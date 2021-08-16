@@ -1,0 +1,5 @@
+name: docs-dataweave
+title: DataWeave
+version: '1.0 (Mule 3.7 compatible)'
+nav:
+- modules/ROOT/nav.adoc

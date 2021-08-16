@@ -1,0 +1,3 @@
+
+[WARNING]
+DataWeave 1.0 is compatible with Mule Runtime Engine 3.7, which reached https://www.mulesoft.com/legal/versioning-back-support-policy#mule-runtimes-end-of-life[End of Life] on or before January 25, 2020. For more information, contact your Customer Success Manager to determine how you can migrate to the latest Mule version.
