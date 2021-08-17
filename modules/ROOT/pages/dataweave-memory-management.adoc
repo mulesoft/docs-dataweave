@@ -106,4 +106,4 @@ org.mule.transport.file.FileConnector: Writing file to: /Users/josh/output/input
 * xref:dataweave-formats.adoc[DataWeave Formats]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
