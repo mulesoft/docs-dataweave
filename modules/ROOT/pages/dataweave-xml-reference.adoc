@@ -39,7 +39,7 @@ Note that these dependencies are automatically added when you drag and drop the 
 [[topic_2]]
 === Maven Dependency Snippet
 
-If you xref:using-maven-in-mule-esb.adoc[use Maven] on your project, you must also include the following dependencies on your `pom.xml` Maven file:
+If you xref:3.8@mule-runtime::using-maven-in-mule-esb.adoc[use Maven] on your project, you must also include the following dependencies on your `pom.xml` Maven file:
 
 [source,xml,linenums]
 ----
