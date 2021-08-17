@@ -18,7 +18,7 @@ Two types of DataWeave files are generated, both with names beginning with `dw-b
 
 * `dw-buffer-output-${count}.tmp` +
 Used to store the output of a transformation when the result is bigger than the threshold *1572864 bytes*.
-To change this threshold value, add the system property `com.mulesoft.dw.buffersize` and assign it the number of bytes you want as your new threshold. Because you can define system properties in several ways, see xref:configuring-properties.adoc#system-properties[system properties] for further details.
+To change this threshold value, add the system property `com.mulesoft.dw.buffersize` and assign it the number of bytes you want as your new threshold. Because you can define system properties in several ways, see xref:4.1@mule-runtime::configuring-properties.adoc#system-properties[system properties] for further details.
 Mule runtime engine deletes the file when the value is no longer referenced, JVM GC collects it or when the Mule Event finishes executing.
 
 * `dw-buffer-index-${count}.tmp` +
