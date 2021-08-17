@@ -1,4 +1,5 @@
 .xref:index.adoc[DataWeave (Mule 3.7 compatible)]
+* xref:index.adoc[DataWeave]
 * xref:dataweave-reference-documentation.adoc[DataWeave Reference Documentation]
 * xref:dataweave-tutorial.adoc[DataWeave Tutorial]
 * xref:dataweave-examples.adoc[DataWeave Examples]
