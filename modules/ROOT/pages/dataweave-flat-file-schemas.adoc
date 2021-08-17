@@ -722,7 +722,7 @@ Here's a quick step by step example of how – once you have built out your full
 . Download the sample schema file link:{attachmentsdir}/Check.ffd[here].
 
 . In Anypoint Studio click *File* > *New* > *Mule Project* to create a new project, give it whatever name you wish and click *Finish*.
-. Drag an xref:http-connector.adoc[HTTP Connector] from the palette to your empty canvas, then a *Transform Message Component*.
+. Drag an xref:3.9@mule-runtime::http-connector.adoc[HTTP Connector] from the palette to your empty canvas, then a *Transform Message Component*.
 +
 image::dataweave-flat-file-schemas-3f67f.png[]
 
