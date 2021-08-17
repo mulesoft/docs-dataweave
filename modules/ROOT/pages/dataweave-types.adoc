@@ -534,7 +534,7 @@ These may be used as arguments in certain operations that act upon strings, like
 This type is based in the https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html[iterator Java class]. The iterator contains a collection, and includes methods to iterate through and filter it.
 
 [NOTE]
-Just like the Java class, the iterator is designed to be consumed only once. For example, if you then pass this value to a xref:logger-component-reference.adoc[logger] would result in consuming it and it would no longer be readable to further elements in the flow.
+Just like the Java class, the iterator is designed to be consumed only once. For example, if you then pass this value to a xref:3.8@mule-runtime::logger-component-reference.adoc[logger] would result in consuming it and it would no longer be readable to further elements in the flow.
 
 
 
