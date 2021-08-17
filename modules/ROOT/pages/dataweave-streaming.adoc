@@ -11,7 +11,7 @@ DataWeave supports the processing of files without the need to load the entire c
 
 == Input Streams
 
-In order for DataWeave to process the file stream, the input must enter DataWeave as a stream. For example, flows that start with a xref:file-transport-reference.adoc[file transport inbound endpoint] must have streaming enabled.
+In order for DataWeave to process the file stream, the input must enter DataWeave as a stream. For example, flows that start with a xref:3.7@mule-runtime::file-transport-reference.adoc[file transport inbound endpoint] must have streaming enabled.
 
 [.ex]
 =====
