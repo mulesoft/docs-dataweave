@@ -1,5 +1,5 @@
 .xref:index.adoc[DataWeave (Mule 3.8 compatible)]
-* xref:dataweave.adoc[DataWeave Language]
+* xref:index.adoc[DataWeave Language]
 * xref:dataweave-quickstart.adoc[DataWeave Quickstart Guide]
 * xref:dataweave-language-introduction.adoc[Language Introduction]
 * xref:dataweave-selectors.adoc[Selectors]
