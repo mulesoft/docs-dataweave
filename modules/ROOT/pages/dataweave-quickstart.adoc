@@ -1,537 +1,779 @@
-= DataWeave Quickstart Guide
+= DataWeave Quickstart
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-:keywords: studio, anypoint, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
-// :page-aliases: 3.9@mule-runtime::dataweave-quickstart.adoc
+// :page-aliases: 4.1@mule-runtime::dataweave-quickstart.adoc
+
+include::partial$eol-warning.adoc[]
 
 
-[NOTE]
-Follow this guide to explore data transformation in DataWeave using an example t-shirt service that sends *XML* order requests to a different service that expects *JSON* - you can achieve this very simply via the Transform Message component, its DataWeave editor and interactive GUI.
+In this guide, you run DataWeave scripts on sample data, without relying
+on external data sources. The examples introduce some key DataWeave concepts
+that you can explore further whenever you are ready, and they show how to turn
+the Transform Message component into a DataWeave playground.
 
-The *Transform Message* component in Anypoint Studio gives you the tools to leverage the *DataWeave* language, allowing you to map and connect to anything, regardless of data type or structure.
+To run the scripts, you copy them into the source code area of a Transform
+Message component in xref:7.3@studio::index.adoc[Studio], then view the results
+in the component's *Preview* pane. You also load content from files so that
+your DataWeave script can act on it. Once you feel comfortable with DataWeave
+examples here and elsewhere in the docs, you can use the DataWeave playground
+to practice writing your own DataWeave scripts on sample data.
 
-This DataWeave Quickstart Guide introduces the key functional features of the Transform Message component and DataWeave:
+[[example1]]
+image::dw-tut-script-studio-basic.png[Simple Script]
 
-* _Type Transformation_
-* _Graphical UI for Data Mapping_
-* _Sample-based Output Preview_
-* _Navigating I/O Mapping_
-* _Filter and groupBy Operators_
+The figure shows a Transform Message component in the center canvas, within *testingscriptFlow*. Below the Studio canvas, the *Transform Message* tab
+includes a DataWeave script in the source code area with output in the
+*Preview* pane.
 
+== Prerequisites
 
-== Overview
+xref:7.3@studio::to-download-and-install-studio.adoc[Studio 7] is required.
+Versions 7.3 or 7.2.3 are recommended. Other Studio 7 versions are untested
+with this guide.
 
-Design an example DataWeave transformation between two web services, one that handles SOAP requests and responses, and the other, an HTTP service whose resources are modeled in RAML. By the end of this guide you should understand how to:
+Once Studio is installed, you need to set up a project with a Transform Message component. See <<setup>>.
 
-* Use DataWeave to transform XML data into JSON
-* Send a JSON input to a REST web service
+[[setup]]
+== Set Up a Project in Studio
 
-[NOTE]
-To follow the steps of this Quickstart, you need to download and extract the two files in the link:{attachmentsdir}/dw-quickstart-bundle.zip[dw-quickstart-bundle.zip]
+Set up a Mule project that serves as a DataWeave playground:
 
-[TIP]
-For advanced examples that involve writing DataWeave code, see xref:dataweave-examples.adoc[DataWeave Examples].
+. In Studio, click *File* -> *New* -> *Mule Project* to create a Mule project.
+. Provide the name `testscript` for the project, and click *Finish*.
+. From the *Mule Palette* tab of your new project, click *Core*, and then drag the *Transform Message* component into the Studio canvas.
++
+image::dw-tut-script-studio.png[Studio UI with Transform Component]
++
+(A) *Mule Palette* tab
++
+(B) Studio canvas with Transform Message component
++
+// &#40;C&#41; avoids conversion to copyright symbol:
+&#40;C&#41; *Transform Message* tab
++
+. In the *Transform Message* tab, click *Preview* (on the far right) to open
+the Preview pane, and click the _empty_ rectangle next to *Preview* to expand
+the source code area.
++
+[[studio_source_only]]
+image::studio-transform-msg-tab.png[Studio Transform Message Tab]
++
+The source code area on the left is the place where you are going to add
+DataWeave scripts, and the Preview pane on the right is where you view the
+output of the scripts.
++
+. Proceed to <<start_scripting>>.
 
+[[start_scripting]]
+== Start Scripting
 
-The objective of this example is to send an HTTP request to a web service that places t-shirt orders based on information derived from a sales service (which outputs data in an XML structure). The service that accepts order requests requires a JSON input structure with values for the following set of keys:
+. <<step_1>>
+. <<step_2>>
+. <<step_3>>
+. <<step_4>>
+. <<step_5>>
+. <<step_6>>
+. <<step_7>>
+. <<step_8>>
+. <<step_9>>
+. <<step_10>>
 
-* _size_
-* _email_
-* _name_
-* _address1_
-* _address2_ (optional)
-* _city_
-* _stateOrProvince_
-* _postalCode_
-* _country_
+[[step_1]]
+=== Concatenate Two Strings into a Single String
 
-The order processing service is defined in this example using http://raml.org/[RAML], a lightweight API-modeling language whose format is supported by the HTTP connector as a way of providing metadata into Studio.
+Begin with a simple DataWeave script that concatenates two strings ("hello" and
+"World") together into a single string ("helloWorld").
 
-The raw data from the sales service follows this structure:
+image::dw-tut-helloWorld.png[JSON helloWorld example]
 
+. Replace the current script in the source code area of the *Transform Message*
+tab with this one:
++
+[source,dw,linenums]
+----
+%dw 2.0
+output application/json
+---
+{ myString: ("hello" ++ "World") }
+----
++
+* The body of the DataWeave script contains a key-value pair
+(`{ myString: ("hello" &#43;&#43; "World") }`). The value of this input object
+is a DataWeave expression (`("hello" &#43;&#43; "World")`) for concatenating
+the strings "hello" and "World" into a single string, "helloWorld".
++
+When you are ready, you can learn about the DataWeave
+xref:dw-core-functions-plusplus.adoc[++] function used to concatenate the strings.
++
+* The header of the script is all the content above the three dashes, `---`.
+It includes important directives, including one for specifying the output format
+`application/json`. You can learn more about
+xref:dataweave-language-introduction.adoc[DataWeave Scripts] when you are ready.
++
+. See the JSON output in the *Preview* pane:
++
+[source,json,linenums]
+----
+{ "myString": "helloWorld" }
+----
++
+. Proceed to <<step_2>>.
+
+[[step_2]]
+=== Transform JSON Input to XML Output
+
+Many integrations require transformations from one format to another. This
+procedure uses the `output` directive to produce XML output from JSON input.
+
+image::dw-tut-helloWorld-xml.png[XML helloWorld example]
+
+.  Replace the body of the current script in the source code area with JSON output from <<step_1>>, and change the `output application/json` directive to `output application/xml`:
++
+[source,dw,linenums]
+----
+%dw 2.0
+output application/xml
+---
+{ "myString" : ("helloWorld") }
+----
++
+. See the XML output in the *Preview* pane:
++
 [source,xml,linenums]
 ----
 <?xml version='1.0' encoding='UTF-8'?>
-<order>
-  <product>
-    <price>5</price>
-    <model>MuleSoft Connect 2016</model>
-  </product>
-  <item_amount>3</item_amount>
-  <payment>
-    <payment-type>credit-card</payment-type>
-    <currency>USD</currency>
-    <installments>1</installments>
-  </payment>
-  <buyer>
-    <email>mike@hotmail.com</email>
-    <name>Michael</name>
-    <address>Koala Boulevard 314</address>
-    <city>San Diego</city>
-    <state>CA</state>
-    <postCode>1345</postCode>
-    <nationality>USA</nationality>
-  </buyer>
-  <shop>main branch</shop>
-  <salesperson>Mathew Chow</salesperson>
-</order>
+<myString>helloWorld</myString>
 ----
-
-[NOTE]
-====
-This XML format won't work as a raw input to our web service, because the web service requires the data be serialized as JSON.
-
-Further, as you might have already guessed, only a subset of these fields are needed to complete an order, or they may need to be renamed and used to infer some other required values. You can setup the *metadata structure* and *mapping* in the following two sections.
-====
-
-== Phase 1 - Define Input and Output Metadata
-
-[NOTE]
-The Transform Message component picks up all of the available metadata about the input and output on either side of the component in the flow -- this metadata awareness feature helps you build the transformation interactively through the UI.
-
-It is always recommended you set up the other components of your flow before you configure the Transform Message component.
-
-. In Anypoint Studio click *File* > *New* > *Mule Project* to create a new project, give the project a name, and click *Finish*.
-. If you haven't already, download and extract the link:{attachmentsdir}/dw-quickstart-bundle.zip[dw-quickstart-bundle.zip] and drag both files in it to the `src/main/resources` folder of your new Mule project.
-. Drag an xref:http-connector.adoc[HTTP Connector] from the palette onto your empty canvas, followed by a *Transform Message* component, then another HTTP Connector.
 +
-image::dataweave-quickstart-5a4cb.png[]
-. Click on the first HTTP Connector to open its properties editor, then click the green plus sign icon to create an HTTP connector configuration. In the popup, leave the default values for all fields--just click *OK*.
+Notice that the `"myString"` key of the input JSON object
+`{ "myString" : ("helloWorld") }` is converted to the root element of the
+XML output and that the concatenated string becomes the value of that XML
+object. So the XML output is `<myString>helloWorld</myString>`. That output is
+preceded by a standard XML declaration that specifies the XML version and encoding.
 +
-image::dataweave-quickstart-a56f0.png[]
-
-. In the *Path* field in the properties window above, write `place-order`. Once the Mule application is deployed, the desired endpoint becomes reachable at `+0.0.0.0:8081/place-order+`
-. Select the *Metadata* tab from the HTTP connector's properties window and click the *Add Metadata* button.
+NOTE: Without a _single_ key to serve as a root node for XML output (for example,
+if the input is simply `("helloWorld")`), the transformation to XML will
+fail with a yellow warning (*!*) in the source code area. The warning message
+is `Trying to output non-whitespace characters outside main element tree`. If
+you like, you can try to produce this warning on your own.
 +
-image::dataweave-quickstart-702fd.png[]
-. Click the *Edit* icon image:edit-button.png[edit] that appears next to the dropdown.
+DataWeave supports many output and input formats. You can learn more about
+xref:dataweave-formats.adoc[DataWeave Output Formats and Writer Properties] when you are ready.
 +
-image::dataweave-quickstart-8ea02.png[]
+. Proceed to <<step_3>>
+
+[[step_3]]
+=== Learn About Supported Data Types
+
+Now provide a DataWeave script that simply introduces you to a variety of
+supported data types and shows how to add comments to a script.
+
+. Replace the current script in the source code area of the *Transform Message*
+tab with this one:
 +
-. Click the green plus sign to *Add* a new metadata type.
-+
-image::dataweave-quickstart-c8ae5.png[]
-+
-. Name the metadata type `XML-order-input` and click *Create type*.
-+
-image::dataweave-quickstart-22a00.png[]
-+
-. Select *XML* as the type, choose *Example* from the dropdown and point it to the location of the `dw-tshirt-inputsample.xml` file, which you can extract from the bundle you downloaded at the start of this guide (link:{attachmentsdir}/dw-quickstart-bundle.zip[dw-quickstart-bundle.zip]). Then click *Select* to use this metadata type.
-+
-image::dataweave-quickstart-26f37.png[]
-+
-[TIP]
-====
-Now if you select the Transform Message component by clicking it in the flow, the input section should show the fields that are expected in the *incoming payload* through the Transform Message.
-
-image::dataweave-quickstart-4a1db.png[]
-====
-. Click on the *_second HTTP connector in the flow_* to open its properties editor. Click the green plus sign to create a new configuration for the HTTP connector. In the Global Element Properties popup, change the Port field to 8082 (it must be changed since port 8081 is already taken by the other HTTP connector).
-. In the global configuration popup, find the "RAML Location" field, and give the proper path to the `t-shirt.raml` file, which is available in the bundle you downloaded earlier. You can either type in the file location, or – if you extracted the file into the Mule project folder – locate it through the *browse* button. Then click *Ok*.
-+
-image::dataweave-quickstart-6d4b7.png[]
-
-. Back in the HTTP connector properties window, set "Path" to */orders* and use *POST* as the "Method", picking out of the options described in the RAML you attached.
-+
-image::dataweave-quickstart-3c9c7.png[]
-
-+
-[TIP]
-====
-Note that if you click on the Transform Message component, the output section now reflects the data structure that's described in the RAML file for *POST*-ing to `/orders`.
-
-image::dataweave-quickstart-f39a5.png[]
-====
-
-[NOTE]
-In this example we need to convert XML input into JSON output. Because this difference is defined and known in the metadata of both the input and output, *DataWeave handles the conversion _implicitly_*.
-
-=== Optional: Create a Mock Service from RAML File
-
-Using the same RAML definition that you assigned to the second HTTP connector, you can easily build an API and a mock backend for it with xref:apikit::index.adoc[APIkit]. In this way, when you run your application, your HTTP connector will be targeting this service and receiving an actual response without any errors being raised.
-
-You can create your DataWeave mapping without going through any of this, just keep in mind that if you deploy your mule project and call its endpoint, you won't get any response from it.
-
-. On the package explorer, left click on the `t-shirt.raml` file in your project and select *Mule* > *Generate Flows from RAML*. This automatically generates a new Mule configuration XML that includes a Mule flow per each resource and method described on the RAML.
-+
-image::dataweave-quickstart-flows-from-raml.png[]
-+
-. Open the `t-shirt.xml` file that was generated on your project and look for the flow labeled `post:/orders:application/json:t-shirt-config`.
-. Open the properties for the `Set Payload` element in that flow, and set its value to `&#x0023;[payload]`
-+
-image::dataweave-quickstart-set-payload.png[]
-
-== Phase 2 - Map Input Fields to Output Fields
-
-Use the xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component] to create the actual mapping between the input and output fields. Simply click and drag a field in the input side to a field in the output side. The most obvious task is to match similarly named fields together, thus helping to validate the output data:
-
-** `address` and `address1`
-** `city` and `city`
-** `nationality` and `country`.
-** `email` and `email`
-** `name` and `name`
-** `postalCode` and `postCode`
-** `state` and `stateOrProvince`
-
-*Note:* The `address2` and `size` fields in the output side should remain unassigned.
-
-image::dataweave-quickstart-1984d.png[map]
-
-Each of these actions draws a connection in the UI and generates DataWeave code in the text editor. At this point your DataWeave code should look like this:
-
-[source,dataweave,linenums]
+[source,dw,linenums]
 ----
-%dw 1.0
-%output application/json
+%dw 2.0
+output application/json
 ---
 {
-	address1: payload.order.buyer.address,
-	city: payload.order.buyer.city,
-	country: payload.order.buyer.nationality,
-	email: payload.order.buyer.email,
-	name: payload.order.buyer.name,
-	postalCode: payload.order.buyer.postCode as :string,
-	stateOrProvince: payload.order.buyer.state
+  /*
+   * A multi-line
+   * comment here.
+   */
+  myString: "hello world",
+  myNumber: 123,
+  myFloatingPointNumber: 123.456,
+  myVeryBigNumber: 12341234134123412341234123,
+  myDate: |2018-12-07|,
+  myTime: |11:55:56|,
+  myDateTime: |2018-10-01T23:57:59-03:00|,
+  myBoolean: true,
+  myArray: [ 1, 2, 3, 5, 8],
+  myMixedArray: [ 1, 2, "blah", { hello: "there" } ],
+  myObjectKeyValuePair: { innerKey: "innerValue" },
+  myObjectWithConditionalField: { a : { b : 1, ( c : 2 ) if true, (d : 4) if false } },
+  myNull: null,
+  myBinary: "abcd1234123" as Binary
+  //A one-line comment here.
 }
 ----
-
-== How to Assign Fixed Values to the Output
-
-The transform that we mapped in the previous section does not account for the fields `size` or `address2` -- you can provide these fields with an expression to populate them with the desired value.
-
-. Double click on the `address2` field in the output, seeing how this adds an icon next to the `address2` field, and generates a line of DataWeave code that assigns this field the value `null`.
 +
-image::dataweave-quickstart-c1e53.png[]
+DataWeave supports multi-line comments within `/* */` markup and single-line
+comments after forward slashes (`//`). It also supports many data types, shown
+after the colon (`:`) in key-value pairs, such as `myString: "hello world"` and
+`myNumber: 123`. These types include strings (surrounded by quotation marks,
+`""`), numbers, date and time structures (within pipes, `||`), Booleans (`true`
+and `false`), arrays (within square brackets, `[]`), JSON-like objects
+(key-value structures within curly braces, `{}`), `null`, and binaries. When
+you are ready for more on this topic, you can review
+xref:dataweave-types.adoc[DataWeave types].
 +
-. Do the same for the `size` field, then edit the DataWeave code directly to assign `size` the value `M`, for example, rather than going with the `null` value.
+. See the JSON output in the *Preview* pane:
 +
-image::dataweave-quickstart-4abf1.png[]
-
-
-== How to Use Conditional Logic in DataWeave
-
-The transformation possibilities are endless. Let's make the transform we just completed more interesting by modifying the expression that populates the `size` field, into a conditional expression.
-
-See how the expression that evaluates `size` has changed--it uses the xref:dataweave-language-introduction.adoc#unless-otherwise[Unless and Otherwise operators] to set the value to `M` _unless_ the buyer's name is Homer Simpson, in which case the shirt size, expressed as `size` becomes `XXL`.
-
-
-[source,dataweave,linenums]
+[source,json,linenums]
 ----
-%dw 1.0
-%output application/json
+{
+  "myString": "hello world",
+  "myNumber": 123,
+  "myFloatingPointNumber": 123.456,
+  "myVeryBigNumber": 12341234134123412341234123,
+  "myDate": "2018-12-07",
+  "myTime": "11:55:56",
+  "myDateTime": "2018-10-01T23:57:59-03:00",
+  "myBoolean": true,
+  "myArray": [ 1, 2, 3, 5, 8 ],
+  "myMixedArray": [ 1, 2, "blah", { "hello": "there" } ],
+  "myObjectKeyValuePair": { "innerKey": "innerValue" },
+  "myObjectWithConditionalField": { "a": { "b": 1, "c": 2 } },
+  "myNull": null,
+  "myBinary": "abcd1234123"
+}
+----
++
+. Proceed to <<step_4>>
+
+[[step_4]]
+=== Define and Use a DataWeave Variable as Input
+
+Now try a simple DataWeave script that outputs the value of the DataWeave
+variable `myJson`. You set the variable using the `var` directive in the
+script's header.
+
+. Replace the current script in the source code area of the *Transform Message*
+tab with this one:
++
+[source,dw,linenums]
+----
+%dw 2.0
+var myJson = { "hello" : "world" }
+output application/json
+---
+myJson
+----
++
+A JSON object (`{ "hello" : "world" }`) is defined as the `myJson` variable in
+the script's header. You can learn more about
+xref:dataweave-variables.adoc[DataWeave Variables] when you are ready.
++
+. See the output in the *Preview* pane:
++
+[source,json,linenums]
+----
+{
+  "hello": "world"
+}
+----
++
+. Proceed to <<step_5>>
+
+[[step_5]]
+=== Use a DataWeave Function in a DataWeave Variable
+
+Now try a script that uses the DataWeave `avg` function in a DataWeave
+variable (`myJson`) to get averages of two sets of numbers.
+
+image::dw-tut-script-studio-var.png[Script Using var]
+
+. Replace the current script in the source code area with this one:
++
+[source,dw,linenums]
+----
+%dw 2.0
+var myJson = {
+  a: avg([1, 1000]),
+  b: avg([1, 2, 3])
+}
+output application/json
+---
+myJson
+----
++
+The `avg` functions here get invoked when you add `myJson` to the body of the
+script, producing the calculated averages within the JSON object you can see in
+the *Preview* pane. The structures `[1, 1000]` and `[1, 2, 3]` are
+xref:dataweave-types#dw_type_array[arrays]. You can learn more about
+xref:dw-core-functions-avg.adoc[avg] when you are ready.
++
+. Preview the output:
++
+[source,json,linenums]
+----
+{
+  "a": 500.5,
+  "b": 2.0
+}
+----
++
+. Proceed to <<step_6>>
+
+[[step_6]]
+=== Read, Transform, and Select Content from an Input
+
+Now try a more complicated script that reads XML input, transforms it to
+JSON, and only selects the contents of the `car` element.
+
+. Replace the current script in the source code area with this one:
++
+[source,dw,linenums]
+----
+%dw 2.0
+var myRead = read("<car><color>red</color></car>",
+                "application/xml")
+output application/json
 ---
 {
-	address1: payload.order.buyer.address,
-	address2: null,
-	city: payload.order.buyer.city,
-	country: payload.order.buyer.nationality,
-	email: payload.order.buyer.email,
-	name: payload.order.buyer.name,
-	postalCode: payload.order.buyer.postCode as :string,
-	size: "M" unless payload.order.buyer.name == "Homer Simpson" otherwise "XXL",
-	stateOrProvince: payload.order.buyer.state
+  mySelection : myRead.car
 }
 ----
-
-
-== How to Preview Output in the Transform Message Component
-
-The Transform Message component provides realtime feedback in the editor; a preview of what your output data would look like at _run time_, which is responsive to changes in the metadata structure in _design time_.
-
-*NOte:* The *Preview* can only show an output preview when given valid input sample data.
-
-. To open this section click the `Preview` button on the top right corner of the editor.
 +
-image::dataweave-quickstart-07f8a.png[]
+If you encounter an issue previewing this example, try changing `myRead.car`
+to `myRead."car"`. Learn more about the xref:dw-core-functions-read.adoc[read]
+function, xref:dataweave-formats.adoc[DataWeave Output Formats and Writer Properties], and
+xref:dataweave-selectors.adoc[DataWeave Selectors] when you are ready.
 +
-. As your metadata is based off a sample input you provided before, Studio uses the data in this sample to build out the output sample.
+. Preview the output:
 +
-image::dataweave-quickstart-59e9c.png[]
-+
-. You can freely edit the sample data to test what would happen in corner cases. Select the `payload` tab in your input section and replace any values there at will. When doing this, note how these values are populated into the values of the preview in real time, giving you a tangible representation of what the final result of your mapping will be.
-+
-image::dataweave-quickstart-75ca5.png[]
-+
-. Try populating the "state" field in the input sample with TX and note how the "size" field in the output sample is updated in real time.
-. Save your Mule project and Deploy it to Studio's virtual server to try it out by right-clicking on the project and selecting `Run As > Mule Application`.
-. Using a tool like Postman (chrome extension), send an HTTP POST request to http://localhost:8081/place-order with a XML body like the one below:
-
-[source,xml,linenums]
+[source,json,linenums]
 ----
-<?xml version='1.0' encoding='UTF-8'?>
-<order>
-  <product>
-    <price>5</price>
-    <model>MuleSoft Connect 2016</model>
-  </product>
-  <item_amount>3</item_amount>
-  <payment>
-    <payment-type>credit-card</payment-type>
-    <currency>USD</currency>
-    <installments>1</installments>
-  </payment>
-  <buyer>
-    <email>mike@hotmail.com</email>
-    <name>Michael</name>
-    <address>Koala Boulevard 314</address>
-    <city>San Diego</city>
-    <state>TX</state>
-    <postCode>1345</postCode>
-    <nationality>USA</nationality>
-  </buyer>
-  <shop>main branch</shop>
-  <salesperson>Mathew Chow</salesperson>
-</order>
+{
+  "mySelection": {
+    "color": "red"
+  }
+}
 ----
-
-You should get a response with an JSON body that has a single value, this is the order ID for the shirt order you just placed.
-
-
-== Define Input and Output Metadata for Exercise 2
-
-. Drag two HTTP connectors and a Transform Message component into a new flow.
 +
-image::dataweave-quickstart-e4466.png[]
+. Proceed to <<step_7>>
 
-. Click the first HTTP Connector to open its properties editor, then in the *Connector Configuration* select the one that you have already created in prior steps.
+[[step_7]]
+=== Read File Contents with a DataWeave Function
 
-. In the *Path* field enter `get-products`. Once deployed, this generates a reachable endpoint at `+0.0.0.0:8081/get-products+`
+[[readurl_ex]] Now use `readUrl` to read the contents of a file in the Studio
+`src/main/resources` folder so you can use that content as sample data for a
+DataWeave script.
 
-. Click the second HTTP connector to open its properties editor, then in the *Connector Configuration* select the one that you have already created in prior steps, which is linked to the RAML file you downloaded.
-
-. Set the Path to */products* and the Method to *GET*.
-. If you go and click the Transform Message component, note that its input has been populated with the appropriate data structure to send, via a GET request to /products.
+. Add a file by right-clicking the `src/main/resources` folder in the
+*Package Explorer* tab, then navigating to *New* -> *File*, providing the file
+name `myJson.json` for that file, and clicking *Finish*.
+. From `src/main/resources`, provide and save the following sample content in
+the *myJson.json* tab (or within the *Source* sub-tab of the *myJson.json* tab,
+if it is present):
 +
-image::dataweave-quickstart-2196b.png[]
-
-. Click the *Preview* button to open the output preview. As there is no sample data available, you will be prompted to provide a sample.
-
+[source,json,linenums]
+----
+{
+  "hello": "world"
+}
+----
 +
-image::dataweave-quickstart-be7fd.png[]
+.myJson.json in Studio
+image::dw-tut-sample-file.png[DataWeave Sample File]
++
+. Returning to the Transform Message component within the *testscript*
+tab, replace the current script with one that uses `readUrl` to read the JSON
+contents from your file:
++
+[source,dw,linenums]
+----
+%dw 2.0
+output application/json
+---
+readUrl("classpath://myJson.json", "application/json")
+----
++
+Learn more about the xref:dw-core-functions-readurl.adoc[readUrl] function when
+you are ready.
++
+. View the matching output in the *Preview* pane.
++
+[source,json,linenums]
+----
+{
+  "hello": "world"
+}
+----
++
+Note that you can also load the contents of a file through a metadata type in
+the Transform Message component. That procedure is covered later, in
+<<med_large_payload>>. It uses the `myJson.json` file you just created.
++
+. Proceed to <<step_8>>
 
-. Click the hyperlinked notification. This will open an editor tab in the input section with an empty scaffold of the known input structure, where every field is populated with `????`. You can edit it so that it displays more usable data. Paste the following example in that editor:
+[[step_8]]
+=== Map Elements from an Array into an Object
 
+Almost all integrations require data mappings. Here, you map elements within
+an array to keys and values of a JSON object:
+
+. [[input_map]] Replace the current script in the source code area with this one:
++
+[source,dw,linenums]
+----
+%dw 2.0
+output application/json
+---
+{
+  (
+    ["a", "b", "c"] map ((value, index) -> {
+        (index): value
+    })
+  )
+}
+----
++
+The `map` function iterates over the array on the left to apply the lambda
+(anonymous function) on the right (`((value, index) -> { (index): value })`)
+to elements in that array. The lambda uses
+xref:dataweave-functions-lambdas.adoc#_use_named_parameters_in_a_lambda[named parameters]
+(`value` and `index`) to select the values and indices from the
+array and populate a JSON object with key-value pairs. Learn about
+xref:dw-core-functions-map.adoc[map], and when you are ready, compare `map`
+with xref:dw-core-functions-mapobject.adoc[mapObject], which takes an object as
+input.
++
+. [[output_map]] Preview the output:
++
+[source,json,linenums]
+----
+{
+  "0": "a",
+  "1": "b",
+  "2": "c"
+}
+----
++
+. Proceed to <<step_9>>
+
+[[step_9]]
+=== Pluck Values from an Object into an Array
+
+Now use the DataWeave `pluck` function to iterate over values in a JSON
+object and output those values into an array.
+
+. Replace the contents of the source code area with a script that uses
+`pluck` on a JSON object:
++
+[source,dw,linenums]
+----
+%dw 2.0
+output application/json
+---
+{
+  "0": "a",
+  "1": "b",
+  "2": "c"
+} pluck ((value) -> value)
+----
++
+Notice that the input object matches the <<output_map, output>>
+of the `map` example and that the output array matches the <<input_map, input>>
+from the `map` example. Learn more about xref:dw-core-functions-pluck.adoc[pluck]
+when you are ready.
++
+. Preview the output:
++
+[source,json,linenums]
+----
+[
+  "a",
+  "b",
+  "c"
+]
+----
++
+. Proceed to <<step_10>>.
+
+[[step_10]]
+=== Map and Merge Fields
+
+Now try a more complex example that maps and merges fields from items in
+separate arrays. The point here is simply to provide a taste of DataWeave's
+ability to handle more complex mappings and transformations needed for some
+integrations.
+
+. Replace the current script in the source code area with this one:
++
+[source,dw,linenums]
+----
+%dw 2.0
+var myVar = [
+  { bookId: 101,
+    title: "world history",
+    price: "19.99"
+  },
+  {
+    bookId: 202,
+    title: 'the great outdoors',
+    price: "15.99"
+  }
+]
+var myVar2 = [
+  {
+    bookId: 101,
+    author: "john doe"
+  },
+  {
+    bookId: 202,
+    author: "jane doe"
+  }
+]
+output application/json
+---
+myVar map (item, index) -> using (id = item.bookId) {
+	"id" : id,
+	"topic" : item.title,
+	"cost" : item.price as Number,
+	(myVar2 filter ($.*bookId contains id) map (item) -> {
+		author : item.author
+	})
+}
+----
++
+When you are ready to explore the language further, you can learn how the
+xref:dw-core-functions-filter.adoc[filter] function used near the end returns
+`author` values from the array in the `myVar2` variable. You can read about
+xref:dataweave-types-coercion.adoc[type coercion with DataWeave] to see how
+`as` works with the data type in the line `"cost" : item.price as Number,` to
+coerce input strings like `"19.99"` into numbers like `19.99`. You can see how
+`using` (shown in `using (id = item.bookId)`) enables you to create
+xref:dataweave-variables#example_local_variable[local DataWeave variables] in a
+script.
++
+. Preview the output:
++
 [source,json,linenums]
 ----
 [
   {
-    "productCode": "5423",
-    "size": "m",
-    "description": "Connect 2016",
-    "count": 151
+    "id": "101",
+    "topic": "world history",
+    "cost": 19.99,
+    "author": "john doe"
   },
-    {
-    "productCode": "2452",
-    "size": "m",
-    "description": "RAML",
-    "count": 23
-  },
-    {
-    "productCode": "4567",
-    "size": "xxl",
-    "description": "Connect 2016",
-    "count": 329
-  },
-    {
-    "productCode": "1256",
-    "size": "s",
-    "description": "RAML",
-    "count": 0
+  {
+    "id": "202",
+    "topic": "the great outdoors",
+    "cost": 15.99,
+    "author": "jane doe"
   }
 ]
 ----
-
-== Type Transformation
-
-As with the other Transform Message component used in the first example of this Quickstart guide, in the *input section* you can see a tree that describes the data structure. As there's no metadata about the desired output, there isn't anything specified in the output section though. In this example we will write the DataWeave code *manually* to access more advanced features than are offered through the UI.
-
-
-Click your Transform Message component. In the text editor pane, replace the curly brackets '{}' for 'payload'.
-
-image::dataweave-quickstart-7c173.png[]
-
-This is the simplest transformation you can carry out, it replicates the input structure but changes the format from *JSON* to *Java*. Whatever exists in the payload – including any child elements at any depth – is transformed directly into Java without changing any of its structure.
-
-Open the *Preview* tab and see a tree describing the structure of the data, this is what a Java preview always looks like:
-
-image::dataweave-quickstart-fb3b7.png[]
-
-You can easily change the xref:dataweave-language-introduction.adoc#output-directive[output directive] from the default `application/java` to `text/csv` or to any other of the xref:dataweave-formats.adoc[supported formats] and see the results of that transformation.
-
-image::dataweave-quickstart-c8b4f.png[]
-
-[NOTE]
-Note that in this particular example, the format `application/XML` won't work as is because XML requires a parent node, which is absent here.
-
-Change the xref:dataweave-language-introduction.adoc#output-directive[output directive] to `application/json` so that the final result is identical to the sample data in the input. Later on you can transform this in more interesting ways.
-
-image::dataweave-quickstart-6381c.png[]
-
-== map Operator
-
-A simple "payload" can be passed on without modifications if you want to preserve the data structure, however if you need to change any of the specific data fields in the payload, then you need to interact with the payload's items individually.
-
-. Place the following code in the DataWeave editor:
 +
+. Proceed to <<more_examples>>.
 
-[source,dataweave,linenums]
+[[more_examples]]
+== Try Out More DataWeave Examples
+
+Now you are ready to run DataWeave examples on your own. In your DataWeave
+playground, you can run examples from the docs whenever you want to discover
+more about the DataWeave language. You can play with the examples and use them
+to start your own scripts.
+
+NOTE: For examples that use `payload` to reference input data (such as the
+xref:dw-core-functions-contains.adoc#contains1[contains] or
+xref:dw-core-functions-mapobject.adoc[mapObject] function examples), you
+can avoid payload-related issues by using techniques described in <<provide_payload>>.
+
+. Find many more examples to try out in Studio here:
++
+ * xref:dw-operators.adoc[DataWeave Operators]
+ * xref:dw-functions.adoc[DataWeave Reference]: Docs on the DataWeave function
+ modules provide many examples that use DataWeave functions.
+ * xref:dataweave-flow-control.adoc[Flow Control in DataWeave]
+ * xref:dataweave-pattern-matching.adoc[Pattern Matching in DataWeave]
+ * xref:dataweave-cookbook.adoc[DataWeave Cookbook]
+ * xref:dataweave-functions.adoc[Define DataWeave Functions]
++
+. Proceed to <<next_steps>>.
+
+[[provide_payload]]
+=== Run Examples that Act on a Payload
+
+In DataWeave, `payload` is a built-in Mule Runtime variable that holds the
+contents of a xref:about-mule-message#_message_payload[Mule message]. It enables
+you to retrieve the body of a message simply by typing `payload` into the
+DataWeave script. The docs often refer to this content as "the payload."
+
+To try out DataWeave examples that use `payload` to get the contents of a
+Mule message, you have some options:
+
+* <<small_payload>>: You can use a DataWeave variable.
+* <<med_large_payload>>: Add the payload content through a file. This technique
+also works for short payloads.
+
+Alternatives that require a running Mule app (such as using
+xref:set-payload-transformer-reference.adoc[Set Payload]) are not covered here
+but are introduced in <<next_steps>>.
+
+[[small_payload]]
+==== Run Examples with Short Payloads
+
+For short examples with a few lines of sample data, you can convert the input
+payload to a variable. You simply copy the payload's content into a DataWeave
+variable (`var`) in the header of a DataWeave script. Then, in the body of the
+script, you replace `payload` with the name of the new variable to reference
+that variable.
+
+. [[payload_to_var]] Start with this script in the source code area:
++
+[source,DataWeave, linenums]
 ----
-%dw 1.0
-%output application/json
+%dw 2.0
+output application/json
 ---
-shirts: payload map {
-	size: upper $.size,
-	description: $.description,
-	count: $.count
-}
+ContainsRequestedItem: payload.root.*order.*items contains "3"
 ----
-
-As the input is a collection of elements, each describing a product in inventory, this code uses the xref:dataweave-operators.adoc#map[map operator] to treat each of these instances separately. What's enclosed in curly brackets right after the map operator is executed once for each element in the collection. Within this operation, the code refers to the currently selected instance via the `$` selector. The code in this example merely takes each item of the input and maps it to an identical field, with the exception of the *size* field, on which it applies the xref:dataweave-operators.adoc#upper[upper operator] to change it to upper case.
-
-If you open the *Preview* pane, you can see what this transform would output, given the sample as an input. The output is an object that contains a single array, each element in that array is one of the elements in the input, kept identical except that the size field appears in upper case.
-
-
++
+Notice that you cannot preview it yet:
++
+image::dw-tut-payload-example.png[Script Without Input Payload]
++
+. [[modify_payload]] Now modify this example so that it uses some sample input
+instead of attempting to use `payload` to input content of a Mule message that
+does not exist:
++
+.. Add a `myInput` DataWeave variable supplying some input data the script can
+read, and change the Mule `payload` variable in the body of the script to the
+DataWeave `myInput` variable.
++
+[source,DataWeave, linenums]
+----
+%dw 2.0
+var myInput = read("<root>
+    <order>
+      <items>1</items>
+      <items>3</items>
+    </order>
+    <order>
+      <items>2</items>
+    </order>
+</root>",
+"application/xml")
+output application/json
+---
+ContainsRequestedItem: myInput.root.*order.*items contains "3"
+----
+.. Preview the results:
++
 [source,json,linenums]
 ----
 {
-  "shirts": [
-    {
-      "size": "M",
-      "description": "Connect 2016",
-      "count": 151
-    },
-    {
-      "size": "M",
-      "description": "RAML",
-      "count": 23
-    },
-    {
-      "size": "XXL",
-      "description": "Connect 2016",
-      "count": 329
-    },
-    {
-      "size": "S",
-      "description": "RAML",
-      "count": 0
-    }
-  ]
+  "ContainsRequestedItem": true
 }
 ----
++
+When you are ready, learn more about the
+xref:dw-core-functions-contains.adoc[contains] function
+and about the built-in `payload` variable, in
+xref:dataweave-variables-context.adoc[Predefined Variables].
 
+[[med_large_payload]]
+==== Run Examples with Longer Payloads
 
-== filter Operator
+For DataWeave examples with many lines of sample data, consider creating a
+metadata type through Transform Message. Metadata types can accept a
+local file that contains sample data.
 
-
-The result from the previous step includes a products for which there is zero stock. We can easily filter those cases out using the xref:dataweave-operators.adoc#filter[Filter operator]. Modify your DataWeave code to include `filter $.count > 0` in the end. Your code should look like this:
-
-[source,dataweave,linenums]
+. Use the <<readurl_ex, readUrl>> example to create `src/main/resources/myJson.json` in Studio.
++
+You can skip this step if you still have the file in Studio. The next steps
+show how to use the contents of this file as your payload.
++
+. Now replace the current script from the source code area of the
+Transform Message with one that selects the payload of the input:
++
+[source,dw,linenums]
 ----
-%dw 1.0
-%output application/json
+%dw 2.0
+output application/json
 ---
-shirts: payload map {
-	size: upper $.size,
-	description: $.description,
-	count: $.count
-} filter $.count > 0
+payload
 ----
++
+. Notice that you cannot preview a payload now because it does not exist yet.
++
+image::dw-tut-payload-example2.png[Script Without Input Payload]
++
+. Now provide a simple JSON object as the payload of the Transform Message:
++
+.. In the *Transform Message* tab, click the _left-most_ rectangle from the
+*Preview* button to open the columned, graphical view next to the source
+code area:
++
+image::studio-define-payload.png[Define MetaData in Studio]
++
+If you mouse over that rectangle, you can see the label *Show Graphic*.
++
+.. In the left-most column of the *Transform Message* tab, find *Payload: Unknown*, and click *Define metadata*.
++
+If you do not see the *Define metadata* link, simply right-click the *Payload:*
+entry in the left-most column, and then click *Set Metadata* to open the
+*Select metadata type* dialog.
++
+. Now load the contents of `myJson.json` (created in
+the <<readurl_ex, readUrl>> example) into the Transform Message component:
++
+.. Click *+Add* to open the *Create new type* dialog.
+.. In the dialog, provide the *Type id* `myJsonType`, and click *Create type*.
++
+image::studio-create-type.png[Create New Type]
++
+.. Back in the *Select metadata type* dialog that opens, select *JSON* from
+the *Type* drop-down menu.
++
+image::studio_select_metadata_type.png[Select Metadata Type]
++
+.. Below the new type, change *Schema* to *Example* (as shown above).
+.. Use the navigation button with the ellipsis (*...*) to find `src/main/resources/myJson.json`, and click *Open*, which displays the
+structure of the file contents (`hello: _String_`) in the *Select metadata type* window.
+.. Now click *Select* to load the contents of the file into the message
+payload.
+.. Notice that the JSON object from `myJson.json` is now in the Preview pane.
++
+If necessary, you can click *Preview* to open the Preview pane.
++
+.. Now click the _empty_ rectangle next to the *Preview* button to open the source code area, and change the body of the script to `payload.hello`,
+retaining the existing DataWeave header content.
++
+Notice that the Preview pane now contains only the value of the payload:
+`"world"`.
++
+Here is what this example looks like in Studio:
++
+image::dw-tut-world.png[Example: Payload from File]
++
+Learn more about xref:dataweave-selectors.adoc[DataWeave Selectors]
+when you are ready.
 
-The filter operator takes an array as an input validates each element in it against a condition. In this case, the array it takes is the resulting array created by the map operation, since the filter operation is only executed once the map operation is already compiled. Note that the condition uses the `$` selector to signal the element of the array that is currently being revised.
+[[next_steps]]
+== Next Steps
 
-[TIP]
-See the xref:dataweave-language-introduction.adoc#precedence-table[Precedence Table] to have a clear idea about when each expression is compiled.
+* To get started with Mule app development and data mapping through the
+Studio UI, see xref:mule-app-tutorial.adoc[Mule App Development Tutorial].
+* Beyond the Transform Message component, many Mule connectors, modules, and
+Core components accept DataWeave selectors and short DataWeave expressions
+in their *fx* fields.
++
+To learn about the components, you can start from
+xref:mule-application-about.adoc[Mule Applications].
++
+To try out sample data in a running Mule app, without relying on external
+data sources, you can use these Core components with or without Transform
+Message:
++
+** xref:set-payload-transformer-reference.adoc[Set Payload] to provide
+content for the payload of a Mule event.
+** xref:variable-transformer-reference.adoc[Set Variable] to create content in
+a Mule event xref:about-mule-variables.adoc[variable].
+** xref:scheduler-concept.adoc[Scheduler] to trigger the regular generation of Mule events.
+** xref:logger-component-reference.adoc[Logger] to view output and issues logged
+in the Studio console.
 
+Here is an example that uses some of these components:
 
-If you open the *Preview* pane, you can see what this transform would output, given the sample as an input. The output's array now contains one element less, which was the product that had 0 stock.
+image::studio-hello-world.png[Hello World in Studio]
 
-[source,json,linenums]
-----
-{
-  "shirts": [
-    {
-      "size": "M",
-      "description": "Connect 2016",
-      "count": 151
-    },
-    {
-      "size": "M",
-      "description": "RAML",
-      "count": 23
-    },
-    {
-      "size": "XXL",
-      "description": "Connect 2016",
-      "count": 329
-    }
-  ]
-}
-----
-
-
-== groupBy Operator
-
-The elements in the output can be grouped conveniently. The xref:dataweave-operators.adoc#group-by[groupBy operator] can arrange a collection into a collection of collections where each has the elements that share a common value in one of their fields. Modify your DataWeave code to include `groupBy $.size` in the end. Your code should look like this:
-
-
-[source,dataweave,linenums]
-----
-%dw 1.0
-%output application/json
----
-shirts: payload map {
-	size: upper $.size,
-	description: $.description,
-	count: $.count
-} filter $.count > 0 groupBy $.size
-----
-
-
-
-The Group By operator takes an array as an input and focuses on one of its fields to group the elements according to the values in this field. In this case, the array it takes is the resulting array created by the map operation, since the groupBy operation is only executed once the map operation is already compiled. Note that the condition uses the `$` selector to signal the element of the array that is currently being revised.
-
-
-If you open the *Preview* section, you can see what this transform would output, given the sample as an input. The output now contains an object with a single "shirts" object in it, which contains an array. Each different available value for "size" will have a corresponding element inside the "shirts" object, each holding an array of objects with every product that matches that value for size.
-
-
-[source,json,linenums]
-----
-{
-  "shirts": {
-    "M": [
-      {
-        "size": "M",
-        "description": "Connect 2016",
-        "count": 151
-      },
-      {
-        "size": "M",
-        "description": "RAML",
-        "count": 23
-      }
-    ],
-    "XXL": [
-      {
-        "size": "XXL",
-        "description": "Connect 2016",
-        "count": 329
-      }
-    ]
-  }
-}
-----
-
-
-
-== See Also
-
-* More advanced examples in xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
-* xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
-* xref:dataweave-operators.adoc[DataWeave Operators]
-* xref:dataweave-types.adoc[DataWeave Types]
-* xref:dataweave-formats.adoc[DataWeave Formats]
-* xref:dataweave-selectors.adoc[DataWeave Selectors]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
-* Migrate your old DataMapper transforms automatically by using the xref:dataweave-migrator.adoc[DataWeave Migrator Tool]
+* The *fx* value of Set Payload is set to `output application/json --- { hello : "world"}`.
+* The *fx* value of the Logger is set to `payload`, which looks like `#[payload]` in the UI and the XML configuration file for the project.
+* The *Console* tab of the _running_ Mule app (`testscript`) displays the payload from Set Payload.
