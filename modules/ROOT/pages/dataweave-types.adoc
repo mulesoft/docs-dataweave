@@ -984,4 +984,4 @@ When you <<DataWeave Operators Sorted by Type, provide an operator>> with proper
 * xref:dataweave-memory-management.adoc[DataWeave Memory Management]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.8@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
