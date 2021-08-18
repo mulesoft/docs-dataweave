@@ -1,6 +1,6 @@
 name: dataweave
 title: DataWeave
 version: '2.1'
-display_version: 2.1 (Mule 4.1 compatible)
+display_version: 2.1 (Mule 4.1)
 nav:
 - modules/ROOT/nav.adoc
