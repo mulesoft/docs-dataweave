@@ -1,0 +1,6 @@
+name: mule-runtime
+title: Mule Runtime
+version: '2.2'
+display_version: 2.2 (Mule 4.2 compatible)
+nav:
+- modules/ROOT/nav.adoc
