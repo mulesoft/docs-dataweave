@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 :keywords: b2b, edi, schema, dataweave, yaml, language, reference
-// :page-aliases: 3.8@mule-runtime::dataweave-flat-file-schemas.adoc
+:page-aliases: 3.8@mule-runtime::dataweave-flat-file-schemas.adoc
 
 include::partial$eol-warning.adoc[]
 
