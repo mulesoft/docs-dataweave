@@ -1,4 +1,4 @@
-= DataWeave Operators
+DataWeave version 2= DataWeave Operators
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
@@ -6,12 +6,12 @@ endif::[]
 
 include::partial$eol-warning.adoc[]
 
-DataWeave 2.0 supports several mathematical, equality, relational, logical,
+DataWeave version 2 supports several mathematical, equality, relational, logical,
 prepend, and append operators.
 
 == Mathematical Operators
 
-DataWeave 2.0 supports the most common mathematical operators:
+DataWeave version 2 supports the most common mathematical operators:
 
 [%header,cols="1,2"]
 |===
@@ -54,7 +54,7 @@ Note that several DataWeave functions operate on numbers, for example: xref:dw-c
 
 == Equality and Relational Operators
 
-DataWeave 2.0 supports the following equality and relational operators:
+DataWeave version 2 supports the following equality and relational operators:
 
 [%header,cols="1,2"]
 |===
@@ -241,7 +241,7 @@ var notWithAndNot = if (not (1 + 1 == 2 and not 1 == 1)) {"answer": "foobar"}
 
 == Prepend and Append Operators for Arrays
 
-DataWeave 2.0 supports operators for appending and prepending items within
+DataWeave version 2 supports operators for appending and prepending items within
 an array.
 
 [%header,cols="1,2"]
