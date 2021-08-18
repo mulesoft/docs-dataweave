@@ -51,7 +51,7 @@ The `p` function provides access to properties, whether these are:
 * Environment properties
 
 For more on configuring properties and how they are handled,
-see xref:4.1@mule-runtime::configuring-properties.adoc[Configure Properties].
+see xref:configuring-properties.adoc[Configure Properties].
 
 The following example logs the value of the property `http.port`.
 

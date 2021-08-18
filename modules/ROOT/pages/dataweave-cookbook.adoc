@@ -112,7 +112,10 @@ This section links to examples that demonstrate common data extraction and trans
 
 == See Also
 
+////
+* To step through basic DataWeave use cases and exercises in actual Mule applications, see the xref:dataweave-quickstart.adoc[DataWeave Tutorial].
+////
 * xref:dataweave.adoc[DataWeave Language]
 * xref:dataweave-language-introduction.adoc[DataWeave Scripts]
 * xref:dw-functions.adoc[DataWeave Reference]
-* xref:4.1@mule-runtime::mule-concepts.adoc[Key Mule Concepts]
+* xref:mule-concepts.adoc[Key Concepts]

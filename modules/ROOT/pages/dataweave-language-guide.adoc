@@ -61,7 +61,7 @@ You write DataWeave expressions and scripts within message processors (component
 
 * The Transformer component is for creating scripts that perform data transformations, whether simple format conversions or complex data extraction and transformation processes.
 +
-See xref:4.1@mule-runtime::transform-component-about.adoc[Transform Message Component].
+See xref:transform-component-about.adoc[Transform Message Component].
 +
 * Many Mule message processors support DataWeave expressions, allowing you to access and use core DataWeave functions on parts of the Mule event that you need.
 +
@@ -69,7 +69,7 @@ See the inline DataWeave script examples for Set Payload in xref:dataweave-langu
 
 == See Also
 
-* xref:4.1@mule-runtime::about-mule-event.adoc[Mule Events]
+* xref:about-mule-event.adoc[Mule Events]
 * xref:dataweave-formats.adoc[DataWeave Output Formats and Writer Properties]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
 * xref:dataweave-language-introduction.adoc[DataWeave Scripts]
