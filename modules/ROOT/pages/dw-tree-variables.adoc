@@ -1,5 +1,5 @@
 = Tree Variables (dw::util::Tree)
-// :page-aliases: 4.2@mule-runtime::dw-tree-variables.adoc
+:page-aliases: 4.2@mule-runtime::dw-tree-variables.adoc
 
 include::partial$eol-warning.adoc[]
 

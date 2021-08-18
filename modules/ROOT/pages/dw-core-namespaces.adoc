@@ -1,5 +1,5 @@
 = Core Namespaces (dw::Core)
-// :page-aliases: 4.2@mule-runtime::dw-core-namespaces.adoc
+:page-aliases: 4.2@mule-runtime::dw-core-namespaces.adoc
 
 include::partial$eol-warning.adoc[]
 
