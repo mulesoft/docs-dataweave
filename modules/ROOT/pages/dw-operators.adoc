@@ -2,7 +2,7 @@ DataWeave version 2= DataWeave Operators
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
-// :page-aliases: 4.1@mule-runtime::dw-operators.adoc
+:page-aliases: 4.1@mule-runtime::dw-operators.adoc
 
 include::partial$eol-warning.adoc[]
 
