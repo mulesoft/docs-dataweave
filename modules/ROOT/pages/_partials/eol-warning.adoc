@@ -1,6 +1,6 @@
 [WARNING]
 ====
-DataWeave 2.2 is compatible with Mule 4.2
+DataWeave 2.2 is compatible and bundled with Mule 4.2. 
 Standard Support for Mule 4.2 ended on May 2, 2021, and
 this version of Mule will reach its
 https://www.mulesoft.com/legal/versioning-back-support-policy#mule-runtimes-end-of-life[End of Life]
