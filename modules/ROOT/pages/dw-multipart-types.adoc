@@ -1,5 +1,5 @@
 = Multipart Types (dw::module::Multipart)
-:page-aliases: 4.2@mule-runtime::dw-multipart-types.adoc
+// :page-aliases: 4.2@mule-runtime::dw-multipart-types.adoc
 
 include::partial$eol-warning.adoc[]
 

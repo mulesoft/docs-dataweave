@@ -1,5 +1,5 @@
 = Core (dw::Core)
-:page-aliases: 4.2@mule-runtime::dw-core.adoc
+// :page-aliases: 4.2@mule-runtime::dw-core.adoc
 
 include::partial$eol-warning.adoc[]
 
