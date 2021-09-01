@@ -99,19 +99,19 @@ This DataWeave example changes the hierarchy of a JSON object. The output groups
 .DataWeave Script:
 [source,dataweave,linenums]
 ----
-include::4.3@partial$cookbook-dw/regroup-fields-ex2/transform.dwl[]
+include::2.3@partial$cookbook-dw/regroup-fields-ex2/transform.dwl[]
 ----
 
 .Input JSON Payload:
 [source,json,linenums]
 ----
-include::4.3@partial$cookbook-dw/regroup-fields-ex2/inputs/payload.json[]
+include::2.3@partial$cookbook-dw/regroup-fields-ex2/inputs/payload.json[]
 ----
 
 .Output JSON:
 [source,json,linenums]
 ----
-include::4.3@partial$cookbook-dw/regroup-fields-ex2/out.json[]
+include::2.3@partial$cookbook-dw/regroup-fields-ex2/out.json[]
 ----
 
 == Related Examples
