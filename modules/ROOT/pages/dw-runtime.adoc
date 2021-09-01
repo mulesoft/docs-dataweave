@@ -1,11 +1,10 @@
-include::partial$eol-warning.adoc[]
+= Runtime (dw::Runtime)
 :page-aliases: 4.2@mule-runtime::dw-runtime.adoc
 
-= Runtime (dw::Runtime)
+include::partial$eol-warning.adoc[]
 
 This module contains functions that allow you to interact with the DataWeave
 engine.
-
 
 To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::Runtime` to the header of your
