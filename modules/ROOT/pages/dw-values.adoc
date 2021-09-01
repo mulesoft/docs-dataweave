@@ -1,7 +1,7 @@
-include::partial$eol-warning.adoc[]
+= Values (dw::util::Values)
 :page-aliases: 4.2@mule-runtime::dw-values.adoc
 
-= Values (dw::util::Values)
+include::partial$eol-warning.adoc[]
 
 This utility module simplifies changes to values.
 
