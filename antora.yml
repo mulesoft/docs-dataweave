@@ -1,0 +1,6 @@
+name: dataweave
+title: DataWeave
+version: '2.4'
+display_version: '2.4 (Mule 4.4)'
+nav:
+- modules/ROOT/nav.adoc
