@@ -778,7 +778,7 @@ DataWeave variable defined as
 `var myVar = { "id" : "1234", "name" : "somebody" }`, the DataWeave expression
 `myVar.name` returns the value of `"name"`, which is `"somebody"`.
 
-You can select xref:about-mule-event.adoc[Mule event] data by using
+You can select xref:mule-runtime::about-mule-event.adoc[Mule event] data by using
 Mule Runtime variables.
 
 Extracted values are handled as a literal values (as opposed to
@@ -794,12 +794,12 @@ a| `payload`, for example: `payload.name`
 If the `payload` is `{"name" : "somebody"}`, `payload.name` returns `"somebody"`.
 
 For more on the Mule payload, see
-xref:about-mule-message#_message_payload[Message Payload].
+xref:mule-runtime::about-mule-message#_message_payload[Message Payload].
 
 | *Attribute*
 a| `attributes.<myAttributeName>`
 
-For examples, see xref:about-mule-message#_attributes[Attributes].
+For examples, see xref:mule-runtime::about-mule-message#_attributes[Attributes].
 
 | *Variable*
 a|
@@ -810,7 +810,7 @@ To avoid name collisions, you can prepend `variables`:
 
 `variables.<myVariableName>`
 
-For more on Mule variables, see xref:about-mule-variables.adoc[Variables in Mule Apps].
+For more on Mule variables, see xref:mule-runtime::about-mule-variables.adoc[Variables in Mule Apps].
 
 | *Error object*
 
@@ -825,5 +825,5 @@ For the flow name in the Logger: `#[flow.name]`
 
 Note that `flow.name` does not work in some Core components, such as Set Payload and Transform Message.
 
-For more on flows, see xref:about-flows.adoc[Flows and Subflows].
+For more on flows, see xref:mule-runtime::about-flows.adoc[Flows and Subflows].
 |===
