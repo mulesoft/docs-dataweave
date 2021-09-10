@@ -16,7 +16,7 @@ Replacement proceeds from the beginning of the string to the end.
 For example, the result of replacing `"aa"` with `"b"` in the
 string` `"aaa"` is `"ba"`, rather than `"ab"`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -65,5 +65,5 @@ output application/json
 
 Helper function that enables `replaceAll` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

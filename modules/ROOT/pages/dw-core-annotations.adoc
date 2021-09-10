@@ -19,7 +19,7 @@ Options are:
 | `@Deprecated&#40;since: String, replacement: String&#41;`
 | Annotation that marks a function as Deprecated.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 | DesignOnlyType
 | `@DesignOnlyType&#40;&#41;`
@@ -32,7 +32,7 @@ especially with complex Object types.
 | `@Experimental&#40;&#41;`
 | Annotation that marks that a given function is experimental and it may change or even removed in the future.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 | GlobalDescription
 | `@GlobalDescription&#40;&#41;`
@@ -40,7 +40,7 @@ _Introduced in DataWeave: 2.4.0._
 in the function's documentation section.
 This annotation is useful to select the right function description when the function is overloaded.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 | Interceptor
 | `@Interceptor&#40;interceptorFunction: String &#124; &#40;annotationArgs: Object, targetFunctionName: String, args: Array<Any&#62;, callback: &#40;args: Array<Any&#62;&#41; &#45;&#62; Any&#41; &#45;&#62; Any&#41;`
@@ -62,13 +62,13 @@ _Experimental_: This is an experimental feature that is subject to change or rem
 | `@Labels&#40;labels: Array<String&#62;&#41;`
 | Annotation that marks a given function or variable with different labels so it is easily discover.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 | Lazy
 | `@Lazy&#40;&#41;`
 | Annotation that marks a Variable declaration to be Lazily initialized.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 | RuntimePrivilege
 | `@RuntimePrivilege&#40;requires: String&#41;`

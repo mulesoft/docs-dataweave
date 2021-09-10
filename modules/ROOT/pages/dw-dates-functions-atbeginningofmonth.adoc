@@ -14,7 +14,7 @@ input to the first day of the specified _month_. It also sets the `Time` value t
 
 The day and time in the input changes to `01T00:00:00`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -61,7 +61,7 @@ values from the input to the beginning of the specified _month_.
 
 The day and time in the input changes to `01T00:00:00`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -108,7 +108,7 @@ input to the first day of the specified _month_.
 
 The day in the input changes to `01`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

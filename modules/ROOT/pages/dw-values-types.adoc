@@ -7,6 +7,6 @@
 | `type UpdaterValueProvider = &#40;newValueProvider: &#40;oldValue: Any, index: Number&#41; &#45;&#62; Any&#41; &#45;&#62; ReturnType`
 | Type that represents the output type of the update function.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 |===

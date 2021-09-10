@@ -11,7 +11,7 @@ endif::[]
 Wraps `text` with `wrapper` if that `wrapper` is missing from the start or
 end of the given string.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -68,5 +68,5 @@ output application/json
 
 Helper function that enables `wrapIfMissing` to work with a `null` value.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
