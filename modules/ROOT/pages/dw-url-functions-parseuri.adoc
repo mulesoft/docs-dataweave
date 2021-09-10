@@ -6,7 +6,7 @@ endif::[]
 
 
 [[parseuri1]]
-== parseURI&#40;String&#41;: URI
+== parseURI&#40;uri: String&#41;: URI
 
 Parses a URL and returns a `URI` object.
 
@@ -29,7 +29,7 @@ This example parses a URL.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::URL
@@ -41,6 +41,7 @@ output application/json
 ----
 
 ==== Output
+
 [source,JSON,linenums]
 ----
 {
@@ -57,3 +58,4 @@ output application/json
   }
 }
 ----
+

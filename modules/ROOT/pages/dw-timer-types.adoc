@@ -1,6 +1,5 @@
 = Timer Types (dw::util::Timer)
 
-
 |===
 | Type | Definition | Description
 

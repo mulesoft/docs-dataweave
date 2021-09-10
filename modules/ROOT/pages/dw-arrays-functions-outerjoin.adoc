@@ -6,7 +6,7 @@ endif::[]
 
 
 [[outerjoin1]]
-== outerJoin&#40;Array<L&#62;, Array<R&#62;, &#40;leftValue: L&#41; &#45;&#62; String, &#40;rightValue: R&#41; &#45;&#62; String&#41;: Array<{ l?: L, r?: R }&#62;
+== outerJoin<L <: Object, R <: Object&#62;&#40;left: Array<L&#62;, right: Array<R&#62;, leftCriteria: &#40;leftValue: L&#41; &#45;&#62; String, rightCriteria: &#40;rightValue: R&#41; &#45;&#62; String&#41;: Array<{ l?: L, r?: R }&#62;
 
 Joins two array of objects by a given `ID` criteria.
 
@@ -15,7 +15,7 @@ Joins two array of objects by a given `ID` criteria.
 with the `right` items in cases where any exist, and it returns `right`
 items that are not present in the `left`.
 
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -37,16 +37,15 @@ and it includes objects where there is no match for the value of the
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
- %dw 2.0
- import * from dw::core::Arrays
- var users = [{id: "1", name:"Mariano"},{id: "2", name:"Leandro"},{id: "3", name:"Julian"},{id: "5", name:"Julian"}]
- var products = [{ownerId: "1", name:"DataWeave"},{ownerId: "1", name:"BAT"}, {ownerId: "3", name:"DataSense"}, {ownerId: "4", name:"SmartConnectors"}]
- output application/json
- ---
- outerJoin(users, products, (user) -> user.id, (product) -> product.ownerId)
-
+%dw 2.0
+import * from dw::core::Arrays
+var users = [{id: "1", name:"Mariano"},{id: "2", name:"Leandro"},{id: "3", name:"Julian"},{id: "5", name:"Julian"}]
+var products = [{ownerId: "1", name:"DataWeave"},{ownerId: "1", name:"BAT"}, {ownerId: "3", name:"DataSense"}, {ownerId: "4", name:"SmartConnectors"}]
+output application/json
+---
+outerJoin(users, products, (user) -> user.id, (product) -> product.ownerId)
 ----
 
 ==== Output
@@ -104,3 +103,4 @@ and it includes objects where there is no match for the value of the
   }
 ]
 ----
+

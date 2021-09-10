@@ -6,12 +6,11 @@ endif::[]
 
 
 [[repeat1]]
-== repeat&#40;String, Number&#41;: String
+== repeat&#40;text: String, times: Number&#41;: String
 
 Repeats a `text` the number of specified `times`.
 
-
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -28,7 +27,7 @@ This example shows how `repeat` behaves with different inputs and sizes.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -51,3 +50,12 @@ output application/json
   "c": ""
 }
 ----
+
+
+[[repeat2]]
+== repeat&#40;text: Null, times: Any&#41;: Null
+
+Helper function that enables `repeat` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

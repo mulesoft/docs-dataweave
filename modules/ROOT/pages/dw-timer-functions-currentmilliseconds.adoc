@@ -10,14 +10,13 @@ endif::[]
 
 Returns the current time in milliseconds.
 
-
 === Example
 
 This example shows the time in milliseconds when the function executed.
 
 ==== Source
 
-[source,Dataweave, linenums]
+[source,Dataweave,linenums]
 ----
 %dw 2.0
 import * from dw::util::Timer
@@ -32,3 +31,4 @@ output application/json
 ----
 { "currentMilliseconds": 1532923168900 }
 ----
+

@@ -6,7 +6,7 @@ endif::[]
 
 
 [[unzip1]]
-== unzip&#40;Array<Array<T&#62;&#62;&#41;: Array<Array<T&#62;&#62;
+== unzip<T&#62;&#40;items: Array<Array<T&#62;&#62;&#41;: Array<Array<T&#62;&#62;
 
 Performs the opposite of `zip`. It takes an array of arrays as input.
 
@@ -34,7 +34,7 @@ another `[ "a", "b", "c", "d" ]`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -57,7 +57,7 @@ sub-arrays as it can, in this case, just one.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -71,3 +71,4 @@ unzip([ [0,"a"], [1,"a","foo"], [2], [3,"a"] ])
 ----
 [0,1,2,3]
 ----
+

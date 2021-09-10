@@ -6,13 +6,12 @@ endif::[]
 
 
 [[objectfields1]]
-== objectFields&#40;Type&#41;: Array<Field&#62;
+== objectFields&#40;t: Type&#41;: Array<Field&#62;
 
 Returns the array of fields from the given Object type.
 This function fails if the type is not an Object type.
 
-
-_Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 
@@ -137,4 +136,5 @@ type AUser = {name @(foo?: String,l: Number)?: String, lastName*: Number}
     }
   ]
 }
-* ----
+----
+

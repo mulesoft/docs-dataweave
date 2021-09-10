@@ -6,13 +6,12 @@ endif::[]
 
 
 [[partition1]]
-== partition&#40;Array<T&#62;, &#40;item: T&#41; &#45;&#62; Boolean&#41;: { success: Array<T&#62;, failure: Array<T&#62; }
+== partition<T&#62;&#40;array: Array<T&#62;, condition: &#40;item: T&#41; &#45;&#62; Boolean&#41;: { success: Array<T&#62;, failure: Array<T&#62; }
 
 Separates the array into the elements that satisfy the condition from those
 that do not.
 
-
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -32,7 +31,7 @@ even numbers match the criteria set by the lambda expression
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Arrays
@@ -59,3 +58,12 @@ arr partition (item) -> isEven(item)
   ]
 }
 ----
+
+
+[[partition2]]
+== partition&#40;array: Null, condition: &#40;item: Nothing&#41; &#45;&#62; Any&#41;: Null
+
+Helper function that enables `partition` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

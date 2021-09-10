@@ -10,7 +10,6 @@ endif::[]
 
 Returns a pseudo-random number greater than or equal to `0.0` and less than `1.0`.
 
-
 === Example
 
 This example generates a pseudo-random number and multiplies it by 1000.
@@ -31,3 +30,4 @@ output application/json
 ----
 { "price": 65.02770292248383 }
 ----
+

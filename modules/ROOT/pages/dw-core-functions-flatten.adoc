@@ -6,7 +6,7 @@ endif::[]
 
 
 [[flatten1]]
-== flatten&#40;Array<Array<T&#62; &#124; Q&#62;&#41;: Array<T &#124; Q&#62;
+== flatten<T, Q&#62;&#40;@StreamCapable items: Array<Array<T&#62; &#124; Q&#62;&#41;: Array<T &#124; Q&#62;
 
 Turns a set of subarrays (such as `[ [1,2,3], [4,5,[6]], [], [null] ]`) into a single, flattened array (such as `[ 1, 2, 3, 4, 5, [6], null ]`).
 
@@ -27,7 +27,7 @@ This example defines three arrays of numbers, creates another array containing t
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -52,7 +52,7 @@ This example returns a single array from a nested array of objects.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 var myData =
@@ -109,6 +109,7 @@ instead of using `flatten(myData.user.myarray)`, the output is a nested array of
 
 
 [[flatten2]]
-== flatten&#40;Null&#41;: Null
+== flatten&#40;@StreamCapable value: Null&#41;: Null
 
 Helper function that enables `flatten` to work with a `null` value.
+

@@ -6,12 +6,11 @@ endif::[]
 
 
 [[writelineswith1]]
-== writeLinesWith&#40;Array<String&#62;, String&#41;: Binary
+== writeLinesWith&#40;content: Array<String&#62;, charset: String&#41;: Binary
 
 Writes the specified lines and returns the binary content.
 
-
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -36,7 +35,7 @@ an array of line numbers as the value of an object:
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Binaries
@@ -53,3 +52,4 @@ output application/json
   "lines": "Line 1\nLine 2\nLine 3\nLine 4\nLine 5\n"
 }
 ----
+

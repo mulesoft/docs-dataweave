@@ -6,7 +6,7 @@ endif::[]
 
 
 [[divideby1]]
-== divideBy&#40;Object, Number&#41;: Array<Object&#62;
+== divideBy&#40;items: Object, amount: Number&#41;: Array<Object&#62;
 
 Breaks up an object into sub-objects that contain the specified number of
 key-value pairs.
@@ -31,7 +31,7 @@ This example breaks up objects into sub-objects based on the specified `amount`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import divideBy from dw::core::Objects
@@ -60,3 +60,4 @@ output application/json
   ]
 }
 ----
+

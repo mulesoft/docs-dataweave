@@ -6,10 +6,9 @@ endif::[]
 
 
 [[tobase641]]
-== toBase64&#40;Binary&#41;: String
+== toBase64&#40;content: Binary&#41;: String
 
 Transforms a binary value into a Base64 string.
-
 
 === Parameters
 
@@ -20,13 +19,14 @@ Transforms a binary value into a Base64 string.
 |===
 
 [[toBase64-example]]
+
 === Example
 
 This example transforms a binary value into a Base64 encoded string. In this case, the binary value represents an image.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 
@@ -44,7 +44,9 @@ toBase64(image)
 ==== Output
 
 This example outputs a Base64 encoded string. The resulting string was shortened for readability purposes:
+
 [source,JSON,linenums]
 ----
 "/9j/4AAQSkZJRgABAQEAYABgAAD//..."
 ----
+

@@ -6,10 +6,9 @@ endif::[]
 
 
 [[pow1]]
-== pow&#40;Number, Number&#41;: Number
+== pow&#40;base: Number, power: Number&#41;: Number
 
 Raises the value of a `base` number to the specified `power`.
-
 
 === Parameters
 
@@ -28,7 +27,7 @@ Note that you can also use the `pow(base,power)` notation (for example,
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -42,3 +41,4 @@ output application/json
 ----
 [ 8, 9, 343 ]
 ----
+
