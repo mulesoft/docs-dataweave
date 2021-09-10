@@ -28,7 +28,7 @@ This is analogous to the `dw-buffer-output-${count}.tmp` file, but for input dat
 Used to store index information of a value being read. This file helps DataWeave access data quickly. Mule runtime engine deletes the file when the execution of the transformation ends or, in a streaming use case like the foreach loop, when the stream ends (when foreach finishes its execution).
 
 System properties: +
-Because you can define system properties in several ways, see xref:configuring-properties.adoc#system-properties[system properties] for further details.
+Because you can define system properties in several ways, see xref:mule-runtime::configuring-properties.adoc#system-properties[system properties] for further details.
 
 * `com.mulesoft.dw.buffersize` +
 This system property determines the size in bytes of the in-memory input and output buffers used in DataWeave to keep the processed inputs and outputs. If a payload exceeds this size, it is stored in `dw-buffer-index-${count}.tmp` and `dw-buffer-output-${count}.tmp` temporary files. The default buffer size is 8192 bytes (8 KB).

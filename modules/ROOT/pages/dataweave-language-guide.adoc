@@ -288,8 +288,8 @@ For usage examples of `map`, `reduce`, and `filter`, see:
 
 == See Also
 
-* xref:about-mule-message.adoc[Mule Message Structure]
-* xref:about-mule-event.adoc[Mule Events]
-* xref:about-components.adoc[Core Components]
+* xref:mule-runtime::about-mule-message.adoc[Mule Message Structure]
+* xref:mule-runtime::about-mule-event.adoc[Mule Events]
+* xref:mule-runtime::about-components.adoc[Core Components]
 * xref:connectors::index.adoc[Connectors and Modules]
-* xref:transform-component-about.adoc[Transform Message Component]
+* xref:mule-runtime::transform-component-about.adoc[Transform Message Component]

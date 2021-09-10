@@ -119,7 +119,7 @@ The following examples pass reader properties through the `outputMimeType` field
 [[ex04]]
 == Use a Mule Variable as a Configuration Value
 
-The following Mule flow transforms comma-separated CSV data into pipe-separated (`|`) CSV data. Instead of setting a literal value in the script, the example selects the pipe value from a xref:about-mule-variables.adoc[Mule variable], which is part of a Mule event that travels through data-processing components in the flow.
+The following Mule flow transforms comma-separated CSV data into pipe-separated (`|`) CSV data. Instead of setting a literal value in the script, the example selects the pipe value from a xref:mule-runtime::about-mule-variables.adoc[Mule variable], which is part of a Mule event that travels through data-processing components in the flow.
 
 The Scheduler component (`<scheduler/>`) in the example generates a Mule event each time it triggers the flow.
 
@@ -169,10 +169,10 @@ Note that if you want to see pipe-separated content from the Tranform Message co
 . Select *Edit Sample Data* to open a *vars-delimiter* tab.
 . Replace any content in the *vars-delimiter* with the following sample data for the `delimiter` value: `"|"`. You must put the delimiter in quotation marks.
 
-For further guidance with sample data, see xref:transform-preview-transformation-output-studio-task.adoc[Previewing the Output of a Transformation].
+For further guidance with sample data, see xref:mule-runtime::transform-preview-transformation-output-studio-task.adoc[Previewing the Output of a Transformation].
 
 == See Also
 
 * xref:dataweave-formats.adoc[DataWeave Formats]
-* xref:about-components.adoc[Core Components]
+* xref:mule-runtime::about-components.adoc[Core Components]
 * xref:dataweave-cookbook.adoc[DataWeave Cookbook]
