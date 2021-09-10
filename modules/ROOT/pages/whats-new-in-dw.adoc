@@ -4,8 +4,7 @@ TODO
 
 * Function signatures provide more detail
 * Addition of many functions to handle null values
-
-
+* DW modules in the TOC/left-nav are reorganized alphabetically using the module names (such as dw::Core, dw::core::Arrays, dw::module::Multipart, etc.) vs Core (dw::Core), Arrays(dw::core::Arrays), etc.)
 
 
 
