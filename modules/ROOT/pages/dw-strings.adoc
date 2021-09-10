@@ -1,5 +1,5 @@
 = Strings (dw::core::Strings)
-// :page-aliases: 4.3@mule-runtime::dw-strings.adoc
+
 
 This module contains helper functions to work with Strings.
 

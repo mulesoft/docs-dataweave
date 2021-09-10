@@ -1,5 +1,5 @@
 = Types (dw::core::Types)
-// :page-aliases: 4.3@mule-runtime::dw-types.adoc
+
 
 This module enables you to perform type introspection.
 

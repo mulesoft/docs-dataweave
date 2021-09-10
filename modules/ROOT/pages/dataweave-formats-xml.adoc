@@ -1,5 +1,5 @@
 = XML Format
-// :page-aliases: 4.3@mule-runtime::dataweave-formats-xml.adoc
+
 
 MIME Type: `application/xml`
 

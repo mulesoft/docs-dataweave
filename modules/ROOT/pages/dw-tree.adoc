@@ -1,5 +1,5 @@
 = Tree (dw::util::Tree)
-// :page-aliases: 4.3@mule-runtime::dw-tree.adoc
+
 
 This utility module provides functions that enable you to handle values
 as though they are tree data structures.

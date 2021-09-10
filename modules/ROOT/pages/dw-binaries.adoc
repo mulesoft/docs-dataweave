@@ -1,5 +1,5 @@
 = Binaries (dw::core::Binaries)
-// :page-aliases: 4.3@mule-runtime::dw-binaries.adoc
+
 
 This module contains helper functions for working with binaries.
 

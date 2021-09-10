@@ -1,5 +1,5 @@
 = System (dw::System)
-// :page-aliases: 4.3@mule-runtime::dw-system.adoc
+
 
 This module contains functions that allow you to interact with the underlying
 system.

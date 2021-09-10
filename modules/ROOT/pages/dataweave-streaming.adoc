@@ -1,5 +1,5 @@
 = Streaming in DataWeave
-// :page-aliases: 4.3@mule-runtime::dataweave-streaming.adoc
+
 
 DataWeave supports end-to-end streaming through a flow in a Mule application. Streaming speeds the processing of large documents without overloading memory.
 

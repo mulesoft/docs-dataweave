@@ -1,5 +1,5 @@
 = COBOL Copybook Format
-// :page-aliases: 4.3@mule-runtime::dataweave-formats-copybook.adoc
+
 
 MIME Type: `application/flatfile`
 

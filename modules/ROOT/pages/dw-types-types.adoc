@@ -1,5 +1,5 @@
 = Types Types (dw::core::Types)
-// :page-aliases: 4.3@mule-runtime::dw-types-types.adoc
+
 
 |===
 | Type | Definition | Description

@@ -1,5 +1,5 @@
 = Diff (dw::util::Diff)
-// :page-aliases: 4.3@mule-runtime::dw-diff.adoc
+
 
 This utility module calculates the difference between two values
 and returns the list of differences.

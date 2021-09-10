@@ -1,5 +1,5 @@
 = Text Java Properties Format
-// :page-aliases: 4.3@mule-runtime::dataweave-formats-properties.adoc
+
 
 MIME Type: `text/x-java-properties`
 

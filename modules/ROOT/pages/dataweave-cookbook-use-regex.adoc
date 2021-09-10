@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 :keywords: studio, anypoint, transform, transformer, format, aggregate, rename, split, filter convert, json, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping, as
-// :page-aliases: 4.3@mule-runtime::dataweave-cookbook-use-regex.adoc
+
 
 Several DataWeave functions accept regular expressions as arguments, which you can use to return or check for matches. You can also construct regular expressions that incorporate DataWeave expressions that include functions and variables.
 
