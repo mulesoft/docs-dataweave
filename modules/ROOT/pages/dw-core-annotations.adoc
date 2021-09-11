@@ -1,7 +1,8 @@
 = Core Annotations (dw::Core)
 
+[%header, cols="1,1,1a"]
 |===
-| Annotation | Definition a| Description
+| Annotation | Definition | Description
 
 | AnnotationTarget
 | `@AnnotationTarget&#40;targets: Array<"Function" &#124; "Parameter" &#124; "Variable" &#124; "Import"&#62;&#41;`
@@ -45,15 +46,15 @@ _Introduced in DataWeave version 2.4.0._
 Any annotation decorated with Interceptor will wrap the annotated function with the given annotation
 withe the interceptorFunction
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave
+_Experimental_: This feature is subject to change or removal from future versions of DataWeave.
 
 | Internal
 | `@Internal&#40;permits: Array<String&#62;&#41;`
 | Annotation that marks that a given function is internal and shouldn't be used.
 
- _Introduced in DataWeave 2.4.0. Supported by Mule 4.4.0 and later._
+_Introduced in DataWeave version 2.4.0._
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave
+_Experimental_: This feature is subject to change or removal from future versions of DataWeave.
 
 | Labels
 | `@Labels&#40;labels: Array<String&#62;&#41;`
@@ -93,5 +94,5 @@ tail recursive, it will start failing.
 | This annotation marks a script as Untrusted this means that it will not have any Privilege.
 So for example it will not be able to access Env Variables or Read a resource from a Url.
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave
+_Experimental_: This feature is subject to change or removal from future versions of DataWeave.
 |===
