@@ -6,12 +6,11 @@ endif::[]
 
 
 [[nameset1]]
-== nameSet&#40;Object&#41;: Array<String&#62;
+== nameSet&#40;obj: Object&#41;: Array<String&#62;
 
 Returns an array of keys from an object.
 
-
-This method is *Deprecated*. Use `namesOf` from Core module, instead.
+_This function is *Deprecated*. Use xref:dw-core-functions-namesof.adoc[dw::Core::namesOf], instead._
 
 === Parameters
 
@@ -27,7 +26,7 @@ This example returns the keys from the input object.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Objects
@@ -42,3 +41,4 @@ output application/json
 ----
 { "nameSet" : ["a","b"] }
 ----
+

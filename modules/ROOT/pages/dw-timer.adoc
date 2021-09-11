@@ -1,6 +1,5 @@
 = Timer (dw::util::Timer)
 
-
 This is a utility module.
 
 The module is included with Mule runtime. To use it, you must import it into
@@ -23,3 +22,5 @@ the result of the function.
 
 == Types
 * xref:dw-timer-types.adoc[Timer Types]
+
+

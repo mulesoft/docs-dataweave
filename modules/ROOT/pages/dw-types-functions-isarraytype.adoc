@@ -6,12 +6,11 @@ endif::[]
 
 
 [[isarraytype1]]
-== isArrayType&#40;Type&#41;: Boolean
+== isArrayType&#40;t: Type&#41;: Boolean
 
 Returns `true` if the input type is the Array type.
 
-
-_Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 
@@ -49,3 +48,4 @@ output application/json
   "b": false
 }
 ----
+

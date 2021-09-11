@@ -6,13 +6,12 @@ endif::[]
 
 
 [[substringafter1]]
-== substringAfter&#40;String, String&#41;: String
+== substringAfter&#40;text: String, separator: String&#41;: String
 
 Gets the substring after the first occurrence of a separator. The separator
 is not returned.
 
-
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -29,7 +28,7 @@ This example shows how `substringAfter` behaves with different inputs and sizes.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -62,6 +61,9 @@ output application/json
 
 
 [[substringafter2]]
-== substringAfter&#40;Null, String&#41;: Null
+== substringAfter&#40;text: Null, separator: String&#41;: Null
 
 Helper function that enables `substringAfter` to work with a `null` value.
+
+_Introduced in DataWeave: 2.2.0._
+

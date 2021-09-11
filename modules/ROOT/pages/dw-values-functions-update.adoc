@@ -6,13 +6,15 @@ endif::[]
 
 
 [[update1]]
-== update&#40;Object, String&#41;: Any
+== update&#40;objectValue: Object, fieldName: String&#41;: UpdaterValueProvider<Object&#62;
 
 This `update` function updates a field in an object with the specified
 string value.
 
 
 The function returns a new object with the specified field and value.
+
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 
@@ -50,13 +52,15 @@ output application/json
 
 
 [[update2]]
-== update&#40;Object, PathElement&#41;: Any
+== update&#40;objectValue: Object, fieldName: PathElement&#41;: UpdaterValueProvider<Object&#62;
 
 This `update` function updates an object field with the specified
  `PathElement` value.
 
 
 The function returns a new object with the specified field and value.
+
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 
@@ -96,12 +100,15 @@ output application/json
 
 
 [[update3]]
-== update&#40;Array, Number&#41;: Any
+== update&#40;arrayValue: Array, indexToUpdate: Number&#41;: UpdaterValueProvider<Array&#62;
 
 Updates an array index with the specified value.
 
+
 This `update` function returns a new array that changes the value of
 the specified index.
+
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 
@@ -126,14 +133,12 @@ import * from dw::util::Values
 output application/json
 ---
 [1,2,3] update 1 with 5
-
 ----
 
 ==== Output
 
 [source,Json,linenums]
 ----
-
 [
    1,
    5,
@@ -143,10 +148,12 @@ output application/json
 
 
 [[update4]]
-== update&#40;Array, String&#41;: Any
+== update&#40;arrayValue: Array, indexToUpdate: String&#41;: UpdaterValueProvider<Array&#62;
 
 This `update` function updates all objects within the specified array with
 the given string value.
+
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 
@@ -176,7 +183,6 @@ output application/json
 
 [source,Json,linenums]
 ----
-
 [{
    "role": "Super Hero",
    "name": "spiderman"
@@ -189,13 +195,16 @@ output application/json
 
 
 [[update5]]
-== update&#40;Array, PathElement&#41;: Any
+== update&#40;arrayValue: Array, indexToUpdate: PathElement&#41;: UpdaterValueProvider<Array&#62;
 
 This `update` function updates the specified index of an array with the
 given `PathElement` value.
 
+
 The function returns a new array that contains given value at
 the specified index.
+
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 
@@ -221,14 +230,12 @@ import * from dw::util::Values
 output application/json
 ---
 [1,2,3] update index(1) with 5
-
 ----
 
 ==== Output
 
 [source,Json,linenums]
 ----
-
 [
    1,
    5,
@@ -238,9 +245,11 @@ output application/json
 
 
 [[update6]]
-== update&#40;Array &#124; Object &#124; Null, Array<String &#124; Number &#124; PathElement&#62;&#41;: Any
+== update&#40;value: Array &#124; Object &#124; Null, path: Array<String &#124; Number &#124; PathElement&#62;&#41;: UpdaterValueProvider<Array &#124; Object &#124; Null&#62;
 
 Updates the value at the specified path with the given value.
+
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 
@@ -264,14 +273,12 @@ import * from dw::util::Values
 output application/json
 ---
 {user: {name: "Mariano"}} update ["user", field("name")] with "Data Weave"
-
 ----
 
 ==== Output
 
 [source,Json,linenums]
 ----
-
 {
    "user": {
      "name": "Data Weave"
@@ -281,6 +288,9 @@ output application/json
 
 
 [[update7]]
-== update&#40;Null, Number &#124; String &#124; PathElement&#41;: Any
+== update&#40;value: Null, toUpdate: Number &#124; String &#124; PathElement&#41;: UpdaterValueProvider<Null&#62;
 
 Helper function that enables `update` to work with a `null` value.
+
+_Introduced in DataWeave: 2.2.2._
+

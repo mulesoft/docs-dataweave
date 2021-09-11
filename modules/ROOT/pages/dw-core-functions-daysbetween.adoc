@@ -6,10 +6,9 @@ endif::[]
 
 
 [[daysbetween1]]
-== daysBetween&#40;Date, Date&#41;: Number
+== daysBetween&#40;from: Date, to: Date&#41;: Number
 
 Returns the number of days between two dates.
-
 
 === Parameters
 
@@ -26,7 +25,7 @@ This example returns the number of days between the specified dates.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -38,5 +37,6 @@ output application/json
 
 [source,JSON,linenums]
 ----
- { "days" : 365 }
+{ "days" : 365 }
 ----
+

@@ -6,7 +6,7 @@ endif::[]
 
 
 [[sizeof1]]
-== sizeOf&#40;Array<Any&#62;&#41;: Number
+== sizeOf&#40;array: Array<Any&#62;&#41;: Number
 
 Returns the number of elements in an array. It returns `0` if the array
 is empty.
@@ -29,7 +29,7 @@ This example counts the number of elements in the input array. It returns `3`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -49,7 +49,8 @@ sizeOf([ "a", "b", "c"])
 This example returns a count of elements in the input array.
 
 ==== Source
-[source,DataWeave, linenums]
+
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -64,6 +65,7 @@ output application/json
 ----
 
 ==== Output
+
 [source,JSON,linenums]
 ----
 {
@@ -77,7 +79,7 @@ output application/json
 
 
 [[sizeof2]]
-== sizeOf&#40;Object&#41;: Number
+== sizeOf&#40;object: Object&#41;: Number
 
 Returns the number of key-value pairs in an object.
 
@@ -99,7 +101,7 @@ This example counts the key-value pairs in the input object, so it returns `2`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -119,7 +121,8 @@ sizeOf({a: 1, b: 2})
 This example counts the key-value pairs in an object.
 
 ==== Source
-[source,DataWeave, linenums]
+
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -133,6 +136,7 @@ output application/json
 ----
 
 ==== Output
+
 [source,JSON,linenums]
 ----
 {
@@ -145,10 +149,9 @@ output application/json
 
 
 [[sizeof3]]
-== sizeOf&#40;Binary&#41;: Number
+== sizeOf&#40;binary: Binary&#41;: Number
 
 Returns the number of elements in an array of binary values.
-
 
 === Parameters
 
@@ -164,7 +167,7 @@ This example returns the size of an array of binary values.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -181,7 +184,7 @@ sizeOf(["\u0000" as Binary, "\u0001" as Binary, "\u0002" as Binary])
 
 
 [[sizeof4]]
-== sizeOf&#40;String&#41;: Number
+== sizeOf&#40;text: String&#41;: Number
 
 Returns the number of characters (including white space) in an string.
 
@@ -202,7 +205,7 @@ This example returns the number of characters in the input string `"abc"`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -226,7 +229,7 @@ so it is not a string.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -248,3 +251,12 @@ output application/json
   "sizeOfNumber": 1
 }
 ----
+
+
+[[sizeof5]]
+== sizeOf&#40;n: Null&#41;: Null
+
+Helper function that enables `sizeOf` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

@@ -6,11 +6,10 @@ endif::[]
 
 
 [[startswith1]]
-== startsWith&#40;String, String&#41;: Boolean
+== startsWith&#40;text: String, prefix: String&#41;: Boolean
 
 Returns `true` or `false` depending on whether the input string starts with a
 matching prefix.
-
 
 === Parameters
 
@@ -30,7 +29,7 @@ Note that you can use the `startsWith(text,prefix)` or
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -44,3 +43,12 @@ output application/json
 ----
 [ true, false ]
 ----
+
+
+[[startswith2]]
+== startsWith&#40;text: Null, prefix: Any&#41;: false
+
+Helper function that enables `startsWith` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

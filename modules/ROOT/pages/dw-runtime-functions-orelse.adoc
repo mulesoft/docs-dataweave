@@ -4,13 +4,13 @@ include::_attributes.adoc[]
 endif::[]
 
 
+
 [[orelse1]]
-== orElse&#40;TryResult<T&#62;, &#40;&#41; &#45;&#62; R&#41;: T &#124; R
+== orElse<T, R&#62;&#40;previous: TryResult<T&#62;, orElse: &#40;&#41; &#45;&#62; R&#41;: T &#124; R
 
 Returns the result of the `orElse` if the `previous` try result failed if not returns the result of the `previous`
 
-
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -27,7 +27,7 @@ This example waits shows how to chain different try
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::Runtime
@@ -50,3 +50,4 @@ output application/json
   "b": "DW"
 }
 ----
+

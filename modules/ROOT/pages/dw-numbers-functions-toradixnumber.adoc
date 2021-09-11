@@ -6,12 +6,11 @@ endif::[]
 
 
 [[toradixnumber1]]
-== toRadixNumber&#40;Number, Number&#41;: String
+== toRadixNumber&#40;number: Number, radix: Number&#41;: String
 
 Transforms a decimal number into a number string in other radix.
 
-
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -28,7 +27,7 @@ This example shows how the `toRadixNumber` behaves under different inputs.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import toRadixNumber from dw::core::Numbers
@@ -39,7 +38,9 @@ output application/json
     b: toRadixNumber(255, 16)
 }
 ----
+
 ==== Output
+
 [source,JSON,linenums]
 ----
 {
@@ -47,3 +48,4 @@ output application/json
   "b": "ff"
 }
 ----
+
