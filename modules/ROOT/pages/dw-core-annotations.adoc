@@ -1,14 +1,11 @@
 = Core Annotations (dw::Core)
 
 |===
-| Annotation | Definition | Description
+| Annotation | Definition a| Description
 
 | AnnotationTarget
 | `@AnnotationTarget&#40;targets: Array<"Function" &#124; "Parameter" &#124; "Variable" &#124; "Import"&#62;&#41;`
-| Defines where the Annotation can be used. If not defined, it can be used in any possible target.
-
-
-Options are:
+| Indicates where an annotation can be used. Undefined annotations can be used in any possible target.
 
 * Parameter: For function parameters.
 * Function: For function definitions.
@@ -36,7 +33,7 @@ _Introduced in DataWeave version 2.4.0._
 
 | GlobalDescription
 | `@GlobalDescription&#40;&#41;`
-| Annotation is used to identify which function will be used to get the function description 
+| Annotation is used to identify which function will be used to get the function description
 in the function's documentation section.
 This annotation is useful to select the right function description when the function is overloaded.
 
