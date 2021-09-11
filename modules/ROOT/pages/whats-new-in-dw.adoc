@@ -6,6 +6,13 @@ TODO
 * Addition of many functions to handle null values
 * DW modules in the TOC/left-nav are reorganized alphabetically using the module names (such as dw::Core, dw::core::Arrays, dw::module::Multipart, etc.) vs Core (dw::Core), Arrays(dw::core::Arrays), etc.)
 
+* Experimental features in the following. files:
+	modified:   dw-core-annotations.adoc
+	modified:   dw-runtime-functions-dataformatsdescriptor.adoc
+	modified:   dw-runtime-functions-eval.adoc
+	modified:   dw-runtime-functions-evalurl.adoc
+	modified:   dw-runtime-functions-run.adoc
+	modified:   dw-runtime-functions-runurl.adoc
 
 
 == TODO: New DataWeave Modules, Functions, Types, Annotations, etc.
