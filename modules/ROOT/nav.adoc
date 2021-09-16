@@ -82,6 +82,8 @@
  ** xref:dataweave-cookbook-conditional-list-reduction-via-function.adoc[Conditionally Reduce a List Via a Function]
  ** xref:dataweave-cookbook-pass-functions-as-arguments.adoc[Pass Functions as Arguments]
  ** xref:dataweave-cookbook-flat-file-read-and-write.adoc[Read and Write a Flat File]
+** xref:dataweave-cookbook-reader-prop-connector.adoc[Use a Reader Property through a Connector Operation]
+** xref:dataweave-cookbook-writer-prop-mule.adoc[Use a Mule Variable as a Configuration Value]
 * xref:dw-functions.adoc[DataWeave Reference]
  ** xref:dw-operators.adoc[DataWeave Operators]
  ** xref:dataweave-system-properties.adoc[System Properties]
