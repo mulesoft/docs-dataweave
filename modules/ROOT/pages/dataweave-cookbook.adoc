@@ -6,7 +6,7 @@ endif::[]
 
 The following DataWeave examples demonstrate common data extraction and transformation approaches. There are general examples of how to transform data, and also examples of how to use DataWeave in Mule runtime engine (Mule) applications.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+//include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 == DataWeave General Examples
 
