@@ -49,9 +49,6 @@ These examples show how to use DataWeave to extract and transform data.
 //map-based-on-an-external-definition
 | xref:dataweave-cookbook-map-based-on-an-external-definition.adoc[Dynamic Map Based on a Definition]
 | Transforms the payload according to definitions sent in a variable. It defines a function that applies the logic defined in the variable, using `map` and `default`.
-//csv-lookup
-| xref:dataweave-cookbook-csv-lookup.adoc[Look Up Data in CSV File]
-| Uses `filter` with `map` to look up data in a CSV file and return a country code for each calling code found within an input array of phone numbers.
 //rename-keys
 | xref:dataweave-cookbook-rename-keys.adoc[Rename Keys]
 | Renames some keys in a JSON object while retaining the names of all other keys in the output. Uses `mapObject`, `if`, `as`, and `and`.
@@ -154,6 +151,9 @@ These examples show how to use DataWeave to extract and transform data in Mule a
 //xlsx-lookup
 | xref:dataweave-cookbook-xlsx-lookup.adoc[Look Up Data in an Excel (XLSX) File]
 | Uses `filter` to return rows that contain a specified value.
+//csv-lookup
+| xref:dataweave-cookbook-csv-lookup.adoc[Look Up Data in CSV File]
+| Uses `filter` with `map` to look up data in a CSV file and return a country code for each calling code found within an input array of phone numbers.
 //decode-encode-base64
 | xref:dataweave-cookbook-decode-encode.adoc[Decode and Encode Base64]
 | Converts a file stream into Base64 and converts a Base64 string into a file stream. Uses a PDF file as the input and output.
