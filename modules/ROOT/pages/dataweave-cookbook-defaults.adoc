@@ -17,7 +17,7 @@ include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 == Example of Using the Keyword default to Set a Default Value
 
 [[ex01]]
-Consider a Mule application that expects a JSON input with fields `id` and `name` to do a transformation.
+Consider an application that expects a JSON input with fields `id` and `name` to do a transformation.
 You can configure default values for these fields in case the fields are not present, or their value is `null`. For example:
 
 //Note to writer: ex1 dwl is also used for ex2
@@ -27,7 +27,7 @@ You can configure default values for these fields in case the fields are not pre
 include::partial$cookbook-dw/defaults-ex1/transform.dwl[]
 ----
 
-If the Mule application receives a JSON message with values set for the `id` and `name` fields, then the DataWeave  transformation matches field `id` to `userId` and field `name` to `userName`.
+If the application receives a JSON message with values set for the `id` and `name` fields, then the DataWeave  transformation matches field `id` to `userId` and field `name` to `userName`.
 
 .Input JSON Payload:
 [source,json,linenums]
@@ -42,7 +42,7 @@ include::partial$cookbook-dw/defaults-ex1/out.json[]
 ----
 
 [[ex02]]
-However, if the Mule application receives a JSON message without the expected fields, or the fields have `null` values, then the transformation uses the configured default values for fields `userId` and `userName`.
+However, if the application receives a JSON message without the expected fields, or the fields have `null` values, then the transformation uses the configured default values for fields `userId` and `userName`.
 
 ////
 // NOTE: Uses identical script
@@ -79,7 +79,7 @@ The following example sets `United States` as the default value for `userLocatio
 include::partial$cookbook-dw/defaults-ex3/transform.dwl[]
 ----
 
-If the Mule application receives a JSON message with a value set for the `location` field, then the DataWeave  transformation matches field `location` to `userLocation`.
+If the application receives a JSON message with a value set for the `location` field, then the DataWeave transformation matches field `location` to `userLocation`.
 
 .Input JSON Payload:
 [source,json,linenums]
@@ -93,7 +93,7 @@ include::partial$cookbook-dw/defaults-ex3/inputs/payload.json[]
 include::partial$cookbook-dw/defaults-ex3/out.json[]
 ----
 
-However, if the Mule application receives a JSON message without the expected field, or the field is `null`, then the transformation uses the configured default value for field `userLocation`.
+However, if the application receives a JSON message without the expected field, or the field is `null`, then the transformation uses the configured default value for field `userLocation`.
 
 [[ex04]]
 .Input JSON Payload:
