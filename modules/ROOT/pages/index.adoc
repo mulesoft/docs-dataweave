@@ -15,5 +15,4 @@ xref:dataweave-quickstart.adoc[the quickstart].
 
 == Compatibility
 
-//include compatibility table here
-Mule 4.3 is bundled with DataWeave 2.3.0.
+include::release-notes::partial$dataweave/dw-mule-compatibility.adoc[]
