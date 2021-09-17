@@ -6,10 +6,9 @@ endif::[]
 
 
 [[fromcharcode1]]
-== fromCharCode&#40;Number&#41;: String
+== fromCharCode&#40;charCode: Number&#41;: String
 
 Returns a character that matches the specified Unicode.
-
 
 === Parameters
 
@@ -25,7 +24,7 @@ This example inputs the Unicode number `117` to return the character "u".
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -42,3 +41,12 @@ output application/json
 ----
 { "fromCharCode": "u" }
 ----
+
+
+[[fromcharcode2]]
+== fromCharCode&#40;charCode: Null&#41;: Null
+
+Helper function that enables `fromCharCode` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

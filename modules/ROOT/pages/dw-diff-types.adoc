@@ -1,6 +1,5 @@
 = Diff Types (dw::util::Diff)
 
-
 |===
 | Type | Definition | Description
 

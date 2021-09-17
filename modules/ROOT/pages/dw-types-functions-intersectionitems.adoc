@@ -6,13 +6,15 @@ endif::[]
 
 
 [[intersectionitems1]]
-== intersectionItems&#40;Type&#41;: Array<Type&#62;
+== intersectionItems&#40;t: Type&#41;: Array<Type&#62;
 
 Returns an array of all the types that define a given Intersection type.
 This function fails if the input is not an Intersection type.
 
 
 _Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
+
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 
@@ -51,3 +53,4 @@ output application/json
   "a": ["Object","Object"]
 }
 ----
+

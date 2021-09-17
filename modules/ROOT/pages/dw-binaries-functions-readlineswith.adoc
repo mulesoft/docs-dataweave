@@ -6,13 +6,15 @@ endif::[]
 
 
 [[readlineswith1]]
-== readLinesWith&#40;Binary, String&#41;: Array<String&#62;
+== readLinesWith&#40;content: Binary, charset: String&#41;: Array<String&#62;
 
 Splits the specified binary content into lines and returns the results in an
 array.
 
 
 _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -30,7 +32,7 @@ lines (`\n`), in a comma-separated array.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Binaries
@@ -52,3 +54,4 @@ output application/json
    "showType": "Binary"
 }
 ----
+

@@ -6,12 +6,15 @@ endif::[]
 
 
 [[entryset1]]
-== entrySet&#40;T&#41;: Array<{&#124; key: Key, value: Any, attributes: Object &#124;}&#62;
+== entrySet<T <: Object&#62;&#40;obj: T&#41;: Array<{&#124; key: Key, value: Any, attributes: Object &#124;}&#62;
 
 Returns an array of key-value pairs that describe the key, value, and any
 attributes in the input object.
 
+
 This method is *Deprecated*. Use `entriesOf` from Core module, instead.
+
+_This function is *Deprecated*. Use xref:dw-core-functions-entriesof.adoc[dw::Core::entriesOf], instead._
 
 === Parameters
 
@@ -28,7 +31,7 @@ in the variable `myVar`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Objects
@@ -57,3 +60,4 @@ output application/json
   ]
 }
 ----
+

@@ -6,7 +6,7 @@ endif::[]
 
 
 [[charcode1]]
-== charCode&#40;String&#41;: Number
+== charCode&#40;text: String&#41;: Number
 
 Returns the Unicode for the first character in an input string.
 
@@ -27,7 +27,7 @@ This example returns Unicode for the "M" in "Mule".
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -44,3 +44,12 @@ output application/json
 ----
 { "charCode" : 77 }
 ----
+
+
+[[charcode2]]
+== charCode&#40;text: Null&#41;: Null
+
+Helper function that enables `charCode` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

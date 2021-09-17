@@ -6,11 +6,14 @@ endif::[]
 
 
 [[valueset1]]
-== valueSet&#40;{ &#40;K&#41;?: V }&#41;: Array<V&#62;
+== valueSet<K, V&#62;&#40;obj: { &#40;K&#41;?: V }&#41;: Array<V&#62;
 
 Returns an array of the values from key-value pairs in an object.
 
+
 This method is *Deprecated*. Use `valuesOf` from Core module, instead.
+
+_This function is *Deprecated*. Use xref:dw-core-functions-valuesof.adoc[dw::Core::valuesOf], instead._
 
 === Parameters
 
@@ -26,7 +29,7 @@ This example returns the values from the input object.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Objects
@@ -41,3 +44,4 @@ output application/json
 ----
 { "valueSet" : [true,1] }
 ----
+

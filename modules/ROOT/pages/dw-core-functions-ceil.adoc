@@ -6,10 +6,9 @@ endif::[]
 
 
 [[ceil1]]
-== ceil&#40;Number&#41;: Number
+== ceil&#40;number: Number&#41;: Number
 
 Rounds a number up to the nearest whole number.
-
 
 === Parameters
 
@@ -26,7 +25,7 @@ rounds up to `3`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -41,3 +40,4 @@ output application/json
 ----
 [ 2, 3, 3 ]
 ----
+

@@ -6,12 +6,14 @@ endif::[]
 
 
 [[islowercase1]]
-== isLowerCase&#40;String&#41;: Boolean
+== isLowerCase&#40;text: String&#41;: Boolean
 
 Checks if the `text` contains only lowercase characters.
 
 
 _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -23,11 +25,11 @@ _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
 
 === Example
 
-This example shows how `isNumeric` behaves with different inputs and sizes.
+This example shows how `isLowerCase` behaves with different inputs and sizes.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import isLowerCase from dw::core::Strings
@@ -63,6 +65,9 @@ output application/json
 
 
 [[islowercase2]]
-== isLowerCase&#40;Null&#41;: Boolean
+== isLowerCase&#40;text: Null&#41;: Boolean
 
 Helper function that enables `isLowerCase` to work with a `null` value.
+
+_Introduced in DataWeave: 2.2.0._
+

@@ -6,7 +6,7 @@ endif::[]
 
 
 [[index1]]
-== index&#40;Number&#41;: PathElement
+== index&#40;index: Number&#41;: PathElement
 
 This function creates a `PathElement` data type to use for selecting an
 _array element_ and populates the type's `selector` field with the specified
@@ -15,6 +15,8 @@ index.
 
 Some versions of the `update` and `mask` functions accept a `PathElement` as
 an argument.
+
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 
@@ -34,7 +36,7 @@ output, also note that the value of the `"kind"` key is `"Array"`.
 
 [source,DataWeave,linenums]
 ----
- %dw 2.0
+%dw 2.0
  output application/json
  import * from dw::util::Values
  ns ns0 http://acme.com/foo
@@ -52,3 +54,4 @@ output, also note that the value of the `"kind"` key is `"Array"`.
    "selector": 0
  }
 ----
+

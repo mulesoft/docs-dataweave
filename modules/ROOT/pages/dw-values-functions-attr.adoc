@@ -6,7 +6,7 @@ endif::[]
 
 
 [[attr1]]
-== attr&#40;Namespace &#124; Null, String&#41;: PathElement
+== attr&#40;namespace: Namespace &#124; Null = null, name: String&#41;: PathElement
 
 This function creates a `PathElement` to use for selecting an XML
 attribute and populates the type's `selector` field with the given string.
@@ -14,6 +14,8 @@ attribute and populates the type's `selector` field with the given string.
 
 Some versions of the `update` and `mask` functions accept a `PathElement` as
 an argument.
+
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 
@@ -41,6 +43,7 @@ ns ns0 http://acme.com/fo
 ---
 attr(ns0 , "myAttr")
 ----
+
 ==== Output
 
 [source,Json,linenums]
@@ -51,3 +54,4 @@ attr(ns0 , "myAttr")
    "selector": "myAttr"
  }
 ----
+

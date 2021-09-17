@@ -6,13 +6,15 @@ endif::[]
 
 
 [[functionparamtypes1]]
-== functionParamTypes&#40;Type&#41;: Array<FunctionParam&#62;
+== functionParamTypes&#40;t: Type&#41;: Array<FunctionParam&#62;
 
 Returns the list of parameters from the given function type.
 This function fails if the provided type is not a Function type.
 
 
 _Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
+
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 
@@ -46,7 +48,7 @@ type AFunction2 = () -> Number
 
 [source,Json,linenums]
 ----
- {
+{
     "a": [
       {
         "paramType": "String",
@@ -62,3 +64,4 @@ type AFunction2 = () -> Number
     ]
   }
 ----
+

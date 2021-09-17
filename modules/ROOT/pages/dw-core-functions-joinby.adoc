@@ -6,7 +6,7 @@ endif::[]
 
 
 [[joinby1]]
-== joinBy&#40;Array<StringCoerceable&#62;, String&#41;: String
+== joinBy&#40;elements: Array<StringCoerceable&#62;, separator: String&#41;: String
 
 Merges an array into a single string value and uses the provided string
 as a separator between each item in the list.
@@ -29,7 +29,7 @@ This example joins the elements with a hyphen (`-`).
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -43,3 +43,12 @@ output application/json
 ----
 { "hyphenate": "a-b-c" }
 ----
+
+
+[[joinby2]]
+== joinBy&#40;n: Null, separator: Any&#41;: Null
+
+Helper function that enables `joinBy` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

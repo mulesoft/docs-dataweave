@@ -1,6 +1,5 @@
 = Core Types (dw::Core)
 
-
 |===
 | Type | Definition | Description
 
@@ -89,7 +88,7 @@ and filter it.
 
 Just like the Java class, `Iterator` is designed to be consumed only once. For
 example, if you pass it to a
-https://docs.mulesoft.com/mule-runtime/4.3/logger-component-reference[Logger component],
+https://docs.mulesoft.com/mule-runtime/latest/logger-component-reference[Logger component],
 the Logger consumes it, so it becomes unreadable by further elements in the flow.
 
 
@@ -153,6 +152,8 @@ Examples: `{ myKey : "a value" }`, `{ myKey : { a : 1, b : 2} }`,
 
 _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
 
+_Introduced in DataWeave: 2.2.0._
+
 
 | Period
 | `type Period = Period`
@@ -185,6 +186,8 @@ _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
 
 
 _Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
+
+_Introduced in DataWeave: 2.3.0._
 
 
 | Time

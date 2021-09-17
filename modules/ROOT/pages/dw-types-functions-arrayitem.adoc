@@ -6,13 +6,14 @@ endif::[]
 
 
 [[arrayitem1]]
-== arrayItem&#40;Type&#41;: Type
+== arrayItem&#40;t: Type&#41;: Type
 
 Returns the type of the given array. This function fails if the input is not an Array type.
 
 
 _Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
 
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 
@@ -44,7 +45,6 @@ output application/json
    c: arrayItem(ArrayOfAny),
    d: arrayItem(ArrayOfAnyDefault)
 }
-
 ----
 
 ==== Output
@@ -58,3 +58,4 @@ output application/json
   "d": "Any"
 }
 ----
+

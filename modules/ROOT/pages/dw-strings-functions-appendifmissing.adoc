@@ -6,13 +6,15 @@ endif::[]
 
 
 [[appendifmissing1]]
-== appendIfMissing&#40;String, String&#41;: String
+== appendIfMissing&#40;text: String, suffix: String&#41;: String
 
 Appends the `suffix` to the end of the `text` if the `text` does not already
 ends with the `suffix`.
 
 
 _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -29,7 +31,7 @@ This example shows how `appendIfMissing` behaves with different inputs and sizes
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import appendIfMissing from dw::core::Strings
@@ -59,6 +61,9 @@ output application/json
 
 
 [[appendifmissing2]]
-== appendIfMissing&#40;Null, String&#41;: Null
+== appendIfMissing&#40;text: Null, suffix: String&#41;: Null
 
 Helper function that enables `appendIfMissing` to work with a `null` value.
+
+_Introduced in DataWeave: 2.2.0._
+

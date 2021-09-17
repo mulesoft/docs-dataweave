@@ -6,7 +6,7 @@ endif::[]
 
 
 [[rightpad1]]
-== rightPad&#40;String, Number, String&#41;: String
+== rightPad&#40;text: String, size: Number, padChar: String = " "&#41;: String
 
 The specified `text` is _right_-padded to the `size` using the `padText`.
 By default `padText` is `" "`.
@@ -16,6 +16,7 @@ Returns right padded `String` or original `String` if no padding is necessary.
 
 _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
 
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -26,13 +27,14 @@ _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
 | `size` | The size to pad to.
 | `padText` | The text to pad with. It defaults to one space if not specified.
 |===
+
 === Example
 
 This example shows how `rightPad` behaves with different inputs and sizes.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -62,6 +64,9 @@ output application/json
 
 
 [[rightpad2]]
-== rightPad&#40;Null, Number, String&#41;: Null
+== rightPad&#40;text: Null, size: Any, padText: Any = " "&#41;: Null
 
 Helper function that enables `rightPad` to work with a `null` value.
+
+_Introduced in DataWeave: 2.2.0._
+

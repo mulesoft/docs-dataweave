@@ -6,10 +6,9 @@ endif::[]
 
 
 [[map1]]
-== map&#40;Array<T&#62;, &#40;item: T, index: Number&#41; &#45;&#62; R&#41;: Array<R&#62;
+== map<T, R&#62;&#40;@StreamCapable items: Array<T&#62;, mapper: &#40;item: T, index: Number&#41; &#45;&#62; R&#41;: Array<R&#62;
 
 Iterates over items in an array and outputs the results into a new array.
-
 
 === Parameters
 
@@ -31,7 +30,7 @@ that object.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -56,7 +55,7 @@ with an underscore (`_`), and the corresponding `value` to return the array,
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -83,7 +82,7 @@ are necessary to convert the numeric keys to strings.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -108,23 +107,23 @@ This example iterates over a list of objects and transform the values into CSV. 
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/csv
 ---
 [{
-  "age": 14 ,
-  "name": "Claire"
+ "age": 14 ,
+ "name": "Claire"
 }, {
-  "age": 56,
-  "name": "Max"
+ "age": 56,
+ "name": "Max"
 }, {
-  "age": 89,
-  "name": "John"
+ "age": 89,
+ "name": "John"
 }] map {
-    age: $.age,
-    name: $.name
+   age: $.age,
+   name: $.name
 }
 ----
 
@@ -138,7 +137,9 @@ age,name
 89,John
 ----
 
+
 [[map2]]
-== map&#40;Null, &#40;item: Nothing, index: Nothing&#41; &#45;&#62; Any&#41;: Null
+== map&#40;@StreamCapable value: Null, mapper: &#40;item: Nothing, index: Nothing&#41; &#45;&#62; Any&#41;: Null
 
 Helper function that enables `map` to work with a `null` value.
+
