@@ -158,11 +158,17 @@ These examples show how to use DataWeave to extract and transform data in Mule a
 | xref:dataweave-cookbook-decode-encode.adoc[Decode and Encode Base64]
 | Converts a file stream into Base64 and converts a Base64 string into a file stream. Uses a PDF file as the input and output.
 //java-methods
-|  xref:dataweave-cookbook-java-methods.adoc[Call Java Methods with DataWeave]
+| xref:dataweave-cookbook-java-methods.adoc[Call Java Methods with DataWeave]
 | Calls Java methods from a Java class in a Mule project.
 //readwrite-flatfile
-|  xref:dataweave-cookbook-flat-file-read-and-write.adoc[Read and Write a Flat File]
+| xref:dataweave-cookbook-flat-file-read-and-write.adoc[Read and Write a Flat File]
 | Use DataWeave to read and write flat files in a Mule application.
+//read-connector
+| xref:dataweave-cookbook-reader-prop-connector.adoc[Use a Reader Property through a Connector]
+| Use a reader property through a Connector operation.
+//read-connector
+| xref:dataweave-cookbook-writer-prop-mule.adoc[Use a Mule Variable as a Configuration Value]
+| Use a Mule variable as a configuration value.
 |===
 
 == See Also
