@@ -1,0 +1,14 @@
+= localTime
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[localtime1]]
+== localTime&#40;parts: LocalTimeFactory&#41;: LocalTime
+
+
+
+_Introduced in DataWeave: 2.4.0._
+
