@@ -5,7 +5,7 @@ endif::[]
 :keywords: studio, anypoint, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datawave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
 :page-aliases: 4.3@mule-runtime::dataweave.adoc
 
-include::partial$dataweave-intro.adoc[]
+include::dataweave::partial$dataweave-intro.adoc[]
 
 * To learn more about DataWeave, visit xref:dataweave-language-guide.adoc[the language guide].
 * To look up reference information about DataWeave 2.3.0 operators and functions, visit xref:dw-functions.adoc[the reference guide].
