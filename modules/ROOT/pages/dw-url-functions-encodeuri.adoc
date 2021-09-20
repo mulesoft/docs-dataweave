@@ -6,7 +6,7 @@ endif::[]
 
 
 [[encodeuri1]]
-== encodeURI&#40;String&#41;: String
+== encodeURI&#40;text: String&#41;: String
 
 Encodes a URI with UTF-8 escape sequences.
 
@@ -40,7 +40,7 @@ do not get encoded in the `not_encoded` string.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::URL
@@ -61,3 +61,4 @@ output application/json
    "not_encoded": "http://:;,/?:@&=$_-_.!~*'()"
 }
 ----
+

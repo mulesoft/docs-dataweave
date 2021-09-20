@@ -6,7 +6,7 @@ endif::[]
 
 
 [[sum1]]
-== sum&#40;Array<Number&#62;&#41;: Number
+== sum&#40;values: Array<Number&#62;&#41;: Number
 
 Returns the sum of numeric values in an array.
 
@@ -27,7 +27,8 @@ values are in the array.
 This example returns the sum of the values in the input array.
 
 ==== Source
-[source,DataWeave, linenums]
+
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -36,7 +37,9 @@ sum([1, 2, 3])
 ----
 
 ==== Output
+
 [source,JSON,linenums]
 ----
 6
 ----
+

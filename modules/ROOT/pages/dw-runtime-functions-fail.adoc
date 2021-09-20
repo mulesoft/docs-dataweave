@@ -6,10 +6,9 @@ endif::[]
 
 
 [[fail1]]
-== fail&#40;String&#41;: Nothing
+== fail&#40;message: String = 'Error'&#41;: Nothing
 
 Throws an exception with the specified message.
-
 
 === Parameters
 
@@ -27,7 +26,7 @@ is shown in the Output section below.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::Runtime
@@ -46,3 +45,4 @@ ERROR 2018-07-29 11:47:44,983 ...
 Message               : "Data was empty
 ...
 ----
+

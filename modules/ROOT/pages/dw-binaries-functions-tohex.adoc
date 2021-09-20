@@ -6,10 +6,9 @@ endif::[]
 
 
 [[tohex1]]
-== toHex&#40;Binary&#41;: String
+== toHex&#40;content: Binary&#41;: String
 
 Transforms a binary value into a hexadecimal string.
-
 
 === Parameters
 
@@ -26,7 +25,7 @@ This example transforms a binary version of "Mule" (defined in the variable,
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Binaries
@@ -45,3 +44,4 @@ var testType = typeOf(myBinary)
 ----
 { "binaryToHex": "4D756C65" }
 ----
+

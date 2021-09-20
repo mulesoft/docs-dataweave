@@ -6,14 +6,14 @@ endif::[]
 
 
 [[someentry1]]
-== someEntry&#40;Object, &#40;value: Any, key: Key&#41; &#45;&#62; Boolean&#41;: Boolean
+== someEntry&#40;obj: Object, condition: &#40;value: Any, key: Key&#41; &#45;&#62; Boolean&#41;: Boolean
 
 Returns `true` if at least one entry in the object matches the specified condition.
 
 
 The function stops iterating after the first element that matches the condition is found.
 
-_Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 
@@ -44,7 +44,6 @@ output application/json
     e: {a: ""} someEntry (value, key) -> key as String == "b",
     f: null someEntry (value, key) -> key as String == "a"
 }
-
 ----
 
 ==== Output
@@ -63,9 +62,9 @@ output application/json
 
 
 [[someentry2]]
-== someEntry&#40;Null, &#40;value: Nothing, key: Nothing&#41; &#45;&#62; Boolean&#41;: Boolean
+== someEntry&#40;obj: Null, condition: &#40;value: Nothing, key: Nothing&#41; &#45;&#62; Boolean&#41;: Boolean
 
 Helper function that enables `someEntry` to work with a `null` value.
 
+_Introduced in DataWeave: 2.3.0._
 
-_Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._

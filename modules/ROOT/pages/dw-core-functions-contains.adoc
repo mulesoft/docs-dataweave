@@ -6,7 +6,7 @@ endif::[]
 
 
 [[contains1]]
-== contains&#40;Array<T&#62;, Any&#41;: Boolean
+== contains<T&#62;&#40;@StreamCapable items: Array<T&#62;, element: Any&#41;: Boolean
 
 Returns `true` if an input contains a given value, `false` if not.
 
@@ -30,7 +30,7 @@ This example finds that `2` is in the input array, so it returns `true`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -51,7 +51,7 @@ This example indicates whether the input array contains '"3"'.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -100,11 +100,10 @@ ContainsRequestedItem: payload.root.*order.*items contains "3"
 
 
 [[contains2]]
-== contains&#40;String, String&#41;: Boolean
+== contains&#40;text: String, toSearch: String&#41;: Boolean
 
 Indicates whether a string contains a given substring. Returns `true`
 or `false`.
-
 
 === Parameters
 
@@ -121,7 +120,7 @@ This example finds "mule" in the input string "mulesoft", so it returns `true`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -143,7 +142,7 @@ returns `true`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -168,7 +167,7 @@ output application/json
 
 
 [[contains3]]
-== contains&#40;String, Regex&#41;: Boolean
+== contains&#40;text: String, matcher: Regex&#41;: Boolean
 
 Returns `true` if a string contains a match to a regular expression, `false`
 if not.
@@ -189,7 +188,7 @@ This example checks for any of the letters `e` through `g` in the input
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -211,7 +210,7 @@ so it returns `true`. The `[t|p]` in the regex means `t` or `p`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -233,3 +232,12 @@ ContainsString: payload.root.mystring contains /s[t|p]rin/
 ----
 { "ContainsString": true }
 ----
+
+
+[[contains4]]
+== contains&#40;text: Null, matcher: Any&#41;: false
+
+Helper function that enables `contains` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

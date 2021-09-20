@@ -6,10 +6,9 @@ endif::[]
 
 
 [[trim1]]
-== trim&#40;String&#41;: String
+== trim&#40;text: String&#41;: String
 
 Removes any blank spaces from the beginning and end of a string.
-
 
 === Parameters
 
@@ -26,7 +25,7 @@ the middle of the string, only the beginning and end.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -48,7 +47,7 @@ handles a null value.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -77,6 +76,7 @@ output application/json
 
 
 [[trim2]]
-== trim&#40;Null&#41;: Null
+== trim&#40;value: Null&#41;: Null
 
 Helper function that enables `trim` to work with a `null` value.
+

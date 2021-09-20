@@ -6,7 +6,7 @@ endif::[]
 
 
 [[avg1]]
-== avg&#40;Array<Number&#62;&#41;: Number
+== avg&#40;values: Array<Number&#62;&#41;: Number
 
 Returns the average of numbers listed in an array.
 
@@ -28,7 +28,7 @@ This example returns the average of multiple arrays.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -42,3 +42,4 @@ output application/json
 ----
 { "a": 500.5, "b": 2.0 }
 ----
+

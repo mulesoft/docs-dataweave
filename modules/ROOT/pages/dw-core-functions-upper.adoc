@@ -6,10 +6,9 @@ endif::[]
 
 
 [[upper1]]
-== upper&#40;String&#41;: String
+== upper&#40;text: String&#41;: String
 
 Returns the provided string in uppercase characters.
-
 
 === Parameters
 
@@ -25,7 +24,7 @@ This example converts lowercase characters to uppercase.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -42,6 +41,7 @@ output application/json
 
 
 [[upper2]]
-== upper&#40;Null&#41;: Null
+== upper&#40;value: Null&#41;: Null
 
 Helper function that enables `upper` to work with a `null` value.
+

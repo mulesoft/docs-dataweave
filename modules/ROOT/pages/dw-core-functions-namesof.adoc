@@ -6,12 +6,11 @@ endif::[]
 
 
 [[namesof1]]
-== namesOf&#40;Object&#41;: Array<String&#62;
+== namesOf&#40;obj: Object&#41;: Array<String&#62;
 
 Returns an array of strings with the names of all the keys within the given object.
 
-
-_Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 
@@ -27,7 +26,7 @@ This example returns the keys from the key-value pairs within the input object.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -41,3 +40,12 @@ output application/json
 ----
 { "namesOf" : ["a","b"] }
 ----
+
+
+[[namesof2]]
+== namesOf&#40;obj: Null&#41;: Null
+
+Helper function that enables `namesOf` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+
