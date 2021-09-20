@@ -1,7 +1,11 @@
-= Multipart Format (Form Data)
 
+= Multipart (Form Data) Format
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: format, multipart, multipart/*, multipart/form-data
 
-MIME Type: `multipart/form-data`
+MIME type: `multipart/form-data`
 
 ID: `multipart`
 
@@ -11,7 +15,7 @@ regardless of the format each part has. To distinguish the beginning and end of
 a part, a boundary is used and metadata for each part can be added through
 headers.
 
-DataWeave represents a Multipart document with the given `Object` structure:
+DataWeeave represents a Multipart document with the given `Object` structure:
 
 [source,weave,linenums]
 ----
@@ -56,12 +60,10 @@ The Multipart input serves as the payload to the DataWeave source.
 --34b21
 Content-Disposition: form-data; name="text"
 Content-Type: text/plain
-
 Book
 --34b21
 Content-Disposition: form-data; name="file1"; filename="a.json"
 Content-Type: application/json
-
 {
 "title": "Java 8 in Action",
 "author": "Mario Fusco",
@@ -92,7 +94,6 @@ payload
 The output shows how the DataWeave (dw) format represents the Multipart input. Note that the `raw` and `content` values are  shortened for brevity. The full values are longer.
 
 [source,weave,linenums]
-----
 {
     parts: {
         text: {
@@ -263,44 +264,48 @@ provided in the `Content-Disposition` header, and note that DataWeave can
 handle content from supported formats, as well as references to unsupported
 ones, such as HTML.
 
+// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
 
-// CONFIG PROPS ///////////////////////////////////////////////////////
 
 [[properties]]
 == Configuration Properties
 
-DataWeave supports the following configuration properties for the Multipart format.
+DataWeave supports the following configuration properties for this format.
 
+
+[[reader_properties]]
 === Reader Properties
 
-The Multipart format accepts properties that provide instructions for reading input data.
+This format accepts properties that provide instructions for reading input data.
+
 
 [cols="1,1,1,3a", options="header"]
 |===
-| Parameter | Type | Default | Description
-| `boundary` | `String` | `null` | The multipart `boundary` value. A string to
-delimit parts.
-|`defaultContentType`  |`String`| This property has no default value. | Sets the default Content-Type to use on parts of the `multipart/*` format. When set, this property takes precedence over the https://docs.mulesoft.com/mule-runtime/4.3/dataweave-system-properties[system property setting] for `com.mulesoft.dw.multipart.defaultContentType`. _Introduced in DataWeave 2.3 (2.3.0-20210720) for the August 2021 release of Mule 4.3.0-20210719._
+|Parameter |Type |Default|Description
+|`boundary`  |`String`|`null`|The multipart `boundary` value, a string to delimit parts.
+|`defaultContentType`  |`String`|`'application/octet-stream'`|The default Content Type to use
 |===
 
+[[writer_properties]]
 === Writer Properties
 
-The Multipart format accepts properties that provide instructions for writing output data.
+This format accepts properties that provide instructions for writing output data.
 
 [cols="1,1,1,3a", options="header"]
 |===
-| Parameter | Type | Default | Description
-| `boundary` | `String` | `null` | The multipart boundary value. A String to
-delimit parts.
-| `bufferSize` | `Number` | `8192` | Size of the buffer writer.
-| `deferred` | `Boolean` | `false` | When set to `true`, DataWeave generates the output as a data stream, and the script's execution is deferred until it is consumed.
-  Valid values are `true` or `false`.
+|Parameter |Type |Default|Description
+|`boundary`  |`String`|`null`|The multipart `boundary` value, a string to delimit parts.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+
+Valid values are `true` or `false`.
 |===
 
-[[mime_type]]
-== Supported MIME Types (for Multipart)
 
-The Multipart format supports the following MIME types.
+[[mime_types]]
+== Supported MIME Types
+
+This format supports the following MIME types.
 
 [cols="1", options="header"]
 |===
