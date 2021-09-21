@@ -4,13 +4,13 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: studio, anypoint, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping, examples
 
-The following DataWeave examples demonstrate common data extraction and transformation approaches. There are general examples of how to transform data, and also examples of how to use DataWeave in Mule runtime engine (Mule) applications.
+The following DataWeave examples demonstrate common data extraction and transformation approaches. There are DataWeave code examples of how to transform data, and also examples of Mule applications that implement DataWeave transformations.
 //LINK TO DW 1.0 EXAMPLES:
 include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
-== DataWeave General Examples
+== DataWeave Code Examples
 
-These examples show how to use DataWeave to extract and transform data.
+These examples show how to use standalone DataWeave to extract and transform data.
 
 [cols="2,5a",options="header"]
 |===
@@ -138,7 +138,7 @@ the `..*` descendants selector on a key to select values from a flattened list.
 |===
 
 
-== DataWeave Examples in Mule
+== DataWeave Code in Mule Applications Examples
 
 These examples show how to use DataWeave to extract and transform data in Mule applications.
 
