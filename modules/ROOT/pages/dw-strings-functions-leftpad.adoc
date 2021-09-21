@@ -14,7 +14,7 @@ By default `padText` is `" "`.
 
 Returns left-padded `String` or original `String` if no padding is necessary.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -66,5 +66,5 @@ output application/json
 
 Helper function that enables `leftPad` to work with a `null` value.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 

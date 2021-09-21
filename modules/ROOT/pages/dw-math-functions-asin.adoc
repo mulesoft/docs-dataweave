@@ -14,7 +14,7 @@ Returns an arc sine value that can range from `-pi/2` through `pi/2`.
 If the absolute value of the input is greater than 1, the result
 is `null`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

@@ -11,7 +11,7 @@ endif::[]
 Returns an array of key-value pairs that describe the key, value, and any
 attributes in the input object.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 === Parameters
 
@@ -64,5 +64,5 @@ output application/json
 
 Helper function that enables `entriesOf` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

@@ -11,7 +11,7 @@ endif::[]
 Drops the first `n` elements. It returns the original array when `n &lt;= 0`
 and an empty array when `n > sizeOf(array)`.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -54,5 +54,5 @@ drop(users, 2)
 
 Helper function that enables `drop` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
