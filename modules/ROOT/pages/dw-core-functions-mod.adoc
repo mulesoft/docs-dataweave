@@ -6,11 +6,10 @@ endif::[]
 
 
 [[mod1]]
-== mod&#40;Number, Number&#41;: Number
+== mod&#40;dividend: Number, divisor: Number&#41;: Number
 
 Returns the modulo (the remainder after dividing the `dividend`
 by the `divisor`).
-
 
 === Parameters
 
@@ -29,7 +28,7 @@ use the `mod(dividend, divisor)` notation (for example, `mod(3, 2)` to return
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -43,3 +42,4 @@ output application/json
 ----
 [ 1, 0, 0.2]
 ----
+

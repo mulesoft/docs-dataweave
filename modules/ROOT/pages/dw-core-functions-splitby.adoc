@@ -6,7 +6,7 @@ endif::[]
 
 
 [[splitby1]]
-== splitBy&#40;String, Regex&#41;: Array<String&#62;
+== splitBy&#40;text: String, regex: Regex&#41;: Array<String&#62;
 
 Splits a string into a string array based on a value that matches part of that
 string. It filters out the matching part from the returned array.
@@ -33,7 +33,7 @@ between forward slashes.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -62,7 +62,7 @@ letters in the array. Notice that the separator is omitted from the output.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -94,11 +94,13 @@ output application/json
 
 === Example
 
-This example splits the number by `.` and applies the index selector `[0]` to the result of the splitBy function. The splitBy returns `["192", "88", "99", "0"]` so the index selector `[0]` just returns the first element in the array ("192").
+This example splits the number by `.` and applies the index selector `[0]` to
+the result of the splitBy function. The splitBy returns `["192", "88", "99", "0"]`
+so the index * selector `[0]` just returns the first element in the array ("192").
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -115,11 +117,13 @@ output application/json
 
 === Example
 
-This example uses a Java regular expression to split a string by `.` at every point the input string matches the regex. Note that the regular expression does not consider the periods between the backticks ```.
+This example uses a Java regular expression to split a string by `.` at every
+point the input string matches the regex. Note that the regular expression
+does not consider the periods between the backticks ```.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -132,18 +136,18 @@ output application/json
 [source,JSON,linenums]
 ----
 [
-  "root",
-  "sources",
-  "data",
-  "`test.branch.BranchSource`",
-  "source",
-  "traits"
+ "root",
+ "sources",
+ "data",
+ "`test.branch.BranchSource`",
+ "source",
+ "traits"
 ]
 ----
 
 
 [[splitby2]]
-== splitBy&#40;String, String&#41;: Array<String&#62;
+== splitBy&#40;text: String, separator: String&#41;: Array<String&#62;
 
 Splits a string into a string array based on a separating string that matches
 part of the input string. It also filters out the matching string from the
@@ -168,7 +172,7 @@ This example splits a string containing an IP address by its periods.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -195,7 +199,7 @@ omitted from the output.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -222,3 +226,12 @@ output application/json
   }
 }
 ----
+
+
+[[splitby3]]
+== splitBy&#40;text: Null, separator: Any&#41;
+
+Helper function that enables `splitBy` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

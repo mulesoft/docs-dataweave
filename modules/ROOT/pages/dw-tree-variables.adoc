@@ -1,21 +1,23 @@
 = Tree Variables (dw::util::Tree)
 
-
 |===
 | Variable | Definition | Description
 
 | ARRAY_TYPE
 | `ARRAY_TYPE`
-|
+| Variable used to identify a `PathElement` value as an array.
 
+_Introduced in DataWeave: 2.2.2._
 
 | ATTRIBUTE_TYPE
 | `ATTRIBUTE_TYPE`
-|
+| Variable used to identify a `PathElement` value as an attribute.
 
+_Introduced in DataWeave: 2.2.2._
 
 | OBJECT_TYPE
 | `OBJECT_TYPE`
-|
+| Variable used to identify a `PathElement` value as an object.
 
+_Introduced in DataWeave: 2.2.2._
 |===
