@@ -138,9 +138,9 @@ the `..*` descendants selector on a key to select values from a flattened list.
 |===
 
 
-== DataWeave Code in Mule Applications Examples
+== DataWeave Code in MuleSoft Applications Examples
 
-These examples show how to use DataWeave to extract and transform data in Mule applications.
+These examples show how to use DataWeave to extract and transform data in MuleSoft applications.
 
 [cols="2,5a",options="header"]
 |===
