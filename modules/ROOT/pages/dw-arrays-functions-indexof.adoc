@@ -6,12 +6,11 @@ endif::[]
 
 
 [[indexof1]]
-== indexOf&#40;Array<T&#62;, T&#41;: Number
+== indexOf<T&#62;&#40;array: Array<T&#62;, toFind: T&#41;: Number
 
-Returns the index of the first occurrence of an element within the array. If the value is not found, it returns `-1`.
+Returns the index of the first occurrence of an element within the array. If the value is not found, the function returns `-1`.
 
-
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -29,7 +28,7 @@ The index of `"Julian"` is `2`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Arrays
@@ -45,3 +44,4 @@ indexOf(users, "Julian")
 ----
 2
 ----
+

@@ -6,7 +6,7 @@ endif::[]
 
 
 [[divideby1]]
-== divideBy&#40;Array<T&#62;, Number&#41;: Array<Array<T&#62;&#62;
+== divideBy<T&#62;&#40;items: Array<T&#62;, amount: Number&#41;: Array<Array<T&#62;&#62;
 
 Breaks up an array into sub-arrays that contain the
 specified number of elements.
@@ -32,7 +32,7 @@ This example breaks up arrays into sub-arrays based on the specified `amount`.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Arrays
@@ -76,3 +76,12 @@ output application/json
  ]
 }
 ----
+
+
+[[divideby2]]
+== divideBy&#40;items: Null, amount: Any&#41;: Null
+
+Helper function that enables `divideBy` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

@@ -6,7 +6,7 @@ endif::[]
 
 
 [[singularize1]]
-== singularize&#40;String&#41;: String
+== singularize&#40;text: String&#41;: String
 
 Converts a plural string to its singular form.
 
@@ -28,7 +28,7 @@ This example converts the input string "boxes" to return "box".
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -46,6 +46,7 @@ output application/json
 
 
 [[singularize2]]
-== singularize&#40;Null&#41;: Null
+== singularize&#40;text: Null&#41;: Null
 
 Helper function that enables `singularize` to work with a `null` value.
+

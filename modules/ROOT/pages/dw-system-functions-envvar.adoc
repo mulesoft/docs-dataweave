@@ -6,18 +6,17 @@ endif::[]
 
 
 [[envvar1]]
-== envVar&#40;String&#41;: String &#124; Null
+== envVar&#40;variableName: String&#41;: String &#124; Null
 
 Returns an environment variable with the specified name or `null` if the
 environment variable is not defined.
-
 
 === Parameters
 
 [%header, cols="1,3"]
 |===
 | Name | Description
-| `variableName` | Provides the name of the environment variable.
+| `variableName` | String that provides the name of the environment variable.
 |===
 
 === Example
@@ -29,7 +28,7 @@ enables you to call the function without prepending the module name to it.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::System
@@ -56,3 +55,4 @@ output application/json
   }
 ]
 ----
+

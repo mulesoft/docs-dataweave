@@ -10,7 +10,6 @@ endif::[]
 
 Returns all the properties configured for Mule runtime.
 
-
 === Example
 
 This example returns all properties from the `java.util.Properties` class.
@@ -113,3 +112,4 @@ output application/dw
    "wrapper.arch": "universal" as String {class: "java.lang.String"}
  } as Object {class: "java.util.Properties"}
 ----
+

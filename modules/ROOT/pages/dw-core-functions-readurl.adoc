@@ -6,13 +6,13 @@ endif::[]
 
 
 [[readurl1]]
-== readUrl&#40;String, String, Object&#41;: Any
+== readUrl&#40;url: String, contentType: String = "application/dw", readerProperties: Object = {}&#41;: Any
 
 Reads a URL, including a classpath-based URL, and returns parsed content.
 This function works similar to the `read` function.
 
 
-The classpath-based URL uses the `classpath:`` protocol prefix, for example,
+The classpath-based URL uses the `classpath:` protocol prefix, for example:
 `classpath://myfolder/myFile.txt` where `myFolder` is located under
 `src/main/resources` in a Mule project. Other than the URL, `readURL` accepts
 the same arguments as `read`.
@@ -136,6 +136,7 @@ jane,doe,janedoe@demo.com
 This example reads a CSV file from a URL, sets reader properties to indicate that there's no header, and then transforms the data to JSON.
 
 ==== Source
+
 [source,DataWeave,linenums]
 ----
 %dw 2.0
@@ -145,11 +146,13 @@ readUrl("https://mywebsite.com/data.csv", "application/csv", {"header" : false})
 ----
 
 ==== Input
+
 ----
 Max,the Mule,MuleSoft
 ----
 
 ==== Output
+
 [source,JSON,linenums]
 ----
 [
@@ -194,3 +197,4 @@ output application/json
 ----
 "Somebody"
 ----
+

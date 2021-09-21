@@ -6,12 +6,11 @@ endif::[]
 
 
 [[keyset1]]
-== keySet&#40;T&#41;: ?
+== keySet<K, V&#62;&#40;obj: { &#40;K&#41;?: V }&#41;: Array<K&#62;
 
 Returns an array of key names from an object.
 
-
-This method is *Deprecated*. Use `keysOf` from Core module, instead.
+_This function is *Deprecated*. Use xref:dw-core-functions-keysof.adoc[dw::Core::keysOf], instead._
 
 === Parameters
 
@@ -27,7 +26,7 @@ This example returns the keys from the input object.
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Objects
@@ -52,7 +51,7 @@ and namespaces (`xmlns`) from the XML input, while `nameSet` returns
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Objects
@@ -96,3 +95,4 @@ output application/json
   ]
 }
 ----
+

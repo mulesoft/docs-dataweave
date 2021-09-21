@@ -6,13 +6,12 @@ endif::[]
 
 
 [[indexwhere1]]
-== indexWhere&#40;Array<T&#62;, &#40;item: T&#41; &#45;&#62; Boolean&#41;: Number
+== indexWhere<T&#62;&#40;array: Array<T&#62;, condition: &#40;item: T&#41; &#45;&#62; Boolean&#41;: Number
 
 Returns the index of the first occurrence of an element that matches a
-condition within the array.
+condition within the array. If no element matches the condition, the function returns `-1`.
 
-
-_Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -31,7 +30,7 @@ matches the condition in the lambda expression,
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 import * from dw::core::Arrays
@@ -47,3 +46,12 @@ users indexWhere (item) -> item startsWith "Jul"
 ----
 2
 ----
+
+
+[[indexwhere2]]
+== indexWhere&#40;array: Null, condition: &#40;item: Nothing&#41; &#45;&#62; Any&#41;: Null
+
+Helper function that enables `indexWhere` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+
