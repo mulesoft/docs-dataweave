@@ -15,13 +15,13 @@ DataWeave script.
 | Name  | Description
 | xref:dw-runtime-functions-dataformatsdescriptor.adoc[dataFormatsDescriptor] | Returns the description of all the DataFormats that are installed in the current Runtime
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions
+_Experimental:_ This is an experimental feature that is subject to change or removal from future versions
 | xref:dw-runtime-functions-eval.adoc[eval] | Evaluates a given script with the specified context and returns the result of that evaluation
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions
+_Experimental:_ This is an experimental feature that is subject to change or removal from future versions
 | xref:dw-runtime-functions-evalurl.adoc[evalUrl] | Evaluates the script under the specified url.
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions
+_Experimental:_ This is an experimental feature that is subject to change or removal from future versions
 | xref:dw-runtime-functions-fail.adoc[fail] | Throws an exception with the specified message.
 | xref:dw-runtime-functions-failif.adoc[failIf] | Produces an error with the specified message if the expression in
 the evaluator returns `true`, otherwise returns the value.
@@ -35,10 +35,10 @@ property is not defined.
 | xref:dw-runtime-functions-props.adoc[props] | Returns all the properties configured for Mule runtime.
 | xref:dw-runtime-functions-run.adoc[run] | Runs a given script under the provided context. This function will execute this given script in the current runtime.
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions
+_Experimental:_ This is an experimental feature that is subject to change or removal from future versions
 | xref:dw-runtime-functions-runurl.adoc[runUrl] | Runs the script under the specified url.
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions
+_Experimental:_ This is an experimental feature that is subject to change or removal from future versions
 | xref:dw-runtime-functions-try.adoc[try] | Evaluates the delegate function and returns an object with `success: true` and `result` if the delegate function succeeds, or an object with `success: false` and `error` if the delegate function throws an exception.
 | xref:dw-runtime-functions-wait.adoc[wait] | Stops the execution for the specified timeout (in milliseconds).
 |===

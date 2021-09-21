@@ -10,7 +10,7 @@ endif::[]
 
 Evaluates a given script with the specified context and returns the result of that evaluation
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave.
+_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave..
 
 === Parameters
 

@@ -1,5 +1,6 @@
 = Core Annotations (dw::Core)
 
+[%header, cols="1,2,2a"]
 |===
 | Annotation | Definition | Description
 
@@ -17,7 +18,8 @@ Options are:
 
 | Deprecated
 | `@Deprecated&#40;since: String, replacement: String&#41;`
-| Annotation that marks a function as Deprecated.
+| Annotation that marks a function as deprecated.
+
 
 _Introduced in DataWeave version 2.4.0._
 
@@ -32,13 +34,15 @@ especially with complex Object types.
 | `@Experimental&#40;&#41;`
 | Annotation that marks that a given function is experimental and it may change or even removed in the future.
 
+
 _Introduced in DataWeave version 2.4.0._
 
 | GlobalDescription
 | `@GlobalDescription&#40;&#41;`
-| Annotation is used to identify which function will be used to get the function description 
+| Annotation is used to identify which function will be used to get the function description
 in the function's documentation section.
 This annotation is useful to select the right function description when the function is overloaded.
+
 
 _Introduced in DataWeave version 2.4.0._
 
@@ -48,25 +52,29 @@ _Introduced in DataWeave version 2.4.0._
 Any annotation decorated with Interceptor will wrap the annotated function with the given annotation
 withe the interceptorFunction
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave
+
+_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 
 | Internal
 | `@Internal&#40;permits: Array<String&#62;&#41;`
 | Annotation that marks that a given function is internal and shouldn't be used.
 
- _Introduced in DataWeave 2.4.0. Supported by Mule 4.4.0 and later._
+ _Introduced in DataWeave 2.4.0._
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave
+
+_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 
 | Labels
 | `@Labels&#40;labels: Array<String&#62;&#41;`
 | Annotation that marks a given function or variable with different labels so it is easily discover.
+
 
 _Introduced in DataWeave version 2.4.0._
 
 | Lazy
 | `@Lazy&#40;&#41;`
 | Annotation that marks a Variable declaration to be Lazily initialized.
+
 
 _Introduced in DataWeave version 2.3.0._
 
@@ -96,5 +104,6 @@ tail recursive, it will start failing.
 | This annotation marks a script as Untrusted this means that it will not have any Privilege.
 So for example it will not be able to access Env Variables or Read a resource from a Url.
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave
+
+_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 |===
