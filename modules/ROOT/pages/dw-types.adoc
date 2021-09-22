@@ -2,6 +2,7 @@
 
 This module enables you to perform type introspection.
 
+
 To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::core::Types` to the header of your
 DataWeave script.
@@ -59,5 +60,3 @@ This function fails if the input is not a Union type.
 
 == Types
 * xref:dw-types-types.adoc[Types Types]
-
-

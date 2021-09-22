@@ -1,12 +1,12 @@
 = Runtime Types (dw::Runtime)
 
-[%header, cols="1,3a"]
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 
 | DataFormatDescriptor
 | `type DataFormatDescriptor = { name: String, binary: Boolean, defaultEncoding?: String, extensions: Array<String&#62;, defaultMimeType: String, acceptedMimeTypes: Array<String&#62;, readerProperties: Array<DataFormatProperty&#62;, writerProperties: Array<DataFormatProperty&#62; }`
-| TODO: 
+| TODO:
 
 * `name: String`: TODO
 * `binary: Boolean`: TODO

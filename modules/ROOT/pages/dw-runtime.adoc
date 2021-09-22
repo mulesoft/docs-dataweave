@@ -1,6 +1,6 @@
 = Runtime (dw::Runtime)
 
-This module contains functions for interacting with the Mule runtime
+This module contains functions for interacting with Mule runtime
 engine (Mule).
 
 

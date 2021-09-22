@@ -3,7 +3,7 @@
 The DataFormat module provides resources for registering a new data format for the DataWeave language. For an example, see
 https://github.com/mulesoft-labs/data-weave-custom-data-format[Custom Data Formats Example].
 
-[%headers, cols="1,2a,4a"]
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 

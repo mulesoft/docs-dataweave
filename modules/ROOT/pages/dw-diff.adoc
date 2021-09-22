@@ -3,9 +3,10 @@
 This utility module calculates the difference between two values
 and returns the list of differences.
 
-The module is included with Mule runtime. To use it, you must import it to your
-DataWeave code, for example, by adding the line `import dw::util::Diff` or
-`import * from dw::util::Diff` to your header.
+
+To use this module, you must import it to your DataWeave code, for example,
+by adding the line `import * from dw::util::Diff` to the header of your
+DataWeave script.
 
 == Functions
 
@@ -17,5 +18,3 @@ DataWeave code, for example, by adding the line `import dw::util::Diff` or
 
 == Types
 * xref:dw-diff-types.adoc[Diff Types]
-
-

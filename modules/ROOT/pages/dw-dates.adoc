@@ -1,6 +1,6 @@
 = Dates (dw::core::Dates)
 
-This module contains functions to create and manipulate Date types.
+This module contains functions for creating and manipulating dates.
 
 
 To use this module, you must import it to your DataWeave code, for example,
@@ -40,5 +40,3 @@ the first day of the _year_ specified in the input. It also sets the `Time` valu
 
 == Types
 * xref:dw-dates-types.adoc[Dates Types]
-
-

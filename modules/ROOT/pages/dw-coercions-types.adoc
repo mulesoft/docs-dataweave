@@ -1,5 +1,6 @@
 = Coercions Types (dw::util::Coercions)
 
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 

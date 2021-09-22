@@ -2,6 +2,7 @@
 
 This module contains functions for working with and creating Period values.
 
+
 To use this module, you must import it to your DataWeave code,
 for example, by adding the line `import * from dw::core::Periods`
 to the header of your DataWeave script.

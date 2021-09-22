@@ -1,10 +1,10 @@
 = Timer (dw::util::Timer)
 
-This is a utility module.
+This utility module contains functions for measuring time.
 
-The module is included with Mule runtime. To use it, you must import it into
-your DataWeave code, for example, by adding the line
-`import * from dw::util::Timer` to the header of your script.
+To use this module, you must import it to your DataWeave code, for example,
+by adding the line `import * from dw::util::Timer` to the header of your
+DataWeave script.
 
 == Functions
 
@@ -22,5 +22,3 @@ the result of the function.
 
 == Types
 * xref:dw-timer-types.adoc[Timer Types]
-
-

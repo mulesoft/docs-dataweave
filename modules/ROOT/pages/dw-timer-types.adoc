@@ -1,6 +1,6 @@
 = Timer Types (dw::util::Timer)
 
-[%header, cols="1,2a,2a"]
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 
