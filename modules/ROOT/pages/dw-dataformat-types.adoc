@@ -18,7 +18,7 @@ writer: &#40;value: Any,
 settings: WriterSettings&#41; &#45;&#62; Binary }`
 a| Represents the DataFormat definition.
 
-* `binaryFormat?: Boolean`: True if this is data format is represented as binary representation instead of text. False if not present.
+* `binaryFormat?: Boolean`: True if this is data format is represented as binary instead of text. False if not present.
 * `defaultCharset?: String`: Default character set of this format, if any.
 * `fileExtensions?: Array<String&#62;`: Returns the list of file extensions with the `.` (for example, `.json`, ``.xml`) to assign to this data format.
 * `acceptedMimeTypes: Array<MimeType&#62;` The list of MIME type to accept.

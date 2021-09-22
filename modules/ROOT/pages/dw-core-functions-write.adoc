@@ -26,7 +26,7 @@ and a `Binary` value for all the binary formats (such as Excel, MultiPart, Octet
 | Name | Description
 | `value` | The value to write. The value can be of any supported data type.
 | `contentType` | A supported format (or MIME type) to write. Default: `application/dw`.
-| `writerProperties` | Optional: Sets writer configuration properties. For writer configuration properties (and other supported MIME types), see https://docs.mulesoft.com/mule-runtime/latest/dataweave-formats[Supported Data Formats].
+| `writerProperties` | Optional: Sets writer configuration properties. For writer configuration properties (and other supported MIME types), see https://docs.mulesoft.com/dataweave/latest/dataweave-formats[Supported Data Formats].
 |===
 
 === Example

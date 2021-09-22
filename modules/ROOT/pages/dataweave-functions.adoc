@@ -120,7 +120,7 @@ In this example, the type constraints define that the function `toUser` accepts 
 
 Also, the function specifies a constraint for the result to be of type `String`. This return type constraint does not affect the function call; rather, this constraint applies to the function code to validate that the function generates a result of the defined type.
 
-You can find more details about the DataWeave type system in https://docs.mulesoft.com/mule-runtime/4.3/dataweave-type-system.
+You can find more details about the DataWeave type system in https://docs.mulesoft.com/dataweave/4.3/dataweave-type-system.
 
 == Optional Parameters Definition
 
