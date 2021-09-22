@@ -1,6 +1,6 @@
 = Core Annotations (dw::Core)
 
-[%header, cols="1,2,2a"]
+[%header, cols="1,2a,2a"]
 |===
 | Annotation | Definition | Description
 
@@ -59,7 +59,8 @@ _Experimental:_ This experimental feature is subject to change or removal from f
 | `@Internal&#40;permits: Array<String&#62;&#41;`
 | Annotation that marks that a given function is internal and shouldn't be used.
 
- _Introduced in DataWeave 2.4.0._
+
+_Introduced in DataWeave 2.4.0._
 
 
 _Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.

@@ -1,5 +1,6 @@
 = Tree Variables (dw::util::Tree)
 
+[%header, cols="1,1a,2a"]
 |===
 | Variable | Definition | Description
 

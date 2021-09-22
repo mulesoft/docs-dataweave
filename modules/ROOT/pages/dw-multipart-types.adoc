@@ -1,5 +1,6 @@
 = Multipart Types (dw::module::Multipart)
 
+[%header, cols="1,2a,2a"]
 |===
 | Type | Definition | Description
 

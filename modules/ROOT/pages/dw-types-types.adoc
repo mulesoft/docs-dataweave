@@ -1,5 +1,6 @@
 = Types Types (dw::core::Types)
 
+[%header, cols="1,2a,2a"]
 |===
 | Type | Definition | Description
 

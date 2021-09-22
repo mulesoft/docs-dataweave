@@ -1,6 +1,6 @@
 = Numbers (dw::core::Numbers)
 
-This module contains helper functions to work with Numbers.
+This module contains helper functions for working with numbers.
 
 To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::core::Numbers` to the header of your
@@ -20,6 +20,3 @@ _Introduced in DataWeave version 2.2.0._
 | xref:dw-numbers-functions-tohex.adoc[toHex] | Transforms a decimal number into a hexadecimal number.
 | xref:dw-numbers-functions-toradixnumber.adoc[toRadixNumber] | Transforms a decimal number into a number string in other radix.
 |===
-
-
-

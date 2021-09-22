@@ -1,5 +1,6 @@
 = Values Types (dw::util::Values)
 
+[%header, cols="1,2a,2a"]
 |===
 | Type | Definition | Description
 

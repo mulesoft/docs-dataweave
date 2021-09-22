@@ -1,18 +1,28 @@
 = Runtime Types (dw::Runtime)
 
+[%header, cols="1,3a"]
 |===
 | Type | Definition | Description
 
 | DataFormatDescriptor
 | `type DataFormatDescriptor = { name: String, binary: Boolean, defaultEncoding?: String, extensions: Array<String&#62;, defaultMimeType: String, acceptedMimeTypes: Array<String&#62;, readerProperties: Array<DataFormatProperty&#62;, writerProperties: Array<DataFormatProperty&#62; }`
-| *EXPERIMENTAL*
+| TODO: 
+
+* `name: String`: TODO
+* `binary: Boolean`: TODO
+* `extensions: Array<String&#62;`: TODO
+* `defaultMimeType: String`: TODO
+* `acceptedMimeTypes: Array<String&#62;`: TODO
+* `readerProperties: Array<DataFormatProperty&#62;`: TODO
+* `writerProperties: Array<DataFormatProperty&#62;`
+
 
 Describes a DataFormat providing all the metadata information.
 
 
 | DataFormatProperty
 | `type DataFormatProperty = { name: String, optional: Boolean, defaultValue?: Any, description: String, possibleValues: Array<Any&#62; }`
-| 
+|
 
 
 | EvalSuccess
@@ -31,17 +41,17 @@ When the *run* or *eval* function failed.
 
 | Location
 | `type Location = { start?: Position, end?: Position, locationString: String, text?: String, sourceIdentifier?: String }`
-| 
+|
 
 
 | LogEntry
 | `type LogEntry = { level: LogLevel, timestamp: String, message: String }`
-| 
+|
 
 
 | LogLevel
 | `type LogLevel = "INFO" &#124; "ERROR" &#124; "WARN"`
-| 
+|
 
 
 | LoggerService
@@ -68,7 +78,7 @@ This service handles all the logging.
 
 | Position
 | `type Position = { index: Number, line: Number, column: Number }`
-| 
+|
 
 
 | ReaderInput

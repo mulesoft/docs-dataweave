@@ -1,6 +1,6 @@
 = Periods (dw::core::Periods)
 
-This module contains functions for working and creating Period values.
+This module contains functions for working with and creating Period values.
 
 To use this module, you must import it to your DataWeave code,
 for example, by adding the line `import * from dw::core::Periods`
@@ -24,6 +24,3 @@ and days in the ISO-8601 calendar system.
 | xref:dw-periods-functions-seconds.adoc[seconds] | Creates a Period value from the provided number of seconds.
 | xref:dw-periods-functions-years.adoc[years] | Creates a Period value from the provided number of years.
 |===
-
-
-
