@@ -1,61 +1,53 @@
 = DataFormat Types (dw::extension::DataFormat)
 
+The DataFormat module provides resources for registering a new data format for the DataWeave language. For an example, see
+https://github.com/mulesoft-labs/data-weave-custom-data-format[Custom Data Formats Example].
+
+[%headers, cols="1,2a,4a"]
 |===
 | Type | Definition | Description
 
 | DataFormat
-| `type DataFormat = { /**
-* True if this is data format is represented in a binary representation instead of text, if not present is false
-**/
-binaryFormat?: Boolean, /**
-* The default charset of this format, if any.
-**/
-defaultCharset?: String, /**
-* Returns the list of file extensions with the . &#40;".json", ".xml", etc...&#41; that should be assigned to this Data Format
-**/
-fileExtensions?: Array<String&#62;, /**
-* The list of MimeTypes that are accepted
-**/
-acceptedMimeTypes: Array<MimeType&#62;, /**
-* This function will be in charge of reading the raw content and transform it into the DW canonical model
-**/
-reader: &#40;content: Binary, charset: String, settings: ReaderSettings&#41; &#45;&#62; Any, /**
-* This function will be in charge of writing the DW canonical model into Binary content
-**/
-writer: &#40;value: Any, settings: WriterSettings&#41; &#45;&#62; Binary }`
-| Represents the DataFormat definition.
+| `type DataFormat = { binaryFormat?: Boolean, defaultCharset?: String,
+fileExtensions?: Array<String&#62;,
+acceptedMimeTypes: Array<MimeType&#62;,
+reader: &#40;content: Binary,
+charset: String,
+settings: ReaderSettings&#41; &#45;&#62; Any,
+writer: &#40;value: Any,
+settings: WriterSettings&#41; &#45;&#62; Binary }`
+a| Represents the DataFormat definition.
 
-_Introduced in DataWeave version 2.2.0._
+* `binaryFormat?: Boolean`: True if this is data format is represented as binary representation instead of text. False if not present.
+* `defaultCharset?: String`: Default character set of this format, if any.
+* `fileExtensions?: Array<String&#62;`: Returns the list of file extensions with the `.` (for example, `.json`, ``.xml`) to assign to this data format.
+* `acceptedMimeTypes: Array<MimeType&#62;` The list of MIME type to accept.
+* `reader: (content: Binary, charset: String, settings: ReaderSettings) -> Any`: Function that reads raw content and transforms it into the canonical DataWeave model.
+* `writer: (value:Any, settings:WriterSettings) -> Binary`: Function that writes the canonical DataWeave model into binary content.
 
 
 | EmptySettings
 | `type EmptySettings = Object`
-| Represents a configuration with no Settings.
-
-_Introduced in DataWeave version 2.2.0._
+| Represents a configuration with no settings.
 
 
 | EncodingSettings
-| `type EncodingSettings = { /**
-* The character set to use for the output, such as UTF&#45;8.
-**/
-encoding?: String {defaultValue: "UTF&#45;8"} }`
-| Represents an Encoding Settings.
+| `type EncodingSettings = { encoding?: String }`
+| Represents encoding settings:
 
-_Introduced in DataWeave version 2.2.0._
-
+* `encoding?: String`: Encoding that the writer uses for output. Defaults to "UTF-8".
 
 | MimeType
 | `type MimeType = String`
-| Represents a MimeType, such as `application/json`.
+| Represents a MIME type, such as `application/json`.
+
 
 _Introduced in DataWeave version 2.2.0._
-
 
 | Settings
 | `type Settings = Object`
-| Represents reader or writer configuration Settings.
+| Reader or writer configuration settings.
+
 
 _Introduced in DataWeave version 2.2.0._
-
 |===
