@@ -11,7 +11,7 @@ endif::[]
 Returns the location of a given value, or `null` if the
 location can't be traced back to a DataWeave file.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 

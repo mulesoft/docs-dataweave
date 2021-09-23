@@ -8,13 +8,14 @@ endif::[]
 [[dataformatsdescriptor1]]
 == dataFormatsDescriptor&#40;&#41;: Array<DataFormatDescriptor&#62;
 
-Returns the description of all the DataFormats that are installed in the current Runtime
+Returns an array of all DataFormatDescriptor values that are installed in
+the current Mule instance.
 
-_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave..
+_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 === Example
 
-This example shows how the `dataFormatsDescriptor` behaves under different inputs.
+This example shows how the `dataFormatsDescriptor` behaves with different inputs.
 
 ==== Source
 

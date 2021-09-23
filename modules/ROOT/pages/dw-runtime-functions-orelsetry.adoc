@@ -10,7 +10,7 @@ endif::[]
 
 Function to be use with try in order to chain multiple `try`
 
-_Introduced in DataWeave version 2.2.0._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 

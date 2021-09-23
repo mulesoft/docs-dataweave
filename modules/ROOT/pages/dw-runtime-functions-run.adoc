@@ -10,7 +10,7 @@ endif::[]
 
 Runs a given script under the provided context. This function will execute this given script in the current runtime.
 
-_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave..
+_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 === Parameters
 

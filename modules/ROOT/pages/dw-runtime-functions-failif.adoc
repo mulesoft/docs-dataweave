@@ -9,7 +9,7 @@ endif::[]
 == failIf<T&#62;&#40;value: T, evaluator: &#40;value: T&#41; &#45;&#62; Boolean, message: String = 'Failed'&#41;: T
 
 Produces an error with the specified message if the expression in
-the evaluator returns `true`, otherwise returns the value.
+the evaluator returns `true`. Otherwise, the function returns the value.
 
 === Parameters
 
