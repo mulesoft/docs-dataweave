@@ -1,5 +1,9 @@
-= Avro Format
 
+= Avro Format
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: format, avro, application/avro, application/avro
 
 MIME type: `application/avro`
 
@@ -99,40 +103,44 @@ output application/avro schemaUrl="classpath://schema.json"
 ----
 
 
-// CONFIG PROPS ///////////////////////////////////////////////////////
-
 [[properties]]
 == Configuration Properties
 
-DataWeave supports the following configuration properties for Avro.
+DataWeave supports the following configuration properties for this format.
 
-=== Reader Properties (for Avro)
 
-The Avro format accepts properties that provide instructions for reading input data.
+[[reader_properties]]
+=== Reader Properties
 
-[cols="1,1,1,3a", options="header"]
-|===
-| Parameter | Type | Default | Description
-| `schemaUrl`   (Required) | `String` | `null` | The URL for the Avro schema. Valid values are `classpath://`, `file://`, or `http://`.
-|===
+This format accepts properties that provide instructions for reading input data.
 
-=== Writer Properties (for Avro)
-
-The Avro format accepts properties that provide instructions for writing output data.
 
 [cols="1,1,1,3a", options="header"]
 |===
-| Parameter | Type | Default | Description
-| `bufferSize` | `Number` | `8192` | Size of the buffer writer.
-| `deferred` | `Boolean` | `false` | When set to `true`, DataWeave generates the output as a data stream, and the script's execution is deferred until it is consumed.
-  Valid values are `true` or `false`.
-| `schemaUrl`  (Required) | `String` | `null` | The URL for Avro schema. Valid values are `classpath://`, `file://`, or `http://`.
+|Parameter |Type |Default|Description
+|`schemaUrl` (Required) |`String`|`''`|The URL for the Avro schema. Valid values are `classpath://`, `file://`, or `http://`.
 |===
+
+[[writer_properties]]
+=== Writer Properties
+
+This format accepts properties that provide instructions for writing output data.
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+
+Valid values are `true` or `false`.
+|`schemaUrl` (Required) |`String`|`''`|The URL for the Avro schema. Valid values are `classpath://`, `file://`, or `http://`.
+|===
+
 
 [[mime_types]]
 == Supported MIME Types
 
-The Avro format supports the following MIME types.
+This format supports the following MIME types.
 
 [cols="1", options="header"]
 |===
