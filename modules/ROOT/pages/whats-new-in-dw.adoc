@@ -1,16 +1,25 @@
 = What's New in DataWeave
 
-The 2.4 version of DataWeave introduces:
+The 2.4 version of DataWeave introduces the following features:
 
+* Larger than memory strings.
+* TODO: Support for the binary format. IS THIS THE DWB FORMAT?
 * New reader and writer properties for working with data formats.
 * Many new modules, functions, types, annotations, and variables. Some are experimental and subject to change in future releases.
 * A number of other overloaded functions introduce new helper functions for
 handling `null` values.
-// * TODO TODO MORE NEW STUFF
 
 Changes to the documentation include more detailed function signatures and organization of the functions by their module names, such as `dw::Core`, `dw::core::Strings`, and dw::util::Math.
 
 DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 release, see xref:4.4@mule-runtime::whats-new-in-mule.adoc[What's New in Mule 4.4].
+
+== New Data Formats and Properties
+
+* DataWeave (dw) reader property: `privileges`
+* DWB format: TODO (should we doc this? If so, need a description)
+* Excel (XLSX) reader property: `tableLimit`
+* YAML writer property: `writeDeclaration`
+* XML writer property: `defaultNamespace`
 
 == New DataWeave Function Modules and Features
 
@@ -61,20 +70,3 @@ TODO includes functions, Experimental features are subject to change or removal 
   ** xref:dw-tree-functions-isattributetype.adoc[isAttributeType]
   ** xref:dw-tree-functions-isobjecttype.adoc[isObjectType]
 * xref:dw-values-types.adoc[dw::util::Values] provides a new type `UpdaterValueProvider`.
-
-
-== New Data Formats
-
-* DWB: TODO (should we doc this? If so, need a description)
-
-//TODO: NEW IN RUNTIME
-
-
-//TODO: NEW IN STRINGS
-
-
-//TODO: NEW IN TREE
-
-
-//TODO: NEW IN VALUES
-* NEW: ../dw-values-types.adoc
