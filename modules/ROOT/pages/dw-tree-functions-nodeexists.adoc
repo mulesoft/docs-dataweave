@@ -1,0 +1,92 @@
+= nodeExists
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[nodeexists1]]
+== nodeExists&#40;value: Any, callback: &#40;value: Any, path: Path&#41; &#45;&#62; Boolean&#41;: Boolean
+
+Returns `true` if any node in a given tree validates against
+the specified criteria.
+
+_Introduced in DataWeave: 2.2.2._
+
+=== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| `value` | The value to search.
+| `callback` | The criteria to apply to the input `value`.
+|===
+
+=== Example
+
+This example checks for each user by name and last name. Notice
+that you can also reference a `value` with `$` and the `path`
+with `$$`.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::Tree
+var myObject =  {
+     user: [{
+         name: "mariano",
+         lastName: "achaval",
+         friends: [
+             {
+                 name: "julian"
+             },
+             {
+                 name: "tom"
+             }
+         ]
+     },
+     {
+         name: "leandro",
+         lastName: "shokida",
+         friends: [
+             {
+                 name: "peter"
+             },
+             {
+                 name: "robert"
+             }
+         ]
+
+     }
+     ]
+ }
+output application/json
+---
+{
+    mariano : myObject nodeExists ((value, path) -> path[-1].selector == "name" and value == "mariano"),
+    julian : myObject nodeExists ((value, path) -> path[-1].selector == "name" and value == "julian"),
+    tom : myObject nodeExists ($$[-1].selector == "name" and $ == "tom"),
+    leandro : myObject nodeExists ($$[-1].selector == "name" and $ ==  "leandro"),
+    peter : myObject nodeExists ($$[-1].selector == "name" and $ == "peter"),
+    wrongField: myObject nodeExists ($$[-1].selector == "wrongField"),
+    teo: myObject nodeExists ($$[-1].selector == "name" and $ == "teo")
+}
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+{
+  "mariano": true,
+  "julian": true,
+  "tom": true,
+  "leandro": true,
+  "peter": true,
+  "wrongField": false,
+  "teo": false
+}
+----
+

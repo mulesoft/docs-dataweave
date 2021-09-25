@@ -1,0 +1,59 @@
+= take
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[take1]]
+== take<T&#62;&#40;array: Array<T&#62;, n: Number&#41;: Array<T&#62;
+
+Selects the first `n` elements. It returns an empty array when `n &lt;= 0`
+and the original array when `n > sizeOf(array)`.
+
+_Introduced in DataWeave: 2.2.0._
+
+=== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name | Description
+| `array` | The array of elements.
+| `n` | The number of elements to select.
+|===
+
+=== Example
+
+This example outputs an array that contains the values of first two elements
+of the input array.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::core::Arrays
+var users = ["Mariano", "Leandro", "Julian"]
+output application/json
+---
+take(users, 2)
+----
+
+==== Output
+
+[source,json,linenums]
+----
+[
+  "Mariano",
+  "Leandro"
+]
+----
+
+
+[[take2]]
+== take&#40;array: Null, n: Any&#41;: Null
+
+Helper function that enables `take` to work with a `null` value.
+
+_Introduced in DataWeave: 2.4.0._
+

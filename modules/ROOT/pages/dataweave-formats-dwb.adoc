@@ -1,0 +1,64 @@
+
+= DataWeave Binary (dwb) Format
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: format, dwb, application/dwb, application/dwb
+
+MIME type: `application/dwb`
+
+ID: `dwb`
+
+TODO FOR 2.4?
+
+// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
+
+
+[[properties]]
+== Configuration Properties
+
+DataWeave supports the following configuration properties for this format.
+
+
+[[reader_properties]]
+=== Reader Properties
+
+This format accepts properties that provide instructions for reading input data.
+
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`indexedReader`  |`Boolean`|`true`|Uses the indexed reader by default when reaching the threshold. Supports US-ASCII, UTF-8 and ISO-8859-1 encodings only. For other encodings, DataWeave uses the in-memory reader.
+
+Valid values are `true` or `false`.
+|===
+
+[[writer_properties]]
+=== Writer Properties
+
+This format accepts properties that provide instructions for writing output data.
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+
+Valid values are `true` or `false`.
+|`writeIndex`  |`Boolean`|`false`|If it should add the token and hierarchical index at the end to avoid parsing again when this is read
+
+Valid values are `true` or `false`.
+|===
+
+
+[[mime_types]]
+== Supported MIME Types
+
+This format supports the following MIME types.
+
+[cols="1", options="header"]
+|===
+| MIME Type
+|`application/dwb`
+|===

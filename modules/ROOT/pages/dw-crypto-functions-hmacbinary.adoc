@@ -1,0 +1,54 @@
+= HMACBinary
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[hmacbinary1]]
+== HMACBinary&#40;secret: Binary, content: Binary, algorithm: String = "HmacSHA1"&#41;: Binary
+
+Computes an HMAC hash (with a secret cryptographic key) on input content.
+
+
+See also, `HMACWith`.
+
+=== Parameters
+
+[%header, cols="1,3a"]
+|===
+| Name | Description
+| `secret` | The secret cryptographic key (a binary value) used when encrypting the `content`.
+| `content` | The binary input value.
+| `algorithm` | The hashing algorithm. `HmacSHA1` is the default. Valid values depend on the
+   JDK version you are using. For JDK 8 and JDK 11, `HmacMD5`, `HmacSHA1`, `HmacSHA224`,
+  `HmacSHA256`, `HmacSHA384`, and `HmacSHA512` are valid algorithms. For JDK 11, `HmacSHA512/224`
+   and `HmacSHA512/256` are also valid.
+|===
+
+=== Example
+
+This example uses HMAC with a secret value to encrypt the input content.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import dw::Crypto
+output application/json
+---
+{
+  "HMACBinary" : Crypto::HMACBinary("confidential" as Binary, "xxxxx" as Binary, "HmacSHA512")
+}
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+{
+  "HMACBinary": "\ufffd\ufffd\ufffd\ufffd^h\ufffd!3\u0005\ufffd֎\u00017\ufffd\ufffd\ufffd`\ufffd8?\ufffdjn7\ufffdbs;\t\ufffdƅ\ufffd\ufffd\ufffdx&g\ufffd~\ufffd\ufffd%\ufffd7>1\ufffdK\u000e@\ufffdC\u0011\ufffdT\ufffd}W"
+}
+----
+

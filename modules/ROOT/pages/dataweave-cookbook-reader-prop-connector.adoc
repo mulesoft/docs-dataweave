@@ -1,0 +1,66 @@
+= Use a Reader Property through a Connector Operation
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: studio, anypoint, transform, transformer, format, dataweave, data weave, output structure, mime type, mime
+
+Connector operations that read input data provide an `outpuMimeType` field that you can use to identify the _input_ MIME type. This field also accepts one or more reader properties, which is useful for helping DataWeave read the input correctly.
+
+By default, the DataWeave reader treats a comma (`,`) as a separator. However, assume that a CSV input is separated by the pipe (`|`) but that the content also contains commas. You can set a CSV reader property to recognize the pipe as the separator.
+
+.Pipe-separated CSV Input
+[source,csv,linenums]
+----
+id | name | role
+1234 | Shokida,Mr. | dev
+2345 | Achaval,Mr. | arch
+3456 | Felisatti,Ms. | mngr
+4567 | Chibana,Mr. | dev
+----
+
+//LINK TO DW 1.0 EXAMPLES:
+include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+
+The following example uses the Read operation in the File connector to read the pipe-separated (`|`) CSV input, and it uses a DataWeave script in the Transform Message component to output a row of the input in comma-separated format.
+
+.Mule Flow:
+[source,xml,linenums]
+----
+<flow name="ex-use-csv-reader-props" >
+	<scheduler doc:name="Scheduler" >
+		<scheduling-strategy >
+			<fixed-frequency frequency="90" timeUnit="SECONDS"/>
+		</scheduling-strategy>
+	</scheduler>
+	<file:read doc:name="Read" config-ref="File_Config" path="staff.csv"
+	           outputMimeType='application/csv; separator=|; header=true'/>
+	<ee:transform doc:name="Transform Message" >
+		<ee:message>
+			<ee:set-payload><![CDATA[%dw 2.0
+output application/csv header = false
+---
+payload[1]]]></ee:set-payload>
+		</ee:message>
+	</ee:transform>
+	<logger level="INFO" doc:name="Logger" message="#[payload]"/>
+</flow>
+----
+
+The Scheduler component (`<scheduler/>`) in the example generates a Mule event each time it triggers the flow.
+
+The Read operation (`<file:read/>`) uses `outputMimeType='application/csv; separator=|; header=true'` to identify the input MIME type (`application/csv`), the CSV separator (`|`), and the header setting (`true`).
+
+The script in the Transform Message component (`<ee:transform-message/>`) returns the second row from the input CSV (`2345 , Achaval\,Mr. , arch`). The script uses `payload[1]` to select that row because DataWeave treats each row in the CSV as an index of an array. The output is comma-separated because the default CSV separator is a comma. The script omits the CSV header from the output by using the `output` directive (`output application/csv header = false`).
+
+The Logger component (`<logger/>`), which is set to `payload`, writes the comma-separated output as INFO in its `LoggerMessageProcessor` message: `2345 , Achaval\,Mr. , arch`. To avoid treating the comma before "Mr." as a separator, the CSV output escapes the comma with a backslash (`Achaval\,Mr.`).
+
+The following examples pass reader properties through the `outputMimeType` field:
+
+* xref:dataweave-formats-csv.adoc#example2[CSV example] that uses `streaming=true; header=true`
+* xref:dataweave-formats-json.adoc#example3[JSON example] that uses `streaming=true`
+
+== See Also
+
+* xref:dataweave-formats.adoc[DataWeave Formats]
+* xref:mule-runtime::about-components.adoc[Core Components]
+* xref:dataweave-cookbook.adoc[DataWeave Cookbook]

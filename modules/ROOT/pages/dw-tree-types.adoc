@@ -1,0 +1,22 @@
+= Tree Types (dw::util::Tree)
+
+|===
+| Type | Definition | Description
+
+| Path
+| `type Path = Array<PathElement&#62;`
+| Type that consists of an array of `PathElement` values that
+identify the location of a node in a tree. An example is
+`[{kind: OBJECT_TYPE, selector: "user", namespace: null}, {kind: ATTRIBUTE_TYPE, selector: "name", namespace: null}] as Path`.
+
+_Introduced in DataWeave: 2.2.2._
+
+
+| PathElement
+| `type PathElement = {&#124; kind: "Object" &#124; "Attribute" &#124; "Array", selector: String &#124; Number, namespace: Namespace &#124; Null &#124;}`
+| Type that represents a selection of a node in a path.
+An example is `{kind: ARRAY_TYPE, selector: "name", namespace: null} as PathElement`.
+
+_Introduced in DataWeave: 2.2.2._
+
+|===

@@ -1,0 +1,64 @@
+= Use a Mule Variable as a Configuration Value
+
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: studio, anypoint, transform, transformer, format, dataweave, data weave, output structure, mime type, mime
+
+The following example shows a Mule flow that transforms comma-separated CSV data into pipe-separated (`|`) CSV data. Instead of setting a literal value in the script, the example selects the pipe value from a xref:mule-runtime::about-mule-variables.adoc[Mule variable], which is part of a Mule event that travels through data-processing components in the flow. The example uses the DataWeave writer function in the body of the script to change the comma-separated input to pipe-separated output.
+
+The Scheduler component (`<scheduler/>`) in the example generates a Mule event each time it triggers the flow.
+
+The Set Variable component (`<set-variable/>`) creates a Mule variable named `delimiter` with the value `'|'`. In Studio, the value is created as an *fx* expression (`value="#['|']"`), rather than a simple string (`value="'|'"`).
+
+The Transform Message component (`<ee:transform-message/>`) contains a DataWeave script that reads comma-separated CSV input and uses the Mule variable to write pipe-separated CSV output.
+
+The Logger component (`<logger/>`), which is set to `payload`, writes the pipe-separated output as INFO in its `LoggerMessageProcessor` message: `macaroni | rigatoni | ravioli | spaghetti`.
+
+.Mule Flow:
+[source,xml,linenums]
+----
+<flow name="ex-use-mule-var-as-prop-config-val" >
+  <scheduler doc:name="Scheduler" >
+    <scheduling-strategy >
+      <fixed-frequency frequency="45" timeUnit="SECONDS"/>
+    </scheduling-strategy>
+  </scheduler>
+  <set-variable value="#['|']" doc:name="Set Variable" variableName="delimiter" />
+  <ee:transform doc:name="Transform Message" >
+    <ee:message>
+      <ee:set-payload><![CDATA[%dw 2.0
+var myVar = read("macaroni , rigatoni , ravioli , spaghetti", "application/csv" , {"header":false, separator:','})
+output application/csv with binary
+---
+write(myVar, "application/csv", {"header":false, "separator":vars.delimiter})]]></ee:set-payload>
+    </ee:message>
+  </ee:transform>
+  <logger level="INFO" doc:name="Logger" message="#[payload]"/>
+</flow>
+----
+
+To provide comma-separated input for the example, the script in the Transform Message component uses a xref:dw-core-functions-read.adoc[read] function as a value to a DataWeave variable, `myVar`:
+
+`var myVar = read("macaroni , rigatoni , ravioli , spaghetti", "application/csv" , {"header":false, separator:','})`
+
+To write pipe-separated output, the DataWeave xref:dw-core-functions-write.adoc[write] function in the body of the script changes the comma-separated input to pipe-separated output. To select the pipe value from the Mule variable (`delimiter`), the function passes the writer property configuration `"separator":vars.delimiter` as an argument:
+
+`write(myVar, "application/csv", {"header":false, "separator":vars.delimiter})`
+
+The script uses the following DataWeave `output` directive in the script's header: `output application/csv with binary`. It is necessary to append the `with binary` setting (xref:dataweave-formats.adoc#set_mime_types[introduced in Mule 4.3.0]) to invoke the binary writer because the `write` function returned CSV output. Without the setting, DataWeave would attempt to write CSV again and produce the following issue: `CSV Structure should be an Array<Object> or Object but got String, while writing CSV.`
+
+Note that if you want to see pipe-separated content from the Tranform Message component's *Preview* screen in the Studio UI, you must create sample data for it:
+
+. Double-click the Transform Message component from the *Message Flow* area of the Studio app.
+. Right-click *delimiter: _String_* in the *Context* tab, which is located on the bottom left of the configuration UI for the component.
+. Select *Edit Sample Data* to open a *vars-delimiter* tab.
+. Replace any content in the *vars-delimiter* with the following sample data for the `delimiter` value: `"|"`. You must put the delimiter in quotation marks.
+
+For further guidance with sample data, see xref:mule-runtime::transform-preview-transformation-output-studio-task.adoc[Previewing the Output of a Transformation].
+
+== See Also
+
+* xref:dataweave-formats.adoc[DataWeave Formats]
+* xref:mule-runtime::about-components.adoc[Core Components]
+* xref:dataweave-cookbook.adoc[DataWeave Cookbook]

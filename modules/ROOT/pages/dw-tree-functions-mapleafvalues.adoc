@@ -1,0 +1,98 @@
+= mapLeafValues
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[mapleafvalues1]]
+== mapLeafValues&#40;value: Any, callback: &#40;value: Any, path: Path&#41; &#45;&#62; Any&#41;: Any
+
+Maps the terminal (leaf) nodes in the tree.
+
+
+Leafs nodes cannot have an object or an array as a value.
+
+_Introduced in DataWeave: 2.2.2._
+
+=== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| `value` | The value to map.
+| `callback` | The mapper function.
+|===
+
+=== Example
+
+This example transforms all the string values to upper case.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::Tree
+output application/json
+---
+ {
+     user: [{
+         name: "mariano",
+         lastName: "achaval"
+     }],
+     group: "data-weave"
+ } mapLeafValues (value, path) -> upper(value)
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+{
+   "user": [
+     {
+       "name": "MARIANO",
+       "lastName": "ACHAVAL"
+     }
+   ],
+   "group": "DATA-WEAVE"
+ }
+----
+
+=== Example
+
+This example returns a new value for an object, array, or attribute.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+import * from dw::util::Tree
+---
+{
+    name: "Mariano",
+    test: [1,2,3]
+} mapLeafValues ((value, path) -> if(isObjectType(path))
+                                        "***"
+                                  else if(isArrayType(path))
+                                        "In an array"
+                                  else "Is an attribute")
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+{
+  "name": "***",
+  "test": [
+    "In an array",
+    "In an array",
+    "In an array"
+  ]
+}
+----
+

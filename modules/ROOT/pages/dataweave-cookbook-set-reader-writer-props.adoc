@@ -1,0 +1,69 @@
+= Set Reader and Writer Configuration Properties
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: studio, anypoint, transform, transformer, format, dataweave, data weave, output structure, mime type, mime
+
+
+DataWeave provides configuration properties for data formats, such as JSON (`application/json`), XML (`application/xml`), and (`application/csv`). The properties change the behavior of DataWeave readers and writers for those formats. For example, the default separator for a CSV reader is a comma (`,`). You can use the format's `separator` property to specify a different separator for CSV content.
+
+//LINK TO DW 1.0 EXAMPLES:
+include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+
+== Use a Writer Property in an Output Directive
+
+The following example shows how to append writer properties to the DataWeave `output` directive. The script uses `indent = false` to compress the JSON output into a single line.
+
+[[ex01]]
+.DataWeave Script:
+[source,dataweave,linenums]
+----
+include::partial$cookbook-dw/set-reader-writer-props-ex01/transform.dwl[]
+----
+
+.Output JSON:
+[source,json,linenums]
+----
+include::partial$cookbook-dw/set-reader-writer-props-ex01/out.json[]
+----
+
+The following examples also append writer configuration properties to the `output` directive:
+
+* xref:dataweave-formats-avro.adoc#examples[Avro example] that uses `schemaUrl`
+* xref:dataweave-formats-excel.adoc#example2[Excel (XLSX) example] that uses `header=true`
+* xref:dataweave-formats-flatfile#examples[Flat File] example that sets a `schemaPath`
+* xref:dataweave-cookbook-remove-certain-xml-attributes.adoc[XML] example that uses `inlineCloseOn="empty"` to close any empty XML elements
+
+== Use Reader and Writer Properties in DataWeave Functions
+
+The DataWeave `read`, `readUrl`, and `write` functions accept one or more comma-separated property configurations within curly braces.
+
+In the header of the following script, the value of `myVar` is a `read` function that inputs an XML sample with an empty child element (`<ex1></ex1>`). The function passes an XML reader property `{nullValueOn: "empty"}` that converts the value of the empty element to `null`.
+
+In the body of the script, a `write` function accepts the value of `myVar` as input. The function passes the JSON writer properties `{skipNullOn:"objects", writeAttributes:true}` to skip the object with the `null` value (`<ex1>null</ex1>`) and to write the attribute and value of `<ex3 a='greeting'>hello</ex3>`.
+
+
+[[ex01]]
+.DataWeave Script:
+[source,dataweave,linenums]
+----
+include::partial$cookbook-dw/set-reader-writer-props-ex02/transform.dwl[]
+----
+
+.Output JSON:
+[source,json,linenums]
+----
+include::partial$cookbook-dw/set-reader-writer-props-ex02/out.json[]
+----
+
+The following examples pass reader properties to `readUrl`:
+
+* xref:dataweave-formats-xml.adoc#example1[XML example]
+* xref:dataweave-formats-ndjson.adoc#example2[ndjson example]
+
+
+== See Also
+
+* xref:dataweave-formats.adoc[DataWeave Formats]
+* xref:mule-runtime::about-components.adoc[Core Components]
+* xref:dataweave-cookbook.adoc[DataWeave Cookbook]
