@@ -14,6 +14,8 @@ DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 relea
 
 == New Data Formats and Properties
 
+DataWeave introduces the following reader and writer properties:
+
 * DataWeave (dw) reader property: `privileges`
 * Excel (XLSX) reader property: `tableLimit`
 * YAML writer property: `writeDeclaration`
