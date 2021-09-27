@@ -1,11 +1,3 @@
+DataWeave is the programming language designed by MuleSoft for data transformation, it is also the expression language Mule runtime engine uses to configure components and connectors.
 
-DataWeave is the MuleSoft expression language for accessing and transforming
-data that travels through a Mule app. DataWeave is tightly integrated with the
-Mule runtime engine, which runs the scripts and expressions in your Mule app.
-
-
-DataWeave scripts act on data in the Mule event. Most commonly, you use it to
-access and transform data in the message payload. For example, after a component
-in your app retrieves data from one system, you can use DataWeave to modify and
-output selected fields in that data to a new data format, then use another
-component in your app to pass on that data to another system.
+DataWeave enables you to build a simple solution for a common use case for integration developers: read and parse data from one format, transform the data, and write it out as a different format. For example, a DataWeave script can receive a CSV file as input and transform it into an array of complex JSON objects, or receive an XML input and write the data out to a flat file format. DataWeave enables developers to focus on the transformation logic instead of thinking about the specifics of reading, parsing, and writing specific data formats in a performant way.
