@@ -3,7 +3,7 @@
 The 2.4 version of DataWeave introduces the following features:
 
 * Larger than memory strings.
-* TODO: Support for the binary format. IS THIS THE DWB FORMAT?
+* *TODO: Support for the binary format. IS THIS THE DWB FORMAT?*
 * New reader and writer properties for working with data formats.
 * Many new modules, functions, types, annotations, and variables. Some are experimental and subject to change in future releases.
 * A number of other overloaded functions introduce new helper functions for
@@ -16,21 +16,21 @@ DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 relea
 == New Data Formats and Properties
 
 * DataWeave (dw) reader property: `privileges`
-* DWB format: TODO (should we doc this? If so, need a description)
+* *DWB format: TODO (should we doc this? If so, need a description)*
 * Excel (XLSX) reader property: `tableLimit`
 * YAML writer property: `writeDeclaration`
 * XML writer property: `defaultNamespace`
 
 == New DataWeave Function Modules and Features
 
-TODO includes functions, Experimental features are subject to change or removal in future versions.
+New DataWeave modules and features:
 
 * xref:dw-core.adoc[dw::Core] introduces new functions and annotations:
 ** xref:dw-core-functions-indexof.adoc[indexOf]
 ** xref:dw-core-functions-lastindexof.adoc[lastIndexOf]
 ** xref:dw-core-functions-onnull.adoc[onNull]
 ** xref:dw-core-functions-then.adoc[then]
-** xref:w-core-annotations.adoc[Core Annotations] introduces a number of new annotations, some of which are experimental.
+** xref:dw-core-annotations.adoc[Core Annotations] introduces a number of new annotations:
 * xref:dw-dates.adoc[dw::core::Dates] is a new module with functions and types.
 * xref:dw-strings.adoc[dw::core::Strings] introduces new functions:
   ** xref:dw-strings-functions-collapse.adoc[collapse]
