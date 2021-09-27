@@ -17,7 +17,7 @@ DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 relea
 * DataWeave (dw) reader property: `privileges`
 * Excel (XLSX) reader property: `tableLimit`
 * YAML writer property: `writeDeclaration`
-* XML writer property: `defaultNamespace`
+* XML writer properties: `defaultNamespace`, `writeDeclaredNamespaces`
 
 == New DataWeave Function Modules and Features
 
