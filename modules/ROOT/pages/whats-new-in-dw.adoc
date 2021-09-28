@@ -8,7 +8,7 @@ The 2.4 version of DataWeave introduces the following features:
 * A number of other overloaded functions introduce new helper functions for
 handling `null` values.
 
-Changes to the documentation include more detailed function signatures and organization of the functions by their module names, such as `dw::Core`, `dw::core::Strings`, and dw::util::Math.
+Changes to the documentation include more detailed function signatures and organization of the functions by their module names, such as `dw::Core`, `dw::core::Strings`, and `dw::util::Math`.
 
 DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 release, see xref:4.4@mule-runtime::whats-new-in-mule.adoc[What's New in Mule 4.4].
 
