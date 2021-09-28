@@ -90,9 +90,9 @@ DataWeave can read input data as a whole by loading it into memory or by indexin
 | Enables random access to data by parsing the entire document. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
 | DataWeave can read all supported formats using this strategy.
 <.^| Indexed
-| Enables random access to data by parsing the entire document.
+| Enables random access to data by parsing the entire document. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
 
-When using this strategy, a DataWeave script can access any part of the resulting value at any time. When processing a `String` with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues.
+When processing a `String` with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. This feature works only with `JSON` and `XML` input data.
 
 You can configure the maximum size DataWeave uses to split strings by modifying the following system property:
 
@@ -101,7 +101,7 @@ com.mulesoft.dw.max_memory_allocation
 ```
 //can we show an example of a valid value? Is 4096 (chars) the default?
 
-Note that splitting strings and accessing them through local storage introduces performance penalizations. If your environment has enough resources to load all content into memory, you can also disable the string management feature completely by setting the value of the following system property to `false`:
+Note that using this feature has a negative impact on performance due to splitting strings and accessing them through local storage. If your environment has enough resources to load all content in memory, you can also disable this string management feature completely by setting the value of the following system property to `false`:
 
 ```
 com.mulesoft.dw.buffered_char_sequence.enabled
