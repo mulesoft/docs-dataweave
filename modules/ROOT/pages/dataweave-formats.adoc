@@ -85,7 +85,7 @@ DataWeave can read input data as a whole by loading it into memory or by indexin
 [[streaming]]
 [%header%autowidth.spread,cols="a,a,a", options="header"]
 |===
-| Read Strategy | Behavior | Supported Formats
+| Read Strategy | Description | Supported Formats
 <.^| In-Memory
 | Enables random access to data by parsing the entire document. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
 | DataWeave can read all supported formats using this strategy.
