@@ -29,7 +29,7 @@ _Introduced in DataWeave version 2.4.0._
 
 | DesignOnlyType
 | `@DesignOnlyType&#40;&#41;`
-| Annotation that marks a parameter type as "Design Only" to indicate that
+| Annotation that marks a parameter type as _design only_ to indicate that
 the field type is validated only at design time. At runtime, only minimal
 type validation takes place. This annotation is useful for performance,
 especially with complex Object types.
@@ -112,8 +112,8 @@ and `pluck`.
 
 | TailRec
 | `@TailRec&#40;&#41;`
-| Annotation that marks a function as tail recursive. A function with
-this annotation that is not tail recursive will fail.
+| Annotation that marks a function as tail recursive. If a function with
+this annotation is not tail recursive, the function will fail.
 
 | UntrustedCode
 | `@UntrustedCode&#40;&#41;`
