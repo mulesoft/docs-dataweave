@@ -11,7 +11,7 @@ endif::[]
 Prepends the `prefix` to the beginning of the string if the `text` does not
 already start with that prefix.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -62,5 +62,5 @@ output application/json
 
 Helper function that enables `prependIfMissing` to work with a `null` value.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 

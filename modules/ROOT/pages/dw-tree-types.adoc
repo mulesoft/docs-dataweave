@@ -1,5 +1,6 @@
 = Tree Types (dw::util::Tree)
 
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 
@@ -9,7 +10,7 @@
 identify the location of a node in a tree. An example is
 `[{kind: OBJECT_TYPE, selector: "user", namespace: null}, {kind: ATTRIBUTE_TYPE, selector: "name", namespace: null}] as Path`.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 
 | PathElement
@@ -17,6 +18,6 @@ _Introduced in DataWeave: 2.2.2._
 | Type that represents a selection of a node in a path.
 An example is `{kind: ARRAY_TYPE, selector: "name", namespace: null} as PathElement`.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 |===

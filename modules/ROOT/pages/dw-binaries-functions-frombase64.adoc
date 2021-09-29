@@ -21,7 +21,6 @@ Transforms a Base64 string into a binary value.
 === Example
 
 This example takes a Base64 encoded string and transforms it into a binary value. This example assumes that the `payload` contains the Base64 string generated from an image in example xref:dw-binaries-functions-tobase64.adoc#toBase64-example[toBase64].
-The output of this function is a binary value that represents the image generated in example xref:dw-binaries-functions-tobase64.adoc#toBase64-example[toBase64].
 
 ==== Source
 
@@ -34,4 +33,3 @@ output application/octet-stream
 ---
 fromBase64(payload)
 ----
-

@@ -3,11 +3,10 @@
 This module contains core DataWeave functions for data transformations.
 It is automatically imported into any DataWeave script. For documentation
 on DataWeave _1.0_ functions, see
-https://docs.mulesoft.com/mule-runtime/3.9/dataweave-operators[DataWeave Operators].
+https://docs.mulesoft.com/dataweave/3.9/dataweave-operators[DataWeave Operators].
 
 == Functions
 
-[%header, cols="1,3"]
 |===
 | Name  | Description
 | xref:dw-core-functions-plusplus.adoc[++] | Concatenates two values.

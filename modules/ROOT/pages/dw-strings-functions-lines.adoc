@@ -10,7 +10,7 @@ endif::[]
 
 Returns an array of lines from a string.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -49,5 +49,5 @@ lines("hello world\n\nhere   data-weave")
 
 Helper function that enables `lines` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

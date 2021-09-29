@@ -11,7 +11,7 @@ endif::[]
 Transform a `String` value into a `Binary` value
 using the specified encoding.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

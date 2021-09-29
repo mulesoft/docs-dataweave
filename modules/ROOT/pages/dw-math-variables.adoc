@@ -8,12 +8,12 @@
 | Variable `E` sets the value of mathematical constant `e`,
 the base of natural logarithms.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 | PI
 | `PI`
 | Variable `PI` sets the value of constant value pi, the ratio
 of the circumference of a circle to its diameter.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 |===

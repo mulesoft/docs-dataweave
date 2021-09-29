@@ -11,7 +11,7 @@ endif::[]
 Returns the array of fields from the given Object type.
 This function fails if the type is not an Object type.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 === Parameters
 

@@ -12,7 +12,7 @@ A variant of `toNumber` that transforms a `DateTime` value
 into a number of seconds or milliseconds, depending on the
 selected unit.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -60,7 +60,7 @@ A variant of `toNumber` that transforms a `Period` value
 into a number of hours, minutes, seconds, milliseconds
 or nanoseconds (`nanos`).
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -107,7 +107,7 @@ output application/json
 A variant of `toNumber` that transforms a `String` or `Key` value into
 a `Number` value and that accepts a format and locale.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

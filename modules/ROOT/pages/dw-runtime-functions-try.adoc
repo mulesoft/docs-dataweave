@@ -14,7 +14,7 @@ Evaluates the delegate function and returns an object with `success: true` and `
 The `orElseTry` and `orElse` functions will also continue processing if the `try` function fails. See the `orElseTry` and `orElse` documentation for more complete examples of handling failing `try` function expressions.
 
 
-Note: Instead of using the `orElseTry` and `orElse` functions, based on the output of the `try` function, you can add conditional logic to execute when the result is `success: true` or `success: false`.  
+Note: Instead of using the `orElseTry` and `orElse` functions, based on the output of the `try` function, you can add conditional logic to execute when the result is `success: true` or `success: false`.
 
 === Parameters
 
@@ -26,8 +26,8 @@ Note: Instead of using the `orElseTry` and `orElse` functions, based on the outp
 
 === Example
 
-This example calls the `try` function using the `randomNumber` function as argument. +
-The function `randomNumber` generates a random number and calls `fail` if the number is higher than 0.5. The declaration of this function is in the script's header.
+This example calls the `try` function using the `randomNumber` function as argument.
+The function `randomNumber` generates a random number and calls `fail` if the number is greater than 0.5. The declaration of this function is in the script's header.
 
 ==== Source
 
