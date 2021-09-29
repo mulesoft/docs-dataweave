@@ -1,8 +1,6 @@
 = Indexed Readers in DataWeave
 
-DataWeave can read input data (such as XML, JSON, and CSV) in an indexed mode to avoid loading the whole document in memory while still allowing random access just like in the in-memory mode. Use indexed readers when the input is larger than a certain configurable threshold or if the `indexedReader` setting is set to `true`.
-
-The trade-off for managing files that wouldn’t fit in memory is to write the files to a temporary file in disk and index the document content beforehand, which also takes time and disk space.
+DataWeave can read input data (such as XML, JSON, and CSV) in an indexed strategy to avoid loading the whole document in memory while still allowing random access just like in the in-memory strategy. Use indexed readers when the input is larger than a certain configurable threshold or if the `indexedReader` setting is set to `true`.
 
 To manage files that don’t fit in memory, write the files to a temporary file in disk and index the document content beforehand, which also takes time and disk space.
 
