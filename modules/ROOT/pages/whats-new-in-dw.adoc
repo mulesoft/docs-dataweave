@@ -54,7 +54,7 @@ New DataWeave modules and features:
 * xref:dw-runtime-types.adoc[Runtime Types] introduces new types, including `MimeType`, `Location`, `Position`, `LogLevel`, `LogEntry`, and `DataFormatProperty`.
 * xref:dw-coercions.adoc[dw::util::Coercions] is a new DataWeave module with functions and types to simplify data type transformations, for example, the function `toString`.
 * xref:dw-math.adoc[dw::util::Math] is a new DataWeave module with functions and variables that provides mathematical functions, for example, the function `sin`.
-* xref:dw-periods.adoc[dw::util::Periods] is a new DataWeave module with functions.
+* xref:dw-periods.adoc[dw::util::Periods] is a new DataWeave module with functions and types to simplify the creation of Periods, for example, the function `days`.
 ** xref:dw-tree.adoc[dw::util::Tree] introduces new functions:
   ** xref:dw-tree-functions-filterarrayleafs.adoc[filterArrayLeafs]
   ** xref:dw-tree-functions-filterobjectleafs.adoc[filterObjectLeafs]
