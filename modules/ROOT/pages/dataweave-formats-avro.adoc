@@ -118,7 +118,7 @@ This format accepts properties that provide instructions for reading input data.
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`schemaUrl` (Required) |`String`|`''`|The URL for the Avro schema. Valid values are `classpath://`, `file://`, or `http://`.
+|`schemaUrl` (Required) |`String`|`null`|The URL for the Avro schema. Valid URI schemes are `classpath://`, `file://`, or `http://`.
 |===
 
 [[writer_properties]]
