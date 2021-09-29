@@ -5,9 +5,10 @@
 
 | DataFormatDescriptor
 | `type DataFormatDescriptor = { name: String, binary: Boolean, defaultEncoding?: String, extensions: Array<String&#62;, defaultMimeType: String, acceptedMimeTypes: Array<String&#62;, readerProperties: Array<DataFormatProperty&#62;, writerProperties: Array<DataFormatProperty&#62; }`
-| *EXPERIMENTAL*
+| Desciption of a `DataFormat` that provides all the metadata information.
 
-Describes a DataFormat providing all the metadata information.
+
+_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
 
 
 | DataFormatProperty
@@ -17,16 +18,18 @@ Describes a DataFormat providing all the metadata information.
 
 | EvalSuccess
 | `type EvalSuccess = { success: true, value: Any, logs: Array<LogEntry&#62; }`
-| *EXPERIMENTAL*
+| Data type of the data that returns when an `eval` function executes successfully.
 
-When the *eval* function executes with no problem
+
+_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
 
 
 | ExecutionFailure
 | `type ExecutionFailure = { success: false, message: String, kind: String, stack?: Array<String&#62;, location: Location, logs: Array<LogEntry&#62; }`
-| *EXPERIMENTAL*
+| Data type of the data that returns when a `run` or `eval` function fails.
 
-When the *run* or *eval* function failed.
+
+_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
 
 
 | Location
@@ -46,24 +49,27 @@ When the *run* or *eval* function failed.
 
 | LoggerService
 | `type LoggerService = { /**
-* This function is going to be called when the execution starts.
-* The result is going to be sent in every log so for example if some logging header needs to be sent it could be done at initialize and then recover in each log.
+* Function called when the execution starts. DataWeave send the result
+* to every log so that, for example, if a logging header can be sent
+* at initialization and recovered in each log.
 **/
 initialize?: &#40;&#41; &#45;&#62; Object, /**
-* This log method is going to be called on every log message
+* Function that is called on every log message.
 **/
 log: &#40;level: LogLevel, msg: String, context: Object&#41; &#45;&#62; Any, /**
-* When the execution finished it is going to be called. Good time to flush any buffer or to gracefully logout.
+* Function called when the execution completes, which is a good time
+* to flush any buffer or to log out gracefully.
 **/
 shutdown?: &#40;&#41; &#45;&#62; Boolean }`
-| *EXPERIMENTAL*
+| Service that handles all logging.
 
-This service handles all the logging.
+
+_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
 
 
 | MimeType
 | `type MimeType = String`
-| A MimeType represented in a String
+| A String representation of a MIME type.
 
 
 | Position
@@ -73,66 +79,74 @@ This service handles all the logging.
 
 | ReaderInput
 | `type ReaderInput = { /**
-* The actual input
+* The input, in Binary format.
 **/
 value: Binary, /**
-* The encoding to be used
+* The encoding to the reader to use.
 **/
 encoding?: String, /**
-* The reader properties to be used to parse this input
+* The reader properties used to parse the input.
 **/
 properties?: Dictionary<SimpleType&#62;, /**
-* The mimeType of this input.
+* The MIME type of the input.
 **/
 mimeType: MimeType }`
-| *EXPERIMENTAL*
+| Input to the DataWeave reader created for the specified MIME type.
 
-An Reader Input. This is input is going to be used as the source content of the reader created by the specified *mimeType*
+
+_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
 
 
 | RunSuccess
 | `type RunSuccess = { success: true, value: Binary, mimeType: MimeType, encoding?: String, logs: Array<LogEntry&#62; }`
-| *EXPERIMENTAL*
+| Data type of the data that returns when a `run`  function executes successfully.
 
-When the *run* function executes with no problem
+
+_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
 
 
 | RuntimeExecutionConfiguration
 | `type RuntimeExecutionConfiguration = { /**
-* The max time this script should take.
+* Maximum amount of time the DataWeave script takes before timing out.
 **/
 timeOut?: Number, /**
-* The default output mimeType if it is not specified in the script
+* Default output MIME type if not specified in the DataWeave script.
 **/
 outputMimeType?: MimeType, /**
-* The writer properties to be used when the specified the *outputMimeType* property.
+* Writer properties to use with the specified the `outputMimeType` property.
 **/
 writerProperties?: Dictionary<SimpleType&#62;, /**
-* When an the execution fails what it should happen. When *Handle* &#40;default value&#41; is specify the execution will return *ExecutionFailure* if *Fail* is specify
-* then the *Exception* is going to be propagated.
+* Specifies the behavior that occurs when the execution fails:
+* 
+* * `HANDLE` &#40;default value&#41; returns `ExecutionFailure`.
+* * `FAIL` propagates an exception.
 **/
 onException?: "HANDLE" &#124; "FAIL", /**
-* The *SecurityManager* to use in this execution. This security manager is going to be composed with the *current* SecurityManager.
+* Identifies the `SecurityManager` to use in this execution. This security manager
+* is composed by the current `SecurityManager`.
 **/
 securityManager?: SecurityManager, /**
-* The *LoggerService* to be used in this execution.
+* The `LoggerService` to use in this execution.
 **/
 loggerService?: LoggerService, /**
-* The Max stack size
+* The maximum stack size.
 **/
 maxStackSize?: Number }`
-| *EXPERIMENTAL*
+| Configuration of the runtime execution that has advanced parameters.
 
-Configures the runtime execution with some advance parameters.
+
+_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
 
 
 | SecurityManager
 | `type SecurityManager = &#40;grant: String, args: Array<Any&#62;&#41; &#45;&#62; Boolean`
-| *EXPERIMENTAL*
+| Function that is called when a privilege must be granted to the current execution.
 
-This function is going to be called every time some privilege needs to be granted to the current execution.
-The *grant* is the name of the Privilege i.e: *Resource*
-The *args* represents the list of parameters the function that is requesting the Privilege is being called.
+* `grant` is the name of the privilege, such as `Resource`.
+* `args` provides a list of parameters that the function requesting the privilege calls.
+
+
+_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave
 
 
 | TryResult
@@ -140,7 +154,7 @@ The *args* represents the list of parameters the function that is requesting the
 * Since 4.4.0. It is only available when stack is not present. It will contain the native java stacktrace.
 **/
 stackTrace?: String, location?: String } }`
-| Object with a result or error message. If `success` is `false`, it contains
-the `error`. If `true`, it provides the `result`.
+| Object with a result or error message. If `success` is `false`, data type provides
+the `error`. If `true`, the data type provides the `result`.
 
 |===

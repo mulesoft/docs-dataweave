@@ -10,7 +10,7 @@ endif::[]
 
 Splits an array into two at a given position.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -56,5 +56,5 @@ users splitAt 1
 
 Helper function that enables `splitAt` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

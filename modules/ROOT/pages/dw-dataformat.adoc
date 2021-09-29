@@ -1,6 +1,6 @@
 = DataFormat (dw::extension::DataFormat)
 
-This module contains what is required for registering a new data format for
+This module contains resources for registering a new data format for
 the DataWeave language.
 
 For an example, see

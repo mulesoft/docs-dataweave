@@ -10,7 +10,7 @@ endif::[]
 
 Creates a Period value from the provided number of seconds.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

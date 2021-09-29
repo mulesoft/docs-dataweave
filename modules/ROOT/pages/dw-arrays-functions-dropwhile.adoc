@@ -11,7 +11,7 @@ endif::[]
 Drops elements from the array while the condition is met but stops the selection process
 when it reaches an element that fails to satisfy the condition.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -57,5 +57,5 @@ arr dropWhile $ < 3
 
 Helper function that enables `dropWhile` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

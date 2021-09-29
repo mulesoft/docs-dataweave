@@ -13,7 +13,7 @@ Checks if the `text` contains only Unicode digits. A decimal point is not a Unic
 
 Note that the method does not allow for a leading sign, either positive or negative.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -65,5 +65,5 @@ output application/json
 
 Helper function that enables `isAlpha` to work with a `null` value.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 

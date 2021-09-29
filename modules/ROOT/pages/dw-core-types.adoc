@@ -1,5 +1,6 @@
 = Core Types (dw::Core)
 
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 
@@ -88,7 +89,7 @@ and filter it.
 
 Just like the Java class, `Iterator` is designed to be consumed only once. For
 example, if you pass it to a
-https://docs.mulesoft.com/mule-runtime/latest/logger-component-reference[Logger component],
+https://docs.mulesoft.com/dataweave/latest/logger-component-reference[Logger component],
 the Logger consumes it, so it becomes unreadable by further elements in the flow.
 
 
@@ -149,7 +150,7 @@ Examples: `{ myKey : "a value" }`, `{ myKey : { a : 1, b : 2} }`,
 | `type Pair = { l: LEFT, r: RIGHT }`
 | A type used to represent a pair of values.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 
 | Period
@@ -181,7 +182,7 @@ _Introduced in DataWeave: 2.2.0._
 | `type StringCoerceable = String &#124; Boolean &#124; Number &#124; DateTime &#124; LocalDateTime &#124; Date &#124; LocalTime &#124; Time &#124; TimeZone &#124; Period &#124; Key &#124; Binary &#124; Uri &#124; Type<Any&#62; &#124; Regex &#124; Namespace`
 | A union type of all the types that can be coerced to String type.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 
 | Time

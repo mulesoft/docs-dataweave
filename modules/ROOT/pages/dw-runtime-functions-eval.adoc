@@ -8,7 +8,7 @@ endif::[]
 [[eval1]]
 == eval&#40;fileToExecute: String, fs: Dictionary<String&#62;, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: EvalSuccess &#124; ExecutionFailure
 
-Evaluates a given script with the specified context and returns the result of that evaluation
+Evaluates a script with the specified context and returns the result of that evaluation.
 
 _Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
@@ -17,53 +17,49 @@ _Experimental_: This is an experimental feature that is subject to change or rem
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| fileToExecute | The name of the file to execute
-| fs | An Object with the files
-| readerInputs | The reader inputs to bind
-| inputValues | Additional literal values to bind
-| configuration | Runtime configuration
+| `fileToExecute` | Name of the file to execute.
+| `fs` | An object that contains the file to evaluate.
+| `readerInputs` | Reader inputs to bind.
+| `inputValues` | Additional literal values to bind
+| `configuration` | The runtime configuration.
 |===
 
 === Example
 
-This example shows how the `eval` behaves under different inputs.
+This example shows how `eval` behaves with different inputs.
 
 ==== Source
 
 [source,DataWeave,linenums]
 ----
 %dw 2.0
+import * from dw::Runtime
 
- import * from dw::Runtime
-
- var jsonValue = {
+var jsonValue = {
    value: '{"name": "Mariano"}' as Binary {encoding: "UTF-8"},
    encoding: "UTF-8",
    properties: {},
    mimeType: "application/json"
- }
+}
 
- var jsonValue2 = {
+var jsonValue2 = {
    value: '{"name": "Mariano", "lastName": "achaval"}' as Binary {encoding: "UTF-8"},
    encoding: "UTF-8",
    properties: {},
    mimeType: "application/json"
- }
+}
 
- var invalidJsonValue = {
+var invalidJsonValue = {
    value: '{"name": "Mariano' as Binary {encoding: "UTF-8"},
    encoding: "UTF-8",
    properties: {},
    mimeType: "application/json"
- }
+}
 
-
-
-
- var Utils = "fun sum(a,b) = a +b"
- output application/json
- ---
- {
+var Utils = "fun sum(a,b) = a +b"
+output application/json
+---
+{
    "execute_ok" : run("main.dwl", {"main.dwl": "{a: 1}"}, {"payload": jsonValue }),
    "logs" : do {
      var execResult = run("main.dwl", {"main.dwl": "{a: log(1)}"}, {"payload": jsonValue })
@@ -98,7 +94,7 @@ This example shows how the `eval` behaves under different inputs.
                   }
                 }
            )
- }
+}
 ----
 
 ==== Output
