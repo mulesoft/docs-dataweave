@@ -5,7 +5,7 @@ The 2.4 version of DataWeave introduces the following features:
 * Larger than memory strings.
 * New reader and writer properties for working with data formats. For example, the XML writer now enables you to define namespaces at the root level. 
 * Many new modules, functions, types, annotations, and variables. Some are experimental and subject to change in future releases.
-* A number of other overloaded functions introduce new helper functions for
+* A number of functions are overloaded to introduce new helper functions for
 handling `null` values.
 
 Changes to the documentation include more detailed function signatures and organization of the functions by their module names, such as `dw::Core`, `dw::core::Strings`, and `dw::util::Math`.
