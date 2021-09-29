@@ -80,17 +80,17 @@ DataWeave supports the following formats as input and output:
 [[dw_readers_writers]]
 == DataWeave Readers
 
-DataWeave can read input data as a whole by loading it into memory or by indexing it in local storage and, for some data formats, read data sequentially in parts by streaming the input. The indexed reading strategy implements a mechanism to avoid out-of-memory issues when processing large files. The streaming strategy can improve performance but impacts access to file.
+DataWeave can read input data as a whole by loading it into memory or by indexing it in local storage and, for some data formats, read data sequentially in parts by streaming the input. The indexed reading strategy implements a mechanism to avoid out-of-memory issues when processing large files. The streaming strategy can improve performance but restricts file access to be sequentially, because you can access only the part of the file that is being read and stored in memory.
 
 [[streaming]]
 [%header%autowidth.spread,cols="a,a,a", options="header"]
 |===
 | Read Strategy | Description | Supported Formats
 <.^| In-Memory
-| Enables random access to data by parsing the entire document. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
+| This strategy parses the entire document and loads it into memory, enabling random access to data. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
 | DataWeave can read all supported formats using this strategy.
 <.^| Indexed
-| Enables random access to data by parsing the entire document. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
+| This strategy parses the entire document and uses disk space to avoid out-of-memory issues on large files, enabling random access to data. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
 
 When processing a `String` with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. This feature works only with `JSON` and `XML` input data.
 
@@ -111,10 +111,8 @@ com.mulesoft.dw.buffered_char_sequence.enabled
 * `JSON`
 * `XML`
 <.^| Streaming
-| Allows for sequential access to the file. This strategy partitions
-the input document into smaller items and accesses its data sequentially,
-storing the current item in memory. A DataWeave selector can access the portion
-of the file that is getting read.
+| This strategy partitions the input document into smaller items and accesses the data sequentially,
+storing the current item in memory. A DataWeave selector can access only the portion of the file that is getting read.
 
 For additional details, see xref:dataweave-streaming.adoc[Streaming in DataWeave]
 |
