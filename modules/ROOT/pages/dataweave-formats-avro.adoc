@@ -133,7 +133,7 @@ This format accepts properties that provide instructions for writing output data
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
 
 Valid values are `true` or `false`.
-|`schemaUrl` (Required) |`String`|`''`|The URL for the Avro schema. Valid values are `classpath://`, `file://`, or `http://`.
+|`schemaUrl` (Required) |`String`|`null`|The URL for the Avro schema. Valid URI schemes are `classpath://`, `file://`, or `http://`.
 |===
 
 
