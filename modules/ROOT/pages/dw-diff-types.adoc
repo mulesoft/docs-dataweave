@@ -8,7 +8,7 @@
 | `type Diff = { matches: Boolean, diffs: Array<Difference&#62; }`
 | Describes the entire difference between two values.
 
-* _Example with no differences_:
+* _Example with no differences:_
 
 `{ "matches": true, "diffs": [ ] }`
 
