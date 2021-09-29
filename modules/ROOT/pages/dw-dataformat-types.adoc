@@ -21,7 +21,7 @@ a| Represents the DataFormat definition.
 * `binaryFormat?: Boolean`: True if this is data format is represented as binary instead of text. False if not present.
 * `defaultCharset?: String`: Default character set of this format, if any.
 * `fileExtensions?: Array<String&#62;`: Returns the list of file extensions with the `.` (for example, `.json`, ``.xml`) to assign to this data format.
-* `acceptedMimeTypes: Array<MimeType&#62;` The list of MIME type to accept.
+* `acceptedMimeTypes: Array<MimeType&#62;` The list of MIME types to accept.
 * `reader: (content: Binary, charset: String, settings: ReaderSettings) -> Any`: Function that reads raw content and transforms it into the canonical DataWeave model.
 * `writer: (value:Any, settings:WriterSettings) -> Binary`: Function that writes the canonical DataWeave model into binary content.
 
