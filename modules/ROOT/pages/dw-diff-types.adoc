@@ -12,7 +12,7 @@
 
 `{ "matches": true, "diffs": [ ] }`
 
-* _Example with differences_:
+* _Example with differences:_
 
 `{ "matches": true, "diffs": [ "expected": "4", "actual": "2", "path": "(root).a.@.d" ] }`
 
