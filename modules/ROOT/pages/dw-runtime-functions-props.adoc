@@ -8,7 +8,7 @@ endif::[]
 [[props1]]
 == props&#40;&#41;: Dictionary<String&#62;
 
-Returns all the properties configured for Mule runtime engine.
+Returns all the properties configured for the DataWeave runtime, which executes the language.
 
 === Example
 

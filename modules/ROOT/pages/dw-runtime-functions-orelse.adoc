@@ -12,10 +12,6 @@ Returns the result of the `orElse` argument if the `previous` argument to
 `try` fails. Otherwise, the function returns the value of the `previous`
 argument.
 
-
-A failing `previous` argument returns a `TryResult` value with the field
-`"success": false`.
-
 _Introduced in DataWeave: 2.2.0._
 
 === Parameters
@@ -23,8 +19,8 @@ _Introduced in DataWeave: 2.2.0._
 [%header, cols="1,3"]
 |===
 | Name | Description
-| `previous` | The first argument to try.
-| `orElse` | The next argument to try if the `previous` argument fails.
+| `previous` | Result from a previous call to `try`.
+| `orElse` | Argument to return if the `previous` argument fails.
 |===
 
 === Example
