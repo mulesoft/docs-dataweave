@@ -1,7 +1,7 @@
 = Diff (dw::util::Diff)
 
 This utility module calculates the difference between two values
-and returns the list of differences.
+and returns a list of differences.
 
 
 To use this module, you must import it to your DataWeave code, for example,
