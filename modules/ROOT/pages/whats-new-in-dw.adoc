@@ -31,7 +31,7 @@ New DataWeave modules and features:
 ** xref:dw-core-functions-onnull.adoc[onNull]
 ** xref:dw-core-functions-then.adoc[then]
 ** xref:dw-core-annotations.adoc[Core Annotations] introduces a number of new annotations:
-* xref:dw-dates.adoc[dw::core::Dates] is a new module with functions and types.
+* xref:dw-dates.adoc[dw::core::Dates] is a new module with functions and types to create and manipulate Date types, for example, the function `today`.
 * xref:dw-strings.adoc[dw::core::Strings] introduces new functions:
   ** xref:dw-strings-functions-collapse.adoc[collapse]
   ** xref:dw-strings-functions-countcharactersby.adoc[countCharactersBy]
