@@ -1,6 +1,7 @@
 = Strings (dw::core::Strings)
 
-This module contains helper functions to work with Strings.
+This module contains helper functions for working with strings.
+
 
 To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::core::Strings` to the header of your
@@ -81,6 +82,3 @@ characters from left to right, until the string length meets the length limit.
 end of the given string.
 | xref:dw-strings-functions-wrapwith.adoc[wrapWith] | Wraps the specified `text` with the given `wrapper`.
 |===
-
-
-

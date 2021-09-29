@@ -11,7 +11,7 @@ endif::[]
 Executes a callback function if the preceding expression returns a `null`
 value and then replaces the `null` value with the result of the callback.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -56,5 +56,5 @@ output application/json
 
 Helper function that enables `onNull` to work with a _non-null_ value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

@@ -8,7 +8,7 @@ endif::[]
 [[orelsetry1]]
 == orElseTry<T, R&#62;&#40;previous: TryResult<T&#62;, orElse: &#40;&#41; &#45;&#62; R&#41;: TryResult<T &#124; R&#62;
 
-Function to be use with try in order to chain multiple `try`
+Function to use with `try` to chain multiple `try` requests.
 
 _Introduced in DataWeave: 2.2.0._
 
@@ -17,8 +17,8 @@ _Introduced in DataWeave: 2.2.0._
 [%header, cols="1,3"]
 |===
 | Name | Description
-| `previous` | Previous try result
-| `orElse` | The next option to try if the previous fails
+| `previous` | Result from a previous call to `try`.
+| `orElseTry` | Argument to try if the `previous` argument fails.
 |===
 
 === Example

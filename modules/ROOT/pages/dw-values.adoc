@@ -3,11 +3,11 @@
 This utility module simplifies changes to values.
 
 
-The module is included with Mule runtime. To use it, you must import it into
-your DataWeave code, for example, by adding the line
-`import * from dw::util::Values` to the header of your script.
+To use this module, you must import it to your DataWeave code, for example,
+by adding the line `import * from dw::util::Values` to the header of your
+DataWeave script.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 == Functions
 
@@ -30,5 +30,3 @@ string value.
 
 == Types
 * xref:dw-values-types.adoc[Values Types]
-
-

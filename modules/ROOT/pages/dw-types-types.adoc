@@ -1,5 +1,6 @@
 = Types Types (dw::core::Types)
 
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 
@@ -7,21 +8,21 @@
 | `type Attribute = { name: QName, required: Boolean, value: Type }`
 | Represents an Attribute definition that is part of an Object field Key.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 
 | Field
 | `type Field = { key: { name: QName, attributes: Array<Attribute&#62; }, required: Boolean, repeated: Boolean, value: Type }`
 | Represents a Field description that is part of an Object.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 
 | FunctionParam
 | `type FunctionParam = { paramType: Type, optional: Boolean }`
 | Represents a Function parameter that is part of a Function type.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 
 | QName
@@ -29,6 +30,6 @@ _Introduced in DataWeave: 2.3.0._
 | Represents a Qualified Name definition with a `localName` (a string) and a `namespace`.
 If the QName does not have a Namespace, its value is `null`.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 |===

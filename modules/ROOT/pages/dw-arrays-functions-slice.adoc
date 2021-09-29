@@ -11,7 +11,7 @@ endif::[]
 Selects the interval of elements that satisfy the condition:
 `from &lt;= indexOf(array) < until`
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -60,5 +60,5 @@ slice(arr, 1, 4)
 
 Helper function that enables `slice` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

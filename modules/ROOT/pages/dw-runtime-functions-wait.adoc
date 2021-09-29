@@ -8,13 +8,13 @@ endif::[]
 [[wait1]]
 == wait<T&#62;&#40;value: T, timeout: Number&#41;: T
 
-Stops the execution for the specified timeout (in milliseconds).
+Stops the execution for the specified timeout period (in milliseconds).
 
 
-WARNING: Stopping the execution will block the thread used, potentially
-causing slowness, low performance and potentially freezes of the entire
-runtime. This operation is intended for limited functional testing purposes
-and should not be used in production application, performance testing or
+WARNING: Stopping the execution blocks the thread, potentially
+causing slowness, low performance and potentially freezing of the entire
+runtime. This operation is intended for limited functional testing purposes.
+Do not use this function in a production application, performance testing, or
 with multiple applications deployed.
 
 === Parameters

@@ -1,5 +1,6 @@
 = Dates Types (dw::core::Dates)
 
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 
@@ -14,14 +15,14 @@ are not valid.
 | DateTimeFactory
 | `type DateTimeFactory = DateFactory & LocalTimeFactory & Zoned`
 | Type that combines `DateFactory`, `LocalTimeFactory`, and `Zoned` types. For example,
-`{day: 21, month: 1, year: 2021, hour: 8, minutes: 31, seconds: 55, timeZone : |-03:00|} as DateTimeFactory`
+`{day: 21, month: 1, year: 2021, hour: 8, minutes: 31, seconds: 55, timeZone : &#124;-03:00&#124;} as DateTimeFactory`
 is a valid `DateTimeFactory` value.
 
 
 | LocalDateTimeFactory
 | `type LocalDateTimeFactory = DateFactory & LocalTimeFactory`
 | Type that combines `DateFactory` and `LocalTimeFactory` types. For example,
-`{day: 21, month: 1, year: 2021, hour: 8, minutes: 31, seconds: 55, timeZone : |-03:00|} as LocalDateTimeFactory`
+`{day: 21, month: 1, year: 2021, hour: 8, minutes: 31, seconds: 55, timeZone : &#124;-03:00&#124;} as LocalDateTimeFactory`
 is a valid `LocalDateTimeFactory` value. The `timeZone` field is optional.
 
 
@@ -35,13 +36,13 @@ The fields accept any `Number` value.
 | TimeFactory
 | `type TimeFactory = LocalTimeFactory & Zoned`
 | Type that combines `LocalTimeFactory` and `Zoned` types. For example,
-`{hour: 8, minutes: 31, seconds: 55, timeZone : |-03:00|} as TimeFactory`
+`{hour: 8, minutes: 31, seconds: 55, timeZone : &#124;-03:00&#124;} as TimeFactory`
 is a valid `TimeFactory` value.
 
 
 | Zoned
 | `type Zoned = { timeZone: TimeZone }`
 | Type containing a selectable `timeZone` key and `TimeZone` value, such as
-`{ timezone : |-03:00|}`.
+`{ timezone : &#124;-03:00&#124;}`.
 
 |===

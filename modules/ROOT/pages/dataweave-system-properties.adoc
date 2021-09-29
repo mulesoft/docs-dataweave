@@ -84,10 +84,10 @@ output application/json
 ----
 
 |`com.mulesoft.dw.stacksize`|`Number`|`256`|Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as `Stack Overflow. Max stack is 256.`
-|`com.mulesoft.dw.dump_files`|`Boolean`|`false`| _Experimental_: Dumps the input context and the failing script into a folder when this property is set to `true`. This behavior enables you to track the failing script and the data that makes the script fail, which is particularly useful for verifying that the received input data is valid. Incorrect scripts often fail when an upstream component generates invalid data.
+|`com.mulesoft.dw.dump_files`|`Boolean`|`false`| _Experimental:_ Dumps the input context and the failing script into a folder when this property is set to `true`. This behavior enables you to track the failing script and the data that makes the script fail, which is particularly useful for verifying that the received input data is valid. Incorrect scripts often fail when an upstream component generates invalid data.
 
 `com.mulesoft.dw.dump_files` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc [Troubleshooting a Failing DataWeave Script].
-|`com.mulesoft.dw.dump_folder`|`String`|`java.io.tmpdir` (system property value)|_Experimental_: Specifies the path in which to dump files when `com.mulesoft.dw.dump_files` is set to `true`.
+|`com.mulesoft.dw.dump_folder`|`String`|`java.io.tmpdir` (system property value)|_Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.dump_files` is set to `true`.
 
 `com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc [Troubleshooting a Failing DataWeave Script].
 |`com.mulesoft.dw.coercionexception.verbose`|`Boolean`|`true`|By default, adds to coercion exceptions more information about data that fails to coerce. When this property is set to `false`, DataWeave does not display the additional metadata.
