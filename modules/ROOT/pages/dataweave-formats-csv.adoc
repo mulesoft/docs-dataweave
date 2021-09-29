@@ -206,7 +206,7 @@ Valid values are `true` or `false`.
 Valid values are `true` or `false`.
 |`quote`  |`String`|`"`|Character to use for quotes.
 |`separator`  |`String`|`,`|Character that separates one field from another field.
-|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially and do not require random access. The input must be a top-level array. 
+|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially and do not require random access. The input must be a top-level array. |`streaming` |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially and do not require random access. The input must be a top-level array. See the <<example2, streaming example>>, and see xref:dataweave-formats.adoc#dw_readers_writers[DataWeave Readers].
 
 Valid values are `true` or `false`.
 |===
