@@ -37,7 +37,7 @@ The following example is similar to the previous one but minified where the max 
 [{"name":"Mariano","lastName":"Achaval"},...]
 ----
 
-The following example shows a worst-case scenario where a minified array is number 1s. DataWeave supports only approximately 8 GB of such file:
+The following example shows a worst-case scenario where a minified array is number `1`. DataWeave supports only approximately 8 GB of such file:
 [source,json,linenums]
 ----
 [1,1,1,1,1,1,...]
