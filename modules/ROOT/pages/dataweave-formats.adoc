@@ -99,6 +99,8 @@ CSV, JSON, XML (starting in Mule 4.3.0)
 +
 Note that DataWeave _does not_ support reading Excel (XLSX) input in the indexed mode.
 
+For details, see xref:dataweave-indexed-readers.adoc[Indexed Readers in DataWeave].
+
 ** In-Memory: +
 Parses the entire document in memory.
 +

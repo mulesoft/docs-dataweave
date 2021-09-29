@@ -23,6 +23,7 @@
   *** xref:dataweave-formats-xml.adoc[XML Format]
   *** xref:dataweave-formats-yaml.adoc[YAML Format]
  ** xref:dataweave-streaming.adoc[Streaming in DataWeave]
+ ** xref:dataweave-indexed-readers.adoc[Indexed Readers in DataWeave]
  ** xref:dataweave-flat-file-schemas.adoc[Flatfile Schemas]
  ** xref:dataweave-type-system.adoc[Type System]
  ** xref:dataweave-types.adoc[Value Constructs for Types]

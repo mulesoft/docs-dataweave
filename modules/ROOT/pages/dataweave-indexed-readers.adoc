@@ -1,0 +1,53 @@
+= Indexed Readers in DataWeave
+
+DataWeave can read input data (such as XML, JSON, and CSV) in an indexed mode to avoid loading the whole document in memory while still allowing random access just like in the in-memory mode. Use indexed readers when the input is larger than a certain configurable threshold or if the `indexedReader` setting is set to `true`.
+
+The trade-off for managing files that wouldn’t fit in memory is to write the files to a temporary file in disk and index the document content beforehand, which also takes time and disk space.
+
+To manage files that don’t fit in memory, write the files to a temporary file in disk and index the document content beforehand, which also takes time and disk space.
+
+Indexed readers can process input files up to 20GBs. For bigger files use the streaming mode, which is faster. Despite this mode being more limited in functionality, there’s no maximum input size limitation for streaming readers.
+
+The actual maximum input file size supported is difficult to estimate because it depends on the content of the input.
+
+The following list shows the limits on different parts of the input document:
+
+* Max nesting depth: `4096`.
+* Max individual value size: `4GB`.
+* Tokens: `​​2^32-1` (approximately 4 billion). +
+A token is either a key/value, object-start or array-start, which limits the max document size.
+The amount of the max document size is irrespective of the size of each token in the file. The bigger your average value length, the bigger your file size can be because what is important is the amount of tokens, not their size.
+
+The following examples show input file size samples:
+
+In this example, the max file size is approximately 40~50GB:
+[source,json,linenums]
+----
+[
+  {
+    "name": "Mariano",
+    "lastName": "Achaval"
+  },
+  ...
+]
+----
+
+The following example is similar to the previous one but minified where the max file size is approximately 30GB:
+
+[source,json,linenums]
+----
+[{"name":"Mariano","lastName":"Achaval"},...]
+----
+
+The following example shows a worst-case scenario where a minified array is number 1s. DataWeave supports only approximately ~8GB of such file:
+[source,json,linenums]
+----
+[1,1,1,1,1,1,...]
+----
+
+== See Also
+
+* xref:dataweave-formats-csv.adoc[CSV Format]
+* xref:dataweave-formats-json.adoc[JSON Format]
+* xref:dataweave-formats-xml.adoc[XML Format]
+* xref:dataweave-formats.adoc[Supported DataWeave Formats]
