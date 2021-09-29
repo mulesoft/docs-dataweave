@@ -10,7 +10,7 @@ handling `null` values.
 
 Changes to the documentation include more detailed function signatures and organization of the functions by their module names, such as `dw::Core`, `dw::core::Strings`, and `dw::util::Math`.
 
-DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 release, see xref:4.4@mule-runtime::whats-new-in-mule.adoc[What's New in Mule 4.4].
+DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 release, refer to xref:4.4@mule-runtime::whats-new-in-mule.adoc[What's New in Mule 4.4].
 
 == New Data Formats and Properties
 
