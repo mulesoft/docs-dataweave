@@ -19,7 +19,7 @@ DataWeave introduces the following reader and writer properties:
 * DataWeave (dw) reader property: `privileges` enables you to provide a comma-separated list of privileges to use in the format, such as `'Resources,Properties'`.
 * Excel (XLSX) reader property: `tableLimit`
 * YAML writer property: `writeDeclaration`
-* XML writer properties: `defaultNamespace`, `writeDeclaredNamespaces`
+* XML writer properties: `defaultNamespace` specifies the default namespaces of the output XML , and `writeDeclaredNamespaces` marks the namespaces to declare in the root element of the XML.
 
 == New DataWeave Function Modules and Features
 
