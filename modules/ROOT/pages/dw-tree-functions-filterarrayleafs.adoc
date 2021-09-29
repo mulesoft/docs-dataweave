@@ -12,7 +12,7 @@ Applies a filtering expression to leaf or `Path` values of an array.
 
 
 The leaf values in the array must be `SimpleType` or `Null` values. See
-https://docs.mulesoft.com/dataweave/4.3/dw-core-types[Core Types]
+https://docs.mulesoft.com/dataweave/latest/dw-core-types[Core Types]
 for descriptions of the types.
 
 _Introduced in DataWeave version 2.4.0._
