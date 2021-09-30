@@ -155,7 +155,7 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 | `type TryResult = { success: Boolean, result?: T, error?: { kind: String, message: String, stack?: Array<String&#62;,
 stackTrace?: String, location?: String } }`
 | Object with a result or error message. If `success` is `false`, data type provides
-the `error`. If `true`, the data type provides the `result`. +
+the `error`. If `true`, the data type provides the `result`. 
 
 Starting in Mule version 4.3.1 (DataWeave version 2.3.1), `stackTrace` is available only when `stack` is
 not present. The `stackTrace` field provides the native Java stack trace.
