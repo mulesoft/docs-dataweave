@@ -12,13 +12,13 @@ Changes to the documentation include more detailed function signatures and organ
 
 DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 release, refer to xref:4.4@mule-runtime::whats-new-in-mule.adoc[What's New in Mule 4.4].
 
-== New Data Formats and Properties
+== New Properties for Data Formats
 
 DataWeave introduces the following reader and writer properties:
 
 * DataWeave (dw) reader property: `privileges` enables you to provide a comma-separated list of privileges to use in the format, such as `'Resources,Properties'`.
 * Excel (XLSX) reader property: `tableLimit` enables you to set position of the last column in each row. 
-* YAML writer property: `writeDeclaration`
+* YAML writer property: `writeDeclaration` enables you to write the header declaration.
 * XML writer properties: `defaultNamespace` specifies the default namespaces of the output XML , and `writeDeclaredNamespaces` marks the namespaces to declare in the root element of the XML.
 
 == New DataWeave Function Modules and Features
