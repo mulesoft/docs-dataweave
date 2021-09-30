@@ -135,7 +135,7 @@ maxStackSize?: Number }`
 * onException: Specifies the behavior that occurs when the execution fails:
 ** `HANDLE` &#40;default value&#41; returns `ExecutionFailure`.
 ** `FAIL` propagates an exception.
-* securityManager: Identifies the `SecurityManager` to use in this execution.
+* `securityManager`: Identifies the `SecurityManager` to use in this execution.
   This security manager is composed by the current `SecurityManager`.
 * loggerService: The `LoggerService` to use in this execution.
 * maxStackSize: The maximum stack size.
