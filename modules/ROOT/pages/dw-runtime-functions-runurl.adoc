@@ -8,7 +8,7 @@ endif::[]
 [[runurl1]]
 == runUrl&#40;url: String, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: RunSuccess &#124; ExecutionFailure
 
-Runs the script with the specified URL.
+Runs the script at the specified URL.
 
 _Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
