@@ -6,7 +6,7 @@ To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::util::Math` to the header of your
 DataWeave script.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 == Functions
 

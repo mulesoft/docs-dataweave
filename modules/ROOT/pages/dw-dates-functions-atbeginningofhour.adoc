@@ -14,7 +14,7 @@ beginning of the specified _hour_.
 
 The minutes and seconds in the input change to `00:00`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -61,7 +61,7 @@ beginning of the specified _hour_.
 
 The minutes and seconds in the input change to `00:00`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -108,7 +108,7 @@ beginning of the specified _hour_.
 
 The minutes and seconds in the input change to `00:00`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -155,7 +155,7 @@ beginning of the specified _hour_.
 
 The minutes and seconds in the input change to `00:00`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

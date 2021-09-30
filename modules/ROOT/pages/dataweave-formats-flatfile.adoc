@@ -1,7 +1,11 @@
+
 = Flat File Format
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: format, flatfile, */flatfile, application/flatfile
 
-
-MIME Type: `application/flatfile`
+MIME type: `application/flatfile`
 
 ID: `flatfile`
 
@@ -23,17 +27,16 @@ output application/flatfile schemaPath="src/main/resources/test-data/QBReqRsp.es
 payload
 ----
 
-
-// CONFIG PROPS ///////////////////////////////////////////////////////
+// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
 
 // Flat File config properties are shared with COBOL Copybook and Fixed Width.
 include::partial$dataweave-formats-flatfile-config.adoc[]
 
 
-[[mime_type]]
+[[mime_types]]
 == Supported MIME Types
 
-The Flat File format supports the following MIME types.
+This format supports the following MIME types.
 
 [cols="1", options="header"]
 |===

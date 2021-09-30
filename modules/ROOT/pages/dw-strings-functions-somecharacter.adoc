@@ -11,7 +11,7 @@ endif::[]
 Checks whether a condition is valid for at least one of the characters or blank spaces
 in a string.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -51,5 +51,5 @@ true
 
 Helper function that enables `someCharacter` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

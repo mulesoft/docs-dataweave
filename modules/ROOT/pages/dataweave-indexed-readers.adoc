@@ -1,0 +1,51 @@
+= Indexed Readers in DataWeave
+
+In DataWeave, some readers of input data (such as XML, JSON, and CSV) support an indexed strategy to avoid loading the whole document in memory while still allowing random access just like in the in-memory strategy. DataWeave uses indexed readers when the input is larger than a certain configurable threshold or if the `indexedReader` setting is set to `true`.
+
+The trade-off for managing files that wouldn’t fit in memory is to write the files to a temporary file in disk and index the document content beforehand, which also takes time and disk space.
+
+Indexed readers can process input files up to 20 GB. For bigger files use the streaming strategy, which is faster. Despite this mode being more limited in functionality, there’s no maximum input size limitation for streaming readers.
+
+The actual max input file size supported is difficult to estimate because it depends on the content of the input.
+
+The following list shows the limits on different parts of the input file:
+
+* Max nesting depth: `4096`
+* Max individual value size: `4 GB`
+* Tokens: `​​2^32-1` (approximately 4 billion) +
+A token is either a key/value pair, object-start or array-start, that limits the max input file size.
+The amount of the max input file size is irrespective of the size of each token in the file. The bigger your average value length, the bigger your input file size can be because what is important is the amount of tokens, not their size.
+
+The following examples show input file size samples:
+
+In this example, the max input file size is between 40 GB and 50 GB:
+[source,json,linenums]
+----
+[
+  {
+    "name": "Mariano",
+    "lastName": "Achaval"
+  },
+  ...
+]
+----
+
+The following example is similar to the previous one but minified where the max file size is approximately 30 GB:
+
+[source,json,linenums]
+----
+[{"name":"Mariano","lastName":"Achaval"},...]
+----
+
+The following example shows a minified array of numbers `1`. DataWeave supports only approximately 8 GB of such file:
+[source,json,linenums]
+----
+[1,1,1,1,1,1,...]
+----
+
+== See Also
+
+* xref:dataweave-formats-csv.adoc[CSV Format]
+* xref:dataweave-formats-json.adoc[JSON Format]
+* xref:dataweave-formats-xml.adoc[XML Format]
+* xref:dataweave-formats.adoc[Supported DataWeave Formats]

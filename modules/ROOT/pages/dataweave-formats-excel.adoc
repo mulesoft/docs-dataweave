@@ -1,7 +1,11 @@
+
 = Excel Format
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: format, excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/xlsx, application/xlsx
 
-
-MIME Type: `application/xlsx`
+MIME type: `application/xlsx`
 
 ID: `excel`
 
@@ -186,52 +190,75 @@ The following image shows the Excel table output.
 image::dataweave-formats-exceltable.png[]
 
 
-// CONFIG PROPS ///////////////////////////////////////////////////////
+== Limitations
+
+ * Macros are currently not supported.
+ * Charts are ignored.
+ * Pivot tables are not supported.
+
+ // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
+
 
 [[properties]]
 == Configuration Properties
 
-DataWeave supports the following configuration properties for Excel.
+DataWeave supports the following configuration properties for this format.
 
-=== Reader Properties (for Excel)
 
-The Excel format accepts properties that provide instructions for reading input data.
+[[reader_properties]]
+=== Reader Properties
 
-[cols="1,1,1,3a", options="header"]
-|===
-| Parameter | Type | Default | Description
-| `header` | `Boolean` | `true` | Indicates whether the Excel table contains
-headers. Valid values are `true` or `false`.
-| `ignoreEmptyLine` | `Boolean` | `true` | Indicates whether to ignore empty
-line. Valid values are `true` or `false`.
-| `streaming` | `Boolean` | `false` | Introduced in Mule 4.2.2: Streaming is intended for processing a large file. When streaming is enabled, the reader accesses each row sequentially, keeping one row in memory at a time, instead of making all data available at once. Streaming does not permit random access to rows in the file. Use only if the entries are accessed sequentially. Valid values are `true` or `false`.
-| `tableOffset` | `String` | `null` | The position of the first cell in the
-table (`<Column><Row> example A1`).
-| `zipBombCheck` | `Boolean` | `true` | If set to `false`, the zip bomb check is turned off. Valid values are `true` or `false`.
-|===
+This format accepts properties that provide instructions for reading input data.
 
-=== Writer Properties (for Excel)
-
-The Excel format accepts properties that provide instructions for writing output data.
 
 [cols="1,1,1,3a", options="header"]
 |===
-|Parameter | Type | Default | Description
-| `bufferSize` | `Number` | `8192` | Size of the writer buffer.
-| `deferred` | `Boolean` | `false` | When set to `true`, DataWeave generates the output as a data stream, and the script's execution is deferred until it is consumed.
-  Valid values are `true` or `false`.
-| `header` | `Boolean` | `true` |	Indicates whether the Excel table contains
-headers. Valid values are `true` or `false`. When there are no headers, column names are used (for example, A, B, C, and so on).
-| `ignoreEmptyLine` | `Boolean` | `true` | Indicates whether to ignore empty
-lines. Valid values are `true` or `false`.
-| `tableOffset` | `String` | `null` | The position of the first cell in the table (`<Column><Row> example A1`).
-| `zipBombCheck` | `Boolean` | `true` | If set to `false`, the zip bomb check is turned off. Valid values are `true` or `false`.
+|Parameter |Type |Default|Description
+|`header`  |`Boolean`|`true`|Indicates whether the first line of the output contains header field names.
+
+Valid values are `true` or `false`.
+|`ignoreEmptyLine`  |`Boolean`|`true`|Ignores an empty line by default.
+
+Valid values are `true` or `false`.
+|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array.
+
+Valid values are `true` or `false`.
+|`tableLimit`  |`String`|`'Unbounded'`|Position of the last column in each row. Accepts a pattern `<Column>` (for example, `'A'` or `'AB'`), the value `'HeaderSize'`, which uses the location of the last header, or 'Unbounded', which consumes each row.
+|`tableOffset`  |`String`|`null`|Sets the position of the first cell. Accepts the pattern `<Column><Row>`, for example, `A1` or `B3`.
+|`zipBombCheck`  |`Boolean`|`true`|Turns off the zip bomb (decompression bomb) check when set to `false`.
+
+Valid values are `true` or `false`.
 |===
 
-[[mime_type]]
-== Supported MIME Types (for Excel)
+[[writer_properties]]
+=== Writer Properties
 
-DataWeave supports the following MIME type.
+This format accepts properties that provide instructions for writing output data.
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+
+Valid values are `true` or `false`.
+|`header`  |`Boolean`|`true`|Indicates whether the first line of the output contains header field names.
+
+Valid values are `true` or `false`.
+|`ignoreEmptyLine`  |`Boolean`|`true`|Ignores an empty line by default.
+
+Valid values are `true` or `false`.
+|`tableOffset`  |`String`|`null`|Sets the position of the first cell. Accepts the pattern `<Column><Row>`, for example, `A1` or `B3`.
+|`zipBombCheck`  |`Boolean`|`true`|Turns off the zip bomb (decompression bomb) check when set to `false`.
+
+Valid values are `true` or `false`.
+|===
+
+
+[[mime_types]]
+== Supported MIME Types
+
+This format supports the following MIME types.
 
 [cols="1", options="header"]
 |===

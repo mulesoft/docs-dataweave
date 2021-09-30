@@ -11,7 +11,7 @@ endif::[]
 Separates the array into the elements that satisfy the condition from those
 that do not.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -65,5 +65,5 @@ arr partition (item) -> isEven(item)
 
 Helper function that enables `partition` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
