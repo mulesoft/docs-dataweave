@@ -1,71 +1,87 @@
 = Runtime Types (dw::Runtime)
 
+[cols="1,3a,3a", options="header"]
 |===
 | Type | Definition | Description
 
 | DataFormatDescriptor
-| `type DataFormatDescriptor = { name: String, binary: Boolean, defaultEncoding?: String, extensions: Array<String&#62;, defaultMimeType: String, acceptedMimeTypes: Array<String&#62;, readerProperties: Array<DataFormatProperty&#62;, writerProperties: Array<DataFormatProperty&#62; }`
-| Desciption of a `DataFormat` that provides all the metadata information.
+| `type DataFormatDescriptor = {
+name: String,
+binary: Boolean,
+defaultEncoding?: String,
+extensions: Array<String&#62;,
+defaultMimeType: String,
+acceptedMimeTypes: Array<String&#62;,
+readerProperties: Array<DataFormatProperty&#62;,
+writerProperties: Array<DataFormatProperty&#62; }`
+| Description of a `DataFormat` that provides all metadata information.
 
-
-_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | DataFormatProperty
 | `type DataFormatProperty = { name: String, optional: Boolean, defaultValue?: Any, description: String, possibleValues: Array<Any&#62; }`
-| 
+| Type that describes a data format property. The fields include a `name`,
+`description`, array of possible values (`possibleValues`), an optional default
+ value (`defaultValue`), and an `optional` flag that indicates whether the
+ property is required or not.
+
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | EvalSuccess
 | `type EvalSuccess = { success: true, value: Any, logs: Array<LogEntry&#62; }`
 | Data type of the data that returns when an `eval` function executes successfully.
 
-
-_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | ExecutionFailure
 | `type ExecutionFailure = { success: false, message: String, kind: String, stack?: Array<String&#62;, location: Location, logs: Array<LogEntry&#62; }`
 | Data type of the data that returns when a `run` or `eval` function fails.
 
-
-_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | Location
 | `type Location = { start?: Position, end?: Position, locationString: String, text?: String, sourceIdentifier?: String }`
-| 
+| Type that represents the location of an expression in a DataWeave file.
+
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | LogEntry
 | `type LogEntry = { level: LogLevel, timestamp: String, message: String }`
-| 
+| Type for a log entry, which consists of a `level` for a `LogLevel` value,
+a `timestamp`, and `message`.
+
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | LogLevel
 | `type LogLevel = "INFO" &#124; "ERROR" &#124; "WARN"`
-| 
+| Identifies the different kinds of log levels (`INFO`, `ERROR`, or `WARN`).
+
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | LoggerService
-| `type LoggerService = { /**
-* Function called when the execution starts. DataWeave send the result
-* to every log so that, for example, if a logging header can be sent
-* at initialization and recovered in each log.
-**/
-initialize?: &#40;&#41; &#45;&#62; Object, /**
-* Function that is called on every log message.
-**/
-log: &#40;level: LogLevel, msg: String, context: Object&#41; &#45;&#62; Any, /**
-* Function called when the execution completes, which is a good time
-* to flush any buffer or to log out gracefully.
-**/
+| `type LoggerService = {
+initialize?: &#40;&#41; &#45;&#62; Object,
+log: &#40;level: LogLevel,
+msg: String,
+context: Object&#41; &#45;&#62; Any,
 shutdown?: &#40;&#41; &#45;&#62; Boolean }`
 | Service that handles all logging.
 
+* `initialize` : Function called when the execution starts. DataWeave sends the result
+to every `log` call through the `context` parameter, so that, for example,
+a logging header can be sent at initialization and recovered in each log.
+* `log`: Function that is called on every log message.
+* `shutdown`: Function called when the execution completes, which is a time
+to flush any buffer or to log out gracefully.
 
-_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
-
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 | MimeType
 | `type MimeType = String`
@@ -74,69 +90,57 @@ _Experimental:_ This feature is experimental and subject to removal from future 
 
 | Position
 | `type Position = { index: Number, line: Number, column: Number }`
-| 
+| Type that represents a position in a file by its index and its line and column.
+
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | ReaderInput
-| `type ReaderInput = { /**
-* The input, in Binary format.
-**/
-value: Binary, /**
-* The encoding to the reader to use.
-**/
-encoding?: String, /**
-* The reader properties used to parse the input.
-**/
-properties?: Dictionary<SimpleType&#62;, /**
-* The MIME type of the input.
-**/
+| `type ReaderInput = {
+value: Binary,
+encoding?: String,
+properties?: Dictionary<SimpleType&#62;,
 mimeType: MimeType }`
-| Input to the DataWeave reader created for the specified MIME type.
+| Input to the DataWeave reader created for the specified MIME type, which includes the Binary input and MIME type, as well as optional encoding and properties values.
 
+* `value`: The input, in Binary format.
+* `encoding`: The encoding for the reader to use.
+* `properties`: The reader properties used to parse the input.
+* `mimeType`: The MIME type of the input.
 
-_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | RunSuccess
 | `type RunSuccess = { success: true, value: Binary, mimeType: MimeType, encoding?: String, logs: Array<LogEntry&#62; }`
-| Data type of the data that returns when a `run`  function executes successfully.
+| Data type of the data that returns when a `run` function executes successfully.
 
-
-_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | RuntimeExecutionConfiguration
-| `type RuntimeExecutionConfiguration = { /**
-* Maximum amount of time the DataWeave script takes before timing out.
-**/
-timeOut?: Number, /**
-* Default output MIME type if not specified in the DataWeave script.
-**/
-outputMimeType?: MimeType, /**
-* Writer properties to use with the specified the `outputMimeType` property.
-**/
-writerProperties?: Dictionary<SimpleType&#62;, /**
-* Specifies the behavior that occurs when the execution fails:
-* 
-* * `HANDLE` &#40;default value&#41; returns `ExecutionFailure`.
-* * `FAIL` propagates an exception.
-**/
-onException?: "HANDLE" &#124; "FAIL", /**
-* Identifies the `SecurityManager` to use in this execution. This security manager
-* is composed by the current `SecurityManager`.
-**/
-securityManager?: SecurityManager, /**
-* The `LoggerService` to use in this execution.
-**/
-loggerService?: LoggerService, /**
-* The maximum stack size.
-**/
+| `type RuntimeExecutionConfiguration = {
+timeOut?: Number,
+outputMimeType?: MimeType,
+writerProperties?: Dictionary<SimpleType&#62;,
+onException?: "HANDLE" &#124; "FAIL",
+securityManager?: SecurityManager,
+loggerService?: LoggerService,
 maxStackSize?: Number }`
 | Configuration of the runtime execution that has advanced parameters.
 
+* `timeOut`: Maximum amount of time the DataWeave script takes before timing out.
+* `outputMimeType`: Default output MIME type if not specified in the DataWeave script.
+* `writerProperties`: Writer properties to use with the specified the `outputMimeType` property.
+* onException: Specifies the behavior that occurs when the execution fails:
+** `HANDLE` &#40;default value&#41; returns `ExecutionFailure`.
+** `FAIL` propagates an exception.
+* securityManager: Identifies the `SecurityManager` to use in this execution.
+  This security manager is composed by the current `SecurityManager`.
+* loggerService: The `LoggerService` to use in this execution.
+* maxStackSize: The maximum stack size.
 
-_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave.
-
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 | SecurityManager
 | `type SecurityManager = &#40;grant: String, args: Array<Any&#62;&#41; &#45;&#62; Boolean`
@@ -145,16 +149,14 @@ _Experimental:_ This feature is experimental and subject to removal from future 
 * `grant` is the name of the privilege, such as `Resource`.
 * `args` provides a list of parameters that the function requesting the privilege calls.
 
-
-_Experimental:_ This feature is experimental and subject to removal from future versions of DataWeave
-
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 | TryResult
-| `type TryResult = { success: Boolean, result?: T, error?: { kind: String, message: String, stack?: Array<String&#62;, /**
-* Since 4.4.0. It is only available when stack is not present. It will contain the native java stacktrace.
-**/
+| `type TryResult = { success: Boolean, result?: T, error?: { kind: String, message: String, stack?: Array<String&#62;,
 stackTrace?: String, location?: String } }`
 | Object with a result or error message. If `success` is `false`, data type provides
-the `error`. If `true`, the data type provides the `result`.
+the `error`. If `true`, the data type provides the `result`. +
 
+Starting in Mule version 4.3.1 (DataWeave version 2.3.1), `stackTrace` is available only when `stack` is
+not present. The `stackTrace` field provides the native Java stack trace.
 |===
