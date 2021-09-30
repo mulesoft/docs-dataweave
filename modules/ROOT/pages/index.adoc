@@ -4,8 +4,6 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: studio, anypoint, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datawave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
 
-== Overview
-
 The xref:dataweave-language-introduction.adoc[DataWeave Language] is a simple, powerful tool used to query and transform data inside of Mule. It can be implemented to:
 
 * graphically map fields by dragging one attribute to another, just like you were able to with the now deprecated xref:6@studio::datamapper-user-guide-and-reference.adoc[DataMapper], or
@@ -31,6 +29,10 @@ If you have projects that employ the deprecated DataMapper, a migration tool is 
 
 See xref:dataweave-migrator.adoc[DataWeave Migrator].
 ====
+
+== Compatibility
+
+include::release-notes::partial$dataweave/dw-mule-compatibility.adoc[]
 
 == Dataweave Reference Material
 
