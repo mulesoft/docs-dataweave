@@ -138,7 +138,7 @@ maxStackSize?: Number }`
 * `securityManager`: Identifies the `SecurityManager` to use in this execution.
   This security manager is composed by the current `SecurityManager`.
 * `loggerService`: The `LoggerService` to use in this execution.
-* maxStackSize: The maximum stack size.
+* `maxStackSize`: The maximum stack size.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
