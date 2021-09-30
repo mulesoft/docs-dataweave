@@ -1,7 +1,11 @@
-= DataWeave Format (dw)
 
+= DataWeave (dw) Format
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: format, dw, */dw, application/dw
 
-MIME Type: `application/dw`
+MIME type: `application/dw`
 
 ID: `dw`
 
@@ -57,47 +61,60 @@ The example uses the following XML snippet as input.
 ----
 
 
-// CONFIG PROPS ///////////////////////////////////////////////////////
-
 [[properties]]
 == Configuration Properties
 
-DataWeave supports the following configuration properties for the DataWeave (dw) format.
+DataWeave supports the following configuration properties for this format.
 
-=== Reader Properties (for dw)
 
-The DataWeave (dw) format accepts properties that provide instructions for reading input data.
+[[reader_properties]]
+=== Reader Properties
 
-[cols="2,1,1,2", options="header"]
-|===
-|Parameter |Type |Default|Description
-| `externalResources` | `Boolean` | `false` | Enables reading external entities on `readUrl`. Valid options are `true` or `false`.
-| `javaModule`| `Boolean` |`false`| Enables you to load Java module functions. Valid options are `true` or `false`.
-| `onlyData` | `Boolean` | `true` | Indicates whether to handle data only and not other types of content, such as functions. Valid  options are `true` or `false`. Note that the parser runs faster in the `onlyData` mode.
-|===
+This format accepts properties that provide instructions for reading input data.
 
-=== Writer Properties (for dw)
-
-The DataWeave (dw) format accepts properties that provide instructions for writing output data.
 
 [cols="1,1,1,3a", options="header"]
 |===
-| Parameter | Type | Default | Description
-| `bufferSize` | `Number` | `8192` | Size of the writer buffer.
-| `deferred` | `Boolean` | `false` | When set to `true`, DataWeave generates the output as a data stream, and the script's execution is deferred until it is consumed.
-  Valid values are `true` or `false`.
-| `ignoreSchema` | `Boolean` | `false` | Flag that indicates whether the DataWeave writer
-ignores the schema. Valid values are `true` or `false`.
-| `indent` | `String` | `'  '` | The string to use for indentation.
-| `maxCollectionSize` | `Number` | `-1` | The maximum number of elements allowed
-in an array or object. `-1` indicates that no limitation is set.
-|`onlyData` | `Boolean` | `true` | Indicates whether to handle data only and not other types of content, such as functions. Valid  options are `true` or `false`. Note that the parser runs faster in the `onlyData` mode.
+|Parameter |Type |Default|Description
+|`externalResources`  |`Boolean`|`false`|Enables the `readUrl` to read  external entities.
+
+Valid values are `true` or `false`.
+|`javaModule`  |`Boolean`|`false`|Enables Java module functions to load.
+
+Valid values are `true` or `false`.
+|`onlyData`  |`Boolean`|`false`|Handles only data and not other types of content, such as functions, when set to `true`. The DataWeave parser runs faster in the `onlyData` mode.
+
+Valid values are `true` or `false`.
+|`privileges`  |`String`|`''`|Accepts a comma-separated list of privileges to use in the format, such as `'Resources,Properties'`.
 |===
 
-[[mime_type]]
-== Supported MIME Types (for dw)
+[[writer_properties]]
+=== Writer Properties
 
-The DataWeave (dw) format supports the following MIME types.
+This format accepts properties that provide instructions for writing output data.
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+
+Valid values are `true` or `false`.
+|`ignoreSchema`  |`Boolean`|`false`|Ignores the schema when set to `true`.
+
+Valid values are `true` or `false`.
+|`indent`  |`String`|`'  '`|String to use for indenting.
+|`maxCollectionSize`  |`Number`|`-1`|Maximum number of elements allowed in an array or an object. `-1` indicates no limitation.
+|`onlyData`  |`Boolean`|`true`|Handles only data and not other types of content, such as functions, when set to `true`. The DataWeave parser runs faster in the `onlyData` mode.
+
+Valid values are `true` or `false`.
+|===
+
+
+[[mime_types]]
+== Supported MIME Types
+
+This format supports the following MIME types.
 
 [cols="1", options="header"]
 |===
