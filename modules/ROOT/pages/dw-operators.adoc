@@ -1,4 +1,4 @@
-DataWeave version 2= DataWeave Operators
+= DataWeave Operators
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
