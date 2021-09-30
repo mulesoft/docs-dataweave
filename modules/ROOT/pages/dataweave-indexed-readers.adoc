@@ -1,6 +1,6 @@
 = Indexed Readers in DataWeave
 
-In DataWeave some readers of input data (such as XML, JSON, and CSV) support an indexed strategy to avoid loading the whole document in memory while still allowing random access just like in the in-memory strategy. Indexed readers are used when the input is larger than a certain configurable threshold or if the `indexedReader` setting is set to `true`.
+In DataWeave, some readers of input data (such as XML, JSON, and CSV) support an indexed strategy to avoid loading the whole document in memory while still allowing random access just like in the in-memory strategy. DataWeave uses indexed readers when the input is larger than a certain configurable threshold or if the `indexedReader` setting is set to `true`.
 
 The trade-off for managing files that wouldn’t fit in memory is to write the files to a temporary file in disk and index the document content beforehand, which also takes time and disk space.
 
