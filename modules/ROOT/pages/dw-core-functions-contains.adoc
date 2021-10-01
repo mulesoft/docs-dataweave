@@ -239,5 +239,5 @@ ContainsString: payload.root.mystring contains /s[t|p]rin/
 
 Helper function that enables `contains` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

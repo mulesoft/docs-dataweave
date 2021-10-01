@@ -3,10 +3,11 @@
 This module contains core DataWeave functions for data transformations.
 It is automatically imported into any DataWeave script. For documentation
 on DataWeave _1.0_ functions, see
-https://docs.mulesoft.com/dataweave/3.9/dataweave-operators[DataWeave Operators].
+https://docs.mulesoft.com/mule-runtime/3.9/dataweave-operators[DataWeave Operators].
 
 == Functions
 
+[%header, cols="1,3"]
 |===
 | Name  | Description
 | xref:dw-core-functions-plusplus.adoc[++] | Concatenates two values.
@@ -16,7 +17,7 @@ https://docs.mulesoft.com/dataweave/3.9/dataweave-operators[DataWeave Operators]
 | xref:dw-core-functions-ceil.adoc[ceil] | Rounds a number up to the nearest whole number.
 | xref:dw-core-functions-contains.adoc[contains] | Returns `true` if an input contains a given value, `false` if not.
 | xref:dw-core-functions-daysbetween.adoc[daysBetween] | Returns the number of days between two dates.
-| xref:dw-core-functions-distinctby.adoc[distinctBy] | Iterates over an array and returns the unique elements in it.
+| xref:dw-core-functions-distinctby.adoc[distinctBy] | Iterates over the input and returns the unique elements in it.
 | xref:dw-core-functions-endswith.adoc[endsWith] | Returns `true` if a string ends with a provided substring, `false` if not.
 | xref:dw-core-functions-entriesof.adoc[entriesOf] | Returns an array of key-value pairs that describe the key, value, and any
 attributes in the input object.

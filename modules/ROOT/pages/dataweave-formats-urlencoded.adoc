@@ -64,7 +64,7 @@ The output is a DataWeave object that contains a collection of key-value pairs f
 
 This example shows how to generate URL Encoded data.
 
-=== Input
+==== Input
 
 The JSON object serves as the input payload to the DataWeave source.
 

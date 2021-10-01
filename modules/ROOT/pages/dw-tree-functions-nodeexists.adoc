@@ -11,7 +11,7 @@ endif::[]
 Returns `true` if any node in a given tree validates against
 the specified criteria.
 
-_Introduced in DataWeave version 2.2.2._
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 

@@ -11,7 +11,7 @@ endif::[]
 Returns the index of the first occurrence of an element that matches a
 condition within the array. If no element matches the condition, the function returns `-1`.
 
-_Introduced in DataWeave version 2.2.0._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -53,5 +53,5 @@ users indexWhere (item) -> item startsWith "Jul"
 
 Helper function that enables `indexWhere` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

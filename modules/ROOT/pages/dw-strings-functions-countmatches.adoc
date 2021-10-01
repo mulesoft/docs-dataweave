@@ -10,7 +10,7 @@ endif::[]
 
 Counts the number of matches in a string.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -49,7 +49,7 @@ output application/json
 
 Counts the number of times a regular expression matches text in a string.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -88,5 +88,5 @@ output application/json
 
 Helper function that enables `countMatches` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

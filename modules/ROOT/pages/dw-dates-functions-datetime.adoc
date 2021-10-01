@@ -11,7 +11,7 @@ endif::[]
 Creates a `DateTime` value from values specified for `month`, `day`, `hour`,
 `minutes`, `seconds`, and `timezone` fields.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -41,7 +41,7 @@ import * from dw::core::Dates
 output application/json
 ---
 {
-    newDateTime: dateTime({year: 2012, month: 10, day: 11, hour: 12, minutes: 30, seconds: 40 , timeZone: |-03:00|})
+    newDateTime: dateTime({year: 2012, month: 10, day: 11, hour: 12, minutes: 30, seconds: 40 , timeZone: &#124;-03:00&#124;})
 }
 ----
 

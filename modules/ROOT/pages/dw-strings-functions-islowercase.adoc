@@ -10,7 +10,7 @@ endif::[]
 
 Checks if the `text` contains only lowercase characters.
 
-_Introduced in DataWeave version 2.2.0._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -66,5 +66,5 @@ output application/json
 
 Helper function that enables `isLowerCase` to work with a `null` value.
 
-_Introduced in DataWeave version 2.2.0._
+_Introduced in DataWeave: 2.2.0._
 

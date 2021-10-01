@@ -10,7 +10,7 @@ endif::[]
 
 Returns the type of the given array. This function fails if the input is not an Array type.
 
-_Introduced in DataWeave version 2.3.0._
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 

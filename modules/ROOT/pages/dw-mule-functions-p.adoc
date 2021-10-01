@@ -14,7 +14,7 @@ Environment variables.
 
 
 For more on this topic, see
-https://docs.mulesoft.com/dataweave/latest/configuring-properties[Configure Properties].
+https://docs.mulesoft.com/mule-runtime/latest/configuring-properties[Configure Properties].
 
 === Parameters
 

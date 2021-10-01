@@ -1,11 +1,14 @@
 = Core Namespaces (dw::Core)
 
-[%header, cols="1,2a,3a"]
 |===
 | Namespace | Definition | Description
 
 | xsi
-| `+xsi = http://www.w3.org/2001/XMLSchema-instance+`
+| `xsi = http://www.w3.org/2001/XMLSchema-instance`
 | Namespace declaration of XMLSchema.
 
 |===
+
+
+
+

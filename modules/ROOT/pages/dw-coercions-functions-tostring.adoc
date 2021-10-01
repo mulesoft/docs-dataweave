@@ -12,7 +12,7 @@ A variant of `toString` that transforms a `Number` value
 (whole or decimal) into a `String` value and accepts a
 format, locale, and rounding mode value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -122,7 +122,7 @@ output application/json
 A variant of `toString` that transforms a `Date`, `DateTime`,
 `LocalTime`, `LocalDateTime`, or `Time` value into a `String` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -195,7 +195,7 @@ output application/json
 A variant of `toString` that transforms a `Binary` value
 into a `String` value with the specified encoding.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -245,7 +245,7 @@ A variant of `toString` that transforms a `TimeZone`, `Uri`,
 `Boolean`, `Period`, `Regex`, or `Key` value into a
 string.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -301,7 +301,7 @@ output application/json
 A variant of `toString` that joins an `Array` of characters
 into a single `String` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 

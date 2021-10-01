@@ -7,7 +7,7 @@ To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::core::Dates` to the header of your
 DataWeave script.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 == Functions
 
@@ -40,3 +40,5 @@ the first day of the _year_ specified in the input. It also sets the `Time` valu
 
 == Types
 * xref:dw-dates-types.adoc[Dates Types]
+
+

@@ -14,7 +14,7 @@ input to the beginning of the first day of the specified _week_.
 
 The function treats Sunday as the first day of the week.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -62,7 +62,7 @@ input to the beginning of the first day of the specified _week_.
 
 The function treats Sunday as the first day of the week.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -110,7 +110,7 @@ input to the first day of the specified _week_.
 
 The function treats Sunday as the first day of the week.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -123,7 +123,7 @@ _Introduced in DataWeave version 2.4.0._
 === Example
 
 This example changes the `Day` value (`06`) within
-the `Date` input to the first day of the week that contains `2020-10-06` (a Tuesday), which is `2020-10-04` (a Sunday).  
+the `Date` input to the first day of the week that contains `2020-10-06` (a Tuesday), which is `2020-10-04` (a Sunday).
 The `Day` value changes from `06` to `04`.
 
 ==== Source

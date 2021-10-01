@@ -14,7 +14,7 @@ Returns an arc cosine value that can range from `0.0` through pi.
 If the absolute value of the input is greater than `1`,
 the result is `null`.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 

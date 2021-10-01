@@ -13,7 +13,7 @@ capture groups. Returns the results in an array.
 
 
 Note that you can use `match` for pattern matching expressions that include
-https://docs.mulesoft.com/dataweave/latest/dataweave-pattern-matching[case
+https://docs.mulesoft.com/mule-runtime/latest/dataweave-pattern-matching[case
 statements].
 
 === Parameters
@@ -85,5 +85,5 @@ output application/json
 
 Helper function that enables `match` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

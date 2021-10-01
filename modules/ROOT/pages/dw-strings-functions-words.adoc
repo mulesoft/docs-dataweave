@@ -13,7 +13,7 @@ Returns an array of words from a string.
 
 Separators between words include blank spaces, new lines, and tabs.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -52,5 +52,5 @@ words("hello world\nhere\t\t\tdata-weave")
 
 Helper function that enables `words` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

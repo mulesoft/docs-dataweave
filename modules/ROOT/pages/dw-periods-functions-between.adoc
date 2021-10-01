@@ -17,7 +17,7 @@ The result of this method can be a negative period
 if the end date (`endDateExclusive`) is before the
 start date (`startDateInclusive`).
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
