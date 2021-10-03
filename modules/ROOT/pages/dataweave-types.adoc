@@ -7,7 +7,7 @@ endif::[]
 
 include::partial$eol-warning.adoc[]
 
-The xref:dataweave.adoc[DataWeave] language functions essentially as a template engine that describes an output structure through the use of elements that may be of various different types.
+The xref:index.adoc[DataWeave] language functions essentially as a template engine that describes an output structure through the use of elements that may be of various different types.
 
 This document covers the different types of objects you can use to construct your output.
 

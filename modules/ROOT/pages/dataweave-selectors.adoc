@@ -940,7 +940,7 @@ You can optionally also define the payload as an input directive in the header, 
 === Inbound Properties from a Mule Message
 
 You can take *Inbound Properties* from the Mule message that arrives to the DataWeave transformer and use them in your transform body. To refer to one of these, simply call it through the matching
-xref:mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
+xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
 
 In MEL, there are two supported syntaxes to call for an inbound property:
 
@@ -972,7 +972,7 @@ You can optionally also define the inbound property as a constant directive in t
 
 === Outbound Properties from a Mule Message
 
-You can take any *Outbound Properties* in the Mule message that arrives to the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching xref:mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
+You can take any *Outbound Properties* in the Mule message that arrives to the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
 
 In MEL, there are two supported syntaxes to call an outbound property:
 
@@ -1006,7 +1006,7 @@ You can optionally also define the outbound property as a constant directive in 
 === Flow Variables from a Mule Message
 
 You can take any *Flow Variable* in the Mule message that arrives at the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching
-xref:mule-expression-language-mel.adoc[Mule Expression Language (MEL)]  expression.
+xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)]  expression.
 
 In MEL, there are two supported syntaxes to call a flow variable:
 
@@ -1064,4 +1064,4 @@ You can reference any *Property* (System or Spring) that exists in the server wh
 * xref:dataweave-types.adoc[DataWeave Types]
 * xref:dataweave-formats.adoc[DataWeave Formats]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.8@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]

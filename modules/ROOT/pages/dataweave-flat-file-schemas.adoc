@@ -7,7 +7,7 @@ endif::[]
 
 include::partial$eol-warning.adoc[]
 
-xref:dataweave.adoc[DataWeave] allows you to process several different xref:dataweave-formats.adoc[types of data]. For most of these types, you can import a schema that describes the input structure in order to have access to valuable metadata at design time. See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+xref:index.adoc[DataWeave] allows you to process several different xref:dataweave-formats.adoc[types of data]. For most of these types, you can import a schema that describes the input structure in order to have access to valuable metadata at design time. See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 DataWeave uses a YAML format called *FFD (for Flat File Definition)* to represent flat file schemas. The FFD format is very flexible to support a range of use cases, but is based around the concepts of *elements*, *composites*, *segments*, *groups* and *structures*.
 
@@ -37,7 +37,7 @@ Here are the different types of components that make up a flat file schema, goin
 
 
 ////
-If you have a single structure or segment definition in an FFD, that structure or segment definition will be used automatically whenever you use the FFD as metadata for a xref:dataweave.adoc[DataWeave] transformer.
+If you have a single structure or segment definition in an FFD, that structure or segment definition will be used automatically whenever you use the FFD as metadata for a xref:index.adoc[DataWeave] transformer.
 ////
 
 
@@ -128,7 +128,7 @@ This example contains 3 segments, each with a list of defined elements . It then
 
 === Multiple Structures
 
-If you have multiple structures or segment definitions in an FFD, when you apply your schema to an metadata description on a xref:dataweave.adoc[Transform Message component] you'll need to specify which one you want to use.
+If you have multiple structures or segment definitions in an FFD, when you apply your schema to an metadata description on a xref:index.adoc[Transform Message component] you'll need to specify which one you want to use.
 
 image::dataweave-flat-file-schemas-4e1eb.png[]
 
@@ -723,7 +723,7 @@ Here's a quick step by step example of how – once you have built out your full
 . Download the sample schema file link:{attachmentsdir}/Check.ffd[here].
 
 . In Anypoint Studio click *File* > *New* > *Mule Project* to create a new project, give it whatever name you wish and click *Finish*.
-. Drag an xref:http-connector.adoc[HTTP Connector] from the palette to your empty canvas, then a *Transform Message Component*.
+. Drag an xref:3.8@mule-runtime::http-connector.adoc[HTTP Connector] from the palette to your empty canvas, then a *Transform Message Component*.
 +
 image::dataweave-flat-file-schemas-3f67f.png[]
 
