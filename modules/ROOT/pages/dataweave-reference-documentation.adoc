@@ -1376,7 +1376,7 @@ You can optionally also define the payload as an input directive in the header, 
 ==== Inbound Properties from a Mule Message
 
 You can take *Inbound Properties* from the Mule message that arrives to the DataWeave transformer and use them in your transform body. To refer to one of these, simply call it through the matching
-xref:xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
+Mule Expression Language (MEL) expression.
 
 In MEL, there are two supported syntaxes to call for an inbound property:
 
