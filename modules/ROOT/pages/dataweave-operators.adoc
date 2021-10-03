@@ -2831,4 +2831,4 @@ You can change the format of a date to fit another standard, see <<Coerce to dat
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
 * xref:dataweave-memory-management.adoc[DataWeave Memory Management]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
