@@ -5,10 +5,10 @@ endif::[]
 :keywords: studio, anypoint, esb, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
 :page-aliases: 3.9@mule-runtime::dataweave-language-introduction.adoc
 
-The xref:dataweave.adoc[DataWeave] Language is a powerful template engine that allows you to transform data to and from any kind of format (XML, CSV, JSON, Pojos, Maps, etc). In Anypoint Studio, this language can be used in:
+The DataWeave language is a powerful template engine that allows you to transform data to and from any kind of format (XML, CSV, JSON, Pojos, Maps, etc). In Anypoint Studio, this language can be used in:
 
 * The *Transform Message Component*, described in xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
-* Any Mule component that accepts Mule Expression Language, through xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* Any Mule component that accepts Mule Expression Language, through xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
 
 
 
@@ -982,11 +982,11 @@ Which takes two parameters:
 Please note that only the payload returned by the invoked flow will be assigned (i.e. all other message's properties such as flowVars and sessionVars will not be overridden when using the lookup function).
 
 [NOTE]
-The `lookup` function does not support calling xref:flows-and-subflows.adoc#types-of-flows[subflows].
+The `lookup` function does not support calling xref:3.9@mule-runtime::flows-and-subflows.adoc#types-of-flows[subflows].
 
 == Calling Global MEL Functions from DataWeave Code
 
-If you define a global xref:mule-expression-language-mel.adoc[Mule Expression Language] (MEL) function in your Mule project, you can then invoke it anywhere in your DataWeave code, without need for any special syntax.
+If you define a global xref:3.9@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language] (MEL) function in your Mule project, you can then invoke it anywhere in your DataWeave code, without need for any special syntax.
 
 To create one such global function, you must edit your Mule project's XML file and enclose any functions that you wish to define in the following set of tags, which must be placed in the global elements section, before any of the flows are defined.
 
@@ -1279,4 +1279,4 @@ Likewise, whenever you transform from XML to JSON, make sure the resulting outpu
 * xref:dataweave-quickstart.adoc[DataWeave quickstart guide]
 * xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]

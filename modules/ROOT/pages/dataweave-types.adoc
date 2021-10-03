@@ -5,7 +5,7 @@ endif::[]
 :keywords: studio, anypoint, esb, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
 :page-aliases: 3.9@mule-runtime::dataweave-types.adoc
 
-The xref:dataweave.adoc[DataWeave] language functions essentially as a template engine that describes an output structure through the use of elements that may be of various different types.
+DataWeave functions essentially as a template engine that describes an output structure through the use of elements that may be of various different types.
 
 This document covers the different types of objects you can use to construct your output.
 
