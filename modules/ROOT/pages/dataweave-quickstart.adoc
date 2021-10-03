@@ -533,5 +533,5 @@ If you open the *Preview* section, you can see what this transform would output,
 * xref:dataweave-types.adoc[DataWeave Types]
 * xref:dataweave-formats.adoc[DataWeave Formats]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
-* xref:xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
 * Migrate your old DataMapper transforms automatically by using the xref:dataweave-migrator.adoc[DataWeave Migrator Tool]
