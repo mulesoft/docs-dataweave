@@ -11,7 +11,7 @@ The xref:dataweave-language-introduction.adoc[DataWeave Language] is a simple, p
 
 DataWeave supports a variety of transformations: simple *one-to-one*, *one-to-many* or *many-to-one* mappings from an assortment of data structures, and can complete more elaborate mappings including normalization, grouping, joins, partitioning, pivoting and filtering. With DataWeave and Mule Expression Language (MEL), you can take your application's data transformation ability to the next level.
 
-You can also call upon the power of DataWeave language within _other_ components by using xref:3.9@mule-runtime::xref:3.9@mule-runtime::mel-dataweave-functions.adoc[Mule Expression Language DataWeave Functions].
+You can also call upon the power of DataWeave language within _other_ components by using xref:3.9@mule-runtime::mel-dataweave-functions.adoc[Mule Expression Language DataWeave Functions].
 
 The language is tightly integrated with Mule and Anypoint Studio. Use the *Transform Message* component, which allows you to use the language to query and transform data through DataWeave. Any mappings you perform through the graphical interface will be expressed in DataWeave code in real-time.
 
