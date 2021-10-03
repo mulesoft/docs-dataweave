@@ -3161,4 +3161,4 @@ payload.results map
 * xref:dataweave-types.adoc[DataWeave Types]
 * xref:dataweave-formats.adoc[DataWeave Formats]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.8@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]

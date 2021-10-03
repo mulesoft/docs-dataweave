@@ -14,7 +14,7 @@ When dealing with processing large files through DataWeave in Mule, there are a 
 
 DataWeave uses the system's memory as a buffer while processing a transformation unless a certain threshold is exceeded, in that case it resorts to using the system's hard disk as a buffer. By default, this threshold is set at *1572864 bytes*, but this value may be changed. The value refers to memory usage of each individual Transform Message component, not to an aggregate of all the ones in the project.
 
-To change the threshold value at which memory is no longer used as a buffer, you must add a system property `com.mulesoft.dw.buffersize` and assign it the number (in bytes) of your new threshold.  System properties may be defined in several ways, for example by editing the `mule-app.properties` file located in your project's `src/main/app` folder, see xref:configuring-properties.adoc#system-properties[system properties] for more details and more ways you can set these.
+To change the threshold value at which memory is no longer used as a buffer, you must add a system property `com.mulesoft.dw.buffersize` and assign it the number (in bytes) of your new threshold.  System properties may be defined in several ways, for example by editing the `mule-app.properties` file located in your project's `src/main/app` folder, see xref:3.8@mule-runtime::configuring-properties.adoc#system-properties[system properties] for more details and more ways you can set these.
 
 The value you assign to this property affects your entire Mule application, affecting each instance of the Transform Message component individually.
 

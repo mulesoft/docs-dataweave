@@ -7,7 +7,7 @@ endif::[]
 
 include::partial$eol-warning.adoc[]
 
-In xref:dataweave.adoc[DataWeave] you can carry out many different operations on the elements of a DataWeave transform. This document serves as a reference for all of the available operators in the DataWeave language. See xref:dataweave-types.adoc#dataweave-operators-sorted-by-type[all operators sorted by type]
+In xref:index.adoc[DataWeave] you can carry out many different operations on the elements of a DataWeave transform. This document serves as a reference for all of the available operators in the DataWeave language. See xref:dataweave-types.adoc#dataweave-operators-sorted-by-type[all operators sorted by type]
 
 * For an introduction to the essentials of the language, see xref:dataweave-language-introduction.adoc[DataWeave Language Intro]
 * For information on DataWeave's accepted types, see xref:dataweave-types.adoc[DataWeave Types]
@@ -2770,4 +2770,4 @@ You can change the format of a date to fit another standard, see <<Coerce to dat
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
 * xref:dataweave-memory-management.adoc[DataWeave Memory Management]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.8@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
