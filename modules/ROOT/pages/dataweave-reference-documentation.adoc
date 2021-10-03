@@ -460,7 +460,7 @@ Note that both the keys and the values may be *expressions*.
 
 == Streaming
 
-DataWeave supports streaming a large payload. No configuration is necessary in the DataWeave code itself, but other components need to be set up for this to work. See xref:dataweave-streaming.adoc[DataWeave Streaming].
+DataWeave supports streaming a large payload. No configuration is necessary in the DataWeave code itself, but other components need to be set up for this to work.
 
 
 == Example Transformation
@@ -4222,5 +4222,4 @@ You can reference any *Property* (System or Spring) that exists in the server wh
 
 * xref:5@studio::using-dataweave-in-studio.adoc[Using DataWeave in Studio]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:dataweave-tutorial.adoc[DataWeave Tutorial]
 * https://www.mulesoft.com/platform/studio[Anypoint Studio]
