@@ -1408,7 +1408,7 @@ You can optionally also define the inbound property as a constant directive in t
 
 ==== Outbound Properties from a Mule Message
 
-You can take any *Outbound Properties* in the Mule message that arrives to the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching xref:xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
+You can take any *Outbound Properties* in the Mule message that arrives to the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
 
 In MEL, there are two supported syntaxes to call an outbound property:
 
