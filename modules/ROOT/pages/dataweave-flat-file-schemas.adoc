@@ -127,7 +127,7 @@ This example contains 3 segments, each with a list of defined elements . It then
 
 === Multiple Structures
 
-If you have multiple structures or segment definitions in an FFD, when you apply your schema to an metadata description on a xref:index.adoc[Transform Message component] you'll need to specify which one you want to use.
+If you have multiple structures or segment definitions in an FFD, when you apply your schema to an metadata description on a Transform Message component you'll need to specify which one you want to use.
 
 image::dataweave-flat-file-schemas-4e1eb.png[]
 
