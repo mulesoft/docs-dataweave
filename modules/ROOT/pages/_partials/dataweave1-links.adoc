@@ -12,7 +12,7 @@ the Mule Runtime version selector in the table of contents.
 //tag::dataweave1LandingPage[]
 Before you begin, note that DataWeave version 2 is for Mule 4 apps. For a Mule 3 app,
 refer to the
-xref:3.9@mule-runtime::dataweave.adoc[DataWeave version 1 documentation set]
+xref:1.2@index.adoc[DataWeave version 1 documentation set]
 in the Mule 3.9 documentation. For other Mule versions, you can use
 the version selector for the Mule Runtime table of contents.
 //end::dataweave1LandingPage[]
