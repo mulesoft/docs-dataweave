@@ -8,7 +8,7 @@ endif::[]
 include::partial$eol-warning.adoc[]
 
 
-Instead of using the Studio UI to add a xref:index.adoc[DataWeave] script to your Mule projects, you can write a xref:6@studio::transform-message-component-concept-studio.adoc[Transform Message component] in XML, either through the XML tab in Studio or with an external editor. In fact, certain advanced features (such as the `mode` attribute  used for memory management) are only configurable through the XML.
+Instead of using the Studio UI to add a DataWeave script to your Mule projects, you can write a xref:6@studio::transform-message-component-concept-studio.adoc[Transform Message component] in XML, either through the XML tab in Studio or with an external editor. In fact, certain advanced features (such as the `mode` attribute  used for memory management) are only configurable through the XML.
 
 //TODO: WHAT ADVANCED FEATURES?
 
