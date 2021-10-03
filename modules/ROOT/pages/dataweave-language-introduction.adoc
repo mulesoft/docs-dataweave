@@ -7,7 +7,7 @@ endif::[]
 
 include::partial$eol-warning.adoc[]
 
-The xref:index.adoc[DataWeave] Language is a powerful template engine that allows you to transform data to and from any kind of format (XML, CSV, JSON, Pojos, Maps, etc). In Anypoint Studio, this language can be used in:
+The DataWeave language is a powerful template engine that allows you to transform data to and from any kind of format (XML, CSV, JSON, Pojos, Maps, etc). In Anypoint Studio, this language can be used in:
 
 * The *Transform Message Component*, described in xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * Any Mule component that accepts Mule Expression Language, through xref:3.8@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
