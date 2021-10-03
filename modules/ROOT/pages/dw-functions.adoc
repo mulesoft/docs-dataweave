@@ -103,6 +103,6 @@ Functions can be passed as arguments. Some parameters within function signatures
 
 xref:dataweave-language-guide.adoc#functions[Functions]
 
-xref:dataweave.adoc[About DataWeave]
+xref:index.adoc[DataWeave Language]
 
 xref:dataweave-quickstart.adoc[DataWeave Quickstart]
