@@ -59,4 +59,4 @@ The above script fails with the error *Cannot coerce :string to :object*
 * xref:dataweave-formats.adoc[DataWeave Formats]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.9@mule-runtime::xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]

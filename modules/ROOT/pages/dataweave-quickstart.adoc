@@ -94,7 +94,7 @@ It is always recommended you set up the other components of your flow before you
 
 . In Anypoint Studio click *File* > *New* > *Mule Project* to create a new project, give the project a name, and click *Finish*.
 . If you haven't already, download and extract the link:{attachmentsdir}/dw-quickstart-bundle.zip[dw-quickstart-bundle.zip] and drag both files in it to the `src/main/resources` folder of your new Mule project.
-. Drag an xref:http-connector.adoc[HTTP Connector] from the palette onto your empty canvas, followed by a *Transform Message* component, then another HTTP Connector.
+. Drag an xref:3.9@mule-runtime::http-connector.adoc[HTTP Connector] from the palette onto your empty canvas, followed by a *Transform Message* component, then another HTTP Connector.
 +
 image::dataweave-quickstart-5a4cb.png[]
 . Click on the first HTTP Connector to open its properties editor, then click the green plus sign icon to create an HTTP connector configuration. In the popup, leave the default values for all fields--just click *OK*.
@@ -533,5 +533,5 @@ If you open the *Preview* section, you can see what this transform would output,
 * xref:dataweave-types.adoc[DataWeave Types]
 * xref:dataweave-formats.adoc[DataWeave Formats]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
 * Migrate your old DataMapper transforms automatically by using the xref:dataweave-migrator.adoc[DataWeave Migrator Tool]

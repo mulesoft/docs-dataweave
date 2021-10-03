@@ -1049,4 +1049,4 @@ See xref:dataweave-flat-file-schemas.adoc[Flat File Schemas] for more detailed i
 * xref:dataweave-memory-management.adoc[DataWeave Memory Management]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
