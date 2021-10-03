@@ -1279,4 +1279,4 @@ Likewise, whenever you transform from XML to JSON, make sure the resulting outpu
 * xref:dataweave-quickstart.adoc[DataWeave quickstart guide]
 * xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
+* xref:3.9@mule-runtime::mel-dataweave-functions.adoc[MEL DataWeave Functions]
