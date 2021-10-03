@@ -74,7 +74,7 @@ image::add-metadatadw.png[]
 +
 image::ex2outputdw.png[]
 
-. Drag a xref:web-service-consumer.adoc[Web Service Consumer] to your flow. Create a global configuration for it by clicking the green plus sign in its properties editor. In the *WSDL Location* field, paste the following URL: **http://tshirt-service.cloudhub.io/?wsdl**.  Note that all of the other fields in the configuration element are completed automatically when you do this. Then click *Ok*.
+. Drag a Web Service Consumer to your flow. Create a global configuration for it by clicking the green plus sign in its properties editor. In the *WSDL Location* field, paste the following URL: **http://tshirt-service.cloudhub.io/?wsdl**.  Note that all of the other fields in the configuration element are completed automatically when you do this. Then click *Ok*.
 . Back in the Web Service Consumer's properties editor, select *OrderTshirt* in the *Operation* field. Note that while the Web Service Consumer element is selected in your canvas, the metadata explorer should now show the set of fields that are expected in the payload as inputs.
 
 +
