@@ -80,7 +80,7 @@ DataWeave supports the following formats as input and output:
 [[dw_readers_writers]]
 == DataWeave Readers
 
-DataWeave can read input data as a whole by loading it into memory or by indexing it in local storage and, for some data formats, read data sequentially in parts by streaming the input. The indexed reading strategy implements a mechanism to avoid out-of-memory issues when processing large files. The streaming strategy can improve performance but restricts file access to be sequentially, because you can access only the part of the file that is being read and stored in memory.
+DataWeave can read input data as a whole by loading it into memory or by indexing it in local storage and, for some data formats, DataWeave can read data sequentially in parts by streaming the input. The indexed reading strategy implements a mechanism to avoid out-of-memory issues when processing large files. The streaming strategy can improve performance but restricts file access to sequential access (which disallows random access) because you can access only the part of the file that is being read and stored in memory.
 
 [[streaming]]
 [%header%autowidth.spread,cols="a,a,a", options="header"]
