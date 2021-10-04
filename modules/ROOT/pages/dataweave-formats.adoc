@@ -80,44 +80,36 @@ DataWeave supports the following formats as input and output:
 [[dw_readers_writers]]
 == DataWeave Readers
 
-DataWeave can read input data as a whole in-memory, in indexed fashion,
-and for some data formats, part-by-part by streaming the input. When attempting
-to read a large file, it is possible to run out of memory or to impact
-performance negatively. Streaming can improve performance but impacts access to file.
-
-* Indexed and In-Memory: +
-Allow for random access to data because both
-strategies parse the entire document. When using these strategies, a DataWeave
-script can access any part of the resulting value at any time.
-
-** Indexed: +
-Uses indexes over the disk.
-+
-DataWeave can only read the following formats in the indexed mode:
-+
-CSV, JSON, XML (starting in Mule 4.3.0)
-+
-Note that DataWeave _does not_ support reading Excel (XLSX) input in the indexed mode.
-
-For details, see xref:dataweave-indexed-readers.adoc[Indexed Readers in DataWeave].
-
-** In-Memory: +
-Parses the entire document in memory.
-+
-DataWeave can read all supported formats using the in-memory mode.
+DataWeave can read input data as a whole by loading it into memory or by indexing it in local storage and, for some data formats, DataWeave can read data sequentially in parts by streaming the input. The indexed reading strategy implements a mechanism to avoid out-of-memory issues when processing large files. The streaming strategy can improve performance but restricts file access to sequential access (which disallows random access) because you can access only the part of the file that is being read and stored in memory.
 
 [[streaming]]
-* Streaming: +
-Allows for sequential access to the file. This strategy partitions
-the input document into smaller items and accesses its data sequentially,
-storing the current item in memory. A DataWeave selector can access the portion
-of the file that is getting read.
-+
-DataWeave supports streaming only for the following formats:
-+
-CSV, JSON, Excel  (XLSX, starting in Mule 4.2.2), XML (starting in Mule 4.3.0)
+[%header%autowidth.spread,cols="a,a,a", options="header"]
+|===
+| Read Strategy | Description | Supported Formats
+<.^| In-Memory
+| This strategy parses the entire document and loads it into memory, enabling random access to data. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
+| DataWeave can read all supported formats using this strategy.
+<.^| Indexed
+| This strategy parses the entire document and uses disk space to avoid out-of-memory issues on large files, enabling random access to data. When using this strategy, a DataWeave script can access any part of the resulting value at any time.
 
-For details, see xref:dataweave-streaming.adoc[Streaming in DataWeave].
+When processing a `String` with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. This feature works only with `JSON` and `XML` input data.
+
+For additional details, see xref:dataweave-indexed-readers.adoc[Indexed Readers in DataWeave]
+|
+* `CSV`
+* `JSON`
+* `XML`
+<.^| Streaming
+| This strategy partitions the input document into smaller items and accesses the data sequentially,
+storing the current item in memory. A DataWeave selector can access only the portion of the file that is getting read.
+
+For additional details, see xref:dataweave-streaming.adoc[Streaming in DataWeave]
+|
+* `CSV`
+* `JSON`
+* `Excel` (XLSX)
+* `XML`
+|===
 
 [[reader_writer_properties]]
 == Using Reader and Writer Properties
