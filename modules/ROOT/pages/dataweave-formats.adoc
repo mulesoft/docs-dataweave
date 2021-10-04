@@ -94,17 +94,7 @@ DataWeave can read input data as a whole by loading it into memory or by indexin
 
 When processing a `String` with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. This feature works only with `JSON` and `XML` input data.
 
-You can configure the threshold that DataWeave uses to determine when to process a string using this splitting strategy by modifying the following system property:
-
-```
-com.mulesoft.dw.max_memory_allocation
-```
-
-Note that using this feature has a negative impact on performance due to splitting strings and accessing them through local storage. If your environment has enough resources to load all content in memory, you can also disable this string management feature completely by setting the value of the following system property to `false`:
-
-```
-com.mulesoft.dw.buffered_char_sequence.enabled
-```
+For additional details, see xref:dataweave-indexed-readers.adoc[Indexed Readers in DataWeave]
 |
 * `CSV`
 * `JSON`
