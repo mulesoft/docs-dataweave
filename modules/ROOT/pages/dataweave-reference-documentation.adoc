@@ -1442,7 +1442,7 @@ You can optionally also define the outbound property as a constant directive in 
 ==== Flow Variables from a Mule Message
 
 You can take any *Flow Variable* in the Mule message that arrives at the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching
-xref:xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)]  expression.
+xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)]  expression.
 
 In MEL, there are two supported syntaxes to call a flow variable:
 
@@ -3475,7 +3475,7 @@ c: |2003-10-01T23:57:59Z| + |P1Y|
 
 ==== Global MEL Functions
 
-Your DataWeave code can call any function you define as a global xref:xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] function, as long as it is correctly defined in the Mule Project where your Transform Message element sits.
+Your DataWeave code can call any function you define as a global xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] function, as long as it is correctly defined in the Mule Project where your Transform Message element sits.
 
 Refer to xref:5@studio::using-dataweave-in-studio.adoc#calling-global-mel-functions-from-dataweave-code[Using DataWeave in Studio].
 
