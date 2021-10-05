@@ -730,7 +730,7 @@ To avoid name collisions, you can prepend `variables`:
 
 `variables.<myVariableName>`
 
-For more on Mule variables, see xref:4.2@mule-runtime::mule-runtime::about-mule-variables.adoc[Variables in Mule Apps].
+For more on Mule variables, see xref:4.2@mule-runtime::about-mule-variables.adoc[Variables in Mule Apps].
 
 | *Error object*
 
