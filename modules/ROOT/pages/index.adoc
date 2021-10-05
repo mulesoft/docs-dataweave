@@ -12,4 +12,4 @@ include::partial$dataweave-intro.adoc[]
 xref:dataweave-quickstart.adoc[the quickstart].
 * To learn about DataWeave version 2 for Mule 4.1 and later, visit xref:dataweave-language-guide.adoc[the language guide].
 * To look up reference information about DataWeave version 2 operators and functions, visit xref:dw-functions.adoc[the reference guide].
-* To find information about DataWeave 1.0 for Mule 3.9 and earlier, visit xref:3.9@mule-runtime::dataweave.adoc[the DataWeave 1.0 documentation].
+* To find information about DataWeave 1.0 for Mule 3.9 and earlier, visit xref:1.2@index.adoc[the DataWeave 1.0 documentation].
