@@ -43,6 +43,7 @@ The following example shows a minified array of numbers `1`. DataWeave supports 
 [1,1,1,1,1,1,...]
 ----
 
+[[large-strings-management]]
 == Large Strings Management
 
 When processing a `String` with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. This feature works only with `JSON` and `XML` input data.
