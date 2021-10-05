@@ -714,7 +714,7 @@ a| `payload`, for example: `payload.name`
 If the `payload` is `{"name" : "somebody"}`, `payload.name` returns `"somebody"`.
 
 For more on the Mule payload, see
-xref:4.2@mule-runtime::mule-runtime::about-mule-message#_message_payload[Message Payload].
+xref:4.2@mule-runtime::about-mule-message#_message_payload[Message Payload].
 
 | *Attribute*
 a| `attributes.<myAttributeName>`
