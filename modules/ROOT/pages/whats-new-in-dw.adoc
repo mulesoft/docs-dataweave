@@ -2,8 +2,8 @@
 
 The 2.4 version of DataWeave introduces the following features:
 
-* Ability to read larger-than-memory strings automatically. When you are using the indexed reader strategy and processing a String with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. Related reader properties are `com.mulesoft.dw.max_memory_allocation` and `com.mulesoft.dw.buffered_char_sequence.enabled`. Refer to xref:dataweave-formats.adoc[Supported Data Formats].
-* New reader and writer properties for working with data formats. For example, the XML writer now enables you to define namespaces at the root level. 
+* Ability to read larger-than-memory strings automatically. When you are using the indexed reader strategy and processing a String with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. Related reader properties are `com.mulesoft.dw.max_memory_allocation` and `com.mulesoft.dw.buffered_char_sequence.enabled`. Refer to xref:dataweave-indexed-readers.adoc#large-strings-management[Indexed Readers in DataWeave].
+* New reader and writer properties for working with data formats. For example, the XML writer now enables you to define namespaces at the root level.
 * Many new modules, functions, types, annotations, and variables. Some are experimental and subject to change in future releases.
 * A number of functions are overloaded to introduce new helper functions for
 handling `null` values.
@@ -17,7 +17,7 @@ DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 relea
 DataWeave introduces the following reader and writer properties:
 
 * DataWeave (dw) reader property: `privileges` enables you to provide a comma-separated list of privileges to use in the format, such as `'Resources,Properties'`.
-* Excel (XLSX) reader property: `tableLimit` enables you to set position of the last column in each row. 
+* Excel (XLSX) reader property: `tableLimit` enables you to set position of the last column in each row.
 * YAML writer property: `writeDeclaration` enables you to write the header declaration.
 * XML writer properties: `defaultNamespace` specifies the default namespaces of the output XML , and `writeDeclaredNamespaces` marks the namespaces to declare in the root element of the XML.
 
