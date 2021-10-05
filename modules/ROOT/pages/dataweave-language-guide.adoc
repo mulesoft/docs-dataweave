@@ -67,7 +67,7 @@ See xref:4.2@mule-runtime::transform-component-about.adoc[Transform Message Comp
 +
 * Many Mule message processors support DataWeave expressions, allowing you to access and use core DataWeave functions on parts of the Mule event that you need.
 +
-See the inline DataWeave script examples for Set Payload in xref:dataweave-language-introduction.adoc[DataWeave Scripts]. For other examples, see the `message` attribute in  xref:logger-component-reference.adoc[Logger Component] examples, Set Payload (`<ee:set-payload>`) and Set Variable components in the xref:for-each-scope-concept.adoc[For Each Scope] examples, and xref:connectors::file/file-write.adoc[<file:content>] in the File Connector documentation.
+See the inline DataWeave script examples for Set Payload in xref:dataweave-language-introduction.adoc[DataWeave Scripts]. For other examples, see the `message` attribute in  xref:mule-runtime::logger-component-reference.adoc[Logger Component] examples, Set Payload (`<ee:set-payload>`) and Set Variable components in the xref:mule-runtime::for-each-scope-concept.adoc[For Each Scope] examples, and xref:connectors::file/file-write.adoc[<file:content>] in the File Connector documentation.
 
 == See Also
 

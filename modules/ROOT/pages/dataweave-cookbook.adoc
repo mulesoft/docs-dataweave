@@ -130,6 +130,6 @@ the `..*` descendants selector on a key to select values from a flattened list.
 
 == See Also
 
-* xref:dataweave.adoc[DataWeave Language]
+* xref:index.adoc[DataWeave Language]
 * xref:dataweave-language-introduction.adoc[DataWeave Scripts]
 * xref:dw-functions.adoc[DataWeave Reference]
