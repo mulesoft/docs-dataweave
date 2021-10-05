@@ -761,7 +761,7 @@ Core components accept DataWeave selectors and short DataWeave expressions
 in their *fx* fields.
 +
 To learn about the components, you can start from
-xref:mule-components.adoc[Mule Components].
+xref:mule-runtime::mule-components.adoc[Mule Components].
 +
 To try out sample data in a running Mule app, without relying on external
 data sources, you can use these Core components with or without Transform
@@ -770,7 +770,7 @@ Message:
 ** xref:4.2@mule-runtime::set-payload-transformer-reference.adoc[Set Payload] to provide
 content for the payload of a Mule event.
 ** xref:4.2@mule-runtime::variable-transformer-reference.adoc[Set Variable] to create content in
-a Mule event xref:about-mule-variables.adoc[variable].
+a Mule event xref:mule-runtime::about-mule-variables.adoc[variable].
 ** xref:4.2@mule-runtime::scheduler-concept.adoc[Scheduler] to trigger the regular generation of Mule events.
 ** xref:4.2@mule-runtime::logger-component-reference.adoc[Logger] to view output and issues logged
 in the Studio console.

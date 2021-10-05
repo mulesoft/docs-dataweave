@@ -719,7 +719,7 @@ xref:4.2@mule-runtime::about-mule-message#_message_payload[Message Payload].
 | *Attribute*
 a| `attributes.<myAttributeName>`
 
-For examples, see xref:about-mule-message#_attributes[Attributes].
+For examples, see xref:mule-runtime::about-mule-message#_attributes[Attributes].
 
 | *Variable*
 a|
