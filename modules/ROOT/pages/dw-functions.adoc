@@ -74,6 +74,6 @@ output application/json
 [[see_also]]
 == See Also
 
-xref:dataweave.adoc[About DataWeave]
+xref:index.adoc[About DataWeave]
 
 xref:dataweave-quickstart.adoc[DataWeave Quickstart]

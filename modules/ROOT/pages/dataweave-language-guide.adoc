@@ -61,17 +61,17 @@ You write DataWeave expressions and scripts within message processors (component
 
 * The Transformer component is for creating scripts that perform data transformations, whether simple format conversions or complex data extraction and transformation processes.
 +
-See xref:transform-component-about.adoc[Transform Message Component].
+See xref:mule-runtime::transform-component-about.adoc[Transform Message Component].
 +
 * Many Mule message processors support DataWeave expressions, allowing you to access and use core DataWeave functions on parts of the Mule event that you need.
 +
-See the inline DataWeave script examples for Set Payload in xref:dataweave-language-introduction.adoc[DataWeave Scripts]. For other examples, see the `message` attribute in  xref:logger-component-reference.adoc[Logger Component] examples, Set Payload (`<ee:set-payload>`) and Set Variable components in the xref:for-each-scope-concept.adoc[For Each Scope] examples, and xref:connectors::file/file-write.adoc[<file:content>] in the File Connector documentation.
+See the inline DataWeave script examples for Set Payload in xref:dataweave-language-introduction.adoc[DataWeave Scripts]. For other examples, see the `message` attribute in  xref:mule-runtime::logger-component-reference.adoc[Logger Component] examples, Set Payload (`<ee:set-payload>`) and Set Variable components in the xref:mule-runtime::for-each-scope-concept.adoc[For Each Scope] examples, and xref:connectors::file/file-write.adoc[<file:content>] in the File Connector documentation.
 
 == See Also
 
-* xref:about-mule-event.adoc[Mule Events]
+* xref:mule-runtime::about-mule-event.adoc[Mule Events]
 * xref:dataweave-formats.adoc[DataWeave Output Formats and Writer Properties]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
 * xref:dataweave-language-introduction.adoc[DataWeave Scripts]
-* xref:about-components.adoc[Core Components]
+* xref:mule-runtime::about-components.adoc[Core Components]
 * xref:connectors::index.adoc[Connectors and Modules]
