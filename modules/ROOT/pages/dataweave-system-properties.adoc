@@ -22,11 +22,11 @@ output application/dw
 |`com.mulesoft.dw.indexsize`|`Number`|`1572864` (1.5 MB)|Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 |`com.mulesoft.dw.buffersize`|`Number` (in bytes)|`8192` bytes (8 KB)|Sets the size (in bytes) of in-memory input and output buffers that DataWeave uses to retain processed inputs and outputs.
 DataWeave stores payloads that exceed this size in temporary files `dw-buffer-index-${count}.tmp` and `dw-buffer-output-${count}.tmp`.
-See xref:dataweave-memory-management.adoc [DataWeave Memory Management].
-|`com.mulesoft.dw.directbuffer.disable`|`Boolean`|`false`|Controls whether DataWeave uses off-heap memory (the default) or heap memory. DataWeave uses off-heap memory for internal buffering, which can cause issues on systems that have only a small amount of memory. See xref:dataweave-memory-management.adoc [DataWeave Memory Management].
-|`com.mulesoft.dw.memory_pool_size`|`Number`|`60`|Sets the number of slots in the memory pool. DataWeave buffers use off-heap memory from a pool, up to a defined size (`com.mulesoft.dw.memory_pool_size` * `com.mulesoft.dw.max_memory_allocation`). DataWeave allocates the remainder using heap memory. See xref:dataweave-memory-management.adoc [DataWeave Memory Management].
+See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
+|`com.mulesoft.dw.directbuffer.disable`|`Boolean`|`false`|Controls whether DataWeave uses off-heap memory (the default) or heap memory. DataWeave uses off-heap memory for internal buffering, which can cause issues on systems that have only a small amount of memory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
+|`com.mulesoft.dw.memory_pool_size`|`Number`|`60`|Sets the number of slots in the memory pool. DataWeave buffers use off-heap memory from a pool, up to a defined size (`com.mulesoft.dw.memory_pool_size` * `com.mulesoft.dw.max_memory_allocation`). DataWeave allocates the remainder using heap memory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 |`com.mulesoft.dw.max_memory_allocation`|`Number` (in bytes)|`1572864` (1.5 MB)|Sets the size (in bytes) of each slot in the off-heap memory pool.
-See xref:dataweave-memory-management.adoc [DataWeave Memory Management].
+See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 |`com.mulesoft.dw.valueSelector.selectsAlwaysFirst`|`Boolean`|`false`|When set to set to `true`, returns the first occurrence of an element (even if the element appears more than once). Enabling this behavior degrades performance.
 
 The following example illustrates the behavior that is controlled by this property. (Assume that the DataWeave script acts on the XML input.)
@@ -86,10 +86,10 @@ output application/json
 |`com.mulesoft.dw.stacksize`|`Number`|`256`|Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as `Stack Overflow. Max stack is 256.`
 |`com.mulesoft.dw.dump_files`|`Boolean`|`false`| _Experimental:_ Dumps the input context and the failing script into a folder when this property is set to `true`. This behavior enables you to track the failing script and the data that makes the script fail, which is particularly useful for verifying that the received input data is valid. Incorrect scripts often fail when an upstream component generates invalid data.
 
-`com.mulesoft.dw.dump_files` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc [Troubleshooting a Failing DataWeave Script].
+`com.mulesoft.dw.dump_files` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[Troubleshooting a Failing DataWeave Script].
 |`com.mulesoft.dw.dump_folder`|`String`|`java.io.tmpdir` (system property value)|_Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.dump_files` is set to `true`.
 
-`com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc [Troubleshooting a Failing DataWeave Script].
+`com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[Troubleshooting a Failing DataWeave Script].
 |`com.mulesoft.dw.coercionexception.verbose`|`Boolean`|`true`|By default, adds to coercion exceptions more information about data that fails to coerce. When this property is set to `false`, DataWeave does not display the additional metadata.
 |`com.mulesoft.dw.track.cursor.close`|`Boolean`|`false`| When set to `true`, tracks the stack trace from which the `CursorProvider#close()` method is called.
 Use this property for troubleshooting, for example, if `CursorProvider#openCursor()` is called on a cursor that is already closed.
