@@ -672,7 +672,7 @@ with `f`.
 single quote that is part of the string: for example, `+'abcd\'e"f'+`. In this example, the
 second single quote is part of the string that starts with an `a` and ends
 with `f`. Notice that you do not need to escape the double quote in this case.
-* `\``: For a string that is surrounded by backticks (supported in DataWeave 2.x), you must escape any backtick that is part of the string: for example, ``abc\`def``.
+* `\``: For a string that is surrounded by backticks, you must escape any backtick that is part of the string: for example, ``abc\`def``.
 * `\`: Because the backslash is the character you use to escape other special
 characters, you need to escape it with a separate backslash to use it in
 a string, for example,`\\`.
