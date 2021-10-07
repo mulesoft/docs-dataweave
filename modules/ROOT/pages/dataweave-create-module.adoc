@@ -139,7 +139,7 @@ There are several ways to import a module or elements in it:
 
 To avoid name clashes, you can use `as` to assign an alias for a custom module or its elements when you import the module into a DataWeave script.
 
-Assume that you define a custom module like this one in the `MyModule.dwl`:
+Assume that you define a custom module like this one in the file `MyModule.dwl`:
 
 .Example: Custom Module
 [source,dataweave,linenums]
