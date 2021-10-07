@@ -71,7 +71,7 @@ output application/xml
  * /
 ----
 
-* `%dw`: DataWeave version is optional. Default is `2.0`.
+* `%dw`: DataWeave version is optional. Default is `2.0`, which is for _all_ 2.x versions of DataWeave.
 +
 Example: `%dw 2.0`
 +
