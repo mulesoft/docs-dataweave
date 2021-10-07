@@ -139,13 +139,13 @@ There are several ways to import a module or elements in it:
 
 To avoid name clashes, you can use `as` to assign an alias for a custom module or its elements when you import the module into a DataWeave script.
 
-Assume that you have a custom module like this one:
+Assume that you define a custom module like this one in the `MyModule.dwl`:
 
 .Example: Custom Module
 [source,dataweave,linenums]
 ----
 %dw 2.0
-fun myfunc(name:String) = name ++ "_"
+fun myFunc(name:String) = name ++ "_"
 var myVar = "Test"
 ----
 
@@ -161,6 +161,8 @@ output application/json
 ---
 appendDash("dataweave") ++ weaveName ++ "_" ++ myVar
 ----
+
+The script returns `"dataweave_Test_Mapping"`. 
 
 You can create an alias to the imported module, for example:
 
