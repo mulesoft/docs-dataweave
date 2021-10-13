@@ -48,7 +48,7 @@ flatten(arrayOfArrays)
 
 === Example
 
-This example returns a single array from a nested array of objects.
+This example returns a single array from nested arrays of objects.
 
 ==== Source
 
@@ -62,6 +62,13 @@ var myData =
      myarray : [
        { name : "Shoki", id : 5678 },
        { name : "Mariano", id : 9123 }
+     ]
+   },
+   {
+     group : "test",
+     myarray : [
+       { name : "Sai", id : 2001 },
+       { name : "Peter", id : 2002 }
      ]
    }
  ]
@@ -83,6 +90,14 @@ flatten(myData.user.myarray)
   {
     "name": "Mariano",
     "id": 9123
+  },
+  {
+    "name": "Sai",
+    "id": 2001
+  },
+  {
+    "name": "Peter",
+    "id": 2002
   }
 ]
 ----
@@ -112,4 +127,3 @@ instead of using `flatten(myData.user.myarray)`, the output is a nested array of
 == flatten&#40;@StreamCapable value: Null&#41;: Null
 
 Helper function that enables `flatten` to work with a `null` value.
-
