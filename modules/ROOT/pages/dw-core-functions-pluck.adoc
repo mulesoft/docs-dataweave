@@ -92,9 +92,58 @@ var readXml = read("<prices>
 }
 ----
 
+=== Example
+
+This example uses `pluck` to iterate over each element within `Test` and returns arrays of their keys and values.
+
+==== Source
+
+[source,json,linenums]
+----
+{"firstName": "jason", "job": "engineer", "dept":"support"}
+----
+
+==== Script
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+payload pluck (value,key)  -> {
+	Test:{
+		Key: key,
+		Value: value
+	}
+}
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+[
+  {
+    "Test": {
+      "Key": "firstName",
+      "Value": "jason"
+    }
+  },
+  {
+    "Test": {
+      "Key": "job",
+      "Value": "engineer"
+    }
+  },
+  {
+    "Test": {
+      "Key": "dept",
+      "Value": "support"
+    }
+  }
+]
+----
 
 [[pluck2]]
 == pluck&#40;value: Null, mapper: &#40;value: Nothing, key: Nothing, index: Nothing&#41; &#45;&#62; Any&#41;: Null
 
 Helper function that enables `pluck` to work with a `null` value.
-
