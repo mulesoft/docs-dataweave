@@ -1,6 +1,6 @@
 = What's New in DataWeave
 
-The 2.4 version of DataWeave introduces the following features:
+DataWeave 2.4 is bundled with Mule 4.4. The 2.4 version of DataWeave introduces the following features:
 
 * Ability to read larger-than-memory strings automatically. When you are using the indexed reader strategy and processing a String with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. Related reader properties are `com.mulesoft.dw.max_memory_allocation` and `com.mulesoft.dw.buffered_char_sequence.enabled`. Refer to xref:dataweave-indexed-readers.adoc#large-strings-management[Indexed Readers in DataWeave].
 * New reader and writer properties for working with data formats. For example, the XML writer now enables you to define namespaces at the root level.
