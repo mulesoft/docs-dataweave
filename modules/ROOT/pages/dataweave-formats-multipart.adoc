@@ -307,7 +307,7 @@ This example contains only 1 part in the multipart which is the file. In case yo
 ----
 
 * `<PART_NAME>` is the name of the part without quotes, for example `json`
-* `PART_CONTENT` is the content for that part, for example `name": "sampleFile.xml", "sampleFile": {"type": "sample"}`
+* `<PART_CONTENT>` is the content for that part, for example `'{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'`
 
 Based on the following XML input:
 
