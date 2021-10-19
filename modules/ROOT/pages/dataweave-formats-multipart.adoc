@@ -381,10 +381,6 @@ The output multipart is:
 [source,multipart,linenums]
 ----
 ------myboundary----
-Content-Disposition: form-data; name="json"
-
-{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} "}
-------myboundary----
 Content-Type: application/xml
 Content-Disposition: form-data; name="test"; filename="sampleFile.xml"
 
@@ -423,6 +419,10 @@ Content-Disposition: form-data; name="test"; filename="sampleFile.xml"
     </Address>
   </Customer>
 </Customers>
+------myboundary----
+Content-Disposition: form-data; name="otherJsonPart"
+
+{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }
 ------myboundary------
 ----
 
