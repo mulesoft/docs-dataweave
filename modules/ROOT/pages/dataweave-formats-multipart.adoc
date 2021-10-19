@@ -272,22 +272,22 @@ The following example shows how to send the current payload as a file part in a 
 input payload application/xml
 output multipart/form-data boundary="----myboundary----"
 ---
-                {
-                parts : {
-                    json : {
-                        content : '{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} "}'
-                    },
-                    file : {
-                        headers : {
-                            "Content-Disposition" : {
-                                "name": "<NAME>",
-                                "filename": "<FILE_NAME>.<FILE_EXTENSION>"
-                                },
-                            "Content-Type" : "<FILE_CONTENT-TYPE>"
-                            },
-                        content : payload
-                        }
-                    }
+{
+  parts: {
+    filePart: {
+      headers: {
+        "Content-Disposition": {
+          "name": "<NAME>",
+          "filename": "<FILE_NAME>.<FILE_EXTENSION>"
+        },
+        "Content-Type": "<FILE_CONTENT-TYPE>"
+      },
+      content: payload
+    },
+    otherJsonPart: {
+      content: '{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'
+    }
+  }
 }
 ----
 
