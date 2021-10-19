@@ -297,7 +297,7 @@ output multipart/form-data boundary="----myboundary----"
 * `<FILE_CONTENT-TYPE>` matches the content of the file you send, for example `"application/xml"`.
 * The content of the file is the current payload.
 
-This example contains only 1 part in the multipart which is the file. In case you want to add more parts, add them under the `parts:{}` section with the following format:
+This example contains two parts in the multipart which is the file and the 'otherJsonPart'. In case you want to add more parts, add them under the `parts:{}` section with the following format:
 
 [source,dataweave,linenums]
 ----
