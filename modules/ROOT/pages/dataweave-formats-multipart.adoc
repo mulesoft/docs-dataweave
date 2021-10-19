@@ -293,11 +293,11 @@ output multipart/form-data boundary="----myboundary----"
 
 * `boundary` sets the boundary value, for example `"----myboundary----"`.
 * `<NAME>` is the tag name of your file, for example `"sampleFile"`.
-* `<FILE_NAME>.<FILE_EXTENSION>` is the filename to populate the payload content, for example `"sampleFile.xml"`
+* `<FILE_NAME>.<FILE_EXTENSION>` is the filename to populate the payload content, for example `"sampleFile.xml"`.
 * `<FILE_CONTENT-TYPE>` matches the content of the file you send, for example `"application/xml"`.
 * The content of the file is the current payload.
 
-This example contains two parts in the multipart which is the file and the 'otherJsonPart'. In case you want to add more parts, add them under the `parts:{}` section with the following format:
+This example contains two parts in the multipart which are the file and the `otherJsonPart`. In case you want to add more parts, add them under the `parts:{}` section with the following format:
 
 [source,dataweave,linenums]
 ----
@@ -306,8 +306,8 @@ This example contains two parts in the multipart which is the file and the 'othe
   }
 ----
 
-* `<PART_NAME>` is the name of the part without quotes, for example `json`
-* `<PART_CONTENT>` is the content for that part, for example `'{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'`
+* `<PART_NAME>` is the name of the part without quotes, for example `json`.
+* `<PART_CONTENT>` is the content for that part, for example `'{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'`.
 
 Based on the following XML input:
 
