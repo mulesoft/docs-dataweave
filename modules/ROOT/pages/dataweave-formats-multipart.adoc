@@ -301,9 +301,9 @@ This example contains two parts in the multipart which is the file and the 'othe
 
 [source,dataweave,linenums]
 ----
-  <PART_NAME> : {
-                          content : '{"<PART_CONTENT>"}'
-                          },
+  <PART_NAME>: {
+    content: <PART_CONTENT>
+  }
 ----
 
 * `<PART_NAME>` is the name of the part without quotes, for example `json`
