@@ -269,7 +269,6 @@ The following example shows how to send the current payload as a file part in a 
 [source,dataweave,linenums]
 ----
 %dw 2.0
-import dw::module::Multipart
 input payload application/xml
 output multipart/form-data boundary="----myboundary----"
 ---
