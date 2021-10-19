@@ -355,26 +355,24 @@ The DataWeave script is:
 [source,dataweave,linenums]
 ----
 %dw 2.0
-import dw::module::Multipart
-input payload application/xml
-output multipart/form-data boundary="----myboundary----"
+output multipart/form-data  boundary="----myboundary----"
 ---
-              {
-              parts : {
-                  json : {
-                      content : '{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} "}'
-                  },
-                  file : {
-                      headers : {
-                          "Content-Disposition" : {
-                              "name": "test",
-                              "filename": "sampleFile.xml"
-                              },
-                          "Content-Type" : "application/xml"
-                          },
-                      content : payload
-                      }
-                  }
+{
+  parts: {
+    filePart: {
+      headers: {
+        "Content-Disposition": {
+          "name": "test",
+          "filename": "sampleFile.xml"
+        },
+        "Content-Type": "application/xml"
+      },
+      content: payload
+    },
+    otherJsonPart: {
+      content: '{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'
+    }
+  }
 }
 ----
 
