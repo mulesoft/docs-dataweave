@@ -264,6 +264,168 @@ provided in the `Content-Disposition` header, and note that DataWeave can
 handle content from supported formats, as well as references to unsupported
 ones, such as HTML.
 
+The following example shows how to send the current payload as a file part in a multipart form-data. You need to use a DataWeave script similar to the following:
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+input payload application/xml
+output multipart/form-data boundary="----myboundary----"
+---
+{
+  parts: {
+    filePart: {
+      headers: {
+        "Content-Disposition": {
+          "name": "<NAME>",
+          "filename": "<FILE_NAME>.<FILE_EXTENSION>"
+        },
+        "Content-Type": "<FILE_CONTENT-TYPE>"
+      },
+      content: payload
+    },
+    otherJsonPart: {
+      content: '{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'
+    }
+  }
+}
+----
+
+* `boundary` sets the boundary value, for example `"----myboundary----"`.
+* `<NAME>` is the tag name of your file, for example `"sampleFile"`.
+* `<FILE_NAME>.<FILE_EXTENSION>` is the filename to populate the payload content, for example `"sampleFile.xml"`.
+* `<FILE_CONTENT-TYPE>` matches the content of the file you send, for example `"application/xml"`.
+* The content of the file is the current payload.
+
+This example contains two parts in the multipart which are the file and the `otherJsonPart`. In case you want to add more parts, add them under the `parts:{}` section with the following format:
+
+[source,dataweave,linenums]
+----
+  <PART_NAME>: {
+    content: <PART_CONTENT>
+  }
+----
+
+* `<PART_NAME>` is the name of the part without quotes, for example `json`.
+* `<PART_CONTENT>` is the content for that part, for example `'{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'`.
+
+Based on the following XML input:
+
+[source,xml,linenums]
+----
+<Customers>
+	<Customer>
+		<Number>1</Number>
+		<FirstName>Fred</FirstName>
+		<LastName>Landis</LastName>
+		<Address>
+			<Street>Oakstreet</Street>
+			<City>Boston</City>
+			<ZIP>23320</ZIP>
+			<State>MA</State>
+		</Address>
+	</Customer>
+	<Customer>
+		<Number>2</Number>
+		<FirstName>Michelle</FirstName>
+		<LastName>Butler</LastName>
+		<Address>
+			<Street>First Avenue</Street>
+			<City>San-Francisco</City>
+			<ZIP>44324</ZIP>
+			<State>CA</State>
+		</Address>
+	</Customer>
+	<Customer>
+		<Number>3</Number>
+		<FirstName>Ted</FirstName>
+		<LastName>Little</LastName>
+		<Address>
+			<Street>Long Way</Street>
+			<City>Los-Angeles</City>
+			<ZIP>34424</ZIP>
+			<State>CA</State>
+		</Address>
+	</Customer>
+</Customers>
+----
+
+The DataWeave script is:
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output multipart/form-data  boundary="----myboundary----"
+---
+{
+  parts: {
+    filePart: {
+      headers: {
+        "Content-Disposition": {
+          "name": "test",
+          "filename": "sampleFile.xml"
+        },
+        "Content-Type": "application/xml"
+      },
+      content: payload
+    },
+    otherJsonPart: {
+      content: '{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'
+    }
+  }
+}
+----
+
+The output multipart is:
+
+[source,multipart,linenums]
+----
+------myboundary----
+Content-Type: application/xml
+Content-Disposition: form-data; name="test"; filename="sampleFile.xml"
+
+<Customers>
+  <Customer>
+    <Number>1</Number>
+    <FirstName>Fred</FirstName>
+    <LastName>Landis</LastName>
+    <Address>
+      <Street>Oakstreet</Street>
+      <City>Boston</City>
+      <ZIP>23320</ZIP>
+      <State>MA</State>
+    </Address>
+  </Customer>
+  <Customer>
+    <Number>2</Number>
+    <FirstName>Michelle</FirstName>
+    <LastName>Butler</LastName>
+    <Address>
+      <Street>First Avenue</Street>
+      <City>San-Francisco</City>
+      <ZIP>44324</ZIP>
+      <State>CA</State>
+    </Address>
+  </Customer>
+  <Customer>
+    <Number>3</Number>
+    <FirstName>Ted</FirstName>
+    <LastName>Little</LastName>
+    <Address>
+      <Street>Long Way</Street>
+      <City>Los-Angeles</City>
+      <ZIP>34424</ZIP>
+      <State>CA</State>
+    </Address>
+  </Customer>
+</Customers>
+------myboundary----
+Content-Disposition: form-data; name="otherJsonPart"
+
+{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }
+------myboundary------
+----
+
 // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
 
 
