@@ -94,7 +94,7 @@ var readXml = read("<prices>
 
 === Example
 
-This example uses `pluck` to iterate over each element within `Test` and returns arrays of their keys and values.
+This example uses the `pluck` function to iterate over the key-value pairs in the source and outputting the values of those pairs into an array of `Test` objects.
 
 ==== Source
 
