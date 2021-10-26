@@ -12,7 +12,7 @@ Creates a `MultipartPart` data structure from a resource file.
 
 
 This version of the `file` function accepts arguments as an array of objects
-that use the parameter names as keys, for example:
+that use the parameter names as keys, enabling you to enter the key/value pairs in any order, for example:
 
 [source,txt,linenums]
 ----
@@ -35,11 +35,67 @@ supplied. This value does not need to match the input file name.
 
 === Example
 
-This example inserts file content from a `MultipartPart` into a `Multipart`
-data structure. It uses the `form` function to create the `Multipart`
-and uses `file` to create a part named `myClient` with JSON content from
-an external file `myClients.json`. It also specifies `partMyClients.json` as
-the value for to the `filename` parameter.
+This example creates a `MultipartPart` from a file accessible to the DataWeave function, the file name is `orders.xml` and is located in the Mule application's `/src/main/resources` folder.
+
+The `file` function locates the external `orders.xml` file and uses key/value pairs to indicate the various parameters needed to build the `MultipartPart`. The `name` can be anything, but it usually coincides with the required parameter needed by the receiving server that accepts this Multipart payload. The `path` is set to `./orders.xml`, which is the path and name for the `orders.xml` file that is loaded into the `MultipartPart`. The `mime` parameter specifies the correct MIME type for the file. In this case, it is `application/xml`. The `filename` can be changed to any value, it can be different from the actual input file's filename.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import dw::module::Multipart
+output application/dw
+var ordersFilePath = "./orders.xml"
+---
+Multipart::file{ name: "file", path: ordersFilePath, mime: "application/xml", fileName: "orders.xml" }
+----
+
+==== Input
+
+A file called `orders.xml` located in `src/main/resources` with the following content:
+
+[source,xml,linenums]
+----
+<orders>
+  <order>
+    <item>
+      <id>1001</id>
+      <qty>1</qty>
+      <price>\$100</price>
+    </item>
+    <item>
+      <id>2001</id>
+      <qty>2</qty>
+      <price>\$50</price>
+    </item>
+  </order>
+</orders>
+----
+
+==== Output
+
+[source,json,linenums]
+----
+{
+  headers: {
+    "Content-Type": "application/xml",
+    "Content-Disposition": {
+      name: "file",
+      filename: "orders.xml"
+    }
+  },
+  content: "<?xml version='1.0' encoding='UTF-8'?>\n<orders>\n  <order>\n    <item>\n      <id>1001</id>\n      <qty>1</qty>\n      <price>\$100</price>\n    </item>\n    <item>\n      <id>2001</id>\n      <qty>2</qty>\n      <price>\$50</price>\n    </item>\n  </order>\n</orders>"
+}
+----
+
+Note that this output is not compatible with the `multipart/form-data` output type because it is just one part of a multipart structure. To create a valid `multipart/form-data` output, use the `Multipart::form()` function with one or more Multipart files and/or fields.
+
+=== Example
+
+This example inserts file content from a `MultipartPart` into a `Multipart`, resulting in a `multipart/form-data` output. The example uses the `form` function to create the `Multipart` and uses `file` to create a part.
+
+The `Multipart::form()` function accepts an array of Multipart items, where each part can be created using the `Multipart::field()` or `Multipart::file()` functions.
 
 ==== Source
 
@@ -48,62 +104,44 @@ the value for to the `filename` parameter.
 %dw 2.0
 import dw::module::Multipart
 output multipart/form-data
-var myClients = "myClients.json"
-var myArgs = { name: "myFile", path: "myClients.json", mime: "application/json", * fileName: "partMyClients.json"}
+var ordersFilePath = "./orders.xml"
+var myArgs = { name: "file", path: ordersFilePath, mime: "application/xml", fileName: "myorders.xml"}
 ---
 Multipart::form([
   Multipart::file(myArgs)
 ])
 ----
 
-==== Input
-
-A file called `myClients.json` and located in `src/main/resources` with the
-following content.
+==== Output
 
 [source,json,linenums]
 ----
-clients: {
-  client: {
-    id: 1,
-     name: "Mariano"
-   },
-   client: {
-     id: 2,
-     name: "Shoki"
-  }
-}
+------=_Part_5349_1228640551.1560391284935
+Content-Type: application/xml
+Content-Disposition: form-data; name="file"; filename="myorders.xml"
+
+<?xml version='1.0' encoding='UTF-8'?>
+<orders>
+  <order>
+    <item>
+      <id>1001</id>
+      <qty>1</qty>
+      <price>$100</price>
+    </item>
+    <item>
+      <id>2001</id>
+      <qty>2</qty>
+      <price>$50</price>
+    </item>
+  </order>
+</orders>
+------=_Part_5349_1228640551.1560391284935--
 ----
-
-==== Output
-
-[source,txt,linenums]
-----
-------=_Part_1586_1887987980.1542569342438
-Content-Type: application/json
-Content-Disposition: form-data; name="myFile"; filename="partMyClients.json"
-
-{
-   clients: {
-     client: {
-       id: 1,
-       name: "Mariano"
-     },
-     client: {
-       id: 2,
-       name: "Shoki"
-     }
-   }
-}
-------=_Part_1586_1887987980.1542569342438--
-----
-
 
 [[file2]]
 == file&#40;fieldName: String, path: String, mime: String = 'application/octet&#45;stream', sentFileName: String = 'filename'&#41;
 
 Creates a `MultipartPart` data structure from a resource file.
-
 
 This version of the `file` function accepts arguments in a comma-separated
 list, for example:
@@ -112,6 +150,8 @@ list, for example:
 ----
 Multipart::field("myFile", myClients, 'application/json', "partMyClients.json")
 ----
+
+Note that when using this version of the function, the order in which you enter the parameters is relevant.
 
 === Parameters
 
@@ -190,4 +230,3 @@ Content-Disposition: form-data; name="myFile"; filename="partMyClients.json"
 }
 ------=_Part_1586_1887987980.1542569342438--
 ----
-
