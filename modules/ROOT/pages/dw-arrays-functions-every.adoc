@@ -63,7 +63,7 @@ output application/json
        "ok": [ true, true ]
      },
      {
-       "err": [ false, false, false, false, false ]
+       "err": [ false, false, false, false, true ]
      }
    ]
  }
