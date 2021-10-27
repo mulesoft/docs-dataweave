@@ -11,8 +11,7 @@ endif::[]
 Creates a `MultipartPart` data structure from a resource file.
 
 
-This version of the `file` function accepts arguments as an array of objects
-that use the parameter names as keys, enabling you to enter the key/value pairs in any order, for example:
+This version of the `file` function accept as argument an object containing key/value pairs, enabling you to enter the key/value pairs in any order, for example:
 
 [source,txt,linenums]
 ----
@@ -24,7 +23,7 @@ Multipart::file({ name: "myFile", path: "myClients.json", mime: "application/jso
 [%header, cols="1,3"]
 |===
 | Name | Description
-| `opts` a| Array of objects that specifies:
+| `opts` a| An object that specifies the following key/value pairs:
 
 * A unique `name` (required) for the `Content-Disposition` header of the part.
 * A `path` (required) relative to the `src/main/resources` project path for the Mule app.
@@ -143,7 +142,7 @@ Content-Disposition: form-data; name="file"; filename="myorders.xml"
 
 Creates a `MultipartPart` data structure from a resource file.
 
-This version of the `file` function accepts arguments in a comma-separated
+This version of the `file` function accepts String arguments in a comma-separated
 list, for example:
 
 [source,txt,linenums]
@@ -151,20 +150,15 @@ list, for example:
 Multipart::field("myFile", myClients, 'application/json', "partMyClients.json")
 ----
 
-Note that when using this version of the function, the order in which you enter the parameters is relevant.
-
 === Parameters
 
 [%header, cols="1,3"]
 |===
 | Name | Description
-| `opts` a| Array of objects that specifies:
-
-* A unique `name` (required) for the `Content-Disposition` header of the part.
-* A `path` (required) relative to the `src/main/resources` project path for the Mule app.
-* `mime` (optional for strings) for the mime type (for example, `application/json`) to apply to content within the part. This setting _cannot_ be used to transform the input mime type.
-* An optional `fileName` value for the `filename` parameter in the part's `Content-Disposition` header. Defaults to the string `"filename"` if not
-supplied. This value does not need to match the input file name.
+| `fieldName` | A unique name (required) for the `Content-Disposition` header of the part.
+| `path` | A path (required) relative to the `src/main/resources` project path for the Mule app.
+| `mime` | The mime type (optional for strings), for example, `application/json`, to apply to content within the part. This setting _cannot_ be used to transform the input mime type.
+| `sentFileName` | An optional file name value for the `filename` parameter in the part's `Content-Disposition` header. Defaults to the string `"filename"` if not specified. This value does not need to match the input file name.
 |===
 
 === Example
