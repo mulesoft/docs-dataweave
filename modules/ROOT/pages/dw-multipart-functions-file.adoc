@@ -11,7 +11,7 @@ endif::[]
 Creates a `MultipartPart` data structure from a resource file.
 
 
-This version of the `file` function accept as argument an object containing key/value pairs, enabling you to enter the key/value pairs in any order, for example:
+This version of the `file` function accepts as argument an object containing key/value pairs, enabling you to enter the key/value pairs in any order, for example:
 
 [source,txt,linenums]
 ----
@@ -36,7 +36,7 @@ supplied. This value does not need to match the input file name.
 
 This example creates a `MultipartPart` from a file accessible to the DataWeave function, the file name is `orders.xml` and is located in the Mule application's `/src/main/resources` folder.
 
-The `file` function locates the external `orders.xml` file and uses key/value pairs to indicate the various parameters needed to build the `MultipartPart`. The `name` can be anything, but it usually coincides with the required parameter needed by the receiving server that accepts this Multipart payload. The `path` is set to `./orders.xml`, which is the path and name for the `orders.xml` file that is loaded into the `MultipartPart`. The `mime` parameter specifies the correct MIME type for the file. In this case, it is `application/xml`. The `filename` can be changed to any value, it can be different from the actual input file's filename.
+The `file` function locates the external `orders.xml` file and uses key/value pairs to indicate the various parameters needed to build the `MultipartPart`. The `name` can be anything, but it usually coincides with the required parameter needed by the receiving server that accepts this `Multipart` payload. The `path` is set to `./orders.xml`, which is the path and name for the `orders.xml` file that is loaded into the `MultipartPart`. The `mime` parameter specifies the correct MIME type for the file. In this case, it is `application/xml`. The `filename` can be changed to any value, it can be different from the actual input file's filename.
 
 ==== Source
 
@@ -88,13 +88,13 @@ A file called `orders.xml` located in `src/main/resources` with the following co
 }
 ----
 
-Note that this output is not compatible with the `multipart/form-data` output type because it is just one part of a multipart structure. To create a valid `multipart/form-data` output, use the `Multipart::form()` function with one or more Multipart files and/or fields.
+Note that this output is not compatible with the `multipart/form-data` output type because it is just one part of a `Multipart` structure. To create a valid `multipart/form-data` output, use the `Multipart::form()` function with one or more `Multipart` files and/or fields.
 
 === Example
 
 This example inserts file content from a `MultipartPart` into a `Multipart`, resulting in a `multipart/form-data` output. The example uses the `form` function to create the `Multipart` and uses `file` to create a part.
 
-The `Multipart::form()` function accepts an array of Multipart items, where each part can be created using the `Multipart::field()` or `Multipart::file()` functions.
+The `Multipart::form()` function accepts an array of `Multipart` items, where each part can be created using the `Multipart::field()` or `Multipart::file()` functions.
 
 ==== Source
 
