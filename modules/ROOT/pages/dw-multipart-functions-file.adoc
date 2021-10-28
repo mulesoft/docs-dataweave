@@ -20,10 +20,10 @@ Multipart::file({ name: "myFile", path: "myClients.json", mime: "application/jso
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1a,3a"]
 |===
 | Name | Description
-| `opts` a| An object that specifies the following key/value pairs:
+| `opts` | An object that specifies the following key/value pairs:
 
 * A unique `name` (required) for the `Content-Disposition` header of the part.
 * A `path` (required) relative to the `src/main/resources` project path for the Mule app.
@@ -36,7 +36,14 @@ supplied. This value does not need to match the input file name.
 
 This example creates a `MultipartPart` from a file accessible to the DataWeave function, the file name is `orders.xml` and is located in the Mule application's `/src/main/resources` folder.
 
-The `file` function locates the external `orders.xml` file and uses key/value pairs to indicate the various parameters needed to build the `MultipartPart`. The `name` can be anything, but it usually coincides with the required parameter needed by the receiving server that accepts this `Multipart` payload. The `path` is set to `./orders.xml`, which is the path and name for the `orders.xml` file that is loaded into the `MultipartPart`. The `mime` parameter specifies the correct MIME type for the file. In this case, it is `application/xml`. The `filename` can be changed to any value, it can be different from the actual input file's filename.
+The `file` function locates the external `orders.xml` file and uses key/value pairs to indicate the various parameters needed to build the `MultipartPart`.
+
+* The `name` can be anything, but it usually coincides with the required parameter needed by the receiving server that accepts this `Multipart` payload.
+* The `path` is set to `./orders.xml`, which is the path and name for the `orders.xml` file that is loaded into the `MultipartPart`.
+* The `mime` parameter specifies the correct MIME type for the file. In this case, it is `application/xml`.
+* The `filename` can be changed to any value, it can be different from the actual input file's filename.
+
+Note that the output of this example is not compatible with the `multipart/form-data` output type because it is just one part of a `Multipart` structure. To create a valid `multipart/form-data` output, use the `Multipart::form()` function with one or more `Multipart` files and/or fields.
 
 ==== Source
 
@@ -77,7 +84,7 @@ A file called `orders.xml` located in `src/main/resources` with the following co
 [source,json,linenums]
 ----
 {
-  headers: {
+headers: {
     "Content-Type": "application/xml",
     "Content-Disposition": {
       name: "file",
@@ -87,8 +94,6 @@ A file called `orders.xml` located in `src/main/resources` with the following co
   content: "<?xml version='1.0' encoding='UTF-8'?>\n<orders>\n  <order>\n    <item>\n      <id>1001</id>\n      <qty>1</qty>\n      <price>\$100</price>\n    </item>\n    <item>\n      <id>2001</id>\n      <qty>2</qty>\n      <price>\$50</price>\n    </item>\n  </order>\n</orders>"
 }
 ----
-
-Note that this output is not compatible with the `multipart/form-data` output type because it is just one part of a `Multipart` structure. To create a valid `multipart/form-data` output, use the `Multipart::form()` function with one or more `Multipart` files and/or fields.
 
 === Example
 
@@ -118,7 +123,6 @@ Multipart::form([
 ------=_Part_5349_1228640551.1560391284935
 Content-Type: application/xml
 Content-Disposition: form-data; name="file"; filename="myorders.xml"
-
 <?xml version='1.0' encoding='UTF-8'?>
 <orders>
   <order>
@@ -137,10 +141,12 @@ Content-Disposition: form-data; name="file"; filename="myorders.xml"
 ------=_Part_5349_1228640551.1560391284935--
 ----
 
+
 [[file2]]
 == file&#40;fieldName: String, path: String, mime: String = 'application/octet&#45;stream', sentFileName: String = 'filename'&#41;
 
 Creates a `MultipartPart` data structure from a resource file.
+
 
 This version of the `file` function accepts String arguments in a comma-separated
 list, for example:
@@ -224,3 +230,4 @@ Content-Disposition: form-data; name="myFile"; filename="partMyClients.json"
 }
 ------=_Part_1586_1887987980.1542569342438--
 ----
+
