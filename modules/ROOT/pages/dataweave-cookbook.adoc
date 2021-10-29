@@ -169,6 +169,9 @@ These examples show how to use DataWeave to extract and transform data in MuleSo
 //read-connector
 | xref:dataweave-cookbook-writer-prop-mule.adoc[Use a Mule Variable as a Configuration Value]
 | Use a Mule variable as a configuration value.
+//pluck-function
+| xref:dataweave-cookbook-pluck.adoc[Extract Key/Value Pairs with Pluck Function]
+| Use the DataWeave `pluck` function to extract key/value pairs from a JSON payload and store them into flow variables.
 |===
 
 == See Also

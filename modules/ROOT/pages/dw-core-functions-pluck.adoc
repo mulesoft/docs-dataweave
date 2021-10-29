@@ -92,57 +92,6 @@ var readXml = read("<prices>
 }
 ----
 
-=== Example
-
-This example uses the `pluck` function to iterate over the key-value pairs in the source and outputs the values of those pairs into an array of `Test` objects.
-
-==== Source
-
-[source,json,linenums]
-----
-{"firstName": "jason", "job": "engineer", "dept":"support"}
-----
-
-==== Script
-[source,DataWeave,linenums]
-----
-%dw 2.0
-output application/json
----
-payload pluck (value,key)  -> {
-	Test:{
-		Key: key,
-		Value: value
-	}
-}
-----
-
-==== Output
-
-[source,JSON,linenums]
-----
-[
-  {
-    "Test": {
-      "Key": "firstName",
-      "Value": "jason"
-    }
-  },
-  {
-    "Test": {
-      "Key": "job",
-      "Value": "engineer"
-    }
-  },
-  {
-    "Test": {
-      "Key": "dept",
-      "Value": "support"
-    }
-  }
-]
-----
-
 [[pluck2]]
 == pluck&#40;value: Null, mapper: &#40;value: Nothing, key: Nothing, index: Nothing&#41; &#45;&#62; Any&#41;: Null
 

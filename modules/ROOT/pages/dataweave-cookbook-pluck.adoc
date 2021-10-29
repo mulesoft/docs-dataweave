@@ -1,0 +1,132 @@
+= Extract Key/Value Pairs with Pluck Function
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: studio, anypoint, transform, transformer, format, dataweave, data weave, output structure, mime type, mime
+
+The following Mule app example shows how to use the DataWeave `pluck` function to extract key/value pairs from a JSON payload and store them into flow variables with variable name as the keys and their corresponding values.
+
+The Mule app consists of:
+
+* A Scheduler component that triggers the flow
+* A Set Payload component that sets the JSON payload
+* A Transform Message component that transforms the content read from the Set Payload component by extracting the key/value pairs with the `pluck` function and put them into an array
+* A For Each scope component that iterates the array payload content
+* A Set Variable component that sets the flow variable name as the Key and variable value as the Value in the JSON array
+* A Logger component that prints the variable results per each iteration
+
+image::dataweave-cookbook-pluck-examples.png[Mule app flow example in Studio canvas]
+
+Application XML File:
+
+[source,xml,linenums]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="json-varsFlow" >
+		<scheduler >
+			<scheduling-strategy >
+				<fixed-frequency frequency="10000"/>
+			</scheduling-strategy>
+		</scheduler>
+		<set-payload value='{"firstName": "jason", "job": "engineer", "dept":"support"}' mimeType="application/json"/>
+		<ee:transform > //<1>
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+
+payload pluck (value,key)  -> {
+	Test:{
+		Key: key,
+		Value: value
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<foreach collection="#[payload.Test]"> //<2>
+			<logger level="INFO" message="#[payload]" />
+			<set-variable value="#[payload.Value]" variableName="#[payload.Key]"/>
+			<logger level="INFO" message="#[vars.id]"/>
+		</foreach>
+	</flow>
+</mule>
+----
+
+<1>  Note that the Transform Message configures the following DataWeave script:
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+---
+
+payload pluck (value,key)  -> {
+Test:{
+Key: key,
+Value: value
+}
+----
+
+When the the Mule app executes with the following JSON payload:
+
+[source,json,linenums]
+----
+{"firstName": "jason", "job": "engineer", "dept":"support"}
+----
+
+The DataWeave transformation result is:
+
+[source,json,linenums]
+----
+[
+  {
+    "Test": {
+      "Key": "firstName",
+      "Value": "jason"
+    }
+  },
+  {
+    "Test": {
+      "Key": "job",
+      "Value": "engineer"
+    }
+  },
+  {
+    "Test": {
+      "Key": "dept",
+      "Value": "support"
+    }
+  }
+]
+----
+
+Then, the For Each scope component iterates over the transformed values and the app logs the values of the variable results:
+
+----
+INFO  2021-10-29 15:57:17,365 [[MuleRuntime].uber.02: [jsonsample].json-varsFlow.CPU_INTENSIVE @fd66c6e] [processor: json-varsFlow/processors/2/processors/2; event: 09710fb0-38ea-11ec-a17a-f01898ad2638] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: null
+INFO  2021-10-29 15:57:27,361 [[MuleRuntime].uber.03: [jsonsample].json-varsFlow.CPU_INTENSIVE @fd66c6e] [processor: json-varsFlow/processors/2/processors/0; event: 0f6717c0-38ea-11ec-a17a-f01898ad2638] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: {
+  "Key": "firstName",
+  "Value": "jason"
+}
+INFO  2021-10-29 15:57:27,363 [[MuleRuntime].uber.03: [jsonsample].json-varsFlow.CPU_INTENSIVE @fd66c6e] [processor: json-varsFlow/processors/2/processors/2; event: 0f6717c0-38ea-11ec-a17a-f01898ad2638] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: null
+INFO  2021-10-29 15:57:27,364 [[MuleRuntime].uber.03: [jsonsample].json-varsFlow.CPU_INTENSIVE @fd66c6e] [processor: json-varsFlow/processors/2/processors/0; event: 0f6717c0-38ea-11ec-a17a-f01898ad2638] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: {
+  "Key": "job",
+  "Value": "engineer"
+}
+INFO  2021-10-29 15:57:27,366 [[MuleRuntime].uber.03: [jsonsample].json-varsFlow.CPU_INTENSIVE @fd66c6e] [processor: json-varsFlow/processors/2/processors/2; event: 0f6717c0-38ea-11ec-a17a-f01898ad2638] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: null
+INFO  2021-10-29 15:57:27,367 [[MuleRuntime].uber.03: [jsonsample].json-varsFlow.CPU_INTENSIVE @fd66c6e] [processor: json-varsFlow/processors/2/processors/0; event: 0f6717c0-38ea-11ec-a17a-f01898ad2638] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: {
+  "Key": "dept",
+  "Value": "support"
+}
+----
+
+== See Also
+
+* xref:dataweave-formats.adoc[DataWeave Formats]
+
+* xref:dataweave-cookbook.adoc[DataWeave Cookbook]
