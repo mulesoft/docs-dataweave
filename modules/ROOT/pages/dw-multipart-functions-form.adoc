@@ -24,9 +24,7 @@ This example creates a `Multipart` data structure that contains three parts.
 
 The first part uses the `Multipart::file()` function to import an external file named `orders.xml`. The file is located in the internal `src/main/resources` folder of the Mule application. See the xref:dw-multipart-functions-file.adoc[file] function documentation for more details on this example.
 
-The second part uses the `Multipart::field()` function version that accepts field names as input parameters in the form of an object with key/value pairs, enabling you to pass the keys in any order.
-//In this example, and additional key named `extra` is included, and it is ignored by the `Multipart::field()` function.
-This part also does not specify the optional `fileName` parameter. When specified, `fileName` is part of the `Content-Distribution` element of the part. The `mime` field is also optional. When included, the field sets the `Content-Type` element to the `mime` value. In this case the `Content-Type` is set to `text/plain`.
+The second part uses the `Multipart::field()` function version that accepts field names as input parameters in the form of an object with key/value pairs, enabling you to pass the keys in any order. This part also does not specify the optional `fileName` parameter. When specified, `fileName` is part of the `Content-Distribution` element of the part. The `mime` field is also optional. When included, the field sets the `Content-Type` element to the `mime` value. In this case the `Content-Type` is set to `text/plain`.
 
 The third part uses the more compact version of the `Multipart::field()` function which sets the required and optional parameters, in the correct order, as input parameters. The first three parameters `name`, `value`, and `mime` are required. The `fileName` parameters is optional, use it only if the content is read from a file or is written to a file. In this version, the `mime` parameter is output as the `Content-Type` element, and the `fileName` is output as the `filename` parameter of the `Content-Distribution` element.
 
@@ -39,7 +37,7 @@ import dw::module::Multipart
 output multipart/form-data
 var myOrders = "./orders.xml"
 var fileArgs = { name: "file", path: myOrders, mime: "application/xml", fileName: "myorders.xml"}
-var fieldArgs = {name:"userName",value: "Annie Point", mime: "text/plain", extra: "ignored"}
+var fieldArgs = {name:"userName",value: "Annie Point", mime: "text/plain"}
 ---
 Multipart::form([
   Multipart::file(fileArgs),
