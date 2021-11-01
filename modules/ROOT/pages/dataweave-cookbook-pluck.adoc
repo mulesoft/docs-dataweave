@@ -4,15 +4,15 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: studio, anypoint, transform, transformer, format, dataweave, data weave, output structure, mime type, mime
 
-The following Mule app example shows how to use the DataWeave `pluck` function to extract key/value pairs from a JSON payload and store them into flow variables with variable name as the keys and their corresponding values.
+The following Mule app example shows how to use the DataWeave `pluck` function to extract key-value pairs from a JSON payload and store them into Mule event variables with variable names as the keys and their corresponding values.
 
 The Mule app consists of:
 
 * A Scheduler component that triggers the flow
 * A Set Payload component that sets the JSON payload
-* A Transform Message component that transforms the content read from the Set Payload component by extracting the key/value pairs with the `pluck` function and put them into an array
-* A For Each scope component that iterates the array payload content
-* A Set Variable component that sets the flow variable name as the Key and variable value as the Value in the JSON array
+* A Transform Message component that transforms the content read from the Set Payload component by extracting the key-value pairs with the `pluck` function and putting them into an array
+* A For Each scope component that iterates over the array
+* A Set Variable component that sets the variable name as the Key and variable value as the Value in the JSON array
 * A Logger component that prints the variable results per each iteration
 
 image::dataweave-cookbook-pluck-examples.png[Mule app flow example in Studio canvas]
@@ -105,7 +105,7 @@ The DataWeave transformation result is:
 ]
 ----
 
-Then, the For Each scope component iterates over the transformed values and the app logs the values of the variable results:
+The For Each scope component iterates over the transformed values, and the app logs the values of the variable results, as follows:
 
 ----
 INFO  2021-10-29 15:57:17,365 [[MuleRuntime].uber.02: [jsonsample].json-varsFlow.CPU_INTENSIVE @fd66c6e] [processor: json-varsFlow/processors/2/processors/2; event: 09710fb0-38ea-11ec-a17a-f01898ad2638] org.mule.runtime.core.internal.processor.LoggerMessageProcessor: null

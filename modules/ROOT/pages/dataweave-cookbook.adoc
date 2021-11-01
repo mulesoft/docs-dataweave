@@ -171,7 +171,7 @@ These examples show how to use DataWeave to extract and transform data in MuleSo
 | Use a Mule variable as a configuration value.
 //pluck-function
 | xref:dataweave-cookbook-pluck.adoc[Extract Key/Value Pairs with Pluck Function]
-| Use the DataWeave `pluck` function to extract key/value pairs from a JSON payload and store them into flow variables.
+| Use the DataWeave `pluck` function to extract key-value pairs from a JSON payload and store them into Mule event variables.
 |===
 
 == See Also
