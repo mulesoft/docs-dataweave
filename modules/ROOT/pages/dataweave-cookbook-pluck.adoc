@@ -1,4 +1,4 @@
-= Extract Key/Value Pairs with Pluck Function
+= Extract Key-Value Pairs with `Pluck` Function
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
