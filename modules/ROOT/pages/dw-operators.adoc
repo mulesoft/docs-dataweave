@@ -4,14 +4,14 @@ include::_attributes.adoc[]
 endif::[]
 
 
-DataWeave 2.0 supports several operators, including mathematical operators, equality operators, and operators such as prepend, append and update.
+DataWeave supports several operators, including mathematical operators, equality operators, and operators such as prepend, append and update.
 //DW 1.0 OPERATORS IN MULE 3.9 DOCS
 include::partial$dataweave1-links.adoc[tag=dataweave1Operators]
 
 
 == Mathematical Operators
 
-DataWeave 2.0 supports the most common mathematical operators:
+DataWeave supports the most common mathematical operators:
 
 [%header,cols="1,2"]
 |===
@@ -63,7 +63,7 @@ Several DataWeave functions operate on numbers, for example: xref:dw-core-functi
 
 == Equality and Relational Operators
 
-DataWeave 2.0 supports the following equality and relational operators:
+DataWeave supports the following equality and relational operators:
 
 [%header,cols="1,2"]
 |===
@@ -145,7 +145,7 @@ output application/dw
 [[logical_operators]]
 == Logical Operators
 
-DataWeave 2.0 supports the following logical operators:
+DataWeave supports the following logical operators:
 
 [%header,cols="1,2"]
 |===
@@ -271,7 +271,7 @@ DataWeave executes the code inside each `if` block because all conditional expre
 
 == Prepend, Append, and Remove Operators for Arrays
 
-DataWeave 2.0 supports operators for appending and prepending items within
+DataWeave supports operators for appending and prepending items within
 an array:
 
 [%header,cols="1,2"]
@@ -357,7 +357,7 @@ output application/json
 
 == Scope and Flow Control Operators
 
-DataWeave 2.0 supports operators that control the flow and scope of expressions:
+DataWeave supports operators that control the flow and scope of expressions:
 
 * <<control_flow_do,`do` and `using`>>
 * <<control_flow_if,`if else` and `else if`>>
