@@ -1,24 +1,24 @@
 
 //DW 1.0 EXAMPLES, THE "COOKBOOK" IN THE MULE 3.9 DOCS
 //tag::dataweave1Examples[]
-Before you begin, note that DataWeave 2.0 (`%dw 2.0`) is for Mule 4 apps. For a
-Mule 3 app, refer to DataWeave 1.0
-(xref:1.2@dataweave::dataweave-examples.adoc[`%dw 1.0`]) examples. For other Mule versions, you can use
-the Mule Runtime version selector in the table of contents.
+Before you begin, note that 2.x versions of DataWeave are used by Mule 4 apps. For
+DataWeave in Mule 3 apps, refer to
+xref:1.2@dataweave::dataweave-examples.adoc[DataWeave version 1.2 examples].
+For other DataWeave versions, you can use the version selector in the DataWeave table of contents.
 //end::dataweave1Examples[]
 
 //DW 1.0 LANDING PAGE IN MULE 3.9 DOCS
 //tag::dataweave1LandingPage[]
-Before you begin, note that DataWeave 2.0 is for Mule 4 apps. For a Mule 3 app,
-refer to the
-xref:1.2@dataweave::index.adoc[DataWeave 1.0 documentation set]. For other Mule versions, you can use
-the version selector for the Mule Runtime table of contents.
+Before you begin, note that 2.x versions of DataWeave are used by Mule 4 apps. For
+DataWeave in Mule 3 apps, refer to the
+xref:1.2@dataweave::index.adoc[DataWeave version 1.2 documentation].
+For other Mule versions, you can use the version selector in the DataWeave table of contents.
 //end::dataweave1LandingPage[]
 
 //DW 1.0 OPERATORS IN MULE 3.9 DOCS
 //tag::dataweave1Operators[]
-Before you begin, note that DataWeave 2.0 is for Mule 4 apps. For Mule 3
-apps, refer to
-xref:1.2@dataweave::dataweave-operators.adoc[DataWeave Operators]. For other Mule versions, you can use
-the version selector for the Mule Runtime table of contents.
+Before you begin, note that 2.x versions of DataWeave are used by Mule 4 apps. For
+DataWeave in Mule 3 apps, refer to
+xref:1.2@dataweave::dataweave-operators.adoc[DataWeave version 1.2 operators].
+For other Mule versions, you can use the version selector in the DataWeave table of contents.
 //end::dataweave1Operators[]

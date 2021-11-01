@@ -5,7 +5,7 @@ endif::[]
 :keywords: studio, anypoint, esb, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
 
 
-DataWeave 2.0 selectors traverse the structures of objects and arrays and
+DataWeave selectors traverse the structures of objects and arrays and
 return matching values.
 //LINK TO DW 1.0 LANDING PAGE IN MULE 3.9 DOCS:
 include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
