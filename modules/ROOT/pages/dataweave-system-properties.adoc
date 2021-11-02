@@ -9,7 +9,6 @@ DataWeave supports several system properties. To use these properties in applica
 
 //com.mulesoft.dw.date_minus_back_compatibility//
 |`com.mulesoft.dw.date_minus_back_compatibility`|
-
 Restores the xref:dataweave-cookbook-add-and-subtract-time.adoc[Add and Subtract Time] behaviors that changed in 2.3.0 when this property is set to `true`.
 
 * Type: `Boolean`
@@ -29,7 +28,6 @@ output application/dw
 
 //com.mulesoft.dw.verbose//
 |`com.mulesoft.dw.verbose`|
-
 Displays filtered stack traces when this property is set to `true`. Does not display stack traces when set to `false`.
 
 * Type: `Boolean`
@@ -37,38 +35,36 @@ Displays filtered stack traces when this property is set to `true`. Does not dis
 
 //com.mulesoft.dw.error_value_length//
 |`com.mulesoft.dw.error_value_length`|
+Sets the maximum length of exception messages to display to the user. The message is truncated to the maximum length. This setting is useful for avoiding long exception messages.
 
 * Type: `Number`
 * Default: `80`
-Sets the maximum length of exception messages to display to the user. The message is truncated to the maximum length. This setting is useful for avoiding long exception messages.
+
 
 //com.mulesoft.dw.indexsize//
 |`com.mulesoft.dw.indexsize`|
+Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 
 * Type: `Number`
 * Default: `1572864` (1.5 MB)
 
-Sets the maximum size (in bytes) of the page in memory that indexed readers use.
-
 
 //com.mulesoft.dw.buffersize//
 |`com.mulesoft.dw.buffersize`|
-
-* Type: `Number` (in bytes)
-* Default: `8192` bytes (8 KB)
-
 Sets the size (in bytes) of in-memory input and output buffers that DataWeave uses to retain processed inputs and outputs.
 DataWeave stores payloads that exceed this size in temporary files `dw-buffer-index-${count}.tmp` and `dw-buffer-output-${count}.tmp`.
 See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
+* Type: `Number` (in bytes)
+* Default: `8192` bytes (8 KB)
+
 
 //com.mulesoft.dw.directbuffer.disable//
 |`com.mulesoft.dw.directbuffer.disable`|
+Controls whether DataWeave uses off-heap memory (the default) or heap memory. DataWeave uses off-heap memory for internal buffering, which can cause issues on systems that have only a small amount of memory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
 * Type: `Boolean`
 * Default: `false`
-
-Controls whether DataWeave uses off-heap memory (the default) or heap memory. DataWeave uses off-heap memory for internal buffering, which can cause issues on systems that have only a small amount of memory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
 
 //com.mulesoft.dw.memory_pool_size//
@@ -84,6 +80,7 @@ Sets the size (in bytes) of each slot in the off-heap memory pool.
 
 * Type: `Number` (in bytes)
 * Default: `1572864` (1.5 MB)
+
 See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
 
@@ -151,7 +148,6 @@ output application/json
 
 //com.mulesoft.dw.stacksize//
 |`com.mulesoft.dw.stacksize`|
-
 Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as `Stack Overflow. Max stack is 256.`
 
 * Type: `Number`
