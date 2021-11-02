@@ -35,18 +35,15 @@ This example transforms all the string values to upper case.
 ----
 %dw 2.0
 output application/json
+import * from dw::util::Tree
 ---
-%dw 2.0
- import * from dw::util::Tree
-  output application/json
-  ---
- {
-     user: [{
-         name: "mariano",
-         lastName: "achaval"
-     }],
-     group: "data-weave"
- } mapLeafValues (value, path) -> upper(value)
+{
+    user: [{
+        name: "mariano",
+        lastName: "achaval"
+    }],
+    group: "data-weave"
+} mapLeafValues (value, path) -> upper(value)
 
 ----
 
