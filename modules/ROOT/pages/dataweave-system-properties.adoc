@@ -90,6 +90,16 @@ _Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.
 `com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[Troubleshooting a Failing DataWeave Script].
 
 
+//com.mulesoft.dw.dumper_fill_stacktrace//
+|`com.mulesoft.dw.dumper_fill_stacktrace`|
+_Experimental:_ Adds the StackTrace for dumper exceptions when `com.mulesoft.dw.dump_files` is set to `true`.
+
+* Type: `Boolean`
+* Default: `false`
+
+`com.mulesoft.dw.dumper_fill_stacktrace` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave.
+
+
 //com.mulesoft.dw.error_value_length//
 |`com.mulesoft.dw.error_value_length`|
 Sets the maximum length of exception messages to display to the user. The message is truncated to the maximum length. This setting is useful for avoiding long exception messages.
@@ -228,9 +238,9 @@ Displays filtered stack traces when this property is set to `true`. Does not dis
 
 
 //com.mulesoft.dw.xml_reader.honourMixedContentStructure
-|`com.mulesoft.dw.xml_reader.honourMixedContentStructure`
+|`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
 When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
 
-Type: `Boolean`
-Default: `false`
+* Type: `Boolean`
+* Default: `false`
 |===
