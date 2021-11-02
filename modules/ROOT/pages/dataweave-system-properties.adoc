@@ -212,4 +212,20 @@ Sets the default Content-Type to use on parts of the `multipart/*` format when a
 
 * Type: `String`
 * Default: `application/octet-stream`
+
+//com.mulesoft.dw.buffered_char_sequence.enabled
+|`com.mulesoft.dw.buffered_char_sequence.enabled`|
+Controls whether an internal `BufferedCharSequence` improvement is enabled or disabled. When this property is set to `true`, DataWeave avoids loading large fields (greater than 1.5M) into memory. These fields are read in chunks. This feature reduces performance to prevent an out-of-memory error.
+
+
+* Type: `Boolean`
+* Default: `true`
+
+
+//com.mulesoft.dw.xml_reader.honourMixedContentStructure
+|`com.mulesoft.dw.xml_reader.honourMixedContentStructure`
+When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
+
+Type: `Boolean`
+Default: `false`
 |===
