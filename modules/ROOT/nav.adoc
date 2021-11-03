@@ -54,5 +54,6 @@
  ** xref:dataweave-cookbook-pass-functions-as-arguments.adoc[Pass Functions as Arguments]
 * xref:dw-functions.adoc[DataWeave Reference]
  ** xref:dw-operators.adoc[DataWeave Operators]
+ ** xref:dataweave-system-properties.adoc[DataWeave System Properties] 
  ** xref:dataweave-flow-control-precedence.adoc[Precedence Rules]
 include::partial$nav-dw.adoc[]
