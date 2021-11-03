@@ -430,7 +430,7 @@ Content-Disposition: form-data; name="otherJsonPart"
 [[example4]]
 === Example: Iterate through Multipart payload
 
-This example shows how DataWeave iterates through through all the parts of the payload and process the message individually.
+This example shows how DataWeave iterates through all the parts of the payload and processes the each part individually.
 
 === Source
 [source,dataweave,linenums]
