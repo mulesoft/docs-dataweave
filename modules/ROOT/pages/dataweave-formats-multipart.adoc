@@ -45,6 +45,7 @@ The following examples show uses of the Multipart format.
 * <<example1>>
 * <<example2>>
 * <<example3>>
+* <<example4>>
 
 [[example1]]
 === Example: Multipart
@@ -424,6 +425,54 @@ Content-Disposition: form-data; name="otherJsonPart"
 
 {"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }
 ------myboundary------
+----
+
+[[example4]]
+=== Example: Iterate through Multipart payload
+
+This example shows how DataWeave iterates through all the parts of the payload and processes the each part individually.
+
+=== Source
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+var multi = '--34b21
+Content-Disposition: form-data; name="text"
+Content-Type: text/plain
+
+Book
+--34b21
+Content-Disposition: form-data; name="file1"; filename="a.json"
+Content-Type: application/json
+
+{
+"title":"Java 8 in Action",
+"author":"Mario Fusco",
+"year":2014
+}
+--34b21
+Content-Disposition: form-data; name="file2"; filename="a.html"
+Content-Type: text/html
+
+<!DOCTYPE html>
+<title>
+Available for download!
+</title>
+--34b21--'
+var parsed = read(multi, "multipart/form-data", {boundary:'34b21'})
+---
+parsed.parts mapObject ((value, key, index) -> {(index): key})
+----
+
+=== Output
+[source,json,linenums]
+----
+{
+  "0": "text",
+  "1": "file1",
+  "2": "file2"
+}
 ----
 
 // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
