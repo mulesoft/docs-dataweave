@@ -85,6 +85,8 @@ Content-Disposition: form-data; name="myJson"; filename="userInfo.json"
 
 This example constructs a data structure using DataWeave code that is compatible with the `multipart/form-data` output format, demonstrating how you can manually construct a data structure compatible with `multipart/form-data` output, without using the `form` function.
 
+In the following structure, the part keys `part1` and `part2` are stripped out in the `multipart/form-data` output.
+
 ==== Source
 
 [source,DataWeave,linenums]
@@ -102,8 +104,6 @@ var secondPart = "content for my second part"
   }
 }
 ----
-
-In this structure, the part keys `part1` and `part2` are stripped out in the `multipart/form-data` output.
 
 ==== Output
 
