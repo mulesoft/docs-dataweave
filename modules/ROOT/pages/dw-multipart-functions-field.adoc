@@ -31,6 +31,41 @@ that use the parameter names as keys, for example:
 
 === Example
 
+This example creates a `Multipart` data structure that contains parts.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import dw::module::Multipart
+output multipart/form-data
+var firstPart = "content for my first part"
+var secondPart = "content for my second part"
+---
+{
+  parts: {
+    part1: Multipart::field({name:"myFirstPart",value: firstPart}),
+    part2: Multipart::field("mySecondPart", secondPart)
+  }
+}
+----
+
+==== Output
+
+[source,json,linenums]
+----
+------=_Part_320_1528378161.1542639222352
+Content-Disposition: form-data; name="myFirstPart"
+content for my first part
+------=_Part_320_1528378161.1542639222352
+Content-Disposition: form-data; name="mySecondPart"
+content for my second part
+------=_Part_320_1528378161.1542639222352--
+----
+
+=== Example
+
 This example produces two parts. The first part (named `order`) outputs
 content in JSON and provides a file name for the part (`order.json`). The
 second (named `clients`) outputs content in XML and does not provide a file
@@ -221,4 +256,3 @@ Content-Disposition: form-data; name="clients"
 </clients>
 ------=_Part_4846_2022598837.1542560230901--
 ----
-

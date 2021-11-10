@@ -20,10 +20,72 @@ Creates a `Multipart` data structure using a specified array of parts.
 
 === Example
 
-This example creates a `Multipart` data structure that contains parts, which
-are described in examples for the `field` function. For additional uses of
-`form`, see examples in the Multipart `file` and `field`
-https://docs.mulesoft.com/dataweave/latest/dw-multipart-functions-form[documentation].
+This example creates a `Multipart` data structure that contains three parts.
+
+The first part uses the `Multipart::file()` function to import an external file named `orders.xml`. The file is located in the internal `src/main/resources` folder of the Mule application. See the xref:dw-multipart-functions-file.adoc[file] function documentation for more details on this example.
+
+The second part uses the `Multipart::field()` function version that accepts field names as input parameters in the form of an object with key/value pairs, enabling you to pass the keys in any order. This part also does not specify the optional `fileName` parameter. When specified, `fileName` is part of the `Content-Distribution` element of the part. The `mime` field is also optional. When included, the field sets the `Content-Type` element to the `mime` value. In this case the `Content-Type` is set to `text/plain`.
+
+The third part uses the more compact version of the `Multipart::field()` function which sets the required and optional parameters, in the correct order, as input parameters. The first three parameters `name`, `value`, and `mime` are required. The `fileName` parameters is optional, use it only if the content is read from a file or is written to a file. In this version, the `mime` parameter is output as the `Content-Type` element, and the `fileName` is output as the `filename` parameter of the `Content-Distribution` element.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import dw::module::Multipart
+output multipart/form-data
+var myOrders = "./orders.xml"
+var fileArgs = { name: "file", path: myOrders, mime: "application/xml", fileName: "myorders.xml"}
+var fieldArgs = {name:"userName",value: "Annie Point", mime: "text/plain"}
+---
+Multipart::form([
+  Multipart::file(fileArgs),
+  Multipart::field(fieldArgs),
+  Multipart::field("myJson", {"user": "Annie Point"}, "application/json", "userInfo.json")
+])
+----
+
+==== Output
+
+[source,json,linenums]
+----
+------=_Part_146_143704079.1560394078604
+Content-Type: application/xml
+Content-Disposition: form-data; name="file"; filename="myorders.xml"
+<?xml version='1.0' encoding='UTF-8'?>
+<orders>
+  <order>
+    <item>
+      <id>1001</id>
+      <qty>1</qty>
+      <price>$100</price>
+    </item>
+    <item>
+      <id>2001</id>
+      <qty>2</qty>
+      <price>$50</price>
+    </item>
+  </order>
+</orders>
+------=_Part_146_143704079.1560394078604
+Content-Type: text/plain
+Content-Disposition: form-data; name="userName"
+Annie Point
+------=_Part_146_143704079.1560394078604
+Content-Type: application/json
+Content-Disposition: form-data; name="myJson"; filename="userInfo.json"
+{
+  "user": "Annie Point"
+}
+------=_Part_146_143704079.1560394078604--
+----
+
+=== Example
+
+This example constructs a data structure using DataWeave code that is compatible with the `multipart/form-data` output format, demonstrating how you can manually construct a data structure compatible with `multipart/form-data` output, without using the `form` function.
+
+In the following structure, the part keys `part1` and `part2` are stripped out in the `multipart/form-data` output.
 
 ==== Source
 
@@ -57,4 +119,3 @@ Content-Disposition: form-data; name="mySecondPart"
 content for my second part
 ------=_Part_320_1528378161.1542639222352--
 ----
-
