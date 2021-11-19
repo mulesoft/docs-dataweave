@@ -133,9 +133,11 @@ You can configure the maximum stack size by using the property `com.mulesoft.dw.
 In order to handle large payloads, DataWeave generates some data which is handled in memory unless it exceeds a certain configurable limit.
 When that happens the data is stored on disk as output, input, and buffer files in a temporary directory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management] for further details.
 
-To avoid the exception `No space left on device` more resource is needed to been able to run the app, or the app needs to be reviewed to reduce its resource consumption.
+Once the streams referencing those files are closed the files are released. The closure normally happens when flows complete their execution, so long-running and particularly concurrent executions could involve having many of these files living at once.
 
-Normally, once the streams referencing those files are closed the files are released. In case that these types of files remains in the temporal folder even after the flow has completed, this could mean that the streams remain unclosed and cause leaks.
+To avoid the exception `No space left on device` more resources are needed to be able to run the app, or the app needs to be reviewed to reduce its resource consumption.
+
+Sometimes bugs can lead to them not being removed even after the flow has completed.
 If this case isn't fixed in the latest update, there’s no way to work around the issue, and this can be reported to the Mulesoft support team.
 
 === Closed Streams
