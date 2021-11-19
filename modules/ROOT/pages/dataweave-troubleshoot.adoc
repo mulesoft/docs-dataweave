@@ -29,7 +29,7 @@ To use this feature:
 +
 `-M-Dcom.mulesoft.dw.dump_folder=<path_to_folder>`
 +
-The default directory is `/tmp`.
+The default directory is what is set in the `java.io.tmpdir` property.
 
 == DataWeave Exceptions
 
@@ -129,22 +129,15 @@ Stack Overflow. Max stack is 256
 
 You can configure the maximum stack size by using the property `com.mulesoft.dw.stacksize`.
 
-== DataWeave Warnings
+=== Closed Streams
+The input data that makes its way to DataWeave is usually a stream handled by the Mule Runtime: they will add auto-closing and repeatable capabilities by generating “cursors” over them.
+Sometimes these streams are closed prematurely by the time they reach a DataWeave script, and it can be hard to understand who has closed it.
+In these circumstances, the script will fail with an error similar to: "Cannot open a new cursor on a closed stream".
 
-The following are some common DataWeave warnings that you can find in your dump file, along with some details to address these warnings.
+If this case isn't fixed in the latest update, there’s no way to work around the issue, but there is a way to determine which component is closing the stream prematurely, so the issue can be properly reported to the Mulesoft support team.
+Using the `com.mulesoft.dw.track.cursor.close` system property, the error will start showing the stack trace from the moment the stream was closed and therefore point to whoever triggered the closing.
 
-=== End of Input Was Reached
-
-This warning shows because DataWeave treats the Unicode non-character `U+FFFF` as a special character that indicates the end of input.
-
-To avoid this warning, replace the special character in the raw payload and then proceed as usual.
-
-[source,weave, linenums]
-----
-read(payload.^raw replace "\uFFFF" with "NonChar")
-----
-
-== Output Mismatch When Undefined
+=== Output Mismatch When Undefined
 
 Unlike transformations, DataWeave expressions do not require you to define an output format because DataWeave can infer the output based on the expression and the variables you use. Occasionally, the inference process results in a mismatch between the inferred type and the expected type. To resolve this issue, you must make the output explicit. Common examples of this situation occur when:
 
@@ -153,7 +146,7 @@ Unlike transformations, DataWeave expressions do not require you to define an ou
 * <<manipulating_text>>
 
 [[xml_extraction]]
-=== Extract Data from XML
+==== Extract Data from XML
 
 When extracting a String, for example, from an XML payload with the expression `payload.order.product.model`, DataWeave infers an XML output based on the payload format. In such cases, an error similar to the following one occurs:
 
@@ -165,7 +158,7 @@ When extracting a String, for example, from an XML payload with the expression `
 For such an error, you must make the output format explicit, for example: `output text/plain --- payload.order.product.model`.
 
 [[multipart_handling]]
-=== Handle Multipart Entries
+==== Handle Multipart Entries
 
 A common inference error occurs with multipart data, which has a very specific structure. Consider a multipart payload and the expression `dw::core::Objects::keySet(payload.parts)`. Without an explicit output format, DataWeave must infer, based on the payload type, that you intend to output multipart content. In this case, an error similar to the following is thrown:
 
@@ -187,7 +180,7 @@ Trace:
 To resolve this issue, you must define an output format, for example: `output application/json --- dw::core::Objects::keySet(payload.parts)`
 
 [[manipulating_text]]
-=== Manipulate Text Data
+==== Manipulate Text Data
 
 You can use text data to create a more complex object. However, if you do not define the output format for the input text data, DataWeave infers that it must use the plain text writer for the output. The expression `payload splitBy ' '`, for example, will fail with an error similar to:
 
@@ -203,3 +196,18 @@ Trace:
 ----
 
 Making the output explicit solves the issue: `output application/java --- payload splitBy ' '`
+
+== DataWeave Warnings
+
+The following are some common DataWeave warnings that you can find in your dump file, along with some details to address these warnings.
+
+=== End of Input Was Reached
+
+This warning shows because DataWeave treats the Unicode non-character `U+FFFF` as a special character that indicates the end of input.
+
+To avoid this warning, replace the special character in the raw payload and then proceed as usual.
+
+[source,weave, linenums]
+----
+read(payload.^raw replace "\uFFFF" with "NonChar")
+----

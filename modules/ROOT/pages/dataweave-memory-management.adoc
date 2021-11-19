@@ -11,7 +11,7 @@ When processing large files through DataWeave in Mule runtime engine, there are 
 
 == RAM vs Disk Usage
 
-DataWeave keeps small files in memory, but after a configurable threshold uses disk space to avoid running out of memory. The created buffer files are placed in a default temporary directory. If you want to store those files in a custom directory instead, you can specify the directory by using the `java.io.tmpdir` property.
+DataWeave keeps small files in memory, but after a configurable threshold uses disk space to avoid running out of memory. The created buffer files are placed in a default temporary directory. If you want to store those files in a custom directory instead, you can specify the directory by using the `java.io.tmpdir` property. Those files remain there until the streams referencing them are closed (some DataWeave files created when executing a flow could remain there until the flow ends).
 
 Three types of DataWeave buffer files are generated: +
 
