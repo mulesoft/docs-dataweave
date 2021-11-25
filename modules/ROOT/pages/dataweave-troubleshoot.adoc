@@ -137,7 +137,7 @@ When the streams that reference the files are closed, the files are released. Cl
 
 To avoid the exception `No space left on device`, try to provide more resources to run the application, or determine whether you can reduce the application's resource consumption.
 
-Sometimes bugs prevents the release of the files even after the flow has completed.
+Sometimes bugs prevent the release of the files even after the flow has completed.
 If the latest Mule release does not fix this issue, please report the issue to the MuleSoft support team.
 
 === Closed Streams
