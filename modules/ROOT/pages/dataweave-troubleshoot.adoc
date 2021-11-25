@@ -29,7 +29,7 @@ To use this feature:
 +
 `-M-Dcom.mulesoft.dw.dump_folder=<path_to_folder>`
 +
-The default directory is what is set in the `java.io.tmpdir` property.
+The default directory is set in the `java.io.tmpdir` property.
 
 == DataWeave Exceptions
 
@@ -130,23 +130,23 @@ Stack Overflow. Max stack is 256
 You can configure the maximum stack size by using the property `com.mulesoft.dw.stacksize`.
 
 === No space left on device
-In order to handle large payloads, DataWeave generates some data which is handled in memory unless it exceeds a certain configurable limit.
-When that happens the data is stored on disk as output, input, and buffer files in a temporary directory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management] for further details.
+To handle large payloads, DataWeave generates data that is handled in memory unless the payload exceeds a configurable limit.
+If the payload exceeds the limit, the data is stored on disk as output, input, and buffer files in a temporary directory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management] for further details.
 
-Once the streams referencing those files are closed the files are released. The closure normally happens when flows complete their execution, so long-running and particularly concurrent executions could involve having many of these files living at once.
+When the streams that reference the files are closed, the files are released. Closure normally occurs when flows complete their execution, so many buffer files in the temporary folder can remain in use during long-running and concurrent executions.
 
-To avoid the exception `No space left on device` more resources are needed to be able to run the app, or the app needs to be reviewed to reduce its resource consumption.
+To avoid the exception `No space left on device`, try to provide more resources to run the application, or determine whether you can reduce the application's resource consumption.
 
-Sometimes bugs can lead to them not being removed even after the flow has completed.
-If this case isn't fixed in the latest update, there’s no way to work around the issue, and this can be reported to the Mulesoft support team.
+Sometimes bugs prevents the release of the files even after the flow has completed.
+If the latest Mule release does not fix this issue, please report the issue to the MuleSoft support team.
 
 === Closed Streams
-The input data that makes its way to DataWeave is usually a stream handled by the Mule Runtime: they will add auto-closing and repeatable capabilities by generating “cursors” over them.
-Sometimes these streams are closed prematurely by the time they reach a DataWeave script, and it can be hard to understand who has closed it.
-In these circumstances, the script will fail with an error similar to: "Cannot open a new cursor on a closed stream".
+Input data that reaches DataWeave is usually a stream. Mule handles the stream and adds auto-closing and repeatable capabilities to it by generating “cursors” over the stream.
+Sometimes a stream closes prematurely, before it reaches the DataWeave script, and it can be difficult to understand what closed it.
+In these circumstances, the script fails with an error similar to `Cannot open a new cursor on a closed stream`.
 
-If this case isn't fixed in the latest update, there’s no way to work around the issue, but there is a way to determine which component is closing the stream prematurely, so the issue can be properly reported to the Mulesoft support team.
-Using the `com.mulesoft.dw.track.cursor.close` system property, the error will start showing the stack trace from the moment the stream was closed and therefore point to whoever triggered the closing.
+If this error occurs in latest Mule update, please report it to the MuleSoft support team. It is not possible to work around the issue, but you can use the `com.mulesoft.dw.track.cursor.close` system property to determine which component closed the stream prematurely.
+With the property set, the error shows the stack trace from the moment that the stream was closed, which points to the component that triggered the closure.
 
 === Output Mismatch When Undefined
 
@@ -210,11 +210,11 @@ Making the output explicit solves the issue: `output application/java --- payloa
 
 == DataWeave Warnings
 
-The following are some common DataWeave warnings that you can find in your dump file, along with some details to address these warnings.
+The following are some common DataWeave warnings that appear in your dump file, along with some details to address these warnings.
 
 === End of Input Was Reached
 
-This warning shows because DataWeave treats the Unicode non-character `U+FFFF` as a special character that indicates the end of input.
+This warning appears because DataWeave treats the Unicode non-character `U+FFFF` as a special character that indicates the end of input.
 
 To avoid this warning, replace the special character in the raw payload and then proceed as usual.
 
