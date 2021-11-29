@@ -29,7 +29,7 @@ To use this feature:
 +
 `-M-Dcom.mulesoft.dw.dump_folder=<path_to_folder>`
 +
-The default directory is `/tmp`.
+The default directory is set in the `java.io.tmpdir` property.
 
 == DataWeave Exceptions
 
@@ -129,22 +129,26 @@ Stack Overflow. Max stack is 256
 
 You can configure the maximum stack size by using the property `com.mulesoft.dw.stacksize`.
 
-== DataWeave Warnings
+=== No space left on device
+To handle large payloads, DataWeave generates data that is handled in memory unless the payload exceeds a configurable limit.
+If the payload exceeds the limit, the data is stored on disk as output, input, and buffer files in a temporary directory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management] for further details.
 
-The following are some common DataWeave warnings that you can find in your dump file, along with some details to address these warnings.
+When the streams that reference the files are closed, the files are released. Closure normally occurs when flows complete their execution, so many buffer files in the temporary folder can remain in use during long-running and concurrent executions.
 
-=== End of Input Was Reached
+To avoid the exception `No space left on device`, try to provide more resources to run the application, or determine whether you can reduce the application's resource consumption.
 
-This warning shows because DataWeave treats the Unicode non-character `U+FFFF` as a special character that indicates the end of input.
+Sometimes bugs prevent the release of the files even after the flow has completed.
+If the latest Mule release does not fix this issue, please report the issue to the MuleSoft support team.
 
-To avoid this warning, replace the special character in the raw payload and then proceed as usual.
+=== Closed Streams
+Input data that reaches DataWeave is usually a stream. Mule handles the stream and adds auto-closing and repeatable capabilities to it by generating “cursors” over the stream.
+Sometimes a stream closes prematurely, before it reaches the DataWeave script, and it can be difficult to understand what closed it.
+In these circumstances, the script fails with an error similar to `Cannot open a new cursor on a closed stream`.
 
-[source,weave, linenums]
-----
-read(payload.^raw replace "\uFFFF" with "NonChar")
-----
+If this error occurs in latest Mule update, please report it to the MuleSoft support team. It is not possible to work around the issue, but you can use the `com.mulesoft.dw.track.cursor.close` system property to determine which component closed the stream prematurely.
+With the property set, the error shows the stack trace from the moment that the stream was closed, which points to the component that triggered the closure.
 
-== Output Mismatch When Undefined
+=== Output Mismatch When Undefined
 
 Unlike transformations, DataWeave expressions do not require you to define an output format because DataWeave can infer the output based on the expression and the variables you use. Occasionally, the inference process results in a mismatch between the inferred type and the expected type. To resolve this issue, you must make the output explicit. Common examples of this situation occur when:
 
@@ -153,7 +157,7 @@ Unlike transformations, DataWeave expressions do not require you to define an ou
 * <<manipulating_text>>
 
 [[xml_extraction]]
-=== Extract Data from XML
+==== Extract Data from XML
 
 When extracting a String, for example, from an XML payload with the expression `payload.order.product.model`, DataWeave infers an XML output based on the payload format. In such cases, an error similar to the following one occurs:
 
@@ -165,7 +169,7 @@ When extracting a String, for example, from an XML payload with the expression `
 For such an error, you must make the output format explicit, for example: `output text/plain --- payload.order.product.model`.
 
 [[multipart_handling]]
-=== Handle Multipart Entries
+==== Handle Multipart Entries
 
 A common inference error occurs with multipart data, which has a very specific structure. Consider a multipart payload and the expression `dw::core::Objects::keySet(payload.parts)`. Without an explicit output format, DataWeave must infer, based on the payload type, that you intend to output multipart content. In this case, an error similar to the following is thrown:
 
@@ -187,7 +191,7 @@ Trace:
 To resolve this issue, you must define an output format, for example: `output application/json --- dw::core::Objects::keySet(payload.parts)`
 
 [[manipulating_text]]
-=== Manipulate Text Data
+==== Manipulate Text Data
 
 You can use text data to create a more complex object. However, if you do not define the output format for the input text data, DataWeave infers that it must use the plain text writer for the output. The expression `payload splitBy ' '`, for example, will fail with an error similar to:
 
@@ -203,3 +207,18 @@ Trace:
 ----
 
 Making the output explicit solves the issue: `output application/java --- payload splitBy ' '`
+
+== DataWeave Warnings
+
+The following are some common DataWeave warnings that appear in your dump file, along with some details to address these warnings.
+
+=== End of Input Was Reached
+
+This warning appears because DataWeave treats the Unicode non-character `U+FFFF` as a special character that indicates the end of input.
+
+To avoid this warning, replace the special character in the raw payload and then proceed as usual.
+
+[source,weave, linenums]
+----
+read(payload.^raw replace "\uFFFF" with "NonChar")
+----
