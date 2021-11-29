@@ -130,7 +130,7 @@ So when it is mapped to DataWeave values, it is wrapped in a Null with a Schema 
 
 | Null
 | `type Null = Null`
-| A Null type.
+| A Null type, which is for `null` values.
 
 
 | Number
