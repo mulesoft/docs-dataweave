@@ -4,10 +4,13 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: studio, anypoint, transform, transformer, format, aggregate, rename, split, filter convert, json, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping, as
 
-
-This DataWeave example uses both the `map` and `mapObject` functions to iterate through the input and set all of the keys to upper case.
+The following DataWeave examples use the `mapObject` function to iterate through the keys and values in each of the objects of the arrays.
 //LINK TO DW 1.0 EXAMPLES:
 include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+
+== First Example
+
+This example uses both the `map` and `mapObject` functions to iterate through the input and set all of the keys to upper case.
 
 The example uses these DataWeave functions:
 
@@ -34,6 +37,32 @@ include::partial$cookbook-dw/map-an-object/inputs/payload.json[]
 include::partial$cookbook-dw/map-an-object/out.json[]
 ----
 
+== Second Example
+
+This example uses the `mapObject` functions to iterate through the elements in a table. If two rows have the same values in the `FirstName`, `LastName` or `Age` columns, the DataWeave script transforms both rows into a single row in a CSV file. The remaining values in the `Team Name` and `Role` columns in the row file are concatenated with `:` in the single CSV row.
+
+[[ex02]]
+
+.Input JSON Payload:
+[source,json,linenums]
+----
+include::partial$cookbook-dw/map-an-object-ex02/inputs/payload.json[]
+----
+In the previous input example, `Sr.No. 2` and `Sr.No. 3`, and also `Sr.No. 5` and `Sr.No. 6` are exactly the same person because they have same first name, last name and age. However, `Sr.No. 4` is different person with same first and last name but different age.
+
+.DataWeave Script:
+[source,dataweave,linenums]
+----
+include::partial$cookbook-dw/map-an-object-ex02/transform.dwl[]
+----
+
+The DataWeave scripts merges the repeated values of columns `FirstName`, `LastName` or `Age` of rows `Sr.No. 2` and `Sr.No. 3`, and also rows `Sr.No. 5` and `Sr.No. 6`. These values are separated with `,` in the sigle CSV row. The values of the `Team Name` and `Role` columns are concatenated with `:` in the sigle CSV row.
+
+.Output JSON:
+[source,json,linenums]
+----
+include::partial$cookbook-dw/map-an-object-ex02/out.json[]
+----
 
 == Related Examples
 
