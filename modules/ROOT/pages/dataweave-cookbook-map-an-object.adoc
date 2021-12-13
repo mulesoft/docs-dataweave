@@ -39,7 +39,7 @@ include::partial$cookbook-dw/map-an-object/out.json[]
 
 == Second Example
 
-This example uses the `mapObject` functions to iterate through the elements in a table. If two rows have the same values in the `FirstName`, `LastName` or `Age` columns, the DataWeave script transforms both rows into a single row in a CSV file. The remaining values in the `Team Name` and `Role` columns in the row file are concatenated with `:` in the single CSV row.
+This example uses the `mapObject` function to iterate through the elements in a table. If two rows have the same values in the `FirstName`, `LastName` or `Age` columns, the DataWeave script transforms both rows into a single row in a CSV file. The remaining values in the `Team Name` and `Role` columns in the row file are concatenated with `:` in the single CSV row.
 
 [[ex02]]
 
