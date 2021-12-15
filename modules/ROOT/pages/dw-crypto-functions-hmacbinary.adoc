@@ -39,7 +39,7 @@ import dw::Crypto
 output application/json
 ---
 {
-  "HMACBinary" : Crypto::HMACBinary("key_re_loca" as Binary, "xxxxx" as Binary, "HmacSHA512")
+  "HMACBinary" : Crypto::HMACBinary("confidential" as Binary, "xxxxx" as Binary, "HmacSHA512")
 }
 ----
 
