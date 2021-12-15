@@ -37,7 +37,7 @@ This example uses HMAC with a secret value to encrypt the input content.
 import dw::Crypto
 output application/json
 ---
-{ "HMACWith" : Crypto::HMACWith("key_re_loca" as Binary, "xxxxx" as Binary) }
+{ "HMACWith" : Crypto::HMACWith("confidential" as Binary, "xxxxx" as Binary) }
 ----
 
 ==== Output
