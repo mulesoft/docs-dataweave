@@ -225,6 +225,5 @@ read(payload.^raw replace "\uFFFF" with "NonChar")
 
 == Low Performance Issues
 
-Using `output application/dw` could impact the performance of transformations.
-This format is intended to help you debug the results of DataWeave transformations.
-It is significantly slower than other formats, so it is not recommended to be used in production applications.
+Using `output application/dw` format can impact the performance of transformations. This format is intended to help you debug the results of DataWeave transformations.
+It is significantly slower than other formats, so avoid using this format in production applications.
