@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: studio, anypoint, transform, transformer, format, aggregate, rename, split, filter convert, json, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping, as
 
-The following DataWeave examples use the `mapObject` function to iterate through the keys and values in each of the objects of the arrays.
+The following DataWeave examples use the `mapObject` function to iterate through the keys and values of objects.
 //LINK TO DW 1.0 EXAMPLES:
 include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
@@ -39,7 +39,7 @@ include::partial$cookbook-dw/map-an-object/out.json[]
 
 == Second Example
 
-This example uses the `mapObject` function to iterate through the elements in a table. If two rows have the same values in the `FirstName`, `LastName` or `Age` columns, the DataWeave script transforms both rows into a single row in a CSV file. The remaining values in the `Team Name` and `Role` columns in the row file are concatenated with `:` in the single CSV row.
+This example uses the `mapObject` function to iterate through the keys and values of the object that results from using `groupBy` on the payload. If some objects of the input payload have the same values in the `FirstName`, `LastName` and `Age` keys, the DataWeave script transforms those objects into a single row in a CSV file. The remaining values in the `Team Name` and `Role` keys for those objects are concatenated with `:` in the single CSV row.
 
 [[ex02]]
 
@@ -56,10 +56,10 @@ In the previous input example, `Sr.No. 2` and `Sr.No. 3`, and also `Sr.No. 5` an
 include::partial$cookbook-dw/map-an-object-ex02/transform.dwl[]
 ----
 
-The DataWeave scripts merges the repeated values of columns `FirstName`, `LastName` or `Age` of rows `Sr.No. 2` and `Sr.No. 3`, and also rows `Sr.No. 5` and `Sr.No. 6`. These values are separated with `,` in the sigle CSV row. The values of the `Team Name` and `Role` columns are concatenated with `:` in the sigle CSV row.
+The DataWeave script merges the repeated values of keys `FirstName`, `LastName` and `Age` of the objects with key-value `Sr.No. 2` and `Sr.No. 3`, and also `Sr.No. 5` and `Sr.No. 6`. These values are separated with `,` in the single CSV row. The values of the `Team Name` and `Role` for those objects are concatenated with `:` in the single CSV row.
 
-.Output JSON:
-[source,json,linenums]
+.Output CSV:
+[source,CSV,linenums]
 ----
 include::partial$cookbook-dw/map-an-object-ex02/out.json[]
 ----
