@@ -120,7 +120,7 @@ JSON object.
 
 === Reader Properties Not Working In a Mule Application
 
-When working with a transformation inside a Mule application, `input` directives declared inside a script do not work.
+In a Mule application, the `input` directive to a DataWeave script does not work.
 This produces a different behaviour when running the same script in a standalone DataWeave runtime like the one powering the playground.
 Reader properties need to be configured on the MIME type `outputMimeType` attribute of the source of the data to produce
 the same results.
