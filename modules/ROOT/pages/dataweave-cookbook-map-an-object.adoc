@@ -34,7 +34,7 @@ include::partial$cookbook-dw/map-an-object/inputs/payload.json[]
 .Output JSON:
 [source,json,linenums]
 ----
-include::partial$cookbook-dw/map-an-object/out.csv[]
+include::partial$cookbook-dw/map-an-object/out.json[]
 ----
 
 == Second Example
@@ -62,7 +62,7 @@ The DataWeave script merges the repeated values of keys `FirstName`, `LastName` 
 .Output CSV:
 [source,CSV,linenums]
 ----
-include::partial$cookbook-dw/map-an-object-ex02/out.json[]
+include::partial$cookbook-dw/map-an-object-ex02/out.csv[]
 ----
 
 == Related Examples
