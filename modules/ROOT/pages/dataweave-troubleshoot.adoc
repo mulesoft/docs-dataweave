@@ -124,7 +124,7 @@ When working with a transformation inside a Mule application, input directives d
 This produces a different behaviour when running the same script on the playground.
 Reader properties need to be configured on the MIME type `outputMimeType` attribute of the source of the data to produce
 the same results.
-See xref:dataweave-formats.adoc#using-reader-and-writer-properties[Using Reader and Writer Properties]
+See xref:dataweave-formats.adoc#using-reader-and-writer-properties[Using Reader and Writer Properties] for further details.
 
 === Stack Overflow
 
