@@ -5,18 +5,36 @@ endif::[]
 :keywords: studio, anypoint, esb, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
 
 
-DataWeave selectors traverse the structures of objects and arrays and
+DataWeave selectors operte on the result of a left-side expression, then traverse the structure of nested objects and arrays and
 return matching values.
 //LINK TO DW 1.0 LANDING PAGE IN MULE 3.9 DOCS:
 include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
 
 A selector always operates within a context, which can be a reference to
-a variable, an object literal, an array literal, or the invocation of a
-DataWeave function.
+a variable, an object literal, an array literal, or the result of a
+DataWeave function (or variable). 
+
+There are a lot of selectors and the syntax can be overwhelming when you first see them. After some practice the selector syntax should become more intuative. 
+
+Before looking at a detailed table of all the available selectors, there are a few syntax rules that will help you differentiate them. 
+
+Many selectors can be modified with an ' 'asterix' `\*` modifier.  (as with `.*` and `..*`) to select  _all_  matches within an object. Otherwise, only the _first_ match within each object is returned. 
+
+Some selectors (some of the selectors starting with a single 'dot' `.`) only search the outermost *root-level* of the left-side input expression, while other selectors (those starting with 'dot dot' `..`) resurse through the entire nested data structure of *descendants* looking for matches. With root-level selectors such as `.keyName`, if there is a single match, the value itself is returned, and `null` is returned if there is no match.  With other selectors such as `.*keyName`, `..keyName`, and `..*keyName`, even a single match is returned inside an array, and no matches returns an empty array `[]`. 
+
+The `.@attName` selector selects all attributes. Because valid data structures can never have repeating attributes of the same name, so the `.&attName` and `..&attName` selectors always return the first and only `attName` attribute, so there is no need for the 'asterix' `*` modifier. 
+
+While most selectors work with any local DataWeave expression or variable, a few selectors (the `.^` selectors) only work with Mule events. 
 
 [%header,cols="30,30,40"]
 |===
-|Selector Type |Syntax |Return Type
+|Selector Type |Syntax
+
+`p` is an Object or Array of Objects.
+
+`entry` is a key-value pair.
+
+|Return Type
 |All descendants|`p..`|Array of all the values from every branch (recursive)
 |Single root-level values
 
@@ -70,15 +88,45 @@ Entries found in multiple objects are returned as separate objects.
 Same as `(p..).&keyName`.
 
 Selects from the same entries as the all-descendant-values selector `..*`.
-| Single-values| `.keyName` | Any of type of value that belongs to a matching key.
-| Multi-value | `.*keyName` | Array of values of any matching keys.
-| Descendants | `..keyName` | Array of values of any matching descendant keys.
+|Multiple root-level attributes 
+
+(All root-level attributes) 
+|`p.@attrName`
+|All attribute value(s) for all attrName attributes found in keys of each root-level object.
+
+Multiple matches returned in an array; none found returns `null`.
+|Multiple descendant attributes  
+
+(All descendant attributes)
+|`p..@attrName`
+|All attribute value(s) for attrName attributes found in keys of each root-level object
+
+Multiple matches returned in an array; none found returns null
+|Multiple root-level attributes
+
+(All root-level attributes)  
+|`p.@`
+|Array of all attributes (as objects) found in each root-level object. 
+
+Although an uncommon use-case, within a mapObject function's lambda, attributes can also be selected from an entry's value instead of the key, as in:
+`anObject mapObject (v,k) -> (k) @( (@.v) ) : v` instead of `anObject mapObject (v,k) -> (k) @( (@.k) ) : v`
+|Multiple descendant attributes  
+
+(All descendant attributes)
+|`p..@`
+|Array of all attributes (as objects) found in the nested hierarchy (recursive)
+|Key namespace  
+| `entry.#` or `p.keyName.#` 
+|The namespace of an `entry` (key-value pair), as an Object of type Namespace `{uri: String, prefix: String}`. 
+
+The uri and prefix can be selected, such a `entry.keyName.#`. 
+
+Although an uncommon use-case, within a mapObject function's lambda, the namespace can also be selected from a value, as in:
+`anObject mapObject (v,k) -> ("$(v.#.prefix):$(k)"): v`
+
 | Dynamic | See <<dynamic_selector>>. | &nbsp;
-| Key-value pair | `.&keyName` | Object with the matching key.
-| Index | `[<index>]` | Value of any type at selected array index.
-| Range | `[<index> to <index>]`| Array with values from selected indexes.
-| XML attribute | `@`, `.@keyName` | String value of the selected attribute.
-| Namespace | `keyName.#` | String value of the namespace for the selected key.
+| Index | `p[<index>]` | Value of any type at selected array index. Can also be used with Objects to treat an Object like an Array of root-level entries (key-value pairs). 
+| Range | `p[<startIndex> to <endIndex>]`| Array with values from selected indexes. Ranges can also go backwards to reverse the order. Ranges can also be applied to Objects to select from an Object as if it was an Array of root-level entries (key-value pairs). 
 | Key present | `keyName?`, `keyName.@type?` | Boolean (`true` if the
   selected key of an object or XML attribute is present, `false` if not).
 | Assert present | `keyName!` | String: Exception message if the key is not present.
@@ -90,7 +138,7 @@ Returns the value of specified metadata for a Mule payload, variable, or
 attribute. The selector can return the value of class (`.^class`),
 content length (`.^contentLength`), encoding
 (`.^encoding`), mime type (`.^mimeType`), media type (`.^mediaType`),
- raw  (`.^raw`), and custom (`.^myCustomMetadata`) metadata. For details, see
+ raw  (`.^raw`), and custom (`.^myCustomMetadata`) metadata. You can try using `.^raw` to read ill-formed input, such as invalid XML or JSON. For details, see
 xref:dataweave-cookbook-extract-data#selector_metadata[Extract Data].
 
 |===
