@@ -34,7 +34,7 @@ include::partial$cookbook-dw/map-an-object/inputs/payload.json[]
 .Output JSON:
 [source,json,linenums]
 ----
-include::partial$cookbook-dw/map-an-object/out.json[]
+include::partial$cookbook-dw/map-an-object/out.csv[]
 ----
 
 == Second Example
