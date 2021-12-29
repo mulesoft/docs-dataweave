@@ -48,7 +48,8 @@ This example uses the `mapObject` function to iterate through the keys and value
 ----
 include::partial$cookbook-dw/map-an-object-ex02/inputs/payload.json[]
 ----
-In the previous input example, `Sr.No. 2` and `Sr.No. 3`, and also `Sr.No. 5` and `Sr.No. 6` are exactly the same person because they have same first name, last name and age. However, `Sr.No. 4` is different person with same first and last name but different age.
+
+In the previous input example, `Sr.No. 2` and `Sr.No. 3`, as well as `Sr.No. 5` and `Sr.No. 6`, refer to the same person, as they have the same first name, last name, and age. However, `Sr.No. 4` refers to a different person, as it has the same first and last name but a different age.
 
 .DataWeave Script:
 [source,dataweave,linenums]
@@ -56,7 +57,7 @@ In the previous input example, `Sr.No. 2` and `Sr.No. 3`, and also `Sr.No. 5` an
 include::partial$cookbook-dw/map-an-object-ex02/transform.dwl[]
 ----
 
-The DataWeave script merges the repeated values of keys `FirstName`, `LastName` and `Age` of the objects with key-value `Sr.No. 2` and `Sr.No. 3`, and also `Sr.No. 5` and `Sr.No. 6`. These values are separated with `,` in the single CSV row. The values of the `Team Name` and `Role` for those objects are concatenated with `:` in the single CSV row.
+The DataWeave script merges the repeated values of keys `FirstName`, `LastName` and `Age` of the objects with key-value `Sr.No. 2` and `Sr.No. 3`, as well as `Sr.No. 5` and `Sr.No. 6`. These values are separated with `,` in the single CSV row. The values of `Team Name` and `Role` for those objects are concatenated with `:` in the single CSV row.
 
 .Output CSV:
 [source,CSV,linenums]
