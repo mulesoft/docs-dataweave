@@ -122,7 +122,7 @@ JSON object.
 
 In a Mule application, the `input` directive to a DataWeave script does not work.
 This produces a different behaviour when running the same script in a standalone DataWeave runtime like the one powering the playground.
-Reader properties need to be configured on the MIME type `outputMimeType` attribute of the source of the data to produce
+To input reader properties to a script in a Mule application, configure the `outputMimeType` attribute for the data source to produce
 the same results.
 See xref:dataweave-formats.adoc#using-reader-and-writer-properties[Using Reader and Writer Properties] for further details.
 
