@@ -118,7 +118,7 @@ When no MIME type is set on the payload, the MIME type defaults to
 `application/java`, and the content is handled as a `String` instead of a
 JSON object.
 
-=== Reader properties not working inside a Mule application
+=== Reader Properties Not Working In a Mule Application
 
 When working with a transformation inside a Mule application, `input` directives declared inside a script do not work.
 This produces a different behaviour when running the same script in a standalone DataWeave runtime like the one powering the playground.
