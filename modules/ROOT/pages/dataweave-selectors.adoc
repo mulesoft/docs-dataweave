@@ -17,20 +17,72 @@ DataWeave function.
 [%header,cols="30,30,40"]
 |===
 |Selector Type |Syntax |Return Type
+|All descendants|`p..`|Array of all the values from every branch (recursive)
+|Single root-level values
 
-| Single-value | `.keyName` | Any type of value that belongs to a matching key
-| Multi-value | `.*keyName` | Array of values of any matching keys
-| Descendants | `..keyName` | Array of values of any matching descendant keys
+(First-root-level values) | 
+`p.keyName`|
+First value of entries with key keyName found in each root-level object.
+
+Multiple matches returned in an array; none found returns `null`.
+|Multiple root-level values
+
+(All root-level values)  
+|`p.*keyName`
+|Array of all values of entries with key keyName found in each root-level object.
+|Multiple root-level entries
+
+(All root-level entries)
+|`p.&keyName`
+|Object(s) of all entries (key-value pairs) with key keyName found in each root-level object.
+
+Multiple matched objects returned in an array; none found returns `null`.
+
+Selects from the same entries as the all-descendant-values selector `.*`. 
+|Single descendant values 
+
+(First descendant values)
+|`p..keyName`
+|Array of the First value of entries with key keyName found in each object in the nested hierarchy (recursive).
+
+No results returns empty array `[]`.
+
+Same as `(p..).keyName`
+|Multiple descendant values
+
+(All descendant values)  
+|`p..*keyName`
+|Array of all values of entries with key keyName found in the nested hierarchy (recursive).
+
+No results returns empty array `[]`. 
+
+Same as `(p..).*keyName`.
+
+Selects from the same entries as the all-descendant-entries selector `..&`.
+|Multiple descendant entries 
+
+(All descendant entries)
+|`p..&keyName`
+|Array of Object(s) of entries (key-value pairs) with key keyName found in the nested hierarchy.
+
+Entries found in multiple objects are returned as separate objects.
+
+Same as `(p..).&keyName`.
+
+Selects from the same entries as the all-descendant-values selector `..*`.
+| Single-values| `.keyName` | Any of type of value that belongs to a matching key.
+| Multi-value | `.*keyName` | Array of values of any matching keys.
+| Descendants | `..keyName` | Array of values of any matching descendant keys.
 | Dynamic | See <<dynamic_selector>>. | &nbsp;
-| Key-value pair | `.&keyName` | Object with the matching key
-| Index | `[<index>]` | Value of any type at selected array index
-| Range | `[<index> to <index>]`| Array with values from selected indexes
-| XML attribute | `@`, `.@keyName` | String value of the selected attribute
-| Namespace | `keyName.#` | String value of the namespace for the selected key
+| Key-value pair | `.&keyName` | Object with the matching key.
+| Index | `[<index>]` | Value of any type at selected array index.
+| Range | `[<index> to <index>]`| Array with values from selected indexes.
+| XML attribute | `@`, `.@keyName` | String value of the selected attribute.
+| Namespace | `keyName.#` | String value of the namespace for the selected key.
 | Key present | `keyName?`, `keyName.@type?` | Boolean (`true` if the
-  selected key of an object or XML attribute is present, `false` if not)
-| Assert present | `keyName!` | String: Exception message if the key is not present
-| Filter |`[?(boolean_expression)]` | Array or object
+  selected key of an object or XML attribute is present, `false` if not).
+| Assert present | `keyName!` | String: Exception message if the key is not present.
+| Filter |`[?(boolean_expression)]` | Array or object.
   containing key-value pairs _if_ the DataWeave expression returns `true`. Otherwise,
   returns the value `null`.
 | Metadata | `.^someMetadata` a|
