@@ -23,7 +23,7 @@ _Introduced in DataWeave 2.2.0. Supported by Mule 4.2 and later._
 
 === Example
 
-This example waits shows how to chain different try
+This example demonstrates how to specify the next expression to evaluate after a try() has failed
 
 ==== Source
 
