@@ -216,6 +216,38 @@ Trace:
 
 Making the output explicit solves the issue: `output application/java --- payload splitBy ' '`
 
+=== Encoding Issues
+
+Encoding issues could come from a mismatch between the encoding that was used to write a file and the one that will be used to read that file, or if an encoding used to write a text doesn't support some of its characters. Common examples of those situations could be:
+
+* <<reader_encoding>>
+* <<writer_encoding>>
+
+[[reader_encoding]]
+==== Setting an incorrect encoding for reading
+
+Inside mule, when you use components or connectors that allow `MIME Type` configuration (like the `Set Payload`, `File Read`, `HTTP Listener`), check that the encoding that you set is the corresponding one for the payload (the one that was used to write the payload), because DataWeave will use that encoding to read it.
+
+If it is not specified, DataWeave will use the default encoding provided by the Mule Runtime (`mule.encoding` system property).
+
+
+[[writer_encoding]]
+==== The encoding used to write doesn't support some characters
+
+Check that your writer encoding supports the characters that you are trying to write.
+
+For example, if you try to write the text `"～―－＄￠￡㈱①"` with the encoding `sjis`:
+
+[source,weave, linenums]
+----
+%dw 2.0
+output application/json encoding="sjis"
+---
+"～―－＄￠￡㈱①"
+----
+
+This will output `"???＄????"` because many of those characters are not supported in that encoding (unlike UTF-8 for example).
+
 == DataWeave Warnings
 
 The following are some common DataWeave warnings that appear in your dump file, along with some details to address these warnings.
