@@ -118,6 +118,14 @@ When no MIME type is set on the payload, the MIME type defaults to
 `application/java`, and the content is handled as a `String` instead of a
 JSON object.
 
+=== Reader Properties Not Working In a Mule Application
+
+In a Mule application, the `input` directive to a DataWeave script does not work.
+Unlike Mule runtime, a standalone DataWeave runtime, such as the one in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground+], can process a valid MIME type set through the `input` directive in the same DataWeave script.
+To input reader properties to a script in a Mule application, configure the `outputMimeType` attribute for the data source to produce
+the same results.
+See xref:dataweave-formats.adoc#using-reader-and-writer-properties[Using Reader and Writer Properties] for further details.
+
 === Stack Overflow
 
 When a function recurses too deeply, an error like the following one is thrown:
@@ -222,3 +230,8 @@ To avoid this warning, replace the special character in the raw payload and then
 ----
 read(payload.^raw replace "\uFFFF" with "NonChar")
 ----
+
+== Low Performance Issues
+
+Using `output application/dw` format can impact the performance of transformations. This format is intended to help you debug the results of DataWeave transformations.
+It is significantly slower than other formats, so avoid using this format in production applications.
