@@ -66,7 +66,7 @@ a|
 * Fields:
 ** `description`: Concise description of the error.
 ** `detailedDescription`: Can provide a more thorough description.
-** `failingComponent`: The component where the error was generated.
+** `failingComponent`: The component where the error occurred.
 ** `errorType`: The type of error. The `errorType` is composed by `identifier` and `namespace`.
 ** `cause`: The internal Java `Throwable` that caused the error.
 ** `errorMessage`: An optional Mule Message provided by the failing component (used by components like HTTP when a response is invalid).
