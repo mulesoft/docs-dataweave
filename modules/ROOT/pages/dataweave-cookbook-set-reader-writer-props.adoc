@@ -7,6 +7,8 @@ endif::[]
 
 DataWeave provides configuration properties for data formats, such as JSON (`application/json`), XML (`application/xml`), and (`application/csv`). The properties change the behavior of DataWeave readers and writers for those formats. For example, the default separator for a CSV reader is a comma (`,`). You can use the format's `separator` property to specify a different separator for CSV content.
 
+Refer to xref:dataweave-formats.adoc[DataWeave Formats] for more details on available reader and writer properties for various data formats.
+
 //LINK TO DW 1.0 EXAMPLES:
 include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
