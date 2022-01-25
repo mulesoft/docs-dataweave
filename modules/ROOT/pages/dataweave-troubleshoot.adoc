@@ -236,7 +236,7 @@ If you do not set the MIME type, DataWeave uses the default encoding provided by
 
 Check that your writer encoding supports the characters that you are trying to write.
 
-For example, if you try to write the text `"～―－＄￠￡㈱①"` with the encoding `sjis`:
+For example, writing the text `"～―－＄￠￡㈱①"` with the encoding `sjis` outputs `"???＄????"` because many of the input characters are not supported in that encoding (unlike UTF-8, for example).
 
 [source,weave, linenums]
 ----
