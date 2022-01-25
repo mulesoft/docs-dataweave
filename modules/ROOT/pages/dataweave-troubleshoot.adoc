@@ -246,7 +246,6 @@ output application/json encoding="sjis"
 "～―－＄￠￡㈱①"
 ----
 
-This will output `"???＄????"` because many of those characters are not supported in that encoding (unlike UTF-8 for example).
 
 == DataWeave Warnings
 
