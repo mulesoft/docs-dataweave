@@ -224,7 +224,7 @@ Encoding issues can occur because of a mismatch between encodings used to read a
 * <<writer_encoding>>
 
 [[reader_encoding]]
-==== Setting an incorrect encoding for reading
+==== Incorrect Encoding for the Reader
 
 Inside mule, when you use components or connectors that allow `MIME Type` configuration (like the `Set Payload`, `File Read`, `HTTP Listener`), check that the encoding that you set is the corresponding one for the payload (the one that was used to write the payload), because DataWeave will use that encoding to read it.
 
