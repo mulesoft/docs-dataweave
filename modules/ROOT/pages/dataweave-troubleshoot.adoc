@@ -218,7 +218,7 @@ Making the output explicit solves the issue: `output application/java --- payloa
 
 === Encoding Issues
 
-Encoding issues could come from a mismatch between the encoding that was used to write a file and the one that will be used to read that file, or if an encoding used to write a text doesn't support some of its characters. Common examples of those situations could be:
+Encoding issues can occur because of a mismatch between encodings used to read and write a file or when the encoding to write some text does not support some of the characters. Common examples include the following:
 
 * <<reader_encoding>>
 * <<writer_encoding>>
