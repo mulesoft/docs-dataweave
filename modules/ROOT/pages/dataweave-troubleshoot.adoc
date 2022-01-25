@@ -232,7 +232,7 @@ If you do not set the MIME type, DataWeave uses the default encoding provided by
 
 
 [[writer_encoding]]
-==== The encoding used to write doesn't support some characters
+====  Encoding Used by the Writer Does Not Support Some Characters
 
 Check that your writer encoding supports the characters that you are trying to write.
 
