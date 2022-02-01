@@ -5,3 +5,5 @@ adding another test line with new commit message to W-10262792
 take 3 another test line with new commit message to W-10262792
 
 take 4 another test line with new commit message to W-10262792 (and no @ symbols in the message)
+
+take 5 testing with a bug and not a story this time
