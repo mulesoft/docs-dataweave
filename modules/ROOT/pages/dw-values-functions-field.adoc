@@ -16,7 +16,7 @@ string.
 Some versions of the `update` and `mask` functions accept a `PathElement` as
 an argument.
 
-_Introduced in DataWeave version 2.2.2._
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 

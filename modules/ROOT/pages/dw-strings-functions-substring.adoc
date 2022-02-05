@@ -16,7 +16,7 @@ specified `from` index to the last character before the
 The characters in the substring satisfy the condition
 `from &lt;= indexOf(string) < until`.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -58,5 +58,5 @@ substring(text, 1, 5)
 
 Helper function that enables `substring` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

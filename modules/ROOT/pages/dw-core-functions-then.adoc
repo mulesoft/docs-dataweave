@@ -10,7 +10,7 @@ endif::[]
 
 Helper function that enables `then` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 
 [[then2]]
@@ -20,7 +20,7 @@ This function works as a pipe that passes the value returned from the
 preceding expression to the next (a callback) only if the value returned
 by the preceding expression is not `null`.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 

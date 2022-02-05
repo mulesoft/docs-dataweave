@@ -127,3 +127,4 @@ instead of using `flatten(myData.user.myarray)`, the output is a nested array of
 == flatten&#40;@StreamCapable value: Null&#41;: Null
 
 Helper function that enables `flatten` to work with a `null` value.
+

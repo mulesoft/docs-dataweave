@@ -10,7 +10,7 @@ endif::[]
 
 Creates a `Date` value from values specified for `year`, `month`, and `day` fields.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 

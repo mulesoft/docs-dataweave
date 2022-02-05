@@ -15,7 +15,7 @@ fails to satisfy the condition.
 
 To select all elements that meet the condition, use the `filter` function.
 
-_Introduced in DataWeave version 2.2.0._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -61,5 +61,5 @@ arr takeWhile $ <= 1
 
 Helper function that enables `takeWhile` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

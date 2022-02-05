@@ -11,7 +11,7 @@ endif::[]
 Returns an array of all the types that define a given Union type.
 This function fails if the input is not a Union type.
 
-_Introduced in DataWeave version 2.3.0._
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 

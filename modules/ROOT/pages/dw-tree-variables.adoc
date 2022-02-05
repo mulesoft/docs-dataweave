@@ -1,6 +1,5 @@
 = Tree Variables (dw::util::Tree)
 
-[%header, cols="1,2a,3a"]
 |===
 | Variable | Definition | Description
 
@@ -8,17 +7,17 @@
 | `ARRAY_TYPE`
 | Variable used to identify a `PathElement` value as an array.
 
-_Introduced in DataWeave version 2.2.2._
+_Introduced in DataWeave: 2.2.2._
 
 | ATTRIBUTE_TYPE
 | `ATTRIBUTE_TYPE`
 | Variable used to identify a `PathElement` value as an attribute.
 
-_Introduced in DataWeave version 2.2.2._
+_Introduced in DataWeave: 2.2.2._
 
 | OBJECT_TYPE
 | `OBJECT_TYPE`
 | Variable used to identify a `PathElement` value as an object.
 
-_Introduced in DataWeave version 2.2.2._
+_Introduced in DataWeave: 2.2.2._
 |===

@@ -11,7 +11,7 @@ endif::[]
 Creates a Period value as a date-based number of years, months,
 and days in the ISO-8601 calendar system.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 

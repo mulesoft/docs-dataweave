@@ -13,7 +13,7 @@ Maps the terminal (leaf) nodes in the tree.
 
 Leafs nodes cannot have an object or an array as a value.
 
-_Introduced in DataWeave version 2.2.2._
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 

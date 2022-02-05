@@ -11,7 +11,7 @@ endif::[]
 Selects the first `n` elements. It returns an empty array when `n &lt;= 0`
 and the original array when `n > sizeOf(array)`.
 
-_Introduced in DataWeave version 2.2.0._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
@@ -55,5 +55,5 @@ take(users, 2)
 
 Helper function that enables `take` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

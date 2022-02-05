@@ -11,7 +11,7 @@ endif::[]
 Transforms a `Number` value into a `DateTime` value
 using `milliseconds` or `seconds` as the unit.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -60,7 +60,7 @@ output application/dw
 Transforms a `String` value into a `DateTime` value
 and accepts a format and locale.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 

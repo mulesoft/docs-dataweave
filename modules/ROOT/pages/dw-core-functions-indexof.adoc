@@ -10,7 +10,7 @@ endif::[]
 
 Returns the index of the _first_ occurrence of the specified element in this array, or `-1` if this list does not contain the element.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -56,7 +56,7 @@ output application/json
 
 Returns the index of the *first* occurrence of the specified String in this String.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -102,5 +102,5 @@ output application/json
 
 Helper method to make indexOf null friendly
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

@@ -13,7 +13,7 @@ Returns `true` if at least one entry in the object matches the specified conditi
 
 The function stops iterating after the first element that matches the condition is found.
 
-_Introduced in DataWeave version 2.3.0._
+_Introduced in DataWeave: 2.3.0._
 
 === Parameters
 
@@ -66,5 +66,5 @@ output application/json
 
 Helper function that enables `someEntry` to work with a `null` value.
 
-_Introduced in DataWeave version 2.3.0._
+_Introduced in DataWeave: 2.3.0._
 

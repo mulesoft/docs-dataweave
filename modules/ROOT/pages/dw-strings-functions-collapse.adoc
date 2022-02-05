@@ -15,7 +15,7 @@ Each substring contains a single character or identical characters
 that are adjacent to one another in the input string. Empty spaces
 are treated as characters.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -54,5 +54,5 @@ collapse("a  b babb a")
 
 Helper function that enables `collapse` to work with a `null` value.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 

@@ -7,7 +7,7 @@ To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::core::Dates` to the header of your
 DataWeave script.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 == Functions
 
@@ -25,7 +25,7 @@ input to the beginning of the first day of the specified _week_.
 | xref:dw-dates-functions-atbeginningofyear.adoc[atBeginningOfYear] | Takes a `DateTime` value as input and returns a `DateTime` value for
 the first day of the _year_ specified in the input. It also sets the `Time` value to `00:00:00`.
 | xref:dw-dates-functions-date.adoc[date] | Creates a `Date` value from values specified for `year`, `month`, and `day` fields.
-| xref:dw-dates-functions-datetime.adoc[dateTime] | Creates a `DateTime` value from values specified for `month`, `day`, `hour`,
+| xref:dw-dates-functions-datetime.adoc[dateTime] | Creates a `DateTime` value from values specified for `year`, `month`, `day`, `hour`,
 `minutes`, `seconds`, and `timezone` fields.
 | xref:dw-dates-functions-localdatetime.adoc[localDateTime] | Creates a `LocalDateTime` value from values specified for `year`, `month`, `day`,
 `hour`, `minutes`, and `seconds` fields.
@@ -40,3 +40,5 @@ the first day of the _year_ specified in the input. It also sets the `Time` valu
 
 == Types
 * xref:dw-dates-types.adoc[Dates Types]
+
+

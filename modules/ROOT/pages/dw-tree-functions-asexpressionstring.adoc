@@ -10,7 +10,7 @@ endif::[]
 
 Transforms a `Path` value into a string representation of the path.
 
-_Introduced in DataWeave version 2.2.2._
+_Introduced in DataWeave: 2.2.2._
 
 === Parameters
 

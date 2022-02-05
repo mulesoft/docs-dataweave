@@ -8,10 +8,10 @@ endif::[]
 [[datetime1]]
 == dateTime&#40;parts: DateTimeFactory&#41;: DateTime
 
-Creates a `DateTime` value from values specified for `month`, `day`, `hour`,
+Creates a `DateTime` value from values specified for `year`, `month`, `day`, `hour`,
 `minutes`, `seconds`, and `timezone` fields.
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 
@@ -22,7 +22,7 @@ _Introduced in DataWeave version 2.4.0._
             `seconds` fields followed by a `TimeZone` value for the the `timezone`
             field. Valid values are numbers between 1 and 12 for the `month`,
             1 through 31 for the `day`, 0 through 23 for the `hour`,
-            0 through 59 for `minutes`, and 0 through 60 (not inclusive; the field accepts 59.99, for example) for seconds. You can specify the name-value pairs in any
+            0 through 59 for `minutes`, and 0 through 59 (not inclusive; the field accepts 59.99, for example) for seconds. You can specify the name-value pairs in any
             order, but the output is ordered by default as a `DateTime` value,
             such as `2012-10-11T10:10:10-03:00`. The input fields are parts of
             a `DateTimeFactory` type.
@@ -41,7 +41,7 @@ import * from dw::core::Dates
 output application/json
 ---
 {
-    newDateTime: dateTime({year: 2012, month: 10, day: 11, hour: 12, minutes: 30, seconds: 40 , timeZone: |-03:00|})
+    newDateTime: dateTime({year: 2012, month: 10, day: 11, hour: 12, minutes: 30, seconds: 40 , timeZone: &#124;-03:00&#124;})
 }
 ----
 

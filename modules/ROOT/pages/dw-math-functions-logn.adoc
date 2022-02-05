@@ -14,7 +14,7 @@ Returns the natural logarithm (base `e`) of a number.
 If the input value is less than or equal to zero,
 the result is `NaN` (or `null`).
 
-_Introduced in DataWeave version 2.4.0._
+_Introduced in DataWeave: 2.4.0._
 
 === Parameters
 

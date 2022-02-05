@@ -11,7 +11,7 @@ endif::[]
 Splits the specified binary content into lines and returns the results in an
 array.
 
-_Introduced in DataWeave version 2.2.0._
+_Introduced in DataWeave: 2.2.0._
 
 === Parameters
 
