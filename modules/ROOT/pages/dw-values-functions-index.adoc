@@ -22,7 +22,7 @@ _Introduced in DataWeave: 2.2.2._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `index` | The index.
 |===
 

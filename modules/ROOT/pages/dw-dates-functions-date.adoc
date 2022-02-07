@@ -16,7 +16,7 @@ _Introduced in DataWeave: 2.4.0._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `parts` | `Number` values for `year`, `month`, and `day` fields. The `month`
             must be a value between 1 and 12, and the `day` value must be
             between 1 and 31. You can specify the name-value pairs in any order,

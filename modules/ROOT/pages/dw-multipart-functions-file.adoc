@@ -23,7 +23,7 @@ Multipart::file({ name: "myFile", path: "myClients.json", mime: "application/jso
 [%header, cols="1a,3a"]
 |===
 | Name | Description
-| opts | An object that specifies the following key/value pairs:
+| `opts` | An object that specifies the following key/value pairs:
 
 * A unique `name` (required) for the `Content-Disposition` header of the part.
 * A `path` (required) relative to the `src/main/resources` project path for the Mule app.

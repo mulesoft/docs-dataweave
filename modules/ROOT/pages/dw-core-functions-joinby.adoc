@@ -18,8 +18,8 @@ Note that `joinBy` performs the opposite task of `splitBy`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
-| `elements` |  The input array.
+| Name | Description
+| `elements` | The input array.
 | `separator` | A `String` used to join elements in the list.
 |===
 

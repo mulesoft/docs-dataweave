@@ -17,7 +17,7 @@ _Introduced in DataWeave: 2.4.0._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `str` | The `String` value to transform into a `Binary` value.
 | `encoding` | The encoding to apply to the `String` value. Accepts
                encodings that are supported by your JDK. For example,

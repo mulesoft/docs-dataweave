@@ -21,7 +21,7 @@ of the output. If there are no matches, the output array will be empty.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `value` | The source object to evaluate.
 | `criteria` | Boolean expression that selects a `value`, `key`, or `index` of the object.
 |===

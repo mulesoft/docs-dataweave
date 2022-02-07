@@ -19,7 +19,7 @@ https://docs.mulesoft.com/dataweave/latest/dataweave-pattern-matching[Pattern Ma
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The input string.
 | `matcher` | A Java regular expression for matching characters in the string.
 |===

@@ -22,7 +22,7 @@ _Introduced in DataWeave: 2.2.2._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `namespace` | The namespace of the field to select. If not specified, a null value is set.
 | `name` | A string that names the attribute to select.
 |===

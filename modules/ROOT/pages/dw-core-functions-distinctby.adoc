@@ -22,7 +22,7 @@ act on an object and handle a `null` value.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `items` | The array to evaluate.
 | `criteria` | The criteria used to select an `item` and/or `index` from the array.
 |===
@@ -114,7 +114,7 @@ Removes duplicate key-value pairs from an object.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `object` | The object from which to remove the key-value pairs.
 | `criteria` | The `key` and/or `value` used to identify the key-value pairs to remove.
 |===

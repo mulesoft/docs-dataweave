@@ -14,9 +14,9 @@ Raises the value of a `base` number to the specified `power`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
-| `base` |  A number (`Number` type) that serves as the base.
-| `power` |  A number (`Number` type) that serves as the power.
+| Name | Description
+| `base` | A number (`Number` type) that serves as the base.
+| `power` | A number (`Number` type) that serves as the power.
 |===
 
 === Example

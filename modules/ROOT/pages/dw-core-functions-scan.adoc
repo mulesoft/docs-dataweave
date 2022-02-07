@@ -18,7 +18,7 @@ by any capture groups in your regular expression (if present).
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The input string to scan.
 | `regex` | A Java regular expression that describes the pattern match in
 the `text`.

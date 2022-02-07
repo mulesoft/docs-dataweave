@@ -16,8 +16,8 @@ _Introduced in DataWeave: 2.3.0._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
-| t | The type to query
+| Name | Description
+| `t` | The type to query
 |===
 
 === Example

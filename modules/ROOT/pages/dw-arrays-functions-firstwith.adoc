@@ -17,9 +17,9 @@ _Introduced in DataWeave: 2.3.0._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
-| array | The array of elements to search.
-| condition | The condition to satisfy.
+| Name | Description
+| `array` | The array of elements to search.
+| `condition` | The condition to satisfy.
 |===
 
 === Example

@@ -17,7 +17,7 @@ _Experimental_: This is an experimental feature that is subject to change or rem
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `fileToExecute` | Name of the file to execute.
 | `fs` | File system that contains the file to execute.
 | `readerInput` | Inputs to read and bind to the execution.
