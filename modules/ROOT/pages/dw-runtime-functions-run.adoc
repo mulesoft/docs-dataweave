@@ -11,7 +11,7 @@ endif::[]
 Runs the input script under the provided context and executes
 the script in the current runtime.
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave.
+_Experimental_: This function is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 === Parameters
 

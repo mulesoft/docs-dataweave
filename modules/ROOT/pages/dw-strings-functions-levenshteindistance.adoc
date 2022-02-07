@@ -10,7 +10,7 @@ endif::[]
 
 Returns the Levenshtein distance (or edit distance) between two strings.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

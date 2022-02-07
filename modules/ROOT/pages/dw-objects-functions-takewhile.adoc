@@ -10,7 +10,7 @@ endif::[]
 
 Selects key-value pairs from the object while the condition is met.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 === Parameters
 

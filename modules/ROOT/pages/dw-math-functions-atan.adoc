@@ -10,7 +10,7 @@ endif::[]
 
 Returns an arc tangent value that can range from `-pi/2` through `pi/2`.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

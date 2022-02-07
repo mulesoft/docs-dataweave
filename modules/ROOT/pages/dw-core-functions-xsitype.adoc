@@ -10,7 +10,7 @@ endif::[]
 
 Creates a `xsi:type` type attribute. This method returns an object, so it must be used with dynamic attributes.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 === Parameters
 

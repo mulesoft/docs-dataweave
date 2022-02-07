@@ -11,7 +11,7 @@ endif::[]
 Creates a `DateTime` value from values specified for `year`, `month`, `day`, `hour`,
 `minutes`, `seconds`, and `timezone` fields.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

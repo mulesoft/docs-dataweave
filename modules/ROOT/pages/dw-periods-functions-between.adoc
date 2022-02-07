@@ -20,7 +20,7 @@ start date (`startDateInclusive`).
 Note that the first parameter of the function is the `endDateExclusive`
 and the second one is the `startDateInclusive`.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 === Parameters
 

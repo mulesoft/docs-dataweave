@@ -17,7 +17,7 @@ The function iterates through the nodes in the input. The
 the `criteria` evaluates to `true`, the node remains in the
 output. If `false`, the function filters out the node.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

@@ -12,7 +12,7 @@ Returns characters from the end of string to a
 specified number of characters, for example, the last
 two characters of a string.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -53,5 +53,5 @@ output application/json
 
 Helper function that enables `last` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

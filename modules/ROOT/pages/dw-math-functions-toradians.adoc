@@ -11,7 +11,7 @@ endif::[]
 Converts a given number of degrees in an angle to an approximately
 equivalent number of radians.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

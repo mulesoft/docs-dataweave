@@ -10,7 +10,7 @@ endif::[]
 
 Reverses sequence of characters in a string.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -56,5 +56,5 @@ output application/json
 
 Helper function that enables `reverse` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

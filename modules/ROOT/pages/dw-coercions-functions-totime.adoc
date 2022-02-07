@@ -11,7 +11,7 @@ endif::[]
 Transforms a `String` value into a `Time` value
 and accepts a format and locale.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

@@ -14,7 +14,7 @@ string value.
 
 The function returns a new object with the specified field and value.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 === Parameters
 
@@ -60,7 +60,7 @@ This `update` function updates an object field with the specified
 
 The function returns a new object with the specified field and value.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 === Parameters
 
@@ -108,7 +108,7 @@ Updates an array index with the specified value.
 This `update` function returns a new array that changes the value of
 the specified index.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 === Parameters
 
@@ -153,7 +153,7 @@ output application/json
 This `update` function updates all objects within the specified array with
 the given string value.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 === Parameters
 
@@ -204,7 +204,7 @@ given `PathElement` value.
 The function returns a new array that contains given value at
 the specified index.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 === Parameters
 
@@ -249,7 +249,7 @@ output application/json
 
 Updates the value at the specified path with the given value.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 
 === Parameters
 
@@ -292,5 +292,5 @@ output application/json
 
 Helper function that enables `update` to work with a `null` value.
 
-_Introduced in DataWeave: 2.2.2._
+_Introduced in DataWeave version 2.2.2._
 

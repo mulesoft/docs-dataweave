@@ -11,7 +11,7 @@ endif::[]
 Returns the list of parameters from the given function type.
 This function fails if the provided type is not a Function type.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 === Parameters
 

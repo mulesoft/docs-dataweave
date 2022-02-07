@@ -11,7 +11,7 @@ endif::[]
 Returns the index of the _last_ occurrence of the specified element in a given
 array or `-1` if the array does not contain the element.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -59,7 +59,7 @@ Takes a string as input and returns the index of the _last_ occurrence of
 a given search string within the input. The function returns `-1` if the
 search string is not present in the input.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
@@ -105,5 +105,5 @@ output application/json
 
 Helper function that enables `lastIndexOf` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

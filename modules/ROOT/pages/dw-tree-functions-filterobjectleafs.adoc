@@ -16,7 +16,7 @@ The leaf values in the object must be `SimpleType` or `Null` values. See
 https://docs.mulesoft.com/dataweave/latest/dw-core-types[Core Types]
 for descriptions of the types.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

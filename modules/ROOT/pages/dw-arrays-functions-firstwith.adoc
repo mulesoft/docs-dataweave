@@ -11,7 +11,7 @@ endif::[]
 Returns the first element that satisfies the condition, or returns `null` if no
 element meets the condition.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 === Parameters
 
@@ -60,5 +60,5 @@ var users = [{name: "Mariano", lastName: "Achaval"}, {name: "Ana", lastName: "Fe
 
 Helper function that enables `firstWith` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 

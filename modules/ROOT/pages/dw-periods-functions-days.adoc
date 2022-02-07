@@ -14,7 +14,7 @@ Creates a Period value from the provided number of days.
 The function applies the `period` function to input that is a whole number
 and the `duration` function to decimal input.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
 === Parameters
 

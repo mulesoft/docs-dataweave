@@ -14,7 +14,7 @@ Returns `true` if every entry in the object matches the condition.
 The function stops iterating after the first negative evaluation of an
 element in the object.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 
 === Parameters
 
@@ -67,5 +67,5 @@ output application/json
 
 Helper function that enables `everyEntry` to work with a `null` value.
 
-_Introduced in DataWeave: 2.3.0._
+_Introduced in DataWeave version 2.3.0._
 

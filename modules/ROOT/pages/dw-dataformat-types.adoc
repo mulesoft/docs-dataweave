@@ -25,14 +25,14 @@ reader: &#40;content: Binary, charset: String, settings: ReaderSettings&#41; &#4
 writer: &#40;value: Any, settings: WriterSettings&#41; &#45;&#62; Binary }`
 | Represents the DataFormat definition.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 
 | EmptySettings
 | `type EmptySettings = Object`
 | Represents a configuration with no settings.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 
 | EncodingSettings
@@ -42,20 +42,20 @@ _Introduced in DataWeave: 2.2.0._
 encoding?: String {defaultValue: "UTF&#45;8"} }`
 | Represents encoding settings.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 
 | MimeType
 | `type MimeType = String`
 | Represents a MIME type, such as `application/json`.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 
 | Settings
 | `type Settings = Object`
 | Reader or writer configuration settings.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 |===

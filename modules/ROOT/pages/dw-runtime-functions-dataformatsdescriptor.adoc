@@ -11,7 +11,7 @@ endif::[]
 Returns an array of all `DataFormatDescriptor` values that are installed in
 the current instance of DataWeave.
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave.
+_Experimental_: This function is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 === Example
 

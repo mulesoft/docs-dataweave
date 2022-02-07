@@ -10,7 +10,7 @@ endif::[]
 
 Splits an array into two at the first position where the condition is met.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
@@ -57,5 +57,5 @@ users splitWhere (item) -> item startsWith "Jul"
 
 Helper function that enables `splitWhere` to work with a `null` value.
 
-_Introduced in DataWeave: 2.4.0._
+_Introduced in DataWeave version 2.4.0._
 
