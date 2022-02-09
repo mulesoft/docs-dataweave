@@ -570,7 +570,7 @@ from the input payload and output those values into a JSON array.
 %dw 2.0
 output application/json
 ---
-payload..name
+payload..*name
 ----
 
 ==== Output
