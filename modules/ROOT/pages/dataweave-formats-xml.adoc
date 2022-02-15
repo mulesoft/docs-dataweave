@@ -42,6 +42,8 @@ The following examples show uses of the XML format.
 * <<example10>>
 * <<example11>>
 
+Refer to xref:dataweave-formats.adoc[DataWeave Formats] for more details on available reader and writer properties for various data formats.
+
 [[example1]]
 === Example: Stream Input XML Data
 
