@@ -85,7 +85,7 @@
  ** xref:dataweave-cookbook-java-methods.adoc[Call Java Methods (Mule)]
  ** xref:dataweave-cookbook-flat-file-read-and-write.adoc[Read and Write a Flat File (Mule)]
  ** xref:dataweave-cookbook-reader-prop-connector.adoc[Use a Reader Property through a Connector (Mule)]
- ** xref:dataweave-cookbook-writer-prop-mule.adoc[Use a Mule Variable as a Configuration Value (Mule)]
+ ** xref:dataweave-cookbook-writer-prop-mule.adoc[Use Dynamic Writer Properties (Mule)]
  ** xref:dataweave-cookbook-pluck.adoc[Extract Key/Value Pairs with Pluck Function (Mule)]
 * xref:dw-functions.adoc[DataWeave Reference]
  ** xref:dw-operators.adoc[DataWeave Operators]
