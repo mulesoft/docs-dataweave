@@ -1,0 +1,58 @@
+[
+{
+"Sr.No.": 1,
+"FirstName": "Charles",
+"LastName": "Lock",
+"Age": 40,
+"Team Name": "Scrum team 1",
+"Role": "developer"
+},
+{
+"Sr.No.": 2,
+"FirstName": "Josh",
+"LastName": "Rodriguez",
+"Age": 45,
+"Team Name": "architecture",
+"Role": "SA"
+},
+{
+"Sr.No.": 3,
+"FirstName": "Josh",
+"LastName": "Rodriguez",
+"Age": 45,
+"Team Name": "technology",
+"Role": "advisor"
+},
+{
+"Sr.No.": 4,
+"FirstName": "Josh",
+"LastName": "Rodriguez",
+"Age": 35,
+"Team Name": "development",
+"Role": "developer"
+},
+{
+"Sr.No.": 5,
+"FirstName": "Jane",
+"LastName": "Rodriguez",
+"Age": 30,
+"Team Name": "architecture",
+"Role": "SA"
+},
+{
+"Sr.No.": 6,
+"FirstName": "Jane",
+"LastName": "Rodriguez",
+"Age": 30,
+"Team Name": "Scrum team 1",
+"Role": "developer"
+},
+{
+"Sr.No.": 7,
+"FirstName": "Josh",
+"LastName": "Lee",
+"Age": 42,
+"Team Name": "Scrum team1",
+"Role": "developer"
+}
+]
