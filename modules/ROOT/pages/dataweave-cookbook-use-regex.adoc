@@ -46,7 +46,7 @@ For function documentation, see:
 * xref:dw-core-functions-scan.adoc[scan]
 * xref:dw-core-functions-splitby.adoc[splitby]
 
-[[ex01]]
+[[ex02]]
 == Use DataWeave Variables and Functions in a Regular Expression
 
 This example constructs a regular expression by using the DataWeave concatenate function (`++`) to incorporate a DataWeave variable into a regular expression.
