@@ -18,7 +18,7 @@ This example shows how DataWeave represents a properties file.
 
 === Input
 
-The following `text/x-java-properties` data is from a properties file. The file contains key-value pairs that provide host and port values. This content serves as the input payload to the DataWeaave script.
+The following `text/x-java-properties` data is from a properties file. The file contains key-value pairs that provide host and port values. This content serves as the input payload to the DataWeave script.
 
 [source,properties,linenums]
 ----
