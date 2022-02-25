@@ -16,11 +16,13 @@ versions act on objects, strings, and the various date and time formats that
 are supported by DataWeave.
 
 [source,JSON,linenums]
+---
 |===
 | Name   | Description
 | `source` | The array containing items to remove.
 | `toRemove` | Items to remove from the source array.
 |===
+---
 
 === Example
 
@@ -160,4 +162,3 @@ output application/json
 Helper function that enables `--` to work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
-
