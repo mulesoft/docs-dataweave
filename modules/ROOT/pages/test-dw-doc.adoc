@@ -140,3 +140,7 @@ and all the debugging capabilities that VSCode provides.
 == Weave Dependencies
 
 This view shows all the dependencies resolved for this project.
+
+== Testing links
+
+* xref:index.adoc[xref to index]
