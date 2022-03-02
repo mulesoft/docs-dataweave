@@ -1,0 +1,18 @@
+= DataWeave Language
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: studio, anypoint, transform, transformer, format, aggregate, rename, split, filter convert, xml, json, csv, pojo, java object, metadata, dataweave, data weave, datawave, datamapper, dwl, dfl, dw, output structure, input structure, map, mapping
+
+include::dataweave::partial$dataweave-intro.adoc[]
+
+* To learn more about DataWeave, visit xref:dataweave-language-guide.adoc[the language guide].
+* To look up reference information about DataWeave 2.4.0 operators and functions, visit xref:dw-functions.adoc[the reference guide].
+* To see sample scripts to solve common transformation scenarios, visit xref:dataweave-cookbook.adoc[DataWeave examples].
+* To try DataWeave scripts interactively, visit https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
+* To get started with DataWeave 2.4.0 for Mule runtime engine (Mule) version 4.4 and later, visit
+xref:dataweave-quickstart.adoc[the quickstart].
+
+== Compatibility
+
+include::release-notes::partial$dataweave/dw-mule-compatibility.adoc[]

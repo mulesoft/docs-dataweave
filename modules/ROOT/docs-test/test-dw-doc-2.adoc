@@ -143,4 +143,4 @@ This view shows all the dependencies resolved for this project.
 
 == Testing links
 
-* xref:index.adoc[xref to index]
+* xref:index-2.adoc[xref to index]
