@@ -327,4 +327,3 @@
 *** xref:dw-values-functions-mask.adoc[mask]
 *** xref:dw-values-functions-update.adoc[update]
 *** xref:dw-values-types.adoc[Values Types]
-
