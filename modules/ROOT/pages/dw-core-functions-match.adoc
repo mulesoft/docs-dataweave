@@ -20,7 +20,7 @@ statements].
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | A string.
 | `matcher` | A Java regex for matching characters in the `text`.
 |===

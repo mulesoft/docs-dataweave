@@ -18,7 +18,7 @@ values are in the array.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `values` | The input array of numbers.
 |===
 

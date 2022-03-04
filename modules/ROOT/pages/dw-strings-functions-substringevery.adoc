@@ -21,7 +21,7 @@ _Introduced in DataWeave version 2.4.0._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The string to split.
 | `amount` | The desired length of each substring.
 |===

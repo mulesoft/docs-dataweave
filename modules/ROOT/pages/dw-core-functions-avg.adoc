@@ -18,7 +18,7 @@ in an error.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `values` | The input array of numbers.
 |===
 
