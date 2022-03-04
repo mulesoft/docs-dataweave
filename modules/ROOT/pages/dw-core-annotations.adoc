@@ -6,24 +6,23 @@
 
 | AnnotationTarget
 | `@AnnotationTarget&#40;targets: Array<"Function" &#124; "Parameter" &#124; "Variable" &#124; "Import"&#62;&#41;`
-| Annotation that limits the scope of an annotation. For example, the `Lazy`
-annotation applies only to variables, and the `StreamCapable` annotation
-applies only to parameters and variables. If no `AnnotationTarget` is 
-specified, an annotation can apply to any valid target. An example is
-`@AnnotationTarget(targets = ["Function", "Variable"])` to limit the scope
-of the annotation `annotation TailRec()`. 
+| Annotation that limits the application of an annotation. An example is
+`@AnnotationTarget(targets = ["Function", "Variable"])`, which limits
+the scope of the annotation `annotation TailRec()` to functions and
+variables. If no `AnnotationTarget` is specified, an annotation can
+apply to any valid target.
+
 
 Annotation Targets:
 
-* `Parameter`: For function parameters.
-* `Function`: For function definitions.
-* `Variable`: For variable definitions.
-* `Import`: For import definitions.
+* Parameter: For function parameters.
+* Function: For function definitions.
+* Variable: For variable definitions.
+* Import: For import definitions.
 
 | Deprecated
 | `@Deprecated&#40;since: String, replacement: String&#41;`
 | Annotation that marks a function as deprecated.
-
 
 _Introduced in DataWeave version 2.4.0._
 
@@ -36,18 +35,16 @@ especially with complex Object types.
 
 | Experimental
 | `@Experimental&#40;&#41;`
-| Annotation that marks a function as experimental and subject 
+| Annotation that identifies a feature as experimental and subject
 to change or removal in the future.
-
 
 _Introduced in DataWeave version 2.4.0._
 
 | GlobalDescription
 | `@GlobalDescription&#40;&#41;`
-| Annotation used to identify which functions gets the function description
-from the function's documentation section. This annotation is useful for 
-selecting the correct function description when the function is overloaded.
-
+| Annotation used to identify the function description to use for the
+function's documentation. This annotation is useful for selecting
+the correct function description when the function is overloaded.
 
 _Introduced in DataWeave version 2.4.0._
 
@@ -57,8 +54,6 @@ _Introduced in DataWeave version 2.4.0._
 marked annotation will wrap an annotated function with an `interceptorFunction`.
 An example is the `RuntimePrivilege` annotation, which is annotated by
 `@Interceptor(interceptorFunction = "@native system::SecurityManagerCheckFunctionValue")`.
-The `readUrl` function definition is annotated by `@RuntimePrivilege(requires = "Resource")`.
-
 
 _Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 
@@ -67,18 +62,15 @@ _Experimental:_ This experimental feature is subject to change or removal from f
 | Annotation that marks a function as _internal_ and not to be used.
 
 
-_Introduced in DataWeave 2.4.0._
-
+ _Introduced in DataWeave 2.4.0. Supported by Mule 4.4.0 and later._
 
 _Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 
 | Labels
 | `@Labels&#40;labels: Array<String&#62;&#41;`
-| Annotation for labeling a function or variable so that the
-labelled target becomes more easy to discover. An example is 
-`@Labels(labels = ["foreach", "transform"])`, which annotates
-definitions of `map` and `mapObject` functions.
-
+| Annotation for labeling a function or variable definition so that it
+becomes more easy to discover. An example is
+`@Labels(labels =["append", "concat"])`.
 
 _Introduced in DataWeave version 2.4.0._
 
@@ -86,13 +78,12 @@ _Introduced in DataWeave version 2.4.0._
 | `@Lazy&#40;&#41;`
 | Annotation that marks a variable declaration for lazy initialization.
 
-
 _Introduced in DataWeave version 2.3.0._
 
 | RuntimePrivilege
 | `@RuntimePrivilege&#40;requires: String&#41;`
-| Annotation used to indicate that a function requires runtime privileges to 
-execute. An example is `@RuntimePrivilege(requires = "Resource")`, which 
+| Annotation used to indicate that a function requires runtime privileges to
+execute. An example is `@RuntimePrivilege(requires = "Resource")`, which
 annotates the `readUrl` function definition.
 
 | Since
@@ -105,10 +96,8 @@ _Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
 
 | StreamCapable
 | `@StreamCapable&#40;&#41;`
-| Annotation that marks a parameter as stream capable, which means that the
-annotated field consumes an array of objects in a forward-only manner. 
-Examples of functions with `@StreamCapable` fields are `map`, `mapObject`, 
-and `pluck`.
+| Annotation that marks a parameter as stream capable, which means that this
+field will consume an array of objects in a forward-only manner.
 
 | TailRec
 | `@TailRec&#40;&#41;`
@@ -118,9 +107,8 @@ this annotation is not tail recursive, the function will fail.
 | UntrustedCode
 | `@UntrustedCode&#40;&#41;`
 | Annotation that marks a script as untrusted, which means that the script has
-no privileges. For example, the script cannot gain access to environment
+no privileges. For example, such a script cannot gain access to environment
 variables or read a resource from a URL.
-
 
 _Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 |===
