@@ -1,5 +1,6 @@
 = Dates Types (dw::core::Dates)
 
+[%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 

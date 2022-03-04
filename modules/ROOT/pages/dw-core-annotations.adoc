@@ -1,5 +1,6 @@
 = Core Annotations (dw::Core)
 
+[%header, cols="1,2a,3a"]
 |===
 | Annotation | Definition | Description
 
@@ -54,7 +55,7 @@ marked annotation will wrap an annotated function with an `interceptorFunction`.
 An example is the `RuntimePrivilege` annotation, which is annotated by
 `@Interceptor(interceptorFunction = "@native system::SecurityManagerCheckFunctionValue")`.
 
-_Experimental_: This experimental feature is subject to change or removal from future versions of DataWeave
+_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 
 | Internal
 | `@Internal&#40;permits: Array<String&#62;&#41;`
@@ -63,7 +64,7 @@ _Experimental_: This experimental feature is subject to change or removal from f
 
  _Introduced in DataWeave 2.4.0. Supported by Mule 4.4.0 and later._
 
-_Experimental_: This experimental feature is subject to change or removal from future versions of DataWeave
+_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 
 | Labels
 | `@Labels&#40;labels: Array<String&#62;&#41;`
@@ -109,5 +110,5 @@ this annotation is not tail recursive, the function will fail.
 no privileges. For example, such a script cannot gain access to environment
 variables or read a resource from a URL.
 
-_Experimental_: This experimental feature is subject to change or removal from future versions of DataWeave
+_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
 |===

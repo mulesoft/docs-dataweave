@@ -10,7 +10,7 @@ endif::[]
 
 Runs the script at the specified URL.
 
-_Experimental_: This function is an experimental feature that is subject to change or removal from future versions of DataWeave.
+_Experimental:_ This function is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 === Parameters
 

@@ -1,5 +1,6 @@
 = DataFormat Annotations (dw::extension::DataFormat)
 
+[%header, cols="1,2a,3a"]
 |===
 | Annotation | Definition | Description
 
