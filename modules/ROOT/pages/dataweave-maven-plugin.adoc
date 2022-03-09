@@ -81,7 +81,7 @@ Inside the `plugin` configuration, add the `tests` element with your desired tes
 
 *Configuration Parameters*
 
-[cols="1a,1a,2a,3a", options="header"]
+[%header%autowidth.spread,cols=".^a,.^a,.^a,.^a"]
 |===
 |Name |Type |Default |Description
 
@@ -184,7 +184,7 @@ Inside the `plugin` configuration, add the `docs` element with your desired docu
 
 *Configuration Parameters*
 
-[cols="1a,1a,2a,3a", options="header"]
+[%header%autowidth.spread,cols=".^a,.^a,.^a,.^a"]
 |===
 |Name |Type |Default | Description
 
@@ -278,7 +278,7 @@ mvn deploy -DskipDeployDocs=true
 
 At design time, DataWeave libraries need the following basic components:
 
-[cols="1,1,3", options="header"]
+[%header%autowidth.spread,cols=".^a,.^a,.^a"]
 |===
 |Component |Type |Description
 
@@ -301,7 +301,8 @@ The directory structure of a DataWeave library has the following main folders:
 
 `src/main` is the root folder for all the productive source code of the DataWeave library.
 
-[cols="1a,1a,3a,a", options="header"]
+//[cols="1a,1a,3a", options="header"]
+[%header%autowidth.spread,cols=".^a,.^a,.^a"]
 |===
 |Folder |Folder Type |Description
 
@@ -318,7 +319,8 @@ The directory structure of a DataWeave library has the following main folders:
 
 `src/test` is the root folder for all the test source code of the DataWeave library.
 
-[cols="1a,1,3", options="header"]
+//[cols="1a,1,3", options="header"]
+[%header%autowidth.spread,cols=".^a,.^a,.^a"]
 |===
 |Folder |Folder Type |Description
 
@@ -333,4 +335,4 @@ This folder also contains files required to run your test suite.
 |===
 
 // == See also
-// Include links to other DW articles when ready. 
+// Include links to other DW articles when ready.
