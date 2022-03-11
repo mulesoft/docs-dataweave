@@ -22,10 +22,11 @@ To install the plugin, follow these steps:
 
 //image::dataweave-extension-plugin-install.png[]
 image::animations/install_plugin.gif[Installation Steps]
+// ![Installation Steps](animations/install_plugin.gif)
 
 == Develop DataWeave Libraries
 
-To develop DataWeave libraries, first create a new DataWeave project in Visual Studio Code where you then create, preview and test custom mappings and modules.
+To develop DataWeave libraries, first create a new DataWeave project in Visual Studio Code where you then create, preview, and test custom mappings and modules.
 
 === Create a DataWeave Project
 
@@ -48,6 +49,7 @@ After the process to create a new project finishes, a prompt window asks you if 
 
 //image::dataweave-extension-new-project.png[]
 image::animations/new_project.gif[New project creation steps]
+//![](animations/new_project.gif)
 
 === Understand the DataWeave Project Structure
 
@@ -77,68 +79,94 @@ The DataWeave Extension plugin requires that all dependencies are loaded and ind
 
 //image::dataweave-extension-dependencies.png[]
 image::animations/loading.gif[Dependencies loading and indexing]
+// ![](animations/loading.gif)
 
 == Create a DataWeave Module
 
-A DataWeave module is a `.dwl` file that can define functions, variables, types, and namespaces definitions. These modules can't contain an output directive, body expression, or `(---)` between header and body sections. A DataWeave module enables you to share all the content defined in the `.dwl` file for reuse.
+A DataWeave module is a `.dwl` file that can define functions, variables, types, and namespaces definitions. These modules can't contain an output directive, body expression, or the separator `---` between header and body sections. A DataWeave module enables you to share all the content defined in the `.dwl` file for reuse.
 
 To create a new DataWeave module, follow these steps:
 
 . In Visual Studio Code, launch the *Command Palette* by pressing `Ctrl + Shift + P` (Windows, Linux) or `⇧⌘P` (macOS).
-. In the search bar, select *DataWeave: Create New Module*.
+. In the search bar, select *DataWeave: Create new module*.
 
 //image::dataweave-extension-createmodule.png[]
 image::animations/new_mapping.gif[Creating new Module using DataWeave Extension Plugin]
+// ![](animations/new_mapping.gif)
 
 == Test a DataWeave Module
 
-In order to test your module you can create your test automatically by running _Create Unit Test_ code lens in your function definitions inside your module.
+Generate a unit test for your module's functions by clicking the *Add Unit Test* CodeLens button located above the specific function in the module `.dwl` file. +
 
-This feature depends on our DataWeave Testing Framework which provides a DSL to create test suites and assert results.
+This feature generates:
 
-This will create a new .dwl test file for your module (if it does not exist) as well as a suite for your function with a new added test (if it already exists it will add a new test case to your module test suite)
+* A new `.dwl` test file for the module under `src/test/dw` (if the file does not exist), which defines a test case for the function that you call with specific arguments and make assertions over the output.
+* A test suite for the function with a new added test case (if a test suite already exists, the feature adds a new test case to the existing test suite).
 
-![](animations/moduleTest.gif)
+You can also test your module by creating a test mapping, which is located on your `src/test/dw` folder as it should not be exposed to consumers of your module. The test mapping has the same capabilities as a regular [mapping](#mappings).
 
-You can also test your module by creating a test mapping (which should be located on your test/dw folder as it should not be exposed to consumers of your module) which will have the same capabilities as a normal [mapping](#mappings).
+The tests use functions of the modules `dw::test::Tests` and `dw::test::Asserts` provided by the artifact `org.mule.weave.wtf` of the DataWeave Testing Framework.
+
+To test a DataWeave module, follow these steps:
+
+. In Visual Studio Code, open your DataWeave project.
+. Navigate to the `src/main/dw` folder.
+. Select your module `.dwl` file.
+. In your module `.dwl` file, click the *Add Unit Test* CodeLens button located above your function.
+
+//image::dataweave-extension-testmodule.png[]
+image::animations/moduleTest.gif[Test Module Steps]
+// ![](animations/moduleTest.gif)
+
 
 == Create a DataWeave Mapping
 
-A DataWeave mapping is a .dwl file that allows you to map and connect to anything, regardless of data type or structure. You can define functions, variables, types, and namespaces definitions as a DataWeave module, and also you specify a body section after the separator `---`.
+A DataWeave mapping is a `.dwl` file that enables you to map and connect to anything, regardless of data type or structure. You can define functions, variables, types, and namespaces definitions as in a DataWeave module. You can also specify a body section after the separator `---`.
 
-A significant difference with a DataWeave module is that a DataWeave mapping file it's an executable unit that enables you to transform from zero or more inputs into a single output.
+A difference with a DataWeave module file is that a DataWeave mapping file it's an executable unit that enables you to transform from zero or more inputs into a single output. Using the DataWeave Extension plugin you can develop these files to create reusable assets that can be deployed and shared with others.
 
-These files can be developed within this plugin to create reusable assets that can be deployed and shared with others.
+To create a new DataWeave mapping, follow these steps:
 
-This action of `Create New Mapping` will create a new mapping file for you to start your development.
+. In Visual Studio Code, launch the *Command Palette* by pressing `Ctrl + Shift + P` (Windows, Linux) or `⇧⌘P` (macOS).
+. In the search bar, select *DataWeave: Create new mapping*.
 
-![](animations/new_mapping.gif)
+//image::dataweave-extension-createmapping.png[]
+image::animations/new_mapping.gif[Creating new mapping using DataWeave Extension Plugin]
+
+// ![](animations/new_mapping.gif)
+
 
 === Define Sample Data for DataWeave Mappings
 
-Sample Data is a key part of a DataWeave project development. It is going to be used to run your mappings and also for suggestions.
+Generate multiple sample data to use as inputs for your mapping by clicking the *Define Sample Data* CodeLens button at the top of your mapping `.dwl` file. Sample data is a key part of a DataWeave project development as it is used to run your mappings and also for suggestions.
 
-To Specify Sample Data, just click on the Code Lense _Specify Sample Data_  on a Mapping file.
+This feature generates a DataWeave *Scenario* that contains all the resources required to run the mapping in the context of that scenario.
 
-This will create an [Scenario](#scenario) for your mapping.
+To define sample data, follow these steps:
 
-![](animations/sample_data.gif)
+. In Visual Studio Code, open your DataWeave project.
+. Navigate to the `src/main/dw` folder.
+. Select your mapping `.dwl` file.
+. Click the *Define Sample Data* CodeLens button located above your mapping `.dwl` file.
+
+//image::dataweave-extension-sampledata.png[]
+image::animations/sample_data.gif[Define Sample Data steps]
+
+// ![](animations/sample_data.gif)
+
 
 === Understand DataWeave Scenarios
 
-We call scenario to a group of inputs and outputs that you can inject into your mapping to try it out in the preview,
-or use it as a test to evaluate your transformation and compare it with your desired output.
+A DataWeave *Scenario* is a group of inputs and outputs that you can inject into your mapping to try out in the *Preview Output* view, or use the scenario as a test to evaluate your transformation and compare it with your desired output. Scenarios also provide autocompletion based on the input structures.
 
-Scenarios will also provide autocompletion based on the input structures.
-
-These scenarios live on your src/test/resources folder and have this structure:
+These scenarios and its resources live in the `src/test/resources` folder and have the following structure:
 
 ```
 ├── pom.xml
 ├── src
 │   ├── main
 │   │   ├── dw
-│   │   │   ├── MyMapping.dwl //Put your Weave File here
+│   │   │   ├── MyMapping.dwl //Put your Weave file here
 │   │   └── resources
 │   └── test
 │       ├── dw
@@ -146,96 +174,133 @@ These scenarios live on your src/test/resources folder and have this structure:
 │       │   └── MyMapping // Name of your mapping
 │       │       └── default //Name of your scenario
 │       │           └── inputs //Folder where all of your inputs live
-│       │           │   └── payload.json //Input for your mapping (You can use it on your script calling it by the name of the file without extension)
-│       │           │   └── vars //Folder that will represent a name for your input variable on your script. In this case vars
-│       │           │       └── test.json //Input for your mapping (You can use it on your script calling it vars.test)
-│       │           └── out.json // Expected output of your mapping running against your inputs (Only present when testing)
+│       │           │   └── payload.json //Input for your mapping (you can use it on your script calling it by the name of the file without extension)
+│       │           │   └── vars //Folder that represents a name for your input variable on your script. In this case vars
+│       │           │       └── test.json //Input for your mapping (you can use it on your script calling it vars.test)
+│       │           └── out.json // Expected output of your mapping running against your inputs (only present when testing)
 ```
 
+=== Use Weave Scenarios View
 
-This view will show you the available scenarios you have for the mapping opened, here you can add/remove and set the active scenario that will be used
-for your preview execution as well as autocompletion.
+The *WEAVE SCENARIOS* view shows the available scenarios you have for the opened mapping `.dwl` file. Under this view, you can add or remove and set the active scenario that is used for your preview execution, as well as autocompletion.
 
-![](animations/scenarios.gif)
+//image::dataweave-extension-weavescenario.png[]
+image::animations/scenarios.gif[Weave Scenarios view]
+
+// ![](animations/scenarios.gif)
+
 
 == Preview a DataWeave Mapping
 
-Once sample data is set a user can have live feedback on how the script is working. There are two ways.
+After you define sample data, get feedback on how your mapping is working by previewing the output. To do so, follow one of these options:
 
-One is to trigger it by hand when the user wants to execute it, or can enable AutoPreview by right clicking
-on the editor.
+* Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your mapping `.dwl` file window.
+* Right-click on the editor and select *DataWeave: Enable AutoPreview* to run it on every file change.
 
-![](animations/preview.gif)
+//image::dataweave-extension-preview.png[]
+image::animations/preview.gif[Preview View]
+// ![](animations/preview.gif)
 
 
 == Run and Debug a DataWeave Mapping
 
-In order to run a Mapping the fastest way is to use the Code Lense _Run Mapping_ that should appear in the top of your DW script.
+To run and debug a DataWeave mapping click the *Run Mapping* button located at the top of your mapping `.dwl` file. This feature guides you through all the elements to fix or update. You can also set breakpoints to stop evaluating expressions and use all the debugging capabilities that Visual Studio Code provides. Debugging works on mapping tests as well.
 
-This is going to guide through all the things that are needed. The user can set breakpoints to stop evaluate expressions
-and all the debugging capabilities that VSCode provides.
-
-Debugging does work on your mapping tests as wekk.
-
-![](animations/debug.gif)
+//image::dataweave-extension-runmapping.png[]
+image::animations/debug.gif[Run and debug a mapping]
+// ![](animations/debug.gif)
 
 == Test a DataWeave Mapping
 
-== Deploy DataWeave Libraries
+To test a DataWeave mapping, click the *Dataweave: Create Mapping Test* button located at the top of your mapping `.dwl` file. This feature creates a new test scenario that takes a snapshot of your input and your current output and creates a test with it.
+The newly created scenario can also be used as a normal scenario for your preview/autocompletion.
+
+To test a DataWeave mapping, follow these steps:
+
+. In Visual Studio Code, open your DataWeave project.
+. Navigate to the `src/main/dw` folder.
+. Click the *Dataweave: Create Mapping Test* button (microscope icon) located at the top of your mapping `.dwl` file.
+
+//image::dataweave-extension-testmapping.png[]
+image::animations/mappingTest.gif[Test Mapping Steps]
+// ![](animations/mappingTest.gif)
+
+
+// == Deploy and Share DataWeave Libraries
+// This section does not exist in the DW Extension plugin documentation but I consider that we should add it, even though the deployment is through the maven plugin.
 
 
 
 == Use Playground Mode
-If you want to try out your mapping without creating a DataWeave project you can by openning your .dwl mapping file directly or create a new one and use
-[Scenarios](#scenario) and [Sample Data](#sample-data).
+If you want to try out your mapping without creating a DataWeave project you can open your `.dwl` mapping file directly on Visual Studio Code or create a new one and use scenarios and sample data.
 
-== View DataWeave Dependencies
+== Use DataWeave Dependencies View
 
-This view shows all the dependencies resolved for this project.
-It allows to navigate through all of your project's dependencies and open DataWeave files inside those dependencies.
+The *DATAWEAVE DEPENDENCIES* view shows all the dependencies resolved for a DataWeave project. The view enables you to navigate through all of your project's dependencies and open DataWeave files inside those dependencies.
 
-![](animations/weaveDependencies.gif)
-== DataWeave Extension Language Edition Features
-
-### Completion
-
-Completion is provided for any visible functions, variables, types etc. It also
-suggests fields based on the type inference
-
-![](animations/completion.gif)
-
-### Navigation
-
-User can navigate to any definition local or from any imported library
-![](animations/navegation.gif)
+//image::dataweave-extension-weavedependencies.png[]
+image::animations/weaveDependencie.gif[Weave Dependencies view]
+// ![](animations/weaveDependencies.gif)
 
 
-### Addition Code editing features
+== DataWeave Extension Plugin Language Edition Features
 
-* Find all References
+Check the following edition features that you can use in Visual Studio Code:
+
+=== Completion
+
+The completion feature enables you to auto-complete content for any visible functions, variables, or types. The feature also suggests fields based on the type inference.
+
+//image::dataweave-extension-completion.png[]
+image::animations/completion.gif[Completion Edition Feature]
+// ![](animations/completion.gif)
+
+=== Navigation
+
+The navigation feature enables you to navigate to any local definition or from any imported library.
+
+//image::dataweave-extension-navigation.png[]
+image::animations/navegation.gif[Navigation Edition Feature]
+// ![](animations/navegation.gif)
+
+
+=== Code Editing Features
+
+The following features help you to easily code in Visual Studio Code:
+
+* Find all references
 * Refactors (local and cross files)
-* Quick Fixes:
-  * Auto Import when a function is present in a Module
-  * Create a function/variable/type when is not found
+* Quick fixes:
+** Auto import when a function is present in a module
+** Create a function, variable or type when is not found
 * Outline
 * Show parameters information
 * Hover information with documentation
 
-![](animations/auto_import.gif)
+//image::dataweave-extension-autoimport.png[]
+image::animations/auto_import.gif[Auto Import Code Editing Feature]
 
-### Code Inspections
+=== Code Inspections
 
-The plugin tries to detect dioms that the user is expressing and suggest best practices when possible
-We have several inspections for example
+The DataWeave Extension plugin tries to detect idioms that you express and suggests best practices, for example:
 
-#### Default Value
+* Default Value
 
-![](animations/quick_fix.gif)
+//image::dataweave-extension-defaultvalue.png[]
+image::animations/quick_fix.gif[Default Value Code Inspection]
 
-#### TypeOf
+* TypeOf
 
-![](animations/type_of_fix.gif)
+//image::dataweave-extension-typeof.png[]
+image::animations/type_of_fix.gif[TypeOf Code Inspection]
+//![](animations/type_of_fix.gif)
 
-### Is Empty
+* IsEmpty
 
-![](animations/is_empty.gif)
+//image::dataweave-extension-isempty.png[]
+image::animations/is_empty.gif[Is Empty Code Inspection]
+//![](animations/is_empty.gif)
+
+== See Also
+
+//* xref:dataweave-.adoc[]
