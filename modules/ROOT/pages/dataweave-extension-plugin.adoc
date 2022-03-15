@@ -78,6 +78,8 @@ image::dataweave-extension-new-project.png[Command Palette with DataWeave: Creat
 . Select *OK*.
 . When prompted, select *Yes* or *No* whether you want to open the project in a new Visual Studio Code window.
 +
+
+The following image shows a new DataWeave project in Visual Studio Code:
 image::dataweave-extension-new-project-sample.png[DataWeave project example window]
 
 //image::animations/new_project.gif[New project creation steps]
@@ -97,7 +99,7 @@ To create a new DataWeave module, follow these steps:
 
 . In Visual Studio Code, launch *Command Palette* by pressing `Ctrl + Shift + P` (Windows, Linux) or `⇧⌘P` (macOS).
 . In the search bar, type `dataweave`.
-. Select *DataWeave: Create new module*.
+. Select *DataWeave: Create New Module*.
 +
 
 image::dataweave-extension-createmodule.png[Command Palette with DataWeave: Create new module option selected]
@@ -150,7 +152,7 @@ To create a new DataWeave mapping, follow these steps:
 
 . In Visual Studio Code, launch *Command Palette* by pressing `Ctrl + Shift + P` (Windows, Linux) or `⇧⌘P` (macOS).
 . In the search bar, type `dataweave`.
-. Select *DataWeave: Create new mapping*.
+. Select *DataWeave: Create New Mapping*.
 
 image::dataweave-extension-createmapping.png[Command Palette with DataWeave: Create new mapping selected]
 //image::animations/new_mapping.gif[Creating new mapping using DataWeave Extension Plugin]
@@ -179,7 +181,7 @@ Using sample data generates a DataWeave _scenario_ that contains all the resourc
 image::dataweave-extension-sampledata-2.png[Generated new sample data payload.json file as input for the MyMapping.dwl file]
 
 [[scenarios]]
-=== Understanding DataWeave Scenarios
+== Understanding DataWeave Scenarios
 
 A DataWeave _scenario_ is a group of inputs and outputs that you can inject into your mapping either to try out in the *Preview Output* view or to evaluate your transformation and compare it with your desired output. Scenarios also provide autocompletion based on the input structures.
 
