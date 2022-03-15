@@ -77,9 +77,9 @@ image::dataweave-extension-new-project.png[Command Palette with DataWeave: Creat
 . Choose a directory folder for your new project.
 . Select *OK*.
 . When prompted, select *Yes* or *No* whether you want to open the project in a new Visual Studio Code window.
-+
 
 The following image shows a new DataWeave project in Visual Studio Code:
+
 image::dataweave-extension-new-project-sample.png[DataWeave project example window]
 
 //image::animations/new_project.gif[New project creation steps]
