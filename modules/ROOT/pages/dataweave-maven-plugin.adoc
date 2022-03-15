@@ -31,10 +31,7 @@ To enable the DataWeave Maven plugin in your project:
 [source,xml,linenums]
 ----
 <plugin>
-  <groupId>org.mule.weave</groupId>
-  <artifactId>data-weave-maven-plugin</artifactId>
-  <version>0.8.0-SNAPSHOT</version>
-  <extensions>true</extensions>
+include::dataweave::partial$dataweave-maven-plugin-config.adoc[tag=config]
 </plugin>
 ----
 
@@ -146,10 +143,7 @@ The following example enables `sonar` coverage report and disables `htmlReport` 
 [source,xml,linenums]
 ----
 <plugin>
-  <groupId>org.mule.weave</groupId>
-  <artifactId>data-weave-maven-plugin</artifactId>
-  <version>0.8.0-SNAPSHOT</version>
-  <extensions>true</extensions>
+include::dataweave::partial$dataweave-maven-plugin-config.adoc[tag=config]
   <configuration>
     ...
     <tests>
@@ -228,10 +222,7 @@ The following example shows how to configure a custom home page and a specific f
 [source,xml,linenums]
 ----
 <plugin>
-  <groupId>org.mule.weave</groupId>
-  <artifactId>data-weave-maven-plugin</artifactId>
-  <version>0.8.0-SNAPSHOT</version>
-  <extensions>true</extensions>
+include::dataweave::partial$dataweave-maven-plugin-config.adoc[tag=config]
   <configuration>
     ...
     <docs>

@@ -1,0 +1,7 @@
+//DW Maven plugin version to use in examples. Update here once a new version is released.
+//tag::config[]
+  <groupId>org.mule.weave</groupId>
+  <artifactId>data-weave-maven-plugin</artifactId>
+  <version>0.1.0</version>
+  <extensions>true</extensions>
+//end::config[]
