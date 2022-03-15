@@ -1,6 +1,6 @@
 = Installing and Using the DataWeave 2.0 Extension
 
-Install and use the DataWeave 2.0 extension in Visual Studio Code to develop, preview, test, and deploy custom mappings and modules into libraries in a DataWeave project. The extension plugin also enables you to perform transformations similar to those you perform in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
+Install and use the DataWeave 2.0 extension in Visual Studio Code to develop, preview, test, and deploy custom mappings and modules into libraries in a DataWeave project. The extension also enables you to perform transformations similar to those you perform in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
 
 == Before You Begin
 
