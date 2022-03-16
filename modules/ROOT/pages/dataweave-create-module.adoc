@@ -194,7 +194,6 @@ We use Asciidoc heading grammar to separate each section.
 So the valid headings are:
 
 * `=== Parameters`
-
 * `=== Example`
 ** `=== Source`
 ** `=== Input`
@@ -202,48 +201,49 @@ So the valid headings are:
 
 Below you can find the function document template.
 ....
-%Replace with your function description%
-
-%Add additional information to your function description% (optional section)
-
-=== Parameters (optional section)
-
-[%header, cols="1,1,3"]
-|===
-| Name | Type | Description
-| %The parameter name% | %The parameter type% | %The parameter description%  (one row per param)
-|===
-
-=== Example (optional section)
-
-%The example description% (optional)
-
-==== Source (optional section)
-
-[source,%The language%,linenums] (optional)
-----
-YOUR CODE
-----
-
-==== Input (optional section)
-
-The input description (optional)
-
-[source,%The language%,linenums] (optional)
-----
-YOUR CODE
-----
-
-==== Output (optional section)
-
-%The output description% (optional)
-
-[source,%The language%,linenums] (optional)
-----
-YOUR CODE
-----
+/**
+* %Replace with your function description%
+*
+* %Add additional information to your function description% (optional section)
+*
+* === Parameters (optional section)
+*
+* [%header, cols="1,1,3"]
+* |===
+* | Name | Type | Description
+* | %The parameter name% | %The parameter type% | %The parameter description%  (one row per param)
+* |===
+*
+* === Example (optional section)
+*
+* %The example description% (optional)
+*
+* ==== Source (optional section)
+*
+* [source,%The language%,linenums] (optional)
+* ----
+* YOUR CODE
+* ----
+*
+* ==== Input (optional section)
+*
+* The input description (optional)
+*
+* [source,%The language%,linenums] (optional)
+* ----
+* YOUR CODE
+* ----
+*
+* ==== Output (optional section)
+*
+* %The output description% (optional)
+*
+* [source,%The language%,linenums] (optional)
+* ----
+* YOUR CODE
+* ----
+*/
 ....
-
 
 ==== Description Section
 In this section, you describe what your function does.
