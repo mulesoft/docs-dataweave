@@ -1,4 +1,4 @@
-= Share and Reuse Custom DataWeave Modules and Mappings
+= Sharing and Reusing Custom DataWeave Modules and Mappings
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
