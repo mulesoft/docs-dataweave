@@ -4,7 +4,7 @@ Install and use the DataWeave 2.0 extension in Visual Studio Code to develop, pr
 
 == Before You Begin
 
-Before installing the DataWeave 2.0 extension, you must:
+Before installing the DataWeave 2.0 extension to Visual Studio Code, you must:
 
 * Install JDK (Java 8 minimum)
 * Install Apache Maven
@@ -12,10 +12,10 @@ Before installing the DataWeave 2.0 extension, you must:
 
 == Install the DataWeave 2.0 Extension
 
-To install the extension, follow these steps:
+To install the extension:
 
 . Open Visual Studio Code.
-. In the *EXTENSIONS* tab, type `dataweave` to search the plugin in the marketplace.
+. In the *EXTENSIONS* tab, type `dataweave` to search the extension in the marketplace.
 . Select *DataWeave 2.0* from the search results.
 . Click *Install*.
 +
@@ -32,11 +32,11 @@ image::dataweave-extension-plugin-install.png[DataWeave 2.0 extension installati
 
 A DataWeave library is a reusable package of DataWeave modules and mappings files, and resources files such as JSON, XML, and CSV. To develop DataWeave libraries, first create a new DataWeave project in Visual Studio Code where you then create, preview, and test custom mappings and modules.
 
-If you want to try out your mapping without creating a DataWeave project, you can either open your `.dwl` mapping file directly on Visual Studio Code or create a new one and use <<sample-data,sample data>> and <<scenarios,scenarios>>.
+If you want to try out your mapping without creating a DataWeave project, you can either open your `.dwl` mapping file directly in Visual Studio Code or create a new one and use <<sample-data,sample data>> and <<scenarios,scenarios>>.
 
 === Understanding the DataWeave Project Structure
 
-DataWeave projects use Apache Maven to build and declare the projects' dependencies. The following diagram shows the DataWeave project structure:
+DataWeave projects use Apache Maven to build and declare project dependencies. The following diagram shows the DataWeave project structure:
 
 ```
 ├── src
@@ -58,10 +58,10 @@ DataWeave projects use Apache Maven to build and declare the projects' dependenc
 
 === Create a DataWeave Project
 
-Follow these steps to create a new project:
+To create a new project:
 
 . Open Visual Studio Code.
-. Launch *Command Palette* by pressing `Ctrl + Shift + P` (Windows, Linux) or `⇧⌘P` (macOS).
+. Click *View > Command Palette*.
 . In the search bar, type `dataweave`.
 . Select *DataWeave: Create New Library Project*.
 +
@@ -85,7 +85,7 @@ image::dataweave-extension-new-project-sample.png[DataWeave project example wind
 //image::animations/new_project.gif[New project creation steps]
 //![](animations/new_project.gif)
 
-When creating a DataWeave project, the DataWeave 2.0 extension plugin requires all dependencies to be loaded and indexed before it can search the libraries and make them available in your project. Visual Studio Code provides a notification bar at the bottom of the screen editor that shows when the dependencies are loading and when the indexing is complete.
+When creating a DataWeave project, the DataWeave 2.0 extension requires all dependencies to be loaded and indexed before it can search the libraries and make them available in your project. Visual Studio Code provides a notification bar at the bottom of the screen editor that shows when the dependencies are loading and when the indexing is complete.
 
 image::dataweave-extension-dependencies.png[Dependencies loading and indexing]
 //image::animations/loading.gif[Dependencies loading and indexing]
@@ -93,11 +93,11 @@ image::dataweave-extension-dependencies.png[Dependencies loading and indexing]
 
 == Create a DataWeave Module
 
-DataWeave modules are `.dwl` files that define functions, variables, types, and namespaces. These files can't contain output directives, body expressions, or `---` separators between header and body sections. A DataWeave module enables you to share all the content defined in the `.dwl` file for reuse.
+DataWeave modules are `.dwl` files that define functions, variables, types, and namespaces. These files cannot contain output directives, body expressions, or `---` separators between header and body sections. A DataWeave module enables you to share all the content defined in the `.dwl` file for reuse.
 
-To create a new DataWeave module, follow these steps:
+To create a new DataWeave module:
 
-. In Visual Studio Code, launch *Command Palette* by pressing `Ctrl + Shift + P` (Windows, Linux) or `⇧⌘P` (macOS).
+. In Visual Studio Code, click *View > Command Palette*.
 . In the search bar, type `dataweave`.
 . Select *DataWeave: Create New Module*.
 +
@@ -108,7 +108,10 @@ image::dataweave-extension-createmodule.png[Command Palette with DataWeave: Crea
 
 == Test a DataWeave Module
 
-There are two ways to test your module: either by running a unit test or by creating a test mapping located on your `src/test/dw` folder as it should not be exposed to consumers of your module.
+There are two ways to test your module:
+
+* By running a unit test
+* By creating a test mapping located in your `src/test/dw` folder to avoid exposing the test to to consumers of your module
 
 The tests use functions of the modules `dw::test::Tests` and `dw::test::Asserts` provided by the artifact `org.mule.weave.wtf` of the
 //xref:dataweave-testingframework.adoc[DataWeave Testing Framework].
@@ -118,7 +121,7 @@ To generate a unit test for a DataWeave module, follow these steps:
 . In Visual Studio Code, open your DataWeave project.
 . Navigate to the `src/main/dw` folder.
 . Select your module `.dwl` file.
-. In your module `.dwl` file, click the *Add Unit Test* CodeLens button located above your function.
+. In your module `.dwl` file, click the *Add Unit Test* button located above your function.
 +
 image::dataweave-extension-testmodule-1.png[MyModule.dwl file showing the function and the Add Unit Test button]
 
@@ -150,7 +153,7 @@ Unlike a DataWeave module file, a DataWeave mapping file is an executable unit t
 
 To create a new DataWeave mapping, follow these steps:
 
-. In Visual Studio Code, launch *Command Palette* by pressing `Ctrl + Shift + P` (Windows, Linux) or `⇧⌘P` (macOS).
+. In Visual Studio Code, click *View > Command Palette*.
 . In the search bar, type `dataweave`.
 . Select *DataWeave: Create New Mapping*.
 
@@ -161,7 +164,7 @@ image::dataweave-extension-createmapping.png[Command Palette with DataWeave: Cre
 [[sample-data]]
 === Define Sample Data for DataWeave Mappings
 
-Generate multiple sample data inputs for your mapping by clicking the *Define Sample Data* CodeLens button at the top of your mapping `.dwl` file. Sample data is a key part of DataWeave project development, because it is used to run your mappings and also for suggestions.
+Generate multiple sample data inputs for your mapping by clicking the *Define Sample Data* button at the top of your mapping `.dwl` file. Sample data is a key part of DataWeave project development, because it is used to run your mappings and also for suggestions.
 
 // Dev team clarify "sample data used for suggestions"
 
@@ -170,7 +173,7 @@ To define sample data, follow these steps:
 . In Visual Studio Code, open your DataWeave project.
 . Navigate to the `src/main/dw` folder.
 . Select your mapping `.dwl` file.
-. Click the *Define Sample Data* CodeLens button located above your mapping `.dwl` file.
+. Click the *Define Sample Data* button located above your mapping `.dwl` file.
 +
 image::dataweave-extension-sampledata-1.png[MyMapping.dwl file with Define Sample Data button]
 //image::animations/sample_data.gif[Define Sample Data steps]
@@ -266,9 +269,6 @@ image::dataweave-extension-testmapping.png[MyMapping.dwl file and the DataWeave 
 // ![](animations/mappingTest.gif)
 
 
-// == Deploy and Share DataWeave Libraries
-// This section does not exist in the DW Extension plugin documentation but I consider that we should add it, even though the deployment is through the maven plugin.
-
 == Using the DataWeave Dependencies View
 
 The *DATAWEAVE DEPENDENCIES* view shows all the dependencies resolved for a DataWeave project. The view enables you to navigate through all of your project's dependencies and open DataWeave files inside those dependencies.
@@ -276,6 +276,55 @@ The *DATAWEAVE DEPENDENCIES* view shows all the dependencies resolved for a Data
 image::dataweave-extension-dataweavedependencies.png[DataWeave Dependencies View]
 //image::animations/weaveDependencie.gif[Weave Dependencies view]
 // ![](animations/weaveDependencies.gif)
+
+
+== Deploy DataWeave Libraries
+
+Before deploying your DataWeave library to Anypoint Exchange, generate documentation for your mapping or module functions. When you deploy your DataWeave library to Exchange, the documentation is also published to the Exchange library page.
+
+To generate documentation for the functions, follow these steps:
+
+. In Visual Studio Code, open your DataWeave project.
+. Navigate to the `src/main/dw` folder.
+. Click the *Generate Weave Documentation* button located at the top of the function in the `.dwl` file .
+image::dataweave-extension-generatedoc-1.png[MyMapping.dwl file and the Generate Weave Documentation button]
+
+The documentation template appears as a comment above the function:
+
+image::dataweave-extension-generatedocs-2.png[Auto-generated documentation located above the function]
+
+To deploy a DataWeave library to Exchange:
+
+. In Visual Studio Code, open your DataWeave project.
+. Open and configure your `pom.xml` file.
+.. Ensure that your `groupId` is set to your `organization ID`.
+.. Add the Maven facade as a repository within the `<distributionManagement>` element.
++
+image::dataweave-extension-mavenfacade.png[Maven facade in <distributionManagement> element]
+
+[start=3]
+. Update the `settings.xml` file in your Maven `.m2` directory with your Anypoint Platform credentials.
++
+For guidance, refer to the xref:exchange::to-publish-assets-maven.adoc#publish-an-asset-to-exchange-using-maven guide[Publish an Asset to Exchange Using Maven] documentation.
+
+[start=4]
+. Execute the Maven `deploy` command to upload the DataWeave library to the deployment target and the auto-generated documentation to Exchange.
++
+For guidance, refer to the xref:dataweave-.adoc[DataWeave Maven Plugin] documentation.
+
+== Consume DataWeave Libraries
+
+After deploying your DataWeave library to Exchange, the library appears as an asset for your organization in the Exchange marketplace.
+
+To consume the DataWeave library:
+
+. Add the library’s group ID, artifact ID, version, and classifier to the `dependencies` element in your project’s `pom.xml` file.
++
+You can copy the dependency snippet from Exchange.
+
+. Add the Maven facade as a repository in the `repositories` section.
+
+For more details, refer to the xref:exchange::to-publish-assets-maven.adoc#publish-and-consume-federated-assets[Publish and Consume Federated Assets] documentation.
 
 
 == DataWeave 2.0 Extension Language Edition Features
