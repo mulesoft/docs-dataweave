@@ -15,7 +15,7 @@ This version of `--` removes all instances of the specified items from an array.
 versions act on objects, strings, and the various date and time formats that
 are supported by DataWeave.
 
-[source,JSON,linenums]
+[%header, cols="1,3"]
 |===
 | Name   | Description
 | `source` | The array containing items to remove.
