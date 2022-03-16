@@ -1,13 +1,13 @@
 = Installing and Using the DataWeave 2.0 Extension
 
-Install and use the DataWeave 2.0 extension in Visual Studio Code to develop, preview, test, and deploy custom mappings and modules into libraries in a DataWeave project. The extension also enables you to perform transformations similar to those you perform in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
+Install and use DataWeave 2.0 extension to Visual Studio Code (DataWeave extension) to develop, preview, test, and deploy custom mappings and modules into libraries in a DataWeave project. The extension also enables you to preview transformations similar to those you perform in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
 
 == Before You Begin
 
 Before installing the DataWeave 2.0 extension to Visual Studio Code, you must:
 
-* Install JDK (Java 8 minimum)
-* Install Apache Maven
+* Install AdoptOpenJDK (Java 8 minimum)
+* Install Apache Maven (3.6.3 minimum)
 * Install Microsoft Visual Studio Code for your specific operating system
 
 == Install the DataWeave 2.0 Extension
@@ -30,7 +30,7 @@ image::dataweave-extension-plugin-install.png[DataWeave 2.0 extension installati
 
 == Developing DataWeave Libraries
 
-A DataWeave library is a reusable package of DataWeave modules and mappings files, and resources files such as JSON, XML, and CSV. To develop DataWeave libraries, first create a new DataWeave project in Visual Studio Code where you then create, preview, and test custom mappings and modules.
+A DataWeave library is a reusable package of DataWeave module and mapping files, and resource files, such as JSON, XML, and CSV. To develop DataWeave libraries, first create a new DataWeave project in Visual Studio Code where you then create, preview, and test custom mappings and modules.
 
 If you want to try out your mapping without creating a DataWeave project, you can either open your `.dwl` mapping file directly in Visual Studio Code or create a new one and use <<sample-data,sample data>> and <<scenarios,scenarios>>.
 
@@ -130,9 +130,15 @@ image::dataweave-extension-testmodule-1.png[MyModule.dwl file showing the functi
 
 This behavior generates:
 
-* A new `.dwl` test file for the module under the `src/test/dw` folder. The test file defines a test case for the function that you call with specific arguments and make assertions over the output.
+* A new `.dwl` test file for the module under the `src/test/dw` folder. This file is where test cases and test suites are described:
+** A test case is single test with the evaluation and assertion of the result.
+** A test suite groups tests with a name that better describes the intention of some related cases.
+
+The test file defines a test case for the function that you call with specific arguments and use to make assertions over the output.
+
 * Either a new test suite for the function, consisting of your new test case, or a new test case to an existing test suite.
-// > Dev team please define/explain better test file vs test case vs test suite
+
+
 
 image::dataweave-extension-testmodule-2.png[MyModuleTest.dwl file in the src/test/dw folder]
 
