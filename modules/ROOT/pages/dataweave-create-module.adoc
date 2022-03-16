@@ -183,26 +183,33 @@ You can use DWL files directly in Mule connectors and components.
 See xref:dataweave-language-introduction.adoc#dwl_file[dwl File] for details.
 
 == DataWeave Documentation
-DataWeave uses Asciidoc Language to document your functions, modules, and, types.
 
-=== How to document your function
-We defined a template to document your function code properly.
+DataWeave uses AsciiDoc text format to document your functions, modules, and types.
 
-There are three main sections: _Description_, _Parameters_, and _Example_.
+=== Documenting Your DataWeave Functions
 
-We use Asciidoc heading grammar to separate each section. 
-So the valid headings are:
+DataWeave defines a template for documenting your DataWeave function code that has three main sections: 
+
+* A description.  
+* Parameters table for any function signatures that include parameters.
+* Example code that includes sections for any input, the DataWeave script, and the resulting output. 
+
+To separate the sections, the template uses AsciiDoc heading grammar: 
 
 * `=== Parameters`
 * `=== Example`
-** `=== Source`
-** `=== Input`
-** `=== Output`
+** `==== Source`
+** `==== Input`
+** `==== Output`
 
-Below you can find the function document template.
-....
+The template provides guidance on documenting the function. As noted, some sections are optional. 
+
+.DataWeave Function Template
+[source,DataWeave,linenums]
+----
 /**
 * %Replace with your function description%
+*
 *
 * %Add additional information to your function description% (optional section)
 *
@@ -211,7 +218,7 @@ Below you can find the function document template.
 * [%header, cols="1,1,3"]
 * |===
 * | Name | Type | Description
-* | %The parameter name% | %The parameter type% | %The parameter description%  (one row per param)
+* | %`The parameter name`% | %`The parameter type`% | %The parameter description%  (one row per param)
 * |===
 *
 * === Example (optional section)
@@ -243,34 +250,38 @@ Below you can find the function document template.
 * YOUR CODE
 * ----
 */
-....
+----
 
 ==== Description Section
-In this section, you describe what your function does.
-The description section starts from the beginning of the documentation until a heading section appears.
 
-We distinguish two sub-section: _main description_ and _additional description_.
+This section provides a description of the function. The section starts at the top of the comments and extends to the start of a section, such as  `=== Parameters`.
 
-The _main description_ is the first paragraph and the rest of the
-section until some of the heading sections appear, is the _additional description_.
+A description consists of two parts: 
 
-These sub-sections are useful for the auto-generated documentation
+* Short description: The first paragraph, which provides the main description. 
+* Long description: Any additional information about the function that begins two line breaks below the short description.
+
+Each part is useful for the auto-generated documentation.
 
 ==== Parameters Section
-Describe the parameters needed for your function.
 
-We use the Asciidoc grammar table to document the function parameters where every parameter function is a row in this table.
+This optional section describes parameters of the function.
 
-This section is optional, so you can omit it if your function
-does not require any parameter.
+The template uses Asciidoc table format to document each parameter in a table row.
 
 ==== Example Section
-You can use zero or more _Example_ sections to document your function.
-All the examples you need to document your function properly.
 
-The _Example_ section contains 3 optional sub-section: _Input_, _Source_, and _Output_.
-All of them use the same template, an optional description, and an optional code section.
+You can use zero or more `Example` sections to provide all examples needed to illustrate how your function works.
+
+The section contains the following optional subsections: 
+
+* Input
+* Source
+* Output
+
+All subsections use the same template, an optional description, and an optional code section.
 ....
+----
 Your section description
 
 [source,%The language%,linenums]
@@ -279,7 +290,8 @@ YOUR CODE
 ----
 ....
 
-The below example is the xref:dw-core-functions-log.adoc[log] function documentation.
+
+The following example shows the xref:dw-core-functions-log.adoc[log] function documentation.
 
 ....
 /**
@@ -380,11 +392,14 @@ The below example is the xref:dw-core-functions-log.adoc[log] function documenta
 */
 ....
 
-=== How to document your Modules
-The module documentation doesn't follow any template.
-You just need to place it before the DataWeave version tag.
+=== Documenting Your DataWeave Modules
 
-The following example is documentation of the xref:dw-core.adoc[dw::Core] module
+DataWeave module documentation does not follow a structured template.
+
+The only requirement is to place the documentation above the DataWeave version tag.
+
+The following example documents the xref:dw-core.adoc[dw::Core] module:
+
 [source,dataweave,linenums]
 ----
 /**
@@ -396,11 +411,14 @@ The following example is documentation of the xref:dw-core.adoc[dw::Core] module
 %dw 2.0
 ----
 
-=== How to document your Annotation and Types
-Annotation and Types documentation doesn't follow any template too.
-You need to write it before the Annotation or Type definition.
+=== Documenting Your Annotation and Types
 
-The below example is the documentation for _@StreamCapable_ annotation.
+Annotation and Types documentation does not follow a structured template.
+
+The only requirement is to write it above the Annotation or Type definition.
+
+The following example documents the `@StreamCapable` annotation.
+
 [source,dataweave,linenums]
 ----
 /**
@@ -411,7 +429,7 @@ The below example is the documentation for _@StreamCapable_ annotation.
 annotation StreamCapable()
 ----
 
-The following example is the documentation for _DataFormat_ type from the xref:dw-dataformat.adoc[dw::extension::DataFormat] module.
+The following example documents the `EncodingSettings` type found in the xref:dw-dataformat.adoc[dw::extension::DataFormat] module.
 
 [source,dataweave,linenums]
 ----
