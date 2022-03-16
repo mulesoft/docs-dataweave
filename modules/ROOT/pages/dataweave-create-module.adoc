@@ -183,9 +183,9 @@ You can use DWL files directly in Mule connectors and components.
 See xref:dataweave-language-introduction.adoc#dwl_file[dwl File] for details.
 
 [[docs-dw-lib]]
-== DataWeave Documentation
+== Writing Documentation for Custom DataWeave Modules
 
-DataWeave uses AsciiDoc text format to document your functions, modules, and types.
+DataWeave uses AsciiDoc text format to document your functions, modules, types, and annotations. 
 
 === Documenting Your DataWeave Functions
 
@@ -281,7 +281,7 @@ The section contains the following optional subsections:
 * Output
 
 All subsections use the same template, an optional description, and an optional code section.
-....
+
 ----
 Your section description
 
@@ -289,8 +289,6 @@ Your section description
 ----
 YOUR CODE
 ----
-....
-
 
 The following example shows the xref:dw-core-functions-log.adoc[log] function documentation.
 
