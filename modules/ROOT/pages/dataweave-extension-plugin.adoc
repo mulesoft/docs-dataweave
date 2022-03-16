@@ -286,7 +286,8 @@ To generate documentation for the functions, follow these steps:
 
 . In Visual Studio Code, open your DataWeave project.
 . Navigate to the `src/main/dw` folder.
-. Click the *Generate Weave Documentation* button located at the top of the function in the `.dwl` file .
+. Click the *Generate Weave Documentation* button located at the top of the function in the `.dwl` file.
++
 image::dataweave-extension-generatedoc-1.png[MyMapping.dwl file and the Generate Weave Documentation button]
 
 The documentation template appears as a comment above the function:
