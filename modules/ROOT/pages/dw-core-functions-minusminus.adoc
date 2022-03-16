@@ -21,7 +21,6 @@ are supported by DataWeave.
 | `source` | The array containing items to remove.
 | `toRemove` | Items to remove from the source array.
 |===
----
 
 === Example
 
