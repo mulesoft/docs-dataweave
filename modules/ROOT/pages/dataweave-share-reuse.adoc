@@ -1,90 +1,19 @@
-// unedited/unformatted original from
-// https://docs.google.com/document/d/10LvlN7rGVKFv-rl1Jx-5W6QMAtRTWQ7ZhBtQb0V9Xow/edit
+= Share and Reuse Custom DataWeave Modules and Mappings
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
 
-Archiving: I'll be moving content to an Asciidoc/adoc file shortly. We can update that doc. I'll send xref to it soon. (3/10/2022: W-10730697)
+DataWeave enables you to implement, test, and package your custom DataWeave modules and mappings into libraries that you can share and reuse through Anypoint Exchange.
 
-Share and Reuse Custom Modules and Mappings
-Implement, test and package your custom modules and mappings into proper libraries that can be shared and reused through Exchange using the DataWeave Extension in Visual Studio Code. This allows you to work on your DataWeave modules and mappings in a standalone manner, outside of Mule applications.
+xref:dataweave-extension-plugin.adoc[DataWeave 2.0 extension to Visual Studio Code] enhances productivity when you are building DataWeave libraries. The extension provides the following capabilities:
 
-The DataWeave Extension, enhances your productivity when building DataWeave libraries:
-Instant execution of your DataWeave mappings (Live Preview).
-Language support (autocompletion, navigation, refactors, formatting, quick fixes, syntax highlighting, etc)
-Embedded DataWeave Testing Framework, that allows you to easily build automated unit and integration tests.
-Debugging support for DataWeave mappings.
-Embedded DataWeave Maven Plugin to:
-Integrate the packaging and deployment of your DataWeave libraries with your Maven lifecycle.
-Integration with Anypoint Exchange to share and consume DataWeave libraries.
-Automatically generated documentation for DataWeave libraries in Exchange.
-
-The extension is currently in Beta stage.
-
-Note that we are referring to DataWeave modules and mappings as DataWeave files (`.dwl`) where modules only contain functions, variables, types, and namespace definitions while mappings can contain a body expression after the separator `---`. The modules share all that is defined inside it while the mapping shares its execution through the `main` function.
-
-Install the DataWeave Extension
-Prerequisites:
-Installed JDK 11.
-Installed Maven.
-
-Download and install Visual Studio Code for your specific operating system from its Download Site.
-Open Visual Studio Code.
-In the `Extensions` tab, search `DataWeave` in the Marketplace and install it.
-Restart Visual Studio Code.
-
-Developing DataWeave Libraries
-To start creating a new DataWeave project where you can work on your DataWeave mappings and modules, just execute the command `DataWeave: Create New Library Project` and follow the prompts for the initial configuration.
-
-This will create your project with the following structure:
-`src`: The source directory for your DataWeave library productive source code and tests.
-`main`: Contains the source code files that will be packaged and shared in Exchange.
-`dw`: Contains your DataWeave modules and mappings.
-`resources`: It contains the application resources, such as XML, JSON, and properties files.
-`test`: Contains the test cases and its required resources used to validate the DataWeave library.
-`dw`: The DataWeave files used to run your integration and unit tests.
-`resources`: Contains the files required to run your integration tests..
-`pom.xml`: Contains the project configuration and required dependencies.
-
-
-To create a DataWeave mapping or module, execute the commands `DataWeave: Create New Mapping` or `DataWeave: Create New Module` respectively.
-
-You can start working on those mappings and modules by taking advantage of the tooling (autocompletion, navigation tools, refactors, formatting, quick fixes, syntax highlighting, etc). Read more details about these tools in the DataWeave Visual Studio Code Extension Reference page.
-[Add Link to VSCode Extension Reference (Cito’s document). Should we put images or videos for the tools?]
-
-Preview
-If you are working on a mapping, you can execute the `Preview` by clicking on the `DataWeave: Run Preview` button (execute the `DataWeave: Enable AutoPreview` command to run it on every file change). This will execute your mapping and show the corresponding output while you modify it, providing instant feedback for a better development experience.
-
-
-Generate multiple sample data that will be used as inputs for your mapping in the Preview by clicking the CodeLens `Define Sample Data` at the top of the mapping file. This will generate a `DataWeave Scenario` called `default`, that contains all the resources needed to run the mapping in the context of that scenario. Its resources will be created in `src/test/resources` followed by the name of the mapping and the name of the scenario.
-
-
-To use the Preview on modules, you can create a mapping that calls functions of the module under `src/test/dw` and generate scenarios from it as described above.
-
-Test
-When you reach a desired output in the `Preview` for a specific DataWeave Scenario, you can generate an integration test from it by clicking the `DataWeave: Save Expected Output` button located at the top-right of your mapping’s editor. This will generate a DataWeave file under `src/test/dw` that executes the mapping with the inputs and ensures that the output matches the expected saved one. The input and expected output are saved in `src/test/resource` followed by the name of the mapping and the name of the scenario.
-
-
-Generate unit tests for your module’s functions by using the CodeLens `Add Unit Test` located over the function definition. This will generate a DataWeave file under `src/test/dw` that defines a test case for your function where you need to call it with specific arguments and make assertions over the output.
-
-
-The tests are using functions of the modules `dw::test::Tests` and `dw::test::Asserts` provided by the artifact org.mule.weave.wtf (The DataWeave Testing Framework). You can read more about it in DataWeave Testing Framework. [Add link to Shoki’s DWTF docs]
-
-All the created tests will be executed when you run the maven `test`, `install` or `deploy` commands or you can see and execute them in the `Testing` tab.
-
-
-Debug your mappings by adding breakpoints and clicking the `Run Mapping` CodeLens.
-
-Sharing DataWeave Libraries
-Before sharing your DataWeave library you can generate documentation for its functions by using the `Generate Weave Documentation` CodeLens located over the functions definition. This will generate a template documentation as a comment above your function that you need to complete appropriately. This documentation will be published in the exchange page of your library.
-
-To publish your DataWeave library to Exchange, you first need to configure your `pom.xml`:
-Ensure that your `groupId` is set to your `organization ID`.
-Add the Maven facade as a repository in the `distribution management` section.
-
-Update the `settings.xml` file in your Maven `.m2` directory with your Anypoint Platform credentials.
-You can follow this guide Publish an Asset to Exchange Using Maven to set up your project.
-
-After you configured Exchange in the project’s `pom.xml` just execute the maven `deploy` goal and this will upload your DataWeave library to the deployment target and upload the auto-generated documentation to Exchange. For more details, you can read the DataWeave Maven Plugin documentation. [Add link to Lische’s dw-maven-plugin docs]
-
-
-Consuming DataWeave Libraries
-After you deploy your DataWeave library, you will find it as an asset on your organization exchange marketplace.
-To consume the DataWeave library, add the library’s group ID, artifact ID, version, and classifier to the dependencies section of your project’s `pom.xml` file (you can copy the dependency snippet from Exchange), and add the Maven facade as a repository in the `repositories` section. You can follow this page Consume an Exchange Asset with Maven for more details.
+* Ability to work on your DataWeave modules and mappings in a standalone manner, outside of a Mule application.
+* Instant execution of your DataWeave mappings, including live preview of data transformations.
+* Language support, including autocompletion, navigation, refactoring, formatting, quick fixes, syntax highlighting, and more.
+//TODO: ADD FILE NAME AND CORRECT NAME OF TESTING FRAMEWORK BELOW
+* An embedded xref:TODOTODOTODO.adoc[DataWeave testing framework], which enables you to build automated unit and integration tests easily.
+* Debugging support for DataWeave mappings.
+* An embedded xref:dataweave-maven-plugin.adoc[DataWeave Maven plugin]:
+** Integration of packaging and deployment of your DataWeave libraries with your Maven lifecycle.
+** Integration with Exchange to share and consume DataWeave libraries.
+** Automatic generation of a documentation template you can use to provide for DataWeave library documentation in Exchange.
