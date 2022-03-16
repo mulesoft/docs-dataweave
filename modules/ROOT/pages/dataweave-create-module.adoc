@@ -181,3 +181,244 @@ WeaveMod::myFunc("dataweave")
 You can use DWL files directly in Mule connectors and components.
 
 See xref:dataweave-language-introduction.adoc#dwl_file[dwl File] for details.
+
+== DataWeave Documentation
+DataWeave uses Asciidoc Language to document your functions, modules, and, types.
+
+=== How to document your function
+We defined a template to document your function code properly.
+
+There are three main sections: _Description_, _Parameters_, and _Example_.
+
+We use Asciidoc heading grammar to separate each section. 
+So the valid headings are:
+
+* `=== Parameters`
+
+* `=== Example`
+** `=== Source`
+** `=== Input`
+** `=== Output`
+
+Below you can find the function document template.
+....
+%Replace with your function description%
+
+%Add additional information to your function description% (optional section)
+
+=== Parameters (optional section)
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| %The parameter name% | %The parameter type% | %The parameter description%  (one row per param)
+|===
+
+=== Example (optional section)
+
+%The example description% (optional)
+
+==== Source (optional section)
+
+[source,%The language%,linenums] (optional)
+----
+YOUR CODE
+----
+
+==== Input (optional section)
+
+The input description (optional)
+
+[source,%The language%,linenums] (optional)
+----
+YOUR CODE
+----
+
+==== Output (optional section)
+
+%The output description% (optional)
+
+[source,%The language%,linenums] (optional)
+----
+YOUR CODE
+----
+....
+
+
+==== Description Section
+In this section, you describe what your function does.
+The description section starts from the beginning of the documentation until a heading section appears.
+
+We distinguish two sub-section: _main description_ and _additional description_.
+
+The _main description_ is the first paragraph and the rest of the
+section until some of the heading sections appear, is the _additional description_.
+
+These sub-sections are useful for the auto-generated documentation
+
+==== Parameters Section
+Describe the parameters needed for your function.
+
+We use the Asciidoc grammar table to document the function parameters where every parameter function is a row in this table.
+
+This section is optional, so you can omit it if your function
+does not require any parameter.
+
+==== Example Section
+You can use zero or more _Example_ sections to document your function.
+All the examples you need to document your function properly.
+
+The _Example_ section contains 3 optional sub-section: _Input_, _Source_, and _Output_.
+All of them use the same template, an optional description, and an optional code section.
+....
+Your section description
+
+[source,%The language%,linenums]
+----
+YOUR CODE
+----
+....
+
+The below example is the xref:dw-core-functions-log.adoc[log] function documentation.
+
+....
+/**
+* Without changing the value of the input, `log` returns the input as a system
+* log. So this makes it very simple to debug your code, because any expression or subexpression can be wrapped
+* with *log* and the result will be printed out without modifying the result of the expression.
+* The output is going to be printed in application/dw format.
+* (1)
+*
+* The prefix parameter is optional and allows to easily find the log output.
+*
+*
+* Use this function to help with debugging DataWeave scripts. A Mule app
+* outputs the results through the `DefaultLoggingService`, which you can see
+* in the Studio console.
+*
+* === Parameters
+*
+* [%header, cols="1,13"]
+* |===
+* | Name | Description
+* | prefix | An optional string that typically describes the log.
+* | value | The value to log.
+* |===
+*
+* === Example
+*
+* This example logs the specified message. Note that the `DefaultLoggingService`
+* in a Mule app that is running in Studio returns the message
+* `WARNING - "Houston, we have a problem,"` adding the dash `-` between the
+* prefix and value. The Logger component's `LoggerMessageProcessor` returns
+* the input string `"Houston, we have a problem."`, without the `WARNING` prefix.
+*
+* ==== Source
+*
+* [source,DataWeave,linenums]
+* ----
+* %dw 2.0
+* output application/json
+* ---
+* log("WARNING", "Houston, we have a problem")
+* ----
+*
+* ==== Output
+*
+* `Console Output`
+*
+* [source,XML,linenums]
+* ----
+* "WARNING - Houston, we have a problem"
+* ----
+*
+* `Expression Output`
+*
+* [source,XML,linenums]
+* ----
+* "Houston, we have a problem"
+* ----
+*
+* === Example
+*
+* This example shows how to log the result of expression `myUser.user` without modifying the
+* original expression `myUser.user.friend.name`.
+*
+* ==== Source
+*
+* [source,DataWeave,linenums]
+* ----
+* %dw 2.0
+* output application/json
+*
+* var myUser = {user: {friend: {name: "Shoki"}, id: 1, name: "Tomo"}, accountId: "leansh" }
+* ---
+* log("User", myUser.user).friend.name
+* ----
+*
+* ==== Output
+*
+* `Console output`
+*
+* [source,console,linenums]
+* ----
+* User - {
+*   friend: {
+*     name: "Shoki"
+*   },
+*   id: 1,
+*   name: "Tomo"
+* }
+* ----
+*
+* `Expression Output`
+*
+* [source,DataWeave,linenums]
+* ----
+* "Shoki"
+* ----
+*/
+....
+
+=== How to document your Modules
+The module documentation doesn't follow any template.
+You just need to place it before the DataWeave version tag.
+
+The following example is documentation of the xref:dw-core.adoc[dw::Core] module
+....
+/**
+ * This module contains core DataWeave functions for data transformations.
+ * It is automatically imported into any DataWeave script. For documentation
+ * on DataWeave _1.0_ functions, see
+ * https://docs.mulesoft.com/dataweave/1.2/dataweave-operators[DataWeave Operators].
+ */
+%dw 2.0
+....
+
+=== How to document your Annotation and Types
+Annotation and Types documentation doesn't follow any template too.
+You need to write it before the Annotation or Type definition.
+
+The below example is the documentation for _@StreamCapable_ annotation.
+....
+/**
+* Annotation that marks a parameter as stream capable, which means that this
+* field will consume an array of objects in a forward-only manner.
+*/
+@AnnotationTarget(targets = ["Parameter", "Variable"])
+annotation StreamCapable()
+....
+
+The following example is the documentation for _DataFormat_ type from the xref:dw-dataformat.adoc[dw::extension::DataFormat] module.
+....
+/**
+ * Represents encoding settings.
+ */
+@Since(version = "2.2.0")
+type EncodingSettings = {
+    /**
+    * Encoding that the writer uses for output. Defaults to "UTF-8".
+    */
+    encoding?: String {defaultValue: "UTF-8"}
+}
+....
