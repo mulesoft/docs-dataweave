@@ -16,7 +16,6 @@ versions act on objects, strings, and the various date and time formats that
 are supported by DataWeave.
 
 [source,JSON,linenums]
----
 |===
 | Name   | Description
 | `source` | The array containing items to remove.
