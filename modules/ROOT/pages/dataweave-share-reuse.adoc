@@ -16,4 +16,4 @@ xref:dataweave-extension-plugin.adoc[DataWeave 2.0 extension to Visual Studio Co
 ** Integration of packaging and deployment of your DataWeave libraries with your Maven lifecycle.
 ** Integration with Exchange to share and consume DataWeave libraries.
 //TODO: ADD FILE NAME AND CORRECT NAME OF TESTING FRAMEWORK BELOW
-* An embedded xref:TODOTODOTODO.adoc[DataWeave testing framework], which enables you to build automated unit and integration tests easily.
+* An embedded xref:dataweave-testing-framework.adoc[DataWeave testing framework] that enables you to build automated unit and integration tests easily.
