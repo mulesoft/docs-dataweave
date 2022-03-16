@@ -133,7 +133,7 @@ This behavior generates:
 * A new `.dwl` test file for the module under the `src/test/dw` folder. This file is where test cases and test suites are described:
 ** A test case is single test with the evaluation and assertion of the result.
 ** A test suite groups tests with a name that better describes the intention of some related cases.
-
++
 The test file defines a test case for the function that you call with specific arguments and use to make assertions over the output.
 
 * Either a new test suite for the function, consisting of your new test case, or a new test case to an existing test suite.
