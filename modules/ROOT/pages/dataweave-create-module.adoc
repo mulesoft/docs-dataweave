@@ -385,7 +385,8 @@ The module documentation doesn't follow any template.
 You just need to place it before the DataWeave version tag.
 
 The following example is documentation of the xref:dw-core.adoc[dw::Core] module
-....
+[source,dataweave,linenums]
+----
 /**
  * This module contains core DataWeave functions for data transformations.
  * It is automatically imported into any DataWeave script. For documentation
@@ -393,24 +394,27 @@ The following example is documentation of the xref:dw-core.adoc[dw::Core] module
  * https://docs.mulesoft.com/dataweave/1.2/dataweave-operators[DataWeave Operators].
  */
 %dw 2.0
-....
+----
 
 === How to document your Annotation and Types
 Annotation and Types documentation doesn't follow any template too.
 You need to write it before the Annotation or Type definition.
 
 The below example is the documentation for _@StreamCapable_ annotation.
-....
+[source,dataweave,linenums]
+----
 /**
 * Annotation that marks a parameter as stream capable, which means that this
 * field will consume an array of objects in a forward-only manner.
 */
 @AnnotationTarget(targets = ["Parameter", "Variable"])
 annotation StreamCapable()
-....
+----
 
 The following example is the documentation for _DataFormat_ type from the xref:dw-dataformat.adoc[dw::extension::DataFormat] module.
-....
+
+[source,dataweave,linenums]
+----
 /**
  * Represents encoding settings.
  */
@@ -421,4 +425,4 @@ type EncodingSettings = {
     */
     encoding?: String {defaultValue: "UTF-8"}
 }
-....
+----
