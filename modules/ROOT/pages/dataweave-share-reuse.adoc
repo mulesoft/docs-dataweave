@@ -10,10 +10,10 @@ xref:dataweave-extension-plugin.adoc[DataWeave 2.0 extension to Visual Studio Co
 * Ability to work on your DataWeave modules and mappings in a standalone manner, outside of a Mule application.
 * Instant execution of your DataWeave mappings, including live preview of data transformations.
 * Language support, including autocompletion, navigation, refactoring, formatting, quick fixes, syntax highlighting, and more.
-//TODO: ADD FILE NAME AND CORRECT NAME OF TESTING FRAMEWORK BELOW
-* An embedded xref:TODOTODOTODO.adoc[DataWeave testing framework], which enables you to build automated unit and integration tests easily.
 * Debugging support for DataWeave mappings.
-* An embedded xref:dataweave-maven-plugin.adoc[DataWeave Maven plugin]:
+* Automatic generation of a documentation template that you can use to provide your own xref:dataweave-create-module.adoc#docs-dw-lib[DataWeave library documentation] in Exchange.
+* An embedded xref:dataweave-maven-plugin.adoc[DataWeave Maven plugin] with the following features:
 ** Integration of packaging and deployment of your DataWeave libraries with your Maven lifecycle.
 ** Integration with Exchange to share and consume DataWeave libraries.
-** Automatic generation of a documentation template you can use to provide for DataWeave library documentation in Exchange.
+//TODO: ADD FILE NAME AND CORRECT NAME OF TESTING FRAMEWORK BELOW
+* An embedded xref:TODOTODOTODO.adoc[DataWeave testing framework], which enables you to build automated unit and integration tests easily.
