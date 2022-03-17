@@ -324,9 +324,9 @@ The following example shows the xref:dw-core-functions-log.adoc[log] function do
 *
 * [%header, cols="1,13"]
 * |===
-* | Name | Description
-* | `prefix` | An optional string that typically describes the log.
-* | `value` | The value to log.
+* | Name | Type | Description
+* | `prefix` | `String` | An optional string that typically describes the log.
+* | `value` | `TODO` | The value to log.
 * |===
 *
 * === Example
