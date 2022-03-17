@@ -115,8 +115,7 @@ There are two ways to test your module:
 * By running a unit test
 * By creating a test mapping located in your `src/test/dw` folder to avoid exposing the test to to consumers of your module
 
-The tests use functions of the modules `dw::test::Tests` and `dw::test::Asserts` provided by the artifact `org.mule.weave.wtf` of the
-//xref:dataweave-testingframework.adoc[DataWeave Testing Framework].
+The tests use functions of the modules `dw::test::Tests` and `dw::test::Asserts` provided by the artifact `org.mule.weave:data-weave-testing-framework` of the xref:dataweave-testingframework.adoc[DataWeave Testing Framework].
 
 To generate a unit test for a DataWeave module, follow these steps:
 
