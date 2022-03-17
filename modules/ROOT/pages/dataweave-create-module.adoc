@@ -269,7 +269,7 @@ Each part is useful for auto-generated documentation.
 
 The optional `=== Parameters` section describes parameters of the function.
 
-The template uses Asciidoc table format to document each parameter in a table row.
+The template uses AsciiDoc table format to document each parameter in a table row.
 
 ....
 [%header, cols="1,1,3"]
