@@ -441,7 +441,7 @@ The following example documents the `@StreamCapable` annotation.
 annotation StreamCapable()
 ----
 
-The following example documents the `EncodingSettings` type found in the xref:dw-dataformat.adoc[dw::extension::DataFormat] module.
+The following example documents the `EncodingSettings` type found in the https://docs.mulesoft.com/dataweave/2.4/dw-dataformat[dw::extension::DataFormat] module.
 
 [source,dataweave,linenums]
 ----
