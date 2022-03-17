@@ -267,7 +267,7 @@ Each part is useful for auto-generated documentation.
 
 ==== Parameters Section
 
-This optional `=== Parameters` section describes parameters of the function.
+The optional `=== Parameters` section describes parameters of the function.
 
 The template uses Asciidoc table format to document each parameter in a table row.
 
