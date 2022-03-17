@@ -261,7 +261,7 @@ A description consists of the following parts:
 * Short description: The first paragraph, which provides the primary description of the function.
 * Long description: Any additional information about the function. This optional description begins two line breaks below the short description.
 
-See the <<example-documentation, example>> that includes a description with  sections for the parameters and examples.
+See the <<example-documentation, example>> that includes a description with sections for the parameters and examples.
 
 Each part is useful for auto-generated documentation.
 
