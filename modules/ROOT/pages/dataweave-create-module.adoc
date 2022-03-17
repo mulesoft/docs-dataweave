@@ -326,7 +326,7 @@ The following example shows the https://docs.mulesoft.com/dataweave/2.4/dw-core-
 * |===
 * | Name | Type | Description
 * | `prefix` | `String` | An optional string that typically describes the log.
-* | `value` | `TODO` | The value to log.
+* | `value` | `T` | The value to log.
 * |===
 *
 * === Example
