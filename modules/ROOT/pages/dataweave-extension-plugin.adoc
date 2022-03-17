@@ -42,17 +42,19 @@ DataWeave projects use Apache Maven to build and declare project dependencies. T
 ├── src
 │   ├── main
 │   │   ├── dw
-│   │   │   ├── MyMapping.dwl  //Put your DataWeave mapping file here
-|   |   |   └── MyModule.dwl   //Put your DataWeave module file here
+│   │   │   ├── MyMapping.dwl  //Put your DataWeave mappings files here
+|   |   |   └── MyModule.dwl   //Put your DataWeave modules files here
 │   │   └── resources
 │   └── test
 │       ├── dw
-│       │   └── Test.dwl  //Unit tests
-│       │   └── MyMapping
-│       │       └── default
-│       │           └── inputs
-│       │               └── payload.json //[Sample data](#sample-data) for your mappings
+│       │   └── MyModuleTest.dwl  //Unit tests for the functions in your module
+│       │   └── MyMappingTest.dwl //Integration test for your mapping using the saved scenarios
 │       ├── resources
+│       │       └── MyMapping //Contains the different scenarios for your mapping
+│       │           ├── default
+│       │           │   └── inputs
+│       │           │       └── payload.json //[Sample data](#sample-data) for your mappings
+│       │           └── SavedTestScenario //Scenario used for the integration test
 ├── pom.xml
 ```
 
