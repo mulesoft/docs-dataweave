@@ -171,9 +171,7 @@ image::dataweave-extension-createmapping.png[Command Palette with DataWeave: Cre
 [[sample-data]]
 === Define Sample Data for DataWeave Mappings
 
-Generate multiple sample data inputs for your mapping by clicking the *Define Sample Data* button at the top of your mapping `.dwl` file. Sample data is a key part of DataWeave project development, because it is used to run your mappings and also for suggestions.
-
-// Dev team clarify "sample data used for suggestions"
+Generate multiple sample data inputs for your mapping by clicking the *Define Sample Data* button at the top of your mapping `.dwl` file. Sample data is a key part of DataWeave project development to run your mappings.
 
 To define sample data, follow these steps:
 
