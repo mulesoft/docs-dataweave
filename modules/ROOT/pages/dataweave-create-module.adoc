@@ -410,7 +410,7 @@ The DataWeave module description does not follow a structured template.
 
 The only requirement is to place the documentation above the DataWeave version tag.
 
-The following example documents the xref:dw-core.adoc[dw::Core] module:
+The following example documents the https://docs.mulesoft.com/dataweave/2.4/dw-core[dw::Core] module:
 
 [source,dataweave,linenums]
 ----
