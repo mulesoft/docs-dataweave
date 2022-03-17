@@ -357,6 +357,6 @@ image::dataweave-extension-isempty.png[Is Empty Code Inspection sample]
 
 == See Also
 
-* xref:dataweave-share-reuse.adoc[haring and Reusing Custom DataWeave Modules and Mappings]
+* xref:dataweave-share-reuse.adoc[Sharing and Reusing Custom DataWeave Modules and Mappings]
 * xref:dataweave-maven-plugin.adoc[DataWeave Maven Plugin]
 * xref:dataweave-testing-framework.adoc[DataWeave Testing Framework]
