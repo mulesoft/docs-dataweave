@@ -38,9 +38,9 @@ DataWeave projects use Apache Maven to build and declare project dependencies. T
 ```
 ├── src
 │   ├── main
-│   │   ├── dw
-│   │   │   ├── MyMapping.dwl  //Put your DataWeave mappings files here
-|   |   |   └── MyModule.dwl   //Put your DataWeave modules files here
+│   │   ├── dw // Put your DataWeave mappings and module files here
+│   │   │   ├── MyMapping.dwl
+|   |   |   └── MyModule.dwl
 │   │   └── resources
 │   └── test
 │       ├── dw
@@ -97,16 +97,37 @@ To create a new DataWeave module:
 . In the search bar, type `dataweave`.
 . Select *DataWeave: Create New Module*.
 +
-
 image::dataweave-extension-createmodule.png[Command Palette with DataWeave: Create new module option selected]
+[start=4]
+. Add a name for the new module `dwl` file and press enter. +
+This creates a new module `.dwl` file under the `src/main/dw` folder.
 
+== Preview a DataWeave Module
+
+For a better development experience, you can use the _preview_ view to develop your module's functions and mappings. The _preview_ view lets you get instant feedback on how your mapping is working by previewing its output. Use this view to develop the module's functions by creating a DataWeave mapping inside the `src/test/dw` folder that imports your function and calls it to check how is currently working.
+
+To preview the module functionality, follow these steps:
+
+. In Visual Studio Code, open your DataWeave project.
+. Navigate to the `src/test/dw` folder.
+. Create a new preview `.dwl` file, for example `MyModulePreview.dwl`. +
+ This new preview file imports the function you created in the `.dwl` file under the `src/main/dw` folder.
+. In the preview `.dwl` file, add your preview mapping code to try out the function.
+. Either preview the module function by one of these options:
+* Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your preview mapping `.dwl` file.
++
+image::dataweave-extension-preview-1.png[DataWeave: Run Preview button]
+
+* Right-click the editor and select *DataWeave: Enable AutoPreview* to run it on every file change.
++
+image::dataweave-extension-preview-2.png[DataWeave: Enable AutoPreview option]
 
 == Test a DataWeave Module
 
 There are two ways to test your module:
 
 * By running a unit test
-* By creating a test mapping located in your `src/test/dw` folder to avoid exposing the test to to consumers of your module
+* By creating a test mapping located in your `src/test/dw` folder to avoid exposing the test to consumers of your module
 
 The tests use functions of the modules `dw::test::Tests` and `dw::test::Asserts` provided by the artifact `org.mule.weave:data-weave-testing-framework` of the xref:dataweave-testing-framework.adoc[DataWeave Testing Framework].
 
@@ -134,7 +155,7 @@ image::dataweave-extension-testmodule-2.png[MyModuleTest.dwl file in the src/tes
 
 To run the test:
 
-. In Visual Studio Code, go to the *TESTING* tab.
+. In Visual Studio Code, go to the *TESTING* view.
 . Select the dropdown arrows of your module test file.
 . Click the *Run Test* arrow button.
 
@@ -152,9 +173,11 @@ To create a new DataWeave mapping, follow these steps:
 . In Visual Studio Code, click *View > Command Palette*.
 . In the search bar, type `dataweave`.
 . Select *DataWeave: Create New Mapping*.
-
++
 image::dataweave-extension-createmapping.png[Command Palette with DataWeave: Create new mapping selected]
-
+[start=4]
+. Add a name for the new mapping `dwl` file and press enter. +
+This creates a new mapping `.dwl` file under the `src/main/dw` folder.
 
 [[sample-data]]
 === Define Sample Data for DataWeave Mappings
@@ -178,27 +201,20 @@ image::dataweave-extension-sampledata-2.png[Generated new sample data payload.js
 [[scenarios]]
 == Understanding DataWeave Scenarios
 
-A DataWeave _scenario_ is a group of inputs and outputs that you can inject into your mapping either to try out in the *Preview Output* view or to evaluate your transformation and compare it with your desired output. Scenarios also provide autocompletion based on the input structures.
+A DataWeave _scenario_ is a group of inputs and outputs that you can inject into your mapping either to try out in the *Preview Output* view or to test your mapping using the input to evaluate it and compare its output with the desired saved output of your scenario. Scenarios also provide autocompletion based on the input structures.
 
 These scenarios and their resources live in the `src/test/resources` folder and have the following structure:
 
 ```
-├── pom.xml
-├── src
-│   ├── main
-│   │   ├── dw
-│   │   │   ├── MyMapping.dwl //Put your DataWeave file here
-│   │   └── resources
-│   └── test
-│       ├── dw
-│       │   └── Test.dwl //Unit tests go here
-│       │   └── MyMapping // Name of your mapping
-│       │       └── default //Name of your scenario
-│       │           └── inputs //Folder where all of your inputs live
-│       │           │   └── payload.json //Input for your mapping (you can use it in your script, naming it to be the same as the name of the file without the file's extension)
-│       │           │   └── vars //Folder that represents a name for your input variable in your script: in this case ,vars
-│       │           │       └── test.json //Input for your mapping (you can use it in your script, calling it vars.test)
-│       │           └── out.json // Expected output of your mapping running against your inputs (only present when testing)
+├── src/test/resources
+│       └── MyMapping //Contains the different scenarios for your mapping called "MyMapping"
+│           ├── default //Name of your scenario
+│           │   └── inputs //Folder where all of your inputs live
+│           │   │   └── payload.json //Input for your mapping (you can use it in your script, naming it to be the same as the name of the file without the file's extension)
+│           │   │   └── vars //Folder that represents a name for your input variable in your script: in this case vars
+│           │   │       └── test.json //Input for your mapping (you can use it in your script, calling it vars.test)
+│           │   └── out.json // Expected output of your mapping running against your inputs (only present when testing)
+│           └── SavedTestScenario //Another scenario used for the integration test
 ```
 === Using the DataWeave Scenarios View
 
@@ -209,15 +225,23 @@ image::dataweave-extension-dataweavescenario.png[DataWeave Scenarios view in Vis
 
 == Preview a DataWeave Mapping
 
-After you define sample data, get feedback on how your mapping is working by previewing the output. To do so, follow one of these options:
+After you define sample data, get feedback on how your mapping is working by previewing the output.
+
+. In Visual Studio Code, open your DataWeave project.
+. Navigate to the `src/test/dw` folder.
+. Create a new preview `.dwl` file, for example `MyMappingPreview.dwl`. +
+ This new preview file imports the function you created in the `.dwl` file under the `src/main/dw` folder.
+. In the preview `.dwl` file, add your preview mapping code to try out the function.
+. Either preview the mapping function by one of these options:
+* Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your preview mapping `.dwl` file.
 
 * Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your mapping `.dwl` file window.
 +
-image::dataweave-extension-preview-1.png[DataWeave: Run Preview button]
+image::dataweave-extension-preview-3.png[DataWeave: Run Preview button]
 
 * Right-click the editor and select *DataWeave: Enable AutoPreview* to run it on every file change.
 +
-image::dataweave-extension-preview-2.png[DataWeave: Enable AutoPreview option]
+image::dataweave-extension-preview-4.png[DataWeave: Enable AutoPreview option]
 
 
 
@@ -320,7 +344,7 @@ image::dataweave-extension-completion.png[Completion Feature sample]
 
 === Navigation
 
-You to navigate to any local definition or from any imported library.
+You can navigate to any local definition or from any imported library.
 
 
 === Code Editing Features
