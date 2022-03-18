@@ -32,7 +32,7 @@ image::dataweave-mapping-file.png[Example: DataWeave Mapping File]
 * You can create a subfolder in `src/main/resources` by navigating to New -> Folder -> [your_project] -> `src/main/resources`, then adding a folder named `modules`.
 * You can create a new file for your module in that folder by navigating to New -> File -> [your_project] -> `src/main/resources/modules`, then adding a DWL (DataWeave language) file such as `MyMapping.dwl`.
 +
-Saving the module within `src/main/resources` makes it accessible for use in a DataWeave script.  component in a Mule app in that project.
+Saving the module within `src/main/resources` makes it accessible for use in any DataWeave script within the Mule app in that project.
 +
 . Create your function in your mapping file, for example:
 +
@@ -103,8 +103,12 @@ A custom module file can only contain `var`, `fun`, `type`, and `ns` declaration
 [source,dataweave,linenums]
 ----
 %dw 2.0
-fun myFunc(myInput: String) = myInput ++ "_"
 var name = "MyData"
+fun myFunc(myInput: String) = myInput ++ "_"
+type User = {
+    name: String,
+    lastname: String
+}
 ns mynamespace http://acme.com/bar
 ----
 
