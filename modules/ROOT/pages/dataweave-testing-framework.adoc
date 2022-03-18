@@ -25,17 +25,6 @@ To enable the DataWeave Testing Framework in your project:
 
 == Tests Structure
 
-//I think this info is incomplete, need to confirm.
-////
-By default, the testing framework evaluates the files stored in the following paths:
-
-DataWeave Mapping: `src/test/dw/<package>/<testFileName>`
-Inputs: `src/test/resources/<mappingPath>/<scenario>/inputs/<inputFile>`
-Outputs: `src/test/resources/<mappingPath>/<scenario>/<outputFile>`
-
-Inputs and output files are optional. Unit tests, for example, provide these values inline.
-////
-
 The following table shows the different files that compose a test, a description of their functionality, and their default location:
 
 [%header%autowidth.spread,cols=".^a,.^a,.^a"]
@@ -65,7 +54,6 @@ To test a DataWeave mapping, create an integration test by following these steps
 
 The following example shows a DataWeave test that contains a DataWeave mapping file, Input file, output file, and test file with their corresponding locations:
 
-//(this could be a bulleted list, one entry per file)
 * DataWeave mapping in `src/main/dw/myPackage/MyMapping.dwl`
 +
 [source,dataweave,linenums]
@@ -144,8 +132,6 @@ import * from MyModule
 
 == Create an Integration Test for a Module
 
-
-//confirm if these steps are correct and enough.
 To create an Integration Test for a Module:
 
 . In your test folder, create a DataWeave mapping that uses the module you want to test
@@ -158,59 +144,8 @@ You can run the tests from the command line by running the `mvn test` command.
 * To run a single test, use: `mvn -Dtest=<MyMappingTest> test`
 * To skip a test, use: `mvn install -DskipTests`
 
-
 == Matchers
 
 The testing framework includes a set of matchers to use in your tests.
-LINK TO MATCHERS MODULE DOC
 
-////
-//Confirm if this is a mappings Test and add as a secondary example.
-Other examples:
-
-%dw 2.0
-import * from dw::test::Tests
-import * from dw::test::Asserts
-import basic::Example
----
-"Weave Tests scenarios" describedBy [
-   "Execute and assert Example.dwl" in do {
-       var testResult = Example::main({})
-
-       ---
-       testResult must [
-           beObject(),
-           $.tests! must [
-               beArray(),
-               sizeOf($) == 4,
-               $.status must equalTo(["OK", "OK", "OK", "FAIL"])
-           ]
-       ]
-   },
-   "Failed test should have stacktrace" in do {
-       var testResult = basic::FailureExample::main({})
-       ---
-       testResult must [
-           beObject(),
-           $.tests.status must equalTo(["ERROR"])
-
-       ]
-   },
-   "Nested Example" in do {
-           var testResult = basic::NestedExample::main({})
-           ---
-           testResult must [
-               beObject(),
-               $.tests must [
-                   beArray(),
-                   haveSize(2),
-                   $[0].tests must [
-                       beArray()
-                   ],
-                   $[1].status must equalTo("OK")
-               ]
-
-           ]
-       }
-]
-////
+//See //ADD LINK TO DW ASSERTIONS ARTICLE[DW ASSERTS] for reference information of the assertions module.
