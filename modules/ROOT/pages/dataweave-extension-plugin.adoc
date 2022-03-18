@@ -192,7 +192,8 @@ To define sample data, follow these steps:
 . Click the *Define Sample Data* button located above your mapping `.dwl` file.
 +
 image::dataweave-extension-sampledata-1.png[MyMapping.dwl file with Define Sample Data button]
-
+[start=4]
+. Specify the name for the sample data file and press enter.
 
 Using sample data generates a DataWeave _scenario_ that contains all the resources required to run the mapping in the context of that scenario.
 
@@ -236,12 +237,8 @@ After you define sample data, get feedback on how your mapping is working by pre
 * Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your preview mapping `.dwl` file.
 
 * Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your mapping `.dwl` file window.
-+
-image::dataweave-extension-preview-3.png[DataWeave: Run Preview button]
-
 * Right-click the editor and select *DataWeave: Enable AutoPreview* to run it on every file change.
-+
-image::dataweave-extension-preview-4.png[DataWeave: Enable AutoPreview option]
+
 
 
 
@@ -272,7 +269,11 @@ To test a DataWeave mapping, follow these steps:
 +
 image::dataweave-extension-testmapping.png[MyMapping.dwl file and the DataWeave Create Mapping Test button]
 [start=4]
-. Specify a name for the mapping test.
+. Specify a name for the mapping test and press enter.
+
+This creates a new mapping test `.dwl` file:
+
+image::dataweave-extension-testmapping-2.png[MyMappingTest.dwl file]
 
 
 == Using the DataWeave Dependencies View
