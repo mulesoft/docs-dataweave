@@ -76,7 +76,7 @@ output application/json
 }
 ----
 
-* (Optional) Reader properties configuration file in `src/test/resources/myPackage/MyMapping/NewScenario/inputs/payload-config.properties.json`
+* (Optional) Reader properties configuration file in `src/test/resources/myPackage/MyMapping/NewScenario/inputs/payload-config.properties`
 +
 [source,dataweave,linenums]
 ----
