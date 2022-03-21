@@ -225,7 +225,7 @@ image::dataweave-extension-dataweavescenario.png[DataWeave Scenarios view in Vis
 
 === Using reader properties for your inputs
 
-If you want to set different reader properties to the inputs you are using you need to create a properties file with the suffix `{fileName}-config.propertes`. So let us say your input is called `in0.csv` then you could create a `in0-config.properties` file which will contain all the reader properties needed for running your scenario.
+If you want to set different reader properties to the inputs you are using you need to create a properties file with the suffix `{fileName}-config.propertes` in the same directory of your input. So let us say your input is called `payload.csv` then you could create a `payload-config.properties` file which will contain all the reader properties needed for running your scenario.
 This also applies while testing your DataWeave Mappings.
 
 
