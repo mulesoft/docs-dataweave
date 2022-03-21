@@ -49,11 +49,11 @@ To test a DataWeave mapping, create an integration test by following these steps
 ** The `evalPath(<mapping/scenario>)` function, to specify the mapping path
 ** The `must equalTo` matcher to check the results against the expected output specified by function `outputFrom(<mapping/scenario>)`
 . Add the expected inputs and outputs to the `src/test/resources/<mappingPath>` folder
-. (Optional) To configure the reader properties for the inputs, create a properties file with suffix `{fileName}-config.properties` in the `src/test/resources/<mappingPath>/inputs/` folder
+. If you want to configure the reader properties for the inputs, create a properties file with suffix `{fileName}-config.properties` in the `src/test/resources/<mappingPath>/inputs/` folder
 
 === Example Mapping Test
 
-The following example shows a DataWeave test that contains a DataWeave mapping file, Input file, output file, and test file with their corresponding locations:
+The following example shows a DataWeave test that contains a DataWeave mapping file, an input file, a reader properties configuration file, an output file, and a test file with their corresponding locations:
 
 * DataWeave mapping in `src/main/dw/myPackage/MyMapping.dwl`
 +
@@ -76,7 +76,7 @@ output application/json
 }
 ----
 
-* (Optional) Reader properties configuration file in `src/test/resources/myPackage/MyMapping/NewScenario/inputs/payload-config.properties`
+* Reader properties configuration file in `src/test/resources/myPackage/MyMapping/NewScenario/inputs/payload-config.properties`
 +
 [source,dataweave,linenums]
 ----
