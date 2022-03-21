@@ -104,15 +104,15 @@ This creates a new module `.dwl` file under the `src/main/dw` folder.
 
 == Preview a DataWeave Module
 
-For a better development experience, you can use the _preview_ view to develop your module's functions and mappings. The _preview_ view lets you get instant feedback on how your mapping is working by previewing its output. Use this view to develop the module's functions by creating a DataWeave mapping inside the `src/test/dw` folder that imports your function and calls it to check how is currently working.
+For a better development experience, you can use the _preview_ view to develop your module's functions. The _preview_ view lets you get instant feedback on how a mapping file is working by previewing its output. Use this view to develop the module's functions by creating a DataWeave mapping inside the `src/test/dw` folder that imports your functions and calls them to check how they are currently working.
 
 To preview the module functionality, follow these steps:
 
 . In Visual Studio Code, open your DataWeave project.
-. Navigate to the `src/test/dw` folder.
-. Create a new preview `.dwl` file, for example `MyModulePreview.dwl`. +
- This new preview file imports the function you created in the `.dwl` file under the `src/main/dw` folder.
-. In the preview `.dwl` file, add your preview mapping code to try out the function.
+. Navigate to the `src/main/dw` folder.
+. Select your module `.dwl` file.
+. Click the *Create Integration Mapping* button located at the top of your module `.dwl` file. +
+This create a mapping file under the `src/test/dw` folder to test your module, which is not meant to be shared or reused.
 . Either preview the module function by one of these options:
 * Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your preview mapping `.dwl` file.
 +
@@ -233,14 +233,10 @@ If you want to set different reader properties to the inputs you use, create a p
 After you define sample data, get feedback on how your mapping is working by previewing the output.
 
 . In Visual Studio Code, open your DataWeave project.
-. Navigate to the `src/test/dw` folder.
-. Create a new preview `.dwl` file, for example `MyMappingPreview.dwl`. +
- This new preview file imports the function you created in the `.dwl` file under the `src/main/dw` folder.
-. In the preview `.dwl` file, add your preview mapping code to try out the function.
+. Navigate to the `src/main/dw` folder.
 . Either preview the mapping function by one of these options:
-* Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your preview mapping `.dwl` file.
 
-* Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your mapping `.dwl` file window.
+* Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your mapping `.dwl` file.
 * Right-click the editor and select *DataWeave: Enable AutoPreview* to run it on every file change.
 
 
