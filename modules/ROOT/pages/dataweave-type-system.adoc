@@ -396,7 +396,7 @@ var myUser: {name: String, developers: Number} = addName({developers: 3})
 
 ==== Parameterizing Type Definitions
 
-You can use type parameters to paramaterize type definitions. For example, assume that you define a data structure that models file content, one for text files and the other for binary files. You can use type parameters to construct new types that dispatch the correct implementation.
+You can use type parameters to parameterize type definitions. For example, assume that you define a data structure that models file content, one for text files and the other for binary files. You can use type parameters to construct new types that dispatch the correct implementation.
 
 
 [source,DataWeave, linenums]
