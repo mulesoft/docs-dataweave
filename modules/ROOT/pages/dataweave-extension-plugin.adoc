@@ -384,7 +384,7 @@ image::dataweave-extension-isempty.png[Is Empty Code Inspection sample]
 
 == DataWeave Troubleshooting Logs
 
-If an error occurs while you are creating, running, or testing your modules and mappings or any other unexpected error happens with Visual Studio Code and the DataWeave Extension, check the log output of the DataWeave Language Server that provide details of what can cause the issue:
+If an error occurs while you are working with the DataWeave Extension, check the log output of the DataWeave Language Server that provide details of what can cause the issue:
 
 To check the logs, follow these steps:
 
