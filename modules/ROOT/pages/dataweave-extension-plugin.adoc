@@ -6,7 +6,7 @@ Install and use DataWeave 2.0 extension to Visual Studio Code (DataWeave extensi
 
 Before installing the DataWeave 2.0 extension to Visual Studio Code, you must:
 
-* Install AdoptOpenJDK (Java 8 minimum)
+* Install AdoptOpenJDK
 * Install Apache Maven (3.6.3 minimum)
 * Install Microsoft Visual Studio Code for your specific operating system
 
@@ -223,10 +223,9 @@ The *DATAWEAVE SCENARIOS* view shows the available scenarios for the `.dwl` file
 
 image::dataweave-extension-dataweavescenario.png[DataWeave Scenarios view in Visual Studio Code]
 
-=== Using reader properties for your inputs
+=== Using Reader Properties for Inputs
 
-If you want to set different reader properties to the inputs you are using you need to create a properties file with the suffix `{fileName}-config.properties` in the same directory of your input. So let us say your input is called `payload.csv` then you could create a `payload-config.properties` file which will contain all the reader properties needed for running your scenario.
-This also applies while testing your DataWeave Mappings.
+If you want to set different reader properties to the inputs you use, create a properties file with the suffix `{fileName}-config.properties` in the same directory of your input. For example, if your input is called `payload.csv` then create a `payload-config.properties` file that contains all the reader properties required to run your scenario. Creating the properties file also applies while testing your DataWeave mappings.
 
 
 == Preview a DataWeave Mapping
@@ -383,17 +382,16 @@ image::dataweave-extension-typeof.png[TypeOf Code Inspection sample]
 image::dataweave-extension-isempty.png[Is Empty Code Inspection sample]
 
 
-=== Troubleshooting
+== DataWeave Troubleshooting Logs
 
-If something is not working as expected or an error is thrown and you want to get more details or raise an issue and get help from the dev team, you should consider attaching the log output of the DataWeave Language Server. This will help us (and you) to get better understanding of what went wrong.
+If an error occurs while you are creating, running, or testing your modules and mappings or any other unexpected error happens with Visual Studio Code and the DataWeave Extension, check the log output of the DataWeave Language Server that provide details of what can cause the issue:
 
-To do so please follow these steps:
+To check the logs, follow these steps:
 
-. Go to your View menu.
-. Select Output, this will open your Output View below your editor.
-. On the Output view, click the selection combo and choose Mule DX DataWeave LS.
-. Copy the contents of your log output.
+. In Visual Studio Code, navigate to *View > Output* to open the *OUTPUT* view in the Visual Studio Code editor window.
+. In the drop-down menu located on the left of the screen editor, select *Mule DX DataWeave LS* to show the logs.
 
+image::dataweave-extension-logs.png[Mule DX DataWeave LS option to select in the drop-down menu of the Output]
 
 == See Also
 
