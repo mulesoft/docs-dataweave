@@ -5,7 +5,7 @@ endif::[]
 
 DataWeave enables you to implement, test, and package your custom DataWeave modules and mappings into libraries that you can share and reuse through Anypoint Exchange.
 
-xref:dataweave-extension-plugin.adoc[DataWeave 2.0 extension to Visual Studio Code] enhances productivity when you are building DataWeave libraries. The extension provides the following capabilities:
+The xref:dataweave-extension-plugin.adoc[DataWeave 2.0 extension to Visual Studio Code] enhances productivity when you are building DataWeave libraries. The extension provides the following capabilities:
 
 * Ability to work on your DataWeave modules and mappings in a standalone manner, outside of a Mule application.
 * Instant execution of your DataWeave mappings, including live preview of data transformations.
