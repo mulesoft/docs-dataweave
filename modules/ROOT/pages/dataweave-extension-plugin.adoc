@@ -234,6 +234,7 @@ After you define sample data, get feedback on how your mapping is working by pre
 
 . In Visual Studio Code, open your DataWeave project.
 . Navigate to the `src/main/dw` folder.
+. Select your module `.dwl` file.
 . Either preview the mapping function by one of these options:
 
 * Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your mapping `.dwl` file.
