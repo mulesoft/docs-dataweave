@@ -1,20 +1,20 @@
 = Packaging and Deploying DataWeave Libraries
 
-Use the DataWeave Maven plugin to integrate the packaging and deployment of your DataWeave libraries with your Maven lifecycle.
+Use the Apache Maven plugin for DataWeave to integrate the packaging and deployment of your DataWeave libraries with your Maven lifecycle.
 
-The DataWeave Maven plugin has six main goals you can run:
+The plugin enables you to run six main goals:
 
 * `compile` +
 Compiles the source code for your DataWeave library.
 
 * `test` +
-Tests the compiled source code using the https://github.com/mulesoft/data-weave-testing-framework[DataWeave Testing Framework].
+Tests the compiled source code using the xref:dataweave-testing-framework.adoc[DataWeave testing framework].
 
 * `data-weave:generate-docs` +
 Automatically generates the documentation for your DataWeave library.
 
 * `package` +
-Packages the compiled code in a `JAR` file.
+Packages the compiled code in a `.jar` file.
 
 * `data-weave:deploy-docs` +
 Uploads the auto-generated documentation for your DataWeave library to Anypoint Exchange.
@@ -22,9 +22,9 @@ Uploads the auto-generated documentation for your DataWeave library to Anypoint 
 * `deploy` +
 Automatically uploads your DataWeave library to the deployment target and uploads the auto-generated documentation to Exchange.
 
-== Add the DataWeave Maven Plugin to a Project
+== Add the Maven Plugin to a Project
 
-To enable the DataWeave Maven plugin in your project:
+To enable the Maven plugin for DataWeave in your project:
 
 * Add the following Maven dependency to your project's `pom.xml` file:
 +
@@ -69,13 +69,11 @@ Run the `test` goal to execute the DataWeave test suite included in your library
 mvn test
 ----
 
-The DataWeave Maven plugin uses the https://github.com/mulesoft/data-weave-testing-framework[DataWeave Testing Framework] to run your test suite, which supports configuring additional parameters when you run the `test` goal.
+The Maven plugin for DataWeave uses the xref:dataweave-testing-framework.adoc[DataWeave testing framework] to run your test suite, which supports configuring additional parameters when you run the `test` goal.
 
 === Configure the Test Suite
 
-Inside the `plugin` configuration, add the `tests` element with your desired tests configuration.
-
-*Configuration Parameters*
+Inside the `plugin` configuration, add a `tests` element configured to use parameters that meet your specific testing needs:
 
 [%header%autowidth.spread,cols=".^a,.^a,.^a,.^a"]
 |===
@@ -84,24 +82,22 @@ Inside the `plugin` configuration, add the `tests` element with your desired tes
 |`output`
 |`String`
 |`${project.build.directory}/data-weave-test-reports`
-|Specifies the path for the directory where all the auto-generated reports are created when the test runs.
+|Specifies the path for the directory in which all the auto-generated reports are created when the test runs.
 
 |`htmlReport`
 |`boolean`
 |`true`
-|When set to `true`, the test suite generate an HTML report for the execution.
+|When set to `true`, the test suite generates an HTML report about the execution.
 
 |`coverageEnabled`
 |`boolean`
 |`false`
-|When set to `true`, the test suite generate a coverage report for the execution.
+|When set to `true`, the test suite generates a coverage report about the execution.
 
 |`coverageFormat`
 |`String`
 |`sonar`
-|Specifies the format for the coverage report.
-
-There are two valid formats:
+|Specifies the format for the coverage report, one of:
 
 * `sonar` +
 Generates a valid https://www.sonarqube.org/[Sonar^] coverage report for your test suite.
@@ -126,7 +122,7 @@ Generates an HTML coverage report for your test suite.
 |`runnerArgLine`
 |`boolean`
 |`null`
-|A set of additional JVM options to pass to the test runner process
+|A set of additional JVM options to pass to the test runner process.
 
 |`runnerJvmDebug`
 |`boolean`
@@ -136,7 +132,7 @@ Generates an HTML coverage report for your test suite.
 
 === Test Configuration Example
 
-The following example enables `sonar` coverage report and disables `htmlReport` in a project.
+The following example enables the `sonar` coverage report and disables `htmlReport` in a project.
 
 .Example `pom.xml` file
 [source,xml,linenums]
@@ -173,9 +169,7 @@ mvn data-weave:generate-docs
 
 === Configure the Automated Docs Generation
 
-Inside the `plugin` configuration, add the `docs` element with your desired documentation configuration.
-
-*Configuration Parameters*
+Inside the `plugin` configuration, add a `docs` element configured with parameters that meet your desired documentation needs:
 
 [%header%autowidth.spread,cols=".^a,.^a,.^a,.^a"]
 |===
@@ -184,23 +178,21 @@ Inside the `plugin` configuration, add the `docs` element with your desired docu
 |`output`
 |`String`
 |`${project.build.directory}/data-weave-docs`
-|The output directory where the documentation files are created.
+|The output directory in which the documentation files are created.
 
 |`template`
 |`String`
 |`exchange_markdown`
-|The template set to use for the auto-generated documentation.
-
-The DataWeave Maven plugin supports 3 types of documentation templates:
+|The template to use for the auto-generated documentation, one of:
 
 * `exchange_markdown` +
-Generates the documentation in Markdown format, compliant with https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange^].
+Generates the documentation in a Markdown format that is compliant with https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange^].
 * `markdown` +
 Generates the documentation in Markdown format.
 * `asciidoc` +
 Generates the documenation in AsciiDoc format.
 
-Valid values are: `exchange_markdown` or `markdown` or `asciidoc`.
+Valid values are `exchange_markdown`, `markdown`, or `asciidoc`.
 
 |`homePage`
 |`String`
@@ -215,7 +207,7 @@ Valid values are: `exchange_markdown` or `markdown` or `asciidoc`.
 
 === Docs Generation Example
 
-The following example shows how to configure a custom home page and a specific favicon to include in the Exchange portal home page of your DataWeave library:
+The following example shows how to configure both a custom home page and a specific favicon to include in the Exchange portal home page of your DataWeave library:
 
 .Example `pom.xml` file:
 [source,xml,linenums]
@@ -233,27 +225,16 @@ include::dataweave::partial$dataweave-maven-plugin-config.adoc[tag=config]
 </plugin>
 ----
 
-== Deploy DataWeave Libraries and Documentation to Exchange
+== Deploy DataWeave Libraries and Upload Documentation to Exchange
 
-Run the `deploy` goal to deploy the DataWeave library to the deployment target and upload the generated documentation to Exchange, for example:
+Before uploading DataWeave libraries to Exchange, ensure that the `pom.xml` file includes all MuleSoft repositories and your credentials for Maven to access the enterprise repository. See xref:exchange::to-publish-assets-maven.adoc#publish-an-asset-to-exchange-using-maven[Publish an Asset to Exchange Using Maven] for instructions to set up your DataWeave library.
+
+After reviewing the `pom.xml` file, run the `deploy` goal to deploy the DataWeave library to the deployment target and upload the generated documentation to Exchange, for example:
 
 [source,console,linenums]
 ----
 mvn deploy
 ----
-
-Run the `data-weave:deploy-docs` goal to upload the generated documentation to Exchange, for example:
-
-[source,console,linenums]
-----
-mvn data-weave:deploy-docs
-----
-
-=== Before You Deploy Libraries to Exchange
-
-Before uploading DataWeave libraries to Exchange, ensure that the `pom.xml` file includes all MuleSoft repositories and your credentials for Maven to access the enterprise repository.
-
-See xref:exchange::to-publish-assets-maven.adoc#publish-an-asset-to-exchange-using-maven[Publish an Asset to Exchange Using Maven] for instructions to set up your DataWeave library.
 
 === Skip Exchange Documentation Upload
 
@@ -264,9 +245,18 @@ You can skip the Exchange documentation upload when deploying a DataWeave projec
 mvn deploy -DskipDeployDocs=true
 ----
 
+=== Upload the Documentation to Exchange
+
+Alternatively, you can run the `data-weave:deploy-docs` goal to upload the generated documentation to Exchange without deploying the DataWeave library, for example:
+
+[source,console,linenums]
+----
+mvn data-weave:deploy-docs
+----
+
 == DataWeave Library Structure Reference
 
-At design time, DataWeave libraries need the following basic components:
+When designing your DataWeave library, use the basic components `src` and `pom.xml`:
 
 [%header%autowidth.spread,cols=".^a,.^a,.^a"]
 |===
@@ -284,20 +274,19 @@ This file describes all of your library’s required dependencies.
 
 == Source Directory Reference
 
-The directory structure of a DataWeave library has the following main folders:
+The directory structure of a DataWeave library comprises the `src/main` and `src/test` folders.
 
 === src/main
 
 `src/main` is the root folder for all the productive source code of the DataWeave library.
 
-//[cols="1a,1a,3a", options="header"]
 [%header%autowidth.spread,cols=".^a,.^a,.^a"]
 |===
 |Folder |Folder Type |Description
 
 |`src/main/dw`
 |source
-|The root folder of the DataWeave library source code files.
+|The root folder of the DataWeave library source code files
 
 |`src/main/resources`
 |resource
@@ -308,14 +297,13 @@ The directory structure of a DataWeave library has the following main folders:
 
 `src/test` is the root folder for all the test source code of the DataWeave library.
 
-//[cols="1a,1,3", options="header"]
 [%header%autowidth.spread,cols=".^a,.^a,.^a"]
 |===
 |Folder |Folder Type |Description
 
 |`src/test/dw`
 |source
-|The root folder of the test cases used to validate the DataWeave library.
+|The root folder of the test cases used to validate the DataWeave library
 
 |`src/test/resources`
 |resource
@@ -325,5 +313,6 @@ This folder also contains files required to run your test suite.
 
 == See also
 
-//add additional topics.
-xref:dataweave-testing-framework.adoc[Testing DataWeave Libraries and Modules]
+* xref:dataweave-share-reuse.adoc[Sharing and Reusing Custom DataWeave Modules and Mappings]
+* xref:dataweave-testing-framework.adoc[Testing DataWeave Libraries and Modules]
+* xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave 2.0 Extension]
