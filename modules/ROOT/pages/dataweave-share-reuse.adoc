@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-DataWeave enables you to implement, test, and package your custom DataWeave modules and mappings into libraries that you can share and reuse through Anypoint Exchange.
+DataWeave enables you to implement and test your custom DataWeave modules and mappings and package them into libraries that you can share and reuse through Anypoint Exchange.
 
 The xref:dataweave-extension-plugin.adoc[DataWeave 2.0 extension to Visual Studio Code] enhances productivity when you are building DataWeave libraries. The extension provides the following capabilities:
 
