@@ -223,6 +223,11 @@ The *DATAWEAVE SCENARIOS* view shows the available scenarios for the `.dwl` file
 
 image::dataweave-extension-dataweavescenario.png[DataWeave Scenarios view in Visual Studio Code]
 
+=== Using reader properties for your inputs
+
+If you want to set different reader properties to the inputs you are using you need to create a properties file with the suffix `{fileName}-config.propertes`. So let us say your input is called `in0.csv` then you could create a `in0-config.properties` file which will contain all the reader properties needed for running your scenario.
+This also applies while testing your DataWeave Mappings.
+
 
 == Preview a DataWeave Mapping
 
@@ -238,8 +243,6 @@ After you define sample data, get feedback on how your mapping is working by pre
 
 * Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your mapping `.dwl` file window.
 * Right-click the editor and select *DataWeave: Enable AutoPreview* to run it on every file change.
-
-
 
 
 == Run and Debug a DataWeave Mapping
@@ -378,6 +381,18 @@ image::dataweave-extension-typeof.png[TypeOf Code Inspection sample]
 * IsEmpty
 
 image::dataweave-extension-isempty.png[Is Empty Code Inspection sample]
+
+
+=== Troubleshooting
+
+If something is not working as expected or an error is thrown and you want to get more details or raise an issue and get help from the dev team, you should consider attaching the log output of the DataWeave Language Server. This will help us (and you) to get better understanding of what went wrong.
+
+To do so please follow these steps:
+
+. Go to your View menu.
+. Select Output, this will open your Output View below your editor.
+. On the Output view, click the selection combo and choose Mule DX DataWeave LS.
+. Copy the contents of your log output.
 
 
 == See Also
