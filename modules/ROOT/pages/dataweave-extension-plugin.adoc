@@ -1,6 +1,6 @@
 = Installing and Using the DataWeave 2.0 Extension
 
-Install and use DataWeave 2.0 extension to Visual Studio Code (DataWeave extension) to develop, preview, test, and deploy custom mappings and modules into libraries in a DataWeave project. The extension also enables you to preview transformations similar to those you perform in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
+Install and use DataWeave 2.0 extension to Visual Studio Code (DataWeave Extension) to develop, preview, test, and deploy custom mappings and modules into libraries in a DataWeave project. The extension also enables you to preview transformations similar to those you perform in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
 
 == Before You Begin
 
@@ -114,7 +114,7 @@ To preview the module functionality, follow these steps:
 . Click the *Create Integration Mapping* button located at the top of your module `.dwl` file. +
 This create a mapping file under the `src/test/dw` folder to test your module, which is not meant to be shared or reused.
 . Either preview the module function by one of these options:
-* Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your preview mapping `.dwl` file.
+* Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your module `.dwl` file.
 +
 image::dataweave-extension-preview-1.png[DataWeave: Run Preview button]
 
@@ -381,7 +381,7 @@ image::dataweave-extension-isempty.png[Is Empty Code Inspection sample]
 
 == DataWeave Extension Troubleshooting Logs
 
-If an error occurs while you are working with the DataWeave Extension, check the log output of the DataWeave Language Server that provide details of what can cause the issue:
+If an error occurs while you are working with the DataWeave Extension, check the logs output of the DataWeave Language Server that provide details of what can cause the issue:
 
 To check the logs, follow these steps:
 
