@@ -19,4 +19,4 @@ The xref:dataweave-extension-plugin.adoc[DataWeave 2.0 extension to Visual Studi
 
 == See Also
 
-xref:xref:dataweave-create-module.adoc[Create Custom Modules and Mappings]
+xref:dataweave-create-module.adoc[Create Custom Modules and Mappings]
