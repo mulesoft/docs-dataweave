@@ -112,15 +112,18 @@ To preview the module functionality, follow these steps:
 . Navigate to the `src/main/dw` folder.
 . Select your module `.dwl` file.
 . Click the *Create Integration Mapping* button located at the top of your module `.dwl` file. +
-This create a mapping file under the `src/test/dw` folder to test your module, which is not meant to be shared or reused.
+This create a mapping file under the `src/test/dw` folder to test your module, which is not meant to be shared or reused. +
+
+image::dataweave-extension-preview-1.png[Create Integration Mapping button above the .dwl file]
+[start=5]
 . Either preview the module function by one of these options:
 * Click the *DataWeave: Run Preview* button (arrow icon) at the top right corner of your module `.dwl` file.
 +
-image::dataweave-extension-preview-1.png[DataWeave: Run Preview button]
+image::dataweave-extension-preview-2.png[DataWeave: Run Preview button]
 
 * Right-click the editor and select *DataWeave: Enable AutoPreview* to run it on every file change.
 +
-image::dataweave-extension-preview-2.png[DataWeave: Enable AutoPreview option]
+image::dataweave-extension-preview-3.png[DataWeave: Enable AutoPreview option]
 
 == Test a DataWeave Module
 
