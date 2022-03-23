@@ -1,8 +1,10 @@
 = dw::test::Asserts
 
-This module contains the set of core Matchers to use in your tests
+This module contains the set of core matchers to use in your tests.
 
 === Example
+
+The following example validates if a payload is of type Object.
 
 ==== Source
 
@@ -13,7 +15,6 @@ import dw::tests::Asserts
 ---
 payload must beObject()
 ----
-Validates if a payload is of type Object
 
 == Functions
 
@@ -21,14 +22,14 @@ Validates if a payload is of type Object
 
 ==== anyOf(matchers: Array<Matcher<Any>>): Matcher<Any>
 
-Validates that the value satisfies at least one of the given matchers
+Validates that the value satisfies at least one of the given matchers.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| matchers | The list of matchers to be tested.
+| `matchers` | The list of matchers to be tested.
 |===
 
 ===== Example
@@ -50,11 +51,11 @@ import dw::tests::Asserts
 
 ==== beArray(): Matcher
 
-Validates that a given value is of type Array
+Validates that a given value is of type `Array`.
 
 ===== Example
 
-This example shows how to validate that a value is of type 'Array'
+This example shows how to validate that a value is of type `Array`.
 
 ====== Source
 
@@ -71,11 +72,11 @@ import dw::tests::Asserts
 
 ==== beBlank(): Matcher<String | Null>
 
-Validates that the String value is blank
+Validates that the `String` value is blank.
 
 ===== Example
 
-Validates that the `String` is empty or has whitespaces
+Validates that the `String` is empty or has whitespaces.
 
 ====== Source
 [source,DataWeave, linenums]
@@ -91,11 +92,11 @@ import dw::tests::Asserts
 
 ==== beBoolean(): Matcher
 
-Validates that a given value is of type Boolean
+Validates that a given value is of type `Boolean`.
 
 ===== Example
 
-This example shows how to validate that a value is of type `Boolean`
+This example shows how to validate that a value is of type `Boolean`.
 
 ====== Source
 
@@ -112,12 +113,12 @@ true must beBoolean()
 
 ==== beEmpty(): Matcher<String | Object | Array | Null>
 
-Validates that the value (String, Object or Array) is empty
+Validates that the value (String, Object, or Array) is empty.
 
 
 ===== Example
 
-Validates that the `Array` is of size `0`
+Validates that the `Array` is of size `0`.
 
 ====== Source
 
@@ -134,22 +135,22 @@ import dw::tests::Asserts
 
 ==== beGreaterThan(expected: Comparable, inclusive: Boolean = false): Matcher<Comparable>
 
-Validates that the asserted Comparable value is greater than the given one
+Validates that the asserted Comparable value is greater than the given one.
 
- Can be equal to when using the _inclusive_ argument
+The value can be equal when using the _inclusive_ argument.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expected | The number to compare to
-| inclusive | If it is inclusive or not (Optional) false by default
+| `expected` | The number to compare to
+| `inclusive` | Specifies if the comparison is inclusive or not (Optional). False by default
 |===
 
 ===== Example
 
-Expects a `Number` to be bigger than `2`
+Expects a `Number` to be greater than `2`.
 
 ====== Source
 
@@ -163,7 +164,7 @@ import dw::tests::Asserts
 
 ===== Example
 
-Expects a `Number` to be bigger or equal than `2`
+Expects a `Number` to be greater or equal than `2`.
 
 ====== Source
 
@@ -180,22 +181,22 @@ import dw::tests::Asserts
 
 ==== beLowerThan(expected: Comparable, inclusive: Boolean = false): Matcher<Comparable>
 
-Validates that the asserted Comparable value is lower than the given one
+Validates that the asserted Comparable value is less than the given one.
 
-Can be equal to when using the _inclusive_ argument
+The value can be equal when using the _inclusive_ argument.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expected | The number to compare to
-| inclusive | If it is inclusive or not (Optional) false by default
+| `expected` | The number to compare to
+| `inclusive` | Specifies if the comparison is inclusive or not (Optional). False by default
 |===
 
 ===== Example
 
-Expects a `Number` to be less than `2`
+Expects a `Number` to be less than `2`.
 
 ====== Source
 
@@ -209,7 +210,7 @@ import dw::tests::Asserts
 
 ===== Example
 
-Expects a `Number` to be less or equal than `2`
+Expects a `Number` to be less or equal than `2`.
 
 ====== Source
 
@@ -226,10 +227,11 @@ import dw::tests::Asserts
 
 ==== beNull(): Matcher
 
-Validates that a given value is of type Null
+Validates that a given value is of type Null.
+
 ===== Example
 
-This example shows how to validate that a value is of type `Null`
+This example shows how to validate that a value is of type `Null`.
 
 ====== Source
 
@@ -246,11 +248,11 @@ null must beNull()
 
 ==== beNumber(): Matcher
 
-Validates that a given value is of type Number
+Validates that a given value is of type Number.
 
 ===== Example
 
-This example shows how to validate that a value is of type `Number`
+This example shows how to validate that a value is of type `Number`.
 
 ====== Source
 
@@ -267,11 +269,11 @@ import dw::tests::Asserts
 
 ==== beObject(): Matcher
 
-Validates that a given value is of type Object
+Validates that a given value is of type Object.
 
 ===== Example
 
-This example shows how to validate that a value is of type `Object`
+This example shows how to validate that a value is of type `Object`.
 
 ====== Source
 
@@ -288,19 +290,19 @@ import dw::tests::Asserts
 
 ==== beOneOf(expected: Array<Any>): Matcher
 
-Validates that the value is contained in the given Array
+Validates that the value is contained in the given Array.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expected | The array of possible elements
+| `expected` | The array of possible elements
 |===
 
 ===== Example
 
-Asserts that the value is either `1` or "A Text" or `true`
+Asserts that the value is either `1` or "A Text" or `true`.
 
 ====== Source
 
@@ -317,11 +319,11 @@ import dw::tests::Asserts
 
 ==== beString(): Matcher
 
-Validates that a given value is of type String
+Validates that a given value is of type String.
 
 ===== Example
 
-This example shows how to validate that a value is of type `String`
+This example shows how to validate that a value is of type `String`.
 
 ====== Source
 
@@ -338,19 +340,19 @@ import dw::tests::Asserts
 
 ==== contain(expected: String): Matcher<String>
 
-Validates that the asserted String contains the given String
+Validates that the asserted String contains the given String.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expected | The expected text to be contained
+| `expected` | The expected text to be contained
 |===
 
 ===== Example
 
-Expects the value to contain the `String` "ex"
+Expects the value to contain the `String` "ex".
 
 ====== Source
 [source,DataWeave, linenums]
@@ -363,19 +365,19 @@ import dw::tests::Asserts
 
 ==== contain(expected: Any): Matcher<Array<Any>>
 
-Validates that the asserted Array contains the given value
+Validates that the asserted Array contains the given value.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expected | The expected value to be contained
+| `expected` | The expected value to be contained
 |===
 
 ===== Example
 
-Expects the `Array` value to contain the `Number` 1
+Expects the `Array` value to contain the `Number` 1.
 
 ====== Source
 
@@ -392,19 +394,19 @@ import dw::tests::Asserts
 
 ==== eachItem(matcher: Matcher<Any>): Matcher<Array<Any>>
 
-Validates that each item of the array satisfies the given matcher
+Validates that each item of the array satisfies the given matcher.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| matcher | The matcher to apply to all the elements
+| `matcher` | The matcher to apply to all the elements
 |===
 
 ===== Example
 
-Expects all the elements in the `Array` to be a `Number`
+Expects all the elements in the `Array` to be a `Number`.
 
 ====== Source
 
@@ -421,19 +423,19 @@ import dw::tests::Asserts
 
 ==== endWith(expected: String): Matcher<String>
 
-Validates that the asserted String ends with the given String
+Validates that the asserted String ends with the given String.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expected | Suffix of the 'String'
+| `expected` | Suffix of the 'String'
 |===
 
 ===== Example
 
-Expects the `String` to end with "xt"
+Expects the `String` to end with "xt".
 
 ====== Source
 
@@ -450,15 +452,15 @@ import dw::tests::Asserts
 
 ==== equalTo(expected: Any, equalToConfig: { unordered?: Boolean } = {}): Matcher<Any>
 
-Validates that a value is equal to another one
+Validates that a value is equal to another one.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expected | The expected value
-| equalToConfig | Configuration of how to compare them.
+| `expected` | The expected value
+| `equalToConfig` | Configuration of how to compare them
 |===
 
 ===== Example
@@ -479,23 +481,23 @@ import dw::tests::Asserts
 
 ==== equalToResource(resourceName: String, contentType: String = "application/dw", readerProperties: Object = {}): Matcher<Any>
 
-Validates that the given value is equal to the content of a resource file
+Validates that the given value is equal to the content of a resource file.
 
-The resource file must belong to the classpath
+The resource file must belong to the classpath.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| resourceName | The resource name
-| contentType | The content type of the resource (Optional)
-| readerProperties | An object with the config properties (Optional)
+| `resourceName` | The resource name
+| `contentType` | The content type of the resource (Optional)
+| `readerProperties` | An object with the config properties (Optional)
 |===
 
 ===== Example
 
-Expects a value to be equal to the content of the resource "user.json"
+Expects a value to be equal to the content of the resource "user.json".
 
 ====== Source
 
@@ -512,19 +514,19 @@ import dw::tests::Asserts
 
 ==== haveItem(matcher: Matcher<Any>): Matcher<Array<Any>>
 
-Validates that at least one item of the array satisfies the given matcher
+Validates that at least one item of the array satisfies the given matcher.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| matcher | The matcher to apply to at least one of the elements
+| `matcher` | The matcher to apply to at least one of the elements
 |===
 
 ===== Example
 
-Expects that one element of the `Array` is a `Number`
+Expects that one element of the `Array` is a `Number`.
 
 ====== Source
 
@@ -541,19 +543,19 @@ import dw::tests::Asserts
 
 ==== haveKey(keyName: String): Matcher<Object>
 
-Validates that the Object has the given key
+Validates that the Object has the given key.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| keyName | The name of the key to expect to be present.
+| `keyName` | The name of the key to expect to be present.
 |===
 
 ===== Example
 
-Validates that the `Object` contains a key called "name"
+Validates that the `Object` contains a key called "name".
 
 ====== Source
 
@@ -570,19 +572,19 @@ import dw::tests::Asserts
 
 ==== haveSize(expectedSize: Number): Matcher<Array | String | Object | Null>
 
-Validates that the array has the given size
+Validates that the array has the given size.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expectedSize | The expected array size
+| `expectedSize` | The expected array size
 |===
 
 ===== Example
 
-Expects that the array must be of size `3`
+Expects that the array must be of size `3`.
 
 ====== Source
 
@@ -599,19 +601,19 @@ import dw::tests::Asserts
 
 ==== haveValue(value: Any): Matcher<Object>
 
-Validates that the Object has the given value
+Validates that the Object has the given value.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| value | The value that is expected to be present
+| `value` | The value that is expected to be present
 |===
 
 ===== Example
 
-Expected that the `Object` contains the value "Messi"
+Expected that the `Object` contains the value "Messi".
 
 ====== Source
 
@@ -628,20 +630,20 @@ import dw::tests::Asserts
 
 ==== must<T>(value: T, matchExpressions: Array<(value: T) -> Matcher<T> | MatcherResult | Boolean>): MatcherResult
 
-This function allows to assert a value with with a list of Matcher or Expressions
+This function allows to assert a value with with a list of Matcher or Expressions.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| value |
-| matchExpressions |
+| `value` |
+| `matchExpressions` |
 |===
 
 ===== Example
 
-This example shows how to assert that a `payload` is of type `Object` and has a property `foo` that is `null`
+This example shows how to assert that a `payload` is of type `Object` and has a property `foo` that is `null`.
 
 ====== Source
 
@@ -658,15 +660,15 @@ payload must [
 
 ==== must<T>(value: T, matcher: (value: T) -> Matcher<T> | Boolean): MatcherResult
 
-This function allows to assert a value with a Matcher of Expressions
+This function allows to assert a value with a Matcher of Expressions.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| value | The value to be assert
-| matcher | The matcher to be used
+| `value` | The value to be assert
+| `matcher` | The matcher to be used
 |===
 
 ===== Example
@@ -688,14 +690,14 @@ payload must beObject()
 
 ==== notBe<T>(matcher: Matcher<T>): Matcher<T>
 
-Validates that the value doesn't satisfy the given matcher
+Validates that the value doesn't satisfy the given matcher.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| matcher | The matcher that is going to be negated
+| `matcher` | The matcher that is going to be negated
 |===
 
 ===== Example
@@ -717,11 +719,11 @@ import dw::tests::Asserts
 
 ==== notBeNull(): Matcher
 
-Validates that a given value isn't of type Null
+Validates that a given value isn't of type Null.
 
 ===== Example
 
-This example shows how to validate that a value is not of type `Null`
+This example shows how to validate that a value is not of type `Null`.
 
 ====== Source
 
@@ -738,19 +740,19 @@ import dw::tests::Asserts
 
 ==== startWith(expected: String): Matcher<String>
 
-Validates that the asserted String starts with the given String
+Validates that the asserted String starts with the given String.
 
 ===== Parameters
 
 [%header, cols="1,3"]
 |===
 | Name   | Description
-| expected | Prefix of the 'String'
+| `expected` | Prefix of the 'String'
 |===
 
 ===== Example
 
-Validates that the `String` starts with "A"
+Validates that the `String` starts with "A".
 
 ====== Source
 
@@ -768,14 +770,14 @@ import dw::tests::Asserts
 
 === MATCHED
 
-Constant that represents a successful match
+Constant that represents a successful match.
 
 
 
 == Types
 
 === Matcher
-Data Type that represents a Matcher to perform assertions
+Data Type that represents a Matcher to perform assertions.
 
 ===== Example
 
@@ -804,7 +806,7 @@ fun beEqualToOne(): Matcher<Any> =
 
 
 === MatcherResult
-Data Type that represents the result of an Assertion
+Data Type that represents the result of an Assertion.
 
 ===== Example
 
