@@ -2,12 +2,12 @@
 
 The DataWeave testing framework enables you to build automated unit and integration tests for your DataWeave libraries and mappings. You can run tests to evaluate `.dwl` files and compare them to the output produced by the system you are testing. The framework provides a full suite of integration and unit test capabilities with a built-in set of assertion functions, and it is completely integrated with Maven and Surefire for your continuous deployment environment.
 
-Use Snapshot Testing for your integration tests by storing the expected outputs as a separate file rather than as a string literal inside the test code.
+Use snapshot testing for your integration tests by storing the expected outputs as a separate file rather than as a string literal inside the test code.
 
-You can create tests for your DataWeave mappings and modules by using the VSCode plugin,
-(see Add DW VSCode plugin docs link, for instructions), or manually by following the next steps.
+You can create tests for your DataWeave mappings and modules either by using the VSCode plugin
+(see Add DW VSCode plugin docs link for instructions) or manually by modifying your project's `pom.xml` file.
 
-== Add the DataWeave Testing Framework to your Project
+== Add the DataWeave Testing Framework to Your Project
 
 To enable the DataWeave Testing Framework in your project:
 
@@ -25,7 +25,7 @@ To enable the DataWeave Testing Framework in your project:
 
 == Tests Structure
 
-The following table shows the different files that compose a test, a description of their functionality, and their default location:
+The following table shows the different files that compose a test, a description of their functionalities, and their default locations:
 
 [%header%autowidth.spread,cols=".^a,.^a,.^a"]
 |===
@@ -37,23 +37,23 @@ The following table shows the different files that compose a test, a description
 |===
 
 [[create-test]]
-== Creating an Integration Test for a Mapping
+== Create an Integration Test for a Mapping
 
 To test a DataWeave mapping, create an integration test by following these steps:
 
-. Create a `.dwl` file with a name ending in `Test` in the `src/test/dw/<package>/<testFileName>` folder
-. In the test file’s header, import the `dw::test::Tests` and `dw::test::Asserts` modules
-. In the test file’s body, nest any number of sections (`“sectionName”`) followed by `describedBy`, and specify the test name at the end (`“testName”`) followed by `in do {<codeExecution/assertion>}`
+. Create a `.dwl` file with a name ending in `Test` in the `src/test/dw/<package>/<testFileName>` folder.
+. In the test file’s header, import the `dw::test::Tests` and `dw::test::Asserts` modules.
+. In the test file’s body, nest any number of sections (`“sectionName”`), followed by `describedBy`, and specify the test name at the end (`“testName”`) , followed by `in do {<codeExecution/assertion>}`.
 . In the code execution and assertion part of the test file, specify the following:
 ** The `inputsFrom(<inputPath>)` function, to get the inputs to evaluate against the mapping
 ** The `evalPath(<mapping/scenario>)` function, to specify the mapping path
 ** The `must equalTo` matcher to check the results against the expected output specified by function `outputFrom(<mapping/scenario>)`
-. Add the expected inputs and outputs to the `src/test/resources/<mappingPath>` folder
-. If you want to configure the reader properties for the inputs, create a properties file with suffix `{fileName}-config.properties` in the `src/test/resources/<mappingPath>/inputs/` folder
+. Add the expected inputs and outputs to the `src/test/resources/<mappingPath>` folder.
+. If you want to configure the reader properties for the inputs, create a properties file with suffix `{fileName}-config.properties` in the `src/test/resources/<mappingPath>/inputs/` folder.
 
 === Example Mapping Test
 
-The following example shows a DataWeave test that contains a DataWeave mapping file, an input file, a reader properties configuration file, an output file, and a test file with their corresponding locations:
+The following example shows a DataWeave test that contains a DataWeave mapping file, an input file, a reader properties configuration file, an output file, and a test file, respectively:
 
 * DataWeave mapping in `src/main/dw/myPackage/MyMapping.dwl`
 +
@@ -112,10 +112,10 @@ import * from dw::test::Asserts
 
 To create a unit test for a module:
 
-. Create a `.dwl` with a name ending in `Test` in the `src/test/dw/<package>/<testFileName>` folder.
-. In the test file’s header, import `dw::test::Tests`, `dw::test::Asserts`, and the custom module you want to test, for example: `"MyModule"`
+. Create a `.dwl` file with a name ending in `Test` in the `src/test/dw/<package>/<testFileName>` folder.
+. In the test file’s header, import `dw::test::Tests`, `dw::test::Asserts`, and the custom module you want to test, for example, `"MyModule"`.
 . In the test file's body, nest any number of sections (`“sectionName”`) followed by `describedBy`, and specify the test name at the end (`“testName”`).
-. In the code execution and assertion part of the test, call the function you want to test (`functionToTest()`) and add an assertion against its result, for example: `must beObject()`
+. In the code execution and assertion part of the test, call the function you want to test (`functionToTest()`) and add an assertion against its result, for example, `must beObject()`.
 
 === Example Unit Test for a Module
 
@@ -139,17 +139,17 @@ import * from MyModule
 
 == Create an Integration Test for a Module
 
-To create an Integration Test for a Module:
+To create an integration test for a module:
 
-. In your test folder, create a DataWeave mapping that uses the module you want to test
-. Follow the steps in <<create-test, Creating an Integration Test for a Mapping>>
+. In your test folder, create a DataWeave mapping that uses the module you want to test.
+. Follow the steps in <<create-test, Creating an Integration Test for a Mapping>>.
 
-== Run The Tests From the Command Line
+== Run the Tests from the Command Line
 
-You can run the tests from the command line by running the `mvn test` command.
+You can run the tests from the command line by running the `mvn test` command:
 
-* To run a single test, use: `mvn -Dtest=<MyMappingTest> test`
-* To skip a test, use: `mvn install -DskipTests`
+* To run a single test, use: `mvn -Dtest=<MyMappingTest> test`.
+* To skip a test, use `mvn install -DskipTests`.
 
 == Matchers
 
