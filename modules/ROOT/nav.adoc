@@ -93,6 +93,6 @@
  ** xref:dataweave-flow-control-precedence.adoc[Precedence Rules]
 include::partial$nav-dw.adoc[]
 * xref:dataweave-share-reuse.adoc[Sharing and Reusing Custom DataWeave Modules and Mappings]
- ** xref:[Installing and Using the DataWeave 2.0 Extension]
+ ** xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave 2.0 Extension]
  ** xref:dataweave-testing-framework.adoc[Testing DataWeave Libraries and Modules]
  ** xref:dataweave-maven-plugin.adoc[Packaging and Deploying DataWeave Libraries]
