@@ -4,7 +4,7 @@ This module contains the set of core matchers to use in your tests.
 
 === Example
 
-The following example validates if a payload is of type Object.
+The following example validates if a payload is of type `Object`.
 
 ==== Source
 
