@@ -1,0 +1,826 @@
+= dw::test::Asserts
+
+This module contains the set of core Matchers to use in your tests
+
+=== Example
+
+==== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+payload must beObject()
+----
+Validates if a payload is of type Object
+
+== Functions
+
+=== anyOf
+
+==== anyOf(matchers: Array<Matcher<Any>>): Matcher<Any>
+
+Validates that the value satisfies at least one of the given matchers
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| matchers | The list of matchers to be tested.
+|===
+
+===== Example
+
+This example shows how to assert that a value must be either an `Object` or a `String`.
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+"A Text" must anyOf(beObject(), beString())
+----
+
+
+=== beArray
+
+==== beArray(): Matcher
+
+Validates that a given value is of type Array
+
+===== Example
+
+This example shows how to validate that a value is of type 'Array'
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+[1, 4, 7] must beArray()
+----
+
+
+=== beBlank
+
+==== beBlank(): Matcher<String | Null>
+
+Validates that the String value is blank
+
+===== Example
+
+Validates that the `String` is empty or has whitespaces
+
+====== Source
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+"  " must beBlank()
+----
+
+
+=== beBoolean
+
+==== beBoolean(): Matcher
+
+Validates that a given value is of type Boolean
+
+===== Example
+
+This example shows how to validate that a value is of type `Boolean`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+true must beBoolean()
+----
+
+
+=== beEmpty
+
+==== beEmpty(): Matcher<String | Object | Array | Null>
+
+Validates that the value (String, Object or Array) is empty
+
+
+===== Example
+
+Validates that the `Array` is of size `0`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+[] must beEmpty()
+----
+
+
+=== beGreaterThan
+
+==== beGreaterThan(expected: Comparable, inclusive: Boolean = false): Matcher<Comparable>
+
+Validates that the asserted Comparable value is greater than the given one
+
+ Can be equal to when using the _inclusive_ argument
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expected | The number to compare to
+| inclusive | If it is inclusive or not (Optional) false by default
+|===
+
+===== Example
+
+Expects a `Number` to be bigger than `2`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+3 must beGreaterThan(2)
+----
+
+===== Example
+
+Expects a `Number` to be bigger or equal than `2`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+3 must beGreaterThan(2, true)
+----
+
+
+=== beLowerThan
+
+==== beLowerThan(expected: Comparable, inclusive: Boolean = false): Matcher<Comparable>
+
+Validates that the asserted Comparable value is lower than the given one
+
+Can be equal to when using the _inclusive_ argument
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expected | The number to compare to
+| inclusive | If it is inclusive or not (Optional) false by default
+|===
+
+===== Example
+
+Expects a `Number` to be less than `2`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+1 must beLowerThan(2)
+----
+
+===== Example
+
+Expects a `Number` to be less or equal than `2`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+1 must beLowerThan(2, true)
+----
+
+
+=== beNull
+
+==== beNull(): Matcher
+
+Validates that a given value is of type Null
+===== Example
+
+This example shows how to validate that a value is of type `Null`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+null must beNull()
+----
+
+
+=== beNumber
+
+==== beNumber(): Matcher
+
+Validates that a given value is of type Number
+
+===== Example
+
+This example shows how to validate that a value is of type `Number`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+123 must beNumber()
+----
+
+
+=== beObject
+
+==== beObject(): Matcher
+
+Validates that a given value is of type Object
+
+===== Example
+
+This example shows how to validate that a value is of type `Object`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+{ name : "Lionel", lastName: "Messi"} must beObject()
+----
+
+
+=== beOneOf
+
+==== beOneOf(expected: Array<Any>): Matcher
+
+Validates that the value is contained in the given Array
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expected | The array of possible elements
+|===
+
+===== Example
+
+Asserts that the value is either `1` or "A Text" or `true`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+1 must beOneOf([1, "A Text", true])
+----
+
+
+=== beString
+
+==== beString(): Matcher
+
+Validates that a given value is of type String
+
+===== Example
+
+This example shows how to validate that a value is of type `String`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+"A Text" must beString()
+----
+
+
+=== contain
+
+==== contain(expected: String): Matcher<String>
+
+Validates that the asserted String contains the given String
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expected | The expected text to be contained
+|===
+
+===== Example
+
+Expects the value to contain the `String` "ex"
+
+====== Source
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+"A Text" must contain("ex")
+----
+
+==== contain(expected: Any): Matcher<Array<Any>>
+
+Validates that the asserted Array contains the given value
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expected | The expected value to be contained
+|===
+
+===== Example
+
+Expects the `Array` value to contain the `Number` 1
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+[1, "A Text", true] must contain(1)
+----
+
+
+=== eachItem
+
+==== eachItem(matcher: Matcher<Any>): Matcher<Array<Any>>
+
+Validates that each item of the array satisfies the given matcher
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| matcher | The matcher to apply to all the elements
+|===
+
+===== Example
+
+Expects all the elements in the `Array` to be a `Number`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+[1,2,3] must eachItem(beNumber())
+----
+
+
+=== endWith
+
+==== endWith(expected: String): Matcher<String>
+
+Validates that the asserted String ends with the given String
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expected | Suffix of the 'String'
+|===
+
+===== Example
+
+Expects the `String` to end with "xt"
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+"A Text" must endWith("xt")
+----
+
+
+=== equalTo
+
+==== equalTo(expected: Any, equalToConfig: { unordered?: Boolean } = {}): Matcher<Any>
+
+Validates that a value is equal to another one
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expected | The expected value
+| equalToConfig | Configuration of how to compare them.
+|===
+
+===== Example
+
+This example shows how to assert that a value must be `equal` to `3`.
+
+====== Source
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+(1 + 2) must equalTo(3)
+----
+
+
+=== equalToResource
+
+==== equalToResource(resourceName: String, contentType: String = "application/dw", readerProperties: Object = {}): Matcher<Any>
+
+Validates that the given value is equal to the content of a resource file
+
+The resource file must belong to the classpath
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| resourceName | The resource name
+| contentType | The content type of the resource (Optional)
+| readerProperties | An object with the config properties (Optional)
+|===
+
+===== Example
+
+Expects a value to be equal to the content of the resource "user.json"
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+{ name: "Lionel", lastName: "Messi" } must equalToResource("user.json", "application/json")
+----
+
+
+=== haveItem
+
+==== haveItem(matcher: Matcher<Any>): Matcher<Array<Any>>
+
+Validates that at least one item of the array satisfies the given matcher
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| matcher | The matcher to apply to at least one of the elements
+|===
+
+===== Example
+
+Expects that one element of the `Array` is a `Number`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+[1, true, "a text"] must haveItem(beNumber())
+----
+
+
+=== haveKey
+
+==== haveKey(keyName: String): Matcher<Object>
+
+Validates that the Object has the given key
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| keyName | The name of the key to expect to be present.
+|===
+
+===== Example
+
+Validates that the `Object` contains a key called "name"
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+{ name: "Lionel", lastName: "Messi" } must haveKey("name")
+----
+
+
+=== haveSize
+
+==== haveSize(expectedSize: Number): Matcher<Array | String | Object | Null>
+
+Validates that the array has the given size
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expectedSize | The expected array size
+|===
+
+===== Example
+
+Expects that the array must be of size `3`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+[1, 4, 7] must haveSize(3)
+----
+
+
+=== haveValue
+
+==== haveValue(value: Any): Matcher<Object>
+
+Validates that the Object has the given value
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| value | The value that is expected to be present
+|===
+
+===== Example
+
+Expected that the `Object` contains the value "Messi"
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+{ name: "Lionel", lastName: "Messi" } must haveValue("Messi")
+----
+
+
+=== must
+
+==== must<T>(value: T, matchExpressions: Array<(value: T) -> Matcher<T> | MatcherResult | Boolean>): MatcherResult
+
+This function allows to assert a value with with a list of Matcher or Expressions
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| value |
+| matchExpressions |
+|===
+
+===== Example
+
+This example shows how to assert that a `payload` is of type `Object` and has a property `foo` that is `null`
+
+====== Source
+
+[source, DataWeave,linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+payload must [
+    beObject(),
+    $.foo is Null
+]
+----
+
+==== must<T>(value: T, matcher: (value: T) -> Matcher<T> | Boolean): MatcherResult
+
+This function allows to assert a value with a Matcher of Expressions
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| value | The value to be assert
+| matcher | The matcher to be used
+|===
+
+===== Example
+
+This example shows how to assert that a `payload` is of type `Object`.
+
+====== Source
+
+[source, DataWeave,linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+payload must beObject()
+----
+
+
+=== notBe
+
+==== notBe<T>(matcher: Matcher<T>): Matcher<T>
+
+Validates that the value doesn't satisfy the given matcher
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| matcher | The matcher that is going to be negated
+|===
+
+===== Example
+
+This example shows how to assert that a value must `not` be 2.
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+1 must notBe(equalTo(2))
+----
+
+
+=== notBeNull
+
+==== notBeNull(): Matcher
+
+Validates that a given value isn't of type Null
+
+===== Example
+
+This example shows how to validate that a value is not of type `Null`
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+"A Text" must notBeNull()
+----
+
+
+=== startWith
+
+==== startWith(expected: String): Matcher<String>
+
+Validates that the asserted String starts with the given String
+
+===== Parameters
+
+[%header, cols="1,3"]
+|===
+| Name   | Description
+| expected | Prefix of the 'String'
+|===
+
+===== Example
+
+Validates that the `String` starts with "A"
+
+====== Source
+
+[source,DataWeave, linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+---
+"A Text" must startWith("A")
+----
+
+
+
+== Variables
+
+=== MATCHED
+
+Constant that represents a successful match
+
+
+
+== Types
+
+=== Matcher
+Data Type that represents a Matcher to perform assertions
+
+===== Example
+
+====== Source
+
+[source, DataWeave,linenums]
+----
+%dw 2.0
+import dw::tests::Asserts
+
+fun beEqualToOne(): Matcher<Any> =
+    (actual) -> do {
+        {
+            matches: actual == 1,
+            description: { expected: "To be 1", actual: write(actual) as String }
+        }
+    }
+----
+
+.Definition
+
+[source,DataWeave,linenums]
+----
+(value: T) -> MatcherResult
+----
+
+
+=== MatcherResult
+Data Type that represents the result of an Assertion
+
+===== Example
+
+====== Source
+
+[source, DataWeave,linenums]
+----
+{
+  "matches": false,
+  description : { expected : "Number type", actual: "A Text" }
+}
+----
+
+.Definition
+
+[source,DataWeave,linenums]
+----
+{ matches: Boolean, description: { expected: String, actual: String }, reasons?: Array<String> }
+----
