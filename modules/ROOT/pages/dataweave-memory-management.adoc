@@ -33,7 +33,7 @@ System properties: +
 Because you can define system properties in several ways, see xref:mule-runtime::configuring-properties.adoc#system-properties[system properties] for further details.
 
 * `com.mulesoft.dw.buffersize` +
-This system property determines the size in bytes of the internal byte array buffers used in DataWeave to process inputs and outputs. The default buffer size is 8192 bytes (8 KB).
+This system property determines the size in bytes of the in-memory input and output buffers used in DataWeave to keep the processed inputs and outputs. The default buffer size is 8192 bytes (8 KB).
 This property receives a number (size in bytes), for example: `-Dcom.mulesoft.dw.buffersize=8192`.
 
 * `com.mulesoft.dw.directbuffer.disable` +
