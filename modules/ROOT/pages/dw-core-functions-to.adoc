@@ -17,7 +17,7 @@ The upper boundary is inclusive.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `from` | `Number` value that starts the range. The output includes the `from` value.
 | `to` | `Number` value that ends the range. The output includes the `from` value.
 |===

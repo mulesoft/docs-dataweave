@@ -21,7 +21,7 @@ _Introduced in DataWeave version 2.4.0._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `value` | An input value of `Any` type.
 | `criteria` | Boolean expression to apply to `SimpleType` or `Null`
                leaf values of all arrays in the input `value`. If the

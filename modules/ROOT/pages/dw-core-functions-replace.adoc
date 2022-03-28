@@ -19,7 +19,7 @@ specify a replacement string for the matching part of the input string.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | A string to match.
 | `matcher` | A Java regular expression for matching characters in the input `text` string.
 |===
@@ -89,7 +89,7 @@ replacement string for the matching part of the input string.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The string to match.
 | `matcher` | The string for matching characters in the input `text` string.
 |===
