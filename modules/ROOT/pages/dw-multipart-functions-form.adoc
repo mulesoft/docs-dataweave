@@ -12,7 +12,7 @@ Creates a `Multipart` data structure using a specified array of parts.
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
 | Name | Description
 | `parts` | An array of parts (`MultipartPart` data structures).

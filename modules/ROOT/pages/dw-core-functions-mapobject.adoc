@@ -15,7 +15,7 @@ indices of that object.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `object` | The object to map.
 | `mapper` | Expression or selector that provides the `key`, `value`, or `index` used for mapping the specified object into an output object.
 |===

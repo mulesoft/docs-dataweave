@@ -10,13 +10,13 @@ endif::[]
 
 Evaluates the script at the specified URL.
 
-_Experimental_: This is an experimental feature that is subject to change or removal from future versions of DataWeave.
+_Experimental:_ This function is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 === Parameters
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `url` | Name of the file execute.
 | `readerInputs` | Inputs to read and bind to the execution.
 | `inputValues` | Inputs to bind directly to the execution.

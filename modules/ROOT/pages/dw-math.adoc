@@ -10,7 +10,7 @@ _Introduced in DataWeave version 2.4.0._
 
 == Functions
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
 | Name  | Description
 | xref:dw-math-functions-acos.adoc[acos] | Returns an arc cosine value that can range from `0.0` through pi.
@@ -28,6 +28,3 @@ equivalent number of radians.
 |===
 == Variables
 * xref:dw-math-variables.adoc[Math Variables]
-
-
-

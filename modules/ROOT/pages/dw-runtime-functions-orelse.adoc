@@ -12,7 +12,7 @@ Returns the result of the `orElse` argument if the `previous` argument to
 `try` fails. Otherwise, the function returns the value of the `previous`
 argument.
 
-_Introduced in DataWeave: 2.2.0._
+_Introduced in DataWeave version 2.2.0._
 
 === Parameters
 
