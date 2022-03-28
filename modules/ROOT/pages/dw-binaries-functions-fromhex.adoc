@@ -21,8 +21,7 @@ Transforms a hexadecimal string into a binary.
 === Example
 
 This example transforms a hexadecimal string to "Mule".
-
-To make the resulting type clear, it outputs data in the `application/dw` format.
+To make the resulting type clear, it outputs data in the `application/dw` format. 
 
 ==== Source
 
@@ -43,3 +42,4 @@ output application/dw
    hexToBinary: "TXVsZQ==" as Binary {base: "64"}
 }
 ----
+

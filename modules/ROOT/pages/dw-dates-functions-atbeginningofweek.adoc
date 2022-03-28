@@ -18,9 +18,9 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
-| Name   | Description
+| Name | Description
 | `dateTime` | The `DateTime` value to reference.
 |===
 
@@ -66,9 +66,9 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
-| Name   | Description
+| Name | Description
 | `localDateTime` | The `LocalDateTime` value to reference.
 |===
 
@@ -114,16 +114,16 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
-| Name   | Description
+| Name | Description
 | `date` | The `Date` value to reference.
 |===
 
 === Example
 
 This example changes the `Day` value (`06`) within
-the `Date` input to the first day of the week that contains `2020-10-06` (a Tuesday), which is `2020-10-04` (a Sunday).  
+the `Date` input to the first day of the week that contains `2020-10-06` (a Tuesday), which is `2020-10-04` (a Sunday).
 The `Day` value changes from `06` to `04`.
 
 ==== Source
@@ -147,4 +147,3 @@ output application/json
   "atBeginningOfWeekDate": "2020-10-04"
 }
 ----
-

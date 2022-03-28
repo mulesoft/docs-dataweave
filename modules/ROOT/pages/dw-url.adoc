@@ -2,7 +2,6 @@
 
 This module contains helper functions for working with URIs.
 
-
 To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::core::URL` to the header of your
 DataWeave script.
@@ -24,3 +23,5 @@ by `encodeURIComponent` or a similar routine.
 
 == Types
 * xref:dw-url-types.adoc[URL Types]
+
+

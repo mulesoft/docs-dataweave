@@ -15,13 +15,13 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
-| Name   | Description
+| Name | Description
 | `parts` | `Number` values for `year`, `month`, `day`, `hour`, `minutes`, and
             `seconds` fields. Valid values are numbers between 1 and 12 for the
             `month`, 1 through 31 for the `day`, 0 through 23 for the `hour`,
-            0 through 59 for `minutes`, and 0 through 60 (not inclusive; the field accepts 59.99, for example) for `seconds` fields.
+            0 through 59 for `minutes`, and 0 through 59 (including decimals, such as 59.99) for `seconds` fields.
             You can specify the name-value pairs in any order,
             but the output is ordered as a default `LocalDateTime` value,
             such as `2012-10-11T10:10:10`. The input fields are parts of
@@ -53,4 +53,3 @@ output application/json
    "newLocalDateTime": "2012-10-11T12:30:40"
 }
 ----
-

@@ -15,7 +15,7 @@ Returns `true` if the given number is an integer (which lacks decimals),
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `number` | The number to evaluate.
 |===
 

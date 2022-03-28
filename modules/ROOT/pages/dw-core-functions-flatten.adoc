@@ -17,7 +17,7 @@ Note that it flattens only the first level of subarrays and omits empty subarray
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `items` | The input array of arrays made up of any supported types.
 |===
 
@@ -127,3 +127,4 @@ instead of using `flatten(myData.user.myarray)`, the output is a nested array of
 == flatten&#40;@StreamCapable value: Null&#41;: Null
 
 Helper function that enables `flatten` to work with a `null` value.
+
