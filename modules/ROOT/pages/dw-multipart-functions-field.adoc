@@ -21,7 +21,7 @@ that use the parameter names as keys, for example:
 [%header, cols="1,3"]
 |===
 | Name | Description
-| `opts` a | Array of objects that specifies:
+| `opts` | Array of objects that specifies:
 
 * A unique `name` (required) for the `Content-Disposition` header of the part.
 * A `value` (required) for the content of the part.
