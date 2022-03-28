@@ -14,7 +14,7 @@ Removes any blank spaces from the beginning and end of a string.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The string from which to remove any blank spaces.
 |===
 

@@ -19,7 +19,7 @@ Other versions act on arrays of objects, strings, or binary values.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `array` | The input array. The elements in the array can be any supported type.
 |===
 
@@ -91,7 +91,7 @@ empty.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `object` | The input object that contains one or more key-value pairs.
 |===
 
@@ -157,7 +157,7 @@ Returns the number of elements in an array of binary values.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `binary` | The input array of binary values.
 |===
 
@@ -195,7 +195,7 @@ Returns `0` if the string is empty.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The input text.
 |===
 

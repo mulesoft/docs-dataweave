@@ -55,7 +55,7 @@ Removes specified key-value pairs from an object.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `source` | The source object (an `Object` type).
 | `toRemove` | Object that contains the key-value pairs to remove from the source object.
 |===
@@ -91,7 +91,7 @@ Removes all key-value pairs from the source object that match the specified sear
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `source` | The source object (an `Object` type).
 | `toRemove` | An array of keys to specify the key-value pairs to remove from the source object.
 |===
@@ -127,7 +127,7 @@ Removes specified key-value pairs from an object.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `source` | The source object (an `Object` type).
 | `keys` | A keys for the key-value pairs to remove from the source object.
 |===
