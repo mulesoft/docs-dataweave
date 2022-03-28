@@ -64,7 +64,7 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `theString` | The string to search.
-| `search` | The String to search.
+| `search` | The string to find within `theString`.
 |===
 
 === Example
