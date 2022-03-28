@@ -19,7 +19,7 @@ Three types of DataWeave buffer files are generated: +
 
 * `dw-buffer-output-${count}.tmp` +
 Used to store the output of a transformation when the result is bigger than the threshold *1572864 bytes*.
-To change this threshold value, add the system property `com.mulesoft.dw.buffersize` and assign it the number of bytes you want as your new threshold.
+To change this threshold value, add the system property `com.mulesoft.dw.max_memory_allocation` and assign it the number of bytes you want as your new threshold.
 Mule runtime engine deletes the file when the value is no longer referenced, JVM GC collects it or when the Mule Event finishes executing.
 
 * `dw-buffer-input-${count}.tmp` +
@@ -33,7 +33,7 @@ System properties: +
 Because you can define system properties in several ways, see xref:mule-runtime::configuring-properties.adoc#system-properties[system properties] for further details.
 
 * `com.mulesoft.dw.buffersize` +
-This system property determines the size in bytes of the in-memory input and output buffers used in DataWeave to keep the processed inputs and outputs. If a payload exceeds this size, it is stored in `dw-buffer-index-${count}.tmp` and `dw-buffer-output-${count}.tmp` temporary files. The default buffer size is 8192 bytes (8 KB).
+This system property determines the size in bytes of the internal byte array buffers used in DataWeave to process inputs and outputs. The default buffer size is 8192 bytes (8 KB).
 This property receives a number (size in bytes), for example: `-Dcom.mulesoft.dw.buffersize=8192`.
 
 * `com.mulesoft.dw.directbuffer.disable` +
@@ -46,7 +46,8 @@ The default number of slots is 60.
 This property receives a number (slots in the pool), for example: `-Dcom.mulesoft.dw.memory_pool_size=60`.
 
 * `com.mulesoft.dw.max_memory_allocation` +
-Introduced in Mule 4.3.0, this property determines the size in bytes of each slot in the pool of off-heap memory. The default slot size is 1572864 bytes (1.5 MB).
+Introduced in Mule 4.3.0, this property determines the maximum amount of memory to be used before it switches to disk. If a payload exceeds this size, it is stored in `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp` temporary files.
+It also determines the size in bytes of each slot in the pool of off-heap memory. The default size is 1572864 bytes (1.5 MB).
 This property receives a number (size in bytes), for example: `-Dcom.mulesoft.dw.max_memory_allocation=1572864`.
 
 * `com.mulesoft.dw.buffer.memory.monitoring` (experimental) +
