@@ -166,7 +166,7 @@ Multipart::field("order", myOrder,"application/json", "order.json")`
 [%header, cols="1,3"]
 |===
 | Name | Description
-| `opts` a | A set of parameters that specify:
+| `opts` | A set of parameters that specify:
 
 * A unique `name` (required) for the `Content-Disposition` header of the part.
 * A `value` (required) for the content of the part.
