@@ -41,7 +41,7 @@ import * from dw::core::Dates
 output application/json
 ---
 {
-    newDateTime: dateTime({year: 2012, month: 10, day: 11, hour: 12, minutes: 30, seconds: 40 , timeZone: &#124;-03:00&#124;})
+    newDateTime: dateTime({year: 2012, month: 10, day: 11, hour: 12, minutes: 30, seconds: 40 , timeZone: |-03:00|})
 }
 ----
 
@@ -53,4 +53,3 @@ output application/json
    "newDateTime": "2012-10-11T12:30:40-03:00"
 }
 ----
-
