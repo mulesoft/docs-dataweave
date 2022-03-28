@@ -15,7 +15,7 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
 | Name | Description
 | `angrad` | Number of radians to convert to degrees.
@@ -50,4 +50,3 @@ output application/json
    "toDegrees-20": -11.45915590261646417536927286883822
  }
 ----
-

@@ -14,7 +14,7 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
 | Name | Description
 | `angle` | Number of radians in an angle.
@@ -49,4 +49,3 @@ output application/json
   "sin-1": -0.8414709848078965
 }
 ----
-

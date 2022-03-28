@@ -14,7 +14,7 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
 | Name | Description
 | `parts` | `Number` values for `year`, `month`, and `day` fields. The `month`
@@ -49,4 +49,3 @@ output application/json
    "newDate": "2012-10-11"
 }
 ----
-
