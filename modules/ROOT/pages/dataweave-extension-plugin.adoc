@@ -10,6 +10,9 @@ Before installing the DataWeave 2.0 extension to Visual Studio Code, you must:
 * Install Apache Maven (3.6.3 minimum)
 * Install Microsoft Visual Studio Code for your specific operating system
 
+[NOTE]
+If you have any other prior extensions for DataWeave, whether experimental or from a third-party, you should uninstall them.
+
 == Install the DataWeave 2.0 Extension
 
 To install the extension:
