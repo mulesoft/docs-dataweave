@@ -18,7 +18,7 @@ indices of a string.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `elements` | An array with elements of any type.
 | `elementToFind` | Value to find in the input array.
 |===
@@ -62,7 +62,7 @@ Note: To retrieve parts of the text that match a regex. use the `scan` function.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | A string.
 | `matcher` | A Java regular expression for matching characters in the `text`.
 |===
@@ -98,7 +98,7 @@ Lists indices where the specified characters of a string are present.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | A source string.
 | `textToFind` | The string to find in the source string.
 |===

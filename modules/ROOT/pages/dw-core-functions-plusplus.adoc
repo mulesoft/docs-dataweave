@@ -24,7 +24,7 @@ note that the arrays can contain any supported data type.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `source` | The source array.
 | `with` | The array to concatenate with the source array.
 |===
@@ -85,7 +85,7 @@ string.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `source` | The source string.
 | `with` | The string to concatenate with the source string.
 |===
@@ -127,7 +127,7 @@ then combines them together into one result object.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `source` | The source object.
 | `with` | The object to concatenate with the source object.
 |===
@@ -178,7 +178,7 @@ same result as `LocalTime ++ Date`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `date` | A `Date`.
 | `time` | A `LocalTime`, a time format without a time zone.
 |===
@@ -220,7 +220,7 @@ so logically, `LocalTime ++ Date` produces the same result as
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `time` | A `LocalTime`, a time format without a time zone.
 | `date` | A `Date`.
 |===
@@ -261,7 +261,7 @@ so logically, `Date` + `Time`  produces the same result as `Time` + `Date`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `date` | A `Date`.
 | `time` | A `Time`, a time format that can include a time zone (`Z` or `HH:mm`).
 |===
@@ -301,7 +301,7 @@ so logically, `Date` + `Time`  produces the same result as a `Time` + `Date`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `time` | A `Time`, a time format that can include a time zone (`Z` or `HH:mm`).
 | `date` | A `Date`.
 |===
@@ -370,7 +370,7 @@ Appends a `TimeZone` to a `Date` type value and returns a `DateTime` result.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `date` | A `Date`.
 | `timezone` | A `TimeZone` (`Z` or `HH:mm`).
 |===
@@ -407,7 +407,7 @@ Appends a `Date` to a `TimeZone` in order to return a `DateTime`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `date` | A `Date`.
 | `timezone` | A `TimeZone` (`Z` or `HH:mm`).
 |===
@@ -444,7 +444,7 @@ Appends a `TimeZone` to a `LocalDateTime` in order to return a `DateTime`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `dateTime` | A `LocalDateTime`, a date and time without a time zone.
 | `timezone` | A `TimeZone` (`Z` or `HH:mm`).
 |===
@@ -481,7 +481,7 @@ Appends a `LocalDateTime` to a `TimeZone` in order to return a `DateTime`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `dateTime` | A `LocalDateTime`, a date and time without a time zone.
 | `timezone` | A `TimeZone` (`Z` or `HH:mm`).
 |===
@@ -518,7 +518,7 @@ Appends a `TimeZone` to a `LocalTime` in order to return a `Time`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `time` | A `LocalTime`, time format without a time zone.
 | `timezone` | A `TimeZone` (`Z` or `HH:mm`).
 |===
@@ -555,7 +555,7 @@ Appends a `LocalTime` to a `TimeZone` in order to return a `Time`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `time` | A `LocalTime`, a time format without a time zone.
 | `timezone` | A `TimeZone` (`Z` or `HH:mm`).
 |===

@@ -158,7 +158,7 @@ Multipart::field("myFile", myClients, 'application/json', "partMyClients.json")
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
 | Name | Description
 | `fieldName` | A unique name (required) for the `Content-Disposition` header of the part.
@@ -230,4 +230,3 @@ Content-Disposition: form-data; name="myFile"; filename="partMyClients.json"
 }
 ------=_Part_1586_1887987980.1542569342438--
 ----
-

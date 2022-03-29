@@ -16,7 +16,7 @@ _Introduced in DataWeave version 2.2.2._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `name` | The name of the schema `type` that is referenced without the prefix.
 | `namespace` | The namespace of that type.
 |===

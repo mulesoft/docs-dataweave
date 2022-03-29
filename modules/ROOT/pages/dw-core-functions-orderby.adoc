@@ -22,7 +22,7 @@ Note that you can reference the index with the anonymous parameter
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `object` | The object to reorder.
 | `criteria` | The result of the function is used as the criteria to reorder the object.
 |===
@@ -90,7 +90,7 @@ Sorts an array using the specified criteria.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `array` | The array to sort.
 | `criteria` | The result of the function serves as criteria for sorting the array. It should return a simple value (`String`, `Number`, and so on).
 |===

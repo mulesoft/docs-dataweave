@@ -19,7 +19,7 @@ _Introduced in DataWeave version 2.4.0._
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `nMinutes` | The number of minutes as a whole or decimal number.
                A positive or negative number is valid.
 |===

@@ -15,7 +15,7 @@ Returns a pseudo-random whole number from `0` to the specified number
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `upperBound` | A number that sets the upper bound of the random number.
 |===
 
