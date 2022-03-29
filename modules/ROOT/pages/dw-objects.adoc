@@ -2,7 +2,6 @@
 
 This module contains helper functions for working with objects.
 
-
 To use this module, you must import it to your DataWeave code, for example,
 by adding the line `import * from dw::core::Objects` to the header of your
 DataWeave script.
@@ -24,3 +23,6 @@ attributes in the input object.
 | xref:dw-objects-functions-takewhile.adoc[takeWhile] | Selects key-value pairs from the object while the condition is met.
 | xref:dw-objects-functions-valueset.adoc[valueSet] | Returns an array of the values from key-value pairs in an object.
 |===
+
+
+

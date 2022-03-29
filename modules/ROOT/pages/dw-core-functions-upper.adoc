@@ -14,7 +14,7 @@ Returns the provided string in uppercase characters.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The string to convert to uppercase.
 |===
 

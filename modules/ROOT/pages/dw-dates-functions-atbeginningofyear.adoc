@@ -18,9 +18,9 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
-| Name   | Description
+| Name | Description
 | `dateTime` | The `DateTime` value to reference.
 |===
 
@@ -65,9 +65,9 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
-| Name   | Description
+| Name | Description
 | `localDateTime` | The `LocalDateTime` value to reference.
 |===
 
@@ -112,9 +112,9 @@ _Introduced in DataWeave version 2.4.0._
 
 === Parameters
 
-[%header, cols="1,3"]
+[%header, cols="1,3a"]
 |===
-| Name   | Description
+| Name | Description
 | `date` | The `Date` value to reference.
 |===
 
@@ -144,4 +144,3 @@ output application/json
   "atBeginningOfYearDate": "2020-01-01"
 }
 ----
-

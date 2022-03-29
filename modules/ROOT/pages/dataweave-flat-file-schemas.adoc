@@ -161,8 +161,8 @@ Element definitions are the basic building blocks of application data, consistin
 [source,yaml,linenums]
 ----
   - { id: 'OrgCode', name: 'Organization Code', type: String, length: 10 }
-  - { id: 'CreatDate', name: 'File Creation Date', type: Date, length: 8 }
-  - { id: 'CreatTime', name: 'File Creation Time', type: Time, length: 4 }
+  - { id: 'CreateDate', name: 'File Creation Date', type: Date, length: 8 }
+  - { id: 'CreateTime', name: 'File Creation Time', type: Time, length: 4 }
   - { id: 'BatchTransCount', name: 'Batch Transaction Count', type: Integer, format: { justify: zeroes }, length: 6 }
   - { id: 'BatchTransAmount', name: 'Batch Transaction Amount', type: Integer, format: { justify: zeroes }, length: 10 }
 ----

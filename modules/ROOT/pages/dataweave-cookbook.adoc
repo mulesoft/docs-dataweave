@@ -63,7 +63,7 @@ These examples show how to use standalone DataWeave to extract and transform dat
 | Uses `groupBy`, `mapObject`, and `map` to reorganize JSON and XML fields.
 //zip-arrays-together
 | xref:dataweave-cookbook-zip-arrays-together.adoc[Zip Arrays Together]
-| Uses `zip` to rearrange pairs of similar arrays so that they form a series of touples with the matching values from each.
+| Uses `zip` to rearrange pairs of similar arrays so that they form a series of tuples with the matching values from each.
 //pick-top-elements
 | xref:dataweave-cookbook-pick-top-elements.adoc[Pick Top Elements]
 | Uses `groupBy` and `map` to sort a list of candidates according to their score at a test, then it splits the array to select only the top candidates.

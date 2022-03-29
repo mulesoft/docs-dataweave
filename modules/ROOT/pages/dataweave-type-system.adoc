@@ -193,7 +193,7 @@ output application/json
 
 An _open_ object only put constraints on the fields that are declared in the type, and if they are all verified, then the type accepts the value. The type accepts objects that have other fields apart of the ones mentioned in the declaration. All `object` types are open unless specified.
 
-The following example succeds even if `age` is not in the type declaration because the type of the variable `user` is an open object:
+The following example succeeds even if `age` is not in the type declaration because the type of the variable `user` is an open object:
 
 .DataWeave Script
 ----

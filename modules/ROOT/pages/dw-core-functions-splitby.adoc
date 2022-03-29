@@ -20,7 +20,7 @@ string. Note that `splitBy` performs the opposite operation of `joinBy`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The input string to split.
 | `regex` | A Java regular expression used to split the string. If it does not match some part of the string, the function will return the original, unsplit string in the array.
 |===
@@ -161,7 +161,7 @@ the opposite operation of `joinBy`.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `text` | The string to split.
 | `separator` | A string used to separate the input string. If it does not match some part of the string, the function will return the original, unsplit string in the array.
 |===

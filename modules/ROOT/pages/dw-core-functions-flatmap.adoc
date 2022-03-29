@@ -21,7 +21,7 @@ flattened array that looks like this: `[1, 2, 3, 4]`. `flatMap` is similar to
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `items` | The array to map.
 | `mapper` | Expression or selector for an `item` and/or `index` in the array to flatten.
 |===
