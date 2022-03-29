@@ -171,7 +171,7 @@ include::partial$cookbook-dw/extract-data-ex03/transform.dwl[]
 include::partial$cookbook-dw/extract-data-ex03/out.json[]
 ----
 
-To return the values of mulitple matching keys in cases like this, see
+To return the values of multiple matching keys in cases like this, see
 <<multi_value>>.
 
 In the next example, `payload.people.person.address` returns the value of the
