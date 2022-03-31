@@ -1,10 +1,10 @@
-= Installing and Using the DataWeave 2.0 Extension
+= Installing and Using the DataWeave 2.0 (BETA) Extension
 
-Install and use DataWeave 2.0 extension in Visual Studio Code (DataWeave Extension) to develop, preview, test, and deploy custom mappings and modules into libraries in a DataWeave project. The extension also enables you to preview transformations similar to those you perform in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
+Install and use DataWeave 2.0 (BETA) extension in Visual Studio Code (DataWeave extension) to develop, preview, test, and deploy custom mappings and modules into libraries in a DataWeave project. The extension also enables you to preview transformations similar to those you perform in the https://developer.mulesoft.com/learn/dataweave/[DataWeave Playground].
 
 == Before You Begin
 
-Before installing the DataWeave 2.0 extension to Visual Studio Code, you must:
+Before installing the DataWeave extension to Visual Studio Code, you must:
 
 * Install AdoptOpenJDK
 * Install Apache Maven (3.6.3 minimum)
@@ -13,16 +13,16 @@ Before installing the DataWeave 2.0 extension to Visual Studio Code, you must:
 [NOTE]
 If you have any other prior extensions for DataWeave, whether experimental or from a third party, uninstall them.
 
-== Install the DataWeave 2.0 Extension
+== Install the DataWeave Extension
 
 To install the extension:
 
 . Open Visual Studio Code.
 . In the *EXTENSIONS* tab, type `dataweave` to search the extension in the marketplace.
-. Select *DataWeave 2.0* from the search results.
+. Select *DataWeave 2.0 (BETA)* from the search results.
 . Click *Install*.
 +
-image::dataweave-extension-plugin-install.png[DataWeave 2.0 extension installation]
+image::dataweave-extension-plugin-install.png[DataWeave extension installation]
 
 [start=5]
 . After the installation finishes, restart Visual Studio Code.
@@ -85,7 +85,7 @@ The following image shows a new DataWeave project in Visual Studio Code:
 image::dataweave-extension-new-project-sample.png[DataWeave project example window]
 
 
-When creating a DataWeave project, the DataWeave 2.0 extension requires all dependencies to be loaded and indexed before it can search the libraries and make them available in your project. Visual Studio Code provides a notification bar at the bottom of the screen editor that shows when the dependencies are loading and when the indexing is complete.
+When creating a DataWeave project, the DataWeave extension requires all dependencies to be loaded and indexed before it can search the libraries and make them available in your project. Visual Studio Code provides a notification bar at the bottom of the screen editor that shows when the dependencies are loading and when the indexing is complete.
 
 image::dataweave-extension-dependencies.png[Dependencies loading and indexing]
 
@@ -172,7 +172,7 @@ image::dataweave-extension-testmodule-3.png[MyModuleTest file in the TESTING TAB
 
 A DataWeave mapping is a `.dwl` file that enables you to map and connect to anything, regardless of data type or structure. As when using a DataWeave module, you can use a mapping to define functions, variables, types, and namespaces, but you can additionally specify a body section after the separator `---`.
 
-Unlike a DataWeave module file, a DataWeave mapping file is an executable unit that enables you to transform zero or more inputs into a single output. Using the DataWeave 2.0 extension, you can develop these files to create reusable assets that you can deploy and share with others.
+Unlike a DataWeave module file, a DataWeave mapping file is an executable unit that enables you to transform zero or more inputs into a single output. Using the DataWeave extension, you can develop these files to create reusable assets that you can deploy and share with others.
 
 To create a new DataWeave mapping, follow these steps:
 
@@ -338,9 +338,9 @@ You can copy the dependency snippet from Exchange.
 For more details, refer to the xref:exchange::to-publish-assets-maven.adoc#publish-and-consume-federated-assets[Publish and Consume Federated Assets] documentation.
 
 
-== DataWeave 2.0 Extension Language Edition Features
+== DataWeave Extension Language Edition Features
 
-The Language Edition features of the DataWeave 2.0 extension include completion, navigation, code editing, and code inspection.
+The Language Edition features of the DataWeave extension include completion, navigation, code editing, and code inspection.
 
 === Completion
 
@@ -370,7 +370,7 @@ image::dataweave-extension-autoimport.png[Auto Import Feature sample]
 
 === Code Inspections
 
-The DataWeave 2.0 extension tries to detect and suggest replacements for idioms in expressions, as shown in the following examples:
+The DataWeave extension tries to detect and suggest replacements for idioms in expressions, as shown in the following examples:
 
 * Default Value
 
