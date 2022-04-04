@@ -806,9 +806,9 @@ a|
 
 `<myVariableName>`
 
-To avoid name collisions, you can prepend `variables`:
+To avoid name collisions, you can prepend `vars`:
 
-`variables.<myVariableName>`
+`vars.<myVariableName>`
 
 For more on Mule variables, see xref:mule-runtime::about-mule-variables.adoc[Variables in Mule Apps].
 
