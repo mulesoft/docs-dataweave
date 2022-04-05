@@ -65,7 +65,7 @@ See xref:dataweave-functions.adoc[Define DataWeave Functions] for additional fun
 
 ==== Function Definition vs. Function Call
 
-DataWeave enables you to xref:dataweave-functions.adoc[define your own functions] in the header of the script, creating a blueprint for the process that defines the operations that are executed upon the function call. You can also define them in xref:dataweave-functions.adoc[DataWeave mapping and module files].
+DataWeave enables you to xref:dataweave-functions.adoc[define your own functions] in the header of the script, creating a blueprint for the process that defines the operations that are executed upon the function call. You can also define them in xref:dataweave-create-module.adoc[DataWeave mapping and module files].
 
 When you _call_ a function from a DataWeave expression, you are instructing DataWeave to run all the operations defined in that function at that exact point of the script’s execution.
 
