@@ -38,8 +38,8 @@ certain single-byte character encodings
 (so not with UTF-8 or any multibyte format).
 
 | `allowLenientWithBinaryNotEndElement` | `Boolean` | `false` |
-If the schema contains elements of type *Binary* or *Packed* the *lenient* option will not allow short records, regardless of the last element
-format type. When you set this property to `true`, the validation will apply only in cases where the record ends with type `Binary` or `Packed`.
+When the schema contains elements of type Binary or Packed, the `lenient` option does not allow short records, regardless of the last element's
+format type. When you set this property to `true`, the validation applies only to cases in which the record ends with type Binary or Packed.
 
 | `schemaPath`  (Required) | `String` | `null` | Schema definition. Location in your local disk of the schema file used to parse your input.
 | `segmentIdent` | `String` | `null` | Segment identifier in the schema for fixed width or copybook schemas (only needed when parsing a single segment/record definition and if the schema includes multiple segment definitions).
