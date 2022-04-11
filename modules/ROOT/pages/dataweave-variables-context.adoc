@@ -113,8 +113,8 @@ a|
 ** `host`: Fully qualified domain name for the server.
 ** `ip`: IP address of the server.
 ** `locale`: Default locale (`java.util.Locale`) of the JRE. Can be used language (`locale.language`), country (`locale.country`).
-** `javaVendor`: JRE version
-** `javaVersion`: JRE vendor name
+** `javaVendor`: JRE vendor name
+** `javaVersion`: JRE version
 // `nanoSeconds`  removed from Mule 4? Yes, because DW provides this already
 ** `osArch`: Operating system architecture.
 ** `osName`: Operating system name.
