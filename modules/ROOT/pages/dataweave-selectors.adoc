@@ -778,7 +778,7 @@ To select xref:mule-runtime::about-mule-event.adoc[Mule event] data,
 such as the payload, an attribute, or variable data within the Mule event,
 use predefined Mule Runtime variables, such as `payload`, `attributes`, and `vars`.
 
-Extracted values are handled as a literal values of one of the supported DataWeave value types.
+Extracted values are handled as literal values of one of the supported DataWeave value types.
 
 [cols="1,4", options="header"]
 |===
