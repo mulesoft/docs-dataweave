@@ -771,18 +771,14 @@ the namespace `+http://www.w3.org/TR/html4/+`:
 == Use of Selectors on Content Stored in Variables
 
 All selectors work with the
-xref:dataweave-variables-context.adoc[predefined Mule Runtime variables],
-such as `payload` and `attributes`, and with
-xref:dataweave-variables.adoc[DataWeave variables]. For example, assuming a
-DataWeave variable defined as
-`var myVar = { "id" : "1234", "name" : "somebody" }`, the DataWeave expression
-`myVar.name` returns the value of `"name"`, which is `"somebody"`.
+xref:dataweave-variables-context.adoc[predefined Mule Runtime variables] and with
+xref:dataweave-variables.adoc[DataWeave variables]. 
 
-You can select xref:mule-runtime::about-mule-event.adoc[Mule event] data by using
-Mule Runtime variables.
+To select xref:mule-runtime::about-mule-event.adoc[Mule event] data, 
+such as the payload, an attribute or variable data within the Mule event, you
+use predefined Mule Runtime variables, such as `payload`, `attributes`, and `vars`.
 
-Extracted values are handled as a literal values (as opposed to
-variables, for example) of one of the supported DataWeave value types.
+Extracted values are handled as a literal values of one of the supported DataWeave value types.
 
 [cols="1,4", options="header"]
 |===
@@ -806,9 +802,9 @@ a|
 
 `<myVariableName>`
 
-To avoid name collisions, you can prepend `variables`:
+To avoid name collisions, you must prepend `vars` to the variable name:
 
-`variables.<myVariableName>`
+`vars.<myVariableName>`
 
 For more on Mule variables, see xref:mule-runtime::about-mule-variables.adoc[Variables in Mule Apps].
 
