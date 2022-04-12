@@ -264,5 +264,48 @@ read(payload.^raw replace "\uFFFF" with "NonChar")
 
 == Low Performance Issues
 
+=== application/dw format
 Using `output application/dw` format can impact the performance of transformations. This format is intended to help you debug the results of DataWeave transformations.
 It is significantly slower than other formats, so avoid using this format in production applications.
+
+=== multipart/form-data content parsing
+When working with `multipart/form-data` inputs, trying to access the content of a part can cause performance degradation, especially for large parts. If the intention is not to parse the contents, use the `^raw` selector to avoid parsing.
+
+==== Input
+
+[source,text,linenums]
+----
+--myboundary
+Content-Disposition: form-data; name="file1"; filename="a.json"
+Content-Type: application/json
+
+{
+"title": "Java 8 in Action",
+"author": "Mario Fusco",
+"year": 2014
+}
+--myboundary
+Content-Disposition: form-data; name="file2"; filename="a.xml"
+Content-Type: application/xml
+
+<doc>
+    <title> Available for download! </title>
+</doc>
+--myboundary--
+----
+
+==== Source
+
+[source,weave, linenums]
+
+%dw 2.0
+input payload multipart boundary='myboundary'
+output application/json
+---
+payload.parts mapObject ((value, key, index) ->
+{
+    (key): {
+	fileName: payload.parts[index].headers.'Content-Disposition'.filename,
+    rawContent: payload.parts[1].content.^raw
+    }
+})
