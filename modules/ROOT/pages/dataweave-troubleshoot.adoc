@@ -269,7 +269,11 @@ Using `output application/dw` format can impact the performance of transformatio
 It is significantly slower than other formats, so avoid using this format in production applications.
 
 === multipart/form-data content parsing
-When working with `multipart/form-data` inputs, trying to access the content of a part can cause performance degradation, especially for large parts. If the intention is not to parse the contents, use the `^raw` selector to avoid parsing.
+When working with `multipart/form-data` inputs, trying to access the content of a large part could cause performance degradation. This happens because when accessing the content of a part, the interpreter will try to parse it for further querying and analysis which can take time specially for high memory formats like `application/xslx`. 
+
+If the intention of your script is not to parse the contents of specific parts and they can be treated as binary content, use the `^raw` selector to avoid parsing.
+
+The following example shows the use of ^raw selector no specific operations over each part is needed.
 
 ==== Input
 
@@ -290,6 +294,7 @@ Content-Type: application/xml
 
 <doc>
     <title> Available for download! </title>
+    <content> Really large content </content>
 </doc>
 --myboundary--
 ----
