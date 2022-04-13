@@ -311,6 +311,6 @@ payload.parts mapObject ((value, key, index) ->
 {
     (key): {
 	fileName: payload.parts[index].headers.'Content-Disposition'.filename,
-    rawContent: payload.parts[1].content.^raw
+    rawContent: payload.parts[index].content.^raw
     }
 })
