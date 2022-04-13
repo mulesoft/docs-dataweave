@@ -273,7 +273,7 @@ When working with `multipart/form-data` inputs, trying to access the content of 
 
 If the intention of your script is not to parse the contents of specific parts and they can be treated as binary content, use the `^raw` selector to avoid parsing.
 
-The following example shows the use of ^raw selector no specific operations over each part is needed.
+The following example shows the use of ^raw selector on specific operations over each part is needed.
 
 ==== Input
 
