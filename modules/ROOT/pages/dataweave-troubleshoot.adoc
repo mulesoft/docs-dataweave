@@ -268,7 +268,7 @@ read(payload.^raw replace "\uFFFF" with "NonChar")
 Using `output application/dw` format can impact the performance of transformations. This format is intended to help you debug the results of DataWeave transformations.
 It is significantly slower than other formats, so avoid using this format in production applications.
 
-=== multipart/form-data content parsing
+=== multipart/form-data Content Parsing
 For `multipart/form-data` inputs, accessing content of a large part can cause performance degradation, especially for high-memory formats like `application/xlsx`, because the interpreter attempts to parse the content of the part for further querying and analysis.
 
 You can use the `^raw` selector to avoid parsing binary contents of parts.  
