@@ -273,7 +273,7 @@ For `multipart/form-data` inputs, accessing content of a large part can cause pe
 
 If the intention of your script is not to parse the contents of specific parts and they can be treated as binary content, use the `^raw` selector to avoid parsing.
 
-The following example shows the use of ^raw selector on specific operations over each part is needed.
+The following example uses the `^raw` selector on specific operations over each part.
 
 ==== Input
 
