@@ -271,7 +271,7 @@ It is significantly slower than other formats, so avoid using this format in pro
 === multipart/form-data content parsing
 For `multipart/form-data` inputs, accessing content of a large part can cause performance degradation, especially for high-memory formats like `application/xlsx`, because the interpreter attempts to parse the content of the part for further querying and analysis.
 
-If the intention of your script is not to parse the contents of specific parts and they can be treated as binary content, use the `^raw` selector to avoid parsing.
+You can use the `^raw` selector to avoid parsing binary contents of parts.  
 
 The following example uses the `^raw` selector on specific operations over each part.
 
