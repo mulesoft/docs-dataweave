@@ -46,6 +46,7 @@ The following examples show uses of the Multipart format.
 * <<example2>>
 * <<example3>>
 * <<example4>>
+* <<example5>>
 
 [[example1]]
 === Example: Multipart
@@ -475,6 +476,121 @@ parsed.parts mapObject ((value, key, index) -> {(index): key})
 }
 ----
 
+[[example5]]
+=== Example: Use of ^mediaType and ^mimeType metadata selectors
+
+The ^mimeType selector returns the MIME type (without parameters) of a value, for example, `application/json`. 
+The ^mediaType selector by contrast includes any other related parameters related to it, for example, `application/json;charset=UTF-16`. 
+The following example shows how to use both selectors to generate multipart content inside other multipart content.
+
+When receiving multipart inputs, one might want to transform it into multipart outputs but with different format. 
+
+=== Input
+[source,text,linenums]
+----
+----------------------------049709565842371278701691
+Content-Type: application/json
+Content-Disposition: form-data; name="order"
+
+{
+	"name": "order1",
+	"id": 123,
+	"content": "orderContent"
+}
+----------------------------049709565842371278701691
+Content-Type: application/json
+Content-Disposition: form-data; name="partner"
+
+{
+ "name": "mulesoft",
+ "id": 1
+}
+----------------------------049709565842371278701691--
+----
+
+=== Source
+[source,dataweave,linenums]
+----
+%dw 2.0
+  output multipart/form-data
+  ---
+  {
+    parts : {
+  		orderAck : {
+	        headers : {
+	          "Content-Type": "text/plain"
+	    	},
+	    	content : "Order payload received " ++ payload.parts.order.content.id ++ ". Receipt available."
+		},
+	  	order: {
+		    headers : {
+		      "Content-Type": payload.parts.order.content.^mimeType
+		    },
+		    content : payload.parts.order.content
+	  	},
+	  	originalContent : {
+		    headers : {
+		      "Content-Disposition" : {
+		        "name" : "originalContent",
+		        "filename": "originalContent.pdf"
+		      },
+		      "Content-Type" : payload.^mediaType
+	        },
+	        content : payload
+	  	}
+    }
+  }
+----
+
+As it shows in the script, the output has multipart/form-data MIME type and it is composed by 3 parts. 
+The first one is a text with an acknowledge of the receipt of an order. The second part contains the order itself. When
+generating this part, the use of *^mimeType* selector comes useful because we can generate the content-type field of the part with it. 
+Lastly, the third part contains the original content which is multipart. By using the ^mediaType selector we also include useful metadata like the original boundary.
+
+=== Output
+[source,text,linenums]
+----
+--57513
+Content-Type: text/plain
+Content-Disposition: form-data; name="orderAck"
+
+Order payload received 123. Receipt available.
+------=_Part_3790_1676319531.1650417057513
+Content-Type: application/json
+Content-Disposition: form-data; name="order"
+
+{
+	"name": "order1",
+	"id": 123,
+	"field2": "test"
+}
+--57513
+Content-Type: multipart/form-data; charset=UTF-8; boundary="44431"
+Content-Disposition: form-data; name="receipt"; filename="receipt.pdf"
+
+--44431
+Content-Type: application/json
+Content-Disposition: form-data; name="order"
+
+{
+	"name": "order1",
+	"id": 123,
+	"content": "orderContent"
+}
+--44431
+Content-Type: application/json
+Content-Disposition: form-data; name="partner"
+
+{
+ "name": "mulesoft",
+ "id": 1
+}
+--44431--
+
+--57513--
+
+----
+
 // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
 
 
@@ -524,3 +640,4 @@ This format supports the following MIME types.
 | MIME Type
 |`multipart/*`
 |===
+
