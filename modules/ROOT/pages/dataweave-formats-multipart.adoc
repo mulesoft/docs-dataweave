@@ -15,7 +15,7 @@ regardless of the format each part has. To distinguish the beginning and end of
 a part, a boundary is used and metadata for each part can be added through
 headers.
 
-DataWeeave represents a Multipart document with the given `Object` structure:
+DataWeave represents a Multipart document with the given `Object` structure:
 
 [source,weave,linenums]
 ----
@@ -482,7 +482,7 @@ parsed.parts mapObject ((value, key, index) -> {(index): key})
 The `^mimeType` selector returns the MIME type of a value without parameters, for example, `application/json`. +
 The `^mediaType` selector by contrast includes any other related parameters related to the MIME type, for example, `application/json;charset=UTF-16`.
 
-The following example shows how to transform multipart input into multipart outputs but with a different format. The DataWeave script uses both `^mimeType` and `^mediaType` selectors to generate multipart content inside other multipart content.
+The following example shows how to transform multipart inputs into multipart outputs with a different format. The DataWeave script uses both the `^mimeType` and `^mediaType` selectors to generate multipart content inside other multipart content.
 
 === Input
 The multipart input has Content-Type `application/json`:
