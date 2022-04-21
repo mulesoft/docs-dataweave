@@ -477,15 +477,16 @@ parsed.parts mapObject ((value, key, index) -> {(index): key})
 ----
 
 [[example5]]
-=== Example: Use of ^mediaType and ^mimeType metadata selectors
+=== Example: Using ^mediaType and ^mimeType Metadata Selectors
 
-The ^mimeType selector returns the MIME type (without parameters) of a value, for example, `application/json`. 
-The ^mediaType selector by contrast includes any other related parameters related to it, for example, `application/json;charset=UTF-16`. 
-The following example shows how to use both selectors to generate multipart content inside other multipart content.
+The `^mimeType` selector returns the MIME type of a value without parameters, for example, `application/json`. +
+The `^mediaType` selector by contrast includes any other related parameters related to the MIME type, for example, `application/json;charset=UTF-16`.
 
-When receiving multipart inputs, one might want to transform it into multipart outputs but with different format. 
+The following example shows how to transform multipart input into multipart outputs but with a different format. The DataWeave script uses both `^mimeType` and `^mediaType` selectors to generate multipart content inside other multipart content.
 
 === Input
+The multipart input has Content-Type `application/json`:
+
 [source,text,linenums]
 ----
 ----------------------------049709565842371278701691
@@ -509,6 +510,16 @@ Content-Disposition: form-data; name="partner"
 ----
 
 === Source
+
+The DataWeave script transforms the multipart input into multipart output by defining `output multipart/form-data` MIME type. The multipart output data contains three parts:
+* `orderAck` +
+Contains a text with an acknowledge of the receipt of an order. The Content-Type is `text/plain`.
+* `order` +
+Contains the order itself. The Content-Type is `payload.parts.order.content.^mimeType`. The ^mimeType` selector becomes useful to generate the Content-Type field.
+* `originalContent`
+Contains the original content which is multipart. The Content-Type is `payload.^mediaType`. The ^mediaType selector includes useful metadata such as the original boundary.
+
+
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -541,11 +552,6 @@ Content-Disposition: form-data; name="partner"
     }
   }
 ----
-
-As it shows in the script, the output has multipart/form-data MIME type and it is composed by 3 parts. 
-The first one is a text with an acknowledge of the receipt of an order. The second part contains the order itself. When
-generating this part, the use of *^mimeType* selector comes useful because we can generate the content-type field of the part with it. 
-Lastly, the third part contains the original content which is multipart. By using the ^mediaType selector we also include useful metadata like the original boundary.
 
 === Output
 [source,text,linenums]
@@ -640,4 +646,3 @@ This format supports the following MIME types.
 | MIME Type
 |`multipart/*`
 |===
-
