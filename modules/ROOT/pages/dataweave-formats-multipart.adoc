@@ -481,10 +481,10 @@ parsed.parts mapObject ((value, key, index) -> {(index): key})
 
 The `^mimeType` selector returns the MIME type of a value without properties, for example, `application/json`. The `^mediaType` selector, by contrast, provides the MIME type and any other properties related to it, for example, `application/json;charset=UTF-16`.
 
-The following example shows how to transform multipart inputs into multipart outputs with a different format. The DataWeave script uses both the `^mimeType` and `^mediaType` selectors to generate multipart content inside other multipart content.
+The following example shows how to transform multipart inputs into multipart outputs with a different format. The DataWeave script uses both the `^mimeType` and `^mediaType` selectors to generate the new multipart content.
 
 === Input
-The multipart input has Content-Type `application/json`:
+The multipart input has more than one Content-Type. In this case `application/json` and `application/csv` including a non-standard separator:
 
 [source,text,linenums]
 ----
@@ -498,36 +498,30 @@ Content-Disposition: form-data; name="order"
 "content": "orderContent"
 }
 ----------------------------049709565842371278701691
-Content-Type: application/json
+Content-Type: application/csv;separator=.
 Content-Disposition: form-data; name="partner"
 
-{
- "name": "mulesoft",
- "id": 1
-}
+partnerName.id
+mulesoft.1
 ----------------------------049709565842371278701691--
 ----
 
 === Source
 
 The DataWeave script transforms the multipart input into multipart output by defining `output multipart/form-data` MIME type. The multipart output data contains three parts:
-* `orderAck` +
 
-Contains a text with an acknowledgement of the receipt of an order. The Content-Type is `text/plain`.
+* `orderAck`: Contains a text with an acknowledgement of the receipt of an order. The Content-Type is `text/plain`.
 
-* `order` +
+* `order`: Contains the original order itself. The Content-Type is `payload.parts.order.content.^mimeType`. The ^mimeType` selector becomes useful to generate the Content-Type field.
 
-Contains the order itself. The Content-Type is `payload.parts.order.content.^mimeType`. The ^mimeType` selector becomes useful to generate the Content-Type field.
-
-* `originalContent` +
-
-Contains the original content, which is multipart. The Content-Type is `payload.^mediaType`. The ^mediaType selector includes useful metadata such as the original boundary.
+* `partner`: Contains the original partner itself. Notice this time, the Content-Type is `payload.parts..^mediaType`. The ^mediaType selector includes also the separator which is needed to parse the `application/csv` content.
 
 
 [source,dataweave,linenums]
 ----
 %dw 2.0
-output multipart/form-data
+input payload multipart boundary='boundary1'
+output multipart boundary='test2'
 ---
 {
   parts : {
@@ -535,23 +529,13 @@ output multipart/form-data
       headers : {
         "Content-Type": "text/plain"
       },
-      content : "Order payload received " ++ payload.parts.order.content.id ++ ". Receipt available."
+      content : "Order payload of type " ++ payload.parts.order.content.^mimeType ++ " and id " ++ (payload.parts.order.content.id as String) ++ " received. Receipt available."
     },
-    order: {
+    partner: {
       headers : {
-        "Content-Type": payload.parts.order.content.^mimeType
+        "Content-Type": payload.parts.partner.content.^mediaType
       },
-      content : payload.parts.order.content
-    },
-    originalContent : {
-      headers : {
-        "Content-Disposition" : {
-          "name" : "originalContent",
-          "filename": "originalContent.pdf"
-        },
-        "Content-Type" : payload.^mediaType
-      },
-      content : payload
+      content : payload.parts.partner.content
     }
   }
 }
