@@ -479,7 +479,7 @@ parsed.parts mapObject ((value, key, index) -> {(index): key})
 [[example5]]
 === Example: Using ^mediaType and ^mimeType Metadata Selectors
 
-The `^mimeType` selector returns the MIME type of a value without properties, for example, `application/json`. The `^mediaType` selector, by contrast, provides the MIME type and any other properties related to it, for example, `application/json;charset=UTF-16`.
+The `^mimeType` selector returns the MIME type of a value without parameters, for example, `application/json`. The `^mediaType` selector, by contrast, provides the MIME type and any other parameters related to it, for example, `application/json;charset=UTF-16`.
 
 The following example shows how to transform multipart inputs into multipart outputs with a different format. The DataWeave script uses both the `^mimeType` and `^mediaType` selectors to generate the new multipart content.
 
@@ -508,14 +508,11 @@ mulesoft.1
 
 === Source
 
-The DataWeave script transforms the multipart input into multipart output by defining `output multipart/form-data` MIME type. The multipart output data contains three parts:
+The DataWeave script transforms the multipart input into multipart output by defining `output multipart/form-data` MIME type. The multipart output data contains two parts:
 
-* `orderAck`: Contains a text with an acknowledgement of the receipt of an order. The Content-Type is `text/plain`.
-
-* `order`: Contains the original order itself. The Content-Type is `payload.parts.order.content.^mimeType`. The ^mimeType` selector becomes useful to generate the Content-Type field.
+* `orderAck`: Contains a text with an acknowledgement of the receipt of an order. The Content-Type is `text/plain`.  The ^mimeType` selector becomes useful to be able to log the Content-Type as part of the message.
 
 * `partner`: Contains the original partner itself. Notice this time, the Content-Type is `payload.parts..^mediaType`. The ^mediaType selector includes also the separator which is needed to parse the `application/csv` content.
-
 
 [source,dataweave,linenums]
 ----
@@ -544,45 +541,18 @@ output multipart boundary='test2'
 === Output
 [source,text,linenums]
 ----
---57513
+--test2
 Content-Type: text/plain
 Content-Disposition: form-data; name="orderAck"
 
-Order payload received 123. Receipt available.
-------=_Part_3790_1676319531.1650417057513
-Content-Type: application/json
-Content-Disposition: form-data; name="order"
-
-{
-	"name": "order1",
-	"id": 123,
-	"field2": "test"
-}
---57513
-Content-Type: multipart/form-data; charset=UTF-8; boundary="44431"
-Content-Disposition: form-data; name="receipt"; filename="receipt.pdf"
-
---44431
-Content-Type: application/json
-Content-Disposition: form-data; name="order"
-
-{
-	"name": "order1",
-	"id": 123,
-	"content": "orderContent"
-}
---44431
-Content-Type: application/json
+Order payload of type application/json and id 123 received. Receipt available.
+--test2
+Content-Type: application/csv;separator=.
 Content-Disposition: form-data; name="partner"
 
-{
- "name": "mulesoft",
- "id": 1
-}
---44431--
-
---57513--
-
+partnerName.id
+mulesoft.1
+--test2--
 ----
 
 // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
