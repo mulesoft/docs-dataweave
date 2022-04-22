@@ -510,9 +510,13 @@ mulesoft.1
 
 The DataWeave script transforms the multipart input into multipart output by defining `output multipart/form-data` MIME type. The multipart output data contains two parts:
 
-* `orderAck`: Contains a text with an acknowledgement of the receipt of an order. The Content-Type is `text/plain`.  The ^mimeType` selector becomes useful to be able to log the Content-Type as part of the message.
+* `orderAck` +
 
-* `partner`: Contains the original partner itself. Notice this time, the Content-Type is `payload.parts..^mediaType`. The ^mediaType selector includes also the separator which is needed to parse the `application/csv` content.
+Contains a text with an acknowledgement of the receipt of an order. The Content-Type is `text/plain`.  The ^mimeType` selector becomes useful to log the Content-Type as part of the message.
+
+* `partner` +
+
+Contains the original partner itself. Notice that this time, the Content-Type is `payload.parts..^mediaType`. The ^mediaType selector includes also the separator, that parses the `application/csv` content.
 
 [source,dataweave,linenums]
 ----
