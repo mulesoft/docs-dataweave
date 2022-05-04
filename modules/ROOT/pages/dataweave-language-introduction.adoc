@@ -1270,7 +1270,7 @@ Likewise, whenever you transform from XML to JSON, make sure the resulting outpu
 * For a listing and details about all of the types you can use, see xref:dataweave-types.adoc[DataWeave Types]
 * For details on the different formats you can process with DataWeave and the parameters you can configure for each format, see xref:dataweave-formats.adoc[DataWeave Formats]
 * For details on how you can select certain components of the incoming message, see xref:dataweave-selectors.adoc[DataWeave Selectors]
-* View complete example projects that use DataWeave in the https://www.anypoint.mulesoft.com/exchange/?search=dataweave[Anypoint Exchange]
+* View complete example projects that use DataWeave in the https://anypoint.mulesoft.com/exchange/?search=dataweave[Anypoint Exchange]
 
 
 

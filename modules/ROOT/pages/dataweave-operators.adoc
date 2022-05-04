@@ -2758,7 +2758,7 @@ You can change the format of a date to fit another standard, see <<Coerce to dat
 * For a high level overview about the language, see xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * For a listing and details about all of the types you can use, see xref:dataweave-types.adoc[DataWeave Types]
 * For details on how to create and use your own functions, see xref:dataweave-types.adoc#functions-and-lambdas[Functions and Lambdas]
-* View complete example projects that use DataWeave in the https://www.anypoint.mulesoft.com/exchange/?search=dataweave[Anypoint Exchange]
+* View complete example projects that use DataWeave in the https://anypoint.mulesoft.com/exchange/?search=dataweave[Anypoint Exchange]
 
 == See Also
 
