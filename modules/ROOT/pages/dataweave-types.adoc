@@ -1112,7 +1112,7 @@ When you <<DataWeave Operators Sorted by Type, provide an operator>> with proper
 
 * For a high level overview about the language, see xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * For a reference about all of the operators that are available for using, see xref:dataweave-operators.adoc[DataWeave Operators]
-* View complete example projects that use DataWeave in the https://www.anypoint.mulesoft.com/exchange/?search=dataweave[Anypoint Exchange]
+* View complete example projects that use DataWeave in the https://anypoint.mulesoft.com/exchange/?search=dataweave[Anypoint Exchange]
 
 
 == See Also
