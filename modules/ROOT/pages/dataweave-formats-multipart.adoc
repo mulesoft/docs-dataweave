@@ -15,7 +15,7 @@ regardless of the format each part has. To distinguish the beginning and end of
 a part, a boundary is used and metadata for each part can be added through
 headers.
 
-DataWeeave represents a Multipart document with the given `Object` structure:
+DataWeave represents a Multipart document with the given `Object` structure:
 
 [source,weave,linenums]
 ----
@@ -46,6 +46,7 @@ The following examples show uses of the Multipart format.
 * <<example2>>
 * <<example3>>
 * <<example4>>
+* <<example5>>
 
 [[example1]]
 === Example: Multipart
@@ -473,6 +474,89 @@ parsed.parts mapObject ((value, key, index) -> {(index): key})
   "1": "file1",
   "2": "file2"
 }
+----
+
+[[example5]]
+=== Example: Using ^mediaType and ^mimeType Metadata Selectors
+
+The `^mimeType` selector returns the MIME type of a value without parameters, for example, `application/json`. The `^mediaType` selector, by contrast, provides the MIME type and any other parameters related to it, for example, `application/json;charset=UTF-16`.
+
+The following example shows how to transform multipart inputs into multipart outputs with a different format. The DataWeave script uses both the `^mimeType` and `^mediaType` selectors to generate the new multipart content.
+
+=== Input
+The multipart input has more than one Content-Type. In this case `application/json` and `application/csv` including a non-standard separator:
+
+[source,text,linenums]
+----
+----------------------------049709565842371278701691
+Content-Type: application/json
+Content-Disposition: form-data; name="order"
+
+{
+"name": "order1",
+"id": 123,
+"content": "orderContent"
+}
+----------------------------049709565842371278701691
+Content-Type: application/csv;separator=.
+Content-Disposition: form-data; name="partner"
+
+partnerName.id
+mulesoft.1
+----------------------------049709565842371278701691--
+----
+
+=== Source
+
+The DataWeave script transforms the multipart input into multipart output by defining `output multipart/form-data` MIME type. The multipart output data contains two parts:
+
+* `orderAck` +
+
+Contains a text with an acknowledgement of the receipt of an order. The Content-Type is `text/plain`.  The ^mimeType` selector becomes useful to log the Content-Type as part of the message.
+
+* `partner` +
+
+Contains the original partner itself. Notice that this time, the Content-Type is `payload.parts..^mediaType`. The ^mediaType selector includes also the separator, that parses the `application/csv` content.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+input payload multipart boundary='boundary1'
+output multipart boundary='test2'
+---
+{
+  parts : {
+    orderAck : {
+      headers : {
+        "Content-Type": "text/plain"
+      },
+      content : "Order payload of type " ++ payload.parts.order.content.^mimeType ++ " and id " ++ (payload.parts.order.content.id as String) ++ " received. Receipt available."
+    },
+    partner: {
+      headers : {
+        "Content-Type": payload.parts.partner.content.^mediaType
+      },
+      content : payload.parts.partner.content
+    }
+  }
+}
+----
+
+=== Output
+[source,text,linenums]
+----
+--test2
+Content-Type: text/plain
+Content-Disposition: form-data; name="orderAck"
+
+Order payload of type application/json and id 123 received. Receipt available.
+--test2
+Content-Type: application/csv;separator=.
+Content-Disposition: form-data; name="partner"
+
+partnerName.id
+mulesoft.1
+--test2--
 ----
 
 // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
