@@ -846,4 +846,4 @@ DataWeave function modules:
 
 * xref:dataweave-language-introduction.adoc[DataWeave Scripts]
 
-* https://www.anypoint.mulesoft.com/exchange/?search=dataweave[Anypoint Exchange (List of Projects that use DataWeave)]
+* https://anypoint.mulesoft.com/exchange/?search=dataweave[Anypoint Exchange (List of Projects that use DataWeave)]
