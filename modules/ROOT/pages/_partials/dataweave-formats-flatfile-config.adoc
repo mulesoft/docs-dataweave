@@ -12,6 +12,9 @@ DataWeave accepts properties that provide instructions for reading input data in
 [cols="1,1,1,3a", options="header"]
 |===
 | Parameter | Type | Default | Description
+| `allowLenientWithBinaryNotEndElement` | `Boolean` | `false` |
+When the schema contains elements of type Binary or Packed, the `lenient` option does not allow short records, regardless of the last element's
+format type. When you set this property to `true`, the validation applies only to cases in which the record ends with type Binary or Packed.
 | `enforceRequires` | `Boolean` | `false` | Error if required value missing.
   Valid values are `true` or `false`.
 | `missingValues` | `String` | `nulls` for copybook schema, `spaces` otherwise | Fill character used to represent missing values. To activate a non-default setting, set the `useMissCharAsDefaultForFill` property to `true`, and use one of the following values to `missingValues`:
