@@ -55,6 +55,9 @@ DataWeave accepts properties that provide instructions for writing output data i
 [cols="1,1,1,3a", options="header"]
 |===
 | Parameter | Type | Default | Description
+| `allowLenientWithBinaryNotEndElement` | `Boolean` | `false` |
+When the schema contains elements of type Binary or Packed, the `lenient` option does not allow short records, regardless of the last element's
+format type. When you set this property to `true`, the validation applies only to cases in which the record ends with type Binary or Packed.
 | `bufferSize` | `Number` | `8192` | Size of the buffer writer.
 | `deferred` | `Boolean` | `false` | When set to `true`, DataWeave generates the output as a data stream, and the script's execution is deferred until it is consumed.
   Valid values are `true` or `false`.
