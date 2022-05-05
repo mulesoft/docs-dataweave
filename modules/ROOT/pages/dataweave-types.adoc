@@ -326,7 +326,7 @@ output application/json
   { "nanosecondCountOfDay-N" : now() as String {format: "N"} },
   { "timeZoneID-VV" : now() as String {format: "VV"} },
   { "timeZoneName-zz" : now() as String {format: "zz"} },
-  { "localizedZoneOffset-OOOO" : now() as String {format: "OOOO"} },
+  { "localizedZoneOffset-zzz" : now() as String {format: "zzz"} },
   { "localizedZoneOffset-O" : now() as String {format: "O"} },
   { "timeZoneOffsetZforZero-XXX" : now() as String {format: "XXX"} },
   { "timeZoneOffsetZforZero-XX" : now() as String {format: "XX"} },
@@ -334,8 +334,7 @@ output application/json
   { "timeZoneOffset-xxx" : now() as String {format: "xxx"} },
   { "timeZoneOffset-xx" : now() as String {format: "xx"} },
   { "timeZoneOffset-x" : now() as String {format: "x"} },
-  { "timeZoneOffset-Z" : now() as String {format: "Z"} },
-  { "timeZoneOffset-ZZZZ" : now() as String {format: "ZZZZ"} }
+  { "timeZoneOffset-Z" : now() as String {format: "Z"} } }
  ]
 ----
 
@@ -392,7 +391,7 @@ Notice the use of the syntax to format the date or time.
   { "nanosecondCountOfDay-N": "51614271000000" },
   { "timeZoneID-VV": "America/Los_Angeles" },
   { "timeZoneName-zz": "PDT" },
-  { "localizedZoneOffset-OOOO": "GMT-07:00" },
+  { "localizedZoneOffset-zzz": "GMT-07:00" },
   { "localizedZoneOffset-O": "GMT-7" },
   { "timeZoneOffsetZforZero-XXX": "-07:00" },
   { "timeZoneOffsetZforZero-XX": "-0700" },
@@ -400,8 +399,7 @@ Notice the use of the syntax to format the date or time.
   { "timeZoneOffset-xxx": "-07:00" },
   { "timeZoneOffset-xx": "-0700" },
   { "timeZoneOffset-x": "-07" },
-  { "timeZoneOffset-Z": "-0700" },
-  { "timeZoneOffset-ZZZZ": "GMT-07:00" }
+  { "timeZoneOffset-Z": "-0700" }
 ]
 ----
 
