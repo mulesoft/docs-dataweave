@@ -19,7 +19,7 @@ Streaming is not enabled by default. You can use two configuration properties to
 * `streaming` property, for reading source data as a stream
 * `deferred` writer property, for passing an output stream directly to the next message processor in a flow
 
-To enable streaming when reading source data, you must set the `streaming` reader property to `true` on the data source. You can enable streaming on a data source through the *MIME Type* setting `outputMimeType`. You can set the property in a Mule component that accepts source data, such as an HTTP listener or an On New or Updated File operation.
+To enable streaming when reading source data, you must set the `streaming` reader property to `true` on the data source. Within Mule, you can enable streaming on a data source through the *MIME Type* setting `outputMimeType` or `mimeType`. You can set the property in any Mule component that generates  data, such as an HTTP listener, HTTP requester, an On New or Updated File operation and even a set payload. Once the property is set at the source data, streaming will be used when reading it regardless of where in a Mule application this takes place.
 
 [source,XML,linenums]
 ----
@@ -30,7 +30,7 @@ To enable streaming when reading source data, you must set the `streaming` reade
 </flow>
 ----
 
-Notice that `streaming=true` is part of the `outputMimeType` value. Other Mule components, such as the File and FTP components, also support the MIME Type setting.
+Notice that `streaming=true` is part of the `outputMimeType` value. Many other Mule components, such as the File and FTP components, also support the MIME Type setting.
 
 To pass the streamed output to the next message processor, you can use the `output` directive in a DataWeave script, for example:
 
