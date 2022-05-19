@@ -63,6 +63,5 @@ output application/json
     "timeZoneOffset-xxx" : myDateTime as String {format: "xxx"},
     "timeZoneOffset-xx" : myDateTime as String {format: "xx"},
     "timeZoneOffset-x" : myDateTime as String {format: "x"},
-    "timeZoneOffset-Z" : myDateTime as String {format: "Z"},
-    "timeZoneOffset-ZZZZ" : myDateTime as String {format: "ZZZZ"}
+    "timeZoneOffset-Z" : myDateTime as String {format: "Z"}
  }
