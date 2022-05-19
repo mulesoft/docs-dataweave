@@ -715,36 +715,6 @@ Z:
 
 * Zulu
 
-Additional Codes:
-
-* EST
-* HST
-* MST
-* ACT
-* AET
-* AGT
-* ART
-* AST
-* BET
-* BST
-* CAT
-* CNT
-* CST
-* CTT
-* EAT
-* ECT
-* IET
-* IST
-* JST
-* MIT
-* NET
-* NST
-* PLT
-* PNT
-* PRT
-* PST
-* SST
-* VST
 |===
 
 == Related Examples
