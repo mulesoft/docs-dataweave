@@ -55,7 +55,7 @@ output application/json
     "nanosecondCountOfDay-N" : myDateTime as String {format: "N"},
     "timeZoneID-VV" : myDateTime as String {format: "VV"},
     "timeZoneName-zz" : myDateTime as String {format: "zz"},
-    "localizedZoneOffset-OOOO" : myDateTime as String {format: "OOOO"},
+    "localizedZoneOffset-zzz" : myDateTime as String {format: "zzz"},
     "localizedZoneOffset-O" : myDateTime as String {format: "O"},
     "timeZoneOffsetZforZero-XXX" : myDateTime as String {format: "XXX"},
     "timeZoneOffsetZforZero-XX" : myDateTime as String {format: "XX"},
