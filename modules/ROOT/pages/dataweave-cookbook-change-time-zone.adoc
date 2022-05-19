@@ -22,7 +22,7 @@ include::partial$cookbook-dw/change-time-zone/out.json[]
 [[timezone-ids]]
 == Time Zone IDs
 
-In addition to accepting time zone values such as `-07:00`, DataWeave accepts Java 8 `TimeZone` ID values, which are available through a Java method call to `TimeZone.getAvailableIDs()`.
+In addition to accepting time zone values such as `-07:00`, DataWeave accepts Java 8 `TimeZone` ID values, which are available through a Java method call to `ZoneId.getAvailableZoneIds()`.
 
 To see all available values in the following table, scroll right.
 
@@ -715,36 +715,6 @@ Z:
 
 * Zulu
 
-Additional Codes:
-
-* EST
-* HST
-* MST
-* ACT
-* AET
-* AGT
-* ART
-* AST
-* BET
-* BST
-* CAT
-* CNT
-* CST
-* CTT
-* EAT
-* ECT
-* IET
-* IST
-* JST
-* MIT
-* NET
-* NST
-* PLT
-* PNT
-* PRT
-* PST
-* SST
-* VST
 |===
 
 == Related Examples
