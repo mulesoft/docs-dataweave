@@ -47,7 +47,7 @@
   "nanosecondCountOfDay-N": "49452283000000",
   "timeZoneID-VV": "-08:00",
   "timeZoneName-zz": "-08:00",
-  "localizedZoneOffset-OOOO": "GMT-08:00",
+  "localizedZoneOffset-zzz": "-08:00",
   "localizedZoneOffset-O": "GMT-8",
   "timeZoneOffsetZforZero-XXX": "-08:00",
   "timeZoneOffsetZforZero-XX": "-0800",
@@ -55,6 +55,5 @@
   "timeZoneOffset-xxx": "-08:00",
   "timeZoneOffset-xx": "-0800",
   "timeZoneOffset-x": "-08",
-  "timeZoneOffset-Z": "-0800",
-  "timeZoneOffset-ZZZZ": "GMT-08:00"
+  "timeZoneOffset-Z": "-0800"
 }
