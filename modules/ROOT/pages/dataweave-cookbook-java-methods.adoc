@@ -213,7 +213,7 @@ valueOf(true)
 == Java Bridge Example
 
 The following example shows an API that returns a greeting message based on the input `uriParam`.
-The Java Bridge calls a static method within the `my.awesome.org.Greeter` class that builds the response message.
+The Java bridge calls a static method within the `my.awesome.org.Greeter` class that builds the response message.
 
 [source,dataweave,linenums]
 ----
