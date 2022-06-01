@@ -833,13 +833,18 @@ You can find more data type documentation in the reference pages for the
 DataWeave function modules:
 
  * xref:dw-core-types.adoc[Core Types (dw::Core)]
+ * xref:dw-coercions-types.adoc[Coercions Types (dw::util::Coercions)] 
  * xref:dw-dataformat-types.adoc[DataFormat Types (dw::extension::DataFormat)]
+ * xref:dw-dates-types.adoc[Dates Types (dw::core::Dates)]
  * xref:dw-diff-types.adoc[Diff Types (dw::core::Diff)]
  * xref:dw-mule-types.adoc[Mule Types (Mule)]
  * xref:dw-multipart-types.adoc[Multipart Types (dw::module::Multipart)]
  * xref:dw-runtime-types.adoc[Runtime Types (dw::Runtime)]
  * xref:dw-timer-types.adoc[Timer Types (dw::core::Timer)]
+ * xref:dw-tree-types.adoc[Tree Types (dw::util::Tree)]
+ * xref:dw-types-types.adoc[Types Types (dw::core::Types)]
  * xref:dw-url-types.adoc[URL Types (dw::core::URL)]
+ * xref:dw-values-types.adoc[Values Types (dw::util::Values)]
 
 
 == See Also
