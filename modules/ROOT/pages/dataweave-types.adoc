@@ -839,6 +839,8 @@ DataWeave function modules:
  * xref:dw-multipart-types.adoc[Multipart Types (dw::module::Multipart)]
  * xref:dw-runtime-types.adoc[Runtime Types (dw::Runtime)]
  * xref:dw-timer-types.adoc[Timer Types (dw::core::Timer)]
+ * xref:dw-tree-types.adoc[Tree Types (dw::util::Tree)]
+ * xref:dw-types-types.adoc[Types Types (dw::core::Types)]
  * xref:dw-url-types.adoc[URL Types (dw::core::URL)]
 
 
