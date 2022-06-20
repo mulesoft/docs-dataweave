@@ -137,4 +137,4 @@ type AUser = {name @(foo?: String,l: Number)?: String, lastName*: Number}
     }
   ]
 }
-* ----
+----

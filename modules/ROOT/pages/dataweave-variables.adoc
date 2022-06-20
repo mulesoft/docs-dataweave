@@ -13,7 +13,7 @@ A variable is assigned a value, which is either a constant (such as `var msg = "
 
 [NOTE]
 --
-xref:3.9@mule-runtime::dataweave-language-introduction#_variables[DataWeave version 1 variables] are described in the Mule 3.9 documentation.
+xref:1.2@dataweave::dataweave-language-introduction.adoc#variables[DataWeave 1.0 variables] are described in the DataWeave 1.2 documentation for Mule 3.
 --
 
 == DataWeave Variable Assignment

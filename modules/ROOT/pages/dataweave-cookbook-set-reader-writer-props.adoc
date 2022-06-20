@@ -43,7 +43,7 @@ In the header of the following script, the value of `myVar` is a `read` function
 In the body of the script, a `write` function accepts the value of `myVar` as input. The function passes the JSON writer properties `{skipNullOn:"objects", writeAttributes:true}` to skip the object with the `null` value (`<ex1>null</ex1>`) and to write the attribute and value of `<ex3 a='greeting'>hello</ex3>`.
 
 
-[[ex01]]
+[[ex02]]
 .DataWeave Script:
 [source,dataweave,linenums]
 ----
