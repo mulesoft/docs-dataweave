@@ -37,7 +37,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	    </scheduler>
 	    <set-payload value='{"firstName": "jason", "job": "engineer", "dept":"support"}' 
 	                 doc:name="Set Payload" 
-			 mimeType="application/json"/
+			 mimeType="application/json"/ >
 	    <ee:transform doc:name="Transform Message" >
 	          <ee:message >
 		        <ee:set-payload ><![CDATA[%dw 2.0
