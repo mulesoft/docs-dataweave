@@ -758,8 +758,6 @@ You need to create a metadata type to import a copybook definition.
 . Select the Copybook type.
 . Import your copybook definition file.
 . Click Select.
-+
-.Importing a Copybook Definition File
 
 For example, assume that you have a copybook definition file (`mailing-record.cpy`) that looks like this:
 
