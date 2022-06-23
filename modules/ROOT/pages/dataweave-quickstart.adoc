@@ -105,7 +105,7 @@ image::dataweave-quickstart-a56f0.png[]
 . Select the *Metadata* tab from the HTTP connector's properties window and click the *Add Metadata* button.
 +
 image::dataweave-quickstart-702fd.png[]
-. Click the *Edit* icon image:edit-button.png[edit] that appears next to the dropdown.
+. Click the *Edit* icon that appears next to the dropdown.
 +
 image::dataweave-quickstart-8ea02.png[]
 +
