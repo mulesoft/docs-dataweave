@@ -714,9 +714,6 @@ definition.
 . Select the *Copybook* type from the *Type* drop-down menu.
 . Import your copybook definition file.
 . Click Select.
-+
-.Importing a Copybook Definition File
-image::copybook-import.png[Importing a Copybook Definition]
 
 For example, assume that you have a copybook definition file
 (`mailing-record.cpy`) that looks like this:
