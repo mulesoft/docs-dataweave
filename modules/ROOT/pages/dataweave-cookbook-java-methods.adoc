@@ -213,16 +213,17 @@ valueOf(true)
 == Java Bridge Example
 
 The following example shows an API that returns a greeting message based on the input `uriParam`.
-The Java bridge calls a static method within the `my.awesome.org.Greeter` class that builds the response message.
+The Java bridge calls a static method within the `my.class.org.Greeter` class that builds the response message.
 
 [source,dataweave,linenums]
 ----
 %dw 2.0
 output application/json
-import java!my::awesome::org::Greeter
+import java!my::class::org::Greeter
 ---
 {
 response: Greeter::greet(attributes.uriParams."name"
+}
 ----
 
 === XML for Java Bridge Example
@@ -247,7 +248,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
-import java!my::awesome::org::Greeter
+import java!my::class::org::Greeter
 ---
 {
 	response: Greeter::greet(attributes.uriParams."name")
