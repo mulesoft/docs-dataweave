@@ -262,7 +262,7 @@ import java!my::class::org::Greeter
 
 === Test the App
 
-To test your app:
+To test your app, follow these steps:
 
 . Save and run your Mule app.
 . Run the following curl command: `+http://localhost:8081/greet/Username+`.
