@@ -210,6 +210,73 @@ import valueOf from java!java::lang::String
 valueOf(true)
 ----
 
+== Java Bridge Example
+
+The following example shows an API that returns a greeting message based on the input `uriParam`.
+The Java bridge calls a static method within the `my.class.org.Greeter` class that builds the response message.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+import java!my::class::org::Greeter
+---
+{
+response: Greeter::greet(attributes.uriParams."name"
+}
+----
+
+=== XML for Java Bridge Example
+
+Paste this code into your Studio XML editor to quickly load the flow for this example into your Mule app:
+
+[source,xml,linenums]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="addcdb50-cdfa-400d-992f-495ab6dd373d" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="data-weave-java-bridge-example-flow" >
+		<http:listener doc:name="Listener" config-ref="HTTP_Listener_config" path="/greet/{name}"/>
+		<ee:transform doc:name="Transform Message" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+import java!my::class::org::Greeter
+---
+{
+	response: Greeter::greet(attributes.uriParams."name")
+
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
+----
+
+=== Test the App
+
+To test your app, follow these steps:
+
+. Save and run your Mule app.
+. Run the following curl command: `+http://localhost:8081/greet/Username+`.
+
+The Mule app returns the following response message:
+
+[source,xml,linenums]
+----
+{
+ "response": "Greetings, Username!"
+}
+----
+
+
 == See Also
 
 * xref:dataweave-formats-java.adoc[Java Format]
