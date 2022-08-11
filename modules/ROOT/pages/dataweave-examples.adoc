@@ -2095,7 +2095,7 @@ See more XML reader and writer properties on xref:dataweave-formats.adoc#xml[Dat
 
 == Configure CSV Reader
 
-DataWeave supports CSV inputs and outputs, by configuring the reader and writer properties, you can adapt it to different conventions regarding separations, line breaks, etc. Other formats also allow for this kind of configuration. See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation] for how to do this on the UI, or look at the xref:dataweave-xml-reference.adoc#reader-configuration[DataWeave XML Reference] for the required XML syntax. You can also see a full reference of the reader properties available with CSV format on xref:dataweave-formats.adoc#csv[DataWeave formats].
+DataWeave supports CSV inputs and outputs, by configuring the reader and writer properties, you can adapt it to different conventions regarding separations, line breaks, etc. Other formats also allow for this kind of configuration. See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation] for how to do this on the UI, or look at the xref:dataweave-xml-reference.adoc#reader-configuration[DataWeave XML Reference] for the required XML syntax. You can also see a full reference of the reader properties available with CSV format on xref:dataweave-formats.adoc#csv[DataWeave formats].
 
 Reader properties are set as part of the XML `dw:transform-message` component, whilst writer properties are specified in the DataWeave code itself, as part of the output directive. You can see a full reference to the writer properties available with CSV format on xref:dataweave-formats.adoc#writer-properties[DataWeave formats].
 
@@ -2948,7 +2948,7 @@ Based on a mapping definition, stored for instance in a DB table, you can dynami
 
 
 [NOTE]
-Note that for this example to work, on the payload input you must set the reader configuration so that the 'nullValueOn' attribute is "empty". See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+Note that for this example to work, on the payload input you must set the reader configuration so that the 'nullValueOn' attribute is "empty". See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 === Example Transformation
 
@@ -3155,7 +3155,7 @@ payload.results map
 == See Also
 
 * xref:dataweave-quickstart.adoc[DataWeave quickstart guide]
-* xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
+* xref:6.x@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * xref:dataweave-operators.adoc[DataWeave Operators]
 * xref:dataweave-types.adoc[DataWeave Types]
