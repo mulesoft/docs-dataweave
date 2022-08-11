@@ -71,7 +71,7 @@ In the Transform Message component, you can define a Java type through the follo
 * By Providing a sample object
 
 [TIP]
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 == CSV
 
@@ -160,7 +160,7 @@ Alternatively, you can set the properties through the UI of the Transform Messag
 
 image::dataweave-formats-580be.png[]
 
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 
@@ -200,7 +200,7 @@ In the Transform Message component, you can define a CSV type through the follow
 image::dataweave-formats-4a556.png[]
 
 [TIP]
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 
@@ -283,7 +283,7 @@ Or via the UI of the Transform Message component:
 image::dataweave-formats-excell-reader.png[]
 
 
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 
@@ -318,7 +318,7 @@ image::dataweave-formats-excel-metadata.png[]
 
 
 [TIP]
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 == XML
@@ -395,7 +395,7 @@ Or via the UI of the Transform Message component:
 
 image::dataweave-formats-6e5e4.png[]
 
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 === Writer Properties (for XML)
@@ -464,7 +464,7 @@ In the Transform Message component, you can define a XML type through the follow
 * By pointing to a schema file
 
 [TIP]
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 === Custom Types
 
@@ -545,7 +545,7 @@ In the Transform Message component, you can define a JSON type through the follo
 * By pointing to a schema file
 
 [TIP]
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 
@@ -576,7 +576,7 @@ These properties can be set through the XML of your Mule project:
 
 Alternatively, you can set them through the UI of the Transform Message component.
 
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 [NOTE]
 Schemas with type `Binary` or `Packed` don't allow for line breaks to be detected, so setting `recordParsing` to "lenient"` will only allow long records to be handled, but not short ones. These schemas also currently only work with certain single-byte character encodings (so not with UTF-8 or any multibyte format).
@@ -610,7 +610,7 @@ In the Transform Message component, you can define a Flat File type through the 
 * By pointing to a schema file
 
 [TIP]
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 
@@ -647,7 +647,7 @@ These properties can be either set via the XML of your Mule project:
 
 Or via the UI of the Transform Message component
 
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 === Writer Properties (for Fixed Width)
 
@@ -683,7 +683,7 @@ In the Transform Message component, you can define a Fixed Width type through th
 image::dataweave-formats-27b3c.png[]
 
 [TIP]
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 
@@ -951,7 +951,7 @@ These properties can be either set via the XML of your Mule project:
 
 Or via the UI of the Transform Message component
 
-See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 [NOTE]
 Schemas with type `Binary` or `Packed` don't allow for line breaks to be detected, so setting `recordParsing` to "lenient"` will only allow long records to be handled, but not short ones. These schemas also currently only work with certain single-byte character encodings (so not with UTF-8 or any multibyte format).
@@ -1039,7 +1039,7 @@ See xref:dataweave-flat-file-schemas.adoc[Flat File Schemas] for more detailed i
 == See Also
 
 * xref:dataweave-quickstart.adoc[DataWeave quickstart guide]
-* xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
+* xref:6.x@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * xref:dataweave-operators.adoc[DataWeave Operators]
 * xref:dataweave-types.adoc[DataWeave Types]
