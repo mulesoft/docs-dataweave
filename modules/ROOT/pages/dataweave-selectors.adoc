@@ -1055,7 +1055,7 @@ You can reference any *Property* (System or Spring) that exists in the server wh
 == See Also
 
 * xref:dataweave-quickstart.adoc[DataWeave quickstart guide]
-* xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
+* xref:6.x@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * xref:dataweave-operators.adoc[DataWeave Operators]
 * xref:dataweave-types.adoc[DataWeave Types]
