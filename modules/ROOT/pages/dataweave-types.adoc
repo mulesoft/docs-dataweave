@@ -623,7 +623,7 @@ books: payload.items.*item map
 }
 ----
 
-In Anypoint Studio, you can define several more values, like separators, quote characters and escape characters. See xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+In Anypoint Studio, you can define several more values, like separators, quote characters and escape characters. See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 
@@ -977,7 +977,7 @@ When you <<DataWeave Operators Sorted by Type, provide an operator>> with proper
 == See Also
 
 * xref:dataweave-quickstart.adoc[DataWeave quickstart guide]
-* xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
+* xref:6.x@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * xref:dataweave-operators.adoc[DataWeave Operators]
 * xref:dataweave-formats.adoc[DataWeave Formats]

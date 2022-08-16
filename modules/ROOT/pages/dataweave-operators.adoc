@@ -2763,7 +2763,7 @@ You can change the format of a date to fit another standard, see <<Coerce to dat
 == See Also
 
 * xref:dataweave-quickstart.adoc[DataWeave quickstart guide]
-* xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
+* xref:6.x@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * xref:dataweave-types.adoc[DataWeave Types]
 * xref:dataweave-formats.adoc[DataWeave Formats]

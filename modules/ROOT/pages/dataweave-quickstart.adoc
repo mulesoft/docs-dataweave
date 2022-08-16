@@ -165,7 +165,7 @@ image::dataweave-quickstart-set-payload.png[]
 
 == Phase 2 - Map Input Fields to Output Fields
 
-Use the xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component] to create the actual mapping between the input and output fields. Simply click and drag a field in the input side to a field in the output side. The most obvious task is to match similarly named fields together, thus helping to validate the output data:
+Use the xref:6.x@studio::transform-message-component-concept-studio.adoc[About Transform Message Component] to create the actual mapping between the input and output fields. Simply click and drag a field in the input side to a field in the output side. The most obvious task is to match similarly named fields together, thus helping to validate the output data:
 
 ** `address` and `address1`
 ** `city` and `city`
@@ -528,7 +528,7 @@ If you open the *Preview* section, you can see what this transform would output,
 == See Also
 
 * More advanced examples in xref:dataweave-examples.adoc[DataWeave Examples]
-* xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
+* xref:6.x@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * xref:dataweave-operators.adoc[DataWeave Operators]
 * xref:dataweave-types.adoc[DataWeave Types]

@@ -48,13 +48,13 @@ The above script fails with the error *Cannot coerce :string to :object*
 
 *Reason*: As you can see the input XML is an empty XML tag, so the expression *payload.user* returns an empty string. Then DataWeave tries to apply the 'name' selector over a string, which raises an exception.
 
-*Solution*: The XML reader has a configuration property named 'nullValueOn'. This property can be set to "blank" or "empty", which can fix this issue. To set this property see xref:6@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
+*Solution*: The XML reader has a configuration property named 'nullValueOn'. This property can be set to "blank" or "empty", which can fix this issue. To set this property see xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
 
 == See Also
 
 * xref:dataweave-quickstart.adoc[DataWeave quickstart guide]
-* xref:6@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
+* xref:6.x@studio::transform-message-component-concept-studio.adoc[About Transform Message Component]
 * xref:dataweave-language-introduction.adoc[DataWeave Language Introduction]
 * xref:dataweave-operators.adoc[DataWeave Operators]
 * xref:dataweave-types.adoc[DataWeave Types]
