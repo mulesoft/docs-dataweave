@@ -7,7 +7,7 @@ endif::[]
 
 include::partial$eol-warning.adoc[]
 
-If you have projects that are built with the deprecated xref:5@studio::datamapper-user-guide-and-reference.adoc[DataMapper], a migration tool is now included in Studio, which assists in converting a DataMapper map to DataWeave. This tool doesn't replace the original DataMapper in your flow, it creates a new equivalent DataWeave component next to it. The old DataMapper component is left in its place so that you can compare both as they sit next to each other on your flow, but you must then delete it for the flow to be executable.
+If you have projects that are built with the deprecated xref:5.x@studio::datamapper-user-guide-and-reference.adoc[DataMapper], a migration tool is now included in Studio, which assists in converting a DataMapper map to DataWeave. This tool doesn't replace the original DataMapper in your flow, it creates a new equivalent DataWeave component next to it. The old DataMapper component is left in its place so that you can compare both as they sit next to each other on your flow, but you must then delete it for the flow to be executable.
 
 == Using the Migrator Tool
 
