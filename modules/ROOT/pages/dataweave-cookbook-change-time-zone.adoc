@@ -13,8 +13,8 @@ The following example uses the `>>` operator and a <<timezone-ids, time zone ID>
 include::partial$cookbook-dw/change-time-zone/transform.dwl[]
 ----
 
-.Output XML:
-[source,xml,linenums]
+.Output JSON:
+[source,JSON,linenums]
 ----
 include::partial$cookbook-dw/change-time-zone/out.json[]
 ----
