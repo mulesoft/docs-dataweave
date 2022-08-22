@@ -20,13 +20,13 @@ include::partial$cookbook-dw/select-xml-element-ex01/transform.dwl[]
 ----
 
 .Input XML Payload:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex01/inputs/payload.xml[]
 ----
 
 .Output XML:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex01/out.xml[]
 ----
@@ -41,13 +41,13 @@ include::partial$cookbook-dw/select-xml-element-ex01b/transform.dwl[]
 ----
 
 .Input XML Payload:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex01b/inputs/payload.xml[]
 ----
 
 .Output XML:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex01b/out.xml[]
 ----
@@ -62,13 +62,13 @@ include::partial$cookbook-dw/select-xml-element-ex02/transform.dwl[]
 ----
 
 .Input XML Payload:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex02/inputs/payload.xml[]
 ----
 
 .Output XML:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex02/out.xml[]
 ----
@@ -83,13 +83,13 @@ include::partial$cookbook-dw/select-xml-element-ex03/transform.dwl[]
 ----
 
 .Input XML Payload:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex03/inputs/payload.xml[]
 ----
 
 .Output XML:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex03/out.xml[]
 ----
@@ -104,13 +104,13 @@ include::partial$cookbook-dw/select-xml-element-ex04/transform.dwl[]
 ----
 
 .Input XML Payload:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex04/inputs/payload.xml[]
 ----
 
 .Output XML:
-[source,json,linenums]
+[source,xml,linenums]
 ----
 include::partial$cookbook-dw/select-xml-element-ex04/out.xml[]
 ----
