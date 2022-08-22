@@ -60,6 +60,7 @@ include::partial$cookbook-dw/format-dates-ex03/transform.dwl[]
 Notice the use of the syntax to format the date or time.
 
 .Output
+[source,json,linenums]
 ----
 include::partial$cookbook-dw/format-dates-ex03/out.json[]
 ----

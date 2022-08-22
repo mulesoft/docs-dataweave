@@ -23,7 +23,7 @@ Application XML File (reformatted for readability):
 ----
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" 
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
       xmlns="http://www.mulesoft.org/schema/mule/core"
       xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -35,8 +35,8 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		        <fixed-frequency frequency="10000"/>
                   </scheduling-strategy>
 	    </scheduler>
-	    <set-payload value='{"firstName": "jason", "job": "engineer", "dept":"support"}' 
-	                 doc:name="Set Payload" 
+	    <set-payload value='{"firstName": "jason", "job": "engineer", "dept":"support"}'
+	                 doc:name="Set Payload"
 			 mimeType="application/json" />
 	    <ee:transform doc:name="Transform Message" >
 	          <ee:message >
@@ -52,14 +52,14 @@ payload pluck (value,key)  -> {
 }]]></ee:set-payload>
                   </ee:message>
             </ee:transform>
-	    <foreach doc:name="For Each" 
+	    <foreach doc:name="For Each"
 	             collection="#[payload.Test]">
 	                <logger level="INFO" doc:name="Logger" message="#[payload]" />
-		        <set-variable value="#[payload.Value]" 
-		                      doc:name="Set Variable" 
+		        <set-variable value="#[payload.Value]"
+		                      doc:name="Set Variable"
 				      variableName="#[payload.Key]"/>
-		        <logger level="INFO" 
-		                doc:name="Logger" 
+		        <logger level="INFO"
+		                doc:name="Logger"
 			        message="#[vars[payload.Key]]"/>
             </foreach>
       </flow>
@@ -70,88 +70,61 @@ payload pluck (value,key)  -> {
 
 [source,dataweave,linenums]
 ----
-%dw 2.0
-output application/json
----
-
-payload pluck (value,key)  -> {
-Test:{
-Key: key,
-Value: value
-}
+include::partial$cookbook-dw/pluck/transform.dwl[]
 ----
 
 When the the Mule app executes with the following JSON payload:
 
 [source,json,linenums]
 ----
-{"firstName": "jason", "job": "engineer", "dept":"support"}
+include::partial$cookbook-dw/pluck/inputs/payload.json[]
 ----
 
 The DataWeave transformation result is:
 
 [source,json,linenums]
 ----
-[
-  {
-    "Test": {
-      "Key": "firstName",
-      "Value": "jason"
-    }
-  },
-  {
-    "Test": {
-      "Key": "job",
-      "Value": "engineer"
-    }
-  },
-  {
-    "Test": {
-      "Key": "dept",
-      "Value": "support"
-    }
-  }
-]
+include::partial$cookbook-dw/pluck/out.json[]
 ----
 
 The For Each scope component iterates over the transformed values, and the app logs the values of the variable results (reformatted for readability):
 
 ----
-INFO  2022-06-22 10:11:17,864 [[MuleRuntime].uber.02: 
-      [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa] 
+INFO  2022-06-22 10:11:17,864 [[MuleRuntime].uber.02:
+      [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa]
       [processor: json-varsFlow/processors/2/processors/0; event: 545f5ef0-f24e-11ec-8c92-147ddaaf4f97]
-      org.mule.runtime.core.internal.processor.LoggerMessageProcessor: 
+      org.mule.runtime.core.internal.processor.LoggerMessageProcessor:
       {
           "Key": "firstName",
 	  "Value": "jason"
       }
-INFO  2022-06-22 10:11:17,870 [[MuleRuntime].uber.02: [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa] 
+INFO  2022-06-22 10:11:17,870 [[MuleRuntime].uber.02: [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa]
       [processor: json-varsFlow/processors/2/processors/2; event: 545f5ef0-f24e-11ec-8c92-147ddaaf4f97]
-      org.mule.runtime.core.internal.processor.LoggerMessageProcessor: 
+      org.mule.runtime.core.internal.processor.LoggerMessageProcessor:
       "jason"
-INFO  2022-06-22 10:11:17,871 [[MuleRuntime].uber.02: [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa] 
+INFO  2022-06-22 10:11:17,871 [[MuleRuntime].uber.02: [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa]
       [processor: json-varsFlow/processors/2/processors/0; event: 545f5ef0-f24e-11ec-8c92-147ddaaf4f97]
-      org.mule.runtime.core.internal.processor.LoggerMessageProcessor: 
+      org.mule.runtime.core.internal.processor.LoggerMessageProcessor:
       {
         "Key": "job",
         "Value": "engineer"
       }
-INFO  2022-06-22 10:11:17,875 [[MuleRuntime].uber.02: 
-      [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa] 
+INFO  2022-06-22 10:11:17,875 [[MuleRuntime].uber.02:
+      [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa]
       [processor: json-varsFlow/processors/2/processors/2; event: 545f5ef0-f24e-11ec-8c92-147ddaaf4f97]
-      org.mule.runtime.core.internal.processor.LoggerMessageProcessor: 
+      org.mule.runtime.core.internal.processor.LoggerMessageProcessor:
       "engineer"
-INFO  2022-06-22 10:11:17,877 [[MuleRuntime].uber.02: 
-      [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa] 
+INFO  2022-06-22 10:11:17,877 [[MuleRuntime].uber.02:
+      [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa]
       [processor: json-varsFlow/processors/2/processors/0; event: 545f5ef0-f24e-11ec-8c92-147ddaaf4f97]
-      org.mule.runtime.core.internal.processor.LoggerMessageProcessor: 
+      org.mule.runtime.core.internal.processor.LoggerMessageProcessor:
       {
          "Key": "dept",
 	 "Value": "support"
       }
-INFO  2022-06-22 10:11:17,879 [[MuleRuntime].uber.02: [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa] 
+INFO  2022-06-22 10:11:17,879 [[MuleRuntime].uber.02: [jsonsample].json-varsFlow.CPU_INTENSIVE @5c652aa]
       [processor: json-varsFlow/processors/2/processors/2; event: 545f5ef0-f24e-11ec-8c92-147ddaaf4f97]
-      org.mule.runtime.core.internal.processor.LoggerMessageProcessor: 
+      org.mule.runtime.core.internal.processor.LoggerMessageProcessor:
       "support"
 ----
 
