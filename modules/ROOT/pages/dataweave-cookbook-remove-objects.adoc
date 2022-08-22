@@ -24,14 +24,14 @@ This example uses the following functions:
 include::partial$cookbook-dw/remove-objects/transform.dwl[]
 ----
 
-.Input XML Payload:
-[source,xml,linenums]
+.Input JSON Payload:
+[source,json,linenums]
 ----
 include::partial$cookbook-dw/remove-objects/inputs/payload.json[]
 ----
 
-.Output XML:
-[source,xml,linenums]
+.Output JSON:
+[source,json,linenums]
 ----
 include::partial$cookbook-dw/remove-objects/out.json[]
 ----
