@@ -19,7 +19,7 @@ include::partial$cookbook-dw/work-with-multipart-data/transform.dwl[]
 ----
 
 .Output:
-[source,xml,linenums]
+[source,json,linenums]
 ----
 include::partial$cookbook-dw/work-with-multipart-data/out.json[]
 ----
