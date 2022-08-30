@@ -41,6 +41,8 @@ cannot use the `Mule` namespace or use Mule Runtime functions in custom
 modules, only in DataWeave scripts and mappings.
 ====
 
+For DataWeave runtime properties, see the DataWeave functions xref:dw-runtime-functions-props.adoc[] and xref:dw-runtime-functions-prop.adoc[].
+
 [[function_p]]
 === Accessing Properties (p Function)
 
