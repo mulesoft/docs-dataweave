@@ -55,7 +55,7 @@ output application/xml
 ----
 
 [[output]]
-==== Output
+=== Output
 
 [source,XML,linenums]
 ----
