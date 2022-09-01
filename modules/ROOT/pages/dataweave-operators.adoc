@@ -411,9 +411,9 @@ The usage above is performing the filter operation after the transformation bloc
 ---
 filtered: (payload filter ($.*data contains "b") map {
   data: $.data
-}) <2>
+}) <1>
 ----
-<2> Filters the all key:value pairs with "data" value "b" => {data:b} before the transformation block has occurred.
+<1> Filters the all key:value pairs with "data" value "b" => {data:b} before the transformation block has occurred.
 For large, complex transformations this is more efficient than filtering after the transformation block has occurred.
 
 
@@ -2716,7 +2716,7 @@ The same logically applies to subtracting time periods from a date or time type 
 }
 ----
 
-Note that when a subtraction operation includes a time object and a period, the order in which both elements are placed is indiferent since it would be impossible to subtract a date from a period, so `|2003-10-01| - |P1Y|` returns the same as `|P1Y| - |2003-10-01|`.
+Note that when a subtraction operation includes a time object and a period, the order in which both elements are placed is indifferent since it would be impossible to subtract a date from a period, so `|2003-10-01| - |P1Y|` returns the same as `|P1Y| - |2003-10-01|`.
 
 
 === Subtracting two Dates
