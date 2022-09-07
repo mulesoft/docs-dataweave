@@ -1258,7 +1258,7 @@ See xref:dataweave-selectors.adoc#flow-variables-from-a-mule-message[flow variab
 books: {
   (payload filter $.item.properties.year > flowVars.filterParameter.publishedAfter map using (it = $.item, props = $.item.properties) {
     book @(year: props.year): {
-      (flowVars.exchagneRate.USD map {
+      (flowVars.exchangeRate.USD map {
         price @(currency: $.currency): $.ratio * it.price
       }),
       title: props.title,
@@ -1600,8 +1600,11 @@ payload
 [discrete.view]
 === Input: JSON
 
-{ "customer":{
-
+.Input
+[source,json,linenums]
+----
+{ 
+  "customer": {
     "userName": "John Doe",
     "password":{},
     "status":"active",
@@ -1609,7 +1612,6 @@ payload
   }
 }
 ----
-
 
 [discrete.view]
 === Output: XML
@@ -2009,8 +2011,8 @@ See xref:dataweave-selectors.adoc#attribute-selector-expressions[Attribute selec
         }
       },
       plugin: {
-          groupId: "org.apache.maven.plugins",
-        artifcatId: "maven-dependency-plugin",
+        groupId: "org.apache.maven.plugins",
+        artifactId: "maven-dependency-plugin",
         version: "2.4",
         executions: {
               execution: {
@@ -2237,7 +2239,7 @@ See xref:dataweave-selectors.adoc#attribute-selector-expressions[Attribute selec
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifcatId>maven-dependency-plugin</artifcatId>
+        <artifactId>maven-dependency-plugin</artifactId>
         <version>2.4</version>
         <executions>
           <execution>
