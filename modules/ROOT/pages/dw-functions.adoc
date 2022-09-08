@@ -57,13 +57,29 @@ output application/json
 
 * xref:dw-binaries.adoc[Binaries (dw::core::Binaries)]
 
+* xref:dw-coercions.adoc[Coercions (dw::util::Coercions)]
+
 * xref:dw-core.adoc[Core (dw::Core)]
 
-* xref:dw-crypto.adoc[Encryption (dw::Crypto)]
+* xref:dw-dataformat.adoc[DataFormat (dw::extension::DataFormat)]
+
+* xref:dw-dates.adoc[Dates (dw::core::Dates)]
 
 * xref:dw-diff.adoc[Diff (dw::util::Diff)]
 
+* xref:dw-crypto.adoc[Encryption (dw::Crypto)]
+
+* xref:dw-math.adoc[Math (dw::util::Math)]
+
+* xref:dw-mule.adoc[Mule (dw::Mule)]
+
+* xref:dw-multipart.adoc[Multipart (dw::module::Multipart)]
+
+* xref:dw-numbers.adoc[Numbers (dw::core::Numbers)]
+
 * xref:dw-objects.adoc[Objects (dw::core::Objects)]
+
+* xref:dw-periods.adoc[Periods (dw::core::Periods)]
 
 * xref:dw-runtime.adoc[Runtime (dw::Runtime)]
 
@@ -71,7 +87,15 @@ output application/json
 
 * xref:dw-system.adoc[System (dw::System)]
 
+* xref:dw-timer.adoc[Timer (dw::util::Timer)]
+
+* xref:dw-tree.adoc[Tree (dw::util::Tree)]
+
+* xref:dw-types.adoc[Types (dw::core::Types)]
+
 * xref:dw-url.adoc[URL (dw::core::URL)]
+
+* xref:dw-values.adoc[Values (dw::util::Values)]
 
 [[function_signatures]]
 == Function Signatures
