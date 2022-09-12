@@ -48,3 +48,4 @@ which is used for spaces.
 {
   "decodeURI": "http://asd/ text to decode /text"
 }
+----

@@ -42,7 +42,7 @@ output application/xml
 ----
 
 [[input_mapobject]]
-== Input
+==== Input
 
 [source,XML,linenums]
 ----
