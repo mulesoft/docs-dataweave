@@ -788,7 +788,6 @@ table (`<Column><Row> example A1`).
 turned off. Valid options: `true` or `false`
 |===
 
-[[stream_csv]]
 .Streaming Example:
 By default, the Excel reader stores input data from an entire file in-memory
 if the file is 1.5MB or less. If the file is larger than 1.5 MB, the process
