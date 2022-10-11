@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 endif::[]
 :keywords: studio, anypoint, transform, transformer, format, dataweave, data weave, output structure, mime type, mime
 
-The following Mule app example shows how to use the DataWeave `pluck` function to extract key-value pairs from a JSON payload and store them into Mule event variables with variable names as the keys and their corresponding values.
+In addition to using the DataWeave functions such as xref:dw-core-functions-entriesof.adoc[entriesOf], xref:dw-core-functions-keysof.adoc[keysOf], or xref:dw-core-functions-valuesof.adoc[valuesOf] to work with key-value pairs, you can also use xref:dw-core-functions-pluck.adoc[pluck]. The following Mule app example shows how to use the DataWeave `pluck` function to extract key-value pairs from a JSON payload and store them into Mule event variables with variable names as the keys and their corresponding values.
 
 The Mule app consists of:
 
