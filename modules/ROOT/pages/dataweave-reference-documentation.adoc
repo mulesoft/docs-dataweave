@@ -305,7 +305,7 @@ Valid types are:
 
 When defining an input of type CSV, there are a few optional parameters you can  add to the input directive to customize how the data is parsed. These are not defined in the DataWeave script but on the Mule XML code, in the Transform Message XML element.
 
-In Anypoint Studio there are two ways to achieve this. You can either manually add the attributes to the project's XML, or do it through the graphical interface, by selecting the element from the tree view in the input section and clicking the gear icon. See xref:5.x@studio::using-dataweave-in-studio.adoc#parsing-csv-inputs[Using DataWeave in Studio] for more details.
+In Anypoint Studio there are two ways to achieve this. You can either manually add the attributes to the project's XML, or do it through the graphical interface, by selecting the element from the tree view in the input section and clicking the gear icon.
 
 ==== Output Directive
 
@@ -1376,7 +1376,7 @@ You can optionally also define the payload as an input directive in the header, 
 ==== Inbound Properties from a Mule Message
 
 You can take *Inbound Properties* from the Mule message that arrives to the DataWeave transformer and use them in your transform body. To refer to one of these, simply call it through the matching
-xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
+xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
 
 In MEL, there are two supported syntaxes to call for an inbound property:
 
@@ -1408,7 +1408,7 @@ You can optionally also define the inbound property as a constant directive in t
 
 ==== Outbound Properties from a Mule Message
 
-You can take any *Outbound Properties* in the Mule message that arrives to the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
+You can take any *Outbound Properties* in the Mule message that arrives to the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] expression.
 
 In MEL, there are two supported syntaxes to call an outbound property:
 
@@ -1442,7 +1442,7 @@ You can optionally also define the outbound property as a constant directive in 
 ==== Flow Variables from a Mule Message
 
 You can take any *Flow Variable* in the Mule message that arrives at the DataWeave transformer and use it in your transform body. To refer to it, simply call it through the matching
-xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)]  expression.
+xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)]  expression.
 
 In MEL, there are two supported syntaxes to call a flow variable:
 
@@ -3474,9 +3474,7 @@ c: |2003-10-01T23:57:59Z| + |P1Y|
 
 ==== Global MEL Functions
 
-Your DataWeave code can call any function you define as a global xref:3.7@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] function, as long as it is correctly defined in the Mule Project where your Transform Message element sits.
-
-Refer to xref:5.x@studio::using-dataweave-in-studio.adoc#calling-global-mel-functions-from-dataweave-code[Using DataWeave in Studio].
+Your DataWeave code can call any function you define as a global xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] function, as long as it is correctly defined in the Mule Project where your Transform Message element sits.
 
 == Object
 
@@ -4059,7 +4057,7 @@ books: payload.items.*item map
 }
 ----
 
-In Anypoint Studio, you can define several more values, like separators, quote characters and escape characters. See xref:5.x@studio::using-dataweave-in-studio.adoc#configuring-the-csv-reader[Using DataWeave in Studio].
+In Anypoint Studio, you can define several more values, like separators, quote characters and escape characters.
 
 == Functions and Lambdas
 
@@ -4220,6 +4218,5 @@ You can reference any *Property* (System or Spring) that exists in the server wh
 
 == See Also
 
-* xref:5.x@studio::using-dataweave-in-studio.adoc[Using DataWeave in Studio]
 * xref:dataweave-examples.adoc[DataWeave Examples]
 * https://www.mulesoft.com/platform/studio[Anypoint Studio]
