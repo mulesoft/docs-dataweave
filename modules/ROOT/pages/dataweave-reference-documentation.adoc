@@ -3474,7 +3474,7 @@ c: |2003-10-01T23:57:59Z| + |P1Y|
 
 ==== Global MEL Functions
 
-Your DataWeave code can call any function you define as a global xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] function, as long as it is correctly defined in the Mule Project where your Transform Message element sits.
+Your DataWeave code can call any function that you define as a global xref:3.8@mule-runtime::mule-expression-language-mel.adoc[Mule Expression Language (MEL)] function, as long as it is correctly defined in the Mule project where your Transform Message element sits.
 
 == Object
 
