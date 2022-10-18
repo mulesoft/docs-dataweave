@@ -305,7 +305,7 @@ Valid types are:
 
 When defining an input of type CSV, there are a few optional parameters you can  add to the input directive to customize how the data is parsed. These are not defined in the DataWeave script but on the Mule XML code, in the Transform Message XML element.
 
-In Anypoint Studio there are two ways to achieve this. You can either manually add the attributes to the project's XML, or do it through the graphical interface, by selecting the element from the tree view in the input section and clicking the gear icon.
+In Anypoint Studio, there are two ways to achieve this. You can either manually add the attributes to the project's XML or use the graphical interface by selecting the element from the tree view in the input section and clicking the gear icon.
 
 ==== Output Directive
 
