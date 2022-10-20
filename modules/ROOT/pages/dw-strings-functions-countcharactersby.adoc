@@ -33,7 +33,7 @@ This example counts the digits in a string.
 [source,DataWeave,linenums]
 ----
 %dw 2.0
-import countCharactersBy from dw::core::Strings
+import * from dw::core::Strings
 output application/json
 ---
 "42 = 11 * 2 + 20" countCharactersBy isNumeric($)
@@ -53,4 +53,3 @@ output application/json
 Helper function to make `countCharactersBy` work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
-

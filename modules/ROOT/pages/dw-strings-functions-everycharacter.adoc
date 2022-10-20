@@ -32,7 +32,7 @@ of only digits and spaces.
 [source,DataWeave,linenums]
 ----
 %dw 2.0
-import everyCharacter from dw::core::Strings
+import * from dw::core::Strings
 output application/json
 ---
 "12 34  56" everyCharacter $ == " " or isNumeric($)
@@ -52,4 +52,3 @@ true
 Helper function that enables `everyCharacter` to work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
-
