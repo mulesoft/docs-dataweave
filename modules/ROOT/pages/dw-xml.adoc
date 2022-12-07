@@ -1,0 +1,22 @@
+= Xml (dw::util::Xml)
+
+This module contains helper functions for working with XML data format.
+
+To use this module, you must import it to your DataWeave code, for example,
+by adding the line `import * from dw::util::Xml` to the header of your
+DataWeave script.
+
+_Introduced in DataWeave version 2.5.0._
+
+== Functions
+
+[%header, cols="1,3"]
+|===
+| Name  | Description
+| xref:dw-xml-functions-doctypeasstring.adoc[docTypeAsString] | Transforms a `DocType` declaration to a string representation.
+|===
+
+== Types
+* xref:dw-xml-types.adoc[Xml Types]
+
+

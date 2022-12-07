@@ -1,0 +1,35 @@
+= version
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[version1]]
+== version&#40;&#41;: String
+
+Returns the DataWeave version that its currently running.
+
+_Introduced in DataWeave version 2.5.0._
+
+=== Example
+
+This example returns the DataWeave version
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+version()
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+"2.5"
+----
+
