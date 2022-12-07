@@ -20,8 +20,8 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `text` | The string to which the `predicate` applies.
 | `predicate` | Expression to apply to each character in the
-                `text` string. The expression must return a
-                Boolean value.
+              `text` string. The expression must return a
+              Boolean value.
 |===
 
 === Example
@@ -53,3 +53,4 @@ output application/json
 Helper function to make `countCharactersBy` work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
+

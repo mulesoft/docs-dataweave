@@ -26,7 +26,7 @@ _Introduced in DataWeave version 2.4.0._
 
 === Example
 
-This example transforms the `DateTime` input (`|2020-10-06T18:23:20.351-03:00|`)
+This example transforms the `DateTime` input (`&#124;2020-10-06T18:23:20.351-03:00&#124;`)
 to the date of the first day of the `Year` value (`2020`) in the input.
 
 ==== Source
@@ -144,3 +144,4 @@ output application/json
   "atBeginningOfYearDate": "2020-01-01"
 }
 ----
+

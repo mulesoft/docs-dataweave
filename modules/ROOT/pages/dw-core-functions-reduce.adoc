@@ -25,7 +25,7 @@ accumulator parameter, a null value is returned.
 |===
 | Name | Description
 | `item` | Item in the input array. It provides the value to reduce. Can also be referenced as `&#36;`.
-| `acc` | The accumulator. Can also be referenced as `&#36;&#36;`. Used to store the result of the lambda expression after each iteration of the `reduce` operation.
+| `acc` | The accumulator. Can also be referenced as `&#36;&#36;`. Used to store the result of the lambda expression after each iteration of the reduce operation.
 
 The accumulator parameter can be set to an initial value using the
 syntax `acc = initValue`. In this case, the lambda expression is

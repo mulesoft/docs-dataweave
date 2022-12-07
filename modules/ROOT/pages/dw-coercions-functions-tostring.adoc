@@ -21,20 +21,25 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `number` | The `Number` value to format.
 | `format` | The formatting to apply to the `Number` value.
-             A `format` accepts `#` or `0` (but not both) as
-             placeholders for _decimal_ values, and only one decimal
-             point is permitted. A `null` or empty `String` value has
-             no effect on the `Number` value. Most other values are
-             treated as literals, but you must escape special
-             characters, such as a dollar sign (for example, `\$`).
-             Inner quotations must be closed and differ from the
-             surrounding quotations.
+           A `format` accepts `#` or `0` (but not both) as
+           placeholders for _decimal_ values, and only one decimal
+           point is permitted. A `null` or empty `String` value has
+           no effect on the `Number` value. Most other values are
+           treated as literals, but you must escape special
+           characters, such as a dollar sign (for example, `\$`).
+           Inner quotations must be closed and differ from the
+           surrounding quotations.
+| `locale` | Optional ISO 3166 country code to use, such as `US`,
+           `AR`, or `ES`. A `null` or absent value uses your
+           JVM default. When you pass a translatable format, such as
+           `eeee` and `MMMM`, a `locale` (such as `"ES`) transforms
+           the corresponding numeric values to a localized string.
 | `roundMode` | Optional parameter for rounding decimal values
-                when the formatting presents a rounding choice,
-                such as a format of `0.#` for the decimal `0.15`.
-                The default is `HALF_UP`, and a `null` value
-                returns behaves like `HALF_UP`.
-                Only one of the following values is permitted:
+              when the formatting presents a rounding choice,
+              such as a format of `0.#` for the decimal `0.15`.
+              The default is `HALF_UP`, and a `null` value
+              returns behaves like `HALF_UP`.
+              Only one of the following values is permitted:
 
 * `UP`: Always rounds away from zero (for example, `0.01` to `"0.1"`
          and `-0.01` to `"-0.1"`). Increments the preceding digit
@@ -132,9 +137,9 @@ _Introduced in DataWeave version 2.4.0._
 | `date` | The `Date`, `DateTime`, `LocalTime`, `LocalDateTime`,
              or `Time` value to coerce to a `String` type.
 | `format` | The ISO-8601 formatting to use on the date or time.
-             For example, this parameter accepts character patterns
-             patterns based on the Java 8 `java.time.format`.
-             A `null` value has no effect on the value. Defaults:
+           For example, this parameter accepts character patterns
+           patterns based on the Java 8 `java.time.format`.
+           A `null` value has no effect on the value. Defaults:
 
 * `Date` example: `2011-12-03` (equivalent format: `uuuu-MM-dd`)
 * `DateTime` example: `2011-12-03T10:15:30.000000+01:00` (equivalent format: `uuuu-MM-dd HH:mm:ssz`)
@@ -142,10 +147,10 @@ _Introduced in DataWeave version 2.4.0._
 * `LocalTime` example: `10:15:30.000000` (equivalent format: `HH:mm:ss.n`)
 * `Time` example: `10:15:30.000000Z` (equivalent format: `HH:mm:ss.nxxxz`)
 | `locale` | Optional ISO 3166 country code to use, such as `US`,
-             `AR`, or `ES`. A `null` or absent value uses your
-             JVM default. When you pass a translatable format, such as
-             `eeee` and `MMMM`, a `locale` (such as `"ES`) transforms
-             the corresponding numeric values to a localized string.
+           `AR`, or `ES`. A `null` or absent value uses your
+           JVM default. When you pass a translatable format, such as
+           `eeee` and `MMMM`, a `locale` (such as `"ES`) transforms
+           the corresponding numeric values to a localized string.
 |===
 
 === Example
@@ -204,10 +209,10 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `binary` | The `Binary` value to coerce to a `String` value.
 | `encoding` | The encoding to apply to the `String` value. Accepts
-               encodings that are supported by your JDK. For example,
-               `encoding` accepts Java canonical names and aliases for
-               the basic and extended encoding sets in Oracle JDK 8 and
-               JDK 11.
+             encodings that are supported by your JDK. For example,
+             `encoding` accepts Java canonical names and aliases for
+             the basic and extended encoding sets in Oracle JDK 8 and
+             JDK 11.
 |===
 
 === Example
@@ -253,7 +258,7 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `data` | The `TimeZone`, `Uri`, `Boolean`, `Period`, `Regex`,
-           or `Key` value to coerce to a `String` value.
+         or `Key` value to coerce to a `String` value.
 |===
 
 === Example

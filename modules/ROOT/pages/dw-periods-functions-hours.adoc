@@ -21,7 +21,7 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `nHours` | The number of hours as a whole or decimal number.
-             A positive or negative number is valid.
+           A positive or negative number is valid.
 |===
 
 === Example
