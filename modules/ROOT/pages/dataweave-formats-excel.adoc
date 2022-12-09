@@ -195,8 +195,9 @@ image::dataweave-formats-exceltable.png[]
  * Macros are currently not supported.
  * Charts are ignored.
  * Pivot tables are not supported.
+ * Formatting is currently not supported.
 
- // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
+// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
 
 
 [[properties]]
@@ -220,7 +221,8 @@ Valid values are `true` or `false`.
 |`ignoreEmptyLine`  |`Boolean`|`true`|Ignores an empty line by default.
 
 Valid values are `true` or `false`.
-|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array.
+|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array. . See the <<example2, streaming example>>, and see xref:dataweave-formats.adoc#dw_readers_writers[DataWeave Readers].
+
 
 Valid values are `true` or `false`.
 |`tableLimit`  |`String`|`'Unbounded'`|Position of the last column in each row. Accepts a pattern `<Column>` (for example, `'A'` or `'AB'`), the value `'HeaderSize'`, which uses the location of the last header, or 'Unbounded', which consumes each row.
@@ -238,8 +240,9 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
-|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value needs to be bigger than 8.
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
+
 
 Valid values are `true` or `false`.
 |`header`  |`Boolean`|`true`|Indicates whether the first line of the output contains header field names.

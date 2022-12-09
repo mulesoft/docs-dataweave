@@ -23,7 +23,7 @@ To understand the parsing strategies that DataWeave readers and writers can appl
 [[format_xml_cdata]]
 == CData Custom Type
 
-`CData` is a custom DataWeave data type for XML that is used to identify a Character DATA (CData) block. The `CData` type tells the XML writer to wrap content inside a `CData` block or to check for an input string inside a `CData` block. In DataWeave, `CData` inherits from the type `String`.
+`CData` is a custom DataWeave data type for XML that is used to identify a Character DATA (CDATA) block. The `CData` type tells the XML writer to wrap content inside a `CDATA` block or to check for an input string inside a `CDATA` block. In DataWeave, `CData` inherits from the type `String`.
 
 [[examples]]
 == Examples
@@ -41,8 +41,6 @@ The following examples show uses of the XML format.
 * <<example9>>
 * <<example10>>
 * <<example11>>
-
-Refer to xref:dataweave-formats.adoc[DataWeave Formats] for more details on available reader and writer properties for various data formats.
 
 [[example1]]
 === Example: Stream Input XML Data
@@ -399,9 +397,9 @@ ns f https://www.w3schools.com/furniture
 ----
 
 [[example7]]
-=== Example: Create a CData Element
+=== Example: Create a CDATA Element
 
-This example shows how to use the `CData` type to create a CData element in the XML output.
+This example shows how to use the `CData` type to create a CDATA element in the XML output.
 
 ==== Source
 
@@ -419,33 +417,33 @@ output application/xml
 
 ==== Output
 
-The output encloses the input `String` value in a CData block, which contains the special characters, `&lt;` and `&gt;`, from the input.
+The output encloses the input `String` value in a CDATA block, which contains the special characters, `&lt;` and `&gt;`, from the input.
 
 [source,xml,linenums]
 ----
 <?xml version='1.0' encoding='UTF-8'?>
-<test><![CData[A text <a>]]></test>
+<test><![CDATA[A text <a>]]></test>
 ----
 
 [[example8]]
-=== Example: Check for CData in a `String`
+=== Example: Check for CDATA in a `String`
 
-This example indicates whether a given `String` value is CData.
+This example indicates whether a given `String` value is CDATA.
 
 ==== Input
 
 The XML serves as the input payload to the DataWeave source. Notice that the
-`test` element contains a CData block.
+`test` element contains a CDATA block.
 
 [source,xml,linenums]
 ----
 <?xml version='1.0' encoding='UTF-8'?>
-<test><![CData[A text <a>]]></test>
+<test><![CDATA[A text <a>]]></test>
 ----
 
 ==== Source
 
-The DataWeave script uses the `is CData` expression to determine whether the `String` value is CData.
+The DataWeave script uses the `is CData` expression to determine whether the `String` value is CDATA.
 
 [source,dataweave,linenums]
 ----
@@ -453,13 +451,13 @@ The DataWeave script uses the `is CData` expression to determine whether the `St
 output application/json
 ---
 {
-    test: payload.test is CData
+    test: payload.test is CDATA
 }
 ----
 
 ==== Output
 
-The JSON output contains the value `true`, which indicates tha the input `String` value is CData.
+The JSON output contains the value `true`, which indicates tha the input `String` value is CDATA.
 
 [source,json,linenums]
 ----
@@ -657,7 +655,8 @@ Valid values are `empty` or `none` or `blank`.
 |`optimizeFor`  |`String`|`'speed'`|Configures the type of optimization for the XML parser to use.
 
 Valid values are `speed` or `memory`.
-|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array.
+|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array. . See the <<example2, streaming example>>, and see xref:dataweave-formats.adoc#dw_readers_writers[DataWeave Readers].
+
 
 Valid values are `true` or `false`.
 |`supportDtd`  |`Boolean`|`false`|Enable or disable DTD support. Disabling skips (and does not process) internal and external subsets. You can also enable this property by setting the Mule system property `com.mulesoft.dw.xml.supportDTD`. Note that the default for this property changed from `true` to `false` in Mule version 4.3.0-20210601, which includes the June 2021 patch of DataWeave version 2.3.0.
@@ -673,15 +672,17 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value needs to be bigger than 8.
 |`defaultNamespace`  |`String`|`null`|Specifies the default namespaces of the output XML.
-|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
+
 
 Valid values are `true` or `false`.
 |`doubleQuoteInDeclaration`  |`Boolean`|`false`|Escapes double quotes in the XML declaration when set to `true`.
 
 Valid values are `true` or `false`.
-|`encoding`  |`String`|`null`|The character set to use for the output, such as UTF-8.
+|`encoding`  |`String`|`null`|The encoding to use for the output, such as UTF-8.
+
 |`escapeCR`  |`Boolean`|`false`|Escapes `CR` characters when set to `true`.
 
 Valid values are `true` or `false`.
