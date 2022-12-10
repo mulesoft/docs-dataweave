@@ -42,6 +42,8 @@ The following examples show uses of the XML format.
 * <<example10>>
 * <<example11>>
 
+Refer to https://docs.mulesoft.com/dataweave/latest/dataweave-formats[DataWeave Formats] for more detail on available reader and writer properties for various data formats.
+
 [[example1]]
 === Example: Stream Input XML Data
 
@@ -655,7 +657,7 @@ Valid values are `empty` or `none` or `blank`.
 |`optimizeFor`  |`String`|`'speed'`|Configures the type of optimization for the XML parser to use.
 
 Valid values are `speed` or `memory`.
-|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array. . See the <<example2, streaming example>>, and see xref:dataweave-formats.adoc#dw_readers_writers[DataWeave Readers].
+|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array. See the <<example2, streaming example>>, and see https://docs.mulesoft.com/dataweave/latest/dataweave-formats#dw_readers_writers[DataWeave Readers].
 
 
 Valid values are `true` or `false`.
@@ -672,7 +674,8 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value needs to be bigger than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+
 |`defaultNamespace`  |`String`|`null`|Specifies the default namespaces of the output XML.
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 

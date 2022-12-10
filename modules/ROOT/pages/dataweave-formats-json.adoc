@@ -275,7 +275,7 @@ This format accepts properties that provide instructions for reading input data.
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array. . See the <<example2, streaming example>>, and see xref:dataweave-formats.adoc#dw_readers_writers[DataWeave Readers].
+|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array. See the <<example2, streaming example>>, and see https://docs.mulesoft.com/dataweave/latest/dataweave-formats#dw_readers_writers[DataWeave Readers].
 
 
 Valid values are `true` or `false`.
@@ -289,7 +289,8 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value needs to be bigger than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 
 

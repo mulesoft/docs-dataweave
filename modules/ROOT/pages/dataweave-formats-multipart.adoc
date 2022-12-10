@@ -45,6 +45,8 @@ The following examples show uses of the Multipart format.
 * <<example1>>
 * <<example2>>
 * <<example3>>
+* <<example4>>
+* <<example5>>
 
 [[example1]]
 === Example: Multipart
@@ -217,8 +219,8 @@ list of parts, each containing its headers and content. The following
 DataWeave script produces the raw multipart data (previously analyzed)
 if the HTML data is available in the payload.
 
-NOTE: To provide a consistent output in our documentation, we are hardcoding the `boundary` property.
-This can be avoided in most scenarios: DataWeave will simply generate a random boundary on its own and add it to the
+NOTE: To provide a consistent output in the DataWeave documentation, the example hardcodes the `boundary` property.
+However, you do not need to hardcode this property in most cases because DataWeave generates a random boundary and adds it to the
 output MIME type.
 
 .Writing Multipart Content:
@@ -267,6 +269,299 @@ provided in the `Content-Disposition` header, and note that DataWeave can
 handle content from supported formats, as well as references to unsupported
 ones, such as HTML.
 
+The following example shows how to send the current payload as a file part in a multipart form-data. You need to use a DataWeave script similar to the following:
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+input payload application/xml
+output multipart/form-data boundary="----myboundary----"
+---
+{
+  parts: {
+    filePart: {
+      headers: {
+        "Content-Disposition": {
+          "name": "<NAME>",
+          "filename": "<FILE_NAME>.<FILE_EXTENSION>"
+        },
+        "Content-Type": "<FILE_CONTENT-TYPE>"
+      },
+      content: payload
+    },
+    otherJsonPart: {
+      content: '{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'
+    }
+  }
+}
+----
+
+* `boundary` sets the boundary value, for example `"----myboundary----"`.
+* `<NAME>` is the tag name of your file, for example `"sampleFile"`.
+* `<FILE_NAME>.<FILE_EXTENSION>` is the filename to populate the payload content, for example `"sampleFile.xml"`.
+* `<FILE_CONTENT-TYPE>` matches the content of the file you send, for example `"application/xml"`.
+* The content of the file is the current payload.
+
+This example contains two parts in the multipart which are the file and the `otherJsonPart`. In case you want to add more parts, add them under the `parts:{}` section with the following format:
+
+[source,dataweave,linenums]
+----
+  <PART_NAME>: {
+    content: <PART_CONTENT>
+  }
+----
+
+* `<PART_NAME>` is the name of the part without quotes, for example `json`.
+* `<PART_CONTENT>` is the content for that part, for example `'{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'`.
+
+Based on the following XML input:
+
+[source,xml,linenums]
+----
+<Customers>
+	<Customer>
+		<Number>1</Number>
+		<FirstName>Fred</FirstName>
+		<LastName>Landis</LastName>
+		<Address>
+			<Street>Oakstreet</Street>
+			<City>Boston</City>
+			<ZIP>23320</ZIP>
+			<State>MA</State>
+		</Address>
+	</Customer>
+	<Customer>
+		<Number>2</Number>
+		<FirstName>Michelle</FirstName>
+		<LastName>Butler</LastName>
+		<Address>
+			<Street>First Avenue</Street>
+			<City>San-Francisco</City>
+			<ZIP>44324</ZIP>
+			<State>CA</State>
+		</Address>
+	</Customer>
+	<Customer>
+		<Number>3</Number>
+		<FirstName>Ted</FirstName>
+		<LastName>Little</LastName>
+		<Address>
+			<Street>Long Way</Street>
+			<City>Los-Angeles</City>
+			<ZIP>34424</ZIP>
+			<State>CA</State>
+		</Address>
+	</Customer>
+</Customers>
+----
+
+The DataWeave script is:
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output multipart/form-data  boundary="----myboundary----"
+---
+{
+  parts: {
+    filePart: {
+      headers: {
+        "Content-Disposition": {
+          "name": "test",
+          "filename": "sampleFile.xml"
+        },
+        "Content-Type": "application/xml"
+      },
+      content: payload
+    },
+    otherJsonPart: {
+      content: '{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }'
+    }
+  }
+}
+----
+
+The output multipart is:
+
+[source,multipart,linenums]
+----
+------myboundary----
+Content-Type: application/xml
+Content-Disposition: form-data; name="test"; filename="sampleFile.xml"
+
+<Customers>
+  <Customer>
+    <Number>1</Number>
+    <FirstName>Fred</FirstName>
+    <LastName>Landis</LastName>
+    <Address>
+      <Street>Oakstreet</Street>
+      <City>Boston</City>
+      <ZIP>23320</ZIP>
+      <State>MA</State>
+    </Address>
+  </Customer>
+  <Customer>
+    <Number>2</Number>
+    <FirstName>Michelle</FirstName>
+    <LastName>Butler</LastName>
+    <Address>
+      <Street>First Avenue</Street>
+      <City>San-Francisco</City>
+      <ZIP>44324</ZIP>
+      <State>CA</State>
+    </Address>
+  </Customer>
+  <Customer>
+    <Number>3</Number>
+    <FirstName>Ted</FirstName>
+    <LastName>Little</LastName>
+    <Address>
+      <Street>Long Way</Street>
+      <City>Los-Angeles</City>
+      <ZIP>34424</ZIP>
+      <State>CA</State>
+    </Address>
+  </Customer>
+</Customers>
+------myboundary----
+Content-Disposition: form-data; name="otherJsonPart"
+
+{"name": "sampleFile.xml", "sampleFile": {"type": "sample"} }
+------myboundary------
+----
+
+[[example4]]
+=== Example: Iterate through Multipart payload
+
+This example shows how DataWeave iterates through all the parts of the payload and processes the each part individually.
+
+=== Source
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+var multi = '--34b21
+Content-Disposition: form-data; name="text"
+Content-Type: text/plain
+
+Book
+--34b21
+Content-Disposition: form-data; name="file1"; filename="a.json"
+Content-Type: application/json
+
+{
+"title":"Java 8 in Action",
+"author":"Mario Fusco",
+"year":2014
+}
+--34b21
+Content-Disposition: form-data; name="file2"; filename="a.html"
+Content-Type: text/html
+
+<!DOCTYPE html>
+<title>
+Available for download!
+</title>
+--34b21--'
+var parsed = read(multi, "multipart/form-data", {boundary:'34b21'})
+---
+parsed.parts mapObject ((value, key, index) -> {(index): key})
+----
+
+=== Output
+[source,json,linenums]
+----
+{
+  "0": "text",
+  "1": "file1",
+  "2": "file2"
+}
+----
+
+[[example5]]
+=== Example: Using ^mediaType and ^mimeType Metadata Selectors
+
+The `^mimeType` selector returns the MIME type of a value without parameters, for example, `application/json`. The `^mediaType` selector, by contrast, provides the MIME type and any other parameters related to it, for example, `application/json;charset=UTF-16`.
+
+The following example shows how to transform multipart inputs into multipart outputs with a different format. The DataWeave script uses both the `^mimeType` and `^mediaType` selectors to generate the new multipart content.
+
+=== Input
+The multipart input has more than one Content-Type. In this case `application/json` and `application/csv` including a non-standard separator:
+
+[source,text,linenums]
+----
+----------------------------049709565842371278701691
+Content-Type: application/json
+Content-Disposition: form-data; name="order"
+
+{
+"name": "order1",
+"id": 123,
+"content": "orderContent"
+}
+----------------------------049709565842371278701691
+Content-Type: application/csv;separator=.
+Content-Disposition: form-data; name="partner"
+
+partnerName.id
+mulesoft.1
+----------------------------049709565842371278701691--
+----
+
+=== Source
+
+The DataWeave script transforms the multipart input into multipart output by defining `output multipart/form-data` MIME type. The multipart output data contains two parts:
+
+* `orderAck` +
+
+Contains a text with an acknowledgement of the receipt of an order. The Content-Type is `text/plain`.  The ^mimeType` selector becomes useful to log the Content-Type as part of the message.
+
+* `partner` +
+
+Contains the original partner itself. Notice that this time, the Content-Type is `payload.parts..^mediaType`. The ^mediaType selector includes also the separator, that parses the `application/csv` content.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+input payload multipart boundary='boundary1'
+output multipart boundary='test2'
+---
+{
+  parts : {
+    orderAck : {
+      headers : {
+        "Content-Type": "text/plain"
+      },
+      content : "Order payload of type " ++ payload.parts.order.content.^mimeType ++ " and id " ++ (payload.parts.order.content.id as String) ++ " received. Receipt available."
+    },
+    partner: {
+      headers : {
+        "Content-Type": payload.parts.partner.content.^mediaType
+      },
+      content : payload.parts.partner.content
+    }
+  }
+}
+----
+
+=== Output
+[source,text,linenums]
+----
+--test2
+Content-Type: text/plain
+Content-Disposition: form-data; name="orderAck"
+
+Order payload of type application/json and id 123 received. Receipt available.
+--test2
+Content-Type: application/csv;separator=.
+Content-Disposition: form-data; name="partner"
+
+partnerName.id
+mulesoft.1
+--test2--
+----
+
 // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
 
 
@@ -286,9 +581,10 @@ This format accepts properties that provide instructions for reading input data.
 |===
 |Parameter |Type |Default|Description
 |`boundary`  |`String`|`null`|The multipart `boundary` value, a string to delimit parts.
-|`defaultContentType`  |`String`|`'application/octet-stream'`|Sets the default Content-Type to use on parts of the `multipart/*` format. When set, this property takes precedence over the setting for the system property `com.mulesoft.dw.multipart.defaultContentType`.
+|`defaultContentType`  |`String`|`'application/octet-stream'`|Sets the default Content-Type to use on parts of the `multipart/*` format. When set, this property takes precedence over the setting for the https://docs.mulesoft.com/dataweave/latest/dataweave-system-properties[system property] `com.mulesoft.dw.multipart.defaultContentType`.
 
-Introduced in DataWeave 2.3 (2.3.0-20210720) for the August 2021 release of Mule 4.3.0-20210719. 
+Introduced in DataWeave 2.3 (2.3.0-20210720) for the August 2021 release of Mule 4.3.0-20210719.
+
 |===
 
 [[writer_properties]]
@@ -300,7 +596,8 @@ This format accepts properties that provide instructions for writing output data
 |===
 |Parameter |Type |Default|Description
 |`boundary`  |`String`|`null`|The multipart `boundary` value, a string to delimit parts.
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value needs to be bigger than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 
 
