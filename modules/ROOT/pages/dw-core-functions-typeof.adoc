@@ -8,14 +8,19 @@ endif::[]
 [[typeof1]]
 == typeOf<T&#62;&#40;value: T&#41;: Type<T&#62;
 
-Returns the type of a value.
+Returns the basic data type of a value.
+
+A value's type is taken from its runtime representation and is never one of
+the arithmetic types (intersection, union, `Any`, or `Nothing`) nor a type
+alias. If present, metadata of a value is included in the result of
+`typeOf` (see https://docs.mulesoft.com/dataweave/latest/dw-types-functions-metadataof[metadataOf]).
 
 === Parameters
 
 [%header, cols="1,3"]
 |===
 | Name | Description
-| `value` | A string, object, array, number, or other supported type.
+| `value` | Input value to evaluate.
 |===
 
 === Example
