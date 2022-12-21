@@ -764,7 +764,7 @@ The operator syntax is as follows:
 <valueB> <~ <objectA>
 ```
 
-and it reads `assigning objectA as metadata to valueB`. The arrow points to the value that has the metadata assigned.
+The operator assigns `objectA` as metadata to `valueB`. The arrow points to the value to which the metadata is assigned.
 
 
 Versions prior to Mule 4.5 require the following syntax for instance to add the `class` metadata field to an object:
