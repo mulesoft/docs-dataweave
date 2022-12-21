@@ -753,7 +753,7 @@ payload update {
 [[metadata-assignment-operator]]
 == Metadata Assignment Operator
 
-DataWeave supports the metadata assignment operator `<~`, which enables you to set the metadata of any value without the need of using the `as` operator.
+DataWeave supports the metadata assignment operator `<~`, which enables you to set the metadata of any value without using the `as` operator.
 This is useful for cases where you want to set the metadata and keep the current value type. If coercing to a new type is also required then xref:dataweave-types-coercion.adoc[as] needs to be used.
 
 _Introduced in DataWeave 2.5.0. Supported by Mule 4.5 and later._
