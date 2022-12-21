@@ -788,5 +788,5 @@ In Mule 4.5, the metadata assignment operator `<~` simplifies the syntax:
 === Metadata
 
 Metadata is any additional information attached to a value that doesn't affect its identity. Given any two values
-`A` and `B` which are equal then if we attach metadata to `A` and we call it `A'` then `A == A' == B`. So we can define that a value is formed by the value itself
+`A` and `B` that are equal, if you attach metadata to `A` and call it `A'`, then `A == A' == B`. So you can define a value that is formed by the value
 and the metadata attached to it.
