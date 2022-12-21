@@ -749,3 +749,44 @@ payload update {
   }
 }
 ----
+
+[[metadata-assignment-operator]]
+== Metadata Assignment Operator
+
+DataWeave supports the metadata assignment operator `<~`, which enables you to set the metadata of any value without using the `as` operator.
+This operator is useful when you want to set the metadata and retain the current value type. If you are coercing the value to a new type, use xref:dataweave-types-coercion.adoc[as].
+
+_Introduced in DataWeave 2.5.0. Supported by Mule 4.5 and later._
+
+The operator syntax is as follows:
+
+```
+<valueB> <~ <objectA>
+```
+
+The operator assigns `objectA` as metadata to `valueB`. The arrow points to the value to which the metadata is assigned.
+
+
+Versions prior to Mule 4.5 require the following syntax, for example, to add the `class` metadata field to an object:
+
+[source,weave,linenums]
+----
+%dw 2.0
+---
+{name: "Ken"} as Object {class: "Person"}
+----
+
+In Mule 4.5, the metadata assignment operator `<~` simplifies the syntax:
+
+[source,weave,linenums]
+----
+%dw 2.0
+---
+{name: "Ken"} <~ {class: "Person"}
+----
+
+=== Metadata
+
+Metadata is any additional information attached to a value that doesn't affect its identity. Given any two values
+`A` and `B` that are equal, if you attach metadata to `A` and call it `A'`, then `A == A' == B`. So you can define a value that is formed by the value
+and the metadata attached to it.
