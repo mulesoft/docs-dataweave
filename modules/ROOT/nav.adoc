@@ -39,6 +39,7 @@
  ** xref:dataweave-create-module.adoc[Create Custom Modules and Mappings]
  ** xref:dataweave-functions-lambdas.adoc[Working with Functions and Lambdas in DataWeave]
  ** xref:dataweave-memory-management.adoc[Memory Management]
+ ** xref:dataweave-versioning-behavior.adoc[Versioning Behavior in DataWeave]
 * xref:dataweave-cookbook.adoc[DataWeave Examples]
  ** xref:dataweave-cookbook-extract-data.adoc[Extract Data]
  ** xref:dataweave-cookbook-select-xml-elements.adoc[Select XML Elements]

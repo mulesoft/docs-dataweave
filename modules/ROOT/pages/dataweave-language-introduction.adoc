@@ -71,7 +71,7 @@ output application/xml
  * /
 ----
 
-* `%dw`: DataWeave version is optional. Default is `2.0`, which is for _all_ 2.x versions of DataWeave.
+* `%dw`: In order to mantain backwards compatibilty while introducing syntax breaking changes, Data Weave supports selecting different syntax versions on a per file basis and is configured through this directive. This directive is optional. Default is `2.0`, which is for _all_ 2.x versions of DataWeave.
 +
 Example: `%dw 2.0`
 +

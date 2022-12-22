@@ -1,0 +1,17 @@
+= Versioning Behavior in DataWeave
+
+In each version of DataWeave, changes are introduced that modify the way the language behaves. When existing scripts depend on previous behavior, system properties are introduced to toggle the change so that backwards compatibilty is not broken in the current version. These system properties that control behavior in DataWeave are called *Compatibility Flags*. Each flag defined a deletion version, after which it will no longer exists, and the behavior that it controlled will default to the new one.
+
+Specifying DataWeave's *language level* indicates to the runtime which Compatibility Flags are available. As previously stated, when upgrading to a new version there are flags that will be deleted. In order to facilitate updatating DataWeave, setting the language level of a previous version makes it so that the flags available on that version are visible, mantaining backwards compatibility. Language level defaults to the running DataWeave version and has to be at most the same as the runtime version.
+
+For mule applications the language level is determined by the app's *minMuleVersion*. Given the minMuleVersion, the language level is computed by substracting 2 major versions as shown in the following table:
+
+[%header%autowidth.spread,cols="a,a"]
+|===
+| minMuleVersion | LanguageLevel
+| 4.5 | 2.5
+| 4.4 | 2.4
+| 4.3 | 2.3
+|===
+
+For example, the `com.mulesoft.dw.xml_reader.honourMixedContentStructure` exists for language level 2.4 (it was introduced on that version and is deleted in 2.5), meaning that for DataWeave 2.5 the property will be visible only if the language level is set to 2.4, otherwise it will default to its new behavior.
