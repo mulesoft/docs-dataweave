@@ -241,6 +241,37 @@ fun allParametersOptional(param1 = 1, param2 = 2, param3 = 3) =
 }
 ----
 
+== Type Parameters Definition
+
+DataWeave supports the use of type parameters in its function definitions, which are similar to generics in some programming languages. 
+
+.Example Function that uses type parameters
+[source,dataweace,linenums]
+----
+%dw 2.0
+output application/json
+
+fun toArray<T>(x: T): Array<T> = [x]
+---
+toArray(2)
+----
+
+DataWeave also supports adding constraints for its type parameters, which in turn constraints the possible accepted inputs for a function.
+
+.Example Function that uses type parameters with constraints
+[source,dataweace,linenums]
+----
+%dw 2.0
+output application/json
+
+fun getName<T <: { name: String }>(x: T): String = x.name
+---
+{
+  name: getName({ name: "Andrés" })
+  //name: getName({ age: 20 }) invalid call as the parameter does not fullfill the constraint
+}
+----
+
 == Function Overloading
 
 DataWeave enables you to create multiple functions with the same name but different parameters. This feature is useful for defining different behaviors based on the arguments of a function call.
