@@ -4,7 +4,7 @@ In each version of DataWeave, changes are introduced that modify the way the lan
 
 Specifying DataWeave's *language level* indicates to the runtime which Compatibility Flags are available. As previously stated, when upgrading to a new version there are flags that will be deleted. In order to facilitate updatating DataWeave, setting the language level of a previous version makes it so that the flags available on that version are visible, mantaining backwards compatibility. Language level defaults to the running DataWeave version and has to be at most the same as the runtime version.
 
-For mule applications the language level is determined by the app's *minMuleVersion*. Given the minMuleVersion, the language level is computed by substracting 2 major versions as shown in the following table:
+For Mule applications, the language level is determined by the application's `minMuleVersion`. Given the `minMuleVersion`, the language level is computed by subtracting two major versions, as the following table shows:
 
 [%header%autowidth.spread,cols="a,a"]
 |===
