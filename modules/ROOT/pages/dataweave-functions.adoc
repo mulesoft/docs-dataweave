@@ -256,7 +256,7 @@ fun toArray<T>(x: T): Array<T> = [x]
 toArray(2)
 ----
 
-DataWeave also supports adding constraints for its type parameters, which in turn constraints the possible accepted inputs for a function.
+DataWeave also supports adding constraints for its type parameters, which constrain the possible accepted inputs for a function.
 
 .Example Function that uses type parameters with constraints
 [source,dataweace,linenums]
