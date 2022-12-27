@@ -258,7 +258,7 @@ toArray(2)
 
 DataWeave also supports adding constraints for its type parameters, which constrain the possible accepted inputs for a function.
 
-.Example Function that uses type parameters with constraints
+.Example Function that Uses Type Parameters with Constraints
 [source,dataweace,linenums]
 ----
 %dw 2.0
