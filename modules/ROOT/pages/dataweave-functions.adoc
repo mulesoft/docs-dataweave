@@ -243,7 +243,7 @@ fun allParametersOptional(param1 = 1, param2 = 2, param3 = 3) =
 
 == Type Parameters Definition
 
-DataWeave supports the use of type parameters in its function definitions, which are similar to generics in some programming languages. 
+DataWeave function definitions support the use of type parameters, which are similar to generics in some programming languages. 
 
 .Example: Function that Uses Type Parameters
 [source,dataweace,linenums]
