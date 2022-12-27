@@ -55,6 +55,39 @@ fun toUser(obj) = {
 }
 ----
 
+== Specify Type Parameters
+
+Starting in DataWeave syntax version 2.5, you can specify the type parameters of a function at the call site.
+
+.Input
+[source,json,linenums]
+----
+{
+  "measures": [1,2,4,1,5,2,3,3]
+}
+----
+
+.Transform
+[source,dataweave,linenums]
+----
+%dw 2.5
+output application/json
+
+fun max<T>(elems: Array<T>): T = elems reduce ((candidate: T, currentMax = elems[0]) -> if (candidate > currentMax) candidate else currentMax)
+---
+{
+  max: max<Number>(measures)
+}
+----
+
+.Output
+[source,linenums,json]
+----
+{
+  "max": 5
+}
+----
+
 == Assign a Lambda to a Var
 
 You can define a function as a variable with a constant directive through `var`
