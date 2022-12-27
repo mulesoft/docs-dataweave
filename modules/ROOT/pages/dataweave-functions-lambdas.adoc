@@ -57,7 +57,7 @@ fun toUser(obj) = {
 
 == Specify Type Parameters
 
-Starting from syntax version 2.5, you can specify the type parameters of a function at the call site.
+Starting in DataWeave syntax version 2.5, you can specify the type parameters of a function at the call site.
 
 .Input
 [source,json,linenums]
