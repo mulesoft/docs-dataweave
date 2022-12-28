@@ -248,7 +248,7 @@ output application/json encoding="sjis"
 ----
 
 [[multipart_reader]]
-====  Multipart/form-data Reader Does Not Support UTF-8 Characters by Default
+====  Multipart/Form-Data Reader Does Not Support UTF-8 Characters by Default
 
 If non-ASCII characters are used in the multipart filenames, UTF-8 results in corrupted data. 
 
