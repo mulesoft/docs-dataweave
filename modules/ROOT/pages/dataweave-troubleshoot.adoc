@@ -222,7 +222,7 @@ Encoding issues can occur because of a mismatch between encodings used to read a
 
 * <<reader_encoding>>
 * <<writer_encoding>>
-* <<multipart/form-data_reader>>
+* <<multipart_reader>>
 
 [[reader_encoding]]
 ==== Incorrect Encoding for the Reader
@@ -247,7 +247,7 @@ output application/json encoding="sjis"
 "～―－＄￠￡㈱①"
 ----
 
-[[multipart/form-data_reader]]
+[[multipart_reader]]
 ====  Multipart/form-data Reader Does Not Support UTF-8 Characters by Default
 
 If non-ASCII characters are used in the multipart filenames, UTF-8 results in corrupted data. 
