@@ -222,6 +222,7 @@ Encoding issues can occur because of a mismatch between encodings used to read a
 
 * <<reader_encoding>>
 * <<writer_encoding>>
+* <<multipart/form-data_reader>>
 
 [[reader_encoding]]
 ==== Incorrect Encoding for the Reader
@@ -246,12 +247,13 @@ output application/json encoding="sjis"
 "～―－＄￠￡㈱①"
 ----
 
-====  The multipart/form-data reader doesn't support UTF-8 characters by default
+[[multipart/form-data_reader]]
+====  Multipart/form-data Reader Does Not Support UTF-8 Characters by Default
 
-If non-ascii characters are used in the multipart filenames, it will result in corrupted data. 
+If non-ASCII characters are used in the multipart filenames, UTF-8 results in corrupted data. 
 
 Set the following system property to enable support for UTF-8 in multipart:
-
++
 `-M-Dmail.mime.allowutf8=true`
 
 == DataWeave Warnings
