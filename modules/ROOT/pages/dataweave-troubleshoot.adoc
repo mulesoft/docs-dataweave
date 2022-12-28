@@ -246,6 +246,13 @@ output application/json encoding="sjis"
 "～―－＄￠￡㈱①"
 ----
 
+====  The multipart/form-data reader doesn't support UTF-8 characters by default
+
+If non-ascii characters are used in the multipart filenames, it will result in corrupted data. 
+
+Set the following system property to enable support for UTF-8 in multipart:
+
+`-M-Dmail.mime.allowutf8=true`
 
 == DataWeave Warnings
 
