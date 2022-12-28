@@ -1,6 +1,6 @@
 = Versioning Behavior in DataWeave
 
-In each version of DataWeave, changes are introduced that modify the way the language behaves. When existing scripts depend on previous behavior, system properties are introduced to toggle the change so that backwards compatibilty is not broken in the current version. These system properties that control behavior in DataWeave are called *Compatibility Flags*. Each flag defined a deletion version, after which it will no longer exists, and the behavior that it controlled will default to the new one.
+New minor versions of DataWeave can introduce changes that modify the way the language behaves. You can use DataWeave system properties that behave as _compatibility flags_ to continue using existing scripts that depend on the previous behavior. However, each flag defines a deletion version, which identifies the version in which the flag is no longer available and the behavior that it controls defaults to the changed behavior.
 
 Specifying a DataWeave language level indicates to the DataWeave runtime what compatibility flags are available. To upgrade and maintain backward compatibility, you can set the language level of a previous version so that the flags available on that version remain visible even if they expire in the DataWeave version to which you upgrade. The language level defaults to the running DataWeave version and has to be at most the same as the runtime version.
 
