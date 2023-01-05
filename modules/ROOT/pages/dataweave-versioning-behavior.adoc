@@ -1,0 +1,18 @@
+= Versioning Behavior in DataWeave
+
+New minor versions of DataWeave can introduce changes that modify the way the language behaves. You can use DataWeave system properties that behave as _compatibility flags_ to continue using existing scripts that depend on the previous behavior. However, each flag defines a deletion version, which identifies the version in which the flag is no longer available and the behavior that it controls defaults to the changed behavior.
+
+Specifying a DataWeave language level indicates to the DataWeave runtime what compatibility flags are available. To upgrade and maintain backward compatibility, you can set the language level of a previous version so that the flags available on that version remain visible even if they expire in the DataWeave version to which you upgrade. The language level defaults to the running DataWeave version and has to be at most the same as the runtime version.
+
+For Mule applications, the language level is determined by the application's `minMuleVersion` setting (see xref:mule-runtime::feature-flagging.adoc#feature-flags-reference[Feature Flags Reference] in the Mule documentation). Given the `minMuleVersion`, the language level is computed by subtracting two major versions, as the following table shows:
+
+[%header%autowidth.spread,cols="a,a"]
+|===
+| minMuleVersion | Language Level
+| 4.5 | 2.5
+| 4.4 | 2.4
+| 4.3 | 2.3
+|===
+
+Setting the Mule version configures the application to use the corresponding DataWeave language level. This setting is independent of the DataWeave syntax version, which is set through a DataWeave script's `%dw` directive. For details, see xref:dataweave-language-introduction.adoc#dw_header[DataWeave Header] and xref:dataweave-versioning-behavior.adoc[].
+For example, the `com.mulesoft.dw.xml_reader.honourMixedContentStructure` system property is a compatibility flag for language level 2.4, when it was introduced, and it is removed in DataWeave 2.5. In DataWeave 2.5, the property is _visible only if_ you set the language level to 2.4. Otherwise, the property defaults to its new behavior in 2.5.
