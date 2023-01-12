@@ -1,64 +1,110 @@
 = What's New in DataWeave
 
-DataWeave 2.4 is bundled with Mule 4.4. The 2.4 version of DataWeave introduces the following features:
+DataWeave 2.5 is bundled with Mule 4.5. The 2.5 version of DataWeave introduces some new features.
 
-* Ability to read larger-than-memory strings automatically. When you are using the indexed reader strategy and processing a String with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. Related reader properties are `com.mulesoft.dw.max_memory_allocation` and `com.mulesoft.dw.buffered_char_sequence.enabled`. Refer to xref:dataweave-indexed-readers.adoc#large-strings-management[Indexed Readers in DataWeave].
-* New reader and writer properties for working with data formats. For example, the XML writer now enables you to define namespaces at the root level.
-* Many new modules, functions, types, annotations, and variables. Some are experimental and subject to change in future releases.
-* A number of functions are overloaded to introduce new helper functions for
-handling `null` values.
+== Versioning Behavior in DataWeave
 
-Changes to the documentation include more detailed function signatures and organization of the functions by their module names, such as `dw::Core`, `dw::core::Strings`, and `dw::util::Math`.
+DataWeave now supports backward compatibility with previous 2.x versions of DataWeave through compatibility flags and syntax-level support:
 
-DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 release, refer to xref:4.4@mule-runtime::whats-new-in-mule.adoc[What's New in Mule 4.4].
+* Compatibility flags are a set of DataWeave xref:dataweave-system-properties.adoc[DataWeave system properties] that enable you to retain specific DataWeave behavior at the Mule application level. The flags are valid for specified DataWeave versions and expire in a future version of DataWeave. Flags change behavior based on the value of the Mule `minMuleVersion` system property, which corresponds to a DataWeave version. See xref:feature-flagging.adoc[] for details.
+//2.5 DOC MERGED: https://github.com/mulesoft/docs-dataweave/pull/214/files
 
-== New Properties for Data Formats
+* Syntax-level support is available at the script level through the `%dw` directive (see xref:dataweave-language-introduction.adoc#dw_header[DataWeave Scripts]). Setting the directive to an earlier version of DataWeave avoids any syntax-breaking changes when the DataWeave runtime engine runs the script. This script-level setting enables you to retain earlier behavior in some scripts while using the latest behavior in others.
+// 2.5 DOC MERGED: https://github.com/mulesoft/docs-dataweave/pull/214/files
 
-DataWeave introduces the following reader and writer properties:
+For detail, see xref:dataweave-versioning-behavior.adoc[].
 
-* DataWeave (dw) reader property: `privileges` enables you to provide a comma-separated list of privileges to use in the format, such as `'Resources,Properties'`.
-* Excel (XLSX) reader property: `tableLimit` enables you to set position of the last column in each row.
-* YAML writer property: `writeDeclaration` enables you to write the header declaration.
-* XML writer properties: `defaultNamespace` specifies the default namespaces of the output XML , and `writeDeclaredNamespaces` marks the namespaces to declare in the root element of the XML.
+== Supported Formats
 
-== New DataWeave Function Modules and Features
+DataWeave now supports the ProtoBuf format and extends its XML support to DTD.
 
-New DataWeave modules and features:
+* Protocol Buffers (Protobuf): This format is typically used with gRPC, the Remote Procedure Call (RPC) framework. See xref:dataweave-formats-protobuf.adoc[].
 
-* xref:dw-core.adoc[dw::Core] introduces new functions and annotations:
-** xref:dw-core-functions-indexof.adoc[indexOf]
-** xref:dw-core-functions-lastindexof.adoc[lastIndexOf]
-** xref:dw-core-functions-onnull.adoc[onNull]
-** xref:dw-core-functions-then.adoc[then]
-** xref:dw-core-annotations.adoc[Core Annotations] introduces a number of new annotations.
-* xref:dw-dates.adoc[dw::core::Dates] is a new module with functions and types to create and manipulate Date types, for example, the function `today`.
-* xref:dw-strings.adoc[dw::core::Strings] introduces new functions:
-  ** xref:dw-strings-functions-collapse.adoc[collapse]
-  ** xref:dw-strings-functions-countcharactersby.adoc[countCharactersBy]
-  ** xref:dw-strings-functions-countmatches.adoc[countMatches]
-  ** xref:dw-strings-functions-everycharacter.adoc[everyCharacter]
-  ** xref:dw-strings-functions-first.adoc[first]
-  ** xref:dw-strings-functions-hammingdistance.adoc[hammingDistance]
-  ** xref:dw-strings-functions-last.adoc[last]
-  ** xref:dw-strings-functions-levenshteindistance.adoc[levenshteinDistance]
-  ** xref:dw-strings-functions-lines.adoc[lines]
-  ** xref:dw-strings-functions-mapstring.adoc[mapString]
-  ** xref:dw-strings-functions-remove.adoc[remove]
-  ** xref:dw-strings-functions-replaceall.adoc[replaceAll]
-  ** xref:dw-strings-functions-reverse.adoc[reverse]
-  ** xref:dw-strings-functions-somecharacter.adoc[someCharacter]
-  ** xref:dw-strings-functions-substring.adoc[substring]
-  ** xref:dw-strings-functions-substringby.adoc[substringBy]
-  ** xref:dw-strings-functions-substringevery.adoc[substringEvery]
-  ** xref:dw-strings-functions-words.adoc[words]
-* xref:dw-coercions.adoc[dw::util::Coercions] is a new DataWeave module with functions and types to simplify data type transformations, for example, the function `toString`.
-* xref:dw-math.adoc[dw::util::Math] is a new DataWeave module with functions and variables that provides mathematical functions, for example, the function `sin`.
-* xref:dw-periods.adoc[dw::util::Periods] is a new DataWeave module with functions and types to simplify the creation of Periods, for example, the function `days`.
-* xref:dw-tree.adoc[dw::util::Tree] introduces new functions:
-  ** xref:dw-tree-functions-filterarrayleafs.adoc[filterArrayLeafs]
-  ** xref:dw-tree-functions-filterobjectleafs.adoc[filterObjectLeafs]
-  ** xref:dw-tree-functions-filtertree.adoc[filterTree]
-  ** xref:dw-tree-functions-isarraytype.adoc[isArrayType]
-  ** xref:dw-tree-functions-isattributetype.adoc[isAttributeType]
-  ** xref:dw-tree-functions-isobjecttype.adoc[isObjectType]
-* xref:dw-values-types.adoc[dw::util::Values] provides a new type `UpdaterValueProvider`.
+* DTD for XML: DataWeave can read and create cXML. However, the DTDs remain disabled for security reasons. See xref:dw-xml.adoc[].
+//TODO: Does this related to the parseDtd flag?
+//TODO: How does this relate to compatibility flags?
+//From Lische: https://salesforce-internal.slack.com/archives/C011SNL2469/p1671213207700189
+
+
+== Reusing DataWeave Types
+
+In addition to loading types from custom DataWeave modules and mappings, DataWeave now can load types defined through JSON schemas, XML schemas, and Java classes.
+
+//TODO: VERIFY XREF AND ANCHOR IN NEW DOC
+See xref:dataweave-type-system.adoc#reusing-types[Reusing Types] in the DataWeave type system documentation
+
+
+== Specifying Type Parameters
+
+See "Specify Type Parameters" in xref:dataweave-functions-lambdas.adoc[].
+
+* Typing enhancements that allow for reuse of type definitions from other sources:
+** Type parameters in a function call.  //TODO: ADD anchored link to section.
+See "Type Parameters Definition" in xref:dataweave-functions.adoc[].
+//TODO: ADD anchored link to section.
+//From ANA: Type parameters in function calls (@Andrés Radunsky): This is a very
+//          advanced scenario where typed parameters, or generics, will now be able
+//          to be declared at the function call level.  So one can say
+//          myFunc<String>()  to signal that the generic in myFunc<T>() should
+//          be a String. In the past, generics were always inferred which led
+//          to some type checking errors. Because this required a syntax change,
+//          it will only be available to scripts declaring %dw 2.5  or higher
+//          (in the future) as their desired version.
+//github MERGE (type parameter application):
+//             https://github.com/mulesoft/docs-dataweave/pull/215/files
+
+** Type selector expression //TODO: Clarify.
+//From ANA: Type selector expression (@Martín Cousido): Users will be able to
+//          navigate through type definitions to define DW types, so from a
+//          complex type you can select a nested part as a new definition.
+// * See Google doc listed in Slack at https://salesforce-internal.slack.com/archives/C011SNL2469/p1672164627375259: https://docs.google.com/document/d/1KLNh_FDnRIPG_nC4IRzBnN2Pr79d0tuvI6shZ12EcKc/edit#heading=h.epfq33bmp8h8
+
+
+* Memory management
+//TODO: NOT Customer Facing, BUT should we mention that there are
+//      improvements in 2.5 and where they can expect to see them?
+//From ANA: Mule memory service integration: Mule is launching a
+//          new memory service in 4.5 which centralized all memory
+//          usage to provide a single observability point. Within the
+//          context of Mule, we had to start using this service to obtain
+//          memory buffers and such. We are assuming Mule will document
+//          this but we might want to add a note somewhere in our docs
+//          about the change when running in the context of Mule.
+
+* Metadata assignment operator. See xref:dw-operators.adoc[].
+//TODO: ADD anchored link to section.
+//github MERGE: https://github.com/mulesoft/docs-dataweave/pull/211
+
+For information about the Mule 4.5 release, refer to xref:4.5@mule-runtime::whats-new-in-mule.adoc[What's New in Mule 4.5].
+
+
+///////////////
+//List from Slack #data-weave-docs (https://salesforce-internal.slack.com/archives/C011SNL2469/p1670446024214799)
+
+//Typing enhancements: These are all improvements to our typing system meant to allow the reuse of type definitions from other sources.
+
+//JsonSchema support: Users will be able to reference their JSON schemas to define DW types.
+
+//XmlSchema support (@Martín Cousido): Users will be able to reference their XML schemas to define DW types.
+
+//Java support (@Christian Chibana): Users will be able to reference their Java classes to define DW types.
+
+
+
+//Attach metadata operator <~ (@Santiago Vacas): This new operator allows to attach metadata to any value and will replace the as syntax that forced type references.
+
+
+//////////////////////
+
+//TODO NOTE on other work (but not in what's new): make sure to point to the metadataOf function for info about when  typeOf is used on a value that has metadata attached. See Slack https://salesforce-internal.slack.com/archives/C011SNL2469/p1670526310905289?thread_ts=1670526284.229539&cid=C011SNL2469
+
+//TBD: ARE THERE ANY NEW ONES?
+//== New Properties for Data Formats
+
+//DataWeave introduces the following reader and writer properties:
+
+//TBD: ARE THERE ANY NEW ONES?
+//== New DataWeave Function Modules and Features
+
+//New and modified DataWeave modules and features:
+//List any that have changed behavior
