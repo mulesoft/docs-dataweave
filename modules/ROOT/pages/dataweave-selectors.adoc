@@ -23,7 +23,7 @@ DataWeave function.
 | Descendants | `..keyName` | Array of values of any matching descendant keys
 | Dynamic | See <<dynamic_selector>>. | &nbsp;
 | Key-value pair | `.&keyName` | Object with the matching key
-| Index | `[<index>]` | Value of any type at selected array index. Use negative numbers to index from the end of an array, starting with `-1` for the last element in the array.
+| Index | `[<index>]` | Value of any type at selected array index. Use negative numbers to index from the end of an array, for example, `-1` for the last element in the array.
 | Range | `[<index> to <index>]`| Array with values from selected indexes
 | XML attribute | `@`, `.@keyName` | String value of the selected attribute
 | Namespace | `keyName.#` | String value of the namespace for the selected key
