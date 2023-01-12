@@ -4,7 +4,7 @@ DataWeave 2.5 is bundled with Mule 4.5. The 2.5 version of DataWeave introduces 
 
 == Versioning Behavior in DataWeave
 
-DataWeave now supports backward compatibility with previous 2.x versions of DataWeave through compatibility flags and syntax-level support:
+DataWeave now enables backward compatibility with previous 2.x versions of DataWeave through compatibility flags and syntax-level support:
 
 * Compatibility flags are a set of DataWeave xref:dataweave-system-properties.adoc[DataWeave system properties] that enable you to retain specific DataWeave behavior at the Mule application level. The flags are valid for specified DataWeave versions and expire in a future version of DataWeave. Flags change behavior based on the value of the Mule `minMuleVersion` system property, which corresponds to a DataWeave version. See xref:feature-flagging.adoc[] for details.
 //2.5 DOC MERGED: https://github.com/mulesoft/docs-dataweave/pull/214/files
