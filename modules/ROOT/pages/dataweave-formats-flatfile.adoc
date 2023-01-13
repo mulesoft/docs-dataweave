@@ -29,8 +29,116 @@ payload
 
 // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
 
-// Flat File config properties are shared with COBOL Copybook and Fixed Width.
-include::partial$dataweave-formats-flatfile-config.adoc[]
+
+[[properties]]
+== Configuration Properties
+
+DataWeave supports the following configuration properties for this format.
+
+
+[[reader_properties]]
+=== Reader Properties
+
+This format accepts properties that provide instructions for reading input data.
+
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`allowLenientWithBinaryNotEndElement`  |`Boolean`|`false`|When the schema contains elements of type Binary or Packed, the `lenient` option does not allow short records, regardless of the last element's
+format type. When you set this property to `true`, the validation applies only to cases in which the record ends with type Binary or Packed.
+
+Valid values are `true` or `false`.
+|`enforceRequires`  |`Boolean`|`false`|Produces an error when set to `true` if a required value is missing.
+
+Valid values are `true` or `false`.
+|`missingValues`  |`String`|`null`|Fill character used to represent missing values. To activate a non-default setting, set the `useMissCharAsDefaultForFill` property to `true`, and use one of the following values to `missingValues`:
+
+* `none` (for the reader) or `NONE` (for the writer): Treats all data as values.
+* `spaces` (for the reader) or `SPACES` (for the writer): Interprets a field consisting of only spaces as a missing value. Default for flat file and fixed-width formats.
+* `zeroes` (for the reader) or `ZEROES` (for the writer): Interprets numeric fields consisting of only `0` characters _and_ character fields consisting of only spaces as missing values.
+* `nulls` (for the reader) or `NULLS` (for the writer): Interprets a field consisting only of `0` bytes as a missing value. Default for COBOL copybook schema.
+
+Valid values are `none` or `spaces` or `zeroes` or `nulls`.
+|`notTruncateDependingOnSubjectNotPresent`  |`Boolean`|`false`|Fills the entire group when the DEPENDING ON subject is not present.
+
+Valid values are `true` or `false`.
+|`recordParsing`  |`String`|`'strict'`|Specifies the expected type of separation between lines or records:
+
+* `strict`: Line break is expected at exact end of each record. `strict` is the default.
+* `lenient`: Line break is used, but records can be shorter or longer than the schema specifies.
+* `noTerminator`: Records follow one another with no separation.
+* `singleRecord`: The entire input is a single record.
+
+Note that schemas with type `Binary` or `Packed` don't allow for line break detection, so setting `recordParsing` to `lenient` only allows long records to be handled, not short ones. These schemas also currently only work with certain single-byte character encodings (so not with UTF-8 or any multibyte format).
+
+Valid values are `strict` or `lenient` or `noTerminator` or `singleRecord`.
+|`retainEmptyStringFieldsOnParsing`  |`Boolean`|`false`|Allow parsing behavior to keep missing string value fields with a default value in the output map
+
+Valid values are `true` or `false`.
+|`schemaPath` (Required) |`String`|`null`|Path to the schema definition. Specifies the location in your local disk of the schema file that parses your input.
+|`segmentIdent`  |`String`|`null`|Segment identifier in the schema for fixed-width or COBOL copybook schemas. Required when parsing a single segment or record definition if the schema includes multiple segment definitions.
+|`structureIdent`  |`String`|`null`|Structure identifier in the schema for flat file schemas. Required when parsing a structure definition if the schema includes multiple structure definitions.
+|`truncateDependingOn`  |`Boolean`|`false`|For COBOL copybook, truncates DEPENDING ON values to the length used.
+
+Valid values are `true` or `false`.
+|`useMissCharAsDefaultForFill`  |`Boolean`|`false`|By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, DataWeave honors the setting of the `missingValues property`. Introduced in DataWeave 4.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823.
+
+Valid values are `true` or `false`.
+|`zonedDecimalStrict`  |`Boolean`|`false`|For COBOL copybook, uses the 'strict' ASCII form of sign encoding for zoned decimal values.
+
+Valid values are `true` or `false`.
+|===
+
+[[writer_properties]]
+=== Writer Properties
+
+This format accepts properties that provide instructions for writing output data.
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
+
+
+Valid values are `true` or `false`.
+|`encoding`  |`String`|`null`|The encoding to use for the output, such as UTF-8.
+
+|`enforceRequires`  |`Boolean`|`false`|Produces an error when set to `true` if a required value is missing.
+
+Valid values are `true` or `false`.
+|`missingValues`  |`String`|`null`|Fill character used to represent missing values. To activate a non-default setting, set the `useMissCharAsDefaultForFill` property to `true`, and use one of the following values to `missingValues`:
+
+* `none` (for the reader) or `NONE` (for the writer): Treats all data as values.
+* `spaces` (for the reader) or `SPACES` (for the writer): Interprets a field consisting of only spaces as a missing value. Default for flat file and fixed-width formats.
+* `zeroes` (for the reader) or `ZEROES` (for the writer): Interprets numeric fields consisting of only `0` characters _and_ character fields consisting of only spaces as missing values.
+* `nulls` (for the reader) or `NULLS` (for the writer): Interprets a field consisting only of `0` bytes as a missing value. Default for COBOL copybook schema.
+
+Valid values are `none` or `spaces` or `zeroes` or `nulls`.
+|`notTruncateDependingOnSubjectNotPresent`  |`Boolean`|`false`|Fills the entire group when the DEPENDING ON subject is not present.
+
+Valid values are `true` or `false`.
+|`recordTerminator`  |`String`|`null`|Line break for a record separator.
+
+Valid values are `lf` or `cr` or `crlf` or `none`.
+|`schemaPath` (Required) |`String`|`null`|Path to the schema definition. Specifies the location in your local disk of the schema file that parses your input.
+|`segmentIdent`  |`String`|`null`|Segment identifier in the schema for fixed-width or COBOL copybook schemas. Required when parsing a single segment or record definition if the schema includes multiple segment definitions.
+|`structureIdent`  |`String`|`null`|Structure identifier in the schema for flat file schemas. Required when parsing a structure definition if the schema includes multiple structure definitions.
+|`trimValues`  |`Boolean`|`false`|Trim values that are longer than the width of a field.
+
+Valid values are `true` or `false`.
+|`truncateDependingOn`  |`Boolean`|`false`|For COBOL copybook, truncates DEPENDING ON values to the length used.
+
+Valid values are `true` or `false`.
+|`useMissCharAsDefaultForFill`  |`Boolean`|`false`|By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, DataWeave honors the setting of the `missingValues property`. Introduced in DataWeave 4.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823.
+
+Valid values are `true` or `false`.
+|`zonedDecimalStrict`  |`Boolean`|`false`|For COBOL copybook, uses the 'strict' ASCII form of sign encoding for zoned decimal values.
+
+Valid values are `true` or `false`.
+|===
 
 
 [[mime_types]]
