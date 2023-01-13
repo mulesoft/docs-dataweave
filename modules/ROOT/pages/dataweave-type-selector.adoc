@@ -1,0 +1,204 @@
+= Type Selector
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+The type selector allows the use of the `.` selector over xref:dataweave-type-system.adoc#composite-types[types] which enables you to easily declare types from existing ones. This feature can also be combined with the new xref:dataweave-selectors-reusing-types.adoc[module loader feature] to load files and translate declarations inside your file into DataWeave type directives which can be accessed in the same way as types from any other module:
+
+Example: DataWeave script
+[source,dataweave,linenums]
+----
+%dw 2.0
+----
+type User = {name: String}
+type NameType = User.name
+var name: NameType = "Seba"
+---
+typeOf(name)
+----
+
+Output 
+----
+"String"
+----
+
+== Examples on How to Use Type Selector
+
+The following example describes how type selection is useful for declaring complex types from other types already declared:
+Example: Composition
+
+DataWeave script
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+---
+type User = {
+ address : {country: String, city: String, street: String, number: Number},
+ userName : String
+}
+type Address = User.address
+
+var userAddress: Address = {country: "Argentina", city: "Rosario", street: "Calle Falsa", number: 123}
+---
+userAddress
+----
+
+Output
+[source,json,linenums]
+----
+{
+ "country": "Argentina",
+ "city": "Rosario",
+ "street": "Calle Falsa",
+ "number": 123
+}
+----
+
+The next example shows how type selection can also be used with Union Types involving object types:
+Example: Union Types
+
+DataWeave script
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+---
+type ID = {name: String} | {id: Number}
+var name: ID = {name: "Seba"}
+var id: ID = {id: 38123}
+var nameString: ID.name = "Seba"
+var idNumber: ID.id = 38123
+---
+[name, id, nameString ++ " is of type " ++ typeOf(nameString), idNumber ++ " is of type " ++ typeOf(idNumber)]
+----
+
+Output
+[source,json,linenums]
+----
+[
+  {
+    "name": "Seba"
+  },
+  {
+    "id": 38123
+  },
+  "Seba is of type String",
+  "38123 is of type Number"
+]
+----
+
+However, the following script fails because the second type is not an object type and there is no way to reference it with the selector:
+
+DataWeave script
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+---
+type UnionType = {name: String} | Number
+type Fail = UnionType.name
+---
+{}
+----
+
+Output
+[source,json,linenums]
+----
+Cannot do selection on Type: Number
+
+4| type Fail = UnionType.name
+----
+
+In the following example, Type selection also supports namespaces:
+Example: Namespace
+
+DataWeave script
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+---
+ns ns1 http://acme.com
+type User = {
+ ns1#name : String,
+ name : Number,
+}
+var nameString: User.ns1#name = "Seba"
+var nameNumber: User.name = 123
+---
+{
+   "NameString" : typeOf(nameString),
+   "NameNumber" : typeOf(nameNumber)
+}
+----
+
+Output
+[source,json,linenums]
+----
+{
+ "NameString": "String",
+ "NameNumber": "Number"
+}
+----
+
+This example outlines how Type selection preserves metadata associated with the type.
+Example: Metadata
+
+DataWeave script
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+---
+type User = {
+ birthDate: Date {format: "dd-MMM-yy"},
+ userName : String {schema: "value"}
+}
+type FormattedDate = User.birthDate
+type UserName = User.userName
+var formattedDate: FormattedDate = "10-SEP-15" as Date {format: "dd-MMM-yy"}
+var otherFormatDate = "23-10-2022" as Date {format: "dd-MM-yyyy"}
+var userName = "Messi" as String {schema: "value"}
+var otherUserName = "Di María" as String {schema: "otherValue"}
+---
+{
+formattedDate: formattedDate is FormattedDate,
+userName: userName is UserName,
+otherFormatDate: otherFormatDate is FormattedDate,
+otherUserName: otherUserName is UserName
+}
+----
+
+Output
+[source,json,linenums]
+----
+{
+ "formattedDate": true,
+ "userName": true,
+ "otherFormatDate": false,
+ "otherUserName": false
+}
+----
+
+This example shows how Type selection also works with generics.
+Example: Generics
+
+DataWeave script
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+---
+type WithParameters<A, B> = {first: A, second: B, nestedObject: {message: A}}
+----
+
+Output
+[source,json,linenums]
+----
+{
+ a: true is WithParameters<Boolean, Number>.first,
+ b: 4592 is WithParameters<String, Number>.second,
+ c: "sdf" is WithParameters<String, Number>.nestedObject.message,
+}
+----
