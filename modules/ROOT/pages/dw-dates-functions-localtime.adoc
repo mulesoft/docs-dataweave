@@ -19,12 +19,12 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `parts` | `Number` values for `hour`, `minutes`, and
-            `seconds` fields. Valid values are 0 through 23 for the
-            `hour`, 0 through 59 for `minutes`, and 0 through 59 (including decimals, such as 59.99) for `seconds` fields.
-            You can specify the name-value pairs in any order,
-            but the output is ordered as a default `LocalTime` value,
-            such as `10:10:10`. The input fields are parts of
-            a `LocalDateTimeFactory` type.
+          `seconds` fields. Valid values are 0 through 23 for the
+          `hour`, 0 through 59 for `minutes`, and 0 through 59 (including decimals, such as 59.99) for `seconds` fields.
+          You can specify the name-value pairs in any order,
+          but the output is ordered as a default `LocalTime` value,
+          such as `10:10:10`. The input fields are parts of
+          a `LocalDateTimeFactory` type.
 |===
 
 === Example
@@ -52,3 +52,4 @@ output application/json
    "newLocalTime": "12:30:40"
 }
 ----
+

@@ -20,14 +20,14 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `str` | The `String` value to transform into a `LocalDateTime` value.
 | `format` | The formatting to use on the `LocalDateTime` value.
-             A `null` value has no effect on the `LocalDateTime` value.
-             This parameter accepts Java character patterns based
-             on ISO-8601. A `LocalDateTime` value, such as
-             `2011-12-03T10:15:30.000000` has
-             the format `uuuu-MM-dd HH:mm:ss`.
+           A `null` value has no effect on the `LocalDateTime` value.
+           This parameter accepts Java character patterns based
+           on ISO-8601. A `LocalDateTime` value, such as
+           `2011-12-03T10:15:30.000000` has
+           the format `uuuu-MM-dd HH:mm:ss`.
 | `locale` | Optional ISO 3166 country code to use, such as `US`,
-             `AR`, or `ES`. A `null` or absent value uses your
-             JVM default.
+           `AR`, or `ES`. A `null` or absent value uses your
+           JVM default.
 |===
 
 === Example

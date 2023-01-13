@@ -20,13 +20,13 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `str` | The `String` value to transform into a `Time` value.
 | `format` | The formatting to use on the `Time` value.
-             A `null` value has no effect on the `Time` value.
-             This parameter accepts Java character patterns based
-             on ISO-8601. A `Time` value, such as
-             `10:15:30.000000`, has the format `HH:mm:ss.nxxx`.
+           A `null` value has no effect on the `Time` value.
+           This parameter accepts Java character patterns based
+           on ISO-8601. A `Time` value, such as
+           `10:15:30.000000`, has the format `HH:mm:ss.nxxx`.
 | `locale` | Optional ISO 3166 country code to use, such as `US`,
-             `AR`, or `ES`. A `null` or absent value uses your
-             JVM default.
+           `AR`, or `ES`. A `null` or absent value uses your
+           JVM default.
 |===
 
 === Example
