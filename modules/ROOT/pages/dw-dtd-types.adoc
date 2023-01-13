@@ -1,0 +1,19 @@
+= Dtd Types (dw::xml::Dtd)
+
+[%header, cols="1,2a,3a"]
+|===
+| Type | Definition | Description
+
+| DocType
+| `type DocType = { rootName: String, publicId?: String, systemId?: String, internalSubset?: String }`
+| DataWeave type for representing a doctype declaration that is part of an XML file.
+Supports the following fields:
+
+* `rootName`: Root element of the declaration.
+* `publicId`: Publicly available standard (optional).
+* `systemId`: Local URL (optional).
+* `internalSubset`: Internal DTD subset (optional).
+
+_Introduced in DataWeave version 2.5.0._
+
+|===
