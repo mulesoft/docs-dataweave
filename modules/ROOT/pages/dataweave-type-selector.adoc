@@ -25,6 +25,7 @@ Output
 == Examples on How to Use Type Selector
 
 The following example describes how type selection is useful for declaring complex types from other types already declared:
++
 Example: Composition
 
 DataWeave script
@@ -56,6 +57,7 @@ Output
 ----
 
 The next example shows how type selection can also be used with Union Types involving object types:
++
 Example: Union Types
 
 DataWeave script
@@ -111,6 +113,7 @@ Cannot do selection on Type: Number
 ----
 
 In the following example, Type selection also supports namespaces:
++
 Example: Namespace
 
 DataWeave script
@@ -142,7 +145,8 @@ Output
 }
 ----
 
-This example outlines how Type selection preserves metadata associated with the type.
+This example outlines how Type selection preserves metadata associated with the type:
++
 Example: Metadata
 
 DataWeave script
@@ -181,7 +185,8 @@ Output
 }
 ----
 
-This example shows how Type selection also works with generics.
+This example shows how Type selection also works with generics:
++
 Example: Generics
 
 DataWeave script
