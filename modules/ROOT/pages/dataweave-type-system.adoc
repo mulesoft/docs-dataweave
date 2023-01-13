@@ -165,7 +165,7 @@ For repeated fields use `&#42;`. For example, the following type allows you to h
 %dw 2.0
 output application/json
 
-{
+type User = {
     firstName: String,
     lastName*: String,
     age: Number
@@ -179,7 +179,7 @@ For conditional fields, use `?`. For example, the following type allows the `age
 %dw 2.0
 output application/json
 
-{
+type User = {
     firstName: String,
     lastName*: String,
     age?: Number

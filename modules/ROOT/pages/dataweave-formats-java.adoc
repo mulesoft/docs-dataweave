@@ -41,13 +41,19 @@ The following table maps Java classes to DataWeave types.
 | `java.util.Iterator` | `Array`
 | `java.util.Map` | `Object`
 | `java.util.Optional` | `Null` or `Value`
+| `java.util.OptionalInt` | `Null` or `Number`
+| `java.util.OptionalDouble` | `Null` or `Number`
+| `java.util.OptionalLong` | `Null` or `Number`
 | `byte[]` | `Binary`
 | `java.lang.InputStream` | `Binary`
+| `java.nio.ByteBuffer` | `Binary`
 | `byte` | `Binary`
 | `java.lang.File` | `Binary`
+| `java.time.Instant` | `LocalDateTime`
 | `java.time.LocalDateTime` | `LocalDateTime`
 | `java.sql.Timestamp` | `LocalDateTime`
 | `java.sql.Date` | `LocalDateTime`
+| `java.util.Date` | `LocalDateTime`
 | `java.time.ZonedDateTime` | `DateTime`
 | `java.time.LocalTime` | `LocalTime`
 | `java.time.OffsetTime` |`Time`
