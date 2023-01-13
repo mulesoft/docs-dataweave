@@ -164,7 +164,7 @@ the `headers` keyword.
 
 ==== Input
 
-This example serves as input to separate DataWeave scripts. shows a raw `multipart/form-data` payload with a `34b21` boundary consisting of 3 parts:
+This example serves as input to separate DataWeave scripts. It shows a raw `multipart/form-data` payload with a `34b21` boundary consisting of 3 parts:
 
 * a `text/plain` one named `text`
 * an `application/json` file (`a.json`) named `file1`
@@ -219,12 +219,15 @@ list of parts, each containing its headers and content. The following
 DataWeave script produces the raw multipart data (previously analyzed)
 if the HTML data is available in the payload.
 
+NOTE: To provide a consistent output in the DataWeave documentation, the example hardcodes the `boundary` property.
+However, you do not need to hardcode this property in most cases because DataWeave generates a random boundary and adds it to the
+output MIME type.
+
 .Writing Multipart Content:
 [source,dataweave,linenums]
 ----
 %dw 2.0
-output multipart/form-data
-boundary='34b21'
+output multipart/form-data boundary='34b21'
 ---
 {
   parts : {
@@ -576,10 +579,12 @@ This format accepts properties that provide instructions for reading input data.
 
 [cols="1,1,1,3a", options="header"]
 |===
-| Parameter | Type | Default | Description
-| `boundary` | `String` | `null` | The multipart `boundary` value. A string to
-delimit parts.
-|`defaultContentType`  |`String`| This property has no default value. | Sets the default Content-Type to use on parts of the `multipart/*` format. When set, this property takes precedence over the https://docs.mulesoft.com/dataweave/latest/dataweave-system-properties[system property setting] for `com.mulesoft.dw.multipart.defaultContentType`. _Introduced in DataWeave 2.3 (2.3.0-20210720) for the August 2021 release of Mule 4.3.0-20210719._
+|Parameter |Type |Default|Description
+|`boundary`  |`String`|`null`|The multipart `boundary` value, a string to delimit parts.
+|`defaultContentType`  |`String`|`'application/octet-stream'`|Sets the default Content-Type to use on parts of the `multipart/*` format. When set, this property takes precedence over the setting for the https://docs.mulesoft.com/dataweave/latest/dataweave-system-properties[system property] `com.mulesoft.dw.multipart.defaultContentType`.
+
+Introduced in DataWeave 2.3 (2.3.0-20210720) for the August 2021 release of Mule 4.3.0-20210719.
+
 |===
 
 [[writer_properties]]
@@ -591,8 +596,10 @@ This format accepts properties that provide instructions for writing output data
 |===
 |Parameter |Type |Default|Description
 |`boundary`  |`String`|`null`|The multipart `boundary` value, a string to delimit parts.
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
-|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
+
 
 Valid values are `true` or `false`.
 |===
