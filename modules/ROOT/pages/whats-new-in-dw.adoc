@@ -89,7 +89,6 @@ The following functions are updated or new in this release:
 ** xref:dw-runtime-functions-version.adoc[] (new in 2.5)
 
 
-** xref:dw-strings-functions-everycharacter.adoc[]
 
 * Memory management
 //TODO: NOT Customer Facing, BUT should we mention that there are
