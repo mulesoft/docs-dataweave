@@ -20,11 +20,9 @@ DataWeave now supports the ProtoBuf format and extends its XML support to DTD.
 
 * Protocol Buffers (Protobuf): This format is typically used with gRPC, the Remote Procedure Call (RPC) framework. See xref:dataweave-formats-protobuf.adoc[].
 
-* DTD for XML: DataWeave can read and create cXML. However, the DTDs remain disabled for security reasons. See xref:dw-xml.adoc[].
-//TODO: Does this related to the parseDtd flag?
-//TODO: How does this relate to compatibility flags?
-//From Lische: https://salesforce-internal.slack.com/archives/C011SNL2469/p1671213207700189
-
+* DTD for XML: To support cXML, DataWeave can read and create doctype declarations through xref:dw-dtd.adoc[]. This feature is primarly for supporting cXML. For security reasons, the DTDs remain disabled. 
+// TODO: how does this related to the new system property, 
+// xref:dataweave-system-properties.adoc[system property] `com.mulesoft.dw.xml_reader.parseDtd`?
 
 == Reusing DataWeave Types
 
@@ -59,6 +57,102 @@ See "Type Parameters Definition" in xref:dataweave-functions.adoc[].
 //          complex type you can select a nested part as a new definition.
 // * See Google doc listed in Slack at https://salesforce-internal.slack.com/archives/C011SNL2469/p1672164627375259: https://docs.google.com/document/d/1KLNh_FDnRIPG_nC4IRzBnN2Pr79d0tuvI6shZ12EcKc/edit#heading=h.epfq33bmp8h8
 
+== New DataWeave Function Modules and Features
+
+DataWeave introduces the following:
+
+* xref:dw-dtd.adoc[] module
+** xref:dw-dtd-functions-doctypeasstring.adoc[] function 
+** xref:dw-dtd-types.adoc[] types
+
+The following functions are updated or new in this release:
+
+* xref:dw-binaries.adoc[] updates: 
+** xref:dw-binaries-functions-frombase64.adoc[]
+** xref:dw-binaries-functions-fromhex.adoc[]
+** xref:dw-binaries-functions-tobase64.adoc[]
+* xref:dw-binaries-functions-concatwith.adoc[] (new in 2.5)
+
+* xref:dw-coercions.adoc[] updates:
+** xref:dw-coercions-functions-toarray.adoc[]
+** xref:dw-coercions-functions-tobinary.adoc[]
+** xref:dw-coercions-functions-todate.adoc[]
+** xref:dw-coercions-functions-todatetime.adoc[]
+** xref:dw-coercions-functions-tolocaldatetime.adoc[]
+** xref:dw-coercions-functions-tolocaltime.adoc[]
+** xref:dw-coercions-functions-tonumber.adoc[]
+** xref:dw-coercions-functions-tostring.adoc[]
+** xref:dw-coercions-functions-totime.adoc[]
+
+
+* xref:dw-core.adoc[] updates:
+** xref:dw-core-annotations.adoc[]
+** xref:dw-core-functions-distinctby.adoc[]
+** xref:dw-core-functions-filter.adoc[]
+** xref:dw-core-functions-filterobject.adoc[]
+** xref:dw-core-functions-groupby.adoc[]
+** xref:dw-core-functions-minusminus.adoc[]
+** xref:dw-core-functions-typeof.adoc[]
+
+* xref:dw-crypto.adoc[] update:
+** xref:dw-crypto-functions-hmacwith.adoc[]
+
+* xref:dw-dates.adoc[] updates:
+** xref:dw-dataformat-types.adoc[]
+** xref:dw-dates-functions-atbeginningofday.adoc[]
+** xref:dw-dates-functions-atbeginningofhour.adoc[]
+** xref:dw-dates-functions-atbeginningofmonth.adoc[]
+** xref:dw-dates-functions-atbeginningofweek.adoc[]
+** xref:dw-dates-functions-atbeginningofyear.adoc[]
+** xref:dw-dates-functions-date.adoc[]
+** xref:dw-dates-functions-datetime.adoc[]
+** xref:dw-dates-functions-localdatetime.adoc[]
+** xref:dw-dates-functions-localtime.adoc[]
+** xref:dw-dates-functions-time.adoc[]
+** xref:dw-dates-functions-today.adoc[]
+
+* xref:dw-math.adoc[] updates:
+** xref:dw-math-functions-acos.adoc[]
+** xref:dw-math-functions-asin.adoc[]
+** xref:dw-math-functions-atan.adoc[]
+** xref:dw-math-functions-cos.adoc[]
+** xref:dw-math-functions-log10.adoc[]
+** xref:dw-math-functions-logn.adoc[]
+** xref:dw-math-functions-sin.adoc[]
+** xref:dw-math-functions-tan.adoc[]
+** xref:dw-math-functions-todegrees.adoc[]
+** xref:dw-math-functions-toradians.adoc[]
+** xref:dw-math-variables.adoc[]
+
+* xref:dw-multipart.adoc[] updates:
+** xref:dw-multipart-functions-field.adoc[]
+** xref:dw-multipart-functions-file.adoc[]
+** xref:dw-multipart-functions-form.adoc[]
+
+* xref:dw-runtime.adoc[] updates:
+** xref:dw-runtime-functions-eval.adoc[]
+** xref:dw-runtime-types.adoc[]
+** xref:dw-runtime-functions-version.adoc[] (new in 2.5)
+
+* xref:dw-periods.adoc[] updates:
+** xref:dw-periods-functions-days.adoc[]
+** xref:dw-periods-functions-duration.adoc[]
+** xref:dw-periods-functions-hours.adoc[]
+** xref:dw-periods-functions-minutes.adoc[]
+** xref:dw-periods-functions-months.adoc[]
+** xref:dw-periods-functions-period.adoc[]
+** xref:dw-periods-functions-seconds.adoc[]
+** xref:dw-periods-functions-years.adoc[]
+
+* xref:dw-strings.adoc[] updates:
+** xref:dw-strings-functions-countcharactersby.adoc[]
+** xref:dw-strings-functions-countmatches.adoc[]
+** xref:dw-strings-functions-everycharacter.adoc[]
+** xref:dw-strings-functions-first.adoc[]
+** xref:dw-strings-functions-last.adoc[]
+** xref:dw-strings-functions-somecharacter.adoc[]
+** xref:dw-strings-functions-substringby.adoc[]
+** xref:dw-strings-functions-withmaxsize.adoc[]
 
 * Memory management
 //TODO: NOT Customer Facing, BUT should we mention that there are
