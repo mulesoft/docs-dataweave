@@ -76,7 +76,6 @@ The following functions are updated or new in this release:
 
 * xref:dw-core.adoc[] updates:
 ** xref:dw-core-annotations.adoc[]: `@UntrustedCode&#40;&#41;` changes to `@UntrustedCode&#40;privileges: Array<String&#62;&#41;`
-** xref:dw-core-functions-distinctby.adoc[]
 ** xref:dw-core-functions-filter.adoc[]
 ** xref:dw-core-functions-filterobject.adoc[]
 ** xref:dw-core-functions-groupby.adoc[]
