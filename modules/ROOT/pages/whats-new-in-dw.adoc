@@ -83,7 +83,6 @@ The following functions are updated or new in this release:
 ** xref:dw-dataformat-types.adoc[]
 
 
-** xref:dw-multipart-functions-form.adoc[]
 
 * xref:dw-runtime.adoc[] updates:
 ** xref:dw-runtime-functions-eval.adoc[]
