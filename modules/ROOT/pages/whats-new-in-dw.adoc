@@ -82,7 +82,6 @@ The following functions are updated or new in this release:
 * xref:dw-dates.adoc[] updates:
 ** xref:dw-dataformat-types.adoc[]
 ** xref:dw-dates-functions-datetime.adoc[]
-** xref:dw-dates-functions-localdatetime.adoc[]
 ** xref:dw-dates-functions-localtime.adoc[]
 ** xref:dw-dates-functions-time.adoc[]
 ** xref:dw-dates-functions-today.adoc[]
