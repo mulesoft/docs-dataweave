@@ -72,7 +72,6 @@ The following functions are updated or new in this release:
 
 * xref:dw-coercions.adoc[] updates:
 ** xref:dw-coercions-functions-tostring.adoc[] adds the `locale` parameter.
-** xref:dw-coercions-functions-totime.adoc[]
 
 
 * xref:dw-core.adoc[] updates:
