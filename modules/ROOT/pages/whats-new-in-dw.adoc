@@ -81,7 +81,6 @@ The following functions are updated or new in this release:
 ** xref:dw-core-functions-filter.adoc[]
 ** xref:dw-core-functions-filterobject.adoc[]
 ** xref:dw-core-functions-groupby.adoc[]
-** xref:dw-core-functions-minusminus.adoc[]
 ** xref:dw-core-functions-typeof.adoc[]
 
 * xref:dw-crypto.adoc[] update:
