@@ -82,7 +82,6 @@ The following functions are updated or new in this release:
 * xref:dw-dates.adoc[] updates:
 ** xref:dw-dataformat-types.adoc[]
 
-** xref:dw-math-functions-tan.adoc[]
 ** xref:dw-math-functions-todegrees.adoc[]
 ** xref:dw-math-functions-toradians.adoc[]
 ** xref:dw-math-variables.adoc[]
