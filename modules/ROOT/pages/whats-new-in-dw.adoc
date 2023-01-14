@@ -61,23 +61,20 @@ See "Type Parameters Definition" in xref:dataweave-functions.adoc[].
 
 DataWeave introduces the following changes:
 
-* xref:dw-dtd.adoc[] module
+* xref:dw-dtd.adoc[] module is new and includes the following:
 ** xref:dw-dtd-functions-doctypeasstring.adoc[] function 
 ** xref:dw-dtd-types.adoc[] types
 
-The following functions are updated or new in this release:
+* xref:dw-binaries.adoc[] update: 
+** xref:dw-binaries-functions-concatwith.adoc[] (new in 2.5)
 
-* xref:dw-binaries.adoc[] updates: 
-* xref:dw-binaries-functions-concatwith.adoc[] (new in 2.5)
-
-* xref:dw-coercions.adoc[] updates:
+* xref:dw-coercions.adoc[] update:
 ** xref:dw-coercions-functions-tostring.adoc[] adds the `locale` parameter.
 
 
 * xref:dw-core.adoc[] updates:
 ** xref:dw-core-annotations.adoc[]: `@UntrustedCode&#40;&#41;` changes to `@UntrustedCode&#40;privileges: Array<String&#62;&#41;`
 ** xref:dw-core-functions-groupby.adoc[]
-
 
 * xref:dw-dates.adoc[] updates:
 ** xref:dw-dataformat-types.adoc[]
