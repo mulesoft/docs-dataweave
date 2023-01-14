@@ -68,7 +68,6 @@ DataWeave introduces the following:
 The following functions are updated or new in this release:
 
 * xref:dw-binaries.adoc[] updates: 
-** xref:dw-binaries-functions-fromhex.adoc[]
 ** xref:dw-binaries-functions-tobase64.adoc[]
 * xref:dw-binaries-functions-concatwith.adoc[] (new in 2.5)
 
