@@ -84,7 +84,7 @@ The following functions are updated or new in this release:
 
 
 
-* xref:dw-runtime.adoc[] updates:
+* xref:dw-runtime.adoc[] update:
 ** xref:dw-runtime-functions-eval.adoc[]
 ** xref:dw-runtime-types.adoc[]
 ** xref:dw-runtime-functions-version.adoc[] (new in 2.5)
