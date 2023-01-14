@@ -88,7 +88,6 @@ The following functions are updated or new in this release:
 ** xref:dw-runtime-types.adoc[]
 ** xref:dw-runtime-functions-version.adoc[] (new in 2.5)
 
-** xref:dw-periods-functions-years.adoc[]
 
 * xref:dw-strings.adoc[] updates:
 ** xref:dw-strings-functions-countcharactersby.adoc[]
