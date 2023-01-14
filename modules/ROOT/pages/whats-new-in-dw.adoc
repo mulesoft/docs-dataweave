@@ -85,7 +85,6 @@ The following functions are updated or new in this release:
 ** xref:dw-dates-functions-localtime.adoc[]
 ** xref:dw-dates-functions-today.adoc[]
 
-** xref:dw-math-functions-acos.adoc[]
 ** xref:dw-math-functions-asin.adoc[]
 ** xref:dw-math-functions-atan.adoc[]
 ** xref:dw-math-functions-cos.adoc[]
