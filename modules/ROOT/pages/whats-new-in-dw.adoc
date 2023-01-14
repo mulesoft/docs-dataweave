@@ -83,7 +83,6 @@ The following functions are updated or new in this release:
 ** xref:dw-core-functions-groupby.adoc[]
 ** xref:dw-core-functions-typeof.adoc[]
 
-* xref:dw-crypto.adoc[] update:
 ** xref:dw-crypto-functions-hmacwith.adoc[]
 
 * xref:dw-dates.adoc[] updates:
