@@ -3,9 +3,12 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Using the dot selector (`.`) over DataWeave xref:dataweave-type-system.adoc#composite-types[types] enables you to declare new types from existing ones. Combined with the xref:dataweave-selectors-reusing-types.adoc[module loader], DataWeave can also load and translate declarations from a custom module file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module:
+Using the dot selector (`.`) over DataWeave xref:dataweave-type-system.adoc#composite-types[types] enables you to declare new types from existing ones. Combined with the xref:dataweave-selectors-reusing-types.adoc[module loader], DataWeave can also load and translate declarations from a custom module file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module.
 
-Example: DataWeave script
+== Example: Declaring a New Type from an Existing Type
+The following example declares the `NameType` from the `User` type. Using the dot selector in `User.name` to declare the `name` variable a `NameType` enables the `typeOf()`  function to return the basic type, `"String"`. Notice how the DataWeave variable `name` is declared as a `NameType` value "Seba".
+
+.DataWeave script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -16,18 +19,17 @@ var name: NameType = "Seba"
 typeOf(name)
 ----
 
-Output 
+.Output: 
 ----
 "String"
 ----
 
-== Examples on How to Use Type Selector
+== Use the Dot Selector (`.`) Over DataWeave Types
 
-The following example uses the dot selector to declare a new type `Address` from one key in the complex type `User`.
+=== Composition
+The following example uses the dot selector (`.`) to declare a new type `Address` from one key in the complex type `User`.
 
-Example: Composition
-
-DataWeave script
+.DataWeave script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -43,7 +45,7 @@ var userAddress: Address = {country: "Argentina", city: "Rosario", street: "Call
 userAddress
 ----
 
-Output
+.Output:
 [source,json,linenums]
 ----
 {
@@ -54,11 +56,10 @@ Output
 }
 ----
 
+=== Union Types
 The next example shows how type selection can also be used with `Union` types that consist of `Object` types:
 
-Example: Union Types
-
-DataWeave script
+.DataWeave script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -72,7 +73,7 @@ var idNumber: ID.id = 38123
 [name, id, nameString ++ " is of type " ++ typeOf(nameString), idNumber ++ " is of type " ++ typeOf(idNumber)]
 ----
 
-Output
+.Output:
 [source,json,linenums]
 ----
 [
@@ -89,7 +90,7 @@ Output
 
 However, the following script fails because the second type is not an `Object` type and there is no way to reference it with the selector:
 
-DataWeave script
+.DataWeave script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -100,7 +101,7 @@ type Fail = UnionType.name
 {}
 ----
 
-Output
+.Output:
 [source,json,linenums]
 ----
 Cannot do selection on Type: Number
@@ -108,16 +109,14 @@ Cannot do selection on Type: Number
 4| type Fail = UnionType.name
 ----
 
+=== Namespace
 The following example shows type selection of a namespace:
 
-Example: Namespace
-
-DataWeave script
+.DataWeave script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
 output application/json
----
 ns ns1 http://acme.com
 type User = {
  ns1#name : String,
@@ -132,7 +131,7 @@ var nameNumber: User.name = 123
 }
 ----
 
-Output
+.Output:
 [source,json,linenums]
 ----
 {
@@ -141,11 +140,10 @@ Output
 }
 ----
 
-This example outlines how Type selection preserves metadata associated with the type:
+=== Metadata
+This example outlines how type selection preserves metadata associated with the type:
 
-Example: Metadata
-
-DataWeave script
+.DataWeave script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -169,7 +167,7 @@ otherUserName: otherUserName is UserName
 }
 ----
 
-Output
+.Output:
 [source,json,linenums]
 ----
 {
@@ -180,19 +178,24 @@ Output
 }
 ----
 
+=== Generics
 This example shows type selection with generics:
 
-Example: Generics
-
-DataWeave script
+.DataWeave script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
 output application/json
 type WithParameters<A, B> = {first: A, second: B, nestedObject: {message: A}}
+---
+{
+ a: true is WithParameters<Boolean, Number>.first,
+ b: 4592 is WithParameters<String, Number>.second,
+ c: "sdf" is WithParameters<String, Number>.nestedObject.message,
+}
 ----
 
-Output
+.Output:
 [source,json,linenums]
 ----
 {
