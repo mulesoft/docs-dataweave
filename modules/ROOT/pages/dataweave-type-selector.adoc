@@ -23,7 +23,7 @@ Output
 
 == Examples on How to Use Type Selector
 
-The following example describes how type selection is useful for declaring complex types from other types already declared:
+The following example uses the dot selector to declare a new type `Address` from one key in the complex type `User`.
 
 Example: Composition
 
