@@ -180,7 +180,7 @@ Output
 }
 ----
 
-This example shows how Type selection also works with generics:
+This example shows type selection with generics:
 
 Example: Generics
 
