@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-The type selector allows the use of the `.` selector over xref:dataweave-type-system.adoc#composite-types[types] which enables you to easily declare types from existing ones. This feature can also be combined with the new xref:dataweave-selectors-reusing-types.adoc[module loader feature] to load files and translate declarations inside your file into DataWeave type directives which can be accessed in the same way as types from any other module:
+Using the dot selector (`.`) over DataWeave xref:dataweave-type-system.adoc#composite-types[types] enables you to declare new types from existing ones. Combined with the xref:dataweave-selectors-reusing-types.adoc[module loader], DataWeave can also load and translate declarations from a custom module file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module:
 
 Example: DataWeave script
 [source,dataweave,linenums]
