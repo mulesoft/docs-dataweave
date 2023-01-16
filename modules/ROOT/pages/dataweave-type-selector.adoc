@@ -90,7 +90,7 @@ Output
 ]
 ----
 
-However, the following script fails because the second type is not an object type and there is no way to reference it with the selector:
+However, the following script fails because the second type is not an `Object` type and there is no way to reference it with the selector:
 
 DataWeave script
 [source,dataweave,linenums]
