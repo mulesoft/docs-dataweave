@@ -111,7 +111,7 @@ Cannot do selection on Type: Number
 4| type Fail = UnionType.name
 ----
 
-In the following example, Type selection also supports namespaces:
+The following example shows type selection of a namespace:
 
 Example: Namespace
 
