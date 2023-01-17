@@ -16,7 +16,7 @@ For detail, see xref:dataweave-versioning-behavior.adoc[].
 
 == Supported Formats
 
-DataWeave supports the ProtoBuf format and extends its XML support to DTD.
+DataWeave supports the ProtoBuf format and extends its XML support to reading and creating doctype directives (DTDs).
 
 * Protocol Buffers (Protobuf): This format is typically used with gRPC, the Remote Procedure Call (RPC) framework. See xref:dataweave-formats-protobuf.adoc[].
 
