@@ -1,12 +1,12 @@
-= Type Selector
+= Selecting Types
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
 Using the dot selector (`.`) over DataWeave xref:dataweave-type-system.adoc#composite-types[types] enables you to declare new types from existing ones. Combined with the xref:dataweave-selectors-reusing-types.adoc[module loader], DataWeave can also load and translate declarations from a custom module file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module.
 
-== Example: Declaring a New Type from an Existing Type
-The following example declares the `NameType` from the `User` type. Using the dot selector in `User.name` to declare the `name` variable a `NameType` enables the `typeOf()`  function to return the basic type, `"String"`. Notice how the DataWeave variable `name` is declared as a `NameType` value "Seba".
+== Declare a New Type from an Existing Type
+The following example declares the `NameType` from the `User` type. Using the dot selector in `User.name` to declare the `name` variable a `NameType` enables the `typeOf()`  function to return the basic type, `"String"`. Notice how the DataWeave variable `name` is declared as a `NameType` value "Seba":
 
 .DataWeave script:
 [source,dataweave,linenums]
@@ -24,10 +24,8 @@ typeOf(name)
 "String"
 ----
 
-== Use the Dot Selector (`.`) Over DataWeave Types
-
-=== Composition
-The following example uses the dot selector (`.`) to declare a new type `Address` from one key in the complex type `User`.
+== Compose a Type from an Existing Type's Field
+The following example uses the dot selector (`.`) to declare a new type `Address` from one key in the complex type `User`:
 
 .DataWeave script:
 [source,dataweave,linenums]
@@ -56,8 +54,8 @@ userAddress
 }
 ----
 
-=== Union Types
-The next example shows how type selection can also be used with `Union` types that consist of `Object` types:
+== Select Types from Union Types
+The following example shows how type selection can also be used with `Union` types that consist of `Object` types:
 
 .DataWeave script:
 [source,dataweave,linenums]
@@ -109,7 +107,7 @@ Cannot do selection on Type: Number
 4| type Fail = UnionType.name
 ----
 
-=== Namespace
+== Select Namespaces from a Type
 The following example shows type selection of a namespace:
 
 .DataWeave script:
@@ -140,7 +138,7 @@ var nameNumber: User.name = 123
 }
 ----
 
-=== Metadata
+== Select Types to Preserve Metadata
 This example outlines how type selection preserves metadata associated with the type:
 
 .DataWeave script:
@@ -178,8 +176,8 @@ otherUserName: otherUserName is UserName
 }
 ----
 
-=== Generics
-This example shows type selection with generics:
+== Select Types with Type Parameters 
+This example shows type selection with type parameters, which enables you to write a function or data type generically:
 
 .DataWeave script:
 [source,dataweave,linenums]
@@ -199,8 +197,8 @@ type WithParameters<A, B> = {first: A, second: B, nestedObject: {message: A}}
 [source,json,linenums]
 ----
 {
- a: true is WithParameters<Boolean, Number>.first,
- b: 4592 is WithParameters<String, Number>.second,
- c: "sdf" is WithParameters<String, Number>.nestedObject.message,
+  "a": true,
+  "b": true,
+  "c": true
 }
 ----
