@@ -107,7 +107,7 @@ Cannot do selection on Type: Number
 4| type Fail = UnionType.name
 ----
 
-== Select Namespaces from a Type
+== Select Types from Namespaces
 The following example shows type selection of a namespace:
 
 .DataWeave script:
@@ -177,7 +177,7 @@ otherUserName: otherUserName is UserName
 ----
 
 == Select Types with Type Parameters 
-This example shows type selection with type parameters, which enables you to write a function or data type generically:
+This example shows type selection with ype parameters, which enables you to write a function or data type generically:
 
 .DataWeave script:
 [source,dataweave,linenums]
