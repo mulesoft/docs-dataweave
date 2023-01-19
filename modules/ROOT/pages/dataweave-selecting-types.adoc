@@ -6,7 +6,7 @@ endif::[]
 Using the dot selector (`.`) over DataWeave xref:dataweave-type-system.adoc#composite-types[types] enables you to declare new types from existing ones. Combined with the xref:dataweave-selectors-reusing-types.adoc[module loader], DataWeave can also load and translate declarations from a custom module file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module.
 
 == Declare a New Type from an Existing Type
-The following example declares the `NameType` from the `User` type. Using the dot selector in `User.name` to declare the `name` variable a `NameType` enables the `typeOf()`  function to return the basic type, `"String"`. Notice how the DataWeave variable `name` is declared as a `NameType` value "Seba":
+The following example declares the `NameType` from the `User` type. Using the dot selector in `User.name` to declare the `name` variable a `NameType` enables the `typeOf()`  function to return the primitive type, `"String"`. Notice how the DataWeave variable `name` is declared as a `NameType` value "Seba":
 
 .DataWeave script:
 [source,dataweave,linenums]
