@@ -139,7 +139,7 @@ var nameNumber: User.name = 123
 ----
 
 == Select Types to Preserve Metadata
-This example outlines how type selection preserves metadata associated with the type:
+This example shows that type selection preserves metadata associated with the type:
 
 .DataWeave script:
 [source,dataweave,linenums]
