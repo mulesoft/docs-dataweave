@@ -177,7 +177,7 @@ otherUserName: otherUserName is UserName
 ----
 
 == Select Types with Type Parameters 
-This example shows type selection with ype parameters, which enables you to write a function or data type generically:
+This example shows how type selection works with type parameters, which are similar to generics in other programming languages:
 
 .DataWeave script:
 [source,dataweave,linenums]
