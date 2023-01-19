@@ -9,8 +9,12 @@ DataWeave enables backward compatibility with previous 2.x versions of DataWeave
 * Compatibility flags are a set of DataWeave xref:dataweave-system-properties.adoc[DataWeave system properties] that enable you to retain specific DataWeave behavior at the Mule application level. The flags are valid for specified DataWeave versions and expire in a future version of DataWeave. Flags change behavior based on the value of the Mule `minMuleVersion` system property, which corresponds to a DataWeave version. See xref:feature-flagging.adoc[] for details.
 //2.5 DOC MERGED: https://github.com/mulesoft/docs-dataweave/pull/214/files
 
-* Syntax-level support is available at the script level through the `%dw` directive (see xref:dataweave-language-introduction.adoc#dw_header[DataWeave Scripts]). Setting the directive to an earlier version of DataWeave avoids any syntax-breaking changes when the DataWeave runtime engine runs the script. This script-level setting enables you to retain earlier behavior in some scripts while using the latest behavior in others.
+* Syntax-level support for specific DataWeave versions is available at the script level through the `%dw` directive (see xref:dataweave-language-introduction.adoc#dw_header[DataWeave Scripts]). Setting the directive to an earlier version of DataWeave avoids any syntax-breaking changes when the DataWeave runtime engine runs the script. This script-level setting enables you to retain earlier behavior in some scripts while using the latest behavior in others. The syntax did not change between DataWeave versions 2.1 through 2.4.
 // 2.5 DOC MERGED: https://github.com/mulesoft/docs-dataweave/pull/214/files
+//TODO: VERIFY no syntax changes between 2.1-2.4.
+//TODO: Need to list any and all changes to syntax in 2.5,
+//      since this will be requested. Is there a tag or something in the code
+//      for these changes?
 
 For detail, see xref:dataweave-versioning-behavior.adoc[].
 
@@ -20,8 +24,8 @@ DataWeave supports the ProtoBuf format and extends its XML support to reading an
 
 * Protocol Buffers (Protobuf): This format is typically used with gRPC, the Remote Procedure Call (RPC) framework. See xref:dataweave-formats-protobuf.adoc[].
 
-* DTD for XML: To support cXML, DataWeave can read and create doctype declarations through xref:dw-dtd.adoc[]. This feature is primarly for supporting cXML. For security reasons, the DTDs remain disabled. 
-// TODO: how does this related to the new system property, 
+* DTD for XML: To support cXML, DataWeave can read and create doctype declarations through xref:dw-dtd.adoc[]. For security reasons, the DTDs remain disabled.
+// TODO: how does this related to the new system property,
 // xref:dataweave-system-properties.adoc[system property] `com.mulesoft.dw.xml_reader.parseDtd`?
 
 == Reusing DataWeave Types
@@ -51,21 +55,18 @@ See "Type Parameters Definition" in xref:dataweave-functions.adoc[].
 //github MERGE (type parameter application):
 //             https://github.com/mulesoft/docs-dataweave/pull/215/files
 
-** Type selector expression //TODO: Clarify.
-//From ANA: Type selector expression (@Martín Cousido): Users will be able to
-//          navigate through type definitions to define DW types, so from a
-//          complex type you can select a nested part as a new definition.
-// * See Google doc listed in Slack at https://salesforce-internal.slack.com/archives/C011SNL2469/p1672164627375259: https://docs.google.com/document/d/1KLNh_FDnRIPG_nC4IRzBnN2Pr79d0tuvI6shZ12EcKc/edit#heading=h.epfq33bmp8h8
+** Creating new DataWeave types from existing types. The dot selector (`.`) enables you to navigate over DataWeave xref:dataweave-type-system.adoc#composite-types[type] definitions and define new types from existing ones. Combined with the existing xref:dataweave-selectors-reusing-types.adoc[loader] for DataWeave modules, DataWeave can also load and translate declarations from a custom module file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module.
+//PR for this doc: https://github.com/mulesoft/docs-dataweave/pull/224/files
 
 == New DataWeave Function Modules and Features
 
 DataWeave introduces the following changes:
 
 * xref:dw-dtd.adoc[] module is new and includes the following:
-** xref:dw-dtd-functions-doctypeasstring.adoc[] function 
+** xref:dw-dtd-functions-doctypeasstring.adoc[] function
 ** xref:dw-dtd-types.adoc[] types
 
-* xref:dw-binaries.adoc[] update: 
+* xref:dw-binaries.adoc[] update:
 ** xref:dw-binaries-functions-concatwith.adoc[] (new in 2.5)
 
 * xref:dw-coercions.adoc[] update:
