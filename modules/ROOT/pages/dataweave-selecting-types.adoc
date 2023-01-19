@@ -138,7 +138,34 @@ var nameNumber: User.name = 123
 }
 ----
 
-== Select Types to Preserve Metadata
+== Select Types with Type Parameters 
+This example shows how type selection works with type parameters, which are similar to generics in other programming languages:
+
+.DataWeave script:
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+type WithParameters<A, B> = {first: A, second: B, nestedObject: {message: A}}
+---
+{
+ a: true is WithParameters<Boolean, Number>.first,
+ b: 4592 is WithParameters<String, Number>.second,
+ c: "sdf" is WithParameters<String, Number>.nestedObject.message,
+}
+----
+
+.Output:
+[source,json,linenums]
+----
+{
+  "a": true,
+  "b": true,
+  "c": true
+}
+----
+
+== Preserve Metadata of a Type
 This example shows that type selection preserves metadata associated with the type:
 
 .DataWeave script:
@@ -173,32 +200,5 @@ otherUserName: otherUserName is UserName
  "userName": true,
  "otherFormatDate": false,
  "otherUserName": false
-}
-----
-
-== Select Types with Type Parameters 
-This example shows how type selection works with type parameters, which are similar to generics in other programming languages:
-
-.DataWeave script:
-[source,dataweave,linenums]
-----
-%dw 2.0
-output application/json
-type WithParameters<A, B> = {first: A, second: B, nestedObject: {message: A}}
----
-{
- a: true is WithParameters<Boolean, Number>.first,
- b: 4592 is WithParameters<String, Number>.second,
- c: "sdf" is WithParameters<String, Number>.nestedObject.message,
-}
-----
-
-.Output:
-[source,json,linenums]
-----
-{
-  "a": true,
-  "b": true,
-  "c": true
 }
 ----
