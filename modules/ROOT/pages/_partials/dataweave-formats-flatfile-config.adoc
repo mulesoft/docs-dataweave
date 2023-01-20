@@ -45,7 +45,7 @@ certain single-byte character encodings
 | `segmentIdent` | `String` | `null` | Segment identifier in the schema for fixed width or copybook schemas (only needed when parsing a single segment/record definition and if the schema includes multiple segment definitions).
 | `structureIdent` | `String` | `null` | Structure identifier in schema for flatfile schemas (only needed when parsing a structure definition, and if the schema includes multiple structure definitions)
 | `truncateDependingOn` | `Boolean` | `false` | Truncate COBOL copybook DEPENDING ON values to the length used. Valid values are `true` or `false`.
-| `useMissCharAsDefaultForFill`|`Boolean`| `false` |By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, the reader honors the setting of the `missingValues` property.  _Introduced in DataWeave 4.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823._ Valid values are `true` or `false`.
+| `useMissCharAsDefaultForFill`|`Boolean`| `false` |By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, the reader honors the setting of the `missingValues` property.  _Introduced in DataWeave 2.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823._ Valid values are `true` or `false`.
 | `zonedDecimalStrict` | `Boolean` | `false` | Use the `strict` ASCII form of
 sign encoding for COBOL copybook zoned decimal values.
 Valid values are `true` or `false`.
@@ -90,7 +90,7 @@ to be used is located.
 | `structureIdent` | `String` | `null` | Structure identifier in schema for flatfile schemas (only needed when writing a structure definition and if the schema includes multiple structure definitions)| `trimValues` | `Boolean` | `false` | Trim string values longer than the field length by truncating trailing characters. Valid values are `true` or `false`.
 | `trimValues` | `Boolean` | `false` | Indicates whether trim values are longer than the field width. Valid Options are `true` or `false`.
 | `truncateDependingOn` | `Boolean` | `false` | Truncate COBOL copybook DEPENDING ON values to the length used. Valid values are `true` or `false`.
-| `useMissCharAsDefaultForFill`|`Boolean`| `false` |By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, the writer honors the setting of the `missingValues` property.  _Introduced in DataWeave 4.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823._
+| `useMissCharAsDefaultForFill`|`Boolean`| `false` |By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, the writer honors the setting of the `missingValues` property.  _Introduced in DataWeave 2.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823._
 | `zonedDecimalStrict` | `Boolean` | `false` | Use the `strict` ASCII form of
 sign encoding for COBOL copybook zoned decimal values. Valid values are `true` or
 `false`.
