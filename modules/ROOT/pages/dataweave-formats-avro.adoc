@@ -118,7 +118,7 @@ This format accepts properties that provide instructions for reading input data.
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`schemaUrl` (Required) |`String`|`''`|The URL for the Avro schema. Valid values are `classpath://`, `file://`, or `http://`.
+|`schemaUrl` (Required) |`String`|`''`|The URL for the Avro schema. Valid URL schemes are `classpath://`, `file://`, or `http://`. For the reader, this property is optional but defaults to the schema embedded in the input Avro file. The reader requires an embedded schema. For the writer, DataWeave requires a schema value.
 |===
 
 [[writer_properties]]
