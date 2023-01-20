@@ -1,6 +1,4 @@
 //UPDATED FOR v2.5
-// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
-
 
 [[properties]]
 == Configuration Properties
