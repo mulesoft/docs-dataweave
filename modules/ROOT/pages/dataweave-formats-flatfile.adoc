@@ -111,7 +111,7 @@ Valid values are `true` or `false`.
 Valid values are `true` or `false`.
 |`missingValues`  |`String`|`null`|Fill character used to represent missing values. To activate a non-default setting, set the `useMissCharAsDefaultForFill` property to `true`, and use one of the following values to `missingValues`:
 
-* `none` (for the reader) or `NONE` (for the writer): Treats all data as values.
+* `NONE`: Write nothing for missing values.
 * `spaces` (for the reader) or `SPACES` (for the writer): Interprets a field consisting of only spaces as a missing value. Default for flat file and fixed-width formats.
 * `zeroes` (for the reader) or `ZEROES` (for the writer): Interprets numeric fields consisting of only `0` characters _and_ character fields consisting of only spaces as missing values.
 * `nulls` (for the reader) or `NULLS` (for the writer): Interprets a field consisting only of `0` bytes as a missing value. Default for COBOL copybook schema.
