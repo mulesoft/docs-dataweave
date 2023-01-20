@@ -62,13 +62,15 @@ The following example shows how type selection can also be used with `Union` typ
 ----
 %dw 2.0
 output application/json
-type ID = {name: String} | {id: Number}
-var name: ID = {name: "Seba"}
-var id: ID = {id: 38123}
-var nameString: ID.name = "Seba"
+type ID = {id: String, firstName: String, age: Number} | {id: Number, firstName: String, secondName: String}
+
+var nameAge: ID = {firstName: "Seba", id: "123", age: 28}
+var fullName: ID = {id: 38123, firstName: "Seba", secondName: "Elizalde"}
+
+var nameString: ID.firstName = "Seba"
 var idNumber: ID.id = 38123
 ---
-[name, id, nameString ++ " is of type " ++ typeOf(nameString), idNumber ++ " is of type " ++ typeOf(idNumber)]
+[nameAge, fullName, nameString ++ " is of type " ++ typeOf(nameString), idNumber ++ " is of type " ++ typeOf(idNumber)]
 ----
 
 .Output:
