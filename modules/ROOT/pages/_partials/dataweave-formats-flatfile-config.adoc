@@ -1,3 +1,4 @@
+//UPDATED FOR v2.5
 [[properties]]
 == Configuration Properties
 
