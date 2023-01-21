@@ -62,7 +62,7 @@ See "Type Parameters Definition" in xref:dataweave-functions.adoc[].
 
 DataWeave introduces the following changes:
 
-* xref:dw-dtd.adoc[] module is new and includes the following:
+* xref:dw-dtd.adoc[] module (`dw::xml::Dtd`) is new and includes the following:
 ** xref:dw-dtd-functions-doctypeasstring.adoc[] function
 ** xref:dw-dtd-types.adoc[] types
 
