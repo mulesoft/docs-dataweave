@@ -21,9 +21,32 @@ The DataWeave reader for XML input supports the following parsing strategies:
 To understand the parsing strategies that DataWeave readers and writers can apply to this format, see xref:dataweave-formats.adoc#dw_readers_writers[DataWeave Parsing Strategies].
 
 [[format_xml_cdata]]
-== CData Custom Type
+== `CData` Custom Type
 
-`CData` is a custom DataWeave data type for XML that is used to identify a Character DATA (CData) block. The `CData` type tells the XML writer to wrap content inside a `CData` block or to check for an input string inside a `CData` block. In DataWeave, `CData` inherits from the type `String`.
+`CData` is a custom DataWeave data type for XML that is used to identify a character data (CDATA) block. The `CData` type makes the XML writer wrap content inside a `CDATA` block or to check for an input string inside a `CDATA` block. In DataWeave, `CData` inherits from the type `String`.
+
+== `DocType` Custom Type
+
+`DocType` is a custom DataWeave data type for XML that is used to identify a doctype declaration (DTD).
+
+== Read and Write DTDs
+
+_Introduced in DataWeave 2.5.0. Supported by Mule 4.5.0 and later._
+
+DataWeave can read and write doctype declarations in XML files.
+
+To read a doctype declarations, set the xref:dataweave-system-properties.adoc[system property] `com.mulesoft.dw.xml_reader.parseDtd`.
+
+During the reading phase, DataWeave parses the doctype declarations and stores the content as metadata of the root element. The `DocType` value is stored in the `docType` variable. You can use the metadata selector (`^`) to extract the value of that variable with an expression like this one:
+
+* `payload.^docType`
++
+See examples <<example12>>, <<example13>> and <<example14>>.
+
+You can use the xref:dataweave-selectors.adoc[metadata selector] to access it.
+
+NOTE::
+DTDs are disabled by default even if their declarations are read or written. For details, see XML reader property `supportDtd` in <<reader_properties>>.
 
 [[examples]]
 == Examples
@@ -41,8 +64,11 @@ The following examples show uses of the XML format.
 * <<example9>>
 * <<example10>>
 * <<example11>>
+* <<example12>>
+* <<example13>>
+* <<example14>>
 
-Refer to xref:dataweave-formats.adoc[DataWeave Formats] for more details on available reader and writer properties for various data formats.
+Refer to xref:dataweave-formats.adoc[DataWeave Formats] for more detail on available reader and writer properties for various data formats.
 
 [[example1]]
 === Example: Stream Input XML Data
@@ -98,7 +124,7 @@ The following XML serves as the input payload to the DataWeave source. Assume th
 
 The reader property settings in the DataWeave script tell the XML reader to stream the input and process the repeated keys. The script uses the DataWeave `map` function to iterate over the repeated keys.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 var myInput  readUrl('classpath://myXML.xml', 'application/xml', {streaming:true, collectionPath: "root.repeated"})
@@ -162,7 +188,7 @@ Notice the `nil` setting in `<xsi:nil="true"`/>.
 
 The DataWeave script transforms the input XML to the JSON format and MIME type.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 output application/json
@@ -212,7 +238,7 @@ Assume that this input is content within the file, `myInput.xml`.
 The DataWeave script transforms the XML input to JSON. Note that it
 explicitly sets the `nullValueOn` default, `blank`, for demonstration purposes.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 var myInput readUrl('classpath://myXML.xml', 'application/xml', {nullValueOn: "blank"})
@@ -263,7 +289,7 @@ Assume that this input is content within the file, `myInput.xml`.
 
 The DataWeave script uses a DataWeave variable to input the content of `myXML.xml` and applies the `nullValueOn: "empty"` to it. The script transforms the XML input to JSON.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 var myInput readUrl('classpath://myXML.xml', 'application/xml', {nullValueOn: "empty"})
@@ -309,7 +335,7 @@ The XML serves as the input payload to the DataWeave source. Notice that the inp
 
 The DataWeave script transforms the XML input payload to the DataWeave (dw) format and MIME type.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 output application/dw
@@ -321,7 +347,7 @@ payload
 
 The output shows how the DataWeave (dw) format represents the XML input. Notice how the attributes from the XML input and the empty values are represented.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 {
   users: {
@@ -364,7 +390,7 @@ The XML serves as the input payload to the DataWeave source. Notice that the inp
 
 The DataWeave script transforms the XML input payload to the DataWeave (dw) format and MIME type.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 output application/dw
@@ -376,7 +402,7 @@ payload
 
 The output shows how the DataWeave (dw) format represents the XML input. Notice how the namespaces from the XML are represented.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 ns h http://www.w3.org/TR/html4/
 ns f https://www.w3schools.com/furniture
@@ -399,15 +425,15 @@ ns f https://www.w3schools.com/furniture
 ----
 
 [[example7]]
-=== Example: Create a CData Element
+=== Example: Create a CDATA Element
 
-This example shows how to use the `CData` type to create a CData element in the XML output.
+This example shows how to use the `CData` type to create a CDATA element in the XML output.
 
 ==== Source
 
 The body of the DataWeave script coerces the `String` value to the `CData` type.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 output application/xml
@@ -419,47 +445,47 @@ output application/xml
 
 ==== Output
 
-The output encloses the input `String` value in a CData block, which contains the special characters, `&lt;` and `&gt;`, from the input.
+The output encloses the input `String` value in a CDATA block, which contains the special characters, `&lt;` and `&gt;`, from the input.
 
 [source,xml,linenums]
 ----
 <?xml version='1.0' encoding='UTF-8'?>
-<test><![CData[A text <a>]]></test>
+<test><![CDATA[A text <a>]]></test>
 ----
 
 [[example8]]
-=== Example: Check for CData in a `String`
+=== Example: Check for CDATA in a `String`
 
-This example indicates whether a given `String` value is CData.
+This example indicates whether a given `String` value is CDATA.
 
 ==== Input
 
 The XML serves as the input payload to the DataWeave source. Notice that the
-`test` element contains a CData block.
+`test` element contains a CDATA block.
 
 [source,xml,linenums]
 ----
 <?xml version='1.0' encoding='UTF-8'?>
-<test><![CData[A text <a>]]></test>
+<test><![CDATA[A text <a>]]></test>
 ----
 
 ==== Source
 
-The DataWeave script uses the `is CData` expression to determine whether the `String` value is CData.
+The DataWeave script uses the `is CData` expression to determine whether the `String` value is CDATA.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 output application/json
 ---
 {
-    test: payload.test is CData
+    test: payload.test is CDATA
 }
 ----
 
 ==== Output
 
-The JSON output contains the value `true`, which indicates tha the input `String` value is CData.
+The JSON output contains the value `true`, which indicates tha the input `String` value is CDATA.
 
 [source,json,linenums]
 ----
@@ -477,7 +503,7 @@ This example uses the `inlineCloseOn` writer property with the value `none` to a
 
 The DataWeave script transforms the body content to XML. Notice that values of the `emptyElement` keys are `null`.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 output application/xml inlineCloseOn="none"
@@ -537,7 +563,7 @@ The JSON input serves as the payload to the DataWeave source. Notice that the
 
 The DataWeave script selects the value of the `friends` key.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 output application/xml
@@ -565,9 +591,9 @@ The output represents the `name` keys as XML elements.
 See also, xref:dataweave-cookbook-output-self-closing-xml-tags.adoc[Example: Outputting Self-closing XML Tags].
 
 [[example11]]
-=== Example: Transform XML elements into JSON format and replace characters
+=== Example: Transform XML Elements to JSON and Replace Characters
 
-This example iterates over an XML file that contains details of employees such as the `Id`, `Name`, and `Address`, and converts the file into JSON format. The DataWeave script uses the `replace` function to iterate over each `Address` element and replace the characters `-` and `/` with blank space.
+This example iterates over an XML file that contains details of employees, such as the `Id`, `Name`, and `Address`, and converts the file into JSON format. The DataWeave script uses the `replace` function to iterate over each `Address` element and replace the characters `-` and `/` with blank space.
 
 ==== Input
 
@@ -577,16 +603,16 @@ The XML input serves as the payload to the DataWeave source. Notice that the `Ad
 ----
 <?xml version='1.0' encoding='UTF-8'?>
 <root>
-<employees>
-<Id>1</Id>
-<Name>Mule</Name>
-<Address>MuleSoft Avenue - 123</Address>
-</employees>
-<employees>
-<Id>2</Id>
-<Name>Max</Name>
-<Address>MuleSoft Avenue-456/5/e</Address>
-</employees>
+  <employees>
+    <Id>1</Id>
+    <Name>Mule</Name>
+    <Address>MuleSoft Avenue - 123</Address>
+  </employees>
+  <employees>
+    <Id>2</Id>
+    <Name>Max</Name>
+    <Address>MuleSoft Avenue-456/5/e</Address>
+  </employees>
 </root>
 ----
 
@@ -594,13 +620,17 @@ The XML input serves as the payload to the DataWeave source. Notice that the `Ad
 
 The following DataWeave script iterates over the payload elements and performs a mapping to an object. The instruction `payload01.Address replace /([\-\,\/])/ with " "` replaces the `-` and `/` characters with blank spaces.
 
-[source,dataweave,linenums]
+[source,dataweave]
 ----
 %dw 2.0
 output application/json
 ---
 payload.root.*employees map ((payload01 , indexOfPayload01) ->
-{ Id: payload01.Id as String, Name: payload01.Name as String, Address: payload01.Address replace /([\-\,\/])/ with " " }
+  {
+     Id: payload01.Id as String,
+     Name: payload01.Name as String,
+     Address: payload01.Address replace /([\-\,\/])/ with " "
+  }
 )
 ----
 
@@ -624,6 +654,157 @@ The output represents the transformed XML elements into JSON.
 ]
 ----
 
+[[example12]]
+=== Example: Read DTD value
+
+The following DataWeave script transforms the XML input payload that contains a `DocType` value into JSON. Notice that extracts the value of that doctype directive using the expression `payload.^docType`.
+
+==== Input
+
+[source,xml,linenums]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cXML SYSTEM "http://xml.cxml.org/schemas/cXML/1.2.014/cXML.dtd">
+<cXML xml:lang="en-US" payloadID="1615232861.000506@prd327utl1.int.coupahost.com" timestamp="2021-03-08T11:47:42-08:00">
+    <Header>
+        <From>
+            <Credential domain="NetworkID">
+                <Identity>TestIdentity</Identity>
+            </Credential>
+        </From>
+        <To>
+            <Credential domain="TEST">
+                <Identity>Identity</Identity>
+            </Credential>
+        </To>
+    </Header>
+</cXML>
+----
+
+==== Source
+
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+---
+{
+    header: {
+        senderId: payload.cXML.Header.From.Credential.Identity,
+        receiverId: payload.cXML.Header.To.Credential.Identity,
+        docType: payload.^docType
+    }
+}
+----
+
+==== Output
+
+[source,json,linenums]
+----
+{
+  "header": {
+    "senderId": "Identity",
+    "receiverId": "TestIdentity",
+    "docType": {
+      "rootName": "cXML",
+      "systemId": "http://xml.cxml.org/schemas/cXML/1.2.014/cXML.dtd"
+    }
+  }
+}
+----
+
+[[example13]]
+=== Example: Write a DTD Value
+
+This example shows how to use the `docType` metadata to create a `DocType` value in the XML output.
+
+==== Source
+
+[source,dataweave]
+----
+%dw 2.0
+output application/xml
+ns xml http://www.w3.org/XML/1998/namespace
+
+var cXmlObj = {
+  cXML @(payloadID: "9949494", xml#lang: "en-US", timestamp: "2002-02-04T18:39:09-08:00"): {
+      Header: {
+        From: {
+          Credential @(domain: "NetworkId"): {
+            Identity: "Identity"
+          }
+        }
+    }
+  }
+} as Object {
+    docType: { rootName: "cXML", systemId: "http://xml.cXML.org/schemas/cXML/1.2.014/cXML.dtd" }
+}
+---
+cXmlObj
+----
+
+==== Output
+
+[source,xml,linenums]
+----
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE cXML SYSTEM "http://xml.cXML.org/schemas/cXML/1.2.014/cXML.dtd">
+<cXML payloadID="9949494" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:lang="en-US" timestamp="2002-02-04T18:39:09-08:00">
+  <Header>
+    <From>
+      <Credential domain="NetworkId">
+        <Identity>Identity</Identity>
+      </Credential>
+    </From>
+  </Header>
+</cXML>
+----
+
+[[example14]]
+=== Example: Transform DTD Value to a String Representation
+
+This example uses xref:dw-dtd.adoc[Dtd Module (dw::xml::Dtd)] to transform
+a `DocType` value that includes a `systemId` to a string representation.
+
+==== Input
+
+[source,xml,linenums]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cXML SYSTEM "http://xml.cxml.org/schemas/cXML/1.2.014/cXML.dtd">
+<cXML xml:lang="en-US" payloadID="1615232861.000506@prd327utl1.int.coupahost.com" timestamp="2021-03-08T11:47:42-08:00">
+    <Header>
+        <From>
+            <Credential domain="NetworkID">
+                <Identity>Identity</Identity>
+            </Credential>
+        </From>
+        <To>
+            <Credential domain="TEST">
+                <Identity>Identity</Identity>
+            </Credential>
+        </To>
+    </Header>
+</cXML>
+----
+
+==== Source
+
+[source,dataweave]
+----
+%dw 2.0
+output application/json
+import * from dw::xml::Dtd
+---
+docTypeAsString(payload.^docType)
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+"cXML SYSTEM http://xml.cxml.org/schemas/cXML/1.2.014/cXML.dtd"
+----
 // CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
 
 
@@ -657,7 +838,8 @@ Valid values are `empty` or `none` or `blank`.
 |`optimizeFor`  |`String`|`'speed'`|Configures the type of optimization for the XML parser to use.
 
 Valid values are `speed` or `memory`.
-|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array.
+|`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array. See the <<example2, streaming example>>, and see https://docs.mulesoft.com/dataweave/latest/dataweave-formats#dw_readers_writers[DataWeave Readers].
+
 
 Valid values are `true` or `false`.
 |`supportDtd`  |`Boolean`|`false`|Enable or disable DTD support. Disabling skips (and does not process) internal and external subsets. You can also enable this property by setting the Mule system property `com.mulesoft.dw.xml.supportDTD`. Note that the default for this property changed from `true` to `false` in Mule version 4.3.0-20210601, which includes the June 2021 patch of DataWeave version 2.3.0.
@@ -673,15 +855,18 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+
 |`defaultNamespace`  |`String`|`null`|Specifies the default namespaces of the output XML.
-|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until consumed.
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
+
 
 Valid values are `true` or `false`.
 |`doubleQuoteInDeclaration`  |`Boolean`|`false`|Escapes double quotes in the XML declaration when set to `true`.
 
 Valid values are `true` or `false`.
-|`encoding`  |`String`|`null`|The character set to use for the output, such as UTF-8.
+|`encoding`  |`String`|`null`|The encoding to use for the output, such as UTF-8.
+
 |`escapeCR`  |`Boolean`|`false`|Escapes `CR` characters when set to `true`.
 
 Valid values are `true` or `false`.
