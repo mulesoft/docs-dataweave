@@ -214,7 +214,7 @@ When this property is set to `true`, DataWeave parses a doctype declaration.
 Available for language levels: 2.5
 //mule.dw.remove_shadowed_implicit_inputs//
 |`mule.dw.remove_shadowed_implicit_inputs`|
-When enabled, DataWeave will remove implicit inputs when a variable with the same name is declared at the root level.
+If a variable with the same name is declared at the root level and this property is set to `true`, DataWeave removes implicit inputs.
 * Type: `Boolean`
 * Default: `true`
 |===
