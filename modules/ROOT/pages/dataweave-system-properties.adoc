@@ -196,7 +196,8 @@ Specifies the maximum size of a file to be written in bytes
 * Default: `-1`
 //com.mulesoft.dw.workingdirectory.tracking//
 |`com.mulesoft.dw.workingdirectory.tracking`|
-If set, then each script generates tmp files in their own directory
+Each script generates `tmp` files in their own directory when this property is set to `true`.
+
 * Type: `Boolean`
 * Default: `false`
 //com.mulesoft.dw.xml_reader.honourMixedContentStructure//
