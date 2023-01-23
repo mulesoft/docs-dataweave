@@ -10,7 +10,8 @@ Controls whether an internal `BufferedCharSequence` improvement is enabled or di
 * Default: `true`
 //com.mulesoft.dw.buffersize//
 |`com.mulesoft.dw.buffersize`|
-Sets the size (in bytes) of in-memory input and output buffers that DataWeave uses to retain processed inputs and outputs.
+Sets the size (in bytes) of in-memory input and output buffers that DataWeave uses to retain processed inputs and outputs. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-index-${count}.tmp` and `dw-buffer-output-${count}.tmp`.
+See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 * Type: `Number` (in bytes)
 * Default: `8192`
 //com.mulesoft.dw.coercionexception.verbose//
