@@ -102,6 +102,8 @@ Specifies the size of DW scheduler thread pool
 Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. Max stack is 256.
 * Type: `Integer`
 * Default: `256`
+
+
 //com.mulesoft.dw.telemetry.bufferSize//
 |`com.mulesoft.dw.telemetry.bufferSize`|
 Determines the size in bytes of the telemetry event buffer
