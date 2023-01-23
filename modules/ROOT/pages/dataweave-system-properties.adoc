@@ -94,7 +94,7 @@ Sets the number of slots in the memory pool. DataWeave buffers use off-heap memo
 * Default: `60`
 //com.mulesoft.dw.scheduler.size//
 |`com.mulesoft.dw.scheduler.size`|
-Specifies the size of DW scheduler thread pool
+Specifies the size of DataWeave scheduler's thread pool.
 * Type: `Integer`
 * Default: `100`
 //com.mulesoft.dw.stacksize//
