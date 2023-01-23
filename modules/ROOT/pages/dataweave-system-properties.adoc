@@ -74,7 +74,7 @@ Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 * Default: `1572864`
 //com.mulesoft.dw.java.stacktrace//
 |`com.mulesoft.dw.java.stacktrace`|
-Specifies the depth of the java stacktrace
+Specifies the depth of the Java stack trace.
 * Type: `Integer`
 * Default: `6`
 //com.mulesoft.dw.max_memory_allocation//
