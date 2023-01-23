@@ -109,6 +109,8 @@ Sets the maximum size of the stack. When a function recurses too deeply, DataWea
 Determines the size in bytes of the telemetry event buffer. 
 * Type: `Integer`
 * Default: `1048576`
+
+
 //com.mulesoft.dw.telemetry.enabled//
 |`com.mulesoft.dw.telemetry.enabled`|
 Enables Dataweave telemetry service
