@@ -5,7 +5,7 @@ DataWeave supports several system properties. To use these properties in applica
 |Property |Description
 //com.mulesoft.dw.buffered_char_sequence.enabled//
 |`com.mulesoft.dw.buffered_char_sequence.enabled`|
-Controls whether an internal BufferedCharSequence improvement is enabled or disabled. When this property is set to `true`, DataWeaves avoid load large fields (bigger than 1.5M) into memory. This fields are read by chunk. This feature introduces a performance reduction preventing an Out of Memory error.
+Controls whether an internal `BufferedCharSequence` improvement is enabled or disabled. When this property is set to `true`, DataWeave does not load large fields (greater than 1.5M) into memory. DataWeave reads these fields by chunk. This feature reduces performance to prevent an out-of-memory error.
 * Type: `Boolean`
 * Default: `true`
 //com.mulesoft.dw.buffersize//
