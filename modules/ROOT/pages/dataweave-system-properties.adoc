@@ -42,6 +42,8 @@ output application/dw
 * Type: `Boolean`
 * Default: `false`
 Available for language levels: 2.3, 2.4
+
+
 //com.mulesoft.dw.decode_binaries_with_writer_encoding//
 |`com.mulesoft.dw.decode_binaries_with_writer_encoding`|
 If set, then binary values in json are written using JsonWriter encoding, otherwise it will use either the encoding defined in the value schema or the default one.
