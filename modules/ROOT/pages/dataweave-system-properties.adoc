@@ -19,6 +19,8 @@ See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 By default, adds to coercion exceptions more information about data that fails to coerce. When this property is set to `false`, DataWeave does not display the additional metadata.
 * Type: `Boolean`
 * Default: `true`
+
+
 //com.mulesoft.dw.cpulimit.watchdog//
 |`com.mulesoft.dw.cpulimit.watchdog`|
 When set, script execution time is monitored and limited
