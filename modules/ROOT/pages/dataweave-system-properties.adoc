@@ -212,7 +212,7 @@ When this property is set to `true`, DataWeaves honour mixed content structure i
 Available for language levels: 2.4
 //com.mulesoft.dw.xml_reader.parseDtd//
 |`com.mulesoft.dw.xml_reader.parseDtd`|
-When this property is set to `true`, DataWeave parses a doctype declaration.
+DataWeave parses a Doctype declaration when this property is set to `true`.
 * Type: `Boolean`
 * Default: `false`
 
