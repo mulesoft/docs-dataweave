@@ -106,7 +106,7 @@ Sets the maximum size of the stack. When a function recurses too deeply, DataWea
 
 //com.mulesoft.dw.telemetry.bufferSize//
 |`com.mulesoft.dw.telemetry.bufferSize`|
-Determines the size in bytes of the telemetry event buffer
+Determines the size in bytes of the telemetry event buffer. 
 * Type: `Integer`
 * Default: `1048576`
 //com.mulesoft.dw.telemetry.enabled//
