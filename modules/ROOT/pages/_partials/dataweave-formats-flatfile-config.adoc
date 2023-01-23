@@ -12,6 +12,9 @@ DataWeave accepts properties that provide instructions for reading input data in
 [cols="1,1,1,3a", options="header"]
 |===
 | Parameter | Type | Default | Description
+| `allowLenientWithBinaryNotEndElement` | `Boolean` | `false` |
+When the schema contains elements of type Binary or Packed, the `lenient` option does not allow short records, regardless of the last element's
+format type. When you set this property to `true`, the validation applies only to cases in which the record ends with type Binary or Packed.
 | `enforceRequires` | `Boolean` | `false` | Error if required value missing.
   Valid values are `true` or `false`.
 | `missingValues` | `String` | `nulls` for copybook schema, `spaces` otherwise | Fill character used to represent missing values. To activate a non-default setting, set the `useMissCharAsDefaultForFill` property to `true`, and use one of the following values to `missingValues`:
@@ -22,6 +25,7 @@ DataWeave accepts properties that provide instructions for reading input data in
 character fields consisting of only spaces as missing values
 * `nulls`: Interpret a field consisting only of 0 bytes as a missing value
 
+|`notTruncateDependingOnSubjectNotPresent` |`Boolean`|`false`|Fills the entire group when the DEPENDING ON subject is not present. _Introduced in DataWeave 2.3 with the August 2021 release of Mule 4.3.0-20210622._ 
 | `recordParsing` | `String` | `strict` |
 
 Expected separation between lines/records:
@@ -41,7 +45,7 @@ certain single-byte character encodings
 | `segmentIdent` | `String` | `null` | Segment identifier in the schema for fixed width or copybook schemas (only needed when parsing a single segment/record definition and if the schema includes multiple segment definitions).
 | `structureIdent` | `String` | `null` | Structure identifier in schema for flatfile schemas (only needed when parsing a structure definition, and if the schema includes multiple structure definitions)
 | `truncateDependingOn` | `Boolean` | `false` | Truncate COBOL copybook DEPENDING ON values to the length used. Valid values are `true` or `false`.
-| `useMissCharAsDefaultForFill`|`Boolean`| `false` |By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, the reader honors the setting of the `missingValues` property.  _Introduced in DataWeave 4.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823._ Valid values are `true` or `false`.
+| `useMissCharAsDefaultForFill`|`Boolean`| `false` |By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, the reader honors the setting of the `missingValues` property.  _Introduced in DataWeave 2.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823._ Valid values are `true` or `false`.
 | `zonedDecimalStrict` | `Boolean` | `false` | Use the `strict` ASCII form of
 sign encoding for COBOL copybook zoned decimal values.
 Valid values are `true` or `false`.
@@ -55,9 +59,6 @@ DataWeave accepts properties that provide instructions for writing output data i
 [cols="1,1,1,3a", options="header"]
 |===
 | Parameter | Type | Default | Description
-| `allowLenientWithBinaryNotEndElement` | `Boolean` | `false` |
-When the schema contains elements of type Binary or Packed, the `lenient` option does not allow short records, regardless of the last element's
-format type. When you set this property to `true`, the validation applies only to cases in which the record ends with type Binary or Packed.
 | `bufferSize` | `Number` | `8192` | Size of the buffer writer.
 | `deferred` | `Boolean` | `false` | When set to `true`, DataWeave generates the output as a data stream, and the script's execution is deferred until it is consumed.
   Valid values are `true` or `false`.
@@ -72,6 +73,7 @@ Valid values are `true` or `false`.
 * `ZEROES`: Fill numeric fields with `0` characters and character fields with space characters.
 * `NULLS`: Fill the field with 0 bytes.
 
+|`notTruncateDependingOnSubjectNotPresent` |`Boolean`|`false`|Fills the entire group when the DEPENDING ON subject is not present.  _Introduced in DataWeave 2.3 with the August 2021 release of Mule 4.3.0-20210622._ 
 | `recordTerminator` | `String` | System property `line.separator` | Record separator line break. Valid values:
 
 * `lf`
@@ -80,7 +82,7 @@ Valid values are `true` or `false`.
 * `none`
 
 Note that in Mule versions 4.0.4 and later, this is only used as a separator
-when there are multiple records. Values translate directly to character codes
+when there are multiple records. Values translate directly to character codes.
 (`none` leaves no termination on each record).
 | `schemaPath` (Required) | `String` | `null` | Schema definition. Path where the schema file
 to be used is located.
@@ -88,7 +90,7 @@ to be used is located.
 | `structureIdent` | `String` | `null` | Structure identifier in schema for flatfile schemas (only needed when writing a structure definition and if the schema includes multiple structure definitions)| `trimValues` | `Boolean` | `false` | Trim string values longer than the field length by truncating trailing characters. Valid values are `true` or `false`.
 | `trimValues` | `Boolean` | `false` | Indicates whether trim values are longer than the field width. Valid Options are `true` or `false`.
 | `truncateDependingOn` | `Boolean` | `false` | Truncate COBOL copybook DEPENDING ON values to the length used. Valid values are `true` or `false`.
-| `useMissCharAsDefaultForFill`|`Boolean`| `false` |By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, the writer honors the setting of the `missingValues` property.  _Introduced in DataWeave 4.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823._
+| `useMissCharAsDefaultForFill`|`Boolean`| `false` |By default, the flat file reader and writer use spaces for missing characters and ignore the setting of the `missingValues` property. When you set this property to `true`, the writer honors the setting of the `missingValues` property.  _Introduced in DataWeave 2.3 (2.3.0-20210823) for the September 2021 release of Mule 4.3.0-20210823._
 | `zonedDecimalStrict` | `Boolean` | `false` | Use the `strict` ASCII form of
 sign encoding for COBOL copybook zoned decimal values. Valid values are `true` or
 `false`.
