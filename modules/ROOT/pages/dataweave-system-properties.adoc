@@ -71,7 +71,7 @@ _Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.
 _Experimental:_ Adds the StackTrace for dumper exceptions when `com.mulesoft.dw.dump_files` is set to `true`.
 * Type: `Boolean`
 * Default: `false`
-`com.mulesoft.dw.dumper_fill_stacktrace` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[Troubleshooting a Failing DataWeave Script].
+`com.mulesoft.dw.dumper_fill_stacktrace` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
 //com.mulesoft.dw.indexsize//
 |`com.mulesoft.dw.indexsize`|
 Sets the maximum size (in bytes) of the page in memory that indexed readers use.
