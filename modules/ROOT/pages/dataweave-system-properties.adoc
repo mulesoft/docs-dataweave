@@ -56,7 +56,7 @@ Controls whether DataWeave uses off-heap memory (the default) or heap memory. Da
 * Default: `false`
 //com.mulesoft.dw.dump_files//
 |`com.mulesoft.dw.dump_files`|
-_Experimental:_ Dumps the input context and the failing script into a folder when this property is set to true. This behavior enables you to track the failing script and the data that makes the script fail, which is particularly useful for verifying that the received input data is valid. Incorrect scripts often fail when an upstream component generates invalid data.
+_Experimental:_ Dumps the input context and the failing script into a folder when this property is set to `true`. This behavior enables you to track the failing script and the data that makes the script fail, which is particularly useful for verifying that the received input data is valid. Incorrect scripts often fail when an upstream component generates invalid data.
 * Type: `Boolean`
 * Default: `false`
 `com.mulesoft.dw.dump_files` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[Troubleshooting a Failing DataWeave Script].
