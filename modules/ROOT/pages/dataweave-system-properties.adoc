@@ -215,6 +215,7 @@ Available for language levels: 2.4
 When this property is set to `true`, DataWeave parses a doctype declaration.
 * Type: `Boolean`
 * Default: `false`
+
 Available for language levels: 2.5
 //mule.dw.remove_shadowed_implicit_inputs//
 |`mule.dw.remove_shadowed_implicit_inputs`|
