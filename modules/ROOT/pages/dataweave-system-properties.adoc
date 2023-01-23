@@ -113,7 +113,9 @@ Determines the size in bytes of the telemetry event buffer.
 
 //com.mulesoft.dw.telemetry.enabled//
 |`com.mulesoft.dw.telemetry.enabled`|
-Enables Dataweave telemetry service
+Enables the DataWeave telemetry service.
+
+
 * Type: `Boolean`
 * Default: `false`
 //com.mulesoft.dw.telemetry.memory//
