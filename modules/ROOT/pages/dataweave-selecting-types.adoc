@@ -55,7 +55,7 @@ userAddress
 ----
 
 == Select Types from Union Types
-The following example shows how type selection can also be used with `Union` types that consist of `Object` types:
+The following example shows how you can use type selection with `Union` types that consist of `Object` types:
 
 .DataWeave script:
 [source,dataweave,linenums]
@@ -88,7 +88,7 @@ var idNumber: ID.id = 38123
 ]
 ----
 
-However, the following script fails because the second type is not an `Object` type and there is no way to reference it with the selector:
+The following script fails because the second type is not an `Object` type and there is no way to reference it with the selector:
 
 .DataWeave script:
 [source,dataweave,linenums]

@@ -66,7 +66,7 @@ array and ignores all values that are not Object values. If no key matches,
 the value `null` is returned.
 
 [NOTE]
-For information about the dot selector (`.`) and how it is used on DataWeave types, refer to xref:dataweave-selecting-types.adoc[Selecting Types].
+For information about the dot selector (`.`) and how to use it on DataWeave types, refer to xref:dataweave-selecting-types.adoc[].
 
 === Example: Using a Single-Value Selector on an Object
 
