@@ -11,7 +11,7 @@ Controls whether an internal `BufferedCharSequence` improvement is enabled or di
 //com.mulesoft.dw.buffersize//
 |`com.mulesoft.dw.buffersize`|
 Sets the size (in bytes) of in-memory input and output buffers that DataWeave uses to retain processed inputs and outputs.
-* Type: `Integer`
+* Type: `Number` (in bytes)
 * Default: `8192`
 //com.mulesoft.dw.coercionexception.verbose//
 |`com.mulesoft.dw.coercionexception.verbose`|
