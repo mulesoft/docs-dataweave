@@ -65,6 +65,9 @@ to an array. On an array, the selector applies to all Object values inside the
 array and ignores all values that are not Object values. If no key matches,
 the value `null` is returned.
 
+[NOTE]
+For information about the dot selector (`.`) and how to use it on DataWeave types, refer to xref:dataweave-selecting-types.adoc[].
+
 === Example: Using a Single-Value Selector on an Object
 
 This example shows how the selector works on a simple JSON object.
