@@ -23,7 +23,7 @@ DataWeave function.
 | Descendants | `..keyName` | Array of values of any matching descendant keys
 | Dynamic | See <<dynamic_selector>>. | &nbsp;
 | Key-value pair | `.&keyName` | Object with the matching key
-| Index | `[<index>]` | Value of any type at selected array index
+| Index | `[<index>]` | Value of any type at selected array index. Use negative numbers to index from the end of an array, for example, `-1` for the last element in the array. Use of numbers beyond the array size returns `null`.
 | Range | `[<index> to <index>]`| Array with values from selected indexes
 | XML attribute | `@`, `.@keyName` | String value of the selected attribute
 | Namespace | `keyName.#` | String value of the namespace for the selected key
@@ -64,6 +64,9 @@ matches the given selector name. The selector can be applied to an Object or
 to an array. On an array, the selector applies to all Object values inside the
 array and ignores all values that are not Object values. If no key matches,
 the value `null` is returned.
+
+[NOTE]
+For information about the dot selector (`.`) and how to use it on DataWeave types, refer to xref:dataweave-selecting-types.adoc[].
 
 === Example: Using a Single-Value Selector on an Object
 
