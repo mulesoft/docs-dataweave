@@ -81,7 +81,7 @@ _Experimental:_ Dumps the input context and the failing script into a folder whe
 _Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.dump_files` is set to `true`.
 
 * Type: `String`
-* Default: `/var/folders/8f/5jqs1kh97k16dzsmxxph2m5c0000gp/T`
+* Default: `java.io.tmpdir` (system property value)
 
 `com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[Troubleshooting a Failing DataWeave Script].
 
