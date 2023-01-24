@@ -233,7 +233,8 @@ Specifies the base directory in which temporary files will be written
 
 //com.mulesoft.dw.workingdirectory.delete_sync//
 |`com.mulesoft.dw.workingdirectory.delete_sync`|
-If set, file deletion is done synchronously
+ File deletion is occurs synchronously when this property is set to `true`.
+ 
 
 * Type: `Boolean`
 * Default: `false`
