@@ -138,7 +138,7 @@ Specifies the size of DataWeave scheduler's thread pool.
 
 //com.mulesoft.dw.stacksize//
 |`com.mulesoft.dw.stacksize`|
-Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. Max stack is 256.
+Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. The maximum size limit is 256.
 
 * Type: `Integer`
 * Default: `256`
@@ -240,7 +240,8 @@ Specifies the base directory in which to write temporary files.
 
 //com.mulesoft.dw.workingdirectory.delete_sync//
 |`com.mulesoft.dw.workingdirectory.delete_sync`|
-If set, file deletion is done synchronously
+ File deletion is occurs synchronously when this property is set to `true`.
+
 
 * Type: `Boolean`
 * Default: `false`
@@ -261,7 +262,7 @@ Each script generates `tmp` files in their own directory when this property is s
 
 //com.mulesoft.dw.xml_reader.honourMixedContentStructure//
 |`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
-When this property is set to `true`, DataWeaves honour mixed content structure instead of grouping text mixed content in a single text field.
+When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
 
 * Type: `Boolean`
 * Default: `false`
