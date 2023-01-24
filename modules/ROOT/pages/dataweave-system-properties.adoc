@@ -113,7 +113,7 @@ Specifies the depth of the Java stack trace.
 Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp`. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
 * Type: `Integer`
-* Default: `1572864`
+* Default: `1572864` (1.5 MB)
 
 //com.mulesoft.dw.memory_pool_size//
 |`com.mulesoft.dw.memory_pool_size`|
