@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Use the import directive with the `java!` prefix when loading a Java class. The prefix `java!` tells DataWeave to use the Java module loader. When loaded, you can call constructors, variables, and functions, see xref:dataweave-cookbook-java-methods[]. The class type is also available. This is exposed with the type name `Class`.
+Use the import directive with the `java!` prefix when loading a Java class. The prefix `java!` tells DataWeave to use the Java module loader. When loaded, you can call constructors, variables, and functions, see xref:dataweave-cookbook-java-methods.adoc[]. The class type is also available. This is exposed with the type name `Class`.
 
 Java classes are mapped to DataWeave types following the table present in xref:dataweave-formats-java.adoc#java-value-mapping[Java Value Mapping].
 If a Java class is not present in the table, DataWeave treats it as a JavaBean and maps it as an `Object` type with its fields being the properties name of the Java class and its corresponding mapped DataWeave type. In this case, DataWeave takes all properties from the Java getters.
