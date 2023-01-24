@@ -1,6 +1,6 @@
 = Runtime Types (dw::Runtime)
 
-[%header, cols="1,2a,3a"]
+[%header, cols="1,3a,3a"]
 |===
 | Type | Definition | Description
 
