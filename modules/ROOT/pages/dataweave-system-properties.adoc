@@ -152,7 +152,9 @@ Enables the DataWeave telemetry service.
 
 //com.mulesoft.dw.telemetry.memory//
 |`com.mulesoft.dw.telemetry.memory`|
-If set, then the telemetry service will collect memory usage statistics
+The telemetry service collects memory usage statistics when this property is set to `true`. 
+
+
 
 * Type: `Boolean`
 * Default: `false`
