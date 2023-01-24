@@ -254,7 +254,7 @@ Each script generates `tmp` files in their own directory when this property is s
 
 //com.mulesoft.dw.xml_reader.honourMixedContentStructure//
 |`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
-When this property is set to `true`, DataWeaves honour mixed content structure instead of grouping text mixed content in a single text field.
+When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
 
 * Type: `Boolean`
 * Default: `false`
