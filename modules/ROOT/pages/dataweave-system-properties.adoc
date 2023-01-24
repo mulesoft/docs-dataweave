@@ -1,5 +1,6 @@
 = DataWeave System Properties
 DataWeave supports several system properties. To use these properties in application development and deployments, see xref:mule-runtime:mule-app-properties-system.adoc[System Properties].
+
 [%header%autowidth.spread,cols=",a"]
 |===
 |Property |Description
@@ -38,7 +39,9 @@ Restores the xref:dataweave-cookbook-add-and-subtract-time.adoc[Add and Subtract
 * Type: `Boolean`
 * Default: `false`
 
-For example, consider the following DataWeave script:
+Available for language levels: 2.3, 2.4
+
+Example:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -46,10 +49,9 @@ output application/dw
 ---
 \|2019-10-01\| - \|2018-09-23\|
 ----
+
 * In DataWeave 2.3.0, the expression returns `PT8952H`.
 * In DataWeave 2.2.0, the expression returns `P1Y8D`.
-
-Available for language levels: 2.3, 2.4
 
 //com.mulesoft.dw.decode_binaries_with_writer_encoding//
 |`com.mulesoft.dw.decode_binaries_with_writer_encoding`|
@@ -136,7 +138,7 @@ Sets the maximum size of the stack. When a function recurses too deeply, DataWea
 
 //com.mulesoft.dw.telemetry.bufferSize//
 |`com.mulesoft.dw.telemetry.bufferSize`|
-Determines the size in bytes of the telemetry event buffer. 
+Determines the size in bytes of the telemetry event buffer.
 
 * Type: `Integer`
 * Default: `1048576`
