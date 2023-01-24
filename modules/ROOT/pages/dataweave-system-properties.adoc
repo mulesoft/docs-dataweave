@@ -131,7 +131,7 @@ Specifies the size of DataWeave scheduler's thread pool.
 
 //com.mulesoft.dw.stacksize//
 |`com.mulesoft.dw.stacksize`|
-Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. Max stack is 256.
+Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. The maximum size limit is 256.
 
 * Type: `Integer`
 * Default: `256`
