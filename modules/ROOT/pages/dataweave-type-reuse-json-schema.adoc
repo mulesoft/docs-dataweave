@@ -1,0 +1,262 @@
+= Reusing Types from JSON Schema
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+JSON schema is a standard providing a format for what JSON data is required for a given application and how to interact with it. Many existing data formats or types are expressed using this standard. In particular, Rest APIs described by a RAML file are most likely to have their types defined in JSON schemas.
+
+In order to reuse these already defined types, you can load the JSON schema into DataWeave leaving the types structure ready to be used in your scripts.
+
+The JSON schema loader parses schemas following the https://json-schema.org/specification-links.html#draft-7[JSON Schema Draft 7].
+
+== Import a Type from a JSON Schema
+
+Having a JSON schema in the resources: 
+
+.JSON Schema script:
+[source,JSON]
+----
+{
+  "$id": "https://example.com/person.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Person",
+  "type": "object",
+  "properties": {
+    "firstName": {
+      "type": "string",
+      "description": "The person's first name."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "The person's last name."
+    },
+    "age": {
+      "description": "Age in years which must be equal to or greater than zero.",
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": ["firstName", "lastName"]
+}
+----
+
+The following example shows how you can use the JSON schema loader to import the type:
+
+.DataWeave file header:
+----
+import * from jsonschema!example::schema::Person
+----
+
+== Import Syntax
+
+In order to import the JSON schema types, as shown above, use the following directive:
+
+----
+import _typesToImport_ from jsonschema!_pathToJsonSchema_
+----
+
+The following example shows how to import a type:
+
+----
+import * from jsonschema!example::schema::Person
+----
+
+Where:
+
+* `typeToImport`: You can replace it by `*` to import all types defined in the schema or to export a single type from the schema, for example, *Root*. You can also import JSON schema types with a different name, for example, *Root as Person*. This way you can reference the type with that name in the script.
+* `pathToJsonSchema`: This represents the path to the schema file, modifying the file separators for `::` and removing the “.json” extension from the file name. For example, if the path to the schema is “example/schema/Person.json”, “example::schema::Person” must be used.
+
+== Use Your Types in a DataWeave Script
+
+Having this directive in the script header loads all the existing types in the JSON schema. In this case, the only existing type is the *Root* type, specified at the root which describes an Object that can have three properties (`firstName`, `lastName`, and `age`). It is equivalent to declaring the following type in your DataWeave script:
+
+.DataWeave script:
+[source,dataweave,linenums]
+----
+%dw 2.0
+type Root = { firstName: String, lastName: String, age?: Number }
+----
+
+Notice that the age field is the only one that is optional and it is signaled by the `?`.
+
+This is how you can use the type to know if a value follows the structure defined by the JSON schema.
+The following example outputs the value `true` since the object contains the required fields, `firstName` and `lastName`:
+
+.DataWeave script:
+[source,dataweave,linenums]
+----
+%dw 2.0
+import * from jsonschema!jsonschema!example::schema::Person
+---
+{
+ firstName: "John",
+ lastName: "Doe"
+} is Root
+----
+
+.Output: 
+----
+"True"
+----
+
+The following example outputs the value `false` since the object does not contain the required fields, `firstName` and `lastName`:
+
+.DataWeave script:
+[source,dataweave,linenums]
+----
+%dw 2.0
+import * from jsonschema!jsonschema!example::schema::Person
+---
+{
+ firstName: "John",
+ age: 20
+} is Root
+----
+
+.Output: 
+----
+"False"
+----
+
+== Use Definitions Inside Schemas
+
+Definitions inside JSON schemas are also loaded when the module is imported:
+
+.JSON Schema script:
+[source,JSON]
+----
+{
+ "$schema": "http://json-schema.org/draft-04/schema#",
+ "definitions": {
+   "address": {
+     "type": "object",
+     "properties": {
+       "street_address": {
+         "type": "string"
+       },
+       "city": {
+         "type": "string"
+       },
+       "state": {
+         "type": "string"
+       }
+     },
+     "required": [
+       "street_address",
+       "city",
+       "state"
+     ]
+   },
+   "person": {
+     "type": "object",
+     "properties": {
+       "firstName": {
+         "type": "string",
+         "description": "The person's first name."
+       },
+       "lastName": {
+         "type": "string",
+         "description": "The person's last name."
+       },
+       "age": {
+         "description": "Age in years which must be equal to or greater than zero.",
+         "type": "integer",
+         "minimum": 0
+       }
+     },
+     "required": [
+       "firstName",
+       "lastName"
+     ]
+   }
+ },
+ "type": "object",
+ "properties": {
+   "person": {
+     "$ref": "#/definitions/person"
+   },
+   "address": {
+     "$ref": "#/definitions/address"
+   }
+ }
+}
+----
+
+You can import the types from that schema with the following directive:
+
+----
+import * from jsonschema!example::schema::Account
+----
+
+Which has the same effect as declaring these types:
+
+----
+type Root = { address?: address, person?: person }
+
+type address = { street_address: String, city: String, state: String }
+
+type person = { firstName: String, lastName: String, age?: Number }
+----
+
+Use the import directive to import a single type from the schema:
+
+----
+Import address from jsonschema!example::schema::Account
+----
+
+You can change the imported type name to use another name in the script. This helps to avoid the name from clashing with others:
+
+----
+Import address as Account_Address from jsonschema!example::schema::Account
+----
+
+== Facilitate Usage with Pattern Matching
+
+You can use reuse types to take a specific action when an input is of a certain type. These imported types are useful to apply pattern matching.
+
+The following example outputs the value `person` since the object is importing that type definition:
+ 
+.DataWeave script:
+[source,dataweave,linenums]
+----
+%dw 2.0
+import * from import * from jsonschema!example::schema::Account
+---
+{
+ firstName: "John",
+ lastName: "Doe"
+} match {
+case is person -> "PERSON"
+case is address -> "ADDRESS"
+else -> "NO TYPE MATCHED"
+}
+----
+
+.Output: 
+----
+"Person"
+----
+
+The following example outputs the value `address` since the object is importing that type definition:
+
+.DataWeave script:
+[source,dataweave,linenums]
+----
+%dw 2.0
+import * from import * from jsonschema!example::schema::Account
+---
+{
+ street_address: "742 Evergreen Terrace",
+ city: "Gotham",
+ State: "OH"
+} match {
+case is person -> "PERSON"
+case is address -> "ADDRESS"
+else -> "NO TYPE MATCHED"
+}
+----
+
+.Output: 
+----
+"Address"
+----

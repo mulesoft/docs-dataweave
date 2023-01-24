@@ -460,3 +460,7 @@ type EncodingSettings = {
     encoding?: String {defaultValue: "UTF-8"}
 }
 ----
+
+== See Also 
+
+* xref:dataweave-type-reuse-modules.adoc[]

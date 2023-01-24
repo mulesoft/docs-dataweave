@@ -417,3 +417,14 @@ fun read(file: FileData<Binary>) =  "This is a binary file with data " ++ (file.
   text: read({data: "Hello World", name: "myFile.txt"})
 }
 ----
+
+== Reuse Types
+
+You can either declare or use types in the same DataWeave script, see xref:dataweave-type-system.adoc[], or you can reuse types from different sources by loading them with their specific module loader. DataWeave currently supports loading types from:
+
+* xref:dataweave-type-reuse-modules.adoc[]
+* xref:dataweave-type-reuse-json-schema.adoc[]
+* xref:dataweave-type-reuse-module-loader.adoc[]
+* xref:dataweave-type-reuse-java-classes.adoc[]
+
+Module loaders are used to load different files as DataWeave modules containing functions, variables, types, and namespaces. For example, using the prefix `java!` or `xmlschema!` in the import directive tells DataWeave to use the respective module loader so the Java class or the XML schema is loaded as a DataWeave module.
