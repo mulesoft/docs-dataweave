@@ -25,6 +25,7 @@ By default, adds to coercion exceptions more information about data that fails t
 * Type: `Boolean`
 * Default: `true`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.cpulimit.watchdog//
 |`com.mulesoft.dw.cpulimit.watchdog`|
 Monitors and limits script execution time when set to `true`.
@@ -53,6 +54,7 @@ output application/dw
 * In DataWeave 2.3.0, the expression returns `PT8952H`.
 * In DataWeave 2.2.0, the expression returns `P1Y8D`.
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.decode_binaries_with_writer_encoding//
 |`com.mulesoft.dw.decode_binaries_with_writer_encoding`|
 If set, then binary values in json are written using JsonWriter encoding, otherwise it will use either the encoding defined in the value schema or the default one.
@@ -108,6 +110,7 @@ Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 * Type: `Number`
 * Default: `1572864`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.java.stacktrace//
 |`com.mulesoft.dw.java.stacktrace`|
 Specifies the depth of the Java stack trace.
@@ -129,6 +132,7 @@ Sets the number of slots in the memory pool. DataWeave buffers use off-heap memo
 * Type: `Number`
 * Default: `60`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.scheduler.size//
 |`com.mulesoft.dw.scheduler.size`|
 Specifies the size of DataWeave scheduler's thread pool.
@@ -143,6 +147,7 @@ Sets the maximum size of the stack. When a function recurses too deeply, DataWea
 * Type: `Number`
 * Default: `256`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.telemetry.bufferSize//
 |`com.mulesoft.dw.telemetry.bufferSize`|
 Determines the size in bytes of the telemetry event buffer.
@@ -150,6 +155,7 @@ Determines the size in bytes of the telemetry event buffer.
 * Type: `Number`
 * Default: `1048576`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.telemetry.enabled//
 |`com.mulesoft.dw.telemetry.enabled`|
 Enables the DataWeave telemetry service.
@@ -157,6 +163,7 @@ Enables the DataWeave telemetry service.
 * Type: `Boolean`
 * Default: `false`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.telemetry.memory//
 |`com.mulesoft.dw.telemetry.memory`|
 The telemetry service collects memory usage statistics when this property is set to `true`.
@@ -164,6 +171,7 @@ The telemetry service collects memory usage statistics when this property is set
 * Type: `Boolean`
 * Default: `false`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.telemetry.sync//
 |`com.mulesoft.dw.telemetry.sync`|
 Telemetry events are published synchronously when this property is set to `true`.
@@ -231,6 +239,7 @@ output application/json
 
 Available for language levels: 2.3, 2.4
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.workingdirectory.base//
 |`com.mulesoft.dw.workingdirectory.base`|
 Specifies the base directory in which to write temporary files.
@@ -238,6 +247,7 @@ Specifies the base directory in which to write temporary files.
 * Type: `String`
 * Default: `/var/folders/8f/5jqs1kh97k16dzsmxxph2m5c0000gp/T/`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.workingdirectory.delete_sync//
 |`com.mulesoft.dw.workingdirectory.delete_sync`|
  File deletion is occurs synchronously when this property is set to `true`.
@@ -246,6 +256,7 @@ Specifies the base directory in which to write temporary files.
 * Type: `Boolean`
 * Default: `false`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.workingdirectory.max_output_buffer_size//
 |`com.mulesoft.dw.workingdirectory.max_output_buffer_size`|
 Specifies the maximum size of a file to be written in bytes
@@ -253,6 +264,7 @@ Specifies the maximum size of a file to be written in bytes
 * Type: `Long`
 * Default: `-1`
 
+//TODO: RELEASE in 2.5?
 //com.mulesoft.dw.workingdirectory.tracking//
 |`com.mulesoft.dw.workingdirectory.tracking`|
 Each script generates `tmp` files in their own directory when this property is set to `true`.
@@ -278,6 +290,7 @@ DataWeave parses a Doctype declaration when this property is set to `true`.
 
 Available for language levels: 2.5
 
+//TODO: RELEASE in 2.5?
 //mule.dw.remove_shadowed_implicit_inputs//
 |`mule.dw.remove_shadowed_implicit_inputs`|
 If a variable with the same name is declared at the root level and this property is set to `true`, DataWeave removes implicit inputs.
