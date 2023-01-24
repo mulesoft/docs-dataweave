@@ -105,49 +105,49 @@ Sets the maximum length of exception messages to display to the user. The messag
 |`com.mulesoft.dw.indexsize`|
 Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `1572864`
 
 //com.mulesoft.dw.java.stacktrace//
 |`com.mulesoft.dw.java.stacktrace`|
 Specifies the depth of the Java stack trace.
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `6`
 
 //com.mulesoft.dw.max_memory_allocation//
 |`com.mulesoft.dw.max_memory_allocation`|
 Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp`. See xref:dataweave-memory-management.adoc[].
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `1572864` (1.5 MB)
 
 //com.mulesoft.dw.memory_pool_size//
 |`com.mulesoft.dw.memory_pool_size`|
 Sets the number of slots in the memory pool. DataWeave buffers use off-heap memory from a pool, up to a defined size (`com.mulesoft.dw.memory_pool_size` * `com.mulesoft.dw.max_memory_allocation`). DataWeave allocates the remainder using heap memory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `60`
 
 //com.mulesoft.dw.scheduler.size//
 |`com.mulesoft.dw.scheduler.size`|
 Specifies the size of DataWeave scheduler's thread pool.
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `100`
 
 //com.mulesoft.dw.stacksize//
 |`com.mulesoft.dw.stacksize`|
 Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. The maximum size limit is 256.
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `256`
 
 //com.mulesoft.dw.telemetry.bufferSize//
 |`com.mulesoft.dw.telemetry.bufferSize`|
 Determines the size in bytes of the telemetry event buffer.
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `1048576`
 
 //com.mulesoft.dw.telemetry.enabled//
