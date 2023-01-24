@@ -116,6 +116,13 @@ Sets the number of slots in the memory pool. DataWeave buffers use off-heap memo
 * Type: `Number`
 * Default: `60`
 
+//com.mulesoft.dw.multipart.defaultContentType//
+|`com.mulesoft.dw.multipart.defaultContentType`|
+Sets the default Content-Type to use on parts of the `multipart/*` format when a `Content-Type` is not specified. See also, the multipart reader property xref:dataweave-formats-multipart.adoc#properties[defaultContentType]. _Introduced in DataWeave 2.3 (2.3.0-20210720) for the August 2021 release of Mule 4.3.0-20210719._
+
+* Type: `String`
+* Default: `application/octet-stream`
+
 //com.mulesoft.dw.stacksize//
 |`com.mulesoft.dw.stacksize`|
 Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. The maximum size limit is 256.
@@ -151,6 +158,14 @@ The telemetry service collects memory usage statistics when this property is set
 //com.mulesoft.dw.telemetry.sync//
 |`com.mulesoft.dw.telemetry.sync`|
 Telemetry events are published synchronously when this property is set to `true`.
+
+* Type: `Boolean`
+* Default: `false`
+
+//com.mulesoft.dw.track.cursor.close//
+|`com.mulesoft.dw.track.cursor.close`|
+When set to `true`, tracks the stack trace from which the `CursorProvider#close()` method is called.
+Use this property for troubleshooting, for example, if `CursorProvider#openCursor()` is called on a cursor that is already closed.
 
 * Type: `Boolean`
 * Default: `false`
@@ -257,6 +272,13 @@ DataWeave parses a Doctype declaration when this property is set to `true`.
 * Default: `false`
 
 Available for language levels: 2.5
+
+//com.mulesoft.dw.xml.supportDTD//
+|`com.mulesoft.dw.xml.supportDTD`|
+Controls whether DTD handling is enabled or disabled. When this property is set to `false`, DataWeaves skips processing of both internal and external subsets. Note that the default for this property changed from `true` to `false` in Mule version 4.3.0-20210427, which includes the May, 2021 patch of DataWeave version 2.3.0.
+
+* Type: `Boolean`
+* Default: `false`
 
 //TODO: RELEASE in 2.5?
 //mule.dw.remove_shadowed_implicit_inputs//
