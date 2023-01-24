@@ -25,14 +25,6 @@ By default, adds to coercion exceptions more information about data that fails t
 * Type: `Boolean`
 * Default: `true`
 
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.cpulimit.watchdog//
-|`com.mulesoft.dw.cpulimit.watchdog`|
-Monitors and limits script execution time when set to `true`.
-
-* Type: `Boolean`
-* Default: `true`
-
 //com.mulesoft.dw.date_minus_back_compatibility//
 |`com.mulesoft.dw.date_minus_back_compatibility`|
 Restores the xref:dataweave-cookbook-add-and-subtract-time.adoc[Add and Subtract Time] behaviors that changed in 2.3.0 when this property is set to `true`.
@@ -53,14 +45,6 @@ output application/dw
 
 * In DataWeave 2.3.0, the expression returns `PT8952H`.
 * In DataWeave 2.2.0, the expression returns `P1Y8D`.
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.decode_binaries_with_writer_encoding//
-|`com.mulesoft.dw.decode_binaries_with_writer_encoding`|
-If set, then binary values in json are written using JsonWriter encoding, otherwise it will use either the encoding defined in the value schema or the default one.
-
-* Type: `Boolean`
-* Default: `false`
 
 //com.mulesoft.dw.directbuffer.disable//
 |`com.mulesoft.dw.directbuffer.disable`|
@@ -131,14 +115,6 @@ Sets the number of slots in the memory pool. DataWeave buffers use off-heap memo
 
 * Type: `Number`
 * Default: `60`
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.scheduler.size//
-|`com.mulesoft.dw.scheduler.size`|
-Specifies the size of DataWeave scheduler's thread pool.
-
-* Type: `Number`
-* Default: `100`
 
 //com.mulesoft.dw.stacksize//
 |`com.mulesoft.dw.stacksize`|
@@ -239,19 +215,11 @@ output application/json
 
 Available for language levels: 2.3, 2.4
 
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.workingdirectory.base//
-|`com.mulesoft.dw.workingdirectory.base`|
-Specifies the base directory in which to write temporary files.
-
-* Type: `String`
-* Default: `/var/folders/8f/5jqs1kh97k16dzsmxxph2m5c0000gp/T/`
 
 //TODO: RELEASE in 2.5?
 //com.mulesoft.dw.workingdirectory.delete_sync//
 |`com.mulesoft.dw.workingdirectory.delete_sync`|
  File deletion is occurs synchronously when this property is set to `true`.
-
 
 * Type: `Boolean`
 * Default: `false`
