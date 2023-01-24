@@ -94,6 +94,13 @@ _Experimental:_ Adds the StackTrace for dumper exceptions when `com.mulesoft.dw.
 
 `com.mulesoft.dw.dumper_fill_stacktrace` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
 
+//com.mulesoft.dw.error_value_length//
+|`com.mulesoft.dw.error_value_length`|
+Sets the maximum length of exception messages to display to the user. The message is truncated to the maximum length. This setting is useful for avoiding long exception messages.
+
+* Type: `Number`
+* Default: `80`
+
 //com.mulesoft.dw.indexsize//
 |`com.mulesoft.dw.indexsize`|
 Sets the maximum size (in bytes) of the page in memory that indexed readers use.
@@ -110,10 +117,10 @@ Specifies the depth of the Java stack trace.
 
 //com.mulesoft.dw.max_memory_allocation//
 |`com.mulesoft.dw.max_memory_allocation`|
-Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp`.
+Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp`. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
 * Type: `Integer`
-* Default: `1572864`
+* Default: `1572864` (1.5 MB)
 
 //com.mulesoft.dw.memory_pool_size//
 |`com.mulesoft.dw.memory_pool_size`|
@@ -152,14 +159,14 @@ Enables the DataWeave telemetry service.
 
 //com.mulesoft.dw.telemetry.memory//
 |`com.mulesoft.dw.telemetry.memory`|
-If set, then the telemetry service will collect memory usage statistics
+The telemetry service collects memory usage statistics when this property is set to `true`.
 
 * Type: `Boolean`
 * Default: `false`
 
 //com.mulesoft.dw.telemetry.sync//
 |`com.mulesoft.dw.telemetry.sync`|
-If set, then telemetry events are published synchronously.
+Telemetry events are published synchronously when this property is set to `true`.
 
 * Type: `Boolean`
 * Default: `false`
@@ -226,7 +233,7 @@ Available for language levels: 2.3, 2.4
 
 //com.mulesoft.dw.workingdirectory.base//
 |`com.mulesoft.dw.workingdirectory.base`|
-Specifies the base directory in which temporary files will be written
+Specifies the base directory in which to write temporary files.
 
 * Type: `String`
 * Default: `/var/folders/8f/5jqs1kh97k16dzsmxxph2m5c0000gp/T/`
