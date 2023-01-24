@@ -161,7 +161,9 @@ The telemetry service collects memory usage statistics when this property is set
 
 //com.mulesoft.dw.telemetry.sync//
 |`com.mulesoft.dw.telemetry.sync`|
-If set, then telemetry events are published synchronously.
+Telemetry events are published synchronously when this property is set to `true`.
+
+
 
 * Type: `Boolean`
 * Default: `false`
