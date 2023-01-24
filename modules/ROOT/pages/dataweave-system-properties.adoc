@@ -94,14 +94,6 @@ Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 * Type: `Number`
 * Default: `1572864`
 
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.java.stacktrace//
-|`com.mulesoft.dw.java.stacktrace`|
-Specifies the depth of the Java stack trace.
-
-* Type: `Number`
-* Default: `6`
-
 //com.mulesoft.dw.max_memory_allocation//
 |`com.mulesoft.dw.max_memory_allocation`|
 Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp`. See xref:dataweave-memory-management.adoc[].
@@ -129,38 +121,6 @@ Sets the maximum size of the stack. When a function recurses too deeply, DataWea
 
 * Type: `Number`
 * Default: `256`
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.telemetry.bufferSize//
-|`com.mulesoft.dw.telemetry.bufferSize`|
-Determines the size in bytes of the telemetry event buffer.
-
-* Type: `Number`
-* Default: `1048576`
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.telemetry.enabled//
-|`com.mulesoft.dw.telemetry.enabled`|
-Enables the DataWeave telemetry service.
-
-* Type: `Boolean`
-* Default: `false`
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.telemetry.memory//
-|`com.mulesoft.dw.telemetry.memory`|
-The telemetry service collects memory usage statistics when this property is set to `true`.
-
-* Type: `Boolean`
-* Default: `false`
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.telemetry.sync//
-|`com.mulesoft.dw.telemetry.sync`|
-Telemetry events are published synchronously when this property is set to `true`.
-
-* Type: `Boolean`
-* Default: `false`
 
 //com.mulesoft.dw.track.cursor.close//
 |`com.mulesoft.dw.track.cursor.close`|
@@ -230,31 +190,6 @@ output application/json
 
 Available for language levels: 2.3, 2.4
 
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.workingdirectory.delete_sync//
-|`com.mulesoft.dw.workingdirectory.delete_sync`|
- File deletion is occurs synchronously when this property is set to `true`.
-
-* Type: `Boolean`
-* Default: `false`
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.workingdirectory.max_output_buffer_size//
-|`com.mulesoft.dw.workingdirectory.max_output_buffer_size`|
-Specifies the maximum size of a file to be written in bytes
-
-* Type: `Long`
-* Default: `-1`
-
-//TODO: RELEASE in 2.5?
-//com.mulesoft.dw.workingdirectory.tracking//
-|`com.mulesoft.dw.workingdirectory.tracking`|
-Each script generates `tmp` files in their own directory when this property is set to `true`.
-
-* Type: `Boolean`
-* Default: `false`
-
 //com.mulesoft.dw.xml_reader.honourMixedContentStructure//
 |`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
 When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
@@ -279,12 +214,4 @@ Controls whether DTD handling is enabled or disabled. When this property is set 
 
 * Type: `Boolean`
 * Default: `false`
-
-//TODO: RELEASE in 2.5?
-//mule.dw.remove_shadowed_implicit_inputs//
-|`mule.dw.remove_shadowed_implicit_inputs`|
-If a variable with the same name is declared at the root level and this property is set to `true`, DataWeave removes implicit inputs.
-
-* Type: `Boolean`
-* Default: `true`
 |===
