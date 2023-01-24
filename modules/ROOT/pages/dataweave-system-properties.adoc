@@ -230,7 +230,8 @@ Available for language levels: 2.3, 2.4
 
 //com.mulesoft.dw.workingdirectory.base//
 |`com.mulesoft.dw.workingdirectory.base`|
-Specifies the base directory in which temporary files will be written
+Specifies the base directory in which to write temporary files.
+
 
 * Type: `String`
 * Default: `/var/folders/8f/5jqs1kh97k16dzsmxxph2m5c0000gp/T/`
