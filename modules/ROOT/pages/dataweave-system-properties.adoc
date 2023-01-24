@@ -7,15 +7,6 @@ DataWeave supports several system properties. To use these properties in applica
 |===
 |Property |Description
 
-//com.mulesoft.dw.buffer.memory.monitoring//
-|`com.mulesoft.dw.buffer.memory.monitoring`|
-_Experimental:_ When set to `true`, logs a message each time a slot from the memory pool is taken or released. The behavior is useful for troubleshooting.
-`com.mulesoft.dw.buffer.memory.monitoring` supports an _experimental feature_ that is subject to change or removal from future versions of DataWeave.
-
-* Type: `Boolean`
-* Default: `false`
-
-
 //com.mulesoft.dw.buffered_char_sequence.enabled
 |`com.mulesoft.dw.buffered_char_sequence.enabled`|
 Controls whether an internal `BufferedCharSequence` improvement is enabled or disabled. When this property is set to `true`, DataWeave avoids loading large fields (greater than 1.5M) into memory. These fields are read in chunks. This feature reduces performance to prevent an out-of-memory error.
@@ -227,15 +218,6 @@ Use this property for troubleshooting, for example, if `CursorProvider#openCurso
 
 * Type: `Boolean`
 * Default: `false`
-
-
-//com.mulesoft.dw.verbose//
-|`com.mulesoft.dw.verbose`|
-Displays filtered stack traces when this property is set to `true`. Does not display stack traces when set to `false`.
-
-* Type: `Boolean`
-* Default: `false`
-
 
 //com.mulesoft.dw.xml_reader.honourMixedContentStructure
 |`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
