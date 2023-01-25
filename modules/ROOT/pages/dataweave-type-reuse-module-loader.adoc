@@ -35,7 +35,7 @@ Where:
 
 This is how you can use types to import XML schema files inside your DataWeave script.
 
-.XSD script
+.XSD Script
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -65,7 +65,7 @@ This is how you can use types to import XML schema files inside your DataWeave s
 </xs:schema>
 ----
 
-.DataWeave script
+.DataWeave Script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -87,8 +87,9 @@ import * from xmlschema!org::mule::weave::v2::module::xmlschema::engine::pattern
 
 == From the XML Model to DataWeave
 
-As previously mentioned, this is a translation between the XML schema type system to our own. Therefore, there are some general rules and limitations that apply that are important when working with these types.
-The translations between the XML schema model to DataWeave are described below using different XSD files and showing the translation result in DataWeave code. Notice that these files are generated dynamically and are not visible, though they are useful to learn how to consume types from generated XSD files.
+As previously mentioned, this is a translation between the XML schema type system to our own. 
+Therefore, as the two type models are considered different, some general rules and limitations apply.
+The translations between the XML schema model to DataWeave are described below using different XSD files showing how they translate to DataWeave code. Notice that these files are generated dynamically and are not visible, though they are useful to learn how to consume types from generated XSD files.
 
 === Built-in XML Schema Types
 
@@ -124,7 +125,7 @@ DataWeave supports the following XSD types where `xs` is the XMLSchema default n
 | `xs:date`| `LocalDateTime`
 |===
 
-.XSD script
+.XSD Script
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -171,7 +172,7 @@ DataWeave supports the following XSD types where `xs` is the XMLSchema default n
 </xs:schema>
 ----
 
-.Generated DataWeave module
+.Generated DataWeave Module
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -191,7 +192,7 @@ Each root element declared inside your XSD file generates a type directive with 
 
 The following example shows how to declare root elements:
 
-.XSD script
+.XSD Script
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -220,7 +221,7 @@ The following example shows how to declare root elements:
 </xs:schema>
 ----
 
-.Generated DataWeave module
+.Generated DataWeave Module
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -241,7 +242,7 @@ Named complex types declared as top-level elements on the schema which are refer
 
 The following example shows how to declare complex types:
 
-.XSD script
+.XSD Script
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -271,7 +272,7 @@ The following example shows how to declare complex types:
 </xs:schema>
 ----
 
-.Generated DataWeave module
+.Generated DataWeave Module
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -293,7 +294,7 @@ type Root = RootElementDefinition
 
 The use of imports or includes inside an XSD schema file results in a DataWeave module import using the XML schema module loader pointing to the corresponding file. The file should have a `schemaLocation` declared relative to the main schema. Notice how the following examples use xref:dataweave-type-selector.adoc[]:
 
-.XSD script
+.XSD Script
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -310,7 +311,7 @@ The use of imports or includes inside an XSD schema file results in a DataWeave 
 </xsd:schema>
 ----
 
-.Generated DataWeave module
+.Generated DataWeave Module
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -332,7 +333,7 @@ type Root = RootElementDefinition
 
 You can map this XML schema structure to a `UnionType` in DataWeave:
 
-.XSD script
+.XSD Script
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -361,7 +362,7 @@ You can map this XML schema structure to a `UnionType` in DataWeave:
 </xs:schema>
 ----
 
-.Generated DataWeave module
+.Generated DataWeave Module
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -384,7 +385,7 @@ type Root = RootElementDefinition
 XSD namespaces are carried to types and elements definition to make sure that the structure matches exactly. 
 The following example defines a specific `targetNamespace`:
 
-.XSD script
+.XSD Script
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -415,7 +416,7 @@ The following example defines a specific `targetNamespace`:
 </xs:schema>
 ----
 
-.Generated DataWeave module
+.Generated DataWeave Module
 [source,dataweave,linenums]
 ----
 %dw 2.0

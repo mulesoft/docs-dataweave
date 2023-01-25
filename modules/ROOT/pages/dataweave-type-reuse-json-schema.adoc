@@ -13,7 +13,7 @@ The JSON schema loader parses schemas following the https://json-schema.org/spec
 
 Having a JSON schema in the resources: 
 
-.JSON Schema script
+.JSON Script
 [source,JSON]
 ----
 {
@@ -70,7 +70,7 @@ Where:
 
 Having this directive in the script header loads all the existing types in the JSON schema. In this case, the only existing type is the *Root* type, specified at the root which describes an Object that can have three properties (`firstName`, `lastName`, and `age`). It is equivalent to declaring the following type in your DataWeave script:
 
-.DataWeave script
+.DataWeave Script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -82,7 +82,7 @@ Notice that the age field is the only one that is optional and it is signaled by
 This is how you can use the type to know if a value follows the structure defined by the JSON schema.
 The following example outputs the value `true` since the object contains the required fields, `firstName` and `lastName`:
 
-.DataWeave script
+.DataWeave Script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -101,7 +101,7 @@ import * from jsonschema!jsonschema!example::schema::Person
 
 The following example outputs the value `false` since the object does not contain the required fields, `firstName` and `lastName`:
 
-.DataWeave script
+.DataWeave Script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -122,7 +122,7 @@ import * from jsonschema!jsonschema!example::schema::Person
 
 Definitions inside JSON schemas are also loaded when the module is imported:
 
-.JSON Schema script
+.JSON Script
 [source,JSON]
 ----
 {
@@ -216,7 +216,7 @@ You can use reuse types to take a specific action when an input is of a certain 
 
 The following example outputs the value `person` since the object is importing that type definition:
  
-.DataWeave script
+.DataWeave Script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -239,7 +239,7 @@ else -> "NO TYPE MATCHED"
 
 The following example outputs the value `address` since the object is importing that type definition:
 
-.DataWeave script
+.DataWeave Script
 [source,dataweave,linenums]
 ----
 %dw 2.0

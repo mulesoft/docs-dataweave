@@ -5,7 +5,7 @@ endif::[]
 
 Reuse types declared in other DataWeave modules by using the import directive:
 
-.DataWeave module (dw/Weather.dwl)
+.DataWeave Module (dw/Weather.dwl)
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -15,7 +15,7 @@ type DetailedWeather = {temperature: Number, weather: Weather}
 
 You can use those types as any other type in DataWeave, as constraints for variables and functions or for pattern matching and checking types at runtime:
 
-.DataWeave script
+.DataWeave Script
 [source,dataweave,linenums]
 ----
 %dw 2.0

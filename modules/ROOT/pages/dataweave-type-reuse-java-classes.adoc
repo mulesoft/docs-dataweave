@@ -35,7 +35,7 @@ Loading the type for this Java class has the same effect as declaring this DataW
 type Class = { name?: String | Null, price?: Number | Null }
 ----
 
-.DataWeave script
+.DataWeave Script
 [source,dataweave,linenums]
 ----
 %dw 2.0
