@@ -139,7 +139,7 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 * `onUnhandledTimeout`:
  Callback that is called when the watchdog was not able to stop the execution
  after a timeout, which is useful for logging or reporting the problem.
- The callback is going to be called with the following:
+ The callback is called with the following:
 ** `threadName`:  Name of the thread that hanged.
 ** `javaStackTrace`: Java stack trace where the hang occurred.
 ** `code`: The DataWeave code that caused the hang.
