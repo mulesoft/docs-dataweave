@@ -87,8 +87,7 @@ import * from xmlschema!org::mule::weave::v2::module::xmlschema::engine::pattern
 
 == From the XML Model to DataWeave
 
-As previously mentioned, this is a translation between the XML schema type system to our own. 
-Therefore, as the two type models are considered different, some general rules and limitations apply.
+As previously mentioned, the XML schema type system translates to DataWeave type directives. Therefore, as the two type models are considered different, some general rules and limitations apply.
 The translations between the XML schema model to DataWeave are described below using different XSD files showing how they translate to DataWeave code. Notice that these files are generated dynamically and are not visible, though they are useful to learn how to consume types from generated XSD files.
 
 === Built-in XML Schema Types
@@ -382,8 +381,9 @@ type Root = RootElementDefinition
 
 === Namespaces
 
-XSD namespaces are carried to types and elements definition to make sure that the structure matches exactly. 
-The following example defines a specific `targetNamespace`:
+Namespaces on your XML schema file translate directly to DataWeave type directives.
+ 
+The following example shows how to set a specific `targetNamespace` where your elements exist. This namespace, which translates to DataWeave, is required if you want to select and navigate said types. 
 
 .XSD Script
 [source,XML]
