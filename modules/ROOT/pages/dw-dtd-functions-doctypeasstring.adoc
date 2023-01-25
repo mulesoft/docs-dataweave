@@ -1,0 +1,66 @@
+= docTypeAsString
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[doctypeasstring1]]
+== docTypeAsString&#40;docType: DocType&#41;: String
+
+Transforms a `DocType` value to a string representation.
+
+_Introduced in DataWeave version 2.5.0._
+
+=== Parameters
+
+[%header, cols="1,1,3a"]
+|===
+| Name | Type | Description
+| `docType` | DocType | The `DocType` value to transform to a string.
+|===
+
+=== Example
+
+This example transforms a `DocType` value that includes a `systemId` to a string representation.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::xml::Dtd
+output application/json
+---
+docTypeAsString({rootName: "cXML", systemId: "http://xml.cxml.org/schemas/cXML/1.2.014/cXML.dtd"})
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+"cXML SYSTEM http://xml.cxml.org/schemas/cXML/1.2.014/cXML.dtd"
+----
+
+=== Example
+
+This example transforms a `DocType` value that includes a `publicId` and `systemId` to a string representation.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::xml::Dtd
+output application/json
+---
+docTypeAsString({rootName: "html", publicId: "-//W3C//DTD XHTML 1.0 Transitional//EN", systemId: "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"})
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+"html PUBLIC -//W3C//DTD XHTML 1.0 Transitional//EN http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+----
+

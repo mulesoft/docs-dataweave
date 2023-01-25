@@ -1,6 +1,6 @@
 = Runtime Types (dw::Runtime)
 
-[cols="1,3a,3a", options="header"]
+[%header, cols="1,3a,3a"]
 |===
 | Type | Definition | Description
 
@@ -23,8 +23,8 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 | `type DataFormatProperty = { name: String, optional: Boolean, defaultValue?: Any, description: String, possibleValues: Array<Any&#62; }`
 | Type that describes a data format property. The fields include a `name`,
 `description`, array of possible values (`possibleValues`), an optional default
- value (`defaultValue`), and an `optional` flag that indicates whether the
- property is required or not.
+value (`defaultValue`), and an `optional` flag that indicates whether the property
+is required or not.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
@@ -87,13 +87,14 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 | `type MimeType = String`
 | A String representation of a MIME type.
 
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
+
 
 | Position
 | `type Position = { index: Number, line: Number, column: Number }`
 | Type that represents a position in a file by its index and its line and column.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
-
 
 | ReaderInput
 | `type ReaderInput = {
@@ -110,23 +111,25 @@ mimeType: MimeType }`
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
-
 | RunSuccess
 | `type RunSuccess = { success: true, value: Binary, mimeType: MimeType, encoding?: String, logs: Array<LogEntry&#62; }`
 | Data type of the data that returns when a `run` function executes successfully.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
-
 | RuntimeExecutionConfiguration
-| `type RuntimeExecutionConfiguration = {
-timeOut?: Number,
-outputMimeType?: MimeType,
-writerProperties?: Dictionary<SimpleType&#62;,
-onException?: "HANDLE" &#124; "FAIL",
-securityManager?: SecurityManager,
-loggerService?: LoggerService,
-maxStackSize?: Number }`
+| `type RuntimeExecutionConfiguration = { 
+     timeOut?: Number, 
+     outputMimeType?: MimeType,
+     writerProperties?: Dictionary<SimpleType&#62;,
+     onException?: "HANDLE" &#124; "FAIL",
+     securityManager?: SecurityManager, 
+     loggerService?: LoggerService, 
+     maxStackSize?: Number, 
+     onUnhandledTimeout?: &#40;threadName: String, 
+     javaStackTrace: String, 
+     code: String&#41; &#45;&#62; Any 
+}`
 | Configuration of the runtime execution that has advanced parameters.
 
 * `timeOut`: Maximum amount of time the DataWeave script takes before timing out.
@@ -139,8 +142,13 @@ maxStackSize?: Number }`
   This security manager is composed by the current `SecurityManager`.
 * `loggerService`: The `LoggerService` to use in this execution.
 * `maxStackSize`: The maximum stack size.
+*  The callback is called with the following:
+** `threadName`: Name of thread that hangs.
+** `javaStackTrace`: The Java stack trace where the hang occurred.
+** `code`: DataWeave code that caused the hang.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
+
 
 | SecurityManager
 | `type SecurityManager = &#40;grant: String, args: Array<Any&#62;&#41; &#45;&#62; Boolean`
@@ -151,12 +159,12 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
+
 | TryResult
 | `type TryResult = { success: Boolean, result?: T, error?: { kind: String, message: String, stack?: Array<String&#62;,
 stackTrace?: String, location?: String } }`
-| Object with a result or error message. If `success` is `false`, data type provides
-the `error`. If `true`, the data type provides the `result`. 
+| Object with a result or error message. If `success` is `false`, this data type provides the `error`. If `true`, the data type provides the `result`. 
 
-Starting in Mule version 4.3.1 (DataWeave version 2.3.1), `stackTrace` is available only when `stack` is
-not present. The `stackTrace` field provides the native Java stack trace.
+* `stackTrace`: Starting in Mule version 4.4.0 (DataWeave version 2.4.0), `stackTrace` is available only when `stack` is not present. The `stackTrace` field provides the native Java stack trace.
+
 |===

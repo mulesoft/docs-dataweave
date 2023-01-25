@@ -1,22 +1,12 @@
 = DataFormat Types (dw::extension::DataFormat)
 
-The DataFormat module provides resources for registering a new data format for the DataWeave language. For an example, see
-https://github.com/mulesoft-labs/data-weave-custom-data-format[Custom Data Formats Example].
-
 [%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 
 | DataFormat
-| `type DataFormat = { binaryFormat?: Boolean, defaultCharset?: String,
-fileExtensions?: Array<String&#62;,
-acceptedMimeTypes: Array<MimeType&#62;,
-reader: &#40;content: Binary,
-charset: String,
-settings: ReaderSettings&#41; &#45;&#62; Any,
-writer: &#40;value: Any,
-settings: WriterSettings&#41; &#45;&#62; Binary }`
-a| Represents the DataFormat definition.
+| `type DataFormat = { binaryFormat?: Boolean, defaultCharset?: String, fileExtensions?: Array<String&#62;, acceptedMimeTypes: Array<MimeType&#62;, reader: &#40;content: Binary, charset: String, settings: ReaderSettings&#41; &#45;&#62; Any, writer: &#40;value: Any, settings: WriterSettings&#41; &#45;&#62; Binary }`
+| Represents the `DataFormat` definition:
 
 * `binaryFormat?: Boolean`: True if this is data format is represented as binary instead of text. False if not present.
 * `defaultCharset?: String`: Default character set of this format, if any.
@@ -25,29 +15,36 @@ a| Represents the DataFormat definition.
 * `reader: (content: Binary, charset: String, settings: ReaderSettings) -> Any`: Function that reads raw content and transforms it into the canonical DataWeave model.
 * `writer: (value:Any, settings:WriterSettings) -> Binary`: Function that writes the canonical DataWeave model into binary content.
 
+_Introduced in DataWeave version 2.2.0._
+
 
 | EmptySettings
 | `type EmptySettings = Object`
 | Represents a configuration with no settings.
 
+_Introduced in DataWeave version 2.2.0._
+
 
 | EncodingSettings
-| `type EncodingSettings = { encoding?: String }`
+| `type EncodingSettings = {encoding?: String {defaultValue: "UTF&#45;8"} }`
 | Represents encoding settings:
 
 * `encoding?: String`: Encoding that the writer uses for output. Defaults to "UTF-8".
+
+_Introduced in DataWeave version 2.2.0._
+
 
 | MimeType
 | `type MimeType = String`
 | Represents a MIME type, such as `application/json`.
 
-
 _Introduced in DataWeave version 2.2.0._
+
 
 | Settings
 | `type Settings = Object`
 | Reader or writer configuration settings.
 
-
 _Introduced in DataWeave version 2.2.0._
+
 |===

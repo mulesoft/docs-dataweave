@@ -8,10 +8,11 @@ endif::[]
 [[distinctby1]]
 == distinctBy<T&#62;&#40;@StreamCapable items: Array<T&#62;, criteria: &#40;item: T, index: Number&#41; &#45;&#62; Any&#41;: Array<T&#62;
 
-Iterates over an array and returns the unique elements in it.
+Iterates over the input and returns the unique elements in it.
 
 
-DataWeave uses the result of applying the provided lambda as the uniqueness criteria.
+DataWeave uses the result of the provided lambda as the
+uniqueness criteria.
 
 This version of `distinctBy` finds unique values in an array. Other versions
 act on an object and handle a `null` value.
@@ -20,7 +21,7 @@ act on an object and handle a `null` value.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `items` | The array to evaluate.
 | `criteria` | The criteria used to select an `item` and/or `index` from the array.
 |===
@@ -112,7 +113,7 @@ Removes duplicate key-value pairs from an object.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `object` | The object from which to remove the key-value pairs.
 | `criteria` | The `key` and/or `value` used to identify the key-value pairs to remove.
 |===
@@ -196,3 +197,4 @@ output application/xml
 == distinctBy&#40;@StreamCapable items: Null, criteria: &#40;item: Nothing, index: Nothing&#41; &#45;&#62; Any&#41;: Null
 
 Helper function that enables `distinctBy` to work with a `null` value.
+

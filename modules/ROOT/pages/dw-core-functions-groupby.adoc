@@ -6,7 +6,7 @@ endif::[]
 
 
 [[groupby1]]
-== groupBy<T, R&#62;&#40;items: Array<T&#62;, criteria: &#40;item: T, index: Number&#41; &#45;&#62; R&#41;: { &#40;R&#41;: Array<T&#62; }
+== groupBy<T, R&#62;&#40;items: Array<T&#62;, criteria: &#40;item: T, index: Number&#41; &#45;&#62; R&#41;: {&#124; &#40;R&#41;: Array<T&#62; &#124;}
 
 Returns an object that groups items from an array based on specified
 criteria, such as an expression or matching selector.

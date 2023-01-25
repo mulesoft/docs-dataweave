@@ -147,3 +147,4 @@ output application/json
   "atBeginningOfWeekDate": "2020-10-04"
 }
 ----
+

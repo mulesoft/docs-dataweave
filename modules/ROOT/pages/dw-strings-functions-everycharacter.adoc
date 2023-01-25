@@ -19,7 +19,7 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `text` | The string to check.
 | `condition` | Expression that iterates through the characters in
-                the string that it checks and returns a Boolean value.
+              the string that it checks and returns a Boolean value.
 |===
 
 === Example
@@ -52,3 +52,4 @@ true
 Helper function that enables `everyCharacter` to work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
+

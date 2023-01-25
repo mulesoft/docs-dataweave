@@ -21,7 +21,7 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `nMonths` | The number of months as a whole number.
-              A positive or negative number is valid.
+            A positive or negative number is valid.
 |===
 
 === Example

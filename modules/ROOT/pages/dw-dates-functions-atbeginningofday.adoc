@@ -97,3 +97,4 @@ output application/json
   "atBeginningOfDayLocalDateTime": "2020-10-06T00:00:00"
 }
 ----
+
