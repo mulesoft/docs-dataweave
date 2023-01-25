@@ -1,11 +1,6 @@
 = Mule (dw::Mule)
 
-This DataWeave module contains functions for interacting with Mule runtime engine.
-
-
-To use this module, you must import it to your DataWeave code, for example,
-by adding the line `import * from dw::Mule` to the header of your
-DataWeave script.
+This DataWeave module contains functions for interacting with Mule runtime.
 
 == Functions
 
@@ -22,3 +17,5 @@ Environment variables.
 
 == Types
 * xref:dw-mule-types.adoc[Mule Types]
+
+
