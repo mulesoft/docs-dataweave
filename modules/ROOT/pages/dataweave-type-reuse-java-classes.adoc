@@ -35,7 +35,7 @@ Loading the type for this Java class has the same effect as declaring this DataW
 type Class = { name?: String | Null, price?: Number | Null }
 ----
 
-.DataWeave script:
+.DataWeave script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -60,7 +60,7 @@ type Order = {
 The type `Product::Class` is used here as any other type in DataWeave. Creating a DataWeave object by calling the function `Product::new` (that calls the constructor of the Java class) also matches the type `Product::Class`.
 Note that the import directive is written without using `from` so the usage of the type `Class` needs the prefix `Product::`. This allows the use of the types to be more declarative and to avoid collision of other `Class` types that can be imported:
 
-.Output:
+.Output
 ----
 {
     a: true,

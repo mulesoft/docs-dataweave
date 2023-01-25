@@ -13,7 +13,7 @@ The JSON schema loader parses schemas following the https://json-schema.org/spec
 
 Having a JSON schema in the resources: 
 
-.JSON Schema script:
+.JSON Schema script
 [source,JSON]
 ----
 {
@@ -42,7 +42,7 @@ Having a JSON schema in the resources:
 
 The following example shows how you can use the JSON schema loader to import the type:
 
-.DataWeave file header:
+.DataWeave file header
 ----
 import * from jsonschema!example::schema::Person
 ----
@@ -63,14 +63,14 @@ import * from jsonschema!example::schema::Person
 
 Where:
 
-* `typeToImport`: You can replace it by `*` to import all types defined in the schema or to export a single type from the schema, for example, *Root*. You can also import JSON schema types with a different name, for example, *Root as Person*. This way you can reference the type with that name in the script.
+* `typeToImport`: You can replace it by `\*` to import all types defined in the schema or to export a single type from the schema, for example, *Root*. You can also import JSON schema types with a different name, for example, *Root as Person*. This way you can reference the type with that name in the script.
 * `pathToJsonSchema`: This represents the path to the schema file, modifying the file separators for `::` and removing the “.json” extension from the file name. For example, if the path to the schema is “example/schema/Person.json”, “example::schema::Person” must be used.
 
 == Use Your Types in a DataWeave Script
 
 Having this directive in the script header loads all the existing types in the JSON schema. In this case, the only existing type is the *Root* type, specified at the root which describes an Object that can have three properties (`firstName`, `lastName`, and `age`). It is equivalent to declaring the following type in your DataWeave script:
 
-.DataWeave script:
+.DataWeave script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -82,7 +82,7 @@ Notice that the age field is the only one that is optional and it is signaled by
 This is how you can use the type to know if a value follows the structure defined by the JSON schema.
 The following example outputs the value `true` since the object contains the required fields, `firstName` and `lastName`:
 
-.DataWeave script:
+.DataWeave script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -94,14 +94,14 @@ import * from jsonschema!jsonschema!example::schema::Person
 } is Root
 ----
 
-.Output: 
+.Output
 ----
 "True"
 ----
 
 The following example outputs the value `false` since the object does not contain the required fields, `firstName` and `lastName`:
 
-.DataWeave script:
+.DataWeave script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -113,7 +113,7 @@ import * from jsonschema!jsonschema!example::schema::Person
 } is Root
 ----
 
-.Output: 
+.Output
 ----
 "False"
 ----
@@ -122,7 +122,7 @@ import * from jsonschema!jsonschema!example::schema::Person
 
 Definitions inside JSON schemas are also loaded when the module is imported:
 
-.JSON Schema script:
+.JSON Schema script
 [source,JSON]
 ----
 {
@@ -216,7 +216,7 @@ You can use reuse types to take a specific action when an input is of a certain 
 
 The following example outputs the value `person` since the object is importing that type definition:
  
-.DataWeave script:
+.DataWeave script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -232,14 +232,14 @@ else -> "NO TYPE MATCHED"
 }
 ----
 
-.Output: 
+.Output
 ----
 "Person"
 ----
 
 The following example outputs the value `address` since the object is importing that type definition:
 
-.DataWeave script:
+.DataWeave script
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -256,7 +256,7 @@ else -> "NO TYPE MATCHED"
 }
 ----
 
-.Output: 
+.Output
 ----
 "Address"
 ----
