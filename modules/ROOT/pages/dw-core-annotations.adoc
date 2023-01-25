@@ -98,8 +98,7 @@ _Introduced in DataWeave 2.3.0. Supported by Mule 4.3 and later._
 | StreamCapable
 | `@StreamCapable&#40;&#41;`
 | Annotation that marks a parameter as stream capable, which means that this
-field will consume an array of objects in a forward-only manner. Examples of functions with `@StreamCapable` fields are `map`, `mapObject`, 
-and `pluck`.
+field will consume an array of objects in a forward-only manner.
 
 | TailRec
 | `@TailRec&#40;&#41;`
