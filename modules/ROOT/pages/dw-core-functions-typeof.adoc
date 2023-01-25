@@ -47,7 +47,8 @@ output application/json
 
 === Example
 
-This example shows that the type of a value is independent of the type with which the value is declared.
+This example shows that the type of a value is independent of the type it's
+declared with.
 
 ==== Source
 
