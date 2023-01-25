@@ -18,6 +18,7 @@ Transforms a binary value into a Base64 string.
 | `content` | The binary value to transform.
 |===
 
+[[toBase64-example]]
 === Example
 
 This example transforms a binary value into a Base64 encoded string. In this case, the binary value represents an image.
