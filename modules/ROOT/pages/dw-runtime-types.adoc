@@ -58,20 +58,19 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 
 
 | LoggerService
-| `type LoggerService = { /**
-* Function called when the execution starts. DataWeave sends the result
-* to every `log` call through the `context` parameter, so that, for example,
-* a logging header can be sent at initialization and recovered in each log.
-**/
-initialize?: &#40;&#41; &#45;&#62; Object, /**
-* Function that is called on every log message.
-**/
-log: &#40;level: LogLevel, msg: String, context: Object&#41; &#45;&#62; Any, /**
-* Function called when the execution completes, which is a common time
-* to flush any buffer or to log out gracefully.
-**/
-shutdown?: &#40;&#41; &#45;&#62; Boolean }`
-| Service that handles all logging.
+| `type LoggerService = { initialize?: &#40;&#41; &#45;&#62; Object, log: &#40;level: LogLevel, msg: String, context: Object&#41; &#45;&#62; Any, shutdown?: &#40;&#41; &#45;&#62; Boolean }`
+| Service that handles all logging:
+
+* `initialize`:
+   Function called when the execution starts. DataWeave sends
+   the result to every `log` call through the `context` parameter,
+   so that, for example, a logging header can be sent at
+    initialization and recovered in each log.
+* `log`:
+   Function that is called on every log message.
+* `shutdown`:
+   Function called when the execution completes, which is a common time
+   to flush any buffer or to log out gracefully.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
@@ -91,21 +90,14 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 
 
 | ReaderInput
-| `type ReaderInput = { /**
-* The input, in Binary format.
-**/
-value: Binary, /**
-* The encoding for the reader to use.
-**/
-encoding?: String, /**
-* The reader properties used to parse the input.
-**/
-properties?: Dictionary<SimpleType&#62;, /**
-* The MIME type of the input.
-**/
-mimeType: MimeType }`
+| `type ReaderInput = { value: Binary, encoding?: String, properties?: Dictionary<SimpleType&#62;, mimeType: MimeType }`
 | Input to the DataWeave reader created for the specified MIME type, which includes
 the Binary input and MIME type, as well as optional encoding and properties values.
+
+* `value`: The input, in Binary format.
+* `encoding`: The encoding for the reader to use.
+* `properties`: The reader properties used to parse the input.
+* `mimeType`: The MIME type of the input.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
@@ -118,42 +110,39 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 
 
 | RuntimeExecutionConfiguration
-| `type RuntimeExecutionConfiguration = { /**
-* Maximum amount of time the DataWeave script takes before timing out.
-**/
-timeOut?: Number, /**
-* Default output MIME type if not specified in the DataWeave script.
-**/
-outputMimeType?: MimeType, /**
-* Writer properties to use with the specified the `outputMimeType` property.
-**/
-writerProperties?: Dictionary<SimpleType&#62;, /**
-* Specifies the behavior that occurs when the execution fails:
-* 
-* * `HANDLE` &#40;default value&#41; returns `ExecutionFailure`.
-* * `FAIL` propagates an exception.
-**/
-onException?: "HANDLE" &#124; "FAIL", /**
-* Identifies the `SecurityManager` to use in this execution. This security manager
-* is composed by the current `SecurityManager`.
-**/
-securityManager?: SecurityManager, /**
-* The `LoggerService` to use in this execution.
-**/
-loggerService?: LoggerService, /**
-* The maximum stack size.
-**/
-maxStackSize?: Number, /**
-* Callback that is called when the watchdog was not able to stop the execution after a timeout.
-*  Is useful for logging or reporting the problem.
-* 
-*  The callback is going to be called with :
-*  * threadName: The Thread name that is hanged
-*  * javaStackTrace: The javaStackTrace where it is hanged
-*  * code: The DW Code that caused this being hanged
-**/
-onUnhandledTimeout?: &#40;threadName: String, javaStackTrace: String, code: String&#41; &#45;&#62; Any }`
+| `type RuntimeExecutionConfiguration = { timeOut?: Number, outputMimeType?: MimeType, writerProperties?: Dictionary<SimpleType&#62;, onException?: "HANDLE" &#124; "FAIL", securityManager?: SecurityManager, loggerService?: LoggerService, maxStackSize?: Number, onUnhandledTimeout?: &#40;threadName: String, javaStackTrace: String, code: String&#41; &#45;&#62; Any }`
 | Configuration of the runtime execution that has advanced parameters.
+
+* `timeOut`:
+   Maximum amount of time the DataWeave script takes before timing out.
+
+* `outputMimeType`:
+  Default output MIME type if not specified in the DataWeave script.
+
+* `writerProperties`:
+   Writer properties to use with the specified the `outputMimeType` property.
+
+* `onException`
+  Specifies the behavior that occurs when the execution fails:
+  ** `HANDLE` (default value) returns `ExecutionFailure`.
+  ** `FAIL` propagates an exception.
+
+* `securityManager`:
+  Identifies the `SecurityManager` to use in this execution. This security manager
+  is composed by the current `SecurityManager`.
+
+* `loggerService`:
+  The `LoggerService` to use in this execution.
+* `maxStackSize`:
+  The maximum stack size.
+
+* `onUnhandledTimeout`:
+ Callback that is called when the watchdog was not able to stop the execution
+ after a timeout, which is useful for logging or reporting the problem.
+ The callback is going to be called with the following:
+** `threadName`:  Name of the thread that hanged.
+** `javaStackTrace`: Java stack trace where the hang occurred.
+** `code`: The DataWeave code that caused the hang.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
@@ -169,11 +158,11 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 
 
 | TryResult
-| `type TryResult = { success: Boolean, result?: T, error?: { kind: String, message: String, stack?: Array<String&#62;, /**
-* Since 4.4.0. It is only available when stack is not present. It will contain the native java stacktrace.
-**/
-stackTrace?: String, location?: String } }`
+| `type TryResult = { success: Boolean, result?: T, error?: { kind: String, message: String, stack?: Array<String&#62;, stackTrace?: String, location?: String } }`
 | Object with a result or error message. If `success` is `false`, data type provides
 the `error`. If `true`, the data type provides the `result`.
+
+Starting in Mule 4.4.0, if the stack is not present, the `stackTrace` field is available
+with the native Java stack trace.
 
 |===
