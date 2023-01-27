@@ -5,26 +5,26 @@
 | Type | Definition | Description
 
 | DataFormat
-| `type DataFormat = { /**
-* True if this is data format is represented as binary representation instead of text. False if not present.
-**/
-binaryFormat?: Boolean, /**
-* Default character set of this format, if any.
-**/
-defaultCharset?: String, /**
-* Returns the list of file extensions with the `.` &#40;for example, `.json`, `.xml`&#41; to assign to this data format.
-**/
-fileExtensions?: Array<String&#62;, /**
-* The list of MIME types to accept.
-**/
-acceptedMimeTypes: Array<MimeType&#62;, /**
-* Function that reads raw content and transforms it into the canonical DataWeave model.
-**/
-reader: &#40;content: Binary, charset: String, settings: ReaderSettings&#41; &#45;&#62; Any, /**
-* Function that writes the canonical DataWeave model into binary content.
-**/
-writer: &#40;value: Any, settings: WriterSettings&#41; &#45;&#62; Binary }`
-| Represents the DataFormat definition.
+| `type DataFormat = { binaryFormat?: Boolean, defaultCharset?: String, fileExtensions?: Array<String&#62;, acceptedMimeTypes: Array<MimeType&#62;, reader: &#40;content: Binary, charset: String, settings: ReaderSettings&#41; &#45;&#62; Any, writer: &#40;value: Any, settings: WriterSettings&#41; &#45;&#62; Binary }`
+| Represents the `DataFormat` definition and contains the following fields:
+
+* `binaryFormat`:
+   True if this is data format is represented as binary representation instead of text. False if not present.
+
+* `defaultCharset`:
+   Default character set of this format, if any.
+
+* `fileExtensions`:
+  Returns the list of file extensions with the `.` (for example, `.json`, `.xml`) to assign to this data format.
+
+* `acceptedMimeTypes`:
+  The list of MIME types to accept.
+
+* `reader`:
+  Function that reads raw content and transforms it into the canonical DataWeave model.
+
+* `writer`:
+  Function that writes the canonical DataWeave model into binary content.
 
 _Introduced in DataWeave version 2.2.0._
 
@@ -37,11 +37,11 @@ _Introduced in DataWeave version 2.2.0._
 
 
 | EncodingSettings
-| `type EncodingSettings = { /**
-* Encoding that the writer uses for output. Defaults to "UTF&#45;8".
-**/
-encoding?: String {defaultValue: "UTF&#45;8"} }`
-| Represents encoding settings.
+| `type EncodingSettings = { encoding?: String {defaultValue: "UTF&#45;8"} }`
+| Represents encoding settings and contains the following field:
+
+* `encoding`:
+  Encoding that the writer uses for output. Defaults to "UTF-8".
 
 _Introduced in DataWeave version 2.2.0._
 

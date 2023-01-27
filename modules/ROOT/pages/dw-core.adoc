@@ -97,7 +97,7 @@ preceding expression to the next (a callback) only if the value returned
 by the preceding expression is not `null`.
 | xref:dw-core-functions-to.adoc[to] | Returns a range with the specified boundaries.
 | xref:dw-core-functions-trim.adoc[trim] | Removes any blank spaces from the beginning and end of a string.
-| xref:dw-core-functions-typeof.adoc[typeOf] | Returns the basic data type of a value.
+| xref:dw-core-functions-typeof.adoc[typeOf] | Returns the primitive data type of a value, such as `String`.
 | xref:dw-core-functions-unzip.adoc[unzip] | Performs the opposite of `zip`. It takes an array of arrays as input.
 | xref:dw-core-functions-upper.adoc[upper] | Returns the provided string in uppercase characters.
 | xref:dw-core-functions-uuid.adoc[uuid] | Returns a v4 UUID using random numbers as the source.
