@@ -97,7 +97,7 @@ Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 //com.mulesoft.dw.javaSqlDateToDate//
 |`com.mulesoft.dw.javaSqlDateToDate`|
 
-When set, java.sql.Date is mapped to DW Date type. If false it is mapped to DateTime
+When set, `java.sql.Date` maps to the DataWeave `Date` type. If `false`, it maps to `DateTime`.
 
 * Type: `Boolean`
 
