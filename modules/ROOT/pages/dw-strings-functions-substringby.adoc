@@ -20,8 +20,8 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `text` | The string to split. The string is treated as an array of characters.
 | `predicate` | Expression that tests each character and returns a
-                Boolean value. The expression can iterate over each
-                character and index of the string.
+              Boolean value. The expression can iterate over each
+              character and index of the string.
 |===
 
 === Example

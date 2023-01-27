@@ -19,12 +19,12 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `period` | An object such as `{years:4, months:11, days:28}`. The
-             key-value pairs are optional and can be specified in any
-             order. An empty object (`{}`) returns the Period value
-             `"P0D"` (zero days). The default value of each key
-             is `0`. Valid values are whole numbers, which can be
-             positive or negative. Decimal values produce an
-             error message. Key names are selectable.
+           key-value pairs are optional and can be specified in any
+           order. An empty object (`{}`) returns the Period value
+           `"P0D"` (zero days). The default value of each key
+           is `0`. Valid values are whole numbers, which can be
+           positive or negative. Decimal values produce an
+           error message. Key names are selectable.
 |===
 
 === Example

@@ -18,7 +18,7 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `text` | The `String` value to transform into an `Array`
-           of characters (a `Array<String>` type).
+         of characters (a `Array<String>` type).
 |===
 
 === Example

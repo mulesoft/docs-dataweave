@@ -21,7 +21,7 @@ of the output. If there are no matches, the output array will be empty.
 
 [%header, cols="1,3"]
 |===
-| Name   | Description
+| Name | Description
 | `value` | The source object to evaluate.
 | `criteria` | Boolean expression that selects a `value`, `key`, or `index` of the object.
 |===
@@ -101,7 +101,7 @@ This example outputs an object that contains only the values that are not `null`
 
 ==== Source
 
-[source,DataWeave, linenums]
+[source,DataWeave,linenums]
 ----
 %dw 2.0
 output application/json
@@ -126,7 +126,9 @@ myObject filterObject $ != null
 }
 ----
 
+
 [[filterobject2]]
 == filterObject&#40;value: Null, criteria: &#40;value: Nothing, key: Nothing, index: Nothing&#41; &#45;&#62; Any&#41;: Null
 
 Helper function that enables `filterObject` to work with a `null` value.
+

@@ -21,7 +21,7 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `dateTime` | The `DateTime` value to transform into a `Number` value.
 | `unit` | The unit of time (`"milliseconds"` or `"seconds"`) to use
-           Given a `null` value, the function uses `"seconds"`.
+         Given a `null` value, the function uses `"seconds"`.
 |===
 
 === Example
@@ -69,7 +69,7 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `period` | The `Period` value to transform into a `Number` value.
 | `unit` | The unit to apply to the specified `period`: `hours`,
-           `minutes`, `seconds`, `milliseconds`, or `nanos`.
+         `minutes`, `seconds`, `milliseconds`, or `nanos`.
 |===
 
 === Example
@@ -116,15 +116,15 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `value` | The `String` or `Key` value to transform into a `Number` value.
 | `format` | Optional formatting to apply to the `value`.
-             A `format` accepts `#` or `0` (but not both) as
-             placeholders for _decimal_ values and a single
-             whole number that is less than `10`. Only one decimal
-             point is permitted. A `null` or empty `String` value has
-             no effect on the `Number` value. Other characters
-             produce an error.
+           A `format` accepts `#` or `0` (but not both) as
+           placeholders for _decimal_ values and a single
+           whole number that is less than `10`. Only one decimal
+           point is permitted. A `null` or empty `String` value has
+           no effect on the `Number` value. Other characters
+           produce an error.
 | `locale` | Optional ISO 3166 country code to use, such as `US`,
-             `AR`, or `ES`. A `null` or absent value uses your
-             JVM default.
+           `AR`, or `ES`. A `null` or absent value uses your
+           JVM default.
 |===
 
 === Example

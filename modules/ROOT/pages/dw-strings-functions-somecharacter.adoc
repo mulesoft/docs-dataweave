@@ -20,7 +20,7 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `text` | The string to check.
 | `condition` | Expression that iterates through the characters and spaces
-                in the string and returns a Boolean value.
+              in the string and returns a Boolean value.
 |===
 
 === Example
@@ -32,7 +32,7 @@ This example determines whether a string has any uppercase characters.
 [source,DataWeave,linenums]
 ----
 %dw 2.0
-import someCharacter from dw::core::Strings
+import * from dw::core::Strings
 output application/json
 ---
 "someCharacter" someCharacter isUpperCase($)
