@@ -1,12 +1,12 @@
-= Reusing XML Schema Module Loader
+= Reusing an XML Schema
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-You can import XML schema files (`.xsd`) inside your DataWeave script as modules using the `xmlschema!` module loader. This loader allows you to use types declared on your schema inside DataWeave directly.
+You can import XML schema files (`.xsd`) inside your DataWeave script as modules by using the `xmlschema!` module loader. This loader enables you to use types that are declared on your schema inside DataWeave directly.
 DataWeave loads your XSD file and translates declarations inside your file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module. Use them to build new types, type check your variables, do pattern matching, or declare new functions that use types. There are no restrictions on how to use these types.
 
-The following example shows how to look for an XSD file in the path “org/weave/myfolder/User.xsd” being the first path the root of the classpath of your application:
+The following example shows how to look for an XSD file in the path `org/weave/myfolder/User.xsd` being the first path the root of the classpath of your application:
 
 ----
 import * from xmlschema!org::weave::myfolder::User
@@ -14,28 +14,26 @@ import * from xmlschema!org::weave::myfolder::User
 
 == Import Syntax
 
-In order to import the JSON schema types, as shown above, use the following directive:
+To import the XML schema types, as shown above, use the following syntax, where:
+
+* `typeToImport`: You can use `\*` to import all types defined in the schema, or to export a single type from the schema, for example, `Root`. You can also import XML schema types with a different name, for example, `Root as Person`. This way  you can reference the type with that name in the script.
+* `pathToXsdSchemaFile`: To specify the path to the schema file, replace the file separators with `::` and remove the `.xsd` extension from the file name. For example, if the path to the schema is `example/schema/Person.xsd`, use `example::schema::Person`.
 
 ----
-import _typesToImport_ from jsonschema!_pathToXsdSchemaFile_
+import _typesToImport_ from xmlschema!_pathToXsdSchemaFile_
 ----
 
 The following example shows how to import a type:
 
 ----
-import * from jsonschema!example::schema::Person
+import * from xmlschema!example::schema::Person
 ----
-
-Where:
-
-* `typeToImport`: You can replace it by `\*` to import all types defined in the schema or to export a single type from the schema, for example, *Root*. You can also import JSON schema types with a different name, for example, *Root as Person*. This way you can reference the type with that name in the script.
-* `pathToXsdSchemaFile`: This represents the path to the schema file, modifying the file separators for `::` and removing the `.xsd` extension from the file name. For example, if the path to the schema is “example/schema/Person.xsd”, “example::schema::Person” must be used.
 
 == Use Your Types in a DataWeave Script
 
-This is how you can use types to import XML schema files inside your DataWeave script.
+This example shows how to use types to import XML schema files into your DataWeave script.
 
-.XSD Script
+.XSD File (`User.xsd`):
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -65,7 +63,7 @@ This is how you can use types to import XML schema files inside your DataWeave s
 </xs:schema>
 ----
 
-.DataWeave Script
+.DataWeave Script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -73,7 +71,6 @@ import * from xmlschema!org::mule::weave::v2::module::xmlschema::engine::pattern
 
 
 {
-     //This would return true as it complies with the xml schema above.
       Root @(id:"test") :{
         employee: {
             "name": "Mariano"
@@ -88,7 +85,7 @@ import * from xmlschema!org::mule::weave::v2::module::xmlschema::engine::pattern
 == From the XML Model to DataWeave
 
 As previously mentioned, the XML schema type system translates to DataWeave type directives. Therefore, as the two type models are considered different, some general rules and limitations apply.
-The translations between the XML schema model to DataWeave are described below using different XSD files showing how they translate to DataWeave code. Notice that these files are generated dynamically and are not visible, though they are useful to learn how to consume types from generated XSD files.
+The following files illustrate how XSD translates to DataWeave code. These files are generated dynamically and are not visible, though they are useful for learning how to consume types from generated XSD files.
 
 === Built-in XML Schema Types
 
@@ -124,7 +121,7 @@ DataWeave supports the following XSD types where `xs` is the XMLSchema default n
 | `xs:date`| `LocalDateTime`
 |===
 
-.XSD Script
+.XSD:
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -171,7 +168,7 @@ DataWeave supports the following XSD types where `xs` is the XMLSchema default n
 </xs:schema>
 ----
 
-.Generated DataWeave Module
+.Generated DataWeave Module:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -191,7 +188,7 @@ Each root element declared inside your XSD file generates a type directive with 
 
 The following example shows how to declare root elements:
 
-.XSD Script
+.XSD:
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -220,7 +217,7 @@ The following example shows how to declare root elements:
 </xs:schema>
 ----
 
-.Generated DataWeave Module
+.Generated DataWeave Module:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -241,7 +238,7 @@ Named complex types declared as top-level elements on the schema which are refer
 
 The following example shows how to declare complex types:
 
-.XSD Script
+.XSD:
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -271,7 +268,7 @@ The following example shows how to declare complex types:
 </xs:schema>
 ----
 
-.Generated DataWeave Module
+.Generated DataWeave Module:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -291,9 +288,9 @@ type Root = RootElementDefinition
 
 === Imports/Includes
 
-The use of imports or includes inside an XSD schema file results in a DataWeave module import using the XML schema module loader pointing to the corresponding file. The file should have a `schemaLocation` declared relative to the main schema. Notice how the following examples use xref:dataweave-type-selector.adoc[]:
+The use of imports or includes inside an XSD schema file results in a DataWeave module which contains an `import` directive that uses the XML schema module loader to point to the schema file located at the specified `schemaLocation`. This location must be declared relative to the main schema. Notice how the following examples use xref:dataweave-type-selector.adoc[]:
 
-.XSD Script
+.XSD:
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -310,7 +307,7 @@ The use of imports or includes inside an XSD schema file results in a DataWeave 
 </xsd:schema>
 ----
 
-.Generated DataWeave Module
+.Generated DataWeave Module:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -319,7 +316,7 @@ The use of imports or includes inside an XSD schema file results in a DataWeave 
 ns ns0 http://common.com/COMMON
 
 
-Import xmlschema!org::mule::weave::v2::module::xmlschema::moduleloader::imports::common
+import xmlschema!org::mule::weave::v2::module::xmlschema::moduleloader::imports::common
 
 
 type RootElementDefinition = {| Root: common::RequestHeaderDefinition.ns0#RequestHeader |}
@@ -332,7 +329,7 @@ type Root = RootElementDefinition
 
 You can map this XML schema structure to a `UnionType` in DataWeave:
 
-.XSD Script
+.XSD:
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -361,7 +358,7 @@ You can map this XML schema structure to a `UnionType` in DataWeave:
 </xs:schema>
 ----
 
-.Generated DataWeave Module
+.Generated DataWeave Module:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -381,11 +378,11 @@ type Root = RootElementDefinition
 
 === Namespaces
 
-Namespaces on your XML schema file translate directly to DataWeave type directives.
+Namespaces in your XML schema file translate directly to DataWeave type directives.
  
-The following example shows how to set a specific `targetNamespace` where your elements exist. This namespace, which translates to DataWeave, is required if you want to select and navigate said types. 
+The following example shows how to set the specific `targetNamespace` where your elements exist. This namespace, which translates to DataWeave, is required if you want to select and navigate said types. 
 
-.XSD Script
+.XSD:
 [source,XML]
 ----
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -416,7 +413,7 @@ The following example shows how to set a specific `targetNamespace` where your e
 </xs:schema>
 ----
 
-.Generated DataWeave Module
+.Generated DataWeave Module:
 [source,dataweave,linenums]
 ----
 %dw 2.0

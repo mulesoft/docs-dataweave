@@ -3,10 +3,10 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Use the import directive with the `java!` prefix when loading a Java class. The prefix `java!` tells DataWeave to use the Java module loader. When loaded, you can call constructors, variables, and functions, see xref:dataweave-cookbook-java-methods.adoc[]. The class type is also available. This is exposed with the type name `Class`.
+Use the import directive with the `java!` prefix when loading a Java class. The prefix `java!` tells DataWeave to use the Java module loader. When the module is loaded, you can call constructors, variables, and functions (see xref:dataweave-cookbook-java-methods.adoc[]). The class type is also available. DataWeave exposes the type of the Java class with the type name `Class`.
 
-Java classes are mapped to DataWeave types following the table present in xref:dataweave-formats-java.adoc#java-value-mapping[Java Value Mapping].
-If a Java class is not present in the table, DataWeave treats it as a JavaBean and maps it as an `Object` type with its fields being the properties name of the Java class and its corresponding mapped DataWeave type. In this case, DataWeave takes all properties from the Java getters.
+Java classes are mapped to the DataWeave types listed in xref:dataweave-formats-java.adoc#java-value-mapping[Java Value Mapping].
+If a Java class is not present in the table, DataWeave treats the class as a `JavaBean` and maps it to an `Object` type with its fields being the properties name of the Java class and its corresponding mapped DataWeave type. In this case, DataWeave takes all properties from the Java getters.
 
 xref:dataweave-formats-java.adoc#class_user[Product Class]:
 ----
@@ -35,7 +35,7 @@ Loading the type for this Java class has the same effect as declaring this DataW
 type Class = { name?: String | Null, price?: Number | Null }
 ----
 
-.DataWeave Script
+.DataWeave Script:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -57,10 +57,10 @@ type Order = {
 }
 ----
 
-The type `Product::Class` is used here as any other type in DataWeave. Creating a DataWeave object by calling the function `Product::new` (that calls the constructor of the Java class) also matches the type `Product::Class`.
-Note that the import directive is written without using `from` so the usage of the type `Class` needs the prefix `Product::`. This allows the use of the types to be more declarative and to avoid collision of other `Class` types that can be imported:
+The example uses the type `Product::Class` as any other type in DataWeave. Creating a DataWeave object by calling the function `Product::new` (which calls the constructor of the Java class) also matches the type `Product::Class`.
+Notice that the import directive lacks a `from` and instead uses the type `Class` prefix `Product::`. The prefix enables more declarative use of the type and avoids collisions  with any other `Class` types that are imported:
 
-.Output
+.Output:
 ----
 {
     a: true,
