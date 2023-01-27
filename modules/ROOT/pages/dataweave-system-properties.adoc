@@ -1,39 +1,22 @@
 = DataWeave System Properties
-
-
-DataWeave supports several system properties. To use these properties in application development and deployments, see xref:mule-runtime::mule-app-properties-system.adoc[System Properties].
+DataWeave supports several system properties. To use these properties in application development and deployments, see xref:mule-runtime:mule-app-properties-system.adoc[System Properties].
 
 [%header%autowidth.spread,cols=",a"]
 |===
 |Property |Description
-
-//com.mulesoft.dw.buffer.memory.monitoring//
-|`com.mulesoft.dw.buffer.memory.monitoring`|
-_Experimental:_ When set to `true`, logs a message each time a slot from the memory pool is taken or released. The behavior is useful for troubleshooting.
-`com.mulesoft.dw.buffer.memory.monitoring` supports an _experimental feature_ that is subject to change or removal from future versions of DataWeave.
-
-* Type: `Boolean`
-* Default: `false`
-
-
-//com.mulesoft.dw.buffered_char_sequence.enabled
+//com.mulesoft.dw.buffered_char_sequence.enabled//
 |`com.mulesoft.dw.buffered_char_sequence.enabled`|
-Controls whether an internal `BufferedCharSequence` improvement is enabled or disabled. When this property is set to `true`, DataWeave avoids loading large fields (greater than 1.5M) into memory. These fields are read in chunks. This feature reduces performance to prevent an out-of-memory error.
-
+Controls whether an internal `BufferedCharSequence` improvement is enabled or disabled. When this property is set to `true`, DataWeave does not load large fields (greater than 1.5M) into memory. DataWeave reads these fields by chunk. This feature reduces performance to prevent an out-of-memory error.
 
 * Type: `Boolean`
 * Default: `true`
 
-
 //com.mulesoft.dw.buffersize//
 |`com.mulesoft.dw.buffersize`|
-Sets the size (in bytes) of in-memory input and output buffers that DataWeave uses to retain processed inputs and outputs.
-DataWeave stores payloads that exceed this size in temporary files `dw-buffer-index-${count}.tmp` and `dw-buffer-output-${count}.tmp`.
-See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
+Sets the size (in bytes) of in-memory input and output buffers that DataWeave uses to retain processed inputs and outputs. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-index-${count}.tmp` and `dw-buffer-output-${count}.tmp`. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
 * Type: `Number` (in bytes)
 * Default: `8192` bytes (8 KB)
-
 
 //com.mulesoft.dw.coercionexception.verbose//
 |`com.mulesoft.dw.coercionexception.verbose`|
@@ -42,7 +25,6 @@ By default, adds to coercion exceptions more information about data that fails t
 * Type: `Boolean`
 * Default: `true`
 
-
 //com.mulesoft.dw.date_minus_back_compatibility//
 |`com.mulesoft.dw.date_minus_back_compatibility`|
 Restores the xref:dataweave-cookbook-add-and-subtract-time.adoc[Add and Subtract Time] behaviors that changed in 2.3.0 when this property is set to `true`.
@@ -50,7 +32,9 @@ Restores the xref:dataweave-cookbook-add-and-subtract-time.adoc[Add and Subtract
 * Type: `Boolean`
 * Default: `false`
 
-For example, consider the following DataWeave script:
+Available for language levels: 2.3, 2.4
+
+Example:
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -58,9 +42,9 @@ output application/dw
 ---
 \|2019-10-01\| - \|2018-09-23\|
 ----
+
 * In DataWeave 2.3.0, the expression returns `PT8952H`.
 * In DataWeave 2.2.0, the expression returns `P1Y8D`.
-
 
 //com.mulesoft.dw.directbuffer.disable//
 |`com.mulesoft.dw.directbuffer.disable`|
@@ -68,7 +52,6 @@ Controls whether DataWeave uses off-heap memory (the default) or heap memory. Da
 
 * Type: `Boolean`
 * Default: `false`
-
 
 //com.mulesoft.dw.dump_files//
 |`com.mulesoft.dw.dump_files`|
@@ -79,7 +62,6 @@ _Experimental:_ Dumps the input context and the failing script into a folder whe
 
 `com.mulesoft.dw.dump_files` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[Troubleshooting a Failing DataWeave Script].
 
-
 //com.mulesoft.dw.dump_folder//
 |`com.mulesoft.dw.dump_folder`|
 _Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.dump_files` is set to `true`.
@@ -89,7 +71,6 @@ _Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.
 
 `com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[Troubleshooting a Failing DataWeave Script].
 
-
 //com.mulesoft.dw.dumper_fill_stacktrace//
 |`com.mulesoft.dw.dumper_fill_stacktrace`|
 _Experimental:_ Adds the StackTrace for dumper exceptions when `com.mulesoft.dw.dump_files` is set to `true`.
@@ -97,8 +78,7 @@ _Experimental:_ Adds the StackTrace for dumper exceptions when `com.mulesoft.dw.
 * Type: `Boolean`
 * Default: `false`
 
-`com.mulesoft.dw.dumper_fill_stacktrace` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave.
-
+`com.mulesoft.dw.dumper_fill_stacktrace` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
 
 //com.mulesoft.dw.error_value_length//
 |`com.mulesoft.dw.error_value_length`|
@@ -107,24 +87,30 @@ Sets the maximum length of exception messages to display to the user. The messag
 * Type: `Number`
 * Default: `80`
 
-
 //com.mulesoft.dw.indexsize//
 |`com.mulesoft.dw.indexsize`|
 Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 
 * Type: `Number`
-* Default: `1572864` (1.5 MB)
+* Default: `1572864`
 
+//com.mulesoft.dw.javaSqlDateToDate//
+|`com.mulesoft.dw.javaSqlDateToDate`|
+
+When set, `java.sql.Date` maps to the DataWeave `Date` type. If `false`, it maps to `DateTime`.
+
+* Type: `Boolean`
+
+* Default: `false`
+
+Available for language levels: 2.4, 2.5
 
 //com.mulesoft.dw.max_memory_allocation//
 |`com.mulesoft.dw.max_memory_allocation`|
-Sets the size (in bytes) of each slot in the off-heap memory pool.
+Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp`. See xref:dataweave-memory-management.adoc[].
 
-* Type: `Number` (in bytes)
+* Type: `Number`
 * Default: `1572864` (1.5 MB)
-
-See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
-
 
 //com.mulesoft.dw.memory_pool_size//
 |`com.mulesoft.dw.memory_pool_size`|
@@ -133,7 +119,6 @@ Sets the number of slots in the memory pool. DataWeave buffers use off-heap memo
 * Type: `Number`
 * Default: `60`
 
-
 //com.mulesoft.dw.multipart.defaultContentType//
 |`com.mulesoft.dw.multipart.defaultContentType`|
 Sets the default Content-Type to use on parts of the `multipart/*` format when a `Content-Type` is not specified. See also, the multipart reader property xref:dataweave-formats-multipart.adoc#properties[defaultContentType]. _Introduced in DataWeave 2.3 (2.3.0-20210720) for the August 2021 release of Mule 4.3.0-20210719._
@@ -141,6 +126,20 @@ Sets the default Content-Type to use on parts of the `multipart/*` format when a
 * Type: `String`
 * Default: `application/octet-stream`
 
+//com.mulesoft.dw.stacksize//
+|`com.mulesoft.dw.stacksize`|
+Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. The maximum size limit is 256.
+
+* Type: `Number`
+* Default: `256`
+
+//com.mulesoft.dw.track.cursor.close//
+|`com.mulesoft.dw.track.cursor.close`|
+When set to `true`, tracks the stack trace from which the `CursorProvider#close()` method is called.
+Use this property for troubleshooting, for example, if `CursorProvider#openCursor()` is called on a cursor that is already closed.
+
+* Type: `Boolean`
+* Default: `false`
 
 //com.mulesoft.dw.valueSelector.selectsAlwaysFirst//
 |`com.mulesoft.dw.valueSelector.selectsAlwaysFirst`|
@@ -167,7 +166,6 @@ The following example illustrates the behavior that is controlled by this proper
   </users>
 </root>
 ----
-
 .DataWeave script:
 [source,xml,linenums]
 ----
@@ -178,7 +176,6 @@ output application/json
     shokis: payload.root.users.*user map $.name
 }
 ----
-
 * If `com.mulesoft.dw.valueSelector.selectsAlwaysFirst` is set to `true`, the script returns the following output:
 +
 [source,json,linenums]
@@ -190,7 +187,6 @@ output application/json
   ]
 }
 ----
-
 * If `com.mulesoft.dw.valueSelector.selectsAlwaysFirst` is set to `false`, the script returns the following output:
 +
 [source,json,linenums]
@@ -203,43 +199,29 @@ output application/json
 }
 ----
 
+Available for language levels: 2.3, 2.4
 
-//com.mulesoft.dw.stacksize//
-|`com.mulesoft.dw.stacksize`|
-Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as `Stack Overflow. Max stack is 256.`
+//com.mulesoft.dw.xml_reader.honourMixedContentStructure//
+|`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
+When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
 
-* Type: `Number`
-* Default: `256`
+* Type: `Boolean`
+* Default: `false`
 
+Available for language levels: 2.4
+
+//com.mulesoft.dw.xml_reader.parseDtd//
+|`com.mulesoft.dw.xml_reader.parseDtd`|
+DataWeave parses a Doctype declaration when this property is set to `true`.
+
+* Type: `Boolean`
+* Default: `false`
+
+Available for language levels: 2.5
 
 //com.mulesoft.dw.xml.supportDTD//
 |`com.mulesoft.dw.xml.supportDTD`|
 Controls whether DTD handling is enabled or disabled. When this property is set to `false`, DataWeaves skips processing of both internal and external subsets. Note that the default for this property changed from `true` to `false` in Mule version 4.3.0-20210427, which includes the May, 2021 patch of DataWeave version 2.3.0.
-
-* Type: `Boolean`
-* Default: `false`
-
-
-//com.mulesoft.dw.track.cursor.close//
-|`com.mulesoft.dw.track.cursor.close`|
-When set to `true`, tracks the stack trace from which the `CursorProvider#close()` method is called.
-Use this property for troubleshooting, for example, if `CursorProvider#openCursor()` is called on a cursor that is already closed.
-
-* Type: `Boolean`
-* Default: `false`
-
-
-//com.mulesoft.dw.verbose//
-|`com.mulesoft.dw.verbose`|
-Displays filtered stack traces when this property is set to `true`. Does not display stack traces when set to `false`.
-
-* Type: `Boolean`
-* Default: `false`
-
-
-//com.mulesoft.dw.xml_reader.honourMixedContentStructure
-|`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
-When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
 
 * Type: `Boolean`
 * Default: `false`
