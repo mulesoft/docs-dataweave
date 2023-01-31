@@ -30,10 +30,10 @@ character fields consisting of only spaces as missing values
 
 Expected separation between lines/records:
 
-* `strict`: line break expected at exact end of each record
-* `lenient`: line break used but records may be shorter or longer than schema specifies
-* `noTerminator`: records follow one another with no separation
-* `singleRecord`: entire input is a single record
+* `strict`: Line break expected at exact end of each record.
+* `lenient`: Line break used but records may be shorter or longer than schema specifies. Starting in the January 2023 patch update version 4.4.0-20230102 for Mule, payloads without line breaks no longer work when you use `lenient` as the `recordParsing` property; use `noTerminator`, instead.
+* `noTerminator`: Records follow one another with no separation. Starting in the January 2023 patch update version 4.4.0-20230102 for Mule, you must use the `noTerminator` property when the data payloads have no line break character. 
+* `singleRecord`: Entire input is a single record.
 
 Note that schemas with type `Binary` or `Packed` don't allow for line break
 detection, so setting `recordParsing` to `lenient` only allows long records
