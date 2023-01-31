@@ -36,8 +36,8 @@ Valid values are `true` or `false`.
 |`recordParsing`  |`String`|`'strict'`|Specifies the expected type of separation between lines or records:
 
 * `strict`: Line break is expected at exact end of each record. `strict` is the default.
-* `lenient`: Line break is used, but records can be shorter or longer than the schema specifies.
-* `noTerminator`: Records follow one another with no separation.
+* `lenient`: Line break used but records may be shorter or longer than schema specifies. If your payloads lacks line breaks, use `noTerminator`.
+* `noTerminator`: Records follow one another with no separation. Use the `noTerminator` property when the data payloads have no line break character. 
 * `singleRecord`: The entire input is a single record.
 
 Note that schemas with type `Binary` or `Packed` don't allow for line break detection, so setting `recordParsing` to `lenient` only allows long records to be handled, not short ones. These schemas also currently only work with certain single-byte character encodings (so not with UTF-8 or any multibyte format).
