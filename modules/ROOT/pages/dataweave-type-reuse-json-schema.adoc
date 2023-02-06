@@ -11,7 +11,7 @@ The JSON schema loader parses schemas following the https://json-schema.org/spec
 
 == Import a Type from a JSON Schema
 
-Having a JSON schema in the resources: 
+The following example shows a JSON schema (`Person.json`) in the resources directory: 
 
 .JSON Schema (`example/schema/Person.json`):
 [source,JSON]
@@ -42,7 +42,7 @@ Having a JSON schema in the resources:
 
 The following example shows how you can use the JSON schema loader to import the type:
 
-.DataWeave File Header:
+.DataWeave Script Header:
 ----
 import * from jsonschema!example::schema::Person
 ----
@@ -51,7 +51,7 @@ import * from jsonschema!example::schema::Person
 
 To import JSON schema types, use the following syntax, where:
 
-* `typeToImport`: You can use `\*` alone to import all types defined in the schema or you can export a single type from the schema using, for example, `Root`. You can also import JSON schema types with a different name, for example, `Root as Person`, which enables you to reference the type with that name in the script.
+* `typeToImport`: You can use `\*` alone to import all types defined in the schema or you can import a single type from the schema using, for example, `Root`. You can also import JSON schema types with a different name, for example, `Root as Person`, which enables you to reference the type with that name in the script.
 * `pathToJsonSchema`: To specify the path to the schema file, replace the file separators with `::` and remove the `.json` extension from the file name. For example, if the path to the schema is `example/schema/Person.json`, use `example::schema::Person`.
 
 ----
@@ -66,7 +66,7 @@ import * from jsonschema!example::schema::Person
 
 == Use Your Types in a DataWeave Script
 
-Having this directive in the script header loads all the existing types in the JSON schema. In this case, the only existing type is the `Root` type, specified at the root which describes an Object that can have three properties (`firstName`, `lastName`, and `age`). It is equivalent to declaring the following type in your DataWeave script:
+Having the import directive from the above example in the script header loads all the existing types in the JSON schema. In `import * from jsonschema!example::schema::Person`, the only existing type is the `Root` type, specified at the root which describes an Object that can have three properties (`firstName`, `lastName`, and `age`). It is equivalent to declaring the following type in your DataWeave script:
 
 .DataWeave Script:
 [source,dataweave,linenums]
@@ -94,7 +94,7 @@ import * from jsonschema!jsonschema!example::schema::Person
 
 .Output:
 ----
-"True"
+"true"
 ----
 
 The following example outputs the value `false` since the object does not contain the required fields, `firstName` and `lastName`:
@@ -113,7 +113,7 @@ import * from jsonschema!jsonschema!example::schema::Person
 
 .Output:
 ----
-"False"
+"false"
 ----
 
 == Use Definitions Inside Schemas
@@ -180,7 +180,7 @@ Definitions inside JSON schemas are also loaded when the module is imported:
 }
 ----
 
-You can import the types from that schema with the following directive:
+You can import the types from that schema with the following directive, assuming the JSON schema is `example/schema/Account.json`:
 
 ----
 import * from jsonschema!example::schema::Account
@@ -210,7 +210,7 @@ import address as Account_Address from jsonschema!example::schema::Account
 
 == Facilitate Usage with Pattern Matching
 
-You can use these types to take a specific action when an input is of a certain type. These imported types are useful for pattern matching.
+You can use the types imported from the JSON schemas to take a specific action when an input is of a certain type. These imported types are useful for pattern matching.
 
 The following example outputs the value `person` since the object is importing that type definition:
  
@@ -232,7 +232,7 @@ else -> "NO TYPE MATCHED"
 
 .Output:
 ----
-"Person"
+"PERSON"
 ----
 
 The following example outputs the value `address` since the object is importing that type definition:
@@ -256,5 +256,5 @@ else -> "NO TYPE MATCHED"
 
 .Output:
 ----
-"Address"
+"ADDRESS"
 ----

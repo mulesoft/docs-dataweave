@@ -16,7 +16,7 @@ import * from xmlschema!org::weave::myfolder::User
 
 To import the XML schema types, as shown above, use the following syntax, where:
 
-* `typeToImport`: You can use `\*` to import all types defined in the schema, or to export a single type from the schema, for example, `Root`. You can also import XML schema types with a different name, for example, `Root as Person`. This way  you can reference the type with that name in the script.
+* `typeToImport`: You can use `\*` to import all types defined in the schema, or to import a single type from the schema, for example, `Root`. You can also import XML schema types with a different name, for example, `Root as Person`. This way  you can reference the type with that name in the script.
 * `pathToXsdSchemaFile`: To specify the path to the schema file, replace the file separators with `::` and remove the `.xsd` extension from the file name. For example, if the path to the schema is `example/schema/Person.xsd`, use `example::schema::Person`.
 
 ----
