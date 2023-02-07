@@ -18,10 +18,10 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `parts` | `Number` values for `year`, `month`, and `day` fields. The `month`
-            must be a value between 1 and 12, and the `day` value must be
-            between 1 and 31. You can specify the name-value pairs in any order,
-            but the output is ordered by default as a Date value, such as
-            `2012-10-11`. The input fields are parts of a `DateFactory` type.
+          must be a value between 1 and 12, and the `day` value must be
+          between 1 and 31. You can specify the name-value pairs in any order,
+          but the output is ordered by default as a Date value, such as
+          `2012-10-11`. The input fields are parts of a `DateFactory` type.
 |===
 
 === Example
@@ -49,3 +49,4 @@ output application/json
    "newDate": "2012-10-11"
 }
 ----
+

@@ -25,8 +25,8 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `text` | The string to process.
 | `amount` | The number of characters to return. Negative
-             numbers and `0` return an empty string. Decimals
-             are rounded down to the nearest whole number.
+           numbers and `0` return an empty string. Decimals
+           are rounded down to the nearest whole number.
 |===
 
 === Example

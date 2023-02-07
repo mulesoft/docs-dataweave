@@ -1,0 +1,354 @@
+
+= Protobuf Format
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: format, protobuf, application/protobuf, application/x-protobuf, application/protobuf
+
+MIME type: `application/protobuf`
+
+ID: `protobuf`
+
+Protobuf is a data format that can be mapped to DataWeave values natively. From a user
+perspective, always specify the location of the descriptor file and the fully qualified
+name of the message for DataWeave to read or write. When specifying the configuration properties, use the `descriptorUrl` and the `messageType` properties, respectively.
+
+[[example_protobuf_descriptor]]
+== Example: Specify the Descriptor when Reading a Protobuf Message
+
+The following example shows how to specify the descriptor location and the message type to parse a Protobuf message and transform it into JSON.
+
+=== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+
+package examples.descriptor;
+
+message MyMessage {
+  int32 myInt = 3;
+  bool myBool = 13;
+  string myString = 23;
+}
+----
+
+=== Input
+
+The Protobuf message serves as input payload to the DataWeave source. It contains a `myInt` field with the value `42`, a `myBool` field with the value `false`, and a `myString` field with the value `DW + Proto`. We omit showing the Protobuf messages since their representation is not user-friendly.
+
+=== Source
+
+The DataWeave script reads a Protobuf message that has an `int` field, a `bool` field, and a `string` field, and transforms the input into JSON format. `messageType` points to the fully qualified name of the message being read, in this case `examples.descriptor.MyMessage`. `descriptorUrl` points to the descriptor, a compiled version of the `.proto` schema previously presented.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+input payload application/x-protobuf messageType='examples.descriptor.MyMessage',descriptorUrl="descriptors/examples.dsc"
+---
+payload
+----
+
+=== Output
+
+The DataWeave script outputs the following JSON object containing the three values.
+
+[source,json,linenums]
+----
+{
+  "myInt": 42.0,
+  "myBool": false,
+  "myString": "DW <3 Proto"
+}
+----
+
+
+[[protobuf_features]]
+== Protobuf Features
+
+Protobuf supports the following features which are not common in other formats. 
+
+[[protobuf_enums]]
+=== Enumerations
+
+https://developers.google.com/protocol-buffers/docs/proto3#enum[Protobuf enumerations^], or enums, are read as a `String` with a particular schema that specifies the enum index. When parsing a `proto` message, the schema is used to extract the label of the enum value. If many labels share the same index, the first one is used. If the index does not have a matching label, the special label `"-UNRECOGNIZED"` is used.
+When writing a `proto` message, the schema specifies the protocol used to get the index corresponding to the given label.
+
+[[example_protobuf_enum_ok]]
+=== Example: Use DataWeave to Write Protobuf Enumerations
+
+The following example shows how to generate a `proto` message with some enum values, given a particular schema.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+
+package examples.enumerations;
+
+
+message Langs {
+  enum Languages {
+    DataWeave = 0;
+    Scala = 2;
+    Java = 343049039;
+  }
+
+  Languages okayLanguage = 10;
+  Languages bestLanguage = 11;
+}
+----
+
+==== Source
+
+The DataWeave script outputs a Protobuf message containing `okayLanguage` and `bestLanguage` values.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/x-protobuf messageType='examples.enumerations.Langs',descriptorUrl="descriptors/examples.dsc"
+---
+{
+  okayLanguage : "Scala",
+  bestLanguage : "DataWeave"
+}
+----
+
+==== Output
+
+The DataWeave script outputs a Protobuf message with two fields specified with the encoded values.
+
+[[example_protobuf_enum_unrecognized]]
+=== Example: Use DataWeave to Read Protobuf Enumerations
+
+The following example shows how to read a `proto` message with some enum values, given a particular schema, and what to expect when the value present in the message is not specified in the schema.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+
+package examples.enumerations;
+
+
+message Langs {
+  enum Languages {
+    DataWeave = 0;
+    Scala = 2;
+    Java = 343049039;
+  }
+
+  Languages okayLanguage = 10;
+  Languages bestLanguage = 11;
+}
+----
+
+==== Input
+
+The Protobuf message which serves as input payload to the DataWeave source is not shown since it's binary. It contains a `okayLanguage` field with enum index 3, an index not specified on the schema, while the `bestLanguage` field has the expected value.
+
+==== Source
+
+The DataWeave script just reads a Protobuf message and outputs it as a DataWeave output.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+input payload application/x-protobuf messageType='examples.enumerations.Langs',descriptorUrl="descriptors/examples.dsc"
+output application/dw
+---
+payload
+----
+
+==== Output
+
+The DataWeave script shows how the Protobuf message input is represented in the DataWeave (`dw`) format.
+
+[source,dataweave,linenums]
+----
+{
+  okayLanguage: "-UNRECOGNIZED" as String {protobufEnumIndex: 3},
+  bestLanguage: "DataWeave" as String {protobufEnumIndex: 0},
+}
+----
+
+=== Oneof
+
+https://developers.google.com/protocol-buffers/docs/proto3#oneof[Oneof^] fields, a Protobuf particularity, are represented as regular fields on DataWeave. When writing a `proto` message, a particular schema specifies what the DataWeave script needs to validate. If more than one of the fields defined is present, the script fails.
+
+[[example_protobuf_oneof_fail]]
+=== Example: An Invalid Attempt to Write Two Exclusive Fields
+
+The following example shows what happens when you try to write two exclusive fields according to the schema.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+
+package examples.oneof;
+
+message ThisOrThat {
+  oneof thisOrThat {
+    bool this = 2;
+    bool that = 4;
+  }
+}
+
+----
+
+==== Source
+
+The DataWeave script outputs a Protobuf message containing both `this` and `that` fields set.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/x-protobuf messageType='examples.oneof.ThisOrThat',descriptorUrl="descriptors/examples.dsc"
+---
+{
+  this: true,
+  that: false,
+}
+----
+
+==== Output
+
+The DataWeave script outputs a `ProtoBufWritingException` specifying which `oneof` is being wrongly used.
+
+=== Repeated Fields
+
+Since DataWeave admits repeated fields, Protobuf repeated fields are matched to
+DataWeave repeated fields, and vice versa. Note that the DataWeave object being written has to match the schema being used. If the schema does not specify a field as repeated and the DataWeave script has that field more than once, the script fails.
+
+=== Unknowns
+
+Protobuf offers capabilities for forward and backward compatibility of protocols. In order
+to achieve this, readers and writers accept https://developers.google.com/protocol-buffers/docs/proto3#unknowns[unknown fields^] on messages. DataWeave adapts to this functionality by using certain key names.
+
+When reading a Protobuf message, if a field not present in the schema is found, it is read into something similar to `"-35": 111111 as Number {wireType: "Varint"},`, where `"-35"` means that the field index is `35`, and `wireType: "Varint"` specifies the wire type the field has in the message. The `wireType` can be `"Varint"`, `"64Bit"`, `"LengthDelimited"`, `"Group"`, or `"32Bit"`.
+
+
+=== Semantic Parsing (Or Commonly Used Message Types)
+
+Protobuf offers a collection of
+https://developers.google.com/protocol-buffers/docs/reference/google.protobuf[commonly used message types^]. DataWeave parses some of these as the value they represent instead of as the underlying message.
+For example, a `google.protobuf.Duration` is read into DataWeave as a `Period`, while
+a `google.protobuf.NullValue` is read as `Null`.
+
+The following table describes the correspondence between Protobuf types and DataWeave types.
+
+
+[cols="1,1"]
+|===
+| Protobuf type    | DataWeave type
+
+| BoolValue     | Boolean
+| BytesValue    | Binary
+| DoubleValue   | Number
+| Duration      | a Duration Period
+| Empty         | {}
+| FloatValue    | Number
+| Int32Value    | Number
+| Int64Value    | Number
+| ListValue     | Array
+| NullValue     | Null
+| StringValue   | String
+| Struct        | Object
+| Timestamp     | LocalDateTime
+| UInt32Value   | Number
+| UInt64Value   | Number
+| Value         | ProtoBufValue
+|===
+
+Where:
+[source,dataweave,linenums]
+----
+type ProtoBufValue  = Null
+                    | Number
+                    | String
+                    | Boolean
+                    | { _?: ProtoBufValue }
+                    | Array<ProtoBufValue>
+----
+
+=== Maps
+
+https://developers.google.com/protocol-buffers/docs/proto3#maps[Protobuf maps^] enable you to have a structure without a predefined set of keys, but with every field sharing the same value type.
+A `map<keyType, valueType>` is mapped to a DataWeave object with the keys represented as strings and the values mapped to their corresponding value. When writing a `proto` message, the key is casted to the `keyType` specified on the descriptor. If it's not possible to execute the cast, the script fails.
+
+== Compiling Schemas into Descriptors
+
+DataWeave is not able to directly use `*.proto` files and expects an already compiled version called descriptor. Generate descriptors by using the `protoc` compiler as in `protoc --descriptor_set_out=./out.dsc file1.proto file2.proto ...`, where `out.dsc` is the output file for the descriptor (the one that DataWeave expects on the `descriptorUrl` property), while `file1.proto` and `file2.proto` are the actual protocol specifications that the descriptor needs to compile.
+
+
+// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
+
+
+[[properties]]
+== Configuration Properties
+
+DataWeave supports the following configuration properties for this format.
+
+
+[[reader_properties]]
+=== Reader Properties
+
+This format accepts properties that provide instructions for reading input data.
+
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
+
+
+Valid values are `true` or `false`.
+|`descriptorUrl` (Required) |`String`|`''`|The URL for the ProtoBuf descriptor. Valid values are `classpath://`, `file://`, or `http://`.
+|`messageType` (Required) |`String`|`null`|The message type's full name taken from the given descriptor, including the package where it's located.
+|===
+
+[[writer_properties]]
+=== Writer Properties
+
+This format accepts properties that provide instructions for writing output data.
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
+
+
+Valid values are `true` or `false`.
+|`descriptorUrl` (Required) |`String`|`''`|The URL for the ProtoBuf descriptor. Valid values are `classpath://`, `file://`, or `http://`.
+|`messageType` (Required) |`String`|`null`|The message type's full name taken from the given descriptor, including the package where it's located.
+|===
+
+
+[[mime_types]]
+== Supported MIME Types
+
+This format supports the following MIME types.
+
+[cols="1", options="header"]
+|===
+| MIME Type
+|`application/protobuf`
+|`application/x-protobuf`
+|===

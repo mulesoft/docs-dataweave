@@ -11,7 +11,7 @@ _Introduced in DataWeave version 2.4.0._
 
 == Functions
 
-[%header, cols="1,3a"]
+[%header, cols="1,3"]
 |===
 | Name  | Description
 | xref:dw-dates-functions-atbeginningofday.adoc[atBeginningOfDay] | Returns a  new `DateTime` value that changes the `Time` value in the input to the
@@ -40,3 +40,5 @@ the first day of the _year_ specified in the input. It also sets the `Time` valu
 
 == Types
 * xref:dw-dates-types.adoc[Dates Types]
+
+

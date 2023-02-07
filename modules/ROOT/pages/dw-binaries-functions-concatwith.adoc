@@ -1,0 +1,57 @@
+= concatWith
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[concatwith1]]
+== concatWith&#40;source: Binary, with: Binary&#41;: Binary
+
+Concatenates the content of two binaries.
+
+_Introduced in DataWeave version 2.5.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `source` | Binary | The source binary content.
+| `with` | Binary | The binary to append.
+|===
+
+=== Example
+
+This example concats two binaries into one binary.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::core::Binaries
+output application/dw
+---
+"CAFE" as Binary {base: "16"} concatWith "ABCD" as Binary {base: "16"}
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+"yv6rzQ==" as Binary {base: "64"}
+----
+
+
+[[concatwith2]]
+== concatWith&#40;source: Binary, with: Null&#41;: Binary
+
+Helper function that enables `concatWith` to work with a `null` value.
+
+
+[[concatwith3]]
+== concatWith&#40;source: Null, with: Binary&#41;: Binary
+
+Helper function that enables `concatWith` to work with a `null` value.
+

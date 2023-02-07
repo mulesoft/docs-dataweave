@@ -20,10 +20,10 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `str` | The `String` value to transform into a `Binary` value.
 | `encoding` | The encoding to apply to the `String` value. Accepts
-               encodings that are supported by your JDK. For example,
-               `encoding` accepts Java canonical names and aliases for
-               the basic and extended encoding sets in Oracle JDK 8 and
-               JDK 11.
+             encodings that are supported by your JDK. For example,
+             `encoding` accepts Java canonical names and aliases for
+             the basic and extended encoding sets in Oracle JDK 8 and
+             JDK 11.
 |===
 
 === Example
