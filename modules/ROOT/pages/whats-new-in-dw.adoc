@@ -1,6 +1,6 @@
 = What's New in DataWeave
 
-DataWeave 2.5 is bundled with Mule 4.5. The 2.5 version of DataWeave introduces some new features.
+DataWeave 2.5 is bundled with Mule 4.5. The 2.5 version of DataWeave introduces new features and provides bug fixes. For bug fixes, see xref:release-notes::dataweave/dataweave-2.5.0-release-notes.adoc[].
 
 == Versioning Behavior in DataWeave
 
