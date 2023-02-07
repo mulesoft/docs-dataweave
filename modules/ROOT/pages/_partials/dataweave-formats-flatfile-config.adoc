@@ -29,10 +29,6 @@ Valid values are `true` or `false`.
 * `zeroes` (for the reader) or `ZEROES` (for the writer): Interprets numeric fields consisting of only `0` characters _and_ character fields consisting of only spaces as missing values.
 * `nulls` (for the reader) or `NULLS` (for the writer): Interprets a field consisting only of `0` bytes as a missing value. Default for COBOL copybook schema.
 
-Valid values are `none` or `spaces` or `zeroes` or `nulls`.
-|`notTruncateDependingOnSubjectNotPresent`  |`Boolean`|`false`|Fills the entire group when the DEPENDING ON subject is not present.
-
-Valid values are `true` or `false`.
 |`recordParsing`  |`String`|`'strict'`|Specifies the expected type of separation between lines or records:
 
 * `strict`: Line break is expected at exact end of each record. `strict` is the default.
@@ -42,7 +38,6 @@ Valid values are `true` or `false`.
 
 Note that schemas with type `Binary` or `Packed` don't allow for line break detection, so setting `recordParsing` to `lenient` only allows long records to be handled, not short ones. These schemas also currently only work with certain single-byte character encodings (so not with UTF-8 or any multibyte format).
 
-Valid values are `strict` or `lenient` or `noTerminator` or `singleRecord`.
 |`retainEmptyStringFieldsOnParsing`  |`Boolean`|`false`|Allow parsing behavior to keep missing string value fields with a default value in the output map
 
 Valid values are `true` or `false`.
@@ -81,12 +76,11 @@ Valid values are `true` or `false`.
 Valid values are `true` or `false`.
 |`missingValues`  |`String`|`null`|Fill character used to represent missing values. To activate a non-default setting, set the `useMissCharAsDefaultForFill` property to `true`, and use one of the following values to `missingValues`:
 
-* `NONE`: Write nothing for missing values.
+* `none` (for the reader) or `NONE` (for the writer): Treats all data as values.
 * `spaces` (for the reader) or `SPACES` (for the writer): Interprets a field consisting of only spaces as a missing value. Default for flat file and fixed-width formats.
 * `zeroes` (for the reader) or `ZEROES` (for the writer): Interprets numeric fields consisting of only `0` characters _and_ character fields consisting of only spaces as missing values.
 * `nulls` (for the reader) or `NULLS` (for the writer): Interprets a field consisting only of `0` bytes as a missing value. Default for COBOL copybook schema.
 
-Valid values are `none` or `spaces` or `zeroes` or `nulls`.
 |`notTruncateDependingOnSubjectNotPresent`  |`Boolean`|`false`|Fills the entire group when the DEPENDING ON subject is not present.
 
 Valid values are `true` or `false`.
