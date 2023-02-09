@@ -27,7 +27,6 @@ This example uses regular expressions in a number of DataWeave functions to retu
 [source,dataweave,linenums]
 ----
 include::partial$cookbook-dw/use-regular-expressions-ex01/transform.dwl[]
-
 ----
 
 .Output JSON:
