@@ -6,7 +6,7 @@ endif::[]
 You can import XML schema files (`.xsd`) inside your DataWeave script as modules by using the `xmlschema!` module loader. This loader enables you to use types that are declared on your schema inside DataWeave directly.
 DataWeave loads your XSD file and translates declarations inside your file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module. Use them to build new types, type check your variables, do pattern matching, or declare new functions that use types. There are no restrictions on how to use these types.
 
-The following example shows how to look for an XSD file in the path `org/weave/myfolder/User.xsd` being the first path the root of the classpath of your application:
+The following example shows how to look for an XSD file in the path `org/weave/myfolder/User.xsd` inside your DataWeave script:
 
 ----
 import * from xmlschema!org::weave::myfolder::User
@@ -67,7 +67,7 @@ This example shows how to use types to import XML schema files into your DataWea
 [source,dataweave,linenums]
 ----
 %dw 2.0
-import * from xmlschema!org::mule::weave::v2::module::xmlschema::engine::pattern_matching::User
+import * from xmlschema!org::weave::myfolder::User
 
 
 {
@@ -82,9 +82,9 @@ import * from xmlschema!org::mule::weave::v2::module::xmlschema::engine::pattern
 }
 ----
 
-== From the XML Model to DataWeave
+== From the XML Model to DataWeave Types
 
-As previously mentioned, the XML schema type system translates to DataWeave type directives. Therefore, as the two type models are considered different, some general rules and limitations apply.
+As previously mentioned, the XML schema type system translates to DataWeave type directives. Therefore, as the two type models are considered different, the resulting DataWeave Type might not represent exactly the same XML Model.
 The following files illustrate how XSD translates to DataWeave code. These files are generated dynamically and are not visible, though they are useful for learning how to consume types from generated XSD files.
 
 === Built-in XML Schema Types
@@ -180,11 +180,12 @@ type RootElementDefinition = {| Root: { string: String, normalizedString: String
 type Root = RootElementDefinition
 ----
 
-== XSD Structure Mapping
-
 === Root Elements Declaration
 
-Each root element declared inside your XSD file generates a type directive with the element name followed by the `ElementDeclaration` extension and a type directive named *Root*, considered a Union type, consisting of all your root elements.
+Each root element (`<xs:element>`) declared inside your XSD file generates the following:
+
+* A DataWeave `type` directive with the element name followed by the `ElementDeclaration` extension.
+* A `type` directive named `Root` as a `Union` type that consists of all the root elements in the XSD.
 
 The following example shows how to declare root elements:
 
