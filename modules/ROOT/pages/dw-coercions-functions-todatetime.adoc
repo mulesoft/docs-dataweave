@@ -20,8 +20,8 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `number` | The `Number` value to transform into a `DateTime` value.
 | `unit` | The unit to use for the conversion: `"milliseconds"`
-           or `"seconds"`. A `null` value for the `unit` field
-           defaults to `"seconds"`.
+         or `"seconds"`. A `null` value for the `unit` field
+         defaults to `"seconds"`.
 |===
 
 === Example
@@ -69,14 +69,14 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `str` | The `String` value to transform into a `DateTime` value.
 | `format` | The formatting to use on the `DateTime` value.
-             A `null` value has no effect on the `DateTime` value.
-             This parameter accepts Java character patterns based
-             on ISO-8601. A `DateTime` value, such as
-             `2011-12-03T10:15:30.000000+01:00`, has
-             the format `uuuu-MM-dd HH:mm:ssz`.
+           A `null` value has no effect on the `DateTime` value.
+           This parameter accepts Java character patterns based
+           on ISO-8601. A `DateTime` value, such as
+           `2011-12-03T10:15:30.000000+01:00`, has
+           the format `uuuu-MM-dd HH:mm:ssz`.
 | `locale` | Optional ISO 3166 country code to use, such as `US`,
-             `AR`, or `ES`. A `null` or absent value uses your
-             JVM default.
+           `AR`, or `ES`. A `null` or absent value uses your
+           JVM default.
 |===
 
 === Example

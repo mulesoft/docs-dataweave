@@ -20,13 +20,13 @@ _Introduced in DataWeave version 2.4.0._
 | Name | Description
 | `str` | The `String` value to transform into a `Date` value.
 | `format` | The formatting to use on the `Date` value.
-             A `null` value has no effect on the `Date` value.
-             This parameter accepts Java character patterns based
-             on ISO-8601. A `Date` value, such as
-             `2011-12-03`, has the format `uuuu-MM-dd`.
+           A `null` value has no effect on the `Date` value.
+           This parameter accepts Java character patterns based
+           on ISO-8601. A `Date` value, such as
+          `2011-12-03`, has the format `uuuu-MM-dd`.
 | `locale` | Optional ISO 3166 country code to use, such as `US`,
-             `AR`, or `ES`. A `null` or absent value uses your
-             JVM default.
+           `AR`, or `ES`. A `null` or absent value uses your
+           JVM default.
 |===
 
 === Example

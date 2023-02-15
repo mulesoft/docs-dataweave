@@ -21,7 +21,7 @@ _Introduced in DataWeave version 2.4.0._
 |===
 | Name | Description
 | `nYears` | A whole number for the number of years.
-             A positive or negative number is valid.
+           A positive or negative number is valid.
 |===
 
 === Example

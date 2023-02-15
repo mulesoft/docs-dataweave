@@ -25,8 +25,8 @@ _Introduced in DataWeave version 2.3.0._
 
 === Example
 
-This example shows how `withMaxSize` behaves with different inputs and sizes.
-Note that if `withMaxSize` is 0, the function returns an empty string. If
+This example shows how `withMaxSize` behaves with different `maxLength` values for the same string.
+Note that if `withMaxSize` is 0, the function returns an unmodified string. If
 the input is `null`, the output is always `null`.
 
 ==== Source
@@ -41,7 +41,7 @@ output application/json
    a: "123" withMaxSize 10,
    b: "123" withMaxSize 3,
    c: "123" withMaxSize 2,
-   d: "" withMaxSize 0,
+   d: "123" withMaxSize 0,
    e: null withMaxSize 23,
 }
 ----
@@ -54,7 +54,7 @@ output application/json
   "a": "123",
   "b": "123",
   "c": "12",
-  "d": "",
+  "d": "123",
   "e": null
 }
 ----

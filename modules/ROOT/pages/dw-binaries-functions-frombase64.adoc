@@ -21,15 +21,16 @@ Transforms a Base64 string into a binary value.
 === Example
 
 This example takes a Base64 encoded string and transforms it into a binary value. This example assumes that the `payload` contains the Base64 string generated from an image in example xref:dw-binaries-functions-tobase64.adoc#toBase64-example[toBase64].
+The output of this function is a binary value that represents the image generated in example https://docs.mulesoft.com/dataweave/latest/dw-binaries-functions-tobase64[toBase64].
 
 ==== Source
 
 [source,DataWeave,linenums]
 ----
 %dw 2.0
-
-import fromBase64 from dw::core::Binaries
+import * from dw::core::Binaries
 output application/octet-stream
 ---
 fromBase64(payload)
 ----
+

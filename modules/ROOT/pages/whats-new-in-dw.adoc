@@ -1,64 +1,7 @@
 = What's New in DataWeave
 
-DataWeave 2.4 is bundled with Mule 4.4. The 2.4 version of DataWeave introduces the following features:
+DataWeave 2.5.0 is bundled with the Mule 4.5.0 release. For details about the Mule release, see
+xref:mule-runtime/mule-4.5.0-release-notes.adoc[Mule Runtime Engine 4.5.0 Release Notes].
 
-* Ability to read larger-than-memory strings automatically. When you are using the indexed reader strategy and processing a String with a size larger than 1.5 MB, DataWeave automatically splits the value in chunks to avoid out-of-memory issues. Related reader properties are `com.mulesoft.dw.max_memory_allocation` and `com.mulesoft.dw.buffered_char_sequence.enabled`. Refer to xref:dataweave-indexed-readers.adoc#large-strings-management[Indexed Readers in DataWeave].
-* New reader and writer properties for working with data formats. For example, the XML writer now enables you to define namespaces at the root level.
-* Many new modules, functions, types, annotations, and variables. Some are experimental and subject to change in future releases.
-* A number of functions are overloaded to introduce new helper functions for
-handling `null` values.
-
-Changes to the documentation include more detailed function signatures and organization of the functions by their module names, such as `dw::Core`, `dw::core::Strings`, and `dw::util::Math`.
-
-DataWeave 2.4 is bundled with Mule 4.4. For information about the Mule 4.4 release, refer to xref:4.4@mule-runtime::whats-new-in-mule.adoc[What's New in Mule 4.4].
-
-== New Properties for Data Formats
-
-DataWeave introduces the following reader and writer properties:
-
-* DataWeave (dw) reader property: `privileges` enables you to provide a comma-separated list of privileges to use in the format, such as `'Resources,Properties'`.
-* Excel (XLSX) reader property: `tableLimit` enables you to set position of the last column in each row.
-* YAML writer property: `writeDeclaration` enables you to write the header declaration.
-* XML writer properties: `defaultNamespace` specifies the default namespaces of the output XML , and `writeDeclaredNamespaces` marks the namespaces to declare in the root element of the XML.
-
-== New DataWeave Function Modules and Features
-
-New DataWeave modules and features:
-
-* xref:dw-core.adoc[dw::Core] introduces new functions and annotations:
-** xref:dw-core-functions-indexof.adoc[indexOf]
-** xref:dw-core-functions-lastindexof.adoc[lastIndexOf]
-** xref:dw-core-functions-onnull.adoc[onNull]
-** xref:dw-core-functions-then.adoc[then]
-** xref:dw-core-annotations.adoc[Core Annotations] introduces a number of new annotations.
-* xref:dw-dates.adoc[dw::core::Dates] is a new module with functions and types to create and manipulate Date types, for example, the function `today`.
-* xref:dw-strings.adoc[dw::core::Strings] introduces new functions:
-  ** xref:dw-strings-functions-collapse.adoc[collapse]
-  ** xref:dw-strings-functions-countcharactersby.adoc[countCharactersBy]
-  ** xref:dw-strings-functions-countmatches.adoc[countMatches]
-  ** xref:dw-strings-functions-everycharacter.adoc[everyCharacter]
-  ** xref:dw-strings-functions-first.adoc[first]
-  ** xref:dw-strings-functions-hammingdistance.adoc[hammingDistance]
-  ** xref:dw-strings-functions-last.adoc[last]
-  ** xref:dw-strings-functions-levenshteindistance.adoc[levenshteinDistance]
-  ** xref:dw-strings-functions-lines.adoc[lines]
-  ** xref:dw-strings-functions-mapstring.adoc[mapString]
-  ** xref:dw-strings-functions-remove.adoc[remove]
-  ** xref:dw-strings-functions-replaceall.adoc[replaceAll]
-  ** xref:dw-strings-functions-reverse.adoc[reverse]
-  ** xref:dw-strings-functions-somecharacter.adoc[someCharacter]
-  ** xref:dw-strings-functions-substring.adoc[substring]
-  ** xref:dw-strings-functions-substringby.adoc[substringBy]
-  ** xref:dw-strings-functions-substringevery.adoc[substringEvery]
-  ** xref:dw-strings-functions-words.adoc[words]
-* xref:dw-coercions.adoc[dw::util::Coercions] is a new DataWeave module with functions and types to simplify data type transformations, for example, the function `toString`.
-* xref:dw-math.adoc[dw::util::Math] is a new DataWeave module with functions and variables that provides mathematical functions, for example, the function `sin`.
-* xref:dw-periods.adoc[dw::util::Periods] is a new DataWeave module with functions and types to simplify the creation of Periods, for example, the function `days`.
-* xref:dw-tree.adoc[dw::util::Tree] introduces new functions:
-  ** xref:dw-tree-functions-filterarrayleafs.adoc[filterArrayLeafs]
-  ** xref:dw-tree-functions-filterobjectleafs.adoc[filterObjectLeafs]
-  ** xref:dw-tree-functions-filtertree.adoc[filterTree]
-  ** xref:dw-tree-functions-isarraytype.adoc[isArrayType]
-  ** xref:dw-tree-functions-isattributetype.adoc[isAttributeType]
-  ** xref:dw-tree-functions-isobjecttype.adoc[isObjectType]
-* xref:dw-values-types.adoc[dw::util::Values] provides a new type `UpdaterValueProvider`.
+//INCLUDE SHARED CONTENT with release notes
+include::release-notes::partial$dataweave/dataweave-whats-new-2.5.0.adoc[tag=dataweaveFeatures250]
