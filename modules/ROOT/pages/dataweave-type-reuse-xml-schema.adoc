@@ -16,7 +16,7 @@ import * from xmlschema!org::weave::myfolder::User
 
 To import the XML schema types, as shown above, use the following syntax, where:
 
-* `typeToImport`: You can use `\*` to import all types defined in the schema, or to import a single type from the schema, for example, `Root`. You can also import XML schema types with a different name, for example, `Root as Person`. This way  you can reference the type with that name in the script.
+* `typeToImport`: You can use `*` to import all types defined in the schema, or to import a single type from the schema, for example, `Root`. You can also import XML schema types with a different name, for example, `Root as Person`. This way  you can reference the type with that name in the script.
 * `pathToXsdSchemaFile`: To specify the path to the schema file, replace the file separators with `::` and remove the `.xsd` extension from the file name. For example, if the path to the schema is `example/schema/Person.xsd`, use `example::schema::Person`.
 
 ----
@@ -184,7 +184,7 @@ type Root = RootElementDefinition
 
 Each root element (`<xs:element>`) declared inside your XSD file generates the following:
 
-* A DataWeave `type` directive with the element name followed by the `ElementDeclaration` extension.
+* A DataWeave `type` directive with the element name followed by the `ElementDefinition` extension.
 * A `type` directive named `Root` as a `Union` type that consists of all the root elements in the XSD.
 
 The following example shows how to declare root elements:
@@ -289,7 +289,7 @@ type Root = RootElementDefinition
 
 === Imports/Includes
 
-The use of imports or includes inside an XSD schema file results in a DataWeave module which contains an `import` directive that uses the XML schema module loader to point to the schema file located at the specified `schemaLocation`. This location must be declared relative to the main schema. Notice how the following examples use xref:dataweave-type-selector.adoc[]:
+The use of imports or includes inside an XSD schema file results in a DataWeave module which contains an `import` directive that uses the XML schema module loader to point to the schema file located at the specified `schemaLocation`. This location must be declared relative to the main schema. Notice how the following examples use xref:dataweave-selecting-types.adoc[]:
 
 .XSD:
 [source,XML]

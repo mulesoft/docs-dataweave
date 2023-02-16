@@ -420,7 +420,7 @@ fun read(file: FileData<Binary>) =  "This is a binary file with data " ++ (file.
 [[reuse_types]]
 == Reuse Types
 
-You can declare and use types within the same DataWeave script (see xref:dataweave-type-system.adoc[]), or you can reuse types from different sources by loading them with a type-specific module loader. DataWeave currently supports loading types from:
+You can declare and use types within the same DataWeave script (see xref:dataweave-type-system.adoc[]), or you can reuse types from different sources by loading them with a specific module loader. DataWeave currently supports loading types from:
 
 * xref:dataweave-type-reuse-modules.adoc[]
 * xref:dataweave-type-reuse-json-schema.adoc[]

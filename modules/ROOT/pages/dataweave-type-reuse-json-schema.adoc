@@ -51,7 +51,7 @@ import * from jsonschema!example::schema::Person
 
 To import JSON schema types, use the following syntax, where:
 
-* `typeToImport`: You can use `\*` alone to import all types defined in the schema or you can import a single type from the schema using, for example, `Root`. You can also import JSON schema types with a different name, for example, `Root as Person`, which enables you to reference the type with that name in the script.
+* `typeToImport`: You can use `*` alone to import all types defined in the schema or you can import a single type from the schema using, for example, `Root`. You can also import JSON schema types with a different name, for example, `Root as Person`, which enables you to reference the type with that name in the script.
 * `pathToJsonSchema`: To specify the path to the schema file, replace the file separators with `::` and remove the `.json` extension from the file name. For example, if the path to the schema is `example/schema/Person.json`, use `example::schema::Person`.
 
 ----

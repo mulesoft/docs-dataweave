@@ -6,7 +6,7 @@ endif::[]
 Use the import directive with the `java!` prefix when loading a Java class. The prefix `java!` tells DataWeave to use the Java module loader. When the module is loaded, you can call constructors, variables, and functions (see xref:dataweave-cookbook-java-methods.adoc[]). The class type is also available. DataWeave exposes the type of the Java class with the type name `Class`.
 
 Java classes are mapped to the DataWeave types listed in xref:dataweave-formats-java.adoc#java-value-mapping[Java Value Mapping].
-If a Java class is not present in the table, DataWeave treats the class as a `JavaBean` and maps it to a DataWeave `Object` type. The keys in that object match the names of the properties in the Java class and their values correspond to the DataWeave type that marches the property class. The following example shows how DataWeave takes all properties from the Java getters:
+If a Java class is not present in the table, DataWeave treats the class as a `JavaBean` and maps it to a DataWeave `Object` type. The keys in that object match the names of the properties in the Java class and their values correspond to the DataWeave type that matches the property class. The following example shows how DataWeave takes all properties from the Java getters:
 
 Product Class:
 ----
@@ -35,6 +35,9 @@ Loading the type for this Java class has the same effect as declaring this DataW
 type Class = { name?: String | Null, price?: Number | Null }
 ----
 
+The following example uses the type `Product::Class` as any other type in DataWeave. Creating a DataWeave object by calling the function `Product::new` (which calls the constructor of the Java class) also matches the type `Product::Class`.
+Notice that the import directive lacks a `from` and instead uses the type `Class` prefix `Product::`. The prefix enables more declarative use of the type and avoids collisions  with any other `Class` types that are imported:
+
 .DataWeave Script:
 [source,dataweave,linenums]
 ----
@@ -56,9 +59,6 @@ type Order = {
     c: {product: aBook, date: |2022-12-18T14:00:00|} is Order
 }
 ----
-
-The example uses the type `Product::Class` as any other type in DataWeave. Creating a DataWeave object by calling the function `Product::new` (which calls the constructor of the Java class) also matches the type `Product::Class`.
-Notice that the import directive lacks a `from` and instead uses the type `Class` prefix `Product::`. The prefix enables more declarative use of the type and avoids collisions  with any other `Class` types that are imported:
 
 .Output:
 ----
