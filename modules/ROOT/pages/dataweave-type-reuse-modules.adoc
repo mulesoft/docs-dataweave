@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Reuse types declared in other DataWeave modules by using the import directive:
+To reuse types declared in other DataWeave modules, use the `import` directive:
 
 .DataWeave Module (`dw/Weather.dwl`):
 [source,dataweave,linenums]
@@ -13,7 +13,7 @@ type Weather = "cloudy" | "sunny" | "rainy" | "stormy"
 type DetailedWeather = {temperature: Number, weather: Weather}
 ----
 
-You can use those types as any other type in DataWeave, as constraints for variables and functions or for pattern matching and checking types at runtime:
+You can use those imported types as any other type in DataWeave, as constraints for variables and functions or for pattern matching and checking types at runtime:
 
 .DataWeave Script:
 [source,dataweave,linenums]

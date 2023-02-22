@@ -3,11 +3,11 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-JSON schema is a standard providing a format for what JSON data is required for a given application and how to interact with it. Many existing data formats or types are expressed using this standard. In particular, REST APIs described by a RAML file are likely to have their types defined in JSON schemas.
+JSON Schema is a standard that provides a format for the JSON data required for a given application and how to interact with it. Many existing data formats or types are expressed using this standard. In particular, REST APIs described by RAML files are likely to have their types defined in JSON schemas.
 
 To reuse predefined types, you can load the JSON schema into DataWeave to make the types structure available for use in your scripts.
 
-The JSON schema loader parses schemas following the https://json-schema.org/specification-links.html#draft-7[JSON Schema Draft 7ˆ].
+The JSON schema loader parses schemas using the https://json-schema.org/specification-links.html#draft-7[JSON Schema Draft 7ˆ].
 
 == Import a Type from a JSON Schema
 
@@ -31,7 +31,7 @@ The following example shows a JSON schema (`Person.json`) in the resources direc
       "description": "The person's last name."
     },
     "age": {
-      "description": "Age in years which must be equal to or greater than zero.",
+      "description": "Age in years, which must be equal to or greater than zero.",
       "type": "integer",
       "minimum": 0
     }
@@ -40,7 +40,7 @@ The following example shows a JSON schema (`Person.json`) in the resources direc
 }
 ----
 
-The following example shows how you can use the JSON schema loader to import the type:
+The following example shows how to import the type using the JSON schema loader:
 
 .DataWeave Script Header:
 ----
@@ -66,7 +66,7 @@ import * from jsonschema!example::schema::Person
 
 == Use Your Types in a DataWeave Script
 
-Having the import directive from the above example in the script header loads all the existing types in the JSON schema. In `import * from jsonschema!example::schema::Person`, the only existing type is the `Root` type, specified at the root which describes an Object that can have three properties (`firstName`, `lastName`, and `age`). It is equivalent to declaring the following type in your DataWeave script:
+Including the import directive from the above example in the script header loads all the existing types in the JSON schema. In `import * from jsonschema!example::schema::Person`, the only existing type is the `Root` type, specified at the root which describes an Object that can have three properties (`firstName`, `lastName`, and `age`). This is equivalent to declaring the following type in your DataWeave script:
 
 .DataWeave Script:
 [source,dataweave,linenums]
@@ -75,9 +75,9 @@ Having the import directive from the above example in the script header loads al
 type Root = { firstName: String, lastName: String, age?: Number }
 ----
 
-Notice that the `age` field is the only one that is optional, as indicated by the `?`.
+Notice that `age` is the only optional field, as indicated by the `?`.
 
-You can use the type to know if a value follows the structure defined by the JSON schema.
+You can use the type to determine if a value follows the structure defined by the JSON schema.
 The following example outputs the value `true` because the object contains the required fields, `firstName` and `lastName`:
 
 .DataWeave Script:
@@ -97,7 +97,7 @@ import * from jsonschema!jsonschema!example::schema::Person
 "true"
 ----
 
-The following example outputs the value `false` since the object does not contain the required fields, `firstName` and `lastName`:
+The following example outputs the value `false` because the object does not contain the required fields, `firstName` and `lastName`:
 
 .DataWeave Script:
 [source,dataweave,linenums]
@@ -116,9 +116,9 @@ import * from jsonschema!jsonschema!example::schema::Person
 "false"
 ----
 
-== Use Definitions Inside Schemas
+== Use Definitions inside Schemas
 
-Definitions inside JSON schemas are also loaded when the module is imported:
+DataWave loads the definitions inside JSON schemas when the module is imported:
 
 .JSON Schema (`example/schema/Account.json`):
 [source,JSON]
@@ -157,7 +157,7 @@ Definitions inside JSON schemas are also loaded when the module is imported:
          "description": "The person's last name."
        },
        "age": {
-         "description": "Age in years which must be equal to or greater than zero.",
+         "description": "Age in years, which must be equal to or greater than zero.",
          "type": "integer",
          "minimum": 0
        }
@@ -180,13 +180,13 @@ Definitions inside JSON schemas are also loaded when the module is imported:
 }
 ----
 
-You can import the types from that schema with the following directive, assuming the JSON schema is `example/schema/Account.json`:
+You can import the types from that schema with the following directive:
 
 ----
 import * from jsonschema!example::schema::Account
 ----
 
-The types from that schema have the same effect as declring the following types:
+The types defined in the schema have the same effect as declaring the following types:
 
 ----
 type Root = { address?: address, person?: person }
@@ -202,7 +202,7 @@ Use the import directive to import a single type from the schema:
 import address from jsonschema!example::schema::Account
 ----
 
-To avoid type name collision, you can use the `as` keyword to change the imported type name to use another name:
+To avoid type-name collision, you can use the `as` keyword to change the imported type name to another name:
 
 ----
 import address as Account_Address from jsonschema!example::schema::Account
@@ -212,7 +212,7 @@ import address as Account_Address from jsonschema!example::schema::Account
 
 You can use the types imported from the JSON schemas to take a specific action when an input is of a certain type. These imported types are useful for pattern matching.
 
-The following example outputs the value `person` since the object is importing that type definition:
+The following example outputs the value `person` because the object is importing that type definition:
  
 .DataWeave Script:
 [source,dataweave,linenums]
@@ -235,7 +235,7 @@ else -> "NO TYPE MATCHED"
 "PERSON"
 ----
 
-The following example outputs the value `address` since the object is importing that type definition:
+The following example outputs the value `address` because the object is importing that type definition:
 
 .DataWeave Script:
 [source,dataweave,linenums]

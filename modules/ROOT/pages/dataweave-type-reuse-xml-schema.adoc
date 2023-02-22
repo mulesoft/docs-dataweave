@@ -3,10 +3,10 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-You can import XML schema files (`.xsd`) inside your DataWeave script as modules by using the `xmlschema!` module loader. This loader enables you to use types that are declared on your schema inside DataWeave directly.
-DataWeave loads your XSD file and translates declarations inside your file into DataWeave type directives that can be accessed in the same way as types from any other DataWeave module. Use them to build new types, type check your variables, do pattern matching, or declare new functions that use types. There are no restrictions on how to use these types.
+You can import XML schema files (`.xsd`) in your DataWeave script as modules by using the `xmlschema!` module loader. This loader enables you to use types that are declared in your schema in DataWeave directly.
+DataWeave loads your XSD file and translates declarations in your file into DataWeave type directives that you can access in the same way as types from any other DataWeave module. Use the directives to build new types, type-check your variables, match patterns, or declare new functions that use types. DataWeave places no restrictions on how to use these types.
 
-The following example shows how to look for an XSD file in the path `org/weave/myfolder/User.xsd` inside your DataWeave script:
+The following example shows how to look for an XSD file in the path `org/weave/myfolder/User.xsd` in your DataWeave script:
 
 ----
 import * from xmlschema!org::weave::myfolder::User
@@ -14,7 +14,7 @@ import * from xmlschema!org::weave::myfolder::User
 
 == Import Syntax
 
-To import the XML schema types, as shown above, use the following syntax, where:
+To import the XML schema types, use the following syntax, where:
 
 * `typeToImport`: You can use `*` to import all types defined in the schema, or to import a single type from the schema, for example, `Root`. You can also import XML schema types with a different name, for example, `Root as Person`. This way  you can reference the type with that name in the script.
 * `pathToXsdSchemaFile`: To specify the path to the schema file, replace the file separators with `::` and remove the `.xsd` extension from the file name. For example, if the path to the schema is `example/schema/Person.xsd`, use `example::schema::Person`.
@@ -84,7 +84,7 @@ import * from xmlschema!org::weave::myfolder::User
 
 == From the XML Model to DataWeave Types
 
-As previously mentioned, the XML schema type system translates to DataWeave type directives. Therefore, as the two type models are considered different, the resulting DataWeave Type might not represent exactly the same XML Model.
+Because the XML schema type system translates to DataWeave type directives and the two type models are different, the resulting DataWeave type might not represent exactly the same XML model.
 The following files illustrate how XSD translates to DataWeave code. These files are generated dynamically and are not visible, though they are useful for learning how to consume types from generated XSD files.
 
 === Built-in XML Schema Types
@@ -182,9 +182,9 @@ type Root = RootElementDefinition
 
 === Root Elements Declaration
 
-Each root element (`<xs:element>`) declared inside your XSD file generates the following:
+Each root element (`<xs:element>`) declared in your XSD file generates the following:
 
-* A DataWeave `type` directive with the element name followed by the `ElementDefinition` extension.
+* A DataWeave `type` directive with the element name followed by the `ElementDefinition` extension
 * A `type` directive named `Root` as a `Union` type that consists of all the root elements in the XSD.
 
 The following example shows how to declare root elements:
@@ -235,7 +235,7 @@ type Root = AnotherRootElementDefinition | RootElementDefinition
 
 === Complex Types
 
-Named complex types declared as top-level elements on the schema which are referenced inside your schema or are available for reuse on other structures generate their own type directive. These type directives are named with the `complextype` name followed by the `Definition` extension.
+Named complex types declared as top-level elements on the schema which are referenced in your schema or are available for reuse on other structures generate their own type directive. These type directive names include `complextype` name followed by the `Definition` extension.
 
 The following example shows how to declare complex types:
 
@@ -289,7 +289,7 @@ type Root = RootElementDefinition
 
 === Imports/Includes
 
-The use of imports or includes inside an XSD schema file results in a DataWeave module which contains an `import` directive that uses the XML schema module loader to point to the schema file located at the specified `schemaLocation`. This location must be declared relative to the main schema. Notice how the following examples use xref:dataweave-selecting-types.adoc[]:
+The use of imports or includes in an XSD schema file results in a DataWeave module which contains an `import` directive that uses the XML schema module loader to point to the schema file located at the specified `schemaLocation`. This location must be declared relative to the main schema. Notice how the following examples use xref:dataweave-selecting-types.adoc[]:
 
 .XSD:
 [source,XML]
@@ -328,7 +328,7 @@ type Root = RootElementDefinition
 
 === Choice
 
-You can map this XML schema structure to a `UnionType` in DataWeave:
+You can map this XML schema structure to `UnionType` in DataWeave:
 
 .XSD:
 [source,XML]
@@ -381,7 +381,7 @@ type Root = RootElementDefinition
 
 Namespaces in your XML schema file translate directly to DataWeave type directives.
  
-The following example shows how to set the specific `targetNamespace` where your elements exist. This namespace, which translates to DataWeave, is required if you want to select and navigate said types. 
+The following example shows how to set the specific `targetNamespace` attribute where your elements exist. This namespace, which translates to DataWeave, is required to select and navigate these types. 
 
 .XSD:
 [source,XML]
