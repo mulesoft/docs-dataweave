@@ -1,0 +1,38 @@
+= Reusing Types from DataWeave Modules
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+To reuse types declared in other DataWeave modules, use the `import` directive:
+
+.DataWeave Module (`dw/Weather.dwl`):
+[source,dataweave,linenums]
+----
+%dw 2.0
+type Weather = "cloudy" | "sunny" | "rainy" | "stormy"
+type DetailedWeather = {temperature: Number, weather: Weather}
+----
+
+You can use those imported types as any other type in DataWeave, as constraints for variables and functions or for pattern matching and checking types at runtime:
+
+.DataWeave Script:
+[source,dataweave,linenums]
+----
+%dw 2.0
+output json
+import * from dw::Weather
+
+
+fun weatherMessage(todayWeather: Weather) = 
+    "The weather for today is: " ++ todayWeather
+var worstPossibleWeather: DetailedWeather = {temperature: -10, weather: "stormy"}
+---
+{
+    a: weatherMessage("sunny"),
+    b: worstPossibleWeather.weather is Weather
+}
+----
+
+== See Also
+
+* xref:dataweave-create-module.adoc[]

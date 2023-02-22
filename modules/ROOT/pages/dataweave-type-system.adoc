@@ -16,7 +16,7 @@ A type system defines a set of constraints to a set of constructs, such as:
 These constraints are used in the type-checking phase, when DataWeave ensures that the values assigned
 to variables or the arguments for a function call respect its constraints, for example:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -28,7 +28,7 @@ var userName: String = "John"
 The variable definition for `userName` has the constraint of assigning a value of type `String`.
 If some other value type is assigned, a type-checking error is raised.
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -77,7 +77,7 @@ Simple types represent values such as strings, Booleans, and so on. These values
 
 For example, the `repeat` function in the String module has the signature `repeat(String, Number): String`, which means that the function accepts as a first parameter only a value of type `String`, and as a second parameter only a value of type `Number.` The function returns a value of type `String`.
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -88,7 +88,7 @@ repeat("a", 3)
 
 This returns `&quot;aaa&quot;`, but the following example throws an error because the value `null` cannot be assigned to the parameter that expects a value of type `String`:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -99,7 +99,7 @@ repeat(null, 3)
 
 In the following example, the script assigns to the first parameter a value that is the type `Null` (the type of this value is `Type&lt;Null&gt;`). It returns `&quot;NullNullNull&quot;` because autocoercion coerces the value to the type `String` (`&quot;Null&quot;`).
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -144,7 +144,7 @@ The syntax for defining an `Object` type with a set of constraints for its key-v
 
 For example, the syntax to define a `User` type with `firstName` `String`, `lastName` `String`, and `age` `Number` is:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 output application/json
@@ -160,7 +160,7 @@ You can apply modifiers to each key-value pair to specify when a field is always
 
 For repeated fields use `&#42;`. For example, the following type allows you to have multiple `lastName` fields:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 output application/json
@@ -174,7 +174,7 @@ type User = {
 
 For conditional fields, use `?`. For example, the following type allows the `age` field to be present or not:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 output application/json
@@ -195,7 +195,7 @@ An _open_ object only put constraints on the fields that are declared in the typ
 
 The following example succeeds even if `age` is not in the type declaration because the type of the variable `user` is an open object:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 output application/json
@@ -205,7 +205,7 @@ var user: {firstName: String, lastName: String} = {firstName: "John", lastName: 
 
 The syntax to specify a closed object is `{| |}`. The following example makes the `User` type support only the keys `firstName` and `lastName`. The script throws an exception because the `age` field is not accepted.
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 output application/json
@@ -232,7 +232,7 @@ For example, if you want to define in a constraint a `Function` type that has a 
 
 In the following example, you define a function that receives another function as an argument:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 output application/json
@@ -333,7 +333,7 @@ type Days = Weekdays | "Saturday" | "Sunday"
 
 In the following example, the variable accepts only a value of the literal types `404` and `500`. The type system ensures before runtime that the variable can be only one of those literal values:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 output application/json
@@ -346,7 +346,7 @@ var errorStatusCode: 404 | 500 = payload.statusCode match {
 
 Function overloading enables you to define different behaviors based on the input argument's value:
 
-.DataWeave Script
+.DataWeave Script:
 ----
 %dw 2.0
 import * from dw::core::Strings
@@ -417,3 +417,14 @@ fun read(file: FileData<Binary>) =  "This is a binary file with data " ++ (file.
   text: read({data: "Hello World", name: "myFile.txt"})
 }
 ----
+[[reuse_types]]
+== Reuse Types
+
+You can declare and use types within the same DataWeave script (see xref:dataweave-type-system.adoc[]), or you can reuse types from different sources by loading them with a specific module loader. DataWeave currently supports loading types from:
+
+* xref:dataweave-type-reuse-modules.adoc[]
+* xref:dataweave-type-reuse-json-schema.adoc[]
+* xref:dataweave-type-reuse-xml-schema.adoc[]
+* xref:dataweave-type-reuse-java-classes.adoc[]
+
+Module loaders are used to load files as DataWeave modules, in which different parts of those files are loaded as DataWeave functions, variables, types, and namespace definitions. Using a prefix such as `java!` or `xmlschema!` in the import directive tells DataWeave which module loader to use when loading the Java class or the XML schema as a DataWeave module.

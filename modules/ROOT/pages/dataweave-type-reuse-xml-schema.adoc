@@ -1,0 +1,430 @@
+= Reusing an XML Schema
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+You can import XML schema files (`.xsd`) in your DataWeave script as modules by using the `xmlschema!` module loader. This loader enables you to use types that are declared in your schema in DataWeave directly.
+DataWeave loads your XSD file and translates declarations in your file into DataWeave type directives that you can access in the same way as types from any other DataWeave module. Use the directives to build new types, type-check your variables, match patterns, or declare new functions that use types. DataWeave places no restrictions on how to use these types.
+
+The following example shows how to look for an XSD file in the path `org/weave/myfolder/User.xsd` in your DataWeave script:
+
+----
+import * from xmlschema!org::weave::myfolder::User
+----
+
+== Import Syntax
+
+To import the XML schema types, use the following syntax, where:
+
+* `typeToImport`: You can use `*` to import all types defined in the schema, or to import a single type from the schema, for example, `Root`. You can also import XML schema types with a different name, for example, `Root as Person`. This way  you can reference the type with that name in the script.
+* `pathToXsdSchemaFile`: To specify the path to the schema file, replace the file separators with `::` and remove the `.xsd` extension from the file name. For example, if the path to the schema is `example/schema/Person.xsd`, use `example::schema::Person`.
+
+----
+import _typesToImport_ from xmlschema!_pathToXsdSchemaFile_
+----
+
+The following example shows how to import a type:
+
+----
+import * from xmlschema!example::schema::Person
+----
+
+== Use Your Types in a DataWeave Script
+
+This example shows how to use types to import XML schema files into your DataWeave script.
+
+.XSD File (`User.xsd`):
+[source,XML]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="employee" type="employee"/>
+                <xs:element name="member" type="member"/>
+            </xs:choice>
+            <xs:attribute name="id" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="employee">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="member">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+----
+
+.DataWeave Script:
+[source,dataweave,linenums]
+----
+%dw 2.0
+import * from xmlschema!org::weave::myfolder::User
+
+
+{
+      Root @(id:"test") :{
+        employee: {
+            "name": "Mariano"
+        }
+      } match {
+             case is Root -> true
+             else -> false
+        }
+}
+----
+
+== From the XML Model to DataWeave Types
+
+Because the XML schema type system translates to DataWeave type directives and the two type models are different, the resulting DataWeave type might not represent exactly the same XML model.
+The following files illustrate how XSD translates to DataWeave code. These files are generated dynamically and are not visible, though they are useful for learning how to consume types from generated XSD files.
+
+=== Built-in XML Schema Types
+
+DataWeave supports the following XSD types where `xs` is the XMLSchema default namespace:
+
+[cols="2,2",options="header"]
+|===
+| XSD Type | Dataweave Type
+| `xs:number`| `Number`
+| `xs:int`| `Number`
+| `xs:integer`| `Number`
+| `xs:long`| `Number`
+| `xs:short`| `Number`
+| `xs:byte`| `Number`
+| `xs:double`| `Number`
+| `xs:decimal`| `Number`
+| `xs:unsignedLong`| `Number`
+| `xs:unsignedInt`| `Number`
+| `xs:unsignedShort`| `Number`
+| `xs:unsignedByte`| `Number`
+| `xs:positiveInteger`| `Number`
+| `xs:negativeInteger`| `Number`
+| `xs:nonNegativeInteger`| `Number`
+| `xs:nonPositiveInteger`| `Number`
+| `xs:hexBinary`| `Binary`
+| `xs:base64Binary`| `Binary`
+| `xs:boolean`| `Boolean`
+| `xs:any`| `String`
+| `xs:string`| `String`
+| `xs:normalizedString`| `String`
+| `xs:datetime`| `DateTime`
+| `xs:time`| `Time`
+| `xs:date`| `LocalDateTime`
+|===
+
+.XSD:
+[source,XML]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="string" type="xs:string"/>
+                <xs:element name="normalizedString" type="xs:normalizedString"/>
+
+
+                <xs:element name="integer" type="xs:integer"/>
+                <xs:element name="negativeInteger" type="xs:negativeInteger"/>
+                <xs:element name="int" type="xs:int"/>
+                <xs:element name="unsignedInt" type="xs:unsignedInt"/>
+                <xs:element name="unsignedLong" type="xs:unsignedLong"/>
+                <xs:element name="unsignedShort" type="xs:unsignedShort"/>
+                <xs:element name="float" type="xs:float"/>
+                <xs:element name="double" type="xs:double"/>
+
+
+                <xs:element name="date" type="xs:date"/>
+                <xs:element name="dateTime" type="xs:dateTime"/>
+                <xs:element name="time" type="xs:time"/>
+
+
+                <xs:element name="boolean" type="xs:boolean"/>
+
+
+                <xs:element name="hexBinary" type="xs:hexBinary"/>
+                <xs:element name="base64Binary" type="xs:base64Binary"/>
+                <xs:element name="decimal" type="xs:decimal"/>
+
+
+
+
+
+
+
+
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+----
+
+.Generated DataWeave Module:
+[source,dataweave,linenums]
+----
+%dw 2.0
+
+
+type RootElementDefinition = {| Root: { string: String, normalizedString: String, integer: Number, negativeInteger: Number, int: Number, unsignedInt: Number, unsignedLong: Number, unsignedShort: Number, float: Number, double: Number, date: LocalDateTime, dateTime: DateTime, time: Time, boolean: Boolean, hexBinary: Binary, base64Binary: Binary, decimal: Number } |}
+
+
+type Root = RootElementDefinition
+----
+
+=== Root Elements Declaration
+
+Each root element (`<xs:element>`) declared in your XSD file generates the following:
+
+* A DataWeave `type` directive with the element name followed by the `ElementDefinition` extension
+* A `type` directive named `Root` as a `Union` type that consists of all the root elements in the XSD.
+
+The following example shows how to declare root elements:
+
+.XSD:
+[source,XML]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="color" default="Red"/>
+                <xs:element type="xs:integer" name="age" default="12"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="type" default="ALBA"/>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="AnotherRoot">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="name" default="Red"/>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="type"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+----
+
+.Generated DataWeave Module:
+[source,dataweave,linenums]
+----
+%dw 2.0
+
+
+type AnotherRootElementDefinition = {| AnotherRoot @("type"?: String): {- name: String -} |}
+
+
+type RootElementDefinition = {| Root @("type"?: String): {- color: String, age: Number -} |}
+
+
+type Root = AnotherRootElementDefinition | RootElementDefinition
+----
+
+=== Complex Types
+
+Named complex types declared as top-level elements on the schema which are referenced in your schema or are available for reuse on other structures generate their own type directive. These type directive names include `complextype` name followed by the `Definition` extension.
+
+The following example shows how to declare complex types:
+
+.XSD:
+[source,XML]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="employee" type="employee"/>
+                <xs:element name="member" type="member"/>
+            </xs:choice>
+            <xs:attribute name="id" default="foo"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="employee">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="member">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+----
+
+.Generated DataWeave Module:
+[source,dataweave,linenums]
+----
+%dw 2.0
+
+
+type EmployeeDefinition = { employee: {- name: String -} }
+
+
+type MemberDefinition = { member: {- id: String -} }
+
+
+type RootElementDefinition = {| Root @(id?: String): {| employee: EmployeeDefinition.employee |} | {| member: MemberDefinition.member |} |}
+
+
+type Root = RootElementDefinition
+----
+
+=== Imports/Includes
+
+The use of imports or includes in an XSD schema file results in a DataWeave module which contains an `import` directive that uses the XML schema module loader to point to the schema file located at the specified `schemaLocation`. This location must be declared relative to the main schema. Notice how the following examples use xref:dataweave-selecting-types.adoc[]:
+
+.XSD:
+[source,XML]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+						xmlns:common="http://common.com/COMMON">
+
+
+	<xsd:import schemaLocation="common.xsd" namespace="http://common.com/COMMON" />
+
+
+	<xsd:element name="Root" type="common:RequestHeader"/>
+
+
+</xsd:schema>
+----
+
+.Generated DataWeave Module:
+[source,dataweave,linenums]
+----
+%dw 2.0
+
+
+ns ns0 http://common.com/COMMON
+
+
+import xmlschema!org::mule::weave::v2::module::xmlschema::moduleloader::imports::common
+
+
+type RootElementDefinition = {| Root: common::RequestHeaderDefinition.ns0#RequestHeader |}
+
+
+type Root = RootElementDefinition
+----
+
+=== Choice
+
+You can map this XML schema structure to `UnionType` in DataWeave:
+
+.XSD:
+[source,XML]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="employee" type="employee"/>
+                <xs:element name="member" type="member"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="employee">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="member">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+----
+
+.Generated DataWeave Module:
+[source,dataweave,linenums]
+----
+%dw 2.0
+
+
+type EmployeeDefinition = { employee: {- name: String -} }
+
+
+type MemberDefinition = { member: {- id: String -} }
+
+
+type RootElementDefinition = {| Root: {| employee: EmployeeDefinition.employee |} | {| member: MemberDefinition.member |} |}
+
+
+type Root = RootElementDefinition
+----
+
+=== Namespaces
+
+Namespaces in your XML schema file translate directly to DataWeave type directives.
+ 
+The following example shows how to set the specific `targetNamespace` attribute where your elements exist. This namespace, which translates to DataWeave, is required to select and navigate these types. 
+
+.XSD:
+[source,XML]
+----
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema attributeFormDefault="unqualified" targetNamespace="http://NamespaceTest.com/CommonTypes" elementFormDefault="qualified"  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Root">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="string" type="xs:string"/>
+                <xs:element name="normalizedString" type="xs:normalizedString"/>
+                <xs:element name="integer" type="xs:integer"/>
+                <xs:element name="negativeInteger" type="xs:negativeInteger"/>
+                <xs:element name="int" type="xs:int"/>
+                <xs:element name="unsignedInt" type="xs:unsignedInt"/>
+                <xs:element name="unsignedLong" type="xs:unsignedLong"/>
+                <xs:element name="unsignedShort" type="xs:unsignedShort"/>
+                <xs:element name="float" type="xs:float"/>
+                <xs:element name="double" type="xs:double"/>
+                <xs:element name="date" type="xs:date"/>
+                <xs:element name="dateTime" type="xs:dateTime"/>
+                <xs:element name="time" type="xs:time"/>
+                <xs:element name="boolean" type="xs:boolean"/>
+                <xs:element name="hexBinary" type="xs:hexBinary"/>
+                <xs:element name="base64Binary" type="xs:base64Binary"/>
+                <xs:element name="decimal" type="xs:decimal"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+----
+
+.Generated DataWeave Module:
+[source,dataweave,linenums]
+----
+%dw 2.0
+
+
+ns ns0 http://NamespaceTest.com/CommonTypes
+
+
+type RootElementDefinition = {| ns0#Root: { ns0#string: String, ns0#normalizedString: String, ns0#integer: Number, ns0#negativeInteger: Number, ns0#int: Number, ns0#unsignedInt: Number, ns0#unsignedLong: Number, ns0#unsignedShort: Number, ns0#float: Number, ns0#double: Number, ns0#date: LocalDateTime, ns0#dateTime: DateTime, ns0#time: Time, ns0#boolean: Boolean, ns0#hexBinary: Binary, ns0#base64Binary: Binary, ns0#decimal: Number } |}
+
+
+type Root = RootElementDefinition
+----
