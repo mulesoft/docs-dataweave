@@ -1,6 +1,8 @@
-= Release Notes
 //shared content for docs-release-notes and docs-dataweave:
+//TITLE DataWeave Release Notes
+include::release-notes::partial$dataweave/dataweave-rn-landing-page.adoc[tag=dw-rn-title]
 
+//INTRO
 include::dataweave::partial$dataweave-intro.adoc[tag=dataweaveIntroShort]
 
 Release notes for each DataWeave version include bug fixes, compatibility information, and patch update release details, in addition to new features and other information about DataWeave releases: 
