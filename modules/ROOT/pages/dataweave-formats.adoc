@@ -44,6 +44,10 @@ DataWeave supports the following formats as input and output:
 | `binary`
 | xref:dataweave-formats-binary.adoc[Binary Format]
 
+| `application/protobuf`, `application/x-protobuf`
+| `protobuf`
+| xref:dataweave-formats-protobuf.adoc[Protobuf Format]
+
 | `application/xlsx`
 | `excel`
 | xref:dataweave-formats-excel.adoc[Excel Format]
