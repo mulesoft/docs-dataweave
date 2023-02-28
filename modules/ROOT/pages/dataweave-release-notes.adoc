@@ -15,5 +15,5 @@ include::release-notes::partial$dataweave/dataweave-whats-new-2.5.0.adoc[tag=dat
 == DataWeave and Mule
 
 DataWeave 2.5.0 is bundled with the Mule 4.5.0 release. For details about the Mule release, see
-xref:mule-runtime/mule-4.5.0-release-notes.adoc[Mule Runtime Engine 4.5.0 Release Notes].
+xref:release-notes::mule-runtime/mule-4.5.0-release-notes.adoc[Mule Runtime Engine 4.5.0 Release Notes].
 
