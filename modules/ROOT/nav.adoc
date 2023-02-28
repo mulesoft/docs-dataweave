@@ -1,6 +1,6 @@
 .xref:index.adoc[DataWeave Language]
-* xref:whats-new-in-dw.adoc[What's New in DataWeave]
 * xref:index.adoc[DataWeave Language]
+* xref:dataweave-release-notes.adoc[]
 * xref:dataweave-quickstart.adoc[DataWeave Quickstart]
 * xref:dataweave-language-guide.adoc[Language Guide]
  ** xref:dataweave-language-introduction.adoc[Scripts]
