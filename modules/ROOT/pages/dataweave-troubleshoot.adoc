@@ -253,7 +253,6 @@ output application/json encoding="sjis"
 If you use UTF-8 characters in the multipart filenames, the non-ASCII characters in the names are corrupted.
 
 Set the following system property to enable support for UTF-8 in multipart:
-+
 `-M-Dmail.mime.allowutf8=true`
 
 For example, posting a multipart payload with filename=`不明.txt` without setting the `allowutf8` property to `true` produces the following unreadable text for the `filename` field:
