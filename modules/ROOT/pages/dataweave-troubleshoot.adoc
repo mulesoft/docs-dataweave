@@ -256,7 +256,7 @@ Set the following system property to enable support for UTF-8 in multipart:
 +
 `-M-Dmail.mime.allowutf8=true`
 
-For example, posting a multipart payload with filename=`不明.txt` without setting the `allowutf8` property to `true` would produce the following garbled text for the `filename` field:
+For example, posting a multipart payload with filename=`不明.txt` without setting the `allowutf8` property to `true` produces the following unreadable text for the `filename` field:
 
 [source,weave, linenums]
 ----
