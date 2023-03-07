@@ -26,8 +26,7 @@ variables, and any error, but it only passes in the payload without any
 attributes or variables. Similarly, the called flow will only return
 its payload.
 
-[NOTE]
-The `lookup` function does not support calling subflows.
+Note that the `lookup` function _does not_ support calling subflows.
 
 [WARNING]
 ====
