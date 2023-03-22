@@ -537,7 +537,6 @@ E (continued):
 * Europe/San_Marino
 * Europe/Sarajevo
 * Europe/Saratov
-* Europe/Simferopol
 * Europe/Skopje
 * Europe/Sofia
 * Europe/Stockholm
