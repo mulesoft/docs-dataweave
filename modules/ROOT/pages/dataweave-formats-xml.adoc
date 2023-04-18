@@ -424,7 +424,7 @@ The output encloses the input `String` value in a CData block, which contains th
 [source,xml,linenums]
 ----
 <?xml version='1.0' encoding='UTF-8'?>
-<test><![CData[A text <a>]]></test>
+<test><![CDATA[A text <a>]]></test>
 ----
 
 [[example8]]
@@ -440,7 +440,7 @@ The XML serves as the input payload to the DataWeave source. Notice that the
 [source,xml,linenums]
 ----
 <?xml version='1.0' encoding='UTF-8'?>
-<test><![CData[A text <a>]]></test>
+<test><![CDATA[A text <a>]]></test>
 ----
 
 ==== Source
