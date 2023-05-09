@@ -260,7 +260,7 @@ _Introduced in DataWeave version 2.2.2._
 | `path` | The path to update. The path must be an array of strings, numbers, or `PathElement`s.
 |===
 
-=== Example
+=== Example - JSON
 
 This example updates the name of the user.
 
@@ -286,6 +286,85 @@ output application/json
  }
 ----
 
+=== Example - XML
+
+This example updates the name of the user.
+
+==== Input XML payload
+
+[source,XML,linenums]
+----
+<user>
+  <name>Mariano</name>
+</user>
+----
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::Values
+output application/xml
+---
+payload update ["user", "name"] with "Data Weave"
+----
+
+==== Output
+
+[source,XML,linenums]
+----
+<user>
+  <name>Data Weave</name>
+</user>
+----
+
+=== Example - XML
+
+This example updates one of the recurring fields in the XML.
+
+==== Input XML payload
+
+[source,XML,linenums]
+----
+<users>
+  <user>
+    <name>Phoebe</name>
+    <language>French</language>
+  </user>
+  <user>
+    <name>Joey</name>
+    <language>English</language>
+  </user>
+</users>
+----
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::Values
+output application/xml
+---
+payload update ["users", "user", "language"] with (if ($ == "English") "Gibberish" else $)
+----
+
+==== Output
+
+[source,XML,linenums]
+----
+<users>
+  <user>
+    <name>Phoebe</name>
+    <language>French</language>
+  </user>
+  <user>
+    <name>Joey</name>
+    <language>Gibberish</language>
+  </user>
+</users>
+----
 
 [[update7]]
 == update&#40;value: Null, toUpdate: Number &#124; String &#124; PathElement&#41;: UpdaterValueProvider<Null&#62;
