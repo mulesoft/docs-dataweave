@@ -23,7 +23,7 @@ DataWeave function.
 | Descendants | `..keyName` | Array of values of any matching descendant keys
 | Dynamic | See <<dynamic_selector>>. | &nbsp;
 | Key-value pair | `.&keyName` | Object with the matching key
-| Index | `[<index>]` | Value of any type at selected array index
+| Index | `[<index>]` | Value of any type at selected array index. Use negative numbers to index from the end of an array, for example, `-1` for the last element in the array. Use of numbers beyond the array size returns `null`.
 | Range | `[<index> to <index>]`| Array with values from selected indexes
 | XML attribute | `@`, `.@keyName` | String value of the selected attribute
 | Namespace | `keyName.#` | String value of the namespace for the selected key
@@ -45,7 +45,7 @@ xref:dataweave-cookbook-extract-data#selector_metadata[Extract Data].
 
 [NOTE]
 ====
-The following examples use these selectors. For additional examples, see
+The following examples use these selectors. For additional examples of selectors, see
 xref:dataweave-cookbook-extract-data#[Extract Data].
 ====
 

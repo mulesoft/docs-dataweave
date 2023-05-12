@@ -191,7 +191,7 @@ When invoking the Java function, DataWeave transforms each argument to the expec
 
 The following example shows how to create a new instance of a `java.lang.NullPointerException`:
 
-[source,weave,linenums]
+[source,dataweave,linenums]
 ----
 %dw 2.0
 output application/json

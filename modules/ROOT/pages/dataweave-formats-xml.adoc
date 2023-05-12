@@ -23,7 +23,7 @@ To understand the parsing strategies that DataWeave readers and writers can appl
 [[format_xml_cdata]]
 == CData Custom Type
 
-`CData` is a custom DataWeave data type for XML that is used to identify a Character DATA (CDATA) block. The `CData` type tells the XML writer to wrap content inside a `CDATA` block or to check for an input string inside a `CDATA` block. In DataWeave, `CData` inherits from the type `String`.
+`CData` is a custom DataWeave data type for XML that is used to identify a Character DATA (CData) block. The `CData` type tells the XML writer to wrap content inside a `CData` block or to check for an input string inside a `CData` block. In DataWeave, `CData` inherits from the type `String`.
 
 [[examples]]
 == Examples
@@ -399,9 +399,9 @@ ns f https://www.w3schools.com/furniture
 ----
 
 [[example7]]
-=== Example: Create a CDATA Element
+=== Example: Create a CData Element
 
-This example shows how to use the `CData` type to create a CDATA element in the XML output.
+This example shows how to use the `CData` type to create a CData element in the XML output.
 
 ==== Source
 
@@ -419,7 +419,7 @@ output application/xml
 
 ==== Output
 
-The output encloses the input `String` value in a CDATA block, which contains the special characters, `&lt;` and `&gt;`, from the input.
+The output encloses the input `String` value in a CData block, which contains the special characters, `&lt;` and `&gt;`, from the input.
 
 [source,xml,linenums]
 ----
@@ -428,14 +428,14 @@ The output encloses the input `String` value in a CDATA block, which contains th
 ----
 
 [[example8]]
-=== Example: Check for CDATA in a `String`
+=== Example: Check for CData in a `String`
 
-This example indicates whether a given `String` value is CDATA.
+This example indicates whether a given `String` value is CData.
 
 ==== Input
 
 The XML serves as the input payload to the DataWeave source. Notice that the
-`test` element contains a CDATA block.
+`test` element contains a CData block.
 
 [source,xml,linenums]
 ----
@@ -445,7 +445,7 @@ The XML serves as the input payload to the DataWeave source. Notice that the
 
 ==== Source
 
-The DataWeave script uses the `is CData` expression to determine whether the `String` value is CDATA.
+The DataWeave script uses the `is CData` expression to determine whether the `String` value is CData.
 
 [source,dataweave,linenums]
 ----
@@ -453,13 +453,13 @@ The DataWeave script uses the `is CData` expression to determine whether the `St
 output application/json
 ---
 {
-    test: payload.test is CDATA
+    test: payload.test is CData
 }
 ----
 
 ==== Output
 
-The JSON output contains the value `true`, which indicates tha the input `String` value is CDATA.
+The JSON output contains the value `true`, which indicates tha the input `String` value is CData.
 
 [source,json,linenums]
 ----
