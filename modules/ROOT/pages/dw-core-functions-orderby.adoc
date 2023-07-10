@@ -80,6 +80,16 @@ orderDescending: ([3,8,1] orderBy -$)
 { "orderDescending": [8,3,1] }
 ----
 
+For sorting dateTimes descending the negative value needs to be created with millis:
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+payload orderBy -($ as DateTime as Number {unit: "milliseconds"})
+----
+(see https://help.mulesoft.com/s/article/Comparing-dates-using-orderBy)
+
 
 [[orderby2]]
 == orderBy<T, R&#62;&#40;array: Array<T&#62;, criteria: &#40;item: T, index: Number&#41; &#45;&#62; R&#41;: Array<T&#62;
