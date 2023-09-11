@@ -314,7 +314,8 @@ The DataWeave script outputs a JSON message containing an array of names.
 [source,dataweave,linenums]
 ----
 %dw 2.0
-output application/x-protobuf messageType='examples.repeated.People',descriptorUrl="descriptors/examples.dsc"
+input payload application/x-protobuf messageType='examples.repeated.People',descriptorUrl="descriptors/examples.dsc"
+output application/json
 ---
 names: payload.people.*names
 ----
