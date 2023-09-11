@@ -287,7 +287,7 @@ reduce(payload.names, (item, acc = {}) ->  acc ++ {names: item})
 The DataWeave script outputs a Protobuf message with the repeated field containing all the names from the JSON array.
 
 [[example_protobuf_repeated_to_array]]
-=== Example: Transform a Protobuf Repeated Field to a JSON array
+=== Example: Transform a Protobuf Repeated Field to a JSON Array
 
 The following example shows how to transform a `proto` message with a repeated field to a JSON array.
 
