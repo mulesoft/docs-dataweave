@@ -233,6 +233,109 @@ The DataWeave script outputs a `ProtoBufWritingException` specifying which `oneo
 Since DataWeave admits repeated fields, Protobuf repeated fields are matched to
 DataWeave repeated fields, and vice versa. Note that the DataWeave object being written has to match the schema being used. If the schema does not specify a field as repeated and the DataWeave script has that field more than once, the script fails.
 
+[[example_protobuf_array_to_repeated]]
+=== Example: Transform a JSON Array to a Protobuf Repeated Field
+
+The following example shows how to generate a `proto` message with a repeated field obtained from a JSON array.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+
+package examples.repeated;
+
+
+message People {
+  repeated string names = 1;
+}
+----
+
+==== Input
+
+The JSON input serves as the payload to the DataWeave source.
+
+[source,json,linenums]
+----
+{
+  "names": [
+    "Mariano",
+    "Shoki",
+    "Tomo",
+    "Ana"
+  ]
+}
+----
+
+==== Source
+
+The DataWeave script uses the `reduce` function to generate a new field for each name in the array.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/x-protobuf messageType='examples.repeated.People',descriptorUrl="descriptors/examples.dsc"
+---
+reduce(payload.names, (item, acc = {}) ->  acc ++ {names: item})
+----
+
+==== Output
+
+The DataWeave script outputs a Protobuf message with the repeated field containing all the names from the JSON array.
+
+[[example_protobuf_repeated_to_array]]
+=== Example: Transform a Protobuf Repeated Field to a JSON Array
+
+The following example shows how to transform a `proto` message with a repeated field to a JSON array.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+
+package examples.repeated;
+
+
+message People {
+  repeated string names = 1;
+}
+----
+
+==== Source
+
+The DataWeave script outputs a JSON message containing an array of names.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+input payload application/x-protobuf messageType='examples.repeated.People',descriptorUrl="descriptors/examples.dsc"
+output application/json
+---
+names: payload.people.*names
+----
+
+==== Output
+
+The DataWeave script outputs a JSON message containing an array of names.
+
+[source,json,linenums]
+----
+{
+  "names": [
+    "Mariano",
+    "Shoki",
+    "Tomo",
+    "Ana"
+  ]
+}
+----
+
 === Unknowns
 
 Protobuf offers capabilities for forward and backward compatibility of protocols. In order
