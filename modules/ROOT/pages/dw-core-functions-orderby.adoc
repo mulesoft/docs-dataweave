@@ -63,6 +63,30 @@ The `orderBy` function does not have an option to order in descending order
 instead of ascending. In these cases, you can simply invert the order of
 the resulting array using `-`, for example:
 
+==== Input
+
+Using DateTime input:
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+[|2020-10-01T23:57:59.021Z|, |2020-09-01T23:57:59.011Z|, |2020-10-01T23:57:59.012Z|, |2020-10-01T23:57:59.017Z|]
+  orderBy -($ as Number {unit: "milliseconds"})
+----
+
+Using String input:
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+["2020-10-01T23:57:59.021Z", "2020-09-01T23:57:59.011Z", "2020-10-01T23:57:59.012Z", "2020-10-01T23:57:59.017Z"]
+  orderBy -($ as DateTime as Number {unit: "milliseconds"})
+----
+
 ==== Source
 
 [source,DataWeave,linenums]
@@ -223,4 +247,3 @@ output application/json
 == orderBy&#40;value: Null, criteria: &#40;item: Nothing, index: Nothing&#41; &#45;&#62; Null&#41;: Null
 
 Helper function that enables `orderBy` to work with a `null` value.
-
