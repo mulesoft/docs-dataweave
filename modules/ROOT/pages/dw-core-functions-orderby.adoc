@@ -149,6 +149,33 @@ output application/json
 
 === Example
 
+This example sorts an array of DateTime in descending order.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+[|2020-10-01T23:57:59.017Z|, |2022-12-22T12:12:12.011Z|, |2020-10-01T12:40:10.012Z|, |2020-10-01T23:57:59.021Z|]
+  orderBy -($ as Number {unit: "milliseconds"})
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+[
+  "2022-12-22T12:12:12.011Z",
+  "2020-10-01T23:57:59.021Z",
+  "2020-10-01T23:57:59.017Z",
+  "2020-10-01T12:40:10.012Z"
+]
+----
+
+=== Example
+
 This example changes the order of the objects in a JSON array. The expression first orders them alphabetically by the value of the `Type` key, then reverses the order based on the `[-1 to 0]`.
 
 ==== Source
