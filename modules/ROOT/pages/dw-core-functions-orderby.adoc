@@ -63,30 +63,6 @@ The `orderBy` function does not have an option to order in descending order
 instead of ascending. In these cases, you can simply invert the order of
 the resulting array using `-`, for example:
 
-==== Input
-
-Using DateTime input:
-
-[source,DataWeave,linenums]
-----
-%dw 2.0
-output application/json
----
-[|2020-10-01T23:57:59.021Z|, |2020-09-01T23:57:59.011Z|, |2020-10-01T23:57:59.012Z|, |2020-10-01T23:57:59.017Z|]
-  orderBy -($ as Number {unit: "milliseconds"})
-----
-
-Using String input:
-
-[source,DataWeave,linenums]
-----
-%dw 2.0
-output application/json
----
-["2020-10-01T23:57:59.021Z", "2020-09-01T23:57:59.011Z", "2020-10-01T23:57:59.012Z", "2020-10-01T23:57:59.017Z"]
-  orderBy -($ as DateTime as Number {unit: "milliseconds"})
-----
-
 ==== Source
 
 [source,DataWeave,linenums]
@@ -171,6 +147,33 @@ output application/json
     name: "Santiago",
     age: 42
   }
+]
+----
+
+=== Example
+
+This example sorts an array of DateTime in descending order.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+[|2020-10-01T23:57:59.017Z|, |2022-12-22T12:12:12.011Z|, |2020-10-01T12:40:10.012Z|, |2020-10-01T23:57:59.021Z|]
+  orderBy -($ as Number {unit: "milliseconds"})
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+[
+  "2022-12-22T12:12:12.011Z",
+  "2020-10-01T23:57:59.021Z",
+  "2020-10-01T23:57:59.017Z",
+  "2020-10-01T12:40:10.012Z"
 ]
 ----
 
