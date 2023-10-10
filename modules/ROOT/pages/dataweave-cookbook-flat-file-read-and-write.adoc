@@ -9,7 +9,7 @@ The following examples show you how to read the contents of a flat file, and als
 
 When you work with flat files, configure the flat file schema to use for reading and writing flat file content. The flat file schema defines the structure of a flat file, and this enables Mule to write and read in this format.
 
-These example applications are configured to work with the sample flat file data and the example flat file schema provided in xref:dataweave-flat-file-schemas#full_schema_ex[Flat File Schemas].
+These example applications are configured to work with the sample flat file data and the example flat file schema provided in xref:dataweave-flat-file-schemas.adoc#full_schema_ex[Flat File Schemas].
 
 == Example of Reading a Flat File
 
