@@ -79,7 +79,7 @@ var readXml = read("<prices>
 === Example
 
 You can also use named keys and values as parameters. For example, the next
-transformation example iterates over the <<input_pluck, `prices` input>>
+transformation example iterates over the <<source, `prices` input>>
 above and outputs an array with a single element. Note that
 `payload pluck(payload.prices)` produces the same result as
 `payload pluck(payload[0])`.
