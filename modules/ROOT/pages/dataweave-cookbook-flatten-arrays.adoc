@@ -48,7 +48,7 @@ This example uses:
 a single array.
 * `flatten` to flatten the combined array into a list of key-value pairs.
 
-[[ex02]]
+[[ex2]]
 .DataWeave Script:
 [source,dataweave,linenums]
 ----
