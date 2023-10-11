@@ -619,7 +619,7 @@ See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To D
 
 == Fixed Width
 
-Fixed Width types are technically considered a type of <<Flat File>> format, but
+Fixed Width types are technically considered a type of <<flat-file>> format, but
 when you select this option, the Transform Message component offers you settings
 that are better tailored to the needs of this format.
 
