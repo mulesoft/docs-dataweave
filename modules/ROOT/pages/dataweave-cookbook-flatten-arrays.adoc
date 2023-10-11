@@ -61,7 +61,7 @@ include::partial$cookbook-dw/flatten-arrays-ex2/transform.dwl[]
 include::partial$cookbook-dw/flatten-arrays-ex2/out.json[]
 ----
 
-The only difference between the <<ex2, previous example>> and the
+The only difference between the <<ex02, previous example>> and the
 following example is the addition of the `.fruit` selector to the body expression
 to select all the `fruit` values and to exclude values
 of the `notfruit` keys from the output array.
