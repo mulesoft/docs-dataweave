@@ -1672,7 +1672,7 @@ payload.list1 zip payload.list2 zip payload.list3
 
 .(':array') => ':array'
 
-Performs the opposite function of <<zip arrays>>, that is: given a single array where each index contains an array with two elements, it outputs two separate arrays, each with one of the elements of the pair. This can also be scaled up, if the indexes in the provided array contain arrays with more than two elements, the output will contain as many arrays as there are elements for each index.
+Performs the opposite function of <<zip-arrays>>, that is: given a single array where each index contains an array with two elements, it outputs two separate arrays, each with one of the elements of the pair. This can also be scaled up, if the indexes in the provided array contain arrays with more than two elements, the output will contain as many arrays as there are elements for each index.
 
 .Transform
 [source,dataweave,linenums]
