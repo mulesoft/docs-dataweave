@@ -1056,7 +1056,7 @@ In DataWeave, types can be coerced from one type to other using the xref:datawea
 This table shows the possible combinations and the properties from the schema that are used in the transformation.
 
 [TIP]
-When you <<DataWeave Operators Sorted by Type, provide an operator>> with properties that don't match the expected types, DataWeave automatically attempts to coerce the provided property to the required type.
+When you <<Operators Sorted by Type, provide an operator>> with properties that don't match the expected types, DataWeave automatically attempts to coerce the provided property to the required type.
 
 |===
 |Source                          |Target                  | Property
