@@ -410,7 +410,7 @@ When you define an output of type XML, there are a few optional parameters you c
 |`encoding`|string | UTF-8 |The character set to be used for the output
 |`bufferSize`| number | 153600 | The size of the buffer writer
 |`inlineCloseOn` | string | | When the writer should use inline close tag. Possible values = `empty`/`none`
-|`skipNullOn`| string | | Possible values = `elements`/`attributes`/`everywhere`. See <<Skip Null On>>
+|`skipNullOn`| string | | Possible values = `elements`/`attributes`/`everywhere`. See <<skip-null-on-for-xml>>
 |`writeDeclaration`| boolean | true | Defines if the XML declaration will be included in the first line
 |===
 
@@ -518,7 +518,7 @@ When you define an output of type JSON, there are a few optional parameters you 
 |`encoding`| string | UTF-8 |The character set to be used for the output
 |`bufferSize`| number | 153600 | The size of the buffer writer
 |`inlineCloseOn` | string | | When the writer should use inline close tag. Possible values = empty/none
-|`skipNullOn`| string | | Possible values = `elements`/`attributes`/`everywhere`. See <<Skip Null On>>
+|`skipNullOn`| string | | Possible values = `elements`/`attributes`/`everywhere`. See <<skip-null-on-for-json>>
 |`duplicateKeyAsArray`| boolean | false | JSON language doesn't allow duplicate keys with one same parent, this usually raises an exception. If set to true, the output contains a single key that points to an array containing all the values assigned to it.
 |===
 
