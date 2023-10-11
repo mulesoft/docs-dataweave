@@ -489,7 +489,7 @@ The above example removes the key value pair that contains the key 'aa' from {aa
 == Remove by Matching Key and Value
 .(':object', ':object')  => ':object'
 
-Works just like <<using remove on an object, remove>> on objects, but only removes an element when there is a match of not just the key but of the key + value pair . It returns another object where the specified keys are removed.
+Works just like <<using-remove-on-an-object, remove>> on objects, but only removes an element when there is a match of not just the key but of the key + value pair . It returns another object where the specified keys are removed.
 
 .Transform
 [source,dataweave,linenums]
@@ -1705,7 +1705,7 @@ Performs the opposite function of <<zip-arrays>>, that is: given a single array 
 }
 ----
 
-Note even though example b can be considered the inverse function to the example b in <<zip array>>, the result is not analogous, since it returns an array of repeated elements instead of a single element. Also note that in example c, since the number of elements in each component of the original array is not consistent, the output only creates as many full arrays as it can, in this case just one.
+Note even though example b can be considered the inverse function to the example b in <<zip-arrays>>, the result is not analogous, since it returns an array of repeated elements instead of a single element. Also note that in example c, since the number of elements in each component of the original array is not consistent, the output only creates as many full arrays as it can, in this case just one.
 
 
 == Replace
