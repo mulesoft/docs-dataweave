@@ -303,5 +303,5 @@ fileWorkingDir=#["${mule.home}/apps/${app.name}/"]
 
 * xref:dataweave-formats-flatfile.adoc[Flat File Format]
 * xref:dataweave-flat-file-schemas.adoc[Flat File Schemas]
-* xref:dataweave-cookbook-set-reader-writer-props[Set Reader and Writer Properties]
+* xref:dataweave-cookbook-set-reader-writer-props.adoc[Set Reader and Writer Properties]
 * xref:4.3@mule-runtime::configuring-properties.adoc[Configure Properties]
