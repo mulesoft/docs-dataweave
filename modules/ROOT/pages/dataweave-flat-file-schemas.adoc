@@ -173,7 +173,7 @@ segments:
 
 The above defines two different structures, the *BatchReq* structure and the *BatchRsp* structure. Each of these structures uses a particular sequence of segments and groups of segments. The group "batch" is repeated in both structures. A Batch group is composed of a single BCH line, multiple TDR lines and a single BCF line.
 
-Note that this example is not complete, you'd need to <<Segment Definitions, define each of the referenced segments>> at the end. See <<Referenced vs in-lined Definitions>> to understand how these segments are being referenced in this example.
+Note that this example is not complete, you'd need to <<segment-definitions, define each of the referenced segments>> at the end. See <<Referenced vs in-lined Definitions>> to understand how these segments are being referenced in this example.
 
 
 
