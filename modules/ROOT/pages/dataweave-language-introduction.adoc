@@ -1199,7 +1199,7 @@ This table lists the order in which different DataWeave expressions are compiled
 |!= ~= ==                          |Equality evaluators    | 6
 |xref:dataweave-operators.adoc#AND[AND]                              |Conditional And         | 7
 |xref:dataweave-operators.adoc#OR[OR]                                |Conditional OR          | 8
-|xref:dataweave-operators.adoc#default[Default], <<Pattern Matching>>, xref:dataweave-operators.adoc#matches[Matches], xref:dataweave-operators.adoc#map[Map], xref:dataweave-operators.adoc#map-object[Map Object], xref:dataweave-operators.adoc#group-by[Group By], xref:dataweave-operators.adoc#filter[Filter]             |Default Value / Pattern Matching / Binary Operators | 9
+|xref:dataweave-operators.adoc#default[Default], <<pattern-matching>>, xref:dataweave-operators.adoc#matches[Matches], xref:dataweave-operators.adoc#map[Map], xref:dataweave-operators.adoc#map-object[Map Object], xref:dataweave-operators.adoc#group-by[Group By], xref:dataweave-operators.adoc#filter[Filter]             |Default Value / Pattern Matching / Binary Operators | 9
 |<<When Otherwise>>, <<Unless Otherwise>>             |Conditional Expressions | 10
 |===
 
