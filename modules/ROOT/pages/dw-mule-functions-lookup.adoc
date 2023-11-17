@@ -56,7 +56,7 @@ _This function is *Deprecated*._
 === Example
 
 This example shows XML for two flows. The `lookup` function in `flow1` executes
-`flow2` and passes the object `{test:'hello '}` as its payload to `flow2`. The
+`flow2` and passes the object `{"test":"hello "}` as its payload to `flow2`. The
 Set Payload component  (`<set-payload/>`) in `flow2` then concatenates the
 value  of `{test:'hello '}` with the string `world` to output and log
 `hello world`.
