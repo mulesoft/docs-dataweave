@@ -15,7 +15,7 @@ that you can explore further whenever you are ready, and they show how to turn
 the Transform Message component into a DataWeave playground.
 
 To run the scripts, you copy them into the source code area of a Transform
-Message component in xref:7.3@studio::index.adoc[Studio], then view the results
+Message component in xref:studio::index.adoc[Studio], then view the results
 in the component's *Preview* pane. You also load content from files so that
 your DataWeave script can act on it. Once you feel comfortable with DataWeave
 examples here and elsewhere in the docs, you can use the DataWeave playground
@@ -30,7 +30,7 @@ includes a DataWeave script in the source code area with output in the
 
 == Prerequisites
 
-xref:7.3@studio::to-download-and-install-studio.adoc[Studio 7] is required.
+xref:studio::to-download-and-install-studio.adoc[Studio 7] is required.
 Versions 7.3 or 7.2.3 are recommended. Other Studio 7 versions are untested
 with this guide.
 
