@@ -67,6 +67,8 @@ output application/json
 
 * xref:dw-diff.adoc[Diff (dw::util::Diff)]
 
+* xref:dw-dtd.adoc[Dtd (dw::xml::Dtd)]
+
 * xref:dw-crypto.adoc[Encryption (dw::Crypto)]
 
 * xref:dw-math.adoc[Math (dw::util::Math)]
