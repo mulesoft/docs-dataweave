@@ -1,5 +1,5 @@
-.xref:index.adoc[DataWeave Language]
-* xref:index.adoc[DataWeave Language]
+.xref:index.adoc[DataWeave]
+* xref:index.adoc[Overview]
 * xref:dataweave-release-notes.adoc[Release Notes]
 * xref:dataweave-quickstart.adoc[DataWeave Quickstart]
 * xref:dataweave-language-guide.adoc[Language Guide]
