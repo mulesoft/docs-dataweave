@@ -316,7 +316,7 @@ Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions
 [[java17_examples]]
 == Examples of Java Support
 
-The following examples run using Java 17 and using xref:dataweave-versioning-behavior.adoc[language level 2.6].
+The following examples run using Java 17 and xref:dataweave-versioning-behavior.adoc[language level 2.6].
 
 * <<example4>>
 * <<example5>>
@@ -326,7 +326,7 @@ The following examples run using Java 17 and using xref:dataweave-versioning-beh
 
 This example shows how to create a Java object instance.
 
-==== User class
+==== User Class
 
 The Java example uses the following class:
 
@@ -368,7 +368,7 @@ org.mule.weave.v2.module.pojo.reader.PropertyDefinition (in module org.mule.weav
 
 This example shows how to access the values of Java properties.
 
-==== Item class
+==== Item Class
 
 The Java example uses the following class:
 
@@ -413,7 +413,7 @@ output application/json
 
 ==== Output
 
-The expected output is a JSON.  
+The expected output is a JSON object.  
 
 [source,json,linenums]
 ----
@@ -431,13 +431,11 @@ java.lang.IllegalAccessException: class
 org.mule.weave.v2.module.pojo.reader.PropertyDefinition (in module org.mule.weave.module.java) cannot access a member of class Item with modifiers "private"
 ----
 
-=== Solution
+=== Troubleshooting Common Errors
 
-To solve conflicts, ensure you: 
+To resolve conflicts, ensure that you: 
 
-* Update your class definitions to follow the POJOs structure. 
-+
-We encourage you to adopt this option.
+* Update your class definitions to follow the POJOs structure (recommended). 
 * Use the compatibility flag `com.mulesoft.dw.java.disable_set_accessible=false` to allow accessible flag modification for reflection objects. 
 +
-This approach is a workaround and works for customer domain classes only. Note that the usage of this compatibility flag may not affect future versions.
+This approach is a workaround and works for customer domain classes only. Note that the usage of this compatibility flag might not affect future versions.
