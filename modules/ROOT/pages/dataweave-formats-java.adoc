@@ -309,9 +309,9 @@ This format supports the following MIME types.
 
 Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions in encapsulation and reflective access that affects the xref:dataweave-formats-java.adoc[]. Because DataWeave uses Java's reflection API to read and write Java objects, ensure that the objects your application uses are Plain Old Java Objects (POJOs) containing:
 
-* Default constructor (required if your class needs to be instantiated)
-* Getters for all properties (required if your class needs to be read)
-* Setters for all properties (required if your class needs to be instantiated)
+* Default constructor
+* Getters for all properties
+* Setters for all properties
 
 [[java17_examples]]
 == Examples of Java Support
@@ -380,7 +380,7 @@ public class Item {
 	
 	public Item() {
 	}
-            public Item(String name, int quantity) {
+    public Item(String name, int quantity) {
 		this.name = name;
 		this.quantity = quantity;
 	}
