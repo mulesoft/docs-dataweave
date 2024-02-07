@@ -9,10 +9,11 @@ For Mule applications, the language level is determined by the application's `mi
 [%header%autowidth.spread,cols="a,a"]
 |===
 | minMuleVersion | Language Level
+| 4.6 | 2.6
 | 4.5 | 2.5
 | 4.4 | 2.4
 | 4.3 | 2.3
 |===
 
 Setting the Mule version configures the application to use the corresponding DataWeave language level. This setting is independent of the DataWeave syntax version, which is set through a DataWeave script's `%dw` directive. For details, see xref:dataweave-language-introduction.adoc#dw_header[DataWeave Header].
-For example, the `com.mulesoft.dw.xml_reader.honourMixedContentStructure` system property is a compatibility flag for language level 2.4, when it was introduced, and it is removed in DataWeave 2.5. In DataWeave 2.5, the property is _visible only if_ you set the language level to 2.4. Otherwise, the property defaults to its new behavior in 2.5.
+For example, the `com.mulesoft.dw.xml_reader.honourMixedContentStructure` system property is a compatibility flag for language level 2.4, when it was introduced, and it is removed in DataWeave 2.6. In DataWeave 2.6, the property is _visible only if_ you set the language level to 2.4 or 2.5. If you choose language level 2.4 it defaults to the old behavior, if you choose language level 2.5 it defaults to the new behavior.
