@@ -119,6 +119,7 @@ This format accepts properties that provide instructions for reading input data.
 |===
 |Parameter |Type |Default|Description
 |`schemaUrl` (Required) |`String`|`''`|The URL for the Avro schema. Valid URL schemes are `classpath://`, `file://`, or `http://`. For the reader, this property is optional but defaults to the schema embedded in the input Avro file. The reader requires an embedded schema. For the writer, DataWeave requires a schema value.
+
 |===
 
 [[writer_properties]]
@@ -129,13 +130,14 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 
 
 Valid values are `true` or `false`.
 |`schemaUrl` (Required) |`String`|`''`|The URL for the Avro schema. Valid URL schemes are `classpath://`, `file://`, or `http://`. For the reader, this property is optional but defaults to the schema embedded in the input Avro file. The reader requires an embedded schema. For the writer, DataWeave requires a schema value.
+
 |===
 
 
