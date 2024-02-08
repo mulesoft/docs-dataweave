@@ -49,14 +49,14 @@ output application/json
 [source,JSON,linenums]
 ----
 {
-  "a": null,
-  "b": null,
-  "c": "abc",
-  "d": "ABabcBA",
-  "e": "A",
-  "f": "A#",
-  "g": "#A"
-}
+   "a": null,
+   "b": null,
+   "c": "abc",
+   "d": "ABabcBA",
+   "e": "A",
+   "f": "#A",
+   "g": "A#"
+ }
 ----
 
 

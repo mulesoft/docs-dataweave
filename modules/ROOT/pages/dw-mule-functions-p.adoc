@@ -14,7 +14,7 @@ Environment variables.
 
 
 For more on this topic, see
-xref:mule-runtime::configuring-properties.adoc[Configure Properties].
+https://docs.mulesoft.com/dataweave/latest/configuring-properties[Configure Properties].
 
 === Parameters
 
@@ -37,3 +37,4 @@ This example logs the value of the property `http.port` in a Logger component.
    message="#[Mule::p('http.port')]"/>
 </flow>
 ----
+
