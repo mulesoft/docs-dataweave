@@ -1,4 +1,4 @@
-= Mule Types (Mule)
+= Mule Types (dw::Mule)
 
 [%header, cols="1,2a,3a"]
 |===
@@ -6,28 +6,38 @@
 
 | Error
 | `type Error = { description?: String, detailedDescription?: String, errorType?: ErrorType, childErrors?: Array<Error&#62; }`
-a| A complex type that represents an Error:
+| Type that represents an Error and contains the following fields:
 
-* `description?: String`: Concise description of the error.
-* `detailedDescription?: String`: Detailed description of the error. This
-message can include information specific to a Java exception.
-* `errorType?: ErrorType`: Returns the type of the error.
-* `childErrors?: Array<Error&#62;`: Lists child Errors, if any. For example, the
-Scatter&#45;Gather router might throw an error aggregating all of its routing
-errors as children.
+* `description`:
+  Concise description of the error.
 
-Not all failing components aggregate errors, so this type can return an
-empty collection.
+* `detailedDescription`:
+   Detailed description of the error. This message can include information
+   specific to a Java exception.
+
+* `errorType`:
+  Returns the type of the error.
+
+* `childErrors`:
+   Lists child Errors, if any.
+   For example, the Scatter-Gather router might throw an error aggregating
+   all of its routes errors as children.
+   Not all failing components aggregate errors, so this type can return an
+  empty collection.
+
 
 | ErrorType
-| `type ErrorType = { identifier?: String, namespace?: String, parentErrorType?: ErrorType }`
-a| A type of error that a Mule component can throw.
+| `type ErrorType = { identifier?: String, namespace?: String, parentErrorType?: ErrorType &#124; Null }`
+| A type of error that a Mule component can throw.
 
-* The error type has a `identifier` string that end users can provide
+
+The error type has a `identifier` string that end users can provide
 in the Mule configuration.
-* Every error belongs to a `namespace` to avoid collisions with errors that
+
+Every error belongs to a `namespace` to avoid collisions with errors that
 have the same `identifier` string but belong to different namespace.
-* Error types can be a specialization of a more general error type, in which
+
+Error types can be a specialization of a more general error type, in which
 case the `parentErrorType` should return the more general error type. This
 type is used during error type matching within error handlers. So when
 selecting the general error type for error handling, it also handles the
