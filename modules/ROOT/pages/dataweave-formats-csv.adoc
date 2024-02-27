@@ -221,7 +221,7 @@ This format accepts properties that provide instructions for writing output data
 |===
 |Parameter |Type |Default|Description
 |`bodyStartLineNumber`  |`Number`|`0`|Line number on which the body starts.
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 
