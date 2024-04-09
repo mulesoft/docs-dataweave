@@ -54,8 +54,8 @@ output application/json
   "c": "abc",
   "d": "ABabcBA",
   "e": "A",
-  "f": "A#",
-  "g": "#A"
+  "f": "#A",
+  "g": "A#"
 }
 ----
 
