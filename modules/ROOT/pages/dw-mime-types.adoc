@@ -1,0 +1,35 @@
+= Mime Types (dw::module::Mime)
+
+[%header, cols="1,2a,3a"]
+|===
+| Type | Definition | Description
+
+| MimeType
+| `type MimeType = { "type": String, subtype: String, parameters: MimeTypeParameter }`
+| DataWeave type for representing a MIME type.
+Supports the following fields:
+
+* `type`: Represents the general category into which the data type falls, such as 'video' or 'text'.
+* `subtype`: Identifies the exact kind of data of the specified type the MIME type represents.
+* `parameters`: Parameters attached to the MIME type.
+
+_Introduced in DataWeave version 2.7.0._
+
+
+| MimeTypeError
+| `type MimeTypeError = { message: String }`
+| DataWeave type of the data that returns when a `fromString` function fails.
+Supports the following fields:
+
+* `message`: The error message.
+
+_Introduced in DataWeave version 2.7.0._
+
+
+| MimeTypeParameter
+| `type MimeTypeParameter = { _?: String }`
+| DataWeave type for representing a MIME type parameter.
+
+_Introduced in DataWeave version 2.7.0._
+
+|===

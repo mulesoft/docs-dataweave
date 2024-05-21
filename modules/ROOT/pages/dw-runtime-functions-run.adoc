@@ -6,7 +6,7 @@ endif::[]
 
 
 [[run1]]
-== run&#40;fileToExecute: String, fs: Dictionary<String&#62;, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: RunSuccess &#124; ExecutionFailure
+== run&#40;fileToExecute: String, fs: Dictionary<String&#62;, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: RunResult
 
 Runs the input script under the provided context and executes
 the script in the current runtime.
