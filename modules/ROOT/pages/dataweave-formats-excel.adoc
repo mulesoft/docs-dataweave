@@ -221,6 +221,8 @@ Valid values are `true` or `false`.
 |`ignoreEmptyLine`  |`Boolean`|`true`|Ignores an empty line by default.
 
 Valid values are `true` or `false`.
+|`maxEntrySize`  |`Number`|`null`|Sets the maximum number of bytes a single entry in a ZIP file can have.
+|`minInflateRatio`  |`Number`|`null`|Sets the ratio between de- and inflated bytes to detect zip bomb. For example, if you set the value to 1 percent (= 0.01d) when the compression is better than 1 percent for any given read package part, the parsing fails to indicate a zip bomb.
 |`streaming`  |`Boolean`|`false`|Streams input when set to `true`. Use only if entries are accessed sequentially. The input must be a top-level array. See the <<example2, streaming example>>, and see https://docs.mulesoft.com/dataweave/latest/dataweave-formats#dw_readers_writers[DataWeave Readers].
 
 
@@ -240,7 +242,7 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 
@@ -252,6 +254,8 @@ Valid values are `true` or `false`.
 |`ignoreEmptyLine`  |`Boolean`|`true`|Ignores an empty line by default.
 
 Valid values are `true` or `false`.
+|`maxEntrySize`  |`Number`|`null`|Sets the maximum number of bytes a single entry in a ZIP file can have.
+|`minInflateRatio`  |`Number`|`null`|Sets the ratio between de- and inflated bytes to detect zip bomb. For example, if you set the value to 1 percent (= 0.01d) when the compression is better than 1 percent for any given read package part, the parsing fails to indicate a zip bomb.
 |`tableOffset`  |`String`|`null`|Sets the position of the first cell. Accepts the pattern `<Column><Row>`, for example, `A1` or `B3`.
 |`zipBombCheck`  |`Boolean`|`true`|Turns off the zip bomb (decompression bomb) check when set to `false`.
 
