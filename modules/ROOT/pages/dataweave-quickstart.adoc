@@ -752,7 +752,7 @@ when you are ready.
 == Next Steps
 
 * To get started with Mule app development and data mapping through the
-Studio UI, see xref:mule-runtime::mule-app-tutorial.adoc[Mule App Development Tutorial].
+Studio UI, see xref:mule-runtime::mule-app-tutorial.adoc[].
 * Beyond the Transform Message component, many Mule connectors, modules, and
 Core components accept DataWeave selectors and short DataWeave expressions
 in their *fx* fields.
