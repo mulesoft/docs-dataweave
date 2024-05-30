@@ -35,7 +35,7 @@ _Introduced in DataWeave 2.5.0. Supported by Mule 4.5.0 and later._
 
 DataWeave can read and write doctype declarations in XML files.
 
-During the reading phase, DataWeave parses the doctype declarations and stores the content as metadata of the root element. The `DocType` value is stored in the `docType` variable. You can use the xref:dataweave-selectors.adoc[metadata selector] (`^`) to extract the value of that variable with an expression like this one:
+During the reading phase, DataWeave parses the doctype declarations and stores the content as metadata of the root element. The `DocType` value is stored in the `docType` variable. You can use the https://docs.mulesoft.com/dataweave/latest/dataweave-selectors[metadata selector] (`^`) to extract the value of that variable with an expression like this one:
 
 * `payload.^docType`
 +
