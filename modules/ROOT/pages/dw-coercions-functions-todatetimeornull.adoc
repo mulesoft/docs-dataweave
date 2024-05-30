@@ -12,7 +12,7 @@ Transforms a `String` value into a `DateTime` value using the first `Formatter` 
 with the given value to transform.
 
 
-If none of the `Formatter` matches with the given value returns a `null` value.
+If none of the `Formatter` matches with the given value, the function returns a `null` value.
 
 _Introduced in DataWeave version 2.5.0._
 
