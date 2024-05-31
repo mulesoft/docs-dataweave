@@ -17,7 +17,7 @@ Supports the following fields:
             `AR`, or `ES`. A `null` or absent value uses your
             JVM default. When you pass a translatable format, such as
             `eeee` and `MMMM`, a `locale` (such as `"ES`) transforms
-            the corresponding numeric values to a localized string
+            the corresponding numeric values to a localized string.
 
 
 | MillisOrSecs
