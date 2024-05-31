@@ -183,7 +183,7 @@ the `error`. If `true`, the data type provides the `result`.
 
 | TryResultFailure
 | `type TryResultFailure = { kind: String, message: String, stack?: Array<String&#62;, stackTrace?: String, location?: String }`
-| A type for representing failures `try` executions.
+| A type for representing failed execution from `try`.
 
 Supports the following fields:
 
