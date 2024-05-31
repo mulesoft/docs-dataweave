@@ -23,7 +23,7 @@ _Introduced in DataWeave version 2.5.0._
 === Example
 
 This example gets the `com.mulesoft.dw.xml_reader.honourMixedContentStructure` compatibility flag value in the current
-the DataWeave version.
+DataWeave version.
 
 ==== Source
 
