@@ -331,7 +331,6 @@ The DataWeave script outputs a JSON message containing an array of names.
 ----
 
 [[example_protobuf_array_to_repeated]]
-dmerlob marked this conversation as resolved.
 === Example: Transform a JSON Array to a Protobuf Repeated Field
 
 The following example shows how to generate a `proto` message with a repeated field obtained from a JSON array.
