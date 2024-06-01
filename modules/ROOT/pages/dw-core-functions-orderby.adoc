@@ -40,6 +40,7 @@ array. Note that `orderBy($.letter)` produces the same result as
 %dw 2.0
 output application/json
 ---
+{ letter: "b", letter: "c", letter: "a" } orderBy ((value, key) -> value)
 [{ letter: "e" }, { letter: "d" }] orderBy($.letter)
 ----
 
