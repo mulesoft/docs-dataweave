@@ -23,7 +23,7 @@ _Introduced in DataWeave version 2.7.0._
 
 === Example
 
-This example test several MIME types handled validation.
+This example tests how MIME types handles several validations.
 
 ==== Source
 
