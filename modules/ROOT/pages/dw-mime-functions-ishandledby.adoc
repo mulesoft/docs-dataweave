@@ -8,7 +8,7 @@ endif::[]
 [[ishandledby1]]
 == isHandledBy&#40;base: MimeType, other: MimeType&#41;: Boolean
 
-Returns `true` if the given `MimeType` value can be handled the base `MimeType` value.
+Returns `true` if the given `MimeType` value is handled by the base `MimeType` value.
 
 _Introduced in DataWeave version 2.7.0._
 
