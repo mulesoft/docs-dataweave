@@ -23,7 +23,7 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 
 | EvalResult
 | `type EvalResult = Result<EvalSuccess, ExecutionFailure&#62;`
-| Data type of the data that returns when a `eval` function executes.
+| Data type of the data that returns when an `eval` function executes.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
