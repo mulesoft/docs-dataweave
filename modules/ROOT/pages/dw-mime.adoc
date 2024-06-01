@@ -14,7 +14,7 @@ _Introduced in DataWeave version 2.7.0._
 |===
 | Name  | Description
 | xref:dw-mime-functions-fromstring.adoc[fromString] | Transforms a MIME type string value representation to a `MimeType`.
-| xref:dw-mime-functions-ishandledby.adoc[isHandledBy] | Returns `true` if the given `MimeType` value can be handled the base `MimeType` value.
+| xref:dw-mime-functions-ishandledby.adoc[isHandledBy] | Returns `true` if the given `MimeType` value is handled by the base `MimeType` value.
 | xref:dw-mime-functions-tostring.adoc[toString] | Transforms a `MimeType` value to a string representation.
 |===
 
