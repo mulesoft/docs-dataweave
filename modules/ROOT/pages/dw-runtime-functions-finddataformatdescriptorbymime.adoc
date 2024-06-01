@@ -8,7 +8,7 @@ endif::[]
 [[finddataformatdescriptorbymime1]]
 == findDataFormatDescriptorByMime&#40;mime: dw::module::Mime::MimeType&#41;: DataFormatDescriptor &#124; Null
 
-Returns the `DataFormatDescriptor` based on the specified `dw::module::Mime::MimeType` specified or `null` if
+Returns the `DataFormatDescriptor` based on the `dw::module::Mime::MimeType` specified or `null` if
 there is no `DataFormatDescriptor` for the given `MimeType`.
 
 _Experimental:_ This function is an experimental feature that is subject to change or removal from future versions of DataWeave.
