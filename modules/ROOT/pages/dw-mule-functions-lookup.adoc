@@ -26,7 +26,7 @@ variables, and any error, but it only passes in the payload without any
 attributes or variables. Similarly, the called flow will only return
 its payload.
 
-Note that the `lookup` function _does not_ support calling subflows.
+Note that the `lookup` function _doesn't_ support calling subflows.
 
 [WARNING]
 ====
@@ -41,7 +41,7 @@ component, using the `target` attribute to put the result of the flow in a
 `var` and then referencing that `var` from within the DataWeave script.
 ====
 
-_This function is *Deprecated*._
+_This function is *Deprecated*. Use https://docs.mulesoft.com/dataweave/latest/dataweave-functions[], instead._
 
 === Parameters
 
@@ -82,3 +82,4 @@ Mule::lookup('flow2', {test:'hello '})]]></ee:set-payload>
   <logger level="INFO" doc:name="Logger" message='#[payload]'/>
 </flow>
 ----
+

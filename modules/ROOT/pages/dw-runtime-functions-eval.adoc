@@ -6,7 +6,7 @@ endif::[]
 
 
 [[eval1]]
-== eval&#40;fileToExecute: String, fs: Dictionary<String&#62;, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: EvalSuccess &#124; ExecutionFailure
+== eval&#40;fileToExecute: String, fs: Dictionary<String&#62;, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: EvalResult
 
 Evaluates a script with the specified context and returns the result of that evaluation.
 

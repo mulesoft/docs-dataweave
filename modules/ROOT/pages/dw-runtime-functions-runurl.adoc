@@ -6,7 +6,7 @@ endif::[]
 
 
 [[runurl1]]
-== runUrl&#40;url: String, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: RunSuccess &#124; ExecutionFailure
+== runUrl&#40;url: String, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: RunResult
 
 Runs the script at the specified URL.
 

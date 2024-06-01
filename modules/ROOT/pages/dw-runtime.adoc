@@ -25,6 +25,10 @@ _Experimental:_ This function is an experimental feature that is subject to chan
 | xref:dw-runtime-functions-fail.adoc[fail] | Throws an exception with the specified message.
 | xref:dw-runtime-functions-failif.adoc[failIf] | Produces an error with the specified message if the expression in
 the evaluator returns `true`. Otherwise, the function returns the value.
+| xref:dw-runtime-functions-finddataformatdescriptorbymime.adoc[findDataFormatDescriptorByMime] | Returns the `DataFormatDescriptor` based on the `dw::module::Mime::MimeType` specified or `null` if
+there is no `DataFormatDescriptor` for the given `MimeType`.
+
+_Experimental:_ This function is an experimental feature that is subject to change or removal from future versions.
 | xref:dw-runtime-functions-location.adoc[location] | Returns the location of a given value, or `null` if the
 location can't be traced back to a DataWeave file.
 | xref:dw-runtime-functions-locationstring.adoc[locationString] | Returns the location string of a given value.

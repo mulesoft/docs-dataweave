@@ -17,24 +17,35 @@ _Introduced in DataWeave version 2.4.0._
 | xref:dw-coercions-functions-tobinary.adoc[toBinary] | Transform a `String` value into a `Binary` value
 using the specified encoding.
 | xref:dw-coercions-functions-toboolean.adoc[toBoolean] | Transform a `String` value into a `Boolean` value.
-| xref:dw-coercions-functions-todate.adoc[toDate] | Transforms a `String` value into a `Date` value
-and accepts a format and locale.
-| xref:dw-coercions-functions-todatetime.adoc[toDateTime] | Transforms a `Number` value into a `DateTime` value
-using `milliseconds` or `seconds` as the unit.
-| xref:dw-coercions-functions-tolocaldatetime.adoc[toLocalDateTime] | Transforms a `String` value into a `LocalDateTime` value
-and accepts a format and locale.
-| xref:dw-coercions-functions-tolocaltime.adoc[toLocalTime] | Transforms a `String` value into a `LocalTime` value
-and accepts a format and locale.
-| xref:dw-coercions-functions-tonumber.adoc[toNumber] | A variant of `toNumber` that transforms a `DateTime` value
-into a number of seconds or milliseconds, depending on the
-selected unit.
+| xref:dw-coercions-functions-todate.adoc[toDate] | Transforms a `String` value into a `Date` value using the first `Formatter` that
+matches with the given value to transform.
+| xref:dw-coercions-functions-todateornull.adoc[toDateOrNull] | Transforms a `String` value into a `Date` value using the first `Formatter` that matches
+with the given value to transform.
+| xref:dw-coercions-functions-todatetime.adoc[toDateTime] | Transforms a `String` value into a `DateTime` value using the first `Formatter` that
+matches with the given value to transform.
+| xref:dw-coercions-functions-todatetimeornull.adoc[toDateTimeOrNull] | Transforms a `String` value into a `DateTime` value using the first `Formatter` that matches
+with the given value to transform.
+| xref:dw-coercions-functions-tolocaldatetime.adoc[toLocalDateTime] | Transforms a `String` value into a `LocalDateTime` value using the first `Formatter` that
+matches with the given value to transform.
+| xref:dw-coercions-functions-tolocaldatetimeornull.adoc[toLocalDateTimeOrNull] | Transforms a `String` value into a `LocalDateTime` value using the first `Formatter` that matches
+with the given value to transform.
+| xref:dw-coercions-functions-tolocaltime.adoc[toLocalTime] | Transforms a `String` value into a `LocalTime` value using the first `Formatter` that
+matches with the given value to transform.
+| xref:dw-coercions-functions-tolocaltimeornull.adoc[toLocalTimeOrNull] | Transforms a `String` value into a `LocalTime` value using the first `Formatter` that matches
+with the given value to transform.
+| xref:dw-coercions-functions-tonumber.adoc[toNumber] | Transforms a `String` value into a `Number` value using the first `Formatter` that
+matches with the given value to transform.
+| xref:dw-coercions-functions-tonumberornull.adoc[toNumberOrNull] | Transforms a `String` value into a `Number` value using the first `Formatter` that matches
+with the given value to transform.
 | xref:dw-coercions-functions-toperiod.adoc[toPeriod] | Transform a `String` value into a `Period` value.
 | xref:dw-coercions-functions-toregex.adoc[toRegex] | Transforms a `String` value into a `Regex` value.
 | xref:dw-coercions-functions-tostring.adoc[toString] | A variant of `toString` that transforms a `Number` value
 (whole or decimal) into a `String` value and accepts a
 format, locale, and rounding mode value.
-| xref:dw-coercions-functions-totime.adoc[toTime] | Transforms a `String` value into a `Time` value
-and accepts a format and locale.
+| xref:dw-coercions-functions-totime.adoc[toTime] | Transforms a `String` value into a `Time` value using the first `Formatter` that
+matches with the given value to transform.
+| xref:dw-coercions-functions-totimeornull.adoc[toTimeOrNull] | Transforms a `String` value into a `Time` value using the first `Formatter` that matches
+with the given value to transform.
 | xref:dw-coercions-functions-totimezone.adoc[toTimeZone] | Transform a `String` value into a `TimeZone` value.
 | xref:dw-coercions-functions-touri.adoc[toUri] | Transforms a `String` value into a `Uri` value.
 |===

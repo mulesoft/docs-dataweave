@@ -6,7 +6,7 @@ endif::[]
 
 
 [[orelse1]]
-== orElse<T, R&#62;&#40;previous: TryResult<T&#62;, orElse: &#40;&#41; &#45;&#62; R&#41;: T &#124; R
+== orElse<T, E, R&#62;&#40;previous: Result<T, E&#62;, orElse: &#40;&#41; &#45;&#62; R&#41;: T &#124; R
 
 Returns the result of the `orElse` argument if the `previous` argument to
 `try` fails. Otherwise, the function returns the value of the `previous`

@@ -1,0 +1,56 @@
+= toNumberOrNull
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[tonumberornull1]]
+== toNumberOrNull&#40;str: String, formatters: Array<Formatter&#62;&#41;: Number &#124; Null
+
+Transforms a `String` value into a `Number` value using the first `Formatter` that matches
+with the given value to transform.
+
+
+If none of the `Formatter` matches with the given value, the function returns a `null` value.
+
+_Introduced in DataWeave version 2.5.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `str` | String | The `String` value to transform into a `Number` value.
+| `formatters` | Array<Formatter&#62; | The `array` of formatting to use on the `Number` value.
+|===
+
+=== Example
+
+This example shows how `toNumberOrNull` behaves with different inputs.
+It produces output in the `application/dw` format.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::Coercions
+output application/dw
+---
+{
+  a: toNumberOrNull("0.005", [{format: "seconds"}, {format: ".00"}]),
+  b: toNumberOrNull("0.005", [{format: "seconds"}])
+}
+----
+
+==== Output
+
+[source,DataWeave,linenums]
+----
+{
+  a: 0.005 as Number {format: ".00"},
+  b: null
+}
+----
+

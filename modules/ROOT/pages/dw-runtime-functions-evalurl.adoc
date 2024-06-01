@@ -6,7 +6,7 @@ endif::[]
 
 
 [[evalurl1]]
-== evalUrl&#40;url: String, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: EvalSuccess &#124; ExecutionFailure
+== evalUrl&#40;url: String, readerInputs: Dictionary<ReaderInput&#62; = {}, inputValues: Dictionary<Any&#62; = {}, configuration: RuntimeExecutionConfiguration = {}&#41;: EvalResult
 
 Evaluates the script at the specified URL.
 

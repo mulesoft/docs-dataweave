@@ -216,6 +216,7 @@ output application/json
 }
 ----
 
+
 [[filter2]]
 == filter&#40;@StreamCapable text: String, criteria: &#40;character: String, index: Number&#41; &#45;&#62; Boolean&#41;: String
 

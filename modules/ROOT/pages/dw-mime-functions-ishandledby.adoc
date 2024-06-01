@@ -1,0 +1,67 @@
+= isHandledBy
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[ishandledby1]]
+== isHandledBy&#40;base: MimeType, other: MimeType&#41;: Boolean
+
+Returns `true` if the given `MimeType` value is handled by the base `MimeType` value.
+
+_Introduced in DataWeave version 2.7.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `base` | `MimeType` | The MIME type value used as baseline.
+| `other` | `MimeType` | The MIME type value to be validated.
+|===
+
+=== Example
+
+This example tests how MIME types handles several validations.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::module::Mime
+output application/json
+
+var JSON = {'type': "application", subtype: "json", parameters: {}}
+var MULTIPART = {'type': "multipart", subtype: "form-data", parameters: {boundary: "my-boundary"}}
+var ALL = {'type': "*", subtype: "*", parameters: {}}
+---
+{
+  a: isHandledBy(JSON, JSON),
+  b: isHandledBy({'type': "*", subtype: "json", parameters: {}}, JSON),
+  c: isHandledBy({'type': "application", subtype: "*", parameters: {}}, JSON),
+  d: isHandledBy(ALL, MULTIPART),
+  e: isHandledBy(MULTIPART, ALL),
+  f: isHandledBy(JSON, MULTIPART),
+  g: isHandledBy(
+    {'type': "application", subtype: "*+xml", parameters: {}},
+    {'type': "application", subtype: "soap+xml", parameters: {}})
+}
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+{
+  "a": true,
+  "b": true,
+  "c": true,
+  "d": true,
+  "e": false,
+  "f": false,
+  "g": true
+}
+----
+

@@ -8,7 +8,7 @@ endif::[]
 [[typeof1]]
 == typeOf<T&#62;&#40;value: T&#41;: Type<T&#62;
 
-Returns the basic data type of a value.
+Returns the primitive data type of a value, such as `String`.
 
 
 A value's type is taken from its runtime representation and is never one of
@@ -47,7 +47,8 @@ output application/json
 
 === Example
 
-This example shows that the type of a value is independent of the type with which it is declared.
+This example shows that the type of a value is independent of the type with
+which it is declared.
 
 ==== Source
 

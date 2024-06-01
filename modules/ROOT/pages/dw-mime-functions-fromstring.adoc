@@ -1,0 +1,109 @@
+= fromString
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[fromstring1]]
+== fromString&#40;mimeType: String&#41;: Result<MimeType, MimeTypeError&#62;
+
+Transforms a MIME type string value representation to a `MimeType`.
+
+_Introduced in DataWeave version 2.7.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `mimeType` | String | The MIME type string value to transform to a `MimeType`.
+|===
+
+=== Example
+
+This example transforms a MIME type string value without `parameters` to a `MimeType` value.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::module::Mime
+output application/json
+---
+fromString("application/json")
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+{
+  "success": true,
+  "result": {
+      "type": "application",
+      "subtype": "json",
+      "parameters": {}
+  }
+}
+----
+
+=== Example
+
+This example transforms a MIME type string value that includes a `parameters` to a `MimeType` value.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::module::Mime
+output application/json
+---
+fromString("multipart/form-data; boundary=the-boundary")
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+{
+  "success": true,
+  "result": {
+      "type": "multipart",
+      "subtype": "form-data",
+      "parameters": {
+          "boundary": "the-boundary"
+      }
+  }
+}
+----
+
+=== Example
+
+This example transforms an invalid MIME type string value.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::module::Mime
+output application/json
+---
+fromString("Invalid MIME type")
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+{
+  "success": false,
+  "error": {
+      "message": "Unable to find a sub type in `Invalid MIME type`."
+  }
+}
+----
+

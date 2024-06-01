@@ -168,6 +168,19 @@ _Introduced in DataWeave version 2.2.0._
 | A Java regular expression (regex) type.
 
 
+| Result
+| `type Result = { success: true, result: T } &#124; { success: false, error: E }`
+| A type for representing an execution result.
+
+Supports the following fields:
+
+* `success`: Determine if the execution ends successfully. If `true`, the data type provides the `result`. If `false`, the data type provides the `error`.
+* `result`: The success result data.
+* `error`: The error data.
+
+_Introduced in DataWeave version 2.7.0._
+
+
 | SimpleType
 | `type SimpleType = String &#124; Boolean &#124; Number &#124; DateTime &#124; LocalDateTime &#124; Date &#124; LocalTime &#124; Time &#124; TimeZone &#124; Period`
 | A union type that represents all the simple types.

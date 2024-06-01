@@ -21,15 +21,24 @@ is required or not.
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
+| EvalResult
+| `type EvalResult = Result<EvalSuccess, ExecutionFailure&#62;`
+| Data type of the data that returns when an `eval` function executes.
+
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
+
+_Introduced in DataWeave version 2.7.0._
+
+
 | EvalSuccess
-| `type EvalSuccess = { success: true, value: Any, logs: Array<LogEntry&#62; }`
+| `type EvalSuccess = { value: Any, logs: Array<LogEntry&#62; }`
 | Data type of the data that returns when an `eval` function executes successfully.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
 | ExecutionFailure
-| `type ExecutionFailure = { success: false, message: String, kind: String, stack?: Array<String&#62;, location: Location, logs: Array<LogEntry&#62; }`
+| `type ExecutionFailure = { message: String, kind: String, stack?: Array<String&#62;, location: Location, logs: Array<LogEntry&#62; }`
 | Data type of the data that returns when a `run` or `eval` function fails.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
@@ -102,8 +111,17 @@ the Binary input and MIME type, as well as optional encoding and properties valu
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
 
 
+| RunResult
+| `type RunResult = Result<RunSuccess, ExecutionFailure&#62;`
+| Data type of the data that returns when a `run` function executes.
+
+_Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
+
+_Introduced in DataWeave version 2.7.0._
+
+
 | RunSuccess
-| `type RunSuccess = { success: true, value: Binary, mimeType: MimeType, encoding?: String, logs: Array<LogEntry&#62; }`
+| `type RunSuccess = { value: Binary, mimeType: MimeType, encoding?: String, logs: Array<LogEntry&#62; }`
 | Data type of the data that returns when a `run` function executes successfully.
 
 _Experimental:_ This type is an experimental feature that is subject to change or removal from future versions of DataWeave.
@@ -158,11 +176,26 @@ _Experimental:_ This type is an experimental feature that is subject to change o
 
 
 | TryResult
-| `type TryResult = { success: Boolean, result?: T, error?: { kind: String, message: String, stack?: Array<String&#62;, stackTrace?: String, location?: String } }`
+| `type TryResult = Result<T, TryResultFailure&#62;`
 | Object with a result or error message. If `success` is `false`, data type provides
 the `error`. If `true`, the data type provides the `result`.
 
+
+| TryResultFailure
+| `type TryResultFailure = { kind: String, message: String, stack?: Array<String&#62;, stackTrace?: String, location?: String }`
+| A type for representing failed execution from `try`.
+
+Supports the following fields:
+
+* `kind`: The error kind.
+* `message`: The error message.
+* `stack`: The stacktrace error (optional).
+* `stackTrace`: The stacktrace string value representation (optional).
+* `location`: The error location (optional).
+
 Starting in Mule 4.4.0, if the stack is not present, the `stackTrace` field is available
 with the native Java stack trace.
+
+_Introduced in DataWeave version 2.7.0._
 
 |===

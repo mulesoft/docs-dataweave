@@ -1,0 +1,24 @@
+= Mime (dw::module::Mime)
+
+This module contains helper functions for working with MIME type.
+
+To use this module, you must import it to your DataWeave code, for example,
+by adding the line `import * from dw::module::Mime` to the header of your
+DataWeave script.
+
+_Introduced in DataWeave version 2.7.0._
+
+== Functions
+
+[%header, cols="1,3"]
+|===
+| Name  | Description
+| xref:dw-mime-functions-fromstring.adoc[fromString] | Transforms a MIME type string value representation to a `MimeType`.
+| xref:dw-mime-functions-ishandledby.adoc[isHandledBy] | Returns `true` if the given `MimeType` value is handled by the base `MimeType` value.
+| xref:dw-mime-functions-tostring.adoc[toString] | Transforms a `MimeType` value to a string representation.
+|===
+
+== Types
+* xref:dw-mime-types.adoc[Mime Types]
+
+

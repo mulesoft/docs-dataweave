@@ -21,6 +21,7 @@ https://docs.mulesoft.com/dataweave/1.2/dataweave-operators[DataWeave Operators]
 | xref:dw-core-functions-endswith.adoc[endsWith] | Returns `true` if a string ends with a provided substring, `false` if not.
 | xref:dw-core-functions-entriesof.adoc[entriesOf] | Returns an array of key-value pairs that describe the key, value, and any
 attributes in the input object.
+| xref:dw-core-functions-evaluatecompatibilityflag.adoc[evaluateCompatibilityFlag] | Returns the value of the compatibility flag with the specified name.
 | xref:dw-core-functions-filter.adoc[filter] | Iterates over an array and applies an expression that returns matching values.
 | xref:dw-core-functions-filterobject.adoc[filterObject] | Iterates a list of key-value pairs in an object and applies an expression that
 returns only matching objects, filtering out the rest from the output.
@@ -97,7 +98,7 @@ preceding expression to the next (a callback) only if the value returned
 by the preceding expression is not `null`.
 | xref:dw-core-functions-to.adoc[to] | Returns a range with the specified boundaries.
 | xref:dw-core-functions-trim.adoc[trim] | Removes any blank spaces from the beginning and end of a string.
-| xref:dw-core-functions-typeof.adoc[typeOf] | Returns the basic data type of a value.
+| xref:dw-core-functions-typeof.adoc[typeOf] | Returns the primitive data type of a value, such as `String`.
 | xref:dw-core-functions-unzip.adoc[unzip] | Performs the opposite of `zip`. It takes an array of arrays as input.
 | xref:dw-core-functions-upper.adoc[upper] | Returns the provided string in uppercase characters.
 | xref:dw-core-functions-uuid.adoc[uuid] | Returns a v4 UUID using random numbers as the source.

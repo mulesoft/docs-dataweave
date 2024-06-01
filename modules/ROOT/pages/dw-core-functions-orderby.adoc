@@ -41,17 +41,42 @@ array. Note that `orderBy($.letter)` produces the same result as
 output application/json
 ---
 { letter: "b", letter: "c", letter: "a" } orderBy ((value, key) -> value)
+[{ letter: "e" }, { letter: "d" }] orderBy($.letter)
 ----
 
 ==== Output
 
 [source,JSON,linenums]
 ----
-{
-  "letter": "a",
-  "letter": "b",
-  "letter": "c"
-}
+[
+  {
+    "letter": "d"
+  },
+  {
+    "letter": "e"
+  }
+]
+----
+
+=== Example
+
+The `orderBy` function doesn't have an option to sort the result in a descending order. In these cases, invert the order of the resulting array using `-`:
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+orderDescending: ([3,8,1] orderBy -$)
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+{ "orderDescending": [8,3,1] }
 ----
 
 
@@ -88,29 +113,6 @@ output application/json
 [source,JSON,linenums]
 ----
 [ 2, 3, 3 ]
-----
-
-=== Example
-
-The `orderBy` function does not have an option to order in descending order
-instead of ascending. In these cases, you can simply invert the order of
-the resulting array using `-`, for example:
-
-==== Source
-
-[source,DataWeave,linenums]
-----
-%dw 2.0
-output application/json
----
-orderDescending: ([3,8,1] orderBy -$)
-----
-
-==== Output
-
-[source,JSON,linenums]
-----
-{ "orderDescending": [8,3,1] }
 ----
 
 === Example
@@ -247,3 +249,4 @@ output application/json
 == orderBy&#40;value: Null, criteria: &#40;item: Nothing, index: Nothing&#41; &#45;&#62; Null&#41;: Null
 
 Helper function that enables `orderBy` to work with a `null` value.
+

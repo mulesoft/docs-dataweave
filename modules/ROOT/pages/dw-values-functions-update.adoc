@@ -334,9 +334,11 @@ payload update ["users", "user", "language"] with (if ($ == "English") "Gibberis
 ----
 
 
+
 [[update7]]
 == update&#40;value: Null, toUpdate: Number &#124; String &#124; PathElement&#41;: UpdaterValueProvider<Null&#62;
 
 Helper function that enables `update` to work with a `null` value.
 
 _Introduced in DataWeave version 2.2.2._
+
