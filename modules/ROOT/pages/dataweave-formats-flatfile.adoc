@@ -66,8 +66,8 @@ Valid values are `true` or `false`.
 |`recordParsing`  |`String`|`'strict'`|Specifies the expected type of separation between lines or records:
 
 * `strict`: Line break is expected at exact end of each record. `strict` is the default.
-* `lenient`: Line break is used, but records can be shorter or longer than the schema specifies.
-* `noTerminator`: Records follow one another with no separation.
+* `lenient`: Line break is used, but records can be shorter or longer than the schema specifies. Don't use `lenient` if your payload lacks line breaks. The other options to `recordParsing` support records that lack line breaks.
+* `noTerminator`: Records follow one another with no separation. This option is preferred for fixed-length records that lack a line break.
 * `singleRecord`: The entire input is a single record.
 
 Note that schemas with type `Binary` or `Packed` don't allow for line break detection, so setting `recordParsing` to `lenient` only allows long records to be handled, not short ones. These schemas also currently only work with certain single-byte character encodings (so not with UTF-8 or any multibyte format).
@@ -111,7 +111,7 @@ Valid values are `true` or `false`.
 Valid values are `true` or `false`.
 |`missingValues`  |`String`|`null`|Fill character used to represent missing values. To activate a non-default setting, set the `useMissCharAsDefaultForFill` property to `true`, and use one of the following values to `missingValues`:
 
-* `NONE`: Write nothing for missing values.
+* `none` (for the reader) or `NONE` (for the writer): Treats all data as values.
 * `spaces` (for the reader) or `SPACES` (for the writer): Interprets a field consisting of only spaces as a missing value. Default for flat file and fixed-width formats.
 * `zeroes` (for the reader) or `ZEROES` (for the writer): Interprets numeric fields consisting of only `0` characters _and_ character fields consisting of only spaces as missing values.
 * `nulls` (for the reader) or `NULLS` (for the writer): Interprets a field consisting only of `0` bytes as a missing value. Default for COBOL copybook schema.
@@ -120,8 +120,9 @@ Valid values are `none` or `spaces` or `zeroes` or `nulls`.
 |`notTruncateDependingOnSubjectNotPresent`  |`Boolean`|`false`|Fills the entire group when the DEPENDING ON subject is not present.
 
 Valid values are `true` or `false`.
-|`recordTerminator`  |`String`|`null`|Line break for a record separator. Valid values: `lf`, `cr`, `crlf`, `none`. DataWeave uses this property as a separator only when there are multiple records. Values translate directly to character codes, and `none` leaves no termination on each record.
+|`recordTerminator`  |`String`|`null`|Line break for a record separator. DataWeave uses this property as a separator only when there are multiple records. Values translate directly to character codes, and `none` leaves no termination on each record.
 
+Valid values are `lf` or `cr` or `crlf` or `none`.
 |`schemaPath` (Required) |`String`|`null`|Path to the schema definition. Specifies the location in your local disk of the schema file that parses your input.
 |`segmentIdent`  |`String`|`null`|Segment identifier in the schema for fixed-width or COBOL copybook schemas. Required when parsing a single segment or record definition if the schema includes multiple segment definitions.
 |`structureIdent`  |`String`|`null`|Structure identifier in the schema for flat file schemas. Required when parsing a structure definition if the schema includes multiple structure definitions.

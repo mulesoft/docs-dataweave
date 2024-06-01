@@ -245,10 +245,7 @@ The following schema specifies the protocol used in this example.
 [source,protobuf,linenums]
 ----
 syntax = "proto3";
-
 package examples.repeated;
-
-
 message People {
   repeated string names = 1;
 }
@@ -298,10 +295,104 @@ The following schema specifies the protocol used in this example.
 [source,protobuf,linenums]
 ----
 syntax = "proto3";
-
 package examples.repeated;
+message People {
+  repeated string names = 1;
+}
+----
 
+==== Source
 
+The DataWeave script outputs a JSON message containing an array of names.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+input payload application/x-protobuf messageType='examples.repeated.People',descriptorUrl="descriptors/examples.dsc"
+output application/json
+---
+names: payload.people.*names
+----
+
+==== Output
+
+The DataWeave script outputs a JSON message containing an array of names.
+
+[source,json,linenums]
+----
+{
+  "names": [
+    "Mariano",
+    "Shoki",
+    "Tomo",
+    "Ana"
+  ]
+}
+----
+
+[[example_protobuf_array_to_repeated]]
+=== Example: Transform a JSON Array to a Protobuf Repeated Field
+
+The following example shows how to generate a `proto` message with a repeated field obtained from a JSON array.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+package examples.repeated;
+message People {
+  repeated string names = 1;
+}
+----
+
+==== Input
+
+The JSON input serves as the payload to the DataWeave source.
+
+[source,json,linenums]
+----
+{
+  "names": [
+    "Mariano",
+    "Shoki",
+    "Tomo",
+    "Ana"
+  ]
+}
+----
+
+==== Source
+
+The DataWeave script uses the `reduce` function to generate a new field for each name in the array.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/x-protobuf messageType='examples.repeated.People',descriptorUrl="descriptors/examples.dsc"
+---
+reduce(payload.names, (item, acc = {}) ->  acc ++ {names: item})
+----
+
+==== Output
+
+The DataWeave script outputs a Protobuf message with the repeated field containing all the names from the JSON array.
+
+[[example_protobuf_repeated_to_array]]
+=== Example: Transform a Protobuf Repeated Field to a JSON Array
+
+The following example shows how to transform a `proto` message with a repeated field to a JSON array.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+package examples.repeated;
 message People {
   repeated string names = 1;
 }
@@ -415,7 +506,7 @@ This format accepts properties that provide instructions for reading input data.
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 
@@ -433,7 +524,7 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 

@@ -144,13 +144,13 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
 
 
 Valid values are `true` or `false`.
-|`encoding`  |`String`|`'UTF-8'`|Encoding that the writer uses for output. Defaults to "UTF-8".
+|`encoding`  |`String`|`'UTF-8'`| Encoding that the writer uses for output. Defaults to "UTF-8".
 |`skipNullOn`  |`String`|`null`|Skips `null` values. By default, DataWeave does not skip.
 
 

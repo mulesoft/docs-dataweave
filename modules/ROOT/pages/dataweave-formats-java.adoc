@@ -303,11 +303,10 @@ This format supports the following MIME types.
 |`*/java`
 |===
 
-
 [[java_support]]
 == Java Support
 
-Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions in encapsulation and reflective access that affects the xref:dataweave-formats-java.adoc[]. Because DataWeave uses Java's reflection API to read and write Java objects, ensure that the objects your application uses are Plain Old Java Objects (POJOs) containing:
+Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions in encapsulation and reflective access that affects the https://docs.mulesoft.com/dataweave/latest/dataweave-formats-java[Java Format]. Because DataWeave uses Java's reflection API to read and write Java objects, ensure that the objects your application uses are Plain Old Java Objects (POJOs) containing:
 
 * Default constructor
 * Getters for all properties
@@ -316,7 +315,143 @@ Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions
 [[java17_examples]]
 == Examples of Java Support
 
-The following examples run using Java 17 and xref:dataweave-versioning-behavior.adoc[language level 2.6].
+The following examples run using Java 17 and https://docs.mulesoft.com/dataweave/latest/dataweave-versioning-behavior.adoc[language level 2.6].
+
+* <<example4>>
+* <<example5>>
+
+[[example4]]
+=== Example: Create a Java Object Instance
+
+This example shows how to create a Java object instance.
+
+==== User Class
+
+The Java example uses the following class:
+
+[source,java,linenums]
+----
+public class User {
+   private String name;
+   private String lastName;
+   public User(){
+   }
+   public String getName(){
+       return name;
+   }
+   public String getLastName(){
+       return lastName;
+   }
+}
+----
+
+==== DataWeave Script
+
+[source,java,linenums]
+----
+{name: "Tomo", lastName: "Chibana" } as Object {class: "User"}
+----
+
+==== Output
+
+The expected output is an instance of the user class. Because the user class definition doesn't have the proper setters, the output is `IllegalAccessException`.   
+
+[source,java,linenums]
+----
+java.lang.IllegalAccessException - class 
+org.mule.weave.v2.module.pojo.reader.PropertyDefinition (in module org.mule.weave.module.java) cannot access a member of class User with modifiers "private
+----
+
+[[example5]]
+=== Example: Access the Values of Java Properties
+
+This example shows how to access the values of Java properties.
+
+==== Item Class
+
+The Java example uses the following class:
+
+[source,java,linenums]
+----
+public class Item {
+	private String name;
+	private int quantity;
+	
+	public Item() {
+	}
+    public Item(String name, int quantity) {
+		this.name = name;
+		this.quantity = quantity;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+}
+----
+
+==== Input
+
+----
+new Item("Pencil", 5)
+----
+
+==== DataWeave Script
+
+[source,dataweave,linenums]
+----
+output application/json
+---
+{ 
+    "name": "payload.name",
+    "quantity": "payload.quantity"
+}
+----
+
+==== Output
+
+The expected output is a JSON object.  
+
+[source,json,linenums]
+----
+{
+    "name": "Pencil",
+    "quantity": "5"
+}
+----
+
+Because the item class definition doesn't have the proper getters, the output is `IllegalAccessException`.  
+
+[source,java,linenums]
+----
+java.lang.IllegalAccessException: class 
+org.mule.weave.v2.module.pojo.reader.PropertyDefinition (in module org.mule.weave.module.java) cannot access a member of class Item with modifiers "private"
+----
+
+=== Troubleshooting Common Errors
+
+To resolve conflicts, ensure that you: 
+
+* Update your class definitions to follow the POJOs structure (recommended). 
+* Use the compatibility flag `com.mulesoft.dw.java.disable_set_accessible=false` to allow accessible flag modification for reflection objects. 
++
+This approach is a workaround and works for customer domain classes only. Note that the usage of this compatibility flag might not affect future versions.
+
+[[java_support]]
+== Java Support
+
+Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions in encapsulation and reflective access that affects the https://docs.mulesoft.com/dataweave/latest/dataweave-formats-java[Java Format]. Because DataWeave uses Java's reflection API to read and write Java objects, ensure that the objects your application uses are Plain Old Java Objects (POJOs) containing:
+
+* Default constructor
+* Getters for all properties
+* Setters for all properties
+
+[[java17_examples]]
+== Examples of Java Support
+
+The following examples run using Java 17 and https://docs.mulesoft.com/dataweave/latest/dataweave-versioning-behavior.adoc[language level 2.6].
 
 * <<example4>>
 * <<example5>>
