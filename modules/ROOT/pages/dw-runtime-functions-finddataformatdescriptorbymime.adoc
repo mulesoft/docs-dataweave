@@ -25,7 +25,7 @@ _Introduced in DataWeave version 2.7.0._
 
 === Example
 
-This example search for a JSON `DataFormatDescriptor` and an unknown `DataFormatDescriptor`.
+This example searches for a JSON `DataFormatDescriptor` and an unknown `DataFormatDescriptor`.
 
 ==== Source
 
