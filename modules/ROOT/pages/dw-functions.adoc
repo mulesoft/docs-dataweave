@@ -73,6 +73,8 @@ output application/json
 
 * xref:dw-math.adoc[Math (dw::util::Math)]
 
+* xref:dw-mime.adoc[Mime (dw::module::Mime)]
+
 * xref:dw-mule.adoc[Mule (dw::Mule)]
 
 * xref:dw-multipart.adoc[Multipart (dw::module::Multipart)]
