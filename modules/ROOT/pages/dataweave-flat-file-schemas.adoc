@@ -365,7 +365,7 @@ segments:
   …
 ----
 
-This example includes a direct reference to two segments (HeaderFile and Endfile), as well as a group definition that includes references to other segments (Ticket and Check). Note that for this structure to work, each of the <<Segment Definition, referenced segments>> needs to be defined below. See <<Referenced vs in-lined Definitions>> to understand how segments are being referened in this example.
+This example includes a direct reference to two segments (HeaderFile and Endfile), as well as a group definition that includes references to other segments (Ticket and Check). Note that for this structure to work, each of the <<Segment Definitions, referenced segments>> needs to be defined below. See <<Referenced vs in-lined Definitions>> to understand how segments are being referened in this example.
 
 A structure definition can contain the following attributes:
 
