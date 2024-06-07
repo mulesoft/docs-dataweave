@@ -210,7 +210,7 @@ The syntax to specify a closed object is `{| |}`. The following example makes th
 %dw 2.0
 output application/json
 
-var user: {|firstName: String, lastName: String|} = {name: "John", lastName: "Smith", age: 34}
+var user: {|firstName: String, lastName: String|} = {firstName: "John", lastName: "Smith", age: 34}
 ----
 
 
