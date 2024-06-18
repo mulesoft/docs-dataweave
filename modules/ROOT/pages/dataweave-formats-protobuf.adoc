@@ -249,6 +249,9 @@ package examples.repeated;
 message People {
   repeated string names = 1;
 }
+----
+
+==== Input
 
 The JSON input serves as the payload to the DataWeave source.
 
@@ -394,8 +397,11 @@ message People {
   repeated string names = 1;
 }
 ----
+
 ==== Source
+
 The DataWeave script outputs a JSON message containing an array of names.
+
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -404,8 +410,11 @@ output application/json
 ---
 names: payload.people.*names
 ----
+
 ==== Output
+
 The DataWeave script outputs a JSON message containing an array of names.
+
 [source,json,linenums]
 ----
 {
@@ -417,13 +426,13 @@ The DataWeave script outputs a JSON message containing an array of names.
   ]
 }
 ----
+
 === Unknowns
 
 Protobuf offers capabilities for forward and backward compatibility of protocols. In order
 to achieve this, readers and writers accept https://developers.google.com/protocol-buffers/docs/proto3#unknowns[unknown fields^] on messages. DataWeave adapts to this functionality by using certain key names.
 
 When reading a Protobuf message, if a field not present in the schema is found, it is read into something similar to `"-35": 111111 as Number {wireType: "Varint"},`, where `"-35"` means that the field index is `35`, and `wireType: "Varint"` specifies the wire type the field has in the message. The `wireType` can be `"Varint"`, `"64Bit"`, `"LengthDelimited"`, `"Group"`, or `"32Bit"`.
-
 
 === Semantic Parsing (Or Commonly Used Message Types)
 
