@@ -235,9 +235,13 @@ DataWeave repeated fields, and vice versa. Note that the DataWeave object being 
 
 [[example_protobuf_array_to_repeated]]
 === Example: Transform a JSON Array to a Protobuf Repeated Field
+
 The following example shows how to generate a `proto` message with a repeated field obtained from a JSON array.
+
 ==== Schema
+
 The following schema specifies the protocol used in this example.
+
 [source,protobuf,linenums]
 ----
 syntax = "proto3";
@@ -247,6 +251,7 @@ message People {
 }
 
 The JSON input serves as the payload to the DataWeave source.
+
 [source,json,linenums]
 ----
 {
@@ -258,8 +263,11 @@ The JSON input serves as the payload to the DataWeave source.
   ]
 }
 ----
+
 ==== Source
+
 The DataWeave script uses the `reduce` function to generate a new field for each name in the array.
+
 [source,dataweave,linenums]
 ----
 %dw 2.0
@@ -267,13 +275,20 @@ output application/x-protobuf messageType='examples.repeated.People',descriptorU
 ---
 reduce(payload.names, (item, acc = {}) ->  acc ++ {names: item})
 ----
+
 ==== Output
+
 The DataWeave script outputs a Protobuf message with the repeated field containing all the names from the JSON array.
+
 [[example_protobuf_repeated_to_array]]
 === Example: Transform a Protobuf Repeated Field to a JSON Array
+
 The following example shows how to transform a `proto` message with a repeated field to a JSON array.
+
 ==== Schema
+
 The following schema specifies the protocol used in this example.
+
 [source,protobuf,linenums]
 ----
 syntax = "proto3";
