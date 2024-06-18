@@ -150,7 +150,7 @@ This format accepts properties that provide instructions for writing output data
 
 
 Valid values are `true` or `false`.
-|`encoding`  |`String`|`'UTF-8'`|
+|`encoding`  |`String`|`'UTF-8'`|Encoding that the writer uses for output. Defaults to "UTF-8".
 |`skipNullOn`  |`String`|`null`|Skips `null` values. By default, DataWeave does not skip.
 
 
