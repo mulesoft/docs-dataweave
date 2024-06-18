@@ -673,7 +673,7 @@ See xref:dataweave-flat-file-schemas.adoc[DataWeave Flat File or EDI Schemas] fo
 In the Transform Message component, you can define a Fixed Width type through the following methods:
 
 * By Providing a sample file
-* By pointing to a <<Flat File, flat file>> schema file
+* By pointing to a <<Flat File, flat-file>> schema file
 * Via a graphical editor that allows you to set up each field manually
 
 +
