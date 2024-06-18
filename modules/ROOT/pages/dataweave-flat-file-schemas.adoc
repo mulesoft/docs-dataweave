@@ -72,7 +72,7 @@ values:
 - { name: 'Cost', type: Decimal, length: 8, format: { implicit: 2 } }
 - { name: 'Program-id', type: String, length: 8 }
 - { name: 'user-id', type: String, length: 8 }
-- { name: 'return-sign', type: String, length: 1' }
+- { name: 'return-sign', type: String, length: 1 }
 ----
 
 Note that simplified forms are only for convenience. You can use the `segments` key even if you only have a single child segment definition.

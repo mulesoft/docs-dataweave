@@ -9,13 +9,7 @@ Release notes for each DataWeave version include bug fixes, compatibility inform
 
 include::release-notes::partial$dataweave/dataweave-rn-landing-page.adoc[tag=dw-rn-links]
 
-== New Features in This Release
-
-//INCLUDE SHARED CONTENT with release notes
-include::release-notes::partial$dataweave/dataweave-whats-new-2.5.0.adoc[tag=dataweaveFeatures250]
-
 == DataWeave and Mule
 
-DataWeave 2.5.0 is bundled with the Mule 4.5.0 release. For details about the Mule release, see
-xref:release-notes::mule-runtime/mule-4.5.0-release-notes.adoc[Mule Runtime Engine 4.5.0 Release Notes].
-
+DataWeave 2.6.0 is bundled with the Mule 4.6.0 release. For details about the Mule release, see
+xref:release-notes::mule-runtime/mule-4.6.0-release-notes.adoc[Mule Runtime Engine 4.6.0 Release Notes].
