@@ -120,7 +120,7 @@ Valid values are `none` or `spaces` or `zeroes` or `nulls`.
 |`notTruncateDependingOnSubjectNotPresent`  |`Boolean`|`false`|Fills the entire group when the DEPENDING ON subject is not present.
 
 Valid values are `true` or `false`.
-|`recordTerminator`  |`String`|`null`|Line break for a record separator. Valid values: `lf`, `cr`, `crlf`, `none`. DataWeave uses this property as a separator only when there are multiple records. Values translate directly to character codes, and `none` leaves no termination on each record.
+|`recordTerminator`  |`String`|`null`|Line break for a record separator. DataWeave uses this property as a separator only when there are multiple records. Values translate directly to character codes, and `none` leaves no termination on each record.
 
 
 Valid values are `lf` or `cr` or `crlf` or `none`.
