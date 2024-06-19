@@ -4,6 +4,22 @@
 |===
 | Type | Definition | Description
 
+| Formatter
+| `type Formatter = { format?: String, locale?: String }`
+| Type used for formatting `Dates` types and `Number`.
+Supports the following fields:
+
+* `format`: (optional) The ISO-8601 formatting to use on the date or time. 
+            For example, this parameter accepts character patterns
+            patterns based on the Java 8 `java.time.format`. 
+            A `null` value has no effect on the value.
+* `locale`: (optional) ISO 3166 country code to use, such as `US`,
+            `AR`, or `ES`. A `null` or absent value uses your
+            JVM default. When you pass a translatable format, such as
+            `eeee` and `MMMM`, a `locale` (such as `"ES`) transforms
+            the corresponding numeric values to a localized string.
+
+
 | MillisOrSecs
 | `type MillisOrSecs = "milliseconds" &#124; "seconds"`
 | Type used for setting units to `"milliseconds"` or `"seconds"`.

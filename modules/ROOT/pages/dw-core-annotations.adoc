@@ -5,7 +5,7 @@
 | Annotation | Definition | Description
 
 | AnnotationTarget
-| `@AnnotationTarget&#40;targets: Array<"Function" &#124; "Parameter" &#124; "Variable" &#124; "Import"&#62;&#41;`
+| `@AnnotationTarget&#40;targets: Array<"Function" &#124; "Parameter" &#124; "Variable" &#124; "Import" &#124; "Type" &#124; "Version" &#124; "Namespace"&#62;&#41;`
 | Annotation that limits the application of an annotation. An example is
 `@AnnotationTarget(targets = ["Function", "Variable"])`, which limits
 the scope of the annotation `annotation TailRec()` to functions and
