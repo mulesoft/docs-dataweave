@@ -307,7 +307,7 @@ This format supports the following MIME types.
 [[java_support]]
 == Java Support
 
-Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions in encapsulation and reflective access that affects the xref:dataweave-formats-java.adoc[]. Because DataWeave uses Java's reflection API to read and write Java objects, ensure that the objects your application uses are Plain Old Java Objects (POJOs) containing:
+Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions in encapsulation and reflective access that affects the https://docs.mulesoft.com/dataweave/latest/dataweave-formats-java[Java Format]. Because DataWeave uses Java's reflection API to read and write Java objects, ensure that the objects your application uses are Plain Old Java Objects (POJOs) containing:
 
 * Default constructor
 * Getters for all properties
@@ -316,7 +316,7 @@ Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions
 [[java17_examples]]
 == Examples of Java Support
 
-The following examples run using Java 17 and xref:dataweave-versioning-behavior.adoc[language level 2.6].
+The following examples run using Java 17 and https://docs.mulesoft.com/dataweave/latest/dataweave-versioning-behavior.adoc[language level 2.6].
 
 * <<example4>>
 * <<example5>>
