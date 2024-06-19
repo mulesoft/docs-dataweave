@@ -35,15 +35,13 @@ _Introduced in DataWeave 2.5.0. Supported by Mule 4.5.0 and later._
 
 DataWeave can read and write doctype declarations in XML files.
 
-To read a doctype declarations, set the xref:dataweave-system-properties.adoc[system property] `com.mulesoft.dw.xml_reader.parseDtd`.
-
-During the reading phase, DataWeave parses the doctype declarations and stores the content as metadata of the root element. The `DocType` value is stored in the `docType` variable. You can use the metadata selector (`^`) to extract the value of that variable with an expression like this one:
+During the reading phase, DataWeave parses the doctype declarations and stores the content as metadata of the root element. The `DocType` value is stored in the `docType` variable. You can use the https://docs.mulesoft.com/dataweave/latest/dataweave-selectors[metadata selector] (`^`) to extract the value of that variable with an expression like this one:
 
 * `payload.^docType`
 +
 See examples <<example12>>, <<example13>> and <<example14>>.
 
-You can use the xref:dataweave-selectors.adoc[metadata selector] to access it.
+You can use the [https://docs.mulesoft.com/dataweave/latest/dataweave-selectors.adoc[metadata](https://docs.mulesoft.com/dataweave/latest/dataweave-selectors.adoc%5Bmetadata) selector] to access it.
 
 NOTE::
 DTDs are disabled by default even if their declarations are read or written. For details, see XML reader property `supportDtd` in <<reader_properties>>.
@@ -749,7 +747,7 @@ cXmlObj
 ----
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE cXML SYSTEM "http://xml.cXML.org/schemas/cXML/1.2.014/cXML.dtd">
-<cXML payloadID="9949494" xmlns:xml="http://www.w3.org/XML/1998/namespace" xml:lang="en-US" timestamp="2002-02-04T18:39:09-08:00">
+<cXML payloadID="9949494" xml:lang="en-US" timestamp="2002-02-04T18:39:09-08:00">
   <Header>
     <From>
       <Credential domain="NetworkId">
@@ -855,7 +853,7 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`defaultNamespace`  |`String`|`null`|Specifies the default namespaces of the output XML.
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.

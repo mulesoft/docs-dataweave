@@ -65,7 +65,6 @@ The DataWeave script outputs the following JSON object containing the three valu
 }
 ----
 
-
 [[protobuf_features]]
 == Protobuf Features
 
@@ -245,10 +244,7 @@ The following schema specifies the protocol used in this example.
 [source,protobuf,linenums]
 ----
 syntax = "proto3";
-
 package examples.repeated;
-
-
 message People {
   repeated string names = 1;
 }
@@ -298,10 +294,104 @@ The following schema specifies the protocol used in this example.
 [source,protobuf,linenums]
 ----
 syntax = "proto3";
-
 package examples.repeated;
+message People {
+  repeated string names = 1;
+}
+----
 
+==== Source
 
+The DataWeave script outputs a JSON message containing an array of names.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+input payload application/x-protobuf messageType='examples.repeated.People',descriptorUrl="descriptors/examples.dsc"
+output application/json
+---
+names: payload.people.*names
+----
+
+==== Output
+
+The DataWeave script outputs a JSON message containing an array of names.
+
+[source,json,linenums]
+----
+{
+  "names": [
+    "Mariano",
+    "Shoki",
+    "Tomo",
+    "Ana"
+  ]
+}
+----
+
+[[example_protobuf_array_to_repeated]]
+=== Example: Transform a JSON Array to a Protobuf Repeated Field
+
+The following example shows how to generate a `proto` message with a repeated field obtained from a JSON array.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+package examples.repeated;
+message People {
+  repeated string names = 1;
+}
+----
+
+==== Input
+
+The JSON input serves as the payload to the DataWeave source.
+
+[source,json,linenums]
+----
+{
+  "names": [
+    "Mariano",
+    "Shoki",
+    "Tomo",
+    "Ana"
+  ]
+}
+----
+
+==== Source
+
+The DataWeave script uses the `reduce` function to generate a new field for each name in the array.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/x-protobuf messageType='examples.repeated.People',descriptorUrl="descriptors/examples.dsc"
+---
+reduce(payload.names, (item, acc = {}) ->  acc ++ {names: item})
+----
+
+==== Output
+
+The DataWeave script outputs a Protobuf message with the repeated field containing all the names from the JSON array.
+
+[[example_protobuf_repeated_to_array]]
+=== Example: Transform a Protobuf Repeated Field to a JSON Array
+
+The following example shows how to transform a `proto` message with a repeated field to a JSON array.
+
+==== Schema
+
+The following schema specifies the protocol used in this example.
+
+[source,protobuf,linenums]
+----
+syntax = "proto3";
+package examples.repeated;
 message People {
   repeated string names = 1;
 }
@@ -339,10 +429,9 @@ The DataWeave script outputs a JSON message containing an array of names.
 === Unknowns
 
 Protobuf offers capabilities for forward and backward compatibility of protocols. In order
-to achieve this, readers and writers accept https://developers.google.com/protocol-buffers/docs/proto3#unknowns[unknown fields^] on messages. DataWeave adapts to this functionality by using certain key names.
+to achieve this, readers and writers accept https://developers.google.com/protocol-buffers/docs/proto3#unknowns[unknown fields] on messages. DataWeave adapts to this functionality by using certain key names.
 
 When reading a Protobuf message, if a field not present in the schema is found, it is read into something similar to `"-35": 111111 as Number {wireType: "Varint"},`, where `"-35"` means that the field index is `35`, and `wireType: "Varint"` specifies the wire type the field has in the message. The `wireType` can be `"Varint"`, `"64Bit"`, `"LengthDelimited"`, `"Group"`, or `"32Bit"`.
-
 
 === Semantic Parsing (Or Commonly Used Message Types)
 
@@ -352,7 +441,6 @@ For example, a `google.protobuf.Duration` is read into DataWeave as a `Period`, 
 a `google.protobuf.NullValue` is read as `Null`.
 
 The following table describes the correspondence between Protobuf types and DataWeave types.
-
 
 [cols="1,1"]
 |===
@@ -396,29 +484,22 @@ A `map<keyType, valueType>` is mapped to a DataWeave object with the keys repres
 
 DataWeave is not able to directly use `*.proto` files and expects an already compiled version called descriptor. Generate descriptors by using the `protoc` compiler as in `protoc --descriptor_set_out=./out.dsc file1.proto file2.proto ...`, where `out.dsc` is the output file for the descriptor (the one that DataWeave expects on the `descriptorUrl` property), while `file1.proto` and `file2.proto` are the actual protocol specifications that the descriptor needs to compile.
 
-
-// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
-
-
 [[properties]]
 == Configuration Properties
 
 DataWeave supports the following configuration properties for this format.
-
 
 [[reader_properties]]
 === Reader Properties
 
 This format accepts properties that provide instructions for reading input data.
 
-
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
-
 
 Valid values are `true` or `false`.
 |`descriptorUrl` (Required) |`String`|`''`|The URL for the ProtoBuf descriptor. Valid values are `classpath://`, `file://`, or `http://`.
@@ -433,16 +514,14 @@ This format accepts properties that provide instructions for writing output data
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`bufferSize`  |`Number`|`8192`|Size of the buffer writer. The value must be greater than 8.
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
-
 
 Valid values are `true` or `false`.
 |`descriptorUrl` (Required) |`String`|`''`|The URL for the ProtoBuf descriptor. Valid values are `classpath://`, `file://`, or `http://`.
 |`messageType` (Required) |`String`|`null`|The message type's full name taken from the given descriptor, including the package where it's located.
 |===
-
 
 [[mime_types]]
 == Supported MIME Types
