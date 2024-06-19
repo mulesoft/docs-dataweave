@@ -11,7 +11,6 @@ endif::[]
 Reorders the elements of an input using criteria that acts on selected
 elements of that input.
 
-
 This version of `orderBy` takes an object as input. Other versions act on an
 input array or handle a `null` value.
 
@@ -41,19 +40,43 @@ array. Note that `orderBy($.letter)` produces the same result as
 output application/json
 ---
 { letter: "b", letter: "c", letter: "a" } orderBy ((value, key) -> value)
+[{ letter: "e" }, { letter: "d" }] orderBy($.letter)
 ----
 
 ==== Output
 
 [source,JSON,linenums]
 ----
-{
-  "letter": "a",
-  "letter": "b",
-  "letter": "c"
-}
+[
+  {
+    "letter": "d"
+  },
+  {
+    "letter": "e"
+  }
+]
 ----
 
+=== Example
+
+The `orderBy` function doesn't have an option to sort the result in a descending order. In these cases, invert the order of the resulting array using `-`:
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+orderDescending: ([3,8,1] orderBy -$)
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+{ "orderDescending": [8,3,1] }
+----
 
 [[orderby2]]
 == orderBy<T, R&#62;&#40;array: Array<T&#62;, criteria: &#40;item: T, index: Number&#41; &#45;&#62; R&#41;: Array<T&#62;
@@ -88,29 +111,6 @@ output application/json
 [source,JSON,linenums]
 ----
 [ 2, 3, 3 ]
-----
-
-=== Example
-
-The `orderBy` function does not have an option to order in descending order
-instead of ascending. In these cases, you can simply invert the order of
-the resulting array using `-`, for example:
-
-==== Source
-
-[source,DataWeave,linenums]
-----
-%dw 2.0
-output application/json
----
-orderDescending: ([3,8,1] orderBy -$)
-----
-
-==== Output
-
-[source,JSON,linenums]
-----
-{ "orderDescending": [8,3,1] }
 ----
 
 === Example
