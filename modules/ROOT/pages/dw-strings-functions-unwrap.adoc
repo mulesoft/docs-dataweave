@@ -54,8 +54,8 @@ output application/json
   "c": "abc",
   "d": "ABabcBA",
   "e": "A",
-  "f": "A#",
-  "g": "#A"
+  "f": "#A",
+  "g": "A#"
 }
 ----
 
@@ -66,4 +66,3 @@ output application/json
 Helper function that enables `unwrap` to work with a `null` value.
 
 _Introduced in DataWeave version 2.2.0._
-
