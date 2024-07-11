@@ -49,7 +49,7 @@ Below is an example that sets this attribute to "deferred":
 
 Keep in mind that when using deferred execution, the returned message will contain a `WeaveOutputHandler` object rather than a String representation. For example, consider a logger you wish to log your payload with:
 
-image::dataweave-memory-management-541a1.png[]
+image::dataweave-memory-management-541a1.png["A flow diagram showing steps from reading CSV to writing JSON with a log output step highlighted."]
 
 The output of this logger will appear as the following:
 
@@ -65,7 +65,7 @@ org.mule.transport.file.FileConnector: Writing file to: /Users/mulesoft/output/i
 
 If you wish to log the payload as a String representation, you'll need to request the payload in a String representation. This can be achieved by using the expression `#[message.payloadAs(java.lang.String)]`.
 
-image::dataweave-memory-management-dc180.png[]
+image::dataweave-memory-management-dc180.png["A flow diagram for handling JSON output in a data processing sequence, with no errors reported."]
 
 [WARNING]
 This expression is the equivalent of consuming the DataWeave output and transforming it into a String. Even when this expression is used in the context of a logger. The payload will reach the next processor as a String. It's also important to note that once consumed as such, the entire payload will exist in memory.

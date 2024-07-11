@@ -176,7 +176,7 @@ Use the xref:6.x@studio::transform-message-component-concept-studio.adoc[About T
 
 *Note:* The `address2` and `size` fields in the output side should remain unassigned.
 
-image::dataweave-quickstart-1984d.png[map]
+image::dataweave-quickstart-1984d.png["A Transform Message component showing a mapping between the input and output."]
 
 Each of these actions draws a connection in the UI and generates DataWeave code in the text editor. At this point your DataWeave code should look like this:
 
@@ -243,7 +243,7 @@ The Transform Message component provides realtime feedback in the editor; a prev
 
 . To open this section click the `Preview` button on the top right corner of the editor.
 +
-image::dataweave-quickstart-07f8a.png[]
+image::dataweave-quickstart-07f8a.png["Preview button icon", 5%, 5%]
 +
 . As your metadata is based off a sample input you provided before, Studio uses the data in this sample to build out the output sample.
 +

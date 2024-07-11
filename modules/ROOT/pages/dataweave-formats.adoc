@@ -158,7 +158,7 @@ You can set theses properties through the XML of your Mule project:
 
 Alternatively, you can set the properties through the UI of the Transform Message component:
 
-image::dataweave-formats-580be.png[]
+image::dataweave-formats-580be.png["A reader configuration table for CSV files showing settings for headers, separators, and escapes."]
 
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
@@ -197,7 +197,7 @@ In the Transform Message component, you can define a CSV type through the follow
 * Via a graphical editor that allows you to set up each field manually
 
 +
-image::dataweave-formats-4a556.png[]
+image::dataweave-formats-4a556.png["A metadata type selection screen showing options for CSV and XML data types."]
 
 [TIP]
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
@@ -215,7 +215,7 @@ For example:
 
 .Input
 
-image::dataweave-formats-exceltable.png[]
+image::dataweave-formats-exceltable.png["A table in an Excel format displaying IDs and names starting from row 1."]
 
 .DataWeave representation
 [source,dataweave,linenums]
@@ -280,7 +280,7 @@ These properties can be either set via the XML of your Mule project:
 
 Or via the UI of the Transform Message component:
 
-image::dataweave-formats-excell-reader.png[]
+image::dataweave-formats-excell-reader.png["A reader configuration dialog for Excel with options for handling empty lines and setting table offsets."]
 
 
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
@@ -313,7 +313,7 @@ In the Transform Message component, you can define a excel type through the foll
 * Via a graphical editor that allows you to set up each field manually
 
 +
-image::dataweave-formats-excel-metadata.png[]
+image::dataweave-formats-excel-metadata.png["A user interface for selecting metadata types with options for Excel formats and a table listing fields like name, address, and age."]
 
 
 
@@ -393,7 +393,7 @@ These properties can be either set via the XML of your Mule project:
 
 Or via the UI of the Transform Message component:
 
-image::dataweave-formats-6e5e4.png[]
+image::dataweave-formats-6e5e4.png["A reader configuration dialog with options for handling null values and optimizing for speed."]
 
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
@@ -677,7 +677,7 @@ In the Transform Message component, you can define a Fixed Width type through th
 * Via a graphical editor that allows you to set up each field manually
 
 +
-image::dataweave-formats-27b3c.png[]
+image::dataweave-formats-27b3c.png["A metadata selection screen with various data type configurations including JSON, XML, and flat files."]
 
 [TIP]
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
