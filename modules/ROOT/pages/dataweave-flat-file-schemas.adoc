@@ -64,7 +64,7 @@ The top-level definition in an FFD document starts with the form of the schema, 
 
 If you are only working with one type of record, you only need to have a segment definition for that record type in your FFD.
 
-image::dataweave-flat-file-schemas-22788.png["A diagram illustrating the structure of a flat file schema with multiple elements and segments."]
+image::dataweave-flat-file-schemas-22788.png["A diagram showing the structure of a flat file schema with multiple elements and segments."]
 
 Here's a simple schema with only one segment:
 
@@ -730,12 +730,13 @@ image::dataweave-flat-file-schemas-3f67f.png["A data transformation process invo
 
 . Click on the HTTP Connector to open its properties editor, then click the green arrow icon to create a new configuration for it. Leave all of the fields in default and click *OK*.
 +
-image::dataweave-quickstart-a56f0.png[]
+image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'config-ref' attribute in an HTTP configuration screen."]
 
 . In the *path* field write `get-copybook`. Once deployed, this will make the endpoint reachable through '+0.0.0.0:8081/get-copybook+'
 . Select the *Metadata* tab and click the *Set Metadata* button.
 +
-image::dataweave-quickstart-702fd.png[]
+image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data transformation tool with an option to add metadata."]
+
 . Click the *Edit* icon that appears next to the Payload element
 . Click the green plus icon to add a new metadata type and name it 'my-flat-file-type'
 

@@ -96,52 +96,52 @@ It is always recommended you set up the other components of your flow before you
 . If you haven't already, download and extract the link:{attachmentsdir}/dw-quickstart-bundle.zip[dw-quickstart-bundle.zip] and drag both files in it to the `src/main/resources` folder of your new Mule project.
 . Drag an xref:3.9@mule-runtime::http-connector.adoc[HTTP Connector] from the palette onto your empty canvas, followed by a *Transform Message* component, then another HTTP Connector.
 +
-image::dataweave-quickstart-5a4cb.png[]
+image::dataweave-quickstart-5a4cb.png["A schematic view of a data transformation process."]
 . Click on the first HTTP Connector to open its properties editor, then click the green plus sign icon to create an HTTP connector configuration. In the popup, leave the default values for all fields--just click *OK*.
 +
-image::dataweave-quickstart-a56f0.png[]
+image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'config-ref' attribute in an HTTP configuration screen."]
 
 . In the *Path* field in the properties window above, write `place-order`. Once the Mule application is deployed, the desired endpoint becomes reachable at `+0.0.0.0:8081/place-order+`
 . Select the *Metadata* tab from the HTTP connector's properties window and click the *Add Metadata* button.
 +
-image::dataweave-quickstart-702fd.png[]
+image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data transformation tool with an option to add metadata."]
 . Click the *Edit* icon that appears next to the dropdown.
 +
-image::dataweave-quickstart-8ea02.png[]
+image::dataweave-quickstart-8ea02.png["An error message on an HTTP configuration screen indicating a missing attribute."]
 +
 . Click the green plus sign to *Add* a new metadata type.
 +
-image::dataweave-quickstart-c8ae5.png[]
+image::dataweave-quickstart-c8ae5.png["A user interface for selecting metadata types with options to add or delete types."]
 +
 . Name the metadata type `XML-order-input` and click *Create type*.
 +
-image::dataweave-quickstart-22a00.png[]
+image::dataweave-quickstart-22a00.png["A user interface for creating a new XML metadata type."]
 +
 . Select *XML* as the type, choose *Example* from the dropdown and point it to the location of the `dw-tshirt-inputsample.xml` file, which you can extract from the bundle you downloaded at the start of this guide (link:{attachmentsdir}/dw-quickstart-bundle.zip[dw-quickstart-bundle.zip]). Then click *Select* to use this metadata type.
 +
-image::dataweave-quickstart-26f37.png[]
+image::dataweave-quickstart-26f37.png["A metadata type selection interface for XML data related to orders, showing fields like buyer and address."]
 +
 [TIP]
 ====
 Now if you select the Transform Message component by clicking it in the flow, the input section should show the fields that are expected in the *incoming payload* through the Transform Message.
 
-image::dataweave-quickstart-4a1db.png[]
+image::dataweave-quickstart-4a1db.png["A data transformation interface showing input fields for product details and output in JSON format."]
 ====
 . Click on the *_second HTTP connector in the flow_* to open its properties editor. Click the green plus sign to create a new configuration for the HTTP connector. In the Global Element Properties popup, change the Port field to 8082 (it must be changed since port 8081 is already taken by the other HTTP connector).
 . In the global configuration popup, find the "RAML Location" field, and give the proper path to the `t-shirt.raml` file, which is available in the bundle you downloaded earlier. You can either type in the file location, or – if you extracted the file into the Mule project folder – locate it through the *browse* button. Then click *Ok*.
 +
-image::dataweave-quickstart-6d4b7.png[]
+image::dataweave-quickstart-6d4b7.png["A configuration screen for an HTTP request with settings for host, port, and base path."]
 
 . Back in the HTTP connector properties window, set "Path" to */orders* and use *POST* as the "Method", picking out of the options described in the RAML you attached.
 +
-image::dataweave-quickstart-3c9c7.png[]
+image::dataweave-quickstart-3c9c7.png["A configuration screen for an HTTP request with fields for URL settings and method POST."]
 
 +
 [TIP]
 ====
 Note that if you click on the Transform Message component, the output section now reflects the data structure that's described in the RAML file for *POST*-ing to `/orders`.
 
-image::dataweave-quickstart-f39a5.png[]
+image::dataweave-quickstart-f39a5.png["A data transformation interface showing XML input and JSON output configurations."]
 ====
 
 [NOTE]
@@ -155,12 +155,12 @@ You can create your DataWeave mapping without going through any of this, just ke
 
 . On the package explorer, left click on the `t-shirt.raml` file in your project and select *Mule* > *Generate Flows from RAML*. This automatically generates a new Mule configuration XML that includes a Mule flow per each resource and method described on the RAML.
 +
-image::dataweave-quickstart-flows-from-raml.png[]
+image::dataweave-quickstart-flows-from-raml.png["A project directory structure for a DataWeave application with options for managing metadata."]
 +
 . Open the `t-shirt.xml` file that was generated on your project and look for the flow labeled `post:/orders:application/json:t-shirt-config`.
 . Open the properties for the `Set Payload` element in that flow, and set its value to `&#x0023;[payload]`
 +
-image::dataweave-quickstart-set-payload.png[]
+image::dataweave-quickstart-set-payload.png["A configuration screen for setting payload in a message flow with MIME type settings."]
 
 == Phase 2 - Map Input Fields to Output Fields
 
@@ -202,11 +202,11 @@ The transform that we mapped in the previous section does not account for the fi
 
 . Double click on the `address2` field in the output, seeing how this adds an icon next to the `address2` field, and generates a line of DataWeave code that assigns this field the value `null`.
 +
-image::dataweave-quickstart-c1e53.png[]
+image::dataweave-quickstart-c1e53.png["A data transformation interface detailing fields for input and output information in JSON format."]
 +
 . Do the same for the `size` field, then edit the DataWeave code directly to assign `size` the value `M`, for example, rather than going with the `null` value.
 +
-image::dataweave-quickstart-4abf1.png[]
+image::dataweave-quickstart-4abf1.png["A data transformation interface showing fields for input and output information in JSON format."]
 
 
 == How to Use Conditional Logic in DataWeave
@@ -247,11 +247,11 @@ image::dataweave-quickstart-07f8a.png["Preview button icon", 5%, 5%]
 +
 . As your metadata is based off a sample input you provided before, Studio uses the data in this sample to build out the output sample.
 +
-image::dataweave-quickstart-59e9c.png[]
+image::dataweave-quickstart-59e9c.png["A JSON output preview mapping output's details like address and email from an order."]
 +
 . You can freely edit the sample data to test what would happen in corner cases. Select the `payload` tab in your input section and replace any values there at will. When doing this, note how these values are populated into the values of the preview in real time, giving you a tangible representation of what the final result of your mapping will be.
 +
-image::dataweave-quickstart-75ca5.png[]
+image::dataweave-quickstart-75ca5.png["A snippet of an XML input sample."]
 +
 . Try populating the "state" field in the input sample with TX and note how the "size" field in the output sample is updated in real time.
 . Save your Mule project and Deploy it to Studio's virtual server to try it out by right-clicking on the project and selecting `Run As > Mule Application`.
@@ -292,7 +292,7 @@ You should get a response with an JSON body that has a single value, this is the
 
 . Drag two HTTP connectors and a Transform Message component into a new flow.
 +
-image::dataweave-quickstart-e4466.png[]
+image::dataweave-quickstart-e4466.png["A flow of a data transformation process involving HTTP and error handling."]
 
 . Click the first HTTP Connector to open its properties editor, then in the *Connector Configuration* select the one that you have already created in prior steps.
 
@@ -303,12 +303,12 @@ image::dataweave-quickstart-e4466.png[]
 . Set the Path to */products* and the Method to *GET*.
 . If you go and click the Transform Message component, note that its input has been populated with the appropriate data structure to send, via a GET request to /products.
 +
-image::dataweave-quickstart-2196b.png[]
+image::dataweave-quickstart-2196b.png["A user interface for transforming message data with a focus on output payload structure."]
 
 . Click the *Preview* button to open the output preview. As there is no sample data available, you will be prompted to provide a sample.
 
 +
-image::dataweave-quickstart-be7fd.png[]
+image::dataweave-quickstart-be7fd.png["A preview screen prompting the creation of sample data for execution."]
 
 . Click the hyperlinked notification. This will open an editor tab in the input section with an empty scaffold of the known input structure, where every field is populated with `????`. You can edit it so that it displays more usable data. Paste the following example in that editor:
 
@@ -349,24 +349,24 @@ As with the other Transform Message component used in the first example of this 
 
 Click your Transform Message component. In the text editor pane, replace the curly brackets '{}' for 'payload'.
 
-image::dataweave-quickstart-7c173.png[]
+image::dataweave-quickstart-7c173.png["An output payload preview in a data transformation tool."]
 
 This is the simplest transformation you can carry out, it replicates the input structure but changes the format from *JSON* to *Java*. Whatever exists in the payload – including any child elements at any depth – is transformed directly into Java without changing any of its structure.
 
 Open the *Preview* tab and see a tree describing the structure of the data, this is what a Java preview always looks like:
 
-image::dataweave-quickstart-fb3b7.png[]
+image::dataweave-quickstart-fb3b7.png["A Java output payload displaying a list of attributes."]
 
 You can easily change the xref:dataweave-language-introduction.adoc#output-directive[output directive] from the default `application/java` to `text/csv` or to any other of the xref:dataweave-formats.adoc[supported formats] and see the results of that transformation.
 
-image::dataweave-quickstart-c8b4f.png[]
+image::dataweave-quickstart-c8b4f.png["A CSV output preview."]
 
 [NOTE]
 Note that in this particular example, the format `application/XML` won't work as is because XML requires a parent node, which is absent here.
 
 Change the xref:dataweave-language-introduction.adoc#output-directive[output directive] to `application/json` so that the final result is identical to the sample data in the input. Later on you can transform this in more interesting ways.
 
-image::dataweave-quickstart-6381c.png[]
+image::dataweave-quickstart-6381c.png["A JSON output preview."]
 
 == map Operator
 
