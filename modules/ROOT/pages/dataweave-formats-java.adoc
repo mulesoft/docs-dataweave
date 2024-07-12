@@ -260,49 +260,6 @@ output application/json
 ] as Array {class: "java.util.ArrayList<User>"}
 ----
 
-// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
-
-
-[[properties]]
-== Configuration Properties
-
-DataWeave supports the following configuration properties for this format.
-
-
-[[reader_properties]]
-=== Reader Properties
-
-There are no reader properties for this format.
-
- 
-[[writer_properties]]
-=== Writer Properties
-
-This format accepts properties that provide instructions for writing output data.
-
-[cols="1,1,1,3a", options="header"]
-|===
-|Parameter |Type |Default|Description
-|`duplicateKeyAsArray`  |`Boolean`|`false`|Converts the values of duplicate keys in an object to a single array of values to the duplicated key.
-
-Valid values are `true` or `false`.
-|`writeAttributes`  |`Boolean`|`false`|Converts attributes of a key into child key-value pairs of that key. The attribute key name starts with &#64;.
-
-Valid values are `true` or `false`.
-|===
-
-
-[[mime_types]]
-== Supported MIME Types
-
-This format supports the following MIME types.
-
-[cols="1", options="header"]
-|===
-| MIME Type
-|`*/java`
-|===
-
 
 [[java_support]]
 == Java Support
@@ -439,3 +396,46 @@ To resolve conflicts, ensure that you:
 * Use the compatibility flag `com.mulesoft.dw.java.disable_set_accessible=false` to allow accessible flag modification for reflection objects. 
 +
 This approach is a workaround and works for customer domain classes only. Note that the usage of this compatibility flag might not affect future versions.
+
+// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
+
+
+[[properties]]
+== Configuration Properties
+
+DataWeave supports the following configuration properties for this format.
+
+
+[[reader_properties]]
+=== Reader Properties
+
+There are no reader properties for this format.
+
+ 
+[[writer_properties]]
+=== Writer Properties
+
+This format accepts properties that provide instructions for writing output data.
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default|Description
+|`duplicateKeyAsArray`  |`Boolean`|`false`|Converts the values of duplicate keys in an object to a single array of values to the duplicated key.
+
+Valid values are `true` or `false`.
+|`writeAttributes`  |`Boolean`|`false`|Converts attributes of a key into child key-value pairs of that key. The attribute key name starts with &#64;.
+
+Valid values are `true` or `false`.
+|===
+
+
+[[mime_types]]
+== Supported MIME Types
+
+This format supports the following MIME types.
+
+[cols="1", options="header"]
+|===
+| MIME Type
+|`*/java`
+|===
