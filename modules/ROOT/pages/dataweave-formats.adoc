@@ -677,7 +677,7 @@ In the Transform Message component, you can define a Fixed Width type through th
 * Via a graphical editor that allows you to set up each field manually
 
 +
-image::dataweave-formats-27b3c.png["A metadata selection screen with various data type configurations."]
+image::dataweave-formats-27b3c.png["A metadata selection screen with various data type configurations"]
 
 [TIP]
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
