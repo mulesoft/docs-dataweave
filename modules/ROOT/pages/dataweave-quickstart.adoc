@@ -359,7 +359,7 @@ image::dataweave-quickstart-fb3b7.png["A Java output payload displaying a list o
 
 You can easily change the xref:dataweave-language-introduction.adoc#output-directive[output directive] from the default `application/java` to `text/csv` or to any other of the xref:dataweave-formats.adoc[supported formats] and see the results of that transformation.
 
-image::dataweave-quickstart-c8b4f.png["A CSV output preview."]
+image::dataweave-quickstart-c8b4f.png["A CSV output preview"]
 
 [NOTE]
 Note that in this particular example, the format `application/XML` won't work as is because XML requires a parent node, which is absent here.
