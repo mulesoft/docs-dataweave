@@ -280,7 +280,7 @@ These properties can be either set via the XML of your Mule project:
 
 Or via the UI of the Transform Message component:
 
-image::dataweave-formats-excell-reader.png["A reader configuration dialog for Excel with options for handling empty lines and setting table offsets."]
+image::dataweave-formats-excell-reader.png["A reader configuration dialog for Excel with options for handling empty lines and setting table offsets"]
 
 
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
