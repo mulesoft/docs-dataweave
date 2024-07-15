@@ -292,7 +292,7 @@ You should get a response with an JSON body that has a single value, this is the
 
 . Drag two HTTP connectors and a Transform Message component into a new flow.
 +
-image::dataweave-quickstart-e4466.png["A flow of a data transformation process involving HTTP and error handling."]
+image::dataweave-quickstart-e4466.png["A flow of a data transformation process"]
 
 . Click the first HTTP Connector to open its properties editor, then in the *Connector Configuration* select the one that you have already created in prior steps.
 
