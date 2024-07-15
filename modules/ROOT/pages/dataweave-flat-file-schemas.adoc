@@ -90,7 +90,7 @@ The simplified forms are only for convenience. You can use the _segments_ key ev
 
 If you're working with multiple types of records in the same transform, you'll need to use a structure definition that controls how these different records are combined.
 
-image::dataweave-flat-file-schemas-680c6.png["A diagram showing the structure of a flat file schema with elements and segments."]
+image::dataweave-flat-file-schemas-680c6.png["A structure of a flat file schema with elements and segments"]
 
 Here's an example of a multiple-segment schema:
 
