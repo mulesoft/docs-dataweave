@@ -308,7 +308,7 @@ image::dataweave-quickstart-2196b.png["A user interface for transforming message
 . Click the *Preview* button to open the output preview. As there is no sample data available, you will be prompted to provide a sample.
 
 +
-image::dataweave-quickstart-be7fd.png["A preview screen prompting the creation of sample data for execution."]
+image::dataweave-quickstart-be7fd.png["A preview screen prompting the creation of sample data for execution"]
 
 . Click the hyperlinked notification. This will open an editor tab in the input section with an empty scaffold of the known input structure, where every field is populated with `????`. You can edit it so that it displays more usable data. Paste the following example in that editor:
 
