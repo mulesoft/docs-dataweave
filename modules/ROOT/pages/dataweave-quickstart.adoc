@@ -206,7 +206,7 @@ image::dataweave-quickstart-c1e53.png["A Transform Message interface detailing f
 +
 . Do the same for the `size` field, then edit the DataWeave code directly to assign `size` the value `M`, for example, rather than going with the `null` value.
 +
-image::dataweave-quickstart-4abf1.png["A data transformation interface showing fields for input and output information in JSON format."]
+image::dataweave-quickstart-4abf1.png["A Transform Message interface showing fields for input and output information in JSON format"]
 
 
 == How to Use Conditional Logic in DataWeave
