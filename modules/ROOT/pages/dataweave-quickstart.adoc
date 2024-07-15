@@ -99,7 +99,7 @@ It is always recommended you set up the other components of your flow before you
 image::dataweave-quickstart-5a4cb.png["A schematic view of a data transformation process."]
 . Click on the first HTTP Connector to open its properties editor, then click the green plus sign icon to create an HTTP connector configuration. In the popup, leave the default values for all fields--just click *OK*.
 +
-image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'config-ref' attribute in an HTTP configuration screen."]
+image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'config-ref' attribute in an HTTP configuration screen"]
 
 . In the *Path* field in the properties window above, write `place-order`. Once the Mule application is deployed, the desired endpoint becomes reachable at `+0.0.0.0:8081/place-order+`
 . Select the *Metadata* tab from the HTTP connector's properties window and click the *Add Metadata* button.
