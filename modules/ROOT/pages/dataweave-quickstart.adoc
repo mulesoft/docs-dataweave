@@ -202,7 +202,7 @@ The transform that we mapped in the previous section does not account for the fi
 
 . Double click on the `address2` field in the output, seeing how this adds an icon next to the `address2` field, and generates a line of DataWeave code that assigns this field the value `null`.
 +
-image::dataweave-quickstart-c1e53.png["A data transformation interface detailing fields for input and output information in JSON format."]
+image::dataweave-quickstart-c1e53.png["A Transform Message interface detailing fields for input and output information in JSON format"]
 +
 . Do the same for the `size` field, then edit the DataWeave code directly to assign `size` the value `M`, for example, rather than going with the `null` value.
 +
