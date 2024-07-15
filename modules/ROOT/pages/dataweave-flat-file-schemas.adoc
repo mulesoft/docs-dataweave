@@ -746,7 +746,7 @@ image::dataweave-flat-file-schemas-814e1.png["A flat file metadata types screen 
 
 . Note that if you open the Transform Message component, the input section should show the fields that will be present in the incoming payload.
 +
-image::dataweave-flat-file-schemas-a677a.png["A data transformation interface showing flat file header configurations and output preview."]
+image::dataweave-flat-file-schemas-a677a.png["A data transformation interface showing flat file header configurations and output preview"]
 
 . Once you set up metadata for the output section (which you can do by configuring elements after the Transform Message component in the flow), you can drag and drop elements from is input structure onto the output to create a mapping.
 
