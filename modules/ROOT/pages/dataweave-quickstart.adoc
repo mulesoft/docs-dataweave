@@ -107,7 +107,7 @@ image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'co
 image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data transformation tool with an option to add metadata"]
 . Click the *Edit* icon that appears next to the dropdown.
 +
-image::dataweave-quickstart-8ea02.png["An error message on an HTTP configuration screen indicating a missing attribute."]
+image::dataweave-quickstart-8ea02.png["An error message on an HTTP configuration screen indicating a missing attribute"]
 +
 . Click the green plus sign to *Add* a new metadata type.
 +
