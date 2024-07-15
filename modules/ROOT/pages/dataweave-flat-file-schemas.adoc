@@ -64,7 +64,7 @@ The top-level definition in an FFD document starts with the form of the schema, 
 
 If you are only working with one type of record, you only need to have a segment definition for that record type in your FFD.
 
-image::dataweave-flat-file-schemas-22788.png["A diagram showing the structure of a flat file schema with multiple elements and segments."]
+image::dataweave-flat-file-schemas-22788.png["A structure of a flat file schema with multiple elements and segments"]
 
 Here's a simple schema with only one segment:
 
