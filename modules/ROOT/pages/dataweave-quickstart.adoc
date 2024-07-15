@@ -104,7 +104,7 @@ image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'co
 . In the *Path* field in the properties window above, write `place-order`. Once the Mule application is deployed, the desired endpoint becomes reachable at `+0.0.0.0:8081/place-order+`
 . Select the *Metadata* tab from the HTTP connector's properties window and click the *Add Metadata* button.
 +
-image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data transformation tool with an option to add metadata."]
+image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data transformation tool with an option to add metadata"]
 . Click the *Edit* icon that appears next to the dropdown.
 +
 image::dataweave-quickstart-8ea02.png["An error message on an HTTP configuration screen indicating a missing attribute."]
