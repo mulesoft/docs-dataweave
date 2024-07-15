@@ -742,7 +742,7 @@ image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data
 
 . Select *Flat File* as the type, on the *Schema* field point it to the location of your schema file. Then click *Select* to use this Metadata type.
 +
-image::dataweave-flat-file-schemas-814e1.png["A selection screen for flat file metadata types with details on various record structures."]
+image::dataweave-flat-file-schemas-814e1.png["A flat file metadata types screen with details on various record structures"]
 
 . Note that if you open the Transform Message component, the input section should show the fields that will be present in the incoming payload.
 +
