@@ -49,7 +49,7 @@ Below is an example that sets this attribute to "deferred":
 
 Keep in mind that when using deferred execution, the returned message will contain a `WeaveOutputHandler` object rather than a String representation. For example, consider a logger you wish to log your payload with:
 
-image::dataweave-memory-management-541a1.png["A flow diagram showing steps from reading CSV to writing JSON."]
+image::dataweave-memory-management-541a1.png["A flow diagram showing steps from reading CSV to writing JSON"]
 
 The output of this logger will appear as the following:
 
