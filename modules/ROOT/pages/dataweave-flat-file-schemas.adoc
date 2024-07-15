@@ -64,7 +64,7 @@ The top-level definition in an FFD document starts with the form of the schema, 
 
 If you are only working with one type of record, you only need to have a segment definition for that record type in your FFD.
 
-image::dataweave-flat-file-schemas-22788.png[]
+image::dataweave-flat-file-schemas-22788.png["A structure of a flat file schema with multiple elements and segments"]
 
 Here's a simple schema with only one segment:
 
@@ -90,7 +90,7 @@ The simplified forms are only for convenience. You can use the _segments_ key ev
 
 If you're working with multiple types of records in the same transform, you'll need to use a structure definition that controls how these different records are combined.
 
-image::dataweave-flat-file-schemas-680c6.png[]
+image::dataweave-flat-file-schemas-680c6.png["A structure of a flat file schema with elements and segments"]
 
 Here's an example of a multiple-segment schema:
 
@@ -129,7 +129,7 @@ This example contains 3 segments, each with a list of defined elements . It then
 
 If you have multiple structures or segment definitions in an FFD, when you apply your schema to an metadata description on a Transform Message component you'll need to specify which one you want to use.
 
-image::dataweave-flat-file-schemas-4e1eb.png[]
+image::dataweave-flat-file-schemas-4e1eb.png["A flat file schema showing groups, segments, and elements"]
 
 
 Here's what the top-level structure of a schema with multiple structures might look like:
@@ -724,28 +724,29 @@ Here's a quick step by step example of how – once you have built out your full
 . In Anypoint Studio click *File* > *New* > *Mule Project* to create a new project, give it whatever name you wish and click *Finish*.
 . Drag an HTTP Connector from the palette to your empty canvas, then a Transform Message Component.
 +
-image::dataweave-flat-file-schemas-3f67f.png[]
+image::dataweave-flat-file-schemas-3f67f.png["A data transformation process involving HTTP and error handling"]
 
 
 
 . Click on the HTTP Connector to open its properties editor, then click the green arrow icon to create a new configuration for it. Leave all of the fields in default and click *OK*.
 +
-image::dataweave-quickstart-a56f0.png[]
+image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'config-ref' attribute in an HTTP configuration screen"]
 
 . In the *path* field write `get-copybook`. Once deployed, this will make the endpoint reachable through '+0.0.0.0:8081/get-copybook+'
 . Select the *Metadata* tab and click the *Set Metadata* button.
 +
-image::dataweave-quickstart-702fd.png[]
+image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data transformation tool with an option to add metadata"]
+
 . Click the *Edit* icon that appears next to the Payload element
 . Click the green plus icon to add a new metadata type and name it 'my-flat-file-type'
 
 . Select *Flat File* as the type, on the *Schema* field point it to the location of your schema file. Then click *Select* to use this Metadata type.
 +
-image::dataweave-flat-file-schemas-814e1.png[]
+image::dataweave-flat-file-schemas-814e1.png["A flat file metadata types screen with details on various record structures"]
 
 . Note that if you open the Transform Message component, the input section should show the fields that will be present in the incoming payload.
 +
-image::dataweave-flat-file-schemas-a677a.png[]
+image::dataweave-flat-file-schemas-a677a.png["A data transformation interface showing flat file header configurations and output preview"]
 
 . Once you set up metadata for the output section (which you can do by configuring elements after the Transform Message component in the flow), you can drag and drop elements from is input structure onto the output to create a mapping.
 

@@ -16,7 +16,7 @@ To migrate a DataMapper component to DataWeave, do the following:
 
 . Right click on a DataMapper component, select *Migrate to DataWeave*
 +
-image::dw-migrator-script.png[dw migrator]
+image::dw-migrator-script.png["A script interface for mapping worker types in a migration tool with options for user query and data storage"]
 
 . Note that a new DataWeave component exists next to your DataMapper component. Revise both carefully to make sure that the new component is equivalent in all possible use cases.
 +
