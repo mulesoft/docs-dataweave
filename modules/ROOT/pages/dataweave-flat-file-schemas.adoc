@@ -730,7 +730,7 @@ image::dataweave-flat-file-schemas-3f67f.png["A data transformation process invo
 
 . Click on the HTTP Connector to open its properties editor, then click the green arrow icon to create a new configuration for it. Leave all of the fields in default and click *OK*.
 +
-image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'config-ref' attribute in an HTTP configuration screen."]
+image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'config-ref' attribute in an HTTP configuration screen"]
 
 . In the *path* field write `get-copybook`. Once deployed, this will make the endpoint reachable through '+0.0.0.0:8081/get-copybook+'
 . Select the *Metadata* tab and click the *Set Metadata* button.
