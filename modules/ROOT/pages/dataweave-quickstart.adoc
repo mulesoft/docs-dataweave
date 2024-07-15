@@ -355,7 +355,7 @@ This is the simplest transformation you can carry out, it replicates the input s
 
 Open the *Preview* tab and see a tree describing the structure of the data, this is what a Java preview always looks like:
 
-image::dataweave-quickstart-fb3b7.png["A Java output payload displaying a list of attributes."]
+image::dataweave-quickstart-fb3b7.png["A Java output payload displaying a list of attributes"]
 
 You can easily change the xref:dataweave-language-introduction.adoc#output-directive[output directive] from the default `application/java` to `text/csv` or to any other of the xref:dataweave-formats.adoc[supported formats] and see the results of that transformation.
 
