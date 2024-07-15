@@ -141,7 +141,7 @@ image::dataweave-quickstart-3c9c7.png["A configuration screen for an HTTP reques
 ====
 Note that if you click on the Transform Message component, the output section now reflects the data structure that's described in the RAML file for *POST*-ing to `/orders`.
 
-image::dataweave-quickstart-f39a5.png["A data transformation interface showing XML input and JSON output configurations."]
+image::dataweave-quickstart-f39a5.png["A data transformation interface showing XML input and JSON output configurations"]
 ====
 
 [NOTE]
