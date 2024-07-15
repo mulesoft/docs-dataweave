@@ -366,7 +366,7 @@ Note that in this particular example, the format `application/XML` won't work as
 
 Change the xref:dataweave-language-introduction.adoc#output-directive[output directive] to `application/json` so that the final result is identical to the sample data in the input. Later on you can transform this in more interesting ways.
 
-image::dataweave-quickstart-6381c.png["A JSON output preview."]
+image::dataweave-quickstart-6381c.png["A JSON output preview"]
 
 == map Operator
 
