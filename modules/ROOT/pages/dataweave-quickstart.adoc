@@ -134,7 +134,7 @@ image::dataweave-quickstart-6d4b7.png["An HTTP request configuration interface w
 
 . Back in the HTTP connector properties window, set "Path" to */orders* and use *POST* as the "Method", picking out of the options described in the RAML you attached.
 +
-image::dataweave-quickstart-3c9c7.png["A configuration screen for an HTTP request with fields for URL settings and method POST."]
+image::dataweave-quickstart-3c9c7.png["A configuration screen for an HTTP request with fields for URL settings"]
 
 +
 [TIP]
