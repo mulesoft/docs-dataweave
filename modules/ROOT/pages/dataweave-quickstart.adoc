@@ -349,7 +349,7 @@ As with the other Transform Message component used in the first example of this 
 
 Click your Transform Message component. In the text editor pane, replace the curly brackets '{}' for 'payload'.
 
-image::dataweave-quickstart-7c173.png["An output payload preview in a data transformation tool."]
+image::dataweave-quickstart-7c173.png["An output payload preview in a data transformation tool"]
 
 This is the simplest transformation you can carry out, it replicates the input structure but changes the format from *JSON* to *Java*. Whatever exists in the payload – including any child elements at any depth – is transformed directly into Java without changing any of its structure.
 
