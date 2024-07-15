@@ -313,7 +313,7 @@ In the Transform Message component, you can define a excel type through the foll
 * Via a graphical editor that allows you to set up each field manually
 
 +
-image::dataweave-formats-excel-metadata.png["A Select metadata type screen with an option to select Type and a table listing fields like name, address, and age."]
+image::dataweave-formats-excel-metadata.png["A select metadata type screen with an option to select Type and a table listing fields like name, address, and age"]
 
 
 
