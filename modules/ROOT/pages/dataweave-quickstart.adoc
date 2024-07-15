@@ -247,7 +247,7 @@ image::dataweave-quickstart-07f8a.png["Preview button icon", 5%, 5%]
 +
 . As your metadata is based off a sample input you provided before, Studio uses the data in this sample to build out the output sample.
 +
-image::dataweave-quickstart-59e9c.png["A JSON output preview mapping output's details like address and email from an order."]
+image::dataweave-quickstart-59e9c.png["A JSON output preview mapping output's details"]
 +
 . You can freely edit the sample data to test what would happen in corner cases. Select the `payload` tab in your input section and replace any values there at will. When doing this, note how these values are populated into the values of the preview in real time, giving you a tangible representation of what the final result of your mapping will be.
 +
