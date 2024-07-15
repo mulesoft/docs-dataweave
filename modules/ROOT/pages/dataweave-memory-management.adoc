@@ -65,7 +65,7 @@ org.mule.transport.file.FileConnector: Writing file to: /Users/mulesoft/output/i
 
 If you wish to log the payload as a String representation, you'll need to request the payload in a String representation. This can be achieved by using the expression `#[message.payloadAs(java.lang.String)]`.
 
-image::dataweave-memory-management-dc180.png["A flow diagram for handling JSON output in a data processing sequence."]
+image::dataweave-memory-management-dc180.png["A flow diagram for handling JSON output in a data processing sequence"]
 
 [WARNING]
 This expression is the equivalent of consuming the DataWeave output and transforming it into a String. Even when this expression is used in the context of a logger. The payload will reach the next processor as a String. It's also important to note that once consumed as such, the entire payload will exist in memory.
