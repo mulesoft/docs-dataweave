@@ -115,7 +115,7 @@ image::dataweave-quickstart-c8ae5.png["A user interface for selecting metadata t
 +
 . Name the metadata type `XML-order-input` and click *Create type*.
 +
-image::dataweave-quickstart-22a00.png["A user interface for creating a new XML metadata type."]
+image::dataweave-quickstart-22a00.png["A user interface for creating a new XML metadata type"]
 +
 . Select *XML* as the type, choose *Example* from the dropdown and point it to the location of the `dw-tshirt-inputsample.xml` file, which you can extract from the bundle you downloaded at the start of this guide (link:{attachmentsdir}/dw-quickstart-bundle.zip[dw-quickstart-bundle.zip]). Then click *Select* to use this metadata type.
 +
