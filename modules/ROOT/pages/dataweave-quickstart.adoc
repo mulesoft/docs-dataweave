@@ -251,7 +251,7 @@ image::dataweave-quickstart-59e9c.png["A JSON output preview mapping output's de
 +
 . You can freely edit the sample data to test what would happen in corner cases. Select the `payload` tab in your input section and replace any values there at will. When doing this, note how these values are populated into the values of the preview in real time, giving you a tangible representation of what the final result of your mapping will be.
 +
-image::dataweave-quickstart-75ca5.png["A snippet of an XML input sample."]
+image::dataweave-quickstart-75ca5.png["A snippet of an XML input sample"]
 +
 . Try populating the "state" field in the input sample with TX and note how the "size" field in the output sample is updated in real time.
 . Save your Mule project and Deploy it to Studio's virtual server to try it out by right-clicking on the project and selecting `Run As > Mule Application`.
