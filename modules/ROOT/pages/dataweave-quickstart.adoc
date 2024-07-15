@@ -303,7 +303,7 @@ image::dataweave-quickstart-e4466.png["A flow of a data transformation process"]
 . Set the Path to */products* and the Method to *GET*.
 . If you go and click the Transform Message component, note that its input has been populated with the appropriate data structure to send, via a GET request to /products.
 +
-image::dataweave-quickstart-2196b.png["A user interface for transforming message data with a focus on output payload structure."]
+image::dataweave-quickstart-2196b.png["A transforming message data with a focus on output payload structure"]
 
 . Click the *Preview* button to open the output preview. As there is no sample data available, you will be prompted to provide a sample.
 
