@@ -119,7 +119,7 @@ image::dataweave-quickstart-22a00.png["A user interface for creating a new XML m
 +
 . Select *XML* as the type, choose *Example* from the dropdown and point it to the location of the `dw-tshirt-inputsample.xml` file, which you can extract from the bundle you downloaded at the start of this guide (link:{attachmentsdir}/dw-quickstart-bundle.zip[dw-quickstart-bundle.zip]). Then click *Select* to use this metadata type.
 +
-image::dataweave-quickstart-26f37.png["A metadata type selection interface for XML data related to orders, showing fields like buyer and address."]
+image::dataweave-quickstart-26f37.png["A metadata type selection interface"]
 +
 [TIP]
 ====
