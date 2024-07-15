@@ -393,7 +393,7 @@ These properties can be either set via the XML of your Mule project:
 
 Or via the UI of the Transform Message component:
 
-image::dataweave-formats-6e5e4.png["A reader configuration screen with options for handling null values and optimizing for speed."]
+image::dataweave-formats-6e5e4.png["A reader configuration screen with options for handling null values and optimizing for speed"]
 
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
