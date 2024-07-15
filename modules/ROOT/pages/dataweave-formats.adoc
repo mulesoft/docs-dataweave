@@ -158,7 +158,7 @@ You can set theses properties through the XML of your Mule project:
 
 Alternatively, you can set the properties through the UI of the Transform Message component:
 
-image::dataweave-formats-580be.png["A reader configuration screen showing the different properties to be set."]
+image::dataweave-formats-580be.png["A reader configuration screen showing the different properties to be set"]
 
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
 
