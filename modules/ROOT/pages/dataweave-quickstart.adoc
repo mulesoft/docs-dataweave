@@ -160,7 +160,7 @@ image::dataweave-quickstart-flows-from-raml.png["A Mule configuration XML genera
 . Open the `t-shirt.xml` file that was generated on your project and look for the flow labeled `post:/orders:application/json:t-shirt-config`.
 . Open the properties for the `Set Payload` element in that flow, and set its value to `&#x0023;[payload]`
 +
-image::dataweave-quickstart-set-payload.png["A configuration screen for setting payload in a message flow with MIME type settings."]
+image::dataweave-quickstart-set-payload.png["A configuration screen for setting payload in a message flow"]
 
 == Phase 2 - Map Input Fields to Output Fields
 
