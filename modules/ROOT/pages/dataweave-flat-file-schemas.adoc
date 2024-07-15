@@ -735,7 +735,7 @@ image::dataweave-quickstart-a56f0.png["An error message indicating a missing 'co
 . In the *path* field write `get-copybook`. Once deployed, this will make the endpoint reachable through '+0.0.0.0:8081/get-copybook+'
 . Select the *Metadata* tab and click the *Set Metadata* button.
 +
-image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data transformation tool with an option to add metadata."]
+image::dataweave-quickstart-702fd.png["A metadata configuration screen in a data transformation tool with an option to add metadata"]
 
 . Click the *Edit* icon that appears next to the Payload element
 . Click the green plus icon to add a new metadata type and name it 'my-flat-file-type'
