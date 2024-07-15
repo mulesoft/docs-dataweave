@@ -155,7 +155,7 @@ You can create your DataWeave mapping without going through any of this, just ke
 
 . On the package explorer, left click on the `t-shirt.raml` file in your project and select *Mule* > *Generate Flows from RAML*. This automatically generates a new Mule configuration XML that includes a Mule flow per each resource and method described on the RAML.
 +
-image::dataweave-quickstart-flows-from-raml.png["A project directory structure for a DataWeave application with options for managing metadata."]
+image::dataweave-quickstart-flows-from-raml.png["A Mule configuration XML generated from RAML"]
 +
 . Open the `t-shirt.xml` file that was generated on your project and look for the flow labeled `post:/orders:application/json:t-shirt-config`.
 . Open the properties for the `Set Payload` element in that flow, and set its value to `&#x0023;[payload]`
