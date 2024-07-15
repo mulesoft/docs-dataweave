@@ -125,7 +125,7 @@ image::dataweave-quickstart-26f37.png["A metadata type selection interface"]
 ====
 Now if you select the Transform Message component by clicking it in the flow, the input section should show the fields that are expected in the *incoming payload* through the Transform Message.
 
-image::dataweave-quickstart-4a1db.png["A data transformation interface showing input fields for product details and output in JSON format."]
+image::dataweave-quickstart-4a1db.png["A data transformation interface showing input fields for product details and output in JSON format"]
 ====
 . Click on the *_second HTTP connector in the flow_* to open its properties editor. Click the green plus sign to create a new configuration for the HTTP connector. In the Global Element Properties popup, change the Port field to 8082 (it must be changed since port 8081 is already taken by the other HTTP connector).
 . In the global configuration popup, find the "RAML Location" field, and give the proper path to the `t-shirt.raml` file, which is available in the bundle you downloaded earlier. You can either type in the file location, or – if you extracted the file into the Mule project folder – locate it through the *browse* button. Then click *Ok*.
