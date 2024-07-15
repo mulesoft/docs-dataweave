@@ -129,7 +129,7 @@ This example contains 3 segments, each with a list of defined elements . It then
 
 If you have multiple structures or segment definitions in an FFD, when you apply your schema to an metadata description on a Transform Message component you'll need to specify which one you want to use.
 
-image::dataweave-flat-file-schemas-4e1eb.png["A flat file schema showing groups, segments, and elements."]
+image::dataweave-flat-file-schemas-4e1eb.png["A flat file schema showing groups, segments, and elements"]
 
 
 Here's what the top-level structure of a schema with multiple structures might look like:
