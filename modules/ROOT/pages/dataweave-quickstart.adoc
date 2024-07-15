@@ -111,7 +111,7 @@ image::dataweave-quickstart-8ea02.png["An error message on an HTTP configuration
 +
 . Click the green plus sign to *Add* a new metadata type.
 +
-image::dataweave-quickstart-c8ae5.png["A user interface for selecting metadata types with options to add or delete types."]
+image::dataweave-quickstart-c8ae5.png["A user interface for selecting metadata types with options to add or delete types"]
 +
 . Name the metadata type `XML-order-input` and click *Create type*.
 +
