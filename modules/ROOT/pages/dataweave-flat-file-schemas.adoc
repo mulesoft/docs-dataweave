@@ -724,7 +724,7 @@ Here's a quick step by step example of how – once you have built out your full
 . In Anypoint Studio click *File* > *New* > *Mule Project* to create a new project, give it whatever name you wish and click *Finish*.
 . Drag an HTTP Connector from the palette to your empty canvas, then a Transform Message Component.
 +
-image::dataweave-flat-file-schemas-3f67f.png["A data transformation process involving HTTP and error handling."]
+image::dataweave-flat-file-schemas-3f67f.png["A data transformation process involving HTTP and error handling"]
 
 
 
