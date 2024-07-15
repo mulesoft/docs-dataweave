@@ -197,7 +197,7 @@ In the Transform Message component, you can define a CSV type through the follow
 * Via a graphical editor that allows you to set up each field manually
 
 +
-image::dataweave-formats-4a556.png["A metadata type selection screen showing options to define CSV and XML data types."]
+image::dataweave-formats-4a556.png["A metadata type selection screen showing options to define CSV and XML data types"]
 
 [TIP]
 See xref:6.x@studio::input-output-structure-transformation-studio-task.adoc[To Define Input and Output Structure of a Transformation].
