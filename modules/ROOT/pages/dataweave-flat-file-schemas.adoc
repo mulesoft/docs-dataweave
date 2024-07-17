@@ -42,7 +42,7 @@ The top-level definition in an FFD document starts with the form of the schema. 
 
 If you are only working with one type of record, you only need to have a segment definition for that record type in your FFD.
 
-image::dataweave-flat-file-schemas-22788.png[]
+image::dataweave-flat-file-schemas-22788.png["A flat file schema with multiple elements and segments"]
 
 This is a simple schema with only one segment:
 
@@ -81,7 +81,7 @@ Note that simplified forms are only for convenience. You can use the `segments` 
 
 If you are working with multiple types of records in the same transformation, you need to use a structure definition that controls how these different records are combined.
 
-image::dataweave-flat-file-schemas-680c6.png[]
+image::dataweave-flat-file-schemas-680c6.png["A flat file schema with elements and segments"]
 
 In most cases, you need to define a way to distinguish between the different types of records. You do this by identifying `tagValue` fields as part of the record definitions. The parser will check the content of the fields of each record to identify the record type, then see how it fits into the defined structure.
 
@@ -113,7 +113,7 @@ Note that this example is not complete. It needs to define each of the reference
 
 If you have multiple structures or segment definitions in an FFD, when you apply your schema to an metadata description on a Transform component, you need to specify which one you want to use.
 
-image::dataweave-flat-file-schemas-4e1eb.png[]
+image::dataweave-flat-file-schemas-4e1eb.png["A flat file schema showing groups, segments, and elements"]
 
 A top-level structure of a schema with multiple structures might look like this:
 

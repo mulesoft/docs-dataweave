@@ -102,7 +102,7 @@ output application/dw
 ----
 
 
-[[todatetime2]]
+[[todatetime3]]
 == toDateTime&#40;str: String, format: String &#124; Null = null, locale: String &#124; Null = null&#41;: DateTime
 
 Transforms a `String` value into a `DateTime` value

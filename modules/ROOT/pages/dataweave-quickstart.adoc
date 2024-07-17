@@ -22,7 +22,7 @@ examples here and elsewhere in the docs, you can use the DataWeave playground
 to practice writing your own DataWeave scripts on sample data.
 
 [[example1]]
-image::dw-tut-script-studio-basic.png[Simple Script]
+image::dw-tut-script-studio-basic.png["A script in Anypoint Studio showing a basic JSON output"]
 
 The figure shows a Transform Message component in the center canvas, within *testingscriptFlow*. Below the Studio canvas, the *Transform Message* tab
 includes a DataWeave script in the source code area with output in the
@@ -45,7 +45,7 @@ Set up a Mule project that serves as a DataWeave playground:
 . Provide the name `testscript` for the project, and click *Finish*.
 . From the *Mule Palette* tab of your new project, click *Core*, and then drag the *Transform Message* component into the Studio canvas.
 +
-image::dw-tut-script-studio.png[Studio UI with Transform Component]
+image::dw-tut-script-studio.png["A Transform Message component in Anypoint Studio"]
 +
 (A) *Mule Palette* tab
 +
@@ -59,7 +59,7 @@ the Preview pane, and click the _empty_ rectangle next to *Preview* to expand
 the source code area.
 +
 [[studio_source_only]]
-image::studio-transform-msg-tab.png[Studio Transform Message Tab]
+image::studio-transform-msg-tab.png["A Transform Message tab showing an output payload in Anypoint Studio"]
 +
 The source code area on the left is the place where you are going to add
 DataWeave scripts, and the Preview pane on the right is where you view the
@@ -87,7 +87,7 @@ output of the scripts.
 Begin with a simple DataWeave script that concatenates two strings ("hello" and
 "World") together into a single string ("helloWorld").
 
-image::dw-tut-helloWorld.png[JSON helloWorld example]
+image::dw-tut-helloWorld.png["A DataWeave script that outputs 'helloWorld' in JSON format"]
 
 . Replace the current script in the source code area of the *Transform Message*
 tab with this one:
@@ -128,7 +128,7 @@ xref:dataweave-language-introduction.adoc[DataWeave Scripts] when you are ready.
 Many integrations require transformations from one format to another. This
 procedure uses the `output` directive to produce XML output from JSON input.
 
-image::dw-tut-helloWorld-xml.png[XML helloWorld example]
+image::dw-tut-helloWorld-xml.png["A DataWeave script that outputs 'helloWorld' in XML format"]
 
 .  Replace the body of the current script in the source code area with JSON output from <<step_1>>, and change the `output application/json` directive to `output application/xml`:
 +
@@ -276,7 +276,7 @@ xref:dataweave-variables.adoc[DataWeave Variables] when you are ready.
 Now try a script that uses the DataWeave `avg` function in a DataWeave
 variable (`myJson`) to get averages of two sets of numbers.
 
-image::dw-tut-script-studio-var.png[Script Using var]
+image::dw-tut-script-studio-var.png["A DataWeave script using a variable in Anypoint Studio"]
 
 . Replace the current script in the source code area with this one:
 +
@@ -370,7 +370,7 @@ if it is present):
 ----
 +
 .myJson.json in Studio
-image::dw-tut-sample-file.png[DataWeave Sample File]
+image::dw-tut-sample-file.png["A Package Explorer tab showing a sample content in Anypoint Studio"]
 +
 . Returning to the Transform Message component within the *testscript*
 tab, replace the current script with one that uses `readUrl` to read the JSON
@@ -629,7 +629,7 @@ ContainsRequestedItem: payload.root.*order.*items contains "3"
 +
 Notice that you cannot preview it yet:
 +
-image::dw-tut-payload-example.png[Script Without Input Payload]
+image::dw-tut-payload-example.png["A DataWeave script that checks if a payload contains a specific item in Anypoint Studio"]
 +
 . [[modify_payload]] Now modify this example so that it uses some sample input
 instead of attempting to use `payload` to input content of a Mule message that
@@ -695,7 +695,7 @@ payload
 +
 . Notice that you cannot preview a payload now because it does not exist yet.
 +
-image::dw-tut-payload-example2.png[Script Without Input Payload]
+image::dw-tut-payload-example2.png["A DataWeave script that checks if a payload contains a specific item in Anypoint Studio"]
 +
 . Now provide a simple JSON object as the payload of the Transform Message:
 +
@@ -703,7 +703,7 @@ image::dw-tut-payload-example2.png[Script Without Input Payload]
 *Preview* button to open the columned, graphical view next to the source
 code area:
 +
-image::studio-define-payload.png[Define MetaData in Studio]
+image::studio-define-payload.png["A Transform Message component to define metadata in Anypoint Studio"]
 +
 If you mouse over that rectangle, you can see the label *Show Graphic*.
 +
@@ -719,12 +719,12 @@ the <<readurl_ex, readUrl>> example) into the Transform Message component:
 .. Click *+Add* to open the *Create new type* dialog.
 .. In the dialog, provide the *Type id* `myJsonType`, and click *Create type*.
 +
-image::studio-create-type.png[Create New Type]
+image::studio-create-type.png["A dialog for creating a new type"]
 +
 .. Back in the *Select metadata type* dialog that opens, select *JSON* from
 the *Type* drop-down menu.
 +
-image::studio_select_metadata_type.png[Select Metadata Type]
+image::studio_select_metadata_type.png["A Select metadata type dialog to select Type"]
 +
 .. Below the new type, change *Schema* to *Example* (as shown above).
 .. Use the navigation button with the ellipsis (*...*) to find `src/main/resources/myJson.json`, and click *Open*, which displays the
@@ -743,7 +743,7 @@ Notice that the Preview pane now contains only the value of the payload:
 +
 Here is what this example looks like in Studio:
 +
-image::dw-tut-world.png[Example: Payload from File]
+image::dw-tut-world.png["A DataWeave script that outputs the word 'world' in JSON format in Anypoint Studio"]
 +
 Learn more about xref:dataweave-selectors.adoc[DataWeave Selectors]
 when you are ready.
@@ -774,7 +774,7 @@ in the Studio console.
 
 Here is an example that uses some of these components:
 
-image::studio-hello-world.png[Hello World in Studio]
+image::studio-hello-world.png["A flow that outputs 'helloWorld' in Anypoint Studio"]
 
 * The *fx* value of Set Payload is set to `output application/json --- { hello : "world"}`.
 * The *fx* value of the Logger is set to `payload`, which looks like `#[payload]` in the UI and the XML configuration file for the project.
