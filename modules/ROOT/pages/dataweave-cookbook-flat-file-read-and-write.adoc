@@ -20,7 +20,7 @@ The following example application consists of:
 . A Transform Message component that transforms the content read from the flat file to JSON format
 . A Logger component that outputs the current payload
 
-image:mruntime-read-flat-file.png[Example Mule application]
+image::mruntime-read-flat-file.png["A flow showing the process of reading and transforming a flat file to JSON"]
 
 .Application XML File
 [source,xml,linenums]
@@ -175,7 +175,7 @@ The following example application contains:
 . A Logger component that outputs the current payload
 . A File Write operation that outputs the payload to a flat file in the specified target path
 
-image:mruntime-write-flat-file.png[Example Mule application]
+image::mruntime-write-flat-file.png["A flow showing the process of writing a flat file"]
 
 
 .Application XML File
