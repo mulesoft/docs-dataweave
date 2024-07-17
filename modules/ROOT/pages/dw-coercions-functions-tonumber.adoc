@@ -101,7 +101,7 @@ output application/json
 ----
 
 
-[[tonumber2]]
+[[tonumber3]]
 == toNumber&#40;period: Period, unit: PeriodUnits &#124; Null = null&#41;: Number
 
 A variant of `toNumber` that transforms a `Period` value
@@ -149,7 +149,7 @@ output application/json
 ----
 
 
-[[tonumber3]]
+[[tonumber4]]
 == toNumber&#40;value: String &#124; Key, format: String &#124; Null = null, locale: String &#124; Null = null&#41;: Number
 
 A variant of `toNumber` that transforms a `String` or `Key` value into
