@@ -41,7 +41,7 @@ During the reading phase, DataWeave parses the doctype declarations and stores t
 
 * `payload.^docType`
 +
-See examples <<example12>>, <<example13>> and <<example14>>.
+See examples <<example12>>, <<example13>>, and <<example14>>.
 
 You can use the xref:dataweave-selectors.adoc[metadata selector] to access it.
 

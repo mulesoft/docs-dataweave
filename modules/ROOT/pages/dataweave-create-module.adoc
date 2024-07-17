@@ -25,7 +25,7 @@ Note that if you want to import and use a built-in DataWeave function module, an
 You can store a DataWeave transformation in a `.dwl` mapping file (mapping module), then import the file into another DataWeave script. Mapping files can be executed through the Transform Message component, or you can import them into another mapping and execute them through the `main` function.
 
 .Example: DataWeave Mapping File in a Studio Project
-image::dataweave-mapping-file.png[Example: DataWeave Mapping File]
+image::dataweave-mapping-file.png["A DataWeave script with a function to capitalize keys and map payload values"]
 
 . In your Studio project, set up a subfolder and file for your mapping module:
 +
@@ -94,7 +94,7 @@ module cannot contain an `output` directive, body expression, or the separator (
 guidance with mappings, see <<create_dw_mapping>>.)
 
 .Example: Custom Module in a Studio Project
-image::dataweave-function-custom.png[Example: DataWeave Custom Function Module]
+image::dataweave-function-custom.png["A DataWeave script with a custom function module"]
 
 A custom module file can only contain `var`, `fun`, `type`, and `ns` declarations, for example:
 
