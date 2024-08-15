@@ -78,10 +78,14 @@ var idNumber: ID.id = 38123
 ----
 [
   {
-    "name": "Seba"
+    "firstName": "Seba",
+    "id": "123",
+    "age": 28
   },
   {
-    "id": 38123
+    "id": 38123,
+    "firstName": "Seba",
+    "secondName": "Elizalde"
   },
   "Seba is of type String",
   "38123 is of type Number"
