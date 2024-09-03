@@ -301,6 +301,74 @@ output application/json
 }
 ----
 
+==  Deconstructors on Collections in DataWeave
+
+DataWeave supports two types of collections: Arrays and Objects. Arrays are a sequence of values, while Objects are a sequence of key-value pairs. 
+
+=== Deconstruction on Arrays
+
+An Array can be seen as a head (the first element of the Array) and a tail (a new Array with the reminder of the elements). For example, in the array `[1,2,3,4]`, `1` is the head and `2,3,4` is the tail. 
+
+To match over an array, use the following syntax, where the script gets the first element of an array or returns null if the array is empty:
+
+.DataWeave Script
+[source,dataweave,linenums]
+----
+[1,2,3,4] match {
+	case [head ~ tail] -> head
+	case [] -> null
+}
+----
+
+This kind of deconstruction is useful when used with recursive functions.
+
+==== Example: Build a `joinBy` Function
+
+This example builds a `joinBy` function that takes an array of string and returns a string with all the elements of the Array concatenated with the given separator:
+
+.DataWeave Script
+[source,dataweave,linenums]
+----
+fun joinBy(elements: Array<String>, separator: String): String = 
+	elements match {
+		case [head ~ tail] -> head ++ separator ++ joinBy(tail, separator) //When head and tail append and recursively
+		case [] -> "" //When the array is empty return empty array
+	}
+---- 
+
+==== Example: Build a Filter Function
+
+This example builds a higher-order filter function:
+
+.DataWeave Script
+[source,dataweave,linenums]
+----
+fun filter<T>(elements: Array<T>, predicate: (item:T) -> Boolean): Array<T> = 
+	elements match {
+		case [head ~ tail] -> 
+			if(predicate(head))
+				[head] ++ filter(tail, predicate)
+			else
+				filter(tail, predicate)	
+		case [] -> []
+	}
+---- 
+
+=== Deconstruction on Objects
+
+Objects in DataWeave are similar to Arrays but each element consists of a key and a value. An Object can also be seen as a head (the first key-value pair) and a tail (a new Object with the rest of the key-value pairs).
+
+To match over an object, use the following syntax, where the script gets the first value of an object, which in this case is "Word":
+
+.DataWeave Script
+[source,dataweave,linenums]
+----
+{hello: "world", test: true} match {
+    case {headKey: headValue ~ tail} -> headValue
+    case {} -> null
+}
+----
+
 == See Also
 
 * xref:dataweave-types.adoc[DataWeave Types]
