@@ -55,9 +55,13 @@ Introduced in Mule 4.3.0, when this property is enabled, a message is logged eac
 Note that it may be removed or change its behavior in future versions.
 This property receives a boolean, for example: `-Dcom.mulesoft.dw.buffer.memory.monitoring=true`.
 
+* `mule.weave.script.parser.cache.size` +
+This system property determines the maximum size of compiled scripts that are being cached. The default value is 10.000.  
+
+* `com.mulesoft.dw.charbuffersize` +
+This system property determines the size (in bytes) of the buffer used by the writter. The default value is 4.096.
+
 == See Also
-
-
 
 * xref:dataweave-language-introduction.adoc[DataWeave Scripts]
 * xref:dataweave-selectors.adoc[DataWeave Selectors]
