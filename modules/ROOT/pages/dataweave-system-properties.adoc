@@ -225,4 +225,17 @@ Controls whether DTD handling is enabled or disabled. When this property is set 
 
 * Type: `Boolean`
 * Default: `false`
+
+//com.mulesoft.dw.charbuffersize//
+|`com.mulesoft.dw.charbuffersize`|
+Determines the size (in bytes) of the buffer used by the writer.
+
+* Type: `Number`
+* Default: `4096` 
+//mule.weave.script.parser.cache.size//
+|`mule.weave.script.parser.cache.size`|
+Determines the max size of compiled scripts that are being cached.
+
+* Type: `Number`
+* Default: `10000`
 |===
