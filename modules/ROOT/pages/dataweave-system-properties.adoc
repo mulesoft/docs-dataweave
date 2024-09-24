@@ -235,7 +235,7 @@ Determines the size (in bytes) of the buffer used by the writer.
 
 //mule.weave.script.parser.cache.size//
 |`mule.weave.script.parser.cache.size`|
-Determines the maximum size of compiled scripts cached.
+Determines the maximum size of compiled scripts that are being cached.
 
 * Type: `Number`
 * Default: `10000`
