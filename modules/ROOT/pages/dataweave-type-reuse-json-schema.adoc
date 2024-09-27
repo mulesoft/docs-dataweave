@@ -280,7 +280,7 @@ DataWeave supports the following JSON schema types transformed into DataWeave ty
 
 * DataWeave doesn't support formats on JSON schema string types and transforms these types to `String` without any validation or restriction.
 * DataWeave doesn't support restrictions on number types such as maximums or minimums and transforms these types to `Number` without any validation or restriction.
-* Patterns aren't supported.
+* DataWeave doesn't support patterns.
 
 === Object types
 
