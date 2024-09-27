@@ -97,7 +97,7 @@ import * from jsonschema!jsonschema!example::schema::Person
 "true"
 ----
 
-The following example outputs the value `false` because the object does not contain the required fields, `firstName` and `lastName`:
+The following example outputs the value `false` because the object doesn't contain the required fields, `firstName` and `lastName`:
 
 .DataWeave Script:
 [source,dataweave,linenums]
@@ -257,4 +257,143 @@ else -> "NO TYPE MATCHED"
 .Output:
 ----
 "ADDRESS"
+----
+
+=== Built-in JSON Schema Types
+
+DataWeave supports the following JSON schema types transformed into DataWeave types:
+
+[cols="2,2",options="header"]
+|===
+| JSON Schema Type | DataWeave Type
+| `number`| `Number`
+| `integer`| `Number`
+| `string`| `String`
+| `boolean`| `Boolean`
+| `array`| `Array`
+| `enums`| `Union`
+| `null`| `Null`
+| `object`| `Object`
+|===
+
+=== Limitations
+
+* DataWeave doesn't support formats on JSON schema string types and transforms these types to `String` without any validation or restriction.
+* DataWeave doesn't support restrictions on number types such as maximums or minimums and transforms these types to `Number` without any validation or restriction.
+* DataWeave doesn't support patterns.
+
+=== Object types
+
+DataWeave marks non-required properties in JSON Schema object types as optional properties in the DataWeave Object type. 
+
+The following example outputs a DataWeave type:
+
+.JSON schema:
+[source,JSON]
+----
+{
+  "type": "object",
+  "properties": {
+    "name":      { "type": "string" },
+    "email":     { "type": "string" },
+    "address":   { "type": "string" },
+    "telephone": { "type": "string" }
+  },
+  "required": ["name", "email"]
+}
+----
+
+.Output:
+[source,dataweave,linenums]
+----
+%dw 2.0
+type Root = { address?: String, name: String, telephone?: String, email: String }
+----
+
+If additional properties are allowed, DataWeave produces an open Object definition.
+
+The following example outputs a DataWeave type:
+
+.JSON schema:
+[source,JSON]
+----
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "number":      { "type": "number" },
+    "street_name": { "type": "string" },
+    "street_type": { "type": "string",
+      "enum": ["Street", "Avenue", "Boulevard"]
+    }
+  },
+  "required": ["number"],
+  "additionalProperties": true
+}
+----
+
+.Output:
+[source,dataweave,linenums]
+----
+%dw 2.0
+type Root = { number: Number, street_type?: "Street" | "Avenue" | "Boulevard", street_name?: String }
+----
+
+If, on the contrary, additional properties aren't allowed, DataWeave produces a closed Object definition.
+
+The following example outputs a DataWeave type:
+
+.JSON schema:
+[source,JSON]
+----
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "number":      { "type": "number" },
+    "street_name": { "type": "string" },
+    "street_type": { "type": "string",
+      "enum": ["Street", "Avenue", "Boulevard"]
+    }
+  },
+  "required": ["number"],
+  "additionalProperties": false
+}
+----
+
+.Output:
+[source,dataweave,linenums]
+----
+%dw 2.0
+type Root = {| number: Number, street_type?: "Street" | "Avenue" | "Boulevard", street_name?: String |}
+----
+
+=== Built-in JSON Schema Support for Subschema Keywords
+
+Using subschema keywords in JSON schema produces complex types based on the provided subschemas.
+
+[cols="2,2",options="header"]
+|===
+| JSON Schema Keyword | DataWeave Type
+| `allOf`| `Intersection`
+| `anyOf`| `Union`
+| `oneOf`| `Union`
+|===
+====
+The following example outputs a DataWeave type:
+.JSON schema:
+[source,JSON]
+----
+{
+  "anyOf": [
+    { "type": "string" },
+    { "type": "number" }
+  ]
+}
+----
+.Output:
+[source,dataweave,linenums]
+----
+%dw 2.0
+type Root = (String | Number)
 ----
