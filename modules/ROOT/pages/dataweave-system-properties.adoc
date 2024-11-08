@@ -81,7 +81,7 @@ When set to true, binary values in JSON are written using JsonWriter encoding. O
 |`com.mulesoft.dw.defaultOperator.disableExceptionHandling`|
 
 When set to true, DataWeave disables the `default` operator to catch runtime exceptions.
-Enabling this behavior `default` operator does not return the `default value` when a runtime exception occurs.
+Enabling this behavior `default` operator doesn't return the `default value` when a runtime exception occurs.
 When set to `false` the `default` operator catches the runtime exceptions and returns the `default value`.
 
 * Type: `Boolean`
