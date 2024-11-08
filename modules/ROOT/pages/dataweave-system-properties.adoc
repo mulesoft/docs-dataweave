@@ -433,10 +433,7 @@ When set to true the JavaModuleLoader loads the methods for Java Classes in dete
 
 * Type: `Boolean`
 
-* Default: `
-  false for language levels: 
-
-  true for language levels: 2.5, 2.6`
+* Default: `true`
 
 Available for language levels: 2.5, 2.6
 
