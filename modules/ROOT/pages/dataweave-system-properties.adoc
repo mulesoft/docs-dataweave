@@ -253,7 +253,7 @@ Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 |`com.mulesoft.dw.telemetry.bufferSize`|
 Determines the size in bytes of the telemetry event buffer.
 
-* Type: `Integer`
+* Type: `Number (in bytes)`
 * Default: `1048576`
 
 
