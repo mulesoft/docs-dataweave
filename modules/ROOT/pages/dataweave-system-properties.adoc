@@ -429,7 +429,7 @@ Available for language levels: 2.4, 2.5, 2.6
 //mule.dw.java_module_loader_deterministic_functions_ordering//
 |`mule.dw.java_module_loader_deterministic_functions_ordering`|
 
-When set to true the JavaModuleLoader loads the methods for Java Classes in deterministic order. DataWeave considers the method name, the parameters count, and finally, the parameter type name.
+When set to `true`, the JavaModuleLoader loads the methods for Java Classes in deterministic order. DataWeave considers the method name, the parameters count, and finally, the parameter type name.
 
 * Type: `Boolean`
 
