@@ -223,7 +223,7 @@ Sets the maximum size of the stack. When a function recurses too deeply, DataWea
 //com.mulesoft.dw.stripTrailingZeroes//
 |`com.mulesoft.dw.stripTrailingZeroes`|
 
-When set to false restores the behavior of preserving trailing zeroes for some formats (e.g.: dw, json, yaml) present in 2.4.0
+When set to `false`, DataWeave restores the behavior of preserving trailing zeroes for some formats (e.g.: dw, json, yaml) present in 2.4.0.
 Since 2.5.0 trailing zeroes are removed by default.
 .DataWeave script:
 [source,xml,linenums]
