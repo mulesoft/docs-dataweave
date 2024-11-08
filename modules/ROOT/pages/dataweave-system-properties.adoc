@@ -149,10 +149,10 @@ When set to `true` the JavaModuleLoader does not change the accessible flag for 
 
 * Type: `Boolean`
 
-* Default: `
-  false for language levels: 2.5
+* Default:
+  ** `false` for language levels: 2.5
 
-  true for language levels: 2.6, 2.7, 2.8, 2.9`
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
