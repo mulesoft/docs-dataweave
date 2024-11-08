@@ -241,10 +241,10 @@ output application/json
 
 * Type: `Boolean`
 
-* Default: `
-  false for language levels: 
+* Default:
+  ** `false` for language levels: 
 
-  true for language levels: 2.5, 2.6, 2.7, 2.8, 2.9`
+  ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
