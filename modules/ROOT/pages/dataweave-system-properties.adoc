@@ -399,7 +399,7 @@ Controls whether DTD handling is enabled or disabled. When this property is set 
 //com.mulesoft.dw.xml_reader.honourMixedContentStructure//
 |`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
 
-When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
+When set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
 
 * Type: `Boolean`
 
