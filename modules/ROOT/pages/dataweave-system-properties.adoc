@@ -71,7 +71,7 @@ Available for language levels: 2.3, 2.4, 2.5
 
 //com.mulesoft.dw.decode_binaries_with_writer_encoding//
 |`com.mulesoft.dw.decode_binaries_with_writer_encoding`|
-If set, then binary values in json are written using JsonWriter encoding, otherwise it will use either the encoding defined in the value schema or the default one.
+When set to true, binary values in JSON are written using JsonWriter encoding. Otherwise, the property uses either the encoding defined in the value schema or the default one.
 
 * Type: `Boolean`
 * Default: `false`
