@@ -275,7 +275,7 @@ When set to `true`, the telemetry service collects memory usage statistics.
 
 //com.mulesoft.dw.telemetry.sync//
 |`com.mulesoft.dw.telemetry.sync`|
-If set, then telemetry events are published synchronously.
+When set to `true`, telemetry events are published synchronously.
 
 * Type: `Boolean`
 * Default: `false`
