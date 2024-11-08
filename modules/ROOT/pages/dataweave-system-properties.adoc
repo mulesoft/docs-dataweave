@@ -358,7 +358,7 @@ Available for language levels: 2.3, 2.4, 2.5
 
 //com.mulesoft.dw.workingdirectory.base//
 |`com.mulesoft.dw.workingdirectory.base`|
-Specifies the base directory in which temporary files will be written
+Specifies the base directory in which temporary files are written.
 
 * Type: `String`
 * Default: `java.io.tmpdir (system property value)`
