@@ -208,7 +208,7 @@ Sets the default Content-Type to use on parts of the `multipart/*` format when a
 |`com.mulesoft.dw.scheduler.size`|
 Specifies the size of DataWeave scheduler thread pool
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `100`
 
 
