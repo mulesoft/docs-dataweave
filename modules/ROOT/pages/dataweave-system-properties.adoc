@@ -26,7 +26,7 @@ Sets the size (in bytes) of in-memory input and output buffers that DataWeave us
 |`com.mulesoft.dw.charbuffersize`|
 Determines the size (in bytes) of the buffer used by the writer.
 
-* Type: `Integer`
+* Type: `Number` (in bytes)
 * Default: `4096`
 
 
