@@ -130,7 +130,7 @@ _Experimental:_ Adds the StackTrace for dumper exceptions when `com.mulesoft.dw.
 |`com.mulesoft.dw.error_value_length`|
 Sets the maximum length of exception messages to display to the user. The message is truncated to the maximum length. This setting is useful for avoiding long exception messages.
 
-* Type: `Integer`
+* Type: `Number`
 * Default: `80`
 
 
