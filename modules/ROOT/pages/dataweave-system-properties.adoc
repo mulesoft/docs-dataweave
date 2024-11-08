@@ -418,10 +418,10 @@ When this property is set to `false`, DataWeave does not declare the `xml` impli
 
 * Type: `Boolean`
 
-* Default: `
-  true for language levels: 2.4, 2.5
+* Default:
+  ** `true` for language levels: 2.4, 2.5
 
-  false for language levels: 2.6`
+  ** `false` for language levels: 2.6
 
 Available for language levels: 2.4, 2.5, 2.6
 
