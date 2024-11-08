@@ -115,8 +115,7 @@ _Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.
 
 * Type: `String`
 * Default: `java.io.tempdir (system property value)`
-`
-com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
+`com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
 
 //com.mulesoft.dw.dumper_fill_stacktrace//
 |`com.mulesoft.dw.dumper_fill_stacktrace`|
