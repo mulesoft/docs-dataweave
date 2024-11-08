@@ -172,10 +172,10 @@ When set, `java.sql.Date` maps to the DataWeave `Date` type. If `false`, it maps
 
 * Type: `Boolean`
 
-* Default: `
-  false for language levels: 2.4
+* Default:
+  ** `false` for language levels: 2.4
 
-  true for language levels: 2.5`
+  ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
 
