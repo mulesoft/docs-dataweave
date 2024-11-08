@@ -292,7 +292,7 @@ When set to `true`, tracks the stack trace from which the {CursorProvider#close(
 //com.mulesoft.dw.valueSelector.selectsAlwaysFirst//
 |`com.mulesoft.dw.valueSelector.selectsAlwaysFirst`|
 
-When set to set to `true`, returns the first occurrence of an element (even if the element appears more than once). Enabling this behavior degrades performance.
+When set to `true`, returns the first occurrence of an element (even if the element appears more than once). Enabling this behavior degrades performance.
 
 The following example illustrates the behavior that is controlled by this property. (Assume that the DataWeave script acts on the XML input.)
 
