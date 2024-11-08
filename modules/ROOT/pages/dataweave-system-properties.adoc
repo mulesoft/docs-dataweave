@@ -138,7 +138,7 @@ Sets the maximum length of exception messages to display to the user. The messag
 |`com.mulesoft.dw.indexsize`|
 Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 
-* Type: `Integer`
+* Type: `Number (in bytes)`
 * Default: `1572864`
 
 
