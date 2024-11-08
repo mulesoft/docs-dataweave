@@ -403,10 +403,10 @@ When this property is set to `true`, DataWeave retains a mixed-content structure
 
 * Type: `Boolean`
 
-* Default: `
-  false for language levels: 2.4
+* Default:
+  ** `false` for language levels: 2.4
 
-  true for language levels: 2.5`
+  ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
 
