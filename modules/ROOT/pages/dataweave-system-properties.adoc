@@ -145,7 +145,7 @@ Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 //com.mulesoft.dw.java.disable_set_accessible//
 |`com.mulesoft.dw.java.disable_set_accessible`|
 
-When set to `true` the JavaModuleLoader does not change the accessible flag for fields or methods used via reflection. The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17+ and the language version is bigger than 2.6
+When set to `true`, the JavaModuleLoader doesn’t change the accessible flag for fields or methods used via reflection. The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17 or later and the language version is 2.6 or later.
 
 * Type: `Boolean`
 
