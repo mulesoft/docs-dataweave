@@ -106,7 +106,7 @@ This table shows the possible combinations and the properties from the schema th
 |`LocalTime`     |`Time`           |
 |`String`        |`Time`           | `format`
 |`DateTime`      |`TimeZone`       |
-|`Time`          |`TimeZone``      |
+|`Time`          |`TimeZone`      |
 |`String`        |`TimeZone`       |
 |===
 

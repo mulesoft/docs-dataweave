@@ -73,7 +73,7 @@ Note that the Transform Message configures the following DataWeave script:
 include::partial$cookbook-dw/pluck/transform.dwl[]
 ----
 
-When the the Mule app executes with the following JSON payload:
+When the Mule app executes with the following JSON payload:
 
 [source,json,linenums]
 ----

@@ -661,7 +661,7 @@ A string can be defined by the use of double quotes or single quotes.
 
 Use the backslash (`\`) to escape special characters in an input string:
 
-* `$`: You need to escape any use of of `$` in a string. Otherwise, DataWeave
+* `$`: You need to escape any use of `$` in a string. Otherwise, DataWeave
 treats the `$` as an unnamed parameter for a function and returns the error
 `Unable to resolve reference of $.`.
 * `"`: For a string that is surrounded by double quotes, you need to escape any
