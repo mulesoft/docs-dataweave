@@ -12,7 +12,7 @@ include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 The examples use these functions:
 
 * `replace` so that all dates match a single pattern.
-* `mapObject` to run through the the `date` elements. The script applies the normalizing function to each `date`.
+* `mapObject` to run through the `date` elements. The script applies the normalizing function to each `date`.
 * `as` (in the second DataWeave script) to change the data type of the values to a Date type with a specific date format.
 
 
@@ -74,7 +74,7 @@ Start out by writing a regular expression to match each of them:
 * Sun Nov 6 08:49:37 1994 = `/^[A-z][A-z][A-z]\s/`
 * Sunday, 06-Nov-94 08:49:37 GMT = This will be the default
 
-You can use these regular expressions in a DW xref:dataweave-types.adoc#functions-and-lambdas[function] that first evaluates a string to see which regular expression it matches, and then converts it through the the corresponding function. This function should do the following:
+You can use these regular expressions in a DW xref:dataweave-types.adoc#functions-and-lambdas[function] that first evaluates a string to see which regular expression it matches, and then converts it through the corresponding function. This function should do the following:
 
 . Take the input string as argument
 . Match it with regular expressions in order to determine which format it's in
