@@ -1,4 +1,4 @@
-= Mule Types (dw::Mule)
+= Mule Types (Mule)
 
 [%header, cols="1,2a,3a"]
 |===
