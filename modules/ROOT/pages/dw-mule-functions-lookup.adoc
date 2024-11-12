@@ -43,6 +43,8 @@ component, using the `target` attribute to put the result of the flow in a
 
 _This function is *Deprecated*. Use https://docs.mulesoft.com/dataweave/latest/dataweave-functions[], instead._
 
+_This function is *Deprecated*. Use xref:-functions-.adoc[], instead._
+
 === Parameters
 
 [%header, cols="1,3"]
