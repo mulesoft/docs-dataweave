@@ -11,8 +11,7 @@ endif::[]
 Capitalizes the first letter of each word in a string.
 
 
-It also removes underscores between words and puts a space before each
-capitalized word.
+The function treats every non-alphabetic character as a separator and replaces underscores with spaces. For example, `capitalize("a*s_b’s")` results in `"A*S B’S"`.
 
 === Parameters
 
@@ -38,7 +37,8 @@ output application/json
   "a" : capitalize("customer"),
   "b" : capitalize("customer_first_name"),
   "c" : capitalize("customer NAME"),
-  "d" : capitalize("customerName")
+  "d" : capitalize("customerName"),
+  "e" : capitalize("a*s_b’s") 
 }
 ----
 
@@ -50,7 +50,8 @@ output application/json
   "a": "Customer",
   "b": "Customer First Name",
   "c": "Customer Name",
-  "d": "Customer Name"
+  "d": "Customer Name",
+  "e": "A*S B’S"
 }
 ----
 
