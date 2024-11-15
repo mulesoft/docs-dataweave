@@ -217,8 +217,7 @@ output application/json
 "08/30/2020"
 ----
 
-The following example converts a string to a number with decimal representation. First, you transform the string value `"22"` to `Number` and then to `String` again because `format` adds zeros when converting from a number to a string. If the input data is the number `22`, it is not necessary to perform the first `Number` conversion.
-The latter `Number` conversion makes the output a number with the decimal representation.
+The following example converts a number to a string with decimal representation.
 
 .DataWeave script:
 [source,dataweave,linenums]
@@ -227,7 +226,7 @@ The latter `Number` conversion makes the output a number with the decimal repres
 output application/json
 ---
 {
-     data: "22" as Number as String {format: ".00"} as Number
+      data: 22 as String {format: ".00"}
 }
 
 ----
@@ -236,9 +235,12 @@ output application/json
 [source,json,linenums]
 ----
 {
-  "data": 22.00
+  "data": "22.00"
 }
 ----
+
+[NOTE]
+To maintain consistency across all formats, starting with DataWeave 2.5, writing number values directly doesn't preserve formatting and strips trailing zeroes. Format metadata is only used to parse the provided string into the correct number representation. To retain this behavior, you can re-enable it by using the `stripTrailingZeroes` property. See xref:dataweave-system-properties.adoc[supported data formats].
 
 The following example uses the `locale` property to format number and date values. First, you coerce a number value into `String` type to the specified output format that uses the Java DecimalFormat pattern (##) and also the `locale` property `en` (English) or `es` (Spanish). The `locale: "en"` property, formats the output number decimal representation using a `.`, while the `locale: "es"` property, formats the output using a `,`. +
 Then, you coerce a date value into `Date` type and then to `String` type with the output format `dd-MMM-yy` and the `locale` property `en` (English), or `es` (Spanish). The `locale: "en"` property, formats the month `MMM` in English, while the `locale: "es"` property formats the month in Spanish.
