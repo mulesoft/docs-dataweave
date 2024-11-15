@@ -26,7 +26,7 @@ Sets the size (in bytes) of in-memory input and output buffers that DataWeave us
 |`com.mulesoft.dw.charbuffersize`|
 Determines the size (in bytes) of the buffer used by the writer.
 
-* Type: `Number` (in bytes)
+* Type: `Integer`
 * Default: `4096`
 
 
@@ -64,14 +64,17 @@ output application/dw
 
 * Type: `Boolean`
 
-* Default: `false`
+* Default: `
+  false for language levels: 2.3, 2.4
+
+  false for language levels: 2.5`
 
 Available for language levels: 2.3, 2.4, 2.5
 
 
 //com.mulesoft.dw.decode_binaries_with_writer_encoding//
 |`com.mulesoft.dw.decode_binaries_with_writer_encoding`|
-When set to `true`, binary values in JSON are written using JsonWriter encoding. Otherwise, the property uses either the encoding defined in the value schema or the default one.
+If set, then binary values in json are written using JsonWriter encoding, otherwise it will use either the encoding defined in the value schema or the default one.
 
 * Type: `Boolean`
 * Default: `false`
@@ -80,13 +83,16 @@ When set to `true`, binary values in JSON are written using JsonWriter encoding.
 //com.mulesoft.dw.defaultOperator.disableExceptionHandling//
 |`com.mulesoft.dw.defaultOperator.disableExceptionHandling`|
 
-When set to `true`, DataWeave disables the `default` operator that catches runtime exceptions.
-Enabling the `default` operator doesn’t return the `default value` when a runtime exception occurs.
-When set to `false`, the `default` operator catches the runtime exceptions and returns the `default value`.
+When set to `true` disable the `default` operator to catch runtime exceptions.
+Enabling this behavior `default` operator does not return the `default value` when a runtime exception occurs.
+When set to `false` the `default` operator catches the runtime exceptions and returns the `default value`.
 
 * Type: `Boolean`
 
-* Default: `true`
+* Default: `
+  false for language levels: 
+
+  true for language levels: 2.5, 2.6, 2.7, 2.8, 2.9`
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -106,7 +112,8 @@ _Experimental:_ Dumps the input context and the failing script into a folder whe
 
 * Type: `Boolean`
 * Default: `false`
-`com.mulesoft.dw.dump_files` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
+`
+com.mulesoft.dw.dump_files` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
 
 //com.mulesoft.dw.dump_folder//
 |`com.mulesoft.dw.dump_folder`|
@@ -115,7 +122,8 @@ _Experimental:_ Specifies the path in which to dump files when `com.mulesoft.dw.
 
 * Type: `String`
 * Default: `java.io.tempdir (system property value)`
-`com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
+`
+com.mulesoft.dw.dump_folder` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
 
 //com.mulesoft.dw.dumper_fill_stacktrace//
 |`com.mulesoft.dw.dumper_fill_stacktrace`|
@@ -124,13 +132,14 @@ _Experimental:_ Adds the StackTrace for dumper exceptions when `com.mulesoft.dw.
 
 * Type: `Boolean`
 * Default: `false`
-`com.mulesoft.dw.dumper_fill_stacktrace` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
+`
+com.mulesoft.dw.dumper_fill_stacktrace` is an _experimental feature_ that is subject to change or removal from future versions of DataWeave. See xref:dataweave-troubleshoot.adoc[].
 
 //com.mulesoft.dw.error_value_length//
 |`com.mulesoft.dw.error_value_length`|
 Sets the maximum length of exception messages to display to the user. The message is truncated to the maximum length. This setting is useful for avoiding long exception messages.
 
-* Type: `Number`
+* Type: `Integer`
 * Default: `80`
 
 
@@ -138,30 +147,45 @@ Sets the maximum length of exception messages to display to the user. The messag
 |`com.mulesoft.dw.indexsize`|
 Sets the maximum size (in bytes) of the page in memory that indexed readers use.
 
-* Type: `Number (in bytes)`
+* Type: `Integer`
 * Default: `1572864`
 
 
 //com.mulesoft.dw.java.disable_set_accessible//
 |`com.mulesoft.dw.java.disable_set_accessible`|
 
-When set to `true`, the JavaModuleLoader doesn’t change the accessible flag for fields or methods used via reflection. The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17 or later and the language version is 2.6 or later.
+When set to `true` the JavaModuleLoader does not change the accessible flag for fields or methods used via reflection. The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17+ and the language version is bigger than 2.6
 
 * Type: `Boolean`
 
-* Default:
-  ** `false` for language levels: 2.5
+* Default: `
+  false for language levels: 2.5
 
-  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+  true for language levels: 2.6, 2.7, 2.8, 2.9`
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 
+//com.mulesoft.dw.java.honour_bean_definition_accessor//
+|`com.mulesoft.dw.java.honour_bean_definition_accessor`|
+
+When set to `true` the JavaModuleLoader honour the bean definition by using the setter/getter methods to access properties via reflection at object value selectors.If it is set to `false`, the JavaModuleLoader uses the setter/getter methods to access properties if exists or it uses the field accessor as default. 
+
+* Type: `Boolean`
+
+* Default: `
+  false for language levels: 2.8
+
+  true for language levels: 2.9, 2.10, 2.11, 2.12, 2.13, 2.14, 2.15`
+
+Available for language levels: 2.8, 2.9, 2.10, 2.11, 2.12, 2.13, 2.14, 2.15
+
+
 //com.mulesoft.dw.java.stacktrace//
 |`com.mulesoft.dw.java.stacktrace`|
-Specifies the depth of the Java stack trace.
+Specifies the depth of the Java stack trace
 
-* Type: `Number`
+* Type: `Integer`
 * Default: `6`
 
 
@@ -172,10 +196,10 @@ When set, `java.sql.Date` maps to the DataWeave `Date` type. If `false`, it maps
 
 * Type: `Boolean`
 
-* Default:
-  ** `false` for language levels: 2.4
+* Default: `
+  false for language levels: 2.4
 
-  ** `true` for language levels: 2.5
+  true for language levels: 2.5`
 
 Available for language levels: 2.4, 2.5
 
@@ -184,7 +208,7 @@ Available for language levels: 2.4, 2.5
 |`com.mulesoft.dw.max_memory_allocation`|
 Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp`.
 
-* Type: `Number (in bytes)`
+* Type: `Integer`
 * Default: `1572864`
 
 
@@ -192,7 +216,7 @@ Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave sto
 |`com.mulesoft.dw.memory_pool_size`|
 Sets the number of slots in the memory pool. DataWeave buffers use off-heap memory from a pool, up to a defined size (`com.mulesoft.dw.memory_pool_size` * `com.mulesoft.dw.max_memory_allocation`). DataWeave allocates the remainder using heap memory. See xref:dataweave-memory-management.adoc[DataWeave Memory Management].
 
-* Type: `Number`
+* Type: `Integer`
 * Default: `60`
 
 
@@ -206,9 +230,9 @@ Sets the default Content-Type to use on parts of the `multipart/*` format when a
 
 //com.mulesoft.dw.scheduler.size//
 |`com.mulesoft.dw.scheduler.size`|
-Specifies the size of DataWeave scheduler thread pool.
+Specifies the size of DataWeave scheduler thread pool
 
-* Type: `Number`
+* Type: `Integer`
 * Default: `100`
 
 
@@ -216,15 +240,15 @@ Specifies the size of DataWeave scheduler thread pool.
 |`com.mulesoft.dw.stacksize`|
 Sets the maximum size of the stack. When a function recurses too deeply, DataWeave throws an error, such as Stack Overflow. The maximum size limit is 256.
 
-* Type: `Number`
+* Type: `Integer`
 * Default: `256`
 
 
 //com.mulesoft.dw.stripTrailingZeroes//
 |`com.mulesoft.dw.stripTrailingZeroes`|
 
-When set to `false`, DataWeave restores the behavior of preserving trailing zeroes for some formats (such as DataWeave, JSON, and YAML) present in 2.4.0.
-Starting with 2.5.0, trailing zeroes are removed by default.
+When set to false restores the behavior of preserving trailing zeroes for some formats (e.g.: dw, json, yaml) present in 2.4.0
+Since 2.5.0 trailing zeroes are removed by default.
 .DataWeave script:
 [source,xml,linenums]
 ----
@@ -241,10 +265,10 @@ output application/json
 
 * Type: `Boolean`
 
-* Default:
-  ** `false` for language levels: 
+* Default: `
+  false for language levels: 
 
-  ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+  true for language levels: 2.5, 2.6, 2.7, 2.8, 2.9`
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -253,7 +277,7 @@ Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 |`com.mulesoft.dw.telemetry.bufferSize`|
 Determines the size in bytes of the telemetry event buffer.
 
-* Type: `Number (in bytes)`
+* Type: `Integer`
 * Default: `1048576`
 
 
@@ -267,7 +291,7 @@ Enables Dataweave telemetry service.
 
 //com.mulesoft.dw.telemetry.memory//
 |`com.mulesoft.dw.telemetry.memory`|
-When set to `true`, the telemetry service collects memory usage statistics.
+If set, then the telemetry service will collect memory usage statistics
 
 * Type: `Boolean`
 * Default: `false`
@@ -275,7 +299,7 @@ When set to `true`, the telemetry service collects memory usage statistics.
 
 //com.mulesoft.dw.telemetry.sync//
 |`com.mulesoft.dw.telemetry.sync`|
-When set to `true`, telemetry events are published synchronously.
+If set, then telemetry events are published synchronously.
 
 * Type: `Boolean`
 * Default: `false`
@@ -292,7 +316,7 @@ When set to `true`, tracks the stack trace from which the {CursorProvider#close(
 //com.mulesoft.dw.valueSelector.selectsAlwaysFirst//
 |`com.mulesoft.dw.valueSelector.selectsAlwaysFirst`|
 
-When set to `true`, returns the first occurrence of an element (even if the element appears more than once). Enabling this behavior degrades performance.
+When set to set to `true`, returns the first occurrence of an element (even if the element appears more than once). Enabling this behavior degrades performance.
 
 The following example illustrates the behavior that is controlled by this property. (Assume that the DataWeave script acts on the XML input.)
 
@@ -351,14 +375,17 @@ output application/json
 
 * Type: `Boolean`
 
-* Default: `false`
+* Default: `
+  false for language levels: 2.3, 2.4
+
+  false for language levels: 2.5`
 
 Available for language levels: 2.3, 2.4, 2.5
 
 
 //com.mulesoft.dw.workingdirectory.base//
 |`com.mulesoft.dw.workingdirectory.base`|
-Specifies the base directory in which temporary files are written.
+Specifies the base directory in which temporary files will be written
 
 * Type: `String`
 * Default: `java.io.tmpdir (system property value)`
@@ -374,9 +401,9 @@ File deletion occurs synchronously when this property is set to `true`.
 
 //com.mulesoft.dw.workingdirectory.max_output_buffer_size//
 |`com.mulesoft.dw.workingdirectory.max_output_buffer_size`|
-Specifies the maximum size of a file written in bytes.
+Specifies the maximum size of a file to be written in bytes
 
-* Type: `Number (in bytes)`
+* Type: `Long`
 * Default: `-1`
 
 
@@ -399,14 +426,14 @@ Controls whether DTD handling is enabled or disabled. When this property is set 
 //com.mulesoft.dw.xml_reader.honourMixedContentStructure//
 |`com.mulesoft.dw.xml_reader.honourMixedContentStructure`|
 
-When set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
+When this property is set to `true`, DataWeave retains a mixed-content structure instead of grouping text with mixed content into a single text field.
 
 * Type: `Boolean`
 
-* Default:
-  ** `false` for language levels: 2.4
+* Default: `
+  false for language levels: 2.4
 
-  ** `true` for language levels: 2.5
+  true for language levels: 2.5`
 
 Available for language levels: 2.4, 2.5
 
@@ -414,14 +441,14 @@ Available for language levels: 2.4, 2.5
 //com.mulesoft.dw.xml_writer.declareXmlNamespace//
 |`com.mulesoft.dw.xml_writer.declareXmlNamespace`|
 
-When set to `false`, DataWeave doesn’t declare the `xml` implicit namespace.
+When this property is set to `false`, DataWeave does not declare the `xml` implicit namespace.
 
 * Type: `Boolean`
 
-* Default:
-  ** `true` for language levels: 2.4, 2.5
+* Default: `
+  true for language levels: 2.4, 2.5
 
-  ** `false` for language levels: 2.6
+  false for language levels: 2.6`
 
 Available for language levels: 2.4, 2.5, 2.6
 
@@ -429,11 +456,14 @@ Available for language levels: 2.4, 2.5, 2.6
 //mule.dw.java_module_loader_deterministic_functions_ordering//
 |`mule.dw.java_module_loader_deterministic_functions_ordering`|
 
-When set to `true`, the JavaModuleLoader loads the methods for Java Classes in deterministic order. DataWeave considers the method name, the parameters count, and finally, the parameter type name.
+When set to true the JavaModuleLoader loads the methods for Java Classes in deterministic order. DataWeave considers the method name, the parameters count, and finally, the parameter type name.
 
 * Type: `Boolean`
 
-* Default: `true`
+* Default: `
+  false for language levels: 
+
+  true for language levels: 2.5, 2.6`
 
 Available for language levels: 2.5, 2.6
 
