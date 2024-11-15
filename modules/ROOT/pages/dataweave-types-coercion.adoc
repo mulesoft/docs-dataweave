@@ -240,7 +240,7 @@ output application/json
 ----
 
 [NOTE]
-To maintain consistency across all formats, starting with DataWeave 2.5, writing number values directly doesn't preserve formatting and strips trailing zeroes. Format metadata is only used to parse the provided string into the correct number representation. To retain this behavior, you can re-enable it by using the `stripTrailingZeroes` property. See xref:dataweave-system-properties.adoc[supported data formats].
+To maintain consistency across all formats, starting with DataWeave 2.5, writing number values directly doesn't preserve formatting and strips trailing zeroes. Format metadata is only used to parse the provided string into the correct number representation. To retain this behavior, you can re-enable it by using the `stripTrailingZeroes` property. See xref:dataweave-system-properties.adoc[].
 
 The following example uses the `locale` property to format number and date values. First, you coerce a number value into `String` type to the specified output format that uses the Java DecimalFormat pattern (##) and also the `locale` property `en` (English) or `es` (Spanish). The `locale: "en"` property, formats the output number decimal representation using a `.`, while the `locale: "es"` property, formats the output using a `,`. +
 Then, you coerce a date value into `Date` type and then to `String` type with the output format `dd-MMM-yy` and the `locale` property `en` (English), or `es` (Spanish). The `locale: "en"` property, formats the month `MMM` in English, while the `locale: "es"` property formats the month in Spanish.
