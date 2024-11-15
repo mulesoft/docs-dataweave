@@ -217,7 +217,7 @@ output application/json
 "08/30/2020"
 ----
 
-The following example converts a number to a string with decimal representation.
+This example converts a number to a string with decimal representation:
 
 .DataWeave script:
 [source,dataweave,linenums]
