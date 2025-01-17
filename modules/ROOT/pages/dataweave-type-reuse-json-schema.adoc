@@ -379,8 +379,9 @@ Using subschema keywords in JSON schema produces complex types based on the prov
 | `anyOf`| `Union`
 | `oneOf`| `Union`
 |===
-====
+
 The following example outputs a DataWeave type:
+
 .JSON schema:
 [source,JSON]
 ----
@@ -391,6 +392,7 @@ The following example outputs a DataWeave type:
   ]
 }
 ----
+
 .Output:
 [source,dataweave,linenums]
 ----
