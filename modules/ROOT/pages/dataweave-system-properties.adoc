@@ -171,18 +171,18 @@ Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 
 "When set to `true` the JavaModuleLoader honour the public interface definition of the given bean instance to access properties via reflection.
-The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17+ and the language version is bigger than 2.6.
+The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17+ and the language version is bigger than 2.10.
 If it is set to `false`, the JavaModuleLoader uses the specific bean's class definition to access properties via reflection which could ends on accessibility issues.
 
 
 * Type: `Boolean`
 
 * Default: `
-  false for language levels: 2.5
+  false for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
-  true for language levels: 2.6, 2.7, 2.8, 2.9`
+  true for language levels: 2.10, 2.11`
 
-Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
 
 //com.mulesoft.dw.java.honour_bean_definition_accessor//
