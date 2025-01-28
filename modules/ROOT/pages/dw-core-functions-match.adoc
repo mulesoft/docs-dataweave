@@ -30,7 +30,7 @@ statements].
 In this example, the regex matches the input email address and contains two
 capture groups within parentheses (located before and after the `@`). The
 result is an array of elements: The first matching the entire regex, the
-second matching the initial capture group (`[a-z]*`) in the the regex, the
+second matching the initial capture group (`[a-z]*`) in the regex, the
 third matching the last capture group (`[a-z]*`).
 
 ==== Source
