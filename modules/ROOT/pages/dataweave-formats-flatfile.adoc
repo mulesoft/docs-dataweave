@@ -79,7 +79,7 @@ Valid values are `true` or `false`.
 |`schemaPath` (Required) |`String`|`null`|Path to the schema definition. Specifies the location in your local disk of the schema file that parses your input.
 |`segmentIdent`  |`String`|`null`|Segment identifier in the schema for fixed-width or COBOL copybook schemas. Required when parsing a single segment or record definition if the schema includes multiple segment definitions.
 |`structureIdent`  |`String`|`null`|Structure identifier in the schema for flat file schemas. Required when parsing a structure definition if the schema includes multiple structure definitions.
-|`substituteCharacterAsMissingValue`  |`Boolean`|`false`|If set to `true` and if the `missingValues` property is set to `none`, with `useMissCharAsDefaultForFill` is set to `true`, the flat file parser handles the `0x1A` (SUB) character as the missing value. +
+|`substituteCharacterAsMissingValue`  |`Boolean`|`false`|If set to `true` and the `missingValues` property is set to `none`, with `useMissCharAsDefaultForFill` set to `true`, the flat file parser handles the `0x1A` (SUB) character as the missing value. +
 Otherwise, the flat file parser doesn't handle the `0x1A` character as the missing value.
 
 Valid values are `true` or `false`.
