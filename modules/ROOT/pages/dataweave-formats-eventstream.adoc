@@ -14,7 +14,7 @@ The output type is `Array<{_:String}>`, where each key represents a field in the
 [[examples]]
 == Examples
 
-The following examples show uses of the Event Stream format.
+These examples show uses of the Event Stream format.
 
 * <<example1>>
 * <<example2>>
