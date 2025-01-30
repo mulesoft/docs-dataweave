@@ -26,7 +26,7 @@ This example shows how DataWeave represents a simple server event input.
 
 ==== Input
 
-The following stream contains four blocks. The first block has only a comment, and fires no events. The second block has two fields with names `data` and `id` respectively; an event is fired with the data `first event` and sets the last event ID to `1`. The third block fires an event with the data `second event`; it also has an `id` field with no value, which resets the last event ID to an empty string. The fourth block contains only a `data` field with the value `third event` which fires an event. 
+This stream contains four blocks. The first block has one comment, and fires no events. The second block has two fields with names `data` and `id` respectively; an event is fired with the data `first event` and sets the last event ID to `1`. The third block fires an event with the data `second event`; it also has an `id` field with no value, which resets the last event ID to an empty string. The fourth block contains a `data` field with the value `third event`, which fires an event. 
 
 [source,event-stream,linenums]
 ----
