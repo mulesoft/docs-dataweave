@@ -192,9 +192,9 @@ When set to `true`, the JavaModuleLoader honors the bean definition by using the
 * Default:
   ** `false` for language levels: 2.8
 
-  ** `true` for language levels: 2.9, 2.10, 2.11, 2.12, 2.13, 2.14, 2.15
+  ** `true` for language levels: 2.9
 
-Available for language levels: 2.8, 2.9, 2.10, 2.11, 2.12, 2.13, 2.14, 2.15
+Available for language levels: 2.8, 2.9
 
 
 //com.mulesoft.dw.java.stacktrace//
