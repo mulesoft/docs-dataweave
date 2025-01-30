@@ -8,7 +8,8 @@ endif::[]
 [[capitalize1]]
 == capitalize&#40;text: String&#41;: String
 
-Capitalizes the first letter of each word in a string. 
+Capitalizes the first letter of each word in a string.
+
 
 The function treats every non-alphabetic character as a separator and replaces underscores with spaces. For example, `capitalize("a*s_b’s")` results in `"A*S B’S"`.
 
@@ -59,3 +60,4 @@ output application/json
 == capitalize&#40;text: Null&#41;: Null
 
 Helper function that enables `capitalize` to work with a `null` value.
+

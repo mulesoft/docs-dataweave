@@ -12,6 +12,7 @@
   *** xref:dataweave-formats-copybook.adoc[COBOL Copybook Format]
   *** xref:dataweave-formats-csv.adoc[CSV Format]
   *** xref:dataweave-formats-dw.adoc[DataWeave Format (dw)]
+  *** xref:dataweave-formats-eventstream.adoc[Event Stream Format]
   *** xref:dataweave-formats-excel.adoc[Excel Format (XLSX)]
   *** xref:dataweave-formats-fixedwidth.adoc[Fixed Width Format]
   *** xref:dataweave-formats-flatfile.adoc[Flat File Format]

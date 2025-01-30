@@ -35,7 +35,7 @@ import failIf from dw::Runtime
 var result = {}
 output application/json
 ---
-{ "result" : failIf(result, isEmpty) }
+{ "result" : "SUCCESS" failIf (isEmpty(result)) }
 ----
 
 ==== Output
@@ -71,3 +71,4 @@ output application/json
   }
 }
 ----
+
