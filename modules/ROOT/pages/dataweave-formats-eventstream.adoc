@@ -128,7 +128,7 @@ The JSON output is an `Array` of the valid `Object` from the server event input.
 [[properties]]
 == Configuration Properties
 
-DataWeave supports the following configuration properties for this format.
+DataWeave supports these configuration properties for this format.
 
 
 [[reader_properties]]
