@@ -177,9 +177,8 @@ If set to `false`, the JavaModuleLoader uses the specific bean's class definitio
 * Default:
   ** `false` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
-  ** `true` for language levels: 2.10, 2.11
 
-Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
+Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 
 //com.mulesoft.dw.java.honour_bean_definition_accessor//
