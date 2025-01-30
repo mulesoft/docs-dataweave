@@ -50,7 +50,8 @@ output application/json
   "a": "Customer",
   "b": "Customer First Name",
   "c": "Customer Name",
-  "d": "Customer Name"
+  "d": "Customer Name",
+  "e": "A*S B’S"
 }
 ----
 
