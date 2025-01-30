@@ -41,8 +41,6 @@ component, using the `target` attribute to put the result of the flow in a
 `var` and then referencing that `var` from within the DataWeave script.
 ====
 
-_This function is *Deprecated*. Use https://docs.mulesoft.com/dataweave/latest/dataweave-functions[], instead._
-
 _This function is *Deprecated*. Use https://docs.mulesoft.com/dataweave/latest/dataweave-functions[DataWeave functions], instead._
 
 === Parameters
