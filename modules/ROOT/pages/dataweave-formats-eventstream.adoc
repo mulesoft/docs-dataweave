@@ -1,0 +1,166 @@
+= Event Stream Format
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: format, eventstream, text/event-stream, text/event-stream
+
+MIME type: `text/event-stream`
+
+ID: `eventstream`
+
+DataWeave represents the Event Stream as an `Array` of `Object`, where each value is a `String`.
+The output type is `Array<{_:String}>`, where each key represents a field in the event.
+
+[[examples]]
+== Examples
+
+These examples show uses of the Event Stream format.
+
+* <<example1>>
+* <<example2>>
+
+[[example1]]
+=== Example: Simple Server Event Input
+
+This example shows how DataWeave represents a simple server event input.
+
+==== Input
+
+This stream contains four blocks. The first block has one comment, and fires no events. The second block has two fields with names `data` and `id` respectively; an event is fired with the data `first event` and sets the last event ID to `1`. The third block fires an event with the data `second event`; it also has an `id` field with no value, which resets the last event ID to an empty string. The fourth block contains a `data` field with the value `third event`, which fires an event. 
+
+[source,event-stream,linenums]
+----
+: test stream
+
+data: first event
+id: 1
+
+data:second event
+id
+
+data:  third event
+
+----
+
+==== Source
+
+The DataWeave script transforms this input into the given output.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+output application/json
+---
+payload
+----
+
+==== Output
+
+The JSON format outputs the 3 events.
+
+[source,json,linenums]
+----
+[
+  {
+    "data": "first event",
+    "id": "1"
+  },
+  {
+    "data": "second event",
+    "id": ""
+  },
+  {
+    "data": "third event"
+  }
+]
+----
+
+[[example2]]
+=== Example: Ignoring Spaces After the Colon
+
+This example shows that spaces after the colon are ignored if present.
+
+==== Input
+
+.myInput.sse:
+[source,event-stream,linenums]
+----
+data:test
+
+data: test
+
+
+----
+
+==== Source
+
+This process transforms the input into JSON.
+
+[source,dataweave,linenums]
+----
+%dw 2.0
+
+output application/json
+---
+payload
+----
+
+==== Output
+
+The JSON output is an `Array` of the valid `Object` from the server event input.
+
+[source,weave,linenums]
+----
+[
+  {
+    "data": "test"
+  },
+  {
+    "data": "test"
+  }
+]
+----
+
+
+// CONFIG PROPS GET APPENDED BELOW /////////////////////////////////
+
+
+[[properties]]
+== Configuration Properties
+
+DataWeave supports these configuration properties for this format.
+
+
+[[reader_properties]]
+=== Reader Properties
+
+This format has no reader properties.
+
+ 
+[[writer_properties]]
+=== Writer Properties
+
+This format accepts properties that provide instructions for writing output data.
+
+[cols="1,1,1,3a", options="header"]
+|===
+|Parameter |Type |Default |Description
+|`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
+
+|`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
+
+
+Valid values are `true` or `false`.
+|===
+
+
+[[mime_types]]
+== Supported MIME Types
+
+This format supports the following MIME types.
+
+[cols="1", options="header"]
+|===
+| MIME Type
+|`text/event-stream`
+|===
