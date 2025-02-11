@@ -84,7 +84,7 @@ The following example outputs the value `true` because the object contains the r
 [source,dataweave,linenums]
 ----
 %dw 2.0
-import * from jsonschema!jsonschema!example::schema::Person
+import * from jsonschema!example::schema::Person
 ---
 {
  firstName: "John",
@@ -103,7 +103,7 @@ The following example outputs the value `false` because the object doesn't conta
 [source,dataweave,linenums]
 ----
 %dw 2.0
-import * from jsonschema!jsonschema!example::schema::Person
+import * from jsonschema!example::schema::Person
 ---
 {
  firstName: "John",
