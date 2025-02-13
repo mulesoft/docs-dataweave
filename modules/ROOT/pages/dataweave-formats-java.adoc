@@ -83,6 +83,17 @@ The Java writer uses the metadata property to discover the Java class to which t
 The Java format supports the `Enum` custom type. To put a Java `enum` value into a `java.util.Map`, the DataWeave Java module defines a custom type called `Enum`.
 This custom type enables you to handle a given string as the name of a specified `enum` type. You must use the `class` metadata property when specifying the Java class name of the enum, for example: `{gender: "Female" as Enum {class: "org.mycompany.Gender"}}`
 
+[[working-with-input-stream]]
+== Handling `java.io.InputStream` Instances
+
+Using `java.io.InputStream` instances in DataWeave, whether running DataWeave functions, calling Java methods from DataWeave code, or writing them to an output, requires understanding how DataWeave manages `java.io.InputStream` instances.
+
+The Java format makes a deep copy of the `java.io.InputStream` instance. As a result, DataWeave creates a new `java.io.InputStream` instance that can be reused later in your script while retaining the content of the original stream.
+
+However, if the original `java.io.InputStream` doesn't support repeatable streams, it may get consumed and become unusable.
+
+To avoid unexpected behavior, always check whether your `java.io.InputStream` is repeatable before processing it multiple times.
+
 [[format_examples]]
 == Examples
 
