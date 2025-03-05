@@ -51,7 +51,7 @@ output application/json
 === Example
 
 This example uses several regular expressions to split input strings. The
-first uses `\/^*.b./\` to split the string by `-b-`. The second uses `/\s/`
+first uses `/.b./` to split the string by `-b-`. The second uses `/\s/`
 to split by a space. The third example returns the original input string in
 an array (`[ "no match"]`) because the regex `/^s/` (for matching the first
 character if it is `s`) does not match the first character in the input
@@ -68,11 +68,11 @@ letters in the array. Notice that the separator is omitted from the output.
 output application/json
 ---
 { "splitters" : {
-   "split1" : "a-b-c" splitBy(/^*.b./),
+   "split1" : "a-b-c" splitBy(/.b./),
    "split2" : "hello world" splitBy(/\s/),
    "split3" : "no match" splitBy(/^s/),
    "split4" : "no match" splitBy(/^n../),
-   "split5" : "a1b2c3d4A1B2C3D" splitBy(/^*[0-9A-Z]/)
+   "split5" : "a1b2c3d4A1B2C3D" splitBy(/[0-9A-Z]/)
   }
 }
 ----
@@ -234,4 +234,3 @@ output application/json
 Helper function that enables `splitBy` to work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
-
