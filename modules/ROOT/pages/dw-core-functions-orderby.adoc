@@ -60,7 +60,7 @@ output application/json
 === Example
 
 The `orderBy` function doesn't have an option to sort the result in a descending order. In these cases, invert the order of
-the resulting array using `-`:
+the resulting array using `[-1 to 0]`:
 
 ==== Source
 
@@ -69,7 +69,7 @@ the resulting array using `-`:
 %dw 2.0
 output application/json
 ---
-orderDescending: ([3,8,1] orderBy -$)
+orderDescending: ([3,8,1] orderBy $)[-1 to 0]
 ----
 
 ==== Output
@@ -249,4 +249,3 @@ output application/json
 == orderBy&#40;value: Null, criteria: &#40;item: Nothing, index: Nothing&#41; &#45;&#62; Null&#41;: Null
 
 Helper function that enables `orderBy` to work with a `null` value.
-
