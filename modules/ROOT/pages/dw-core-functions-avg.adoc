@@ -40,6 +40,5 @@ output application/json
 
 [source,JSON,linenums]
 ----
-{ "a": 500.5, "b": 2.0 }
+{ "a": 500.5, "b": 2 }
 ----
-
