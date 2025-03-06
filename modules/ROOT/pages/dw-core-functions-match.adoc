@@ -40,7 +40,7 @@ third matching the last capture group (`[a-z]*`).
 %dw 2.0
 output application/json
 ---
-"me@mulesoft.com" match(/([a-z]*)@([a-z]*).com/)
+"me@mulesoft.com" match(/([a-z]*)@([a-z]*)\.com/)
 ----
 
 ==== Output
@@ -86,4 +86,3 @@ output application/json
 Helper function that enables `match` to work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
-
