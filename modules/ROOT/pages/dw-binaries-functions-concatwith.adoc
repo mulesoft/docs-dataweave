@@ -23,7 +23,7 @@ _Introduced in DataWeave version 2.5.0._
 
 === Example
 
-This example concats two binaries into one binary.
+This example concatenates two base-16 values into one binary value.
 
 ==== Source
 
@@ -54,4 +54,3 @@ Helper function that enables `concatWith` to work with a `null` value.
 == concatWith&#40;source: Null, with: Binary&#41;: Binary
 
 Helper function that enables `concatWith` to work with a `null` value.
-
