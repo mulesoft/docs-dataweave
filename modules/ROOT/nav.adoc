@@ -46,7 +46,6 @@
  ** xref:dataweave-cookbook-include-xml-namespaces.adoc[Include XML Namespaces]
  ** xref:dataweave-cookbook-reference-multiple-inputs.adoc[Reference Multiple Inputs]
  ** xref:dataweave-cookbook-merge-multiple-payloads.adoc[Merge Fields from Separate Objects]
- ** xref:dataweave-cookbook-use-constant-directives.adoc[Use Constant Directives]
  ** xref:dataweave-cookbook-parse-dates.adoc[Parse Dates]
  ** xref:dataweave-cookbook-add-and-subtract-time.adoc[Add and Subtracting Dates]
  ** xref:dataweave-cookbook-conditional-list-reduction-via-function.adoc[Conditionally Reduce a List Via a Function]
