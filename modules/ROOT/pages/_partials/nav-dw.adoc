@@ -276,6 +276,7 @@
 ** xref:dw-system.adoc[dw::System]
 *** xref:dw-system-functions-envvar.adoc[envVar]
 *** xref:dw-system-functions-envvars.adoc[envVars]
+** xref:dw-test-asserts.adoc[dw::test:Asserts]
 ** xref:dw-coercions.adoc[dw::util::Coercions]
 *** xref:dw-coercions-functions-toarray.adoc[toArray]
 *** xref:dw-coercions-functions-tobinary.adoc[toBinary]
