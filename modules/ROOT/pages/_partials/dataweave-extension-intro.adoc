@@ -1,0 +1,3 @@
+//tag::dataweaveExtensionIntro[]
+DataWeave Extension is 
+//end::dataweaveExtensionIntro[]
