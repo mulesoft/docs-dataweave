@@ -315,4 +315,4 @@ This folder also contains files required to run your test suite.
 
 * xref:dataweave-extension.adoc[]
 * xref:dataweave-testing-framework.adoc[Testing DataWeave Libraries and Modules]
-* xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave 2.0 Extension]
+* xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave Extension]

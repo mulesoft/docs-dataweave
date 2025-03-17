@@ -4,7 +4,7 @@ The DataWeave testing framework enables you to build automated unit and integrat
 
 Use snapshot testing for your integration tests by storing the expected outputs as a separate file rather than as a string literal inside the test code.
 
-You can create tests for your DataWeave mappings and modules either by using the Visual Studio Code (VS Code) plugin, see xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave 2.0 Extension] for instructions, or manually by modifying your project's `pom.xml` file.
+You can create tests for your DataWeave mappings and modules either by using the Visual Studio Code (VS Code) plugin, see xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave Extension] for instructions, or manually by modifying your project's `pom.xml` file.
 
 == Add the DataWeave Testing Framework to Your Project
 
@@ -158,4 +158,4 @@ The testing framework includes a set of matchers to use in your tests. See the x
 
 * xref:dataweave-extension.adoc[]
 * xref:dataweave-maven-plugin.adoc[Packaging and Deploying DataWeave Libraries]
-* xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave 2.0 Extension]
+* xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave Extension]

@@ -1,3 +1,5 @@
 //tag::dataweaveExtensionIntro[]
-DataWeave Extension is 
+DataWeave enables you to implement and test your custom DataWeave modules and mappings and package them into libraries that you can share and reuse through Anypoint Exchange.
+
+The xref:dataweave-extension-plugin.adoc[DataWeave extension to Visual Studio Code] enhances productivity when you are building DataWeave libraries. 
 //end::dataweaveExtensionIntro[]
