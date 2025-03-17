@@ -1,6 +1,6 @@
 = Testing DataWeave Libraries and Modules
 
-The DataWeave testing framework enables you to build automated unit and integration tests for your DataWeave libraries and mappings. You can run tests to evaluate `.dwl` files and compare them to the output produced by the system you are testing. The framework provides a full suite of integration and unit test capabilities with a built-in set of assertion functions, and it is completely integrated with Maven and Surefire for your continuous deployment environment.
+The DataWeave testing framework enables you to build automated unit and integration tests for your DataWeave libraries and mappings. You can run tests to evaluate `.dwl` files and compare them to the output produced by the system you're testing. The framework provides a full suite of integration and unit test capabilities with a built-in set of assertion functions, and it is completely integrated with Maven and Surefire for your continuous deployment environment.
 
 Use snapshot testing for your integration tests by storing the expected outputs as a separate file rather than as a string literal inside the test code.
 

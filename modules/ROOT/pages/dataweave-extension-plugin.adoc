@@ -107,7 +107,7 @@ This creates a new module `.dwl` file under the `src/main/dw` folder.
 
 == Preview a DataWeave Module
 
-For a better development experience, you can use the _preview_ view to develop your module's functions. The _preview_ view lets you get instant feedback on how a mapping file is working by previewing its output. Use this view to develop the module's functions by creating a DataWeave mapping inside the `src/test/dw` folder that imports your functions and calls them to check how they are currently working.
+For a better development experience, you can use the _preview_ view to develop your module's functions. The _preview_ view lets you get instant feedback on how a mapping file is working by previewing its output. Use this view to develop the module's functions by creating a DataWeave mapping inside the `src/test/dw` folder that imports your functions and calls them to check how they're currently working.
 
 To preview the module functionality, follow these steps:
 
@@ -115,7 +115,7 @@ To preview the module functionality, follow these steps:
 . Navigate to the `src/main/dw` folder.
 . Select your module `.dwl` file.
 . Click the *Create Integration Mapping* button located at the top of your module `.dwl` file. +
-This create a mapping file under the `src/test/dw` folder to test your module, which is not meant to be shared or reused. +
+This create a mapping file under the `src/test/dw` folder to test your module, which isn't meant to be shared or reused. +
 
 image::dataweave-extension-preview-1.png[Create Integration Mapping button above the .dwl file]
 [start=5]
@@ -130,7 +130,7 @@ image::dataweave-extension-preview-3.png[DataWeave: Enable AutoPreview option]
 
 == Test a DataWeave Module
 
-There are two ways to test your module:
+There're two ways to test your module:
 
 * By running a unit test
 * By creating a test mapping located in your `src/test/dw` folder to avoid exposing the test to consumers of your module
@@ -361,7 +361,7 @@ The following features help you to easily code in Visual Studio Code:
 * Refactors (local and cross files)
 * Quick fixes:
 ** Auto import when a function is present in a module
-** Create a function, variable, or type when one is not found
+** Create a function, variable, or type when one isn't found
 * Outline
 * Show parameters information
 * Hover information with documentation
@@ -387,7 +387,7 @@ image::dataweave-extension-isempty.png[Is Empty Code Inspection sample]
 
 == DataWeave Extension Troubleshooting Logs
 
-If an error occurs while you are working with the DataWeave Extension, check the logs output of the DataWeave Language Server that provide details of what can cause the issue:
+If an error occurs while you're working with the DataWeave Extension, check the logs output of the DataWeave Language Server that provide details of what can cause the issue:
 
 To check the logs, follow these steps:
 
