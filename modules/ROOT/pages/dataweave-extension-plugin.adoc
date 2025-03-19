@@ -19,7 +19,7 @@ To install the extension:
 
 . Open Visual Studio Code.
 . In the *EXTENSIONS* tab, type `dataweave` to search the extension in the marketplace.
-. Select *DataWeave 2.0* from the search results.
+. Select *Anypoint Code Builder - DataWeave Extension* from the search results.
 . Click *Install*.
 +
 image::dataweave-extension-plugin-install.png[DataWeave extension installation]
