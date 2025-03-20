@@ -2,11 +2,11 @@
 
 This module contains the set of core matchers to use in your tests.
 
-=== Example
+== Example
 
-The following example validates if a payload is of type `Object`.
+This example validates if a payload is of type `Object`.
 
-==== Source
+=== Source
 
 [source,DataWeave, linenums]
 ----
@@ -702,7 +702,7 @@ Validates that the value doesn't satisfy the given matcher.
 
 ===== Example
 
-This example shows how to assert that a value must not be equal to 2.
+This example shows how to assert that a value mustn't be equal to 2.
 
 ====== Source
 
@@ -723,7 +723,7 @@ Validates that a given value isn't of type `Null`.
 
 ===== Example
 
-This example shows how to validate that a value is not of type `Null`.
+This example shows how to validate that a value isn't of type `Null`.
 
 ====== Source
 
