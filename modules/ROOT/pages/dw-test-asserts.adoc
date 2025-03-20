@@ -2,11 +2,11 @@
 
 This module contains the set of core matchers to use in your tests.
 
-=== Example
+== Example
 
-The following example validates if a payload is of type `Object`.
+This example validates if a payload is of type `Object`.
 
-==== Source
+=== Source
 
 [source,DataWeave, linenums]
 ----
