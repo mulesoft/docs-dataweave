@@ -190,7 +190,7 @@ Generates the documentation in a Markdown format that is compliant with https://
 * `markdown` +
 Generates the documentation in Markdown format.
 * `asciidoc` +
-Generates the documenation in AsciiDoc format.
+Generates the documentation in AsciiDoc format.
 
 Valid values are `exchange_markdown`, `markdown`, or `asciidoc`.
 
