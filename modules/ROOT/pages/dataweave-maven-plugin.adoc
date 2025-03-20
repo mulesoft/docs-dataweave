@@ -190,7 +190,7 @@ Generates the documentation in a Markdown format that is compliant with https://
 * `markdown` +
 Generates the documentation in Markdown format.
 * `asciidoc` +
-Generates the documenation in AsciiDoc format.
+Generates the documentation in AsciiDoc format.
 
 Valid values are `exchange_markdown`, `markdown`, or `asciidoc`.
 
@@ -264,12 +264,12 @@ When designing your DataWeave library, use the basic components `src` and `pom.x
 
 |`src`
 |Folder
-|The source directory for your DataWeave library’s production source code and tests.
+|The source directory for your DataWeave library's production source code and tests.
 
 |`pom.xml`
 |Descriptor
 |The POM file of your DataWeave library.
-This file describes all of your library’s required dependencies.
+This file describes all of your library's required dependencies.
 |===
 
 == Source Directory Reference
@@ -315,4 +315,4 @@ This folder also contains files required to run your test suite.
 
 * xref:dataweave-extension.adoc[]
 * xref:dataweave-testing-framework.adoc[Testing DataWeave Libraries and Modules]
-* xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave 2.0 Extension]
+* xref:dataweave-extension-plugin.adoc[Installing and Using the DataWeave Extension]
