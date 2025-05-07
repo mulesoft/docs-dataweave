@@ -460,7 +460,7 @@ File deletion occurs synchronously when this property is set to `true`.
 |`com.mulesoft.dw.workingdirectory.max_output_buffer_size`|
 Specifies the maximum size of a file written in bytes
 
-* Type: `Long`
+* Type: `Number` (in bytes)
 * Default: `-1`
 
 
