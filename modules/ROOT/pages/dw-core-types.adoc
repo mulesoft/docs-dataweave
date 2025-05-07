@@ -111,6 +111,11 @@ Examples: `{ myKey : "a value" }`, `{ myKey : { a : 1, b : 2} }`,
 | A `Time` in the current `TimeZone`. For example: `&#124;22:10:18&#124;`
 
 
+| LogLevel
+| `type LogLevel = "Debug" &#124; "Info" &#124; "Warn" &#124; "Error"`
+| 
+
+
 | NaN
 | `type NaN = Null {NaN: true}`
 | `java.lang.Float` and `java.lang.Double` have special cases for `NaN` and `Infinit`.

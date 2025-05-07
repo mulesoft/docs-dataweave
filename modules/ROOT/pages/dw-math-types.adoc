@@ -1,0 +1,60 @@
+= Math Types (dw::util::Math)
+
+[%header, cols="1,2a,3a"]
+|===
+| Type | Definition | Description
+
+| OperationContext
+| `type OperationContext = {&#124; precision?: Number, roundingMode?: RoundingMode &#124;}`
+| 
+
+
+| RoundCeiling
+| `type RoundCeiling = "CEILING"`
+| Rounding mode to round towards positive infinity. If the number is positive, behaves as for ROUND_UP; if negative, behaves as for ROUND_DOWN.
+Note that this rounding mode never decreases the calculated value.
+
+
+| RoundDown
+| `type RoundDown = "DOWN"`
+| Rounding mode to round towards zero. Never increments the digit prior to a discarded fraction (i.e., truncates).
+
+
+| RoundFloor
+| `type RoundFloor = "FLOOR"`
+| Rounding mode to round towards negative infinity. If the number is positive, behave as for ROUND_DOWN; if negative, behave as for ROUND_UP.
+
+
+| RoundHalfDown
+| `type RoundHalfDown = "HALF_DOWN"`
+| Rounding mode to round towards "nearest neighbor" unless both neighbors are equidistant, in which case round down.
+Behaves as for ROUND_UP if the discarded fraction is > 0.5; otherwise, behaves as for ROUND_DOWN.
+
+
+| RoundHalfEven
+| `type RoundHalfEven = "HALF_EVEN"`
+| Rounding mode to round towards the "nearest neighbor" unless both neighbors are equidistant, in which case, round towards the even neighbor.
+Behaves as for ROUND_HALF_UP if the digit to the left of the discarded fraction is odd; behaves as for ROUND_HALF_DOWN if it's even.
+
+
+| RoundHalfUp
+| `type RoundHalfUp = "HALF_UP"`
+| Rounding mode to round towards "nearest neighbor" unless both neighbors are equidistant, in which case round up.
+Behaves as for ROUND_UP if the discarded fraction is ≥ 0.5; otherwise, behaves as for ROUND_DOWN.
+
+
+| RoundUnnecessary
+| `type RoundUnnecessary = "UNNECESSARY"`
+| Rounding mode to assert that the requested operation has an exact result, hence no rounding is necessary.
+
+
+| RoundUp
+| `type RoundUp = "UP"`
+| Rounding mode to round away from zero. Always increments the digit prior to a nonzero discarded fraction.
+
+
+| RoundingMode
+| `type RoundingMode = RoundUp &#124; RoundDown &#124; RoundCeiling &#124; RoundFloor &#124; RoundHalfUp &#124; RoundHalfDown &#124; RoundHalfEven &#124; RoundUnnecessary`
+| 
+
+|===

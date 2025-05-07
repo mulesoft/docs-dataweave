@@ -17,6 +17,15 @@ _Introduced in DataWeave version 2.4.0._
 | xref:dw-math-functions-asin.adoc[asin] | Returns an arc sine value that can range from `-pi/2` through `pi/2`.
 | xref:dw-math-functions-atan.adoc[atan] | Returns an arc tangent value that can range from `-pi/2` through `pi/2`.
 | xref:dw-math-functions-cos.adoc[cos] | Returns the trigonometric cosine of an angle from a given number of radians.
+| xref:dw-math-functions-decimaladd.adoc[decimalAdd] | Performs number addition with rounding specified by the operation context
+| xref:dw-math-functions-decimaldivide.adoc[decimalDivide] | Performs number division with rounding specified by the operation context. If precision is set to 0 (unlimited precision)
+and the result has an infinite decimal expansion it will error
+| xref:dw-math-functions-decimalmultiply.adoc[decimalMultiply] | Performs number multiplication with rounding specified by the operation context
+| xref:dw-math-functions-decimalpow.adoc[decimalPow] | Returns a number with value base^exponent with rounding specified by the operation context. Maximum value for exponent
+is 99999999.
+| xref:dw-math-functions-decimalround.adoc[decimalRound] | Returns the argument number with rounding specified by the operation context
+| xref:dw-math-functions-decimalsqrt.adoc[decimalSqrt] | Returns a number that approximates the square root of the argument with rounding specified by the operation context
+| xref:dw-math-functions-decimalsubtract.adoc[decimalSubtract] | Performs number subtraction with rounding specified by the operation context
 | xref:dw-math-functions-log10.adoc[log10] | Returns the logarithm base 10 of a number.
 | xref:dw-math-functions-logn.adoc[logn] | Returns the natural logarithm (base `e`) of a number.
 | xref:dw-math-functions-sin.adoc[sin] | Returns the trigonometric sine of an angle from a given number of radians.
@@ -29,5 +38,7 @@ equivalent number of radians.
 == Variables
 * xref:dw-math-variables.adoc[Math Variables]
 
+== Types
+* xref:dw-math-types.adoc[Math Types]
 
 

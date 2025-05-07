@@ -1,0 +1,13 @@
+= decimalPow
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[decimalpow1]]
+== decimalPow&#40;base: Number, exponent: Number, ctx: OperationContext = DECIMAL_128_CONTEXT&#41;: Number
+
+Returns a number with value base^exponent with rounding specified by the operation context. Maximum value for exponent
+is 99999999.
+
