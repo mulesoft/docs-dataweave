@@ -239,4 +239,16 @@ Determines the maximum size of compiled scripts that are being cached.
 
 * Type: `Number`
 * Default: `10000`
+
+//com.mulesoft.dw.xml_reader.honourXmlDeclarationEncoding//
+|`com.mulesoft.dw.xml_reader.honourXmlDeclarationEncoding`|
+
+When this property is set to `true`, DataWeave uses the encoding declared in the XML if present.
+
+* Type: `Boolean`
+* Default:
+  ** `false` for language levels: 2.4, 2.5
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+Available for language levels: 2.4, 2.5, 2.6, 2.7, 2.8, 2.9
+
 |===
