@@ -65,7 +65,7 @@ output application/dw
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.3, 2.4, 2.5
+  ** `false` for language levels: 2.3, 2.4, 2.5
 
 Available for language levels: 2.3, 2.4, 2.5
 
@@ -88,7 +88,7 @@ When set to `false`, the `default` operator catches the runtime exceptions and r
 * Type: `Boolean`
 
 * Default:
-  `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+  ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -155,9 +155,9 @@ When set to `true`, the JavaModuleLoader doesn't change the accessible flag for 
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.5
+  ** `false` for language levels: 2.5
 
-  `true` for language levels: 2.6, 2.7, 2.8, 2.9
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -174,7 +174,7 @@ If set to `false`, the JavaModuleLoader uses the specific bean's class definitio
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+  ** `false` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -187,9 +187,9 @@ When set to `true`, the JavaModuleLoader honors the bean definition by using the
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.8
+  ** `false` for language levels: 2.8
 
-  `true` for language levels: 2.9
+  ** `true` for language levels: 2.9
 
 Available for language levels: 2.8, 2.9
 
@@ -210,9 +210,9 @@ When set, `java.sql.Date` maps to the DataWeave `Date` type. If `false`, it maps
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.4
+  ** `false` for language levels: 2.4
 
-  `true` for language levels: 2.5
+  ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
 
@@ -227,7 +227,7 @@ When set to `true`, DataWeave returns `1` when calling `sizeOf()` function for a
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.6, 2.7, 2.8, 2.9
+  ** `false` for language levels: 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.6, 2.7, 2.8, 2.9
 
@@ -292,7 +292,7 @@ output application/json
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.9
+  ** `false` for language levels: 2.9
 
 Available for language levels: 2.9
 
@@ -327,7 +327,7 @@ output application/json
 * Type: `Boolean`
 
 * Default:
-  `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+  ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -435,7 +435,7 @@ output application/json
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.3, 2.4, 2.5
+  ** `false` for language levels: 2.3, 2.4, 2.5
 
 Available for language levels: 2.3, 2.4, 2.5
 
@@ -488,9 +488,9 @@ When this property is set to `true`, DataWeave retains a mixed-content structure
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.4
+  ** `false` for language levels: 2.4
 
-  `true` for language levels: 2.5
+  ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
 
@@ -503,9 +503,9 @@ When this property is set to `true`, DataWeave uses the encoding declared in the
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 2.4, 2.5
+  ** `false` for language levels: 2.4, 2.5
 
-  `true` for language levels: 2.6, 2.7, 2.8, 2.9
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.4, 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -518,9 +518,9 @@ When this property is set to `false`, DataWeave doesn't declare the `xml` implic
 * Type: `Boolean`
 
 * Default:
-  `true` for language levels: 2.4, 2.5
+  ** `true` for language levels: 2.4, 2.5
 
-  `false` for language levels: 2.6
+  ** `false` for language levels: 2.6
 
 Available for language levels: 2.4, 2.5, 2.6
 
@@ -533,9 +533,7 @@ When set to `true`, the JavaModuleLoader loads the methods for Java Classes in d
 * Type: `Boolean`
 
 * Default:
-  `false` for language levels: 
-
-  `true` for language levels: 2.5, 2.6
+  ** `true` for language levels: 2.5, 2.6
 
 Available for language levels: 2.5, 2.6
 
