@@ -195,6 +195,19 @@ When set, `java.sql.Date` maps to the DataWeave `Date` type. If `false`, it maps
 Available for language levels: 2.4, 2.5
 
 
+//com.mulesoft.dw.legacySizeOfNumber//
+|`com.mulesoft.dw.legacySizeOfNumber`|
+
+
+When set to `true`, DataWeave returns `1` when calling `sizeOf()` function for any `Number` value.
+
+
+* Type: `Boolean`
+* Default:
+  ** `false` for language levels: 2.6, 2.7, 2.8, 2.9
+Available for language levels: 2.6, 2.7, 2.8, 2.9
+
+
 //com.mulesoft.dw.max_memory_allocation//
 |`com.mulesoft.dw.max_memory_allocation`|
 Sets the size (in bytes) of each slot in the off-heap memory pool. DataWeave stores payloads that exceed this size in temporary files `dw-buffer-input-${count}.tmp` and `dw-buffer-output-${count}.tmp`.
@@ -424,6 +437,18 @@ When set to `true`, DataWeave retains a mixed-content structure instead of group
   ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
+
+
+//com.mulesoft.dw.xml_reader.honourXmlDeclarationEncoding//
+|`com.mulesoft.dw.xml_reader.honourXmlDeclarationEncoding`|
+
+When this property is set to `true`, DataWeave uses the encoding declared in the XML if present.
+
+* Type: `Boolean`
+* Default:
+  ** `false` for language levels: 2.4, 2.5
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+Available for language levels: 2.4, 2.5, 2.6, 2.7, 2.8, 2.9
 
 
 //com.mulesoft.dw.xml_writer.declareXmlNamespace//
