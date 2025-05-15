@@ -779,9 +779,9 @@ Constant that represents a successful match.
 === Matcher
 Data type that represents a matcher to perform assertions.
 
-===== Example
+==== Example
 
-====== Source
+===== Source
 
 [source, DataWeave,linenums]
 ----
@@ -808,9 +808,9 @@ fun beEqualToOne(): Matcher<Any> =
 === MatcherResult
 Data Type that represents the result of an assertion.
 
-===== Example
+==== Example
 
-====== Source
+===== Source
 
 [source, DataWeave,linenums]
 ----
