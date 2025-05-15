@@ -2,7 +2,8 @@
 
 This module contains the set of core matchers to use in your tests.
 
-===Example
+== Example
+
 
 This example validates if a payload is of type `Object`.
 
@@ -808,9 +809,9 @@ fun beEqualToOne(): Matcher<Any> =
 === MatcherResult
 Data Type that represents the result of an assertion.
 
-===== Example
+==== Example
 
-====== Source
+===== Source
 
 [source, DataWeave,linenums]
 ----
