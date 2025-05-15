@@ -41,7 +41,7 @@ During the reading phase, DataWeave parses the doctype declarations and stores t
 +
 See examples <<example12>>, <<example13>>, and <<example14>>.
 
-You can use the [https://docs.mulesoft.com/dataweave/latest/dataweave-selectors.adoc[metadata](https://docs.mulesoft.com/dataweave/latest/dataweave-selectors.adoc%5Bmetadata) selector] to access it.
+You can use the https://docs.mulesoft.com/dataweave/latest/dataweave-selectors[metadata selector] to access it.
 
 NOTE::
 DTDs are disabled by default even if their declarations are read or written. For details, see XML reader property `supportDtd` in <<reader_properties>>.
