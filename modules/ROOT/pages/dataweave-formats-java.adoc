@@ -283,7 +283,7 @@ Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions
 [[java17_examples]]
 == Examples of Java Support
 
-The following examples run using Java 17 and https://docs.mulesoft.com/dataweave/latest/dataweave-versioning-behavior.adoc[language level 2.6].
+The following examples run using Java 17 and https://docs.mulesoft.com/dataweave/2.6/dataweave-versioning-behavior[language level 2.6].
 
 * <<example4>>
 * <<example5>>
