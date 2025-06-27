@@ -161,7 +161,7 @@ Given this XML source data, you can set the unit of the stream to `<order-item/>
 </flow>
 ----
 
-Note that you need to set both `streaming=true` and the `collectionPath` value. If either  is missing, DataWeave wont stream the content.
+Note that you need to set both `streaming=true` and the `collectionPath` value. If either  is missing, DataWeave doesn't stream the content.
 The following DataWeave script streams the XML input using each `<order-items/>` element as the streamable unit.
 
 [source,DataWeave,linenums]
