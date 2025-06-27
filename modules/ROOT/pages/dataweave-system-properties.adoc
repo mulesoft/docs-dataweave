@@ -87,7 +87,8 @@ When set to `false`, the `default` operator catches the runtime exceptions and r
 
 * Type: `Boolean`
 
-* Default: `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+* Default:
+  ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -165,7 +166,7 @@ Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 |`com.mulesoft.dw.java.enabled_class_definition_lookup`|
 
 
-"When set to `true`, the JavaModuleLoader honors the public interface definition of the given bean instance to access properties via reflection.
+When set to `true`, the JavaModuleLoader honors the public interface definition of the given bean instance to access properties via reflection.
 The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17 or later and the language version is 2.10 or later.
 If set to `false`, the JavaModuleLoader uses the specific bean's class definition to access properties via reflection, which can cause accessibility issues.
 
@@ -175,14 +176,13 @@ If set to `false`, the JavaModuleLoader uses the specific bean's class definitio
 * Default:
   ** `false` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
-
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 
 //com.mulesoft.dw.java.honour_bean_definition_accessor//
 |`com.mulesoft.dw.java.honour_bean_definition_accessor`|
 
-When set to `true`, the JavaModuleLoader honors the bean definition by using the getter and setter methods to access properties via reflection at object value selectors. If set to `false`, the JavaModuleLoader uses the getter and setter methods to access existing properties or the property uses the field accessor as default. 
+When set to `true`, the JavaModuleLoader honors the bean definition by using the getter and setter methods to access properties via reflection at object value selectors. If set to `false`, the JavaModuleLoader uses the getter and setter methods to access existing properties or the property uses the field accessor as default.
 
 * Type: `Boolean`
 
@@ -215,6 +215,21 @@ When set, `java.sql.Date` maps to the DataWeave `Date` type. If `false`, it maps
   ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
+
+
+//com.mulesoft.dw.legacySizeOfNumber//
+|`com.mulesoft.dw.legacySizeOfNumber`|
+
+
+When set to `true`, DataWeave returns `1` when calling `sizeOf()` function for any `Number` value.
+
+
+* Type: `Boolean`
+
+* Default:
+  ** `false` for language levels: 2.6, 2.7, 2.8, 2.9
+
+Available for language levels: 2.6, 2.7, 2.8, 2.9
 
 
 //com.mulesoft.dw.max_memory_allocation//
@@ -311,7 +326,8 @@ output application/json
 
 * Type: `Boolean`
 
-* Default: `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+* Default:
+  ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -479,6 +495,21 @@ When this property is set to `true`, DataWeave retains a mixed-content structure
 Available for language levels: 2.4, 2.5
 
 
+//com.mulesoft.dw.xml_reader.honourXmlDeclarationEncoding//
+|`com.mulesoft.dw.xml_reader.honourXmlDeclarationEncoding`|
+
+When this property is set to `true`, DataWeave uses the encoding declared in the XML if present.
+
+* Type: `Boolean`
+
+* Default:
+  ** `false` for language levels: 2.4, 2.5
+
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+
+Available for language levels: 2.4, 2.5, 2.6, 2.7, 2.8, 2.9
+
+
 //com.mulesoft.dw.xml_writer.declareXmlNamespace//
 |`com.mulesoft.dw.xml_writer.declareXmlNamespace`|
 
@@ -502,8 +533,6 @@ When set to `true`, the JavaModuleLoader loads the methods for Java Classes in d
 * Type: `Boolean`
 
 * Default:
-  ** `false` for language levels: 
-
   ** `true` for language levels: 2.5, 2.6
 
 Available for language levels: 2.5, 2.6
