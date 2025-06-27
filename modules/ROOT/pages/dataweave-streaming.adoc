@@ -10,11 +10,11 @@ To stream successfully, it is important to understand the following:
 * The basic unit of the stream is specific to the data format. +
 The unit is a record in a CSV document, an element of an array in a JSON document, or a collection in an XML document.
 * Streaming accesses each unit of the stream sequentially. +
-Streaming does not support random access to a document.
+Streaming doesn't support random access to a document.
 
 == Enabling Streaming
 
-Streaming is not enabled by default. You can use two configuration properties to stream data in a supported data format:
+Streaming isn't enabled by default. You can use two configuration properties to stream data in a supported data format:
 
 * `streaming` property, for reading source data as a stream
 * `deferred` writer property, for passing an output stream directly to the next message processor in a flow
@@ -68,9 +68,9 @@ payload map (record) ->
     }
 ----
 
-Although streaming does not support random access to the entire document, a DataWeave script can access data randomly _within each record_ because each record is loaded into memory. For example, the expression `record.lastName ++ "," ++ record.name,` can access a `lastName` value before it accesses a `name` value even though the order of values is reversed in the input.
+Although streaming doesn't support random access to the entire document, a DataWeave script can access data randomly _within each record_ because each record is loaded into memory. For example, the expression `record.lastName ++ "," ++ record.name,` can access a `lastName` value before it accesses a `name` value even though the order of values is reversed in the input.
 
-However, streaming does not work in the following script. The script requires random access to the entire document to return the elements in a different order than they are given in the input.
+However, streaming doesn't work in the following script. The script requires random access to the entire document to return the elements in a different order than they are given in the input.
 ​
 [source,DataWeave,linenums]
 ----
@@ -82,7 +82,7 @@ However, streaming does not work in the following script. The script requires ra
 ​
 The unit of a JSON stream is each element in an array.
 
-Note that DataWeave 2.2.0 support for JSON streaming for Mule 4.2 was limited by the requirement that the root be an array. DataWeave support in Mule 4.3 includes streaming to arrays that are not at the root of the input.
+Note that DataWeave 2.2.0 support for JSON streaming for Mule 4.2 was limited by the requirement that the root be an array. DataWeave support in Mule 4.3 includes streaming to arrays that aren't at the root of the input.
 
 [[example_json]]
 [source,JSON,linenums]
@@ -99,7 +99,7 @@ Note that DataWeave 2.2.0 support for JSON streaming for Mule 4.2 was limited by
 }
 ----
 ​
-In this example, DataWeave can stream `payload.family` and perform random access within each element of that array. However, DataWeave cannot randomly access the container object. For example, it is not possible to stream `{ a: payload.age , b: payload.family}` because `age` follows `family`, and DataWeave cannot go backwards.
+In this example, DataWeave can stream `payload.family` and perform random access within each element of that array. However, DataWeave cannot randomly access the container object. For example, it isn't possible to stream `{ a: payload.age , b: payload.family}` because `age` follows `family`, and DataWeave cannot go backwards.
 ​
 [[stream_xml]]
 == Streaming XML
@@ -161,7 +161,7 @@ Given this XML source data, you can set the unit of the stream to `<order-item/>
 </flow>
 ----
 
-Note that you need to set both `streaming=true` and the `collectionPath` value. If either  is missing, DataWeave will not stream the content.
+Note that you need to set both `streaming=true` and the `collectionPath` value. If either  is missing, DataWeave won't stream the content.
 The following DataWeave script streams the XML input using each `<order-items/>` element as the streamable unit.
 
 [source,DataWeave,linenums]
@@ -282,7 +282,7 @@ The script successfully validates and returns the following output:
 
 If any of the criteria that the validator checks is false, the validation fails.
 
-Before proceeding, note that validation can fail in some cases when streaming works. If you write a script in a way that sequentially accesses the input variable in a given data source, streaming works, but that script might not work in all cases. For example, JSON does not place a restriction on the order of the keys in an object. If the keys in some JSON documents arrive in a different order than the script expects, streaming will fail in those cases. The annotation processor follows the rules of the format and cannot assume that the keys always arrive in the same order.
+Before proceeding, note that validation can fail in some cases when streaming works. If you write a script in a way that sequentially accesses the input variable in a given data source, streaming works, but that script might not work in all cases. For example, JSON doesn't place a restriction on the order of the keys in an object. If the keys in some JSON documents arrive in a different order than the script expects, streaming will fail in those cases. The annotation processor follows the rules of the format and cannot assume that the keys always arrive in the same order.
 
 ==== Error: Variable Is Referenced More Than Once
 
@@ -364,7 +364,7 @@ Reasons:
 After processing streamed data, you can stream the output directly to another message processor. To facilitate this behavior, use the `deferred` writer property in the output directive of the DataWeave script, for example, `output application/json deferred=true`.
 
 NOTE::
-Exceptions are not handled when you set `deferred = true`. For example, you can see this behavior in Studio when a flow throws an exception. If you are running an application in Studio debug mode and an exception occurs in a Transform Message component when `deferred = true`, the console logs the error, but the flow does not stop at the Tranform Message component.
+Exceptions aren't handled when you set `deferred = true`. For example, you can see this behavior in Studio when a flow throws an exception. If you are running an application in Studio debug mode and an exception occurs in a Transform Message component when `deferred = true`, the console logs the error, but the flow doesn't stop at the Transform Message component.
 
 Building on the example in <<stream_json, JSON Streaming>>, the following flow uses a DataWeave script to filter streamed input and then streams the output directly to a Write operation:
 
