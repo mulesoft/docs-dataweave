@@ -28,6 +28,6 @@ output application/json
 
 [source,JSON,linenums]
 ----
-{ "price": 65.02770292248383 }
+{ "price": 650.2770292248383 }
 ----
 
