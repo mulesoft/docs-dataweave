@@ -7,7 +7,7 @@ endif::[]
 
 For XML, DataWeave by default outputs every value within an opening and closing tag, even if the tag contains no value (for example, `<element2></element2>`).
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 To output empty tags as a self-closing XML element (for example, `<element2/>`), you can set the `inlineCloseOn="empty"` output directive in the DataWeave header.
 
