@@ -8,7 +8,7 @@ endif::[]
 DataWeave provides a number of xref:dataweave-selectors.adoc[selectors] for traversing the structure of input data and returning matching values. The following examples use a single-value DataWeave selector (`.`) to extract data from XML elements.
 
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 The XML markup language requires a single root element. In the following example, the selector on the root (`language`) is able to extract the child element because the child has no siblings.
 
