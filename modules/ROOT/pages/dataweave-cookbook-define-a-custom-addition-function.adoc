@@ -8,7 +8,7 @@ endif::[]
 This DataWeave example takes in a set of item prices and stock amounts and uses
 several functions to calculate subtotals, deduct discounts and add taxes.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 It makes use of the following:
 

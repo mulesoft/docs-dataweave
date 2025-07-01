@@ -7,7 +7,7 @@ endif::[]
 
 DataWeave enables you to pass attributes from within an XML tag input source to the target output XML. The DataWeave example shows how to pass the XML attributes in the `NameDetail` field of the input source payload to the `TargetName` field of the XML output.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 
 This example uses:

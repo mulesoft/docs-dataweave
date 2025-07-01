@@ -7,7 +7,7 @@ endif::[]
 
 The examples demonstrate common data extraction and transformation approaches.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 [cols="2,5a",options="header"]
 |===

@@ -11,11 +11,12 @@ include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
 
 A variable is assigned a value, which is either a constant (such as `var msg = "hello"`) or a lambda expression such as `() -> "hello"`.
 
+////
 [NOTE]
 --
 xref:1.2@dataweave::dataweave-language-introduction.adoc#variables[DataWeave 1.0 variables] are described in the DataWeave 1.2 documentation for Mule 3.
 --
-
+////
 == DataWeave Variable Assignment
 
 Here are some examples of DataWeave version 2 variable assignments:
