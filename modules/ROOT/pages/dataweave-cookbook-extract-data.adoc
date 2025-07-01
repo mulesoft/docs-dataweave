@@ -9,7 +9,7 @@ DataWeave can select data from DataWeave objects and arrays, variables that stor
 that data, and the output of DataWeave functions when that output is an array or
 object.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 More precisely, a DataWeave selector operates within a context, which can
 be a reference to the variable that stores the data, an object literal, an array
