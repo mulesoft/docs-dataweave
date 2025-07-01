@@ -10,7 +10,7 @@ DataWeave provides configuration properties for data formats, such as JSON (`app
 Refer to xref:dataweave-formats.adoc[DataWeave Formats] for more details on available reader and writer properties for various data formats.
 
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 == Use a Writer Property in an Output Directive
 

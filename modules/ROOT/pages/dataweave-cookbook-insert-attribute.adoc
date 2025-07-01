@@ -7,7 +7,7 @@ endif::[]
 
 This DataWeave example uses `@(key:value)` syntax (for example, `@(loc: "US")`) to inject attributes to XML tags. The example populates the `title` element with two attributes and each of the `author` elements with one attribute.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 It uses these functions:
 

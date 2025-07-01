@@ -9,7 +9,7 @@ This DataWeave example flattens the input to something simpler. For each element
 in the input, it conditionally includes a `contentTypes` field only in case it
 has any values. It then rearranges this content into a more readable shape.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 The examples use these functions:
 

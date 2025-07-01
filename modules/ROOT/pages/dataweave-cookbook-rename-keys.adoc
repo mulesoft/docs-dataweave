@@ -7,7 +7,7 @@ endif::[]
 
 This DataWeave example renames some keys in a JSON object, while retaining the names of all others in the output.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 The example uses these functions:
 

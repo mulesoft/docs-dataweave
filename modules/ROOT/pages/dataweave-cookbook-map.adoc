@@ -7,7 +7,7 @@ endif::[]
 
 This DataWeave example uses the DataWeave `map` function to iterate through an array of books and perform a series of tasks on each.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 The example uses these DataWeave functions:
 

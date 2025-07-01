@@ -11,7 +11,7 @@ are pluralized. When it's a number, they are set to camel case. In any other
 case they are capitalized. +
 
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 The example uses:
 

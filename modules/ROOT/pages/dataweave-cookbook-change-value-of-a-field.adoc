@@ -8,7 +8,7 @@ endif::[]
 The following DataWeave examples show how to use `update` and `mask` to change the values of some XML elements.
 
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 [[ex01]]
 == Example: Using Update to Change Values

@@ -7,7 +7,7 @@ endif::[]
 
 From a DataWeave statement, you can call Java methods from any Java class that's in your Mule project. Note that you can only call Static methods via DataWeave (methods that belong to a Java class, not methods that belong to a specific instance of a class).
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 == Call a Java Method
 

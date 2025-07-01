@@ -8,7 +8,7 @@ endif::[]
 The `flatMap` function calls `map` on an input and wraps the results
 in a call to `flatten`.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 The `flatMap` function is useful for refactoring uses of `flatten` on the results of a
 call to `map`. For example, review the following DataWeave script:
