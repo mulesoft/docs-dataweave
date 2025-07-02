@@ -7,7 +7,7 @@ endif::[]
 
 DataWeave is the primary data transformation language for use in Mule flows.
 //LINK TO DW 1.0 LANDING PAGE IN MULE 3.9 DOCS:
-include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
+//include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
 
 You can write standalone DataWeave scripts in Transform Message components, or you can write inline DataWeave expressions to transform data _in-place_ and dynamically set the value of various properties, such as configuration fields in an event processor or global configuration element. Inline DataWeave expressions are enclosed in `&#35;[ ]` code blocks. For example, you can use a DataWeave expression to set conditions in a Choice router or to set the value of a Set Payload or Set Variable component.
 
