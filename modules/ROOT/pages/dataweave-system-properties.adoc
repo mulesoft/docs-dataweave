@@ -1,6 +1,6 @@
 = DataWeave System Properties
 
-DataWeave supports several system properties. To use these properties in application development and deployments, see xref:mule-runtime:mule-app-properties-system.adoc[System Properties].
+DataWeave supports several system properties. To use these properties in application development and deployments, see xref:mule-runtime::mule-app-properties-system.adoc[System Properties].
 
 [%header%autowidth.spread,cols=",a"]
 |===
