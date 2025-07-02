@@ -6,7 +6,7 @@ endif::[]
 
 DataWeave supports several operators, including mathematical operators, equality operators, and operators such as prepend, append and update.
 //DW 1.0 OPERATORS IN MULE 3.9 DOCS
-include::partial$dataweave1-links.adoc[tag=dataweave1Operators]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Operators]
 
 
 == Mathematical Operators
