@@ -8,7 +8,7 @@ endif::[]
 In addition to using the built-in DataWeave function modules (such as xref:dw-core.adoc[dw::Core] and xref:dw-crypto.adoc[dw::Crypto]), you can also create and use custom modules and mapping files.
 The examples demonstrate common data extraction and transformation approaches.
 //LINK TO DW 1.0 LANDING PAGE IN MULE 3.9 DOCS:
-include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
+//include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
 
 You write modules and mapping files in a DataWeave Language (`.dwl`) file and import into your Mule app through DataWeave scripts in Mule components. Both modules and mapping files are useful when you need to reuse the same functionality or feature over and over again.
 
@@ -422,7 +422,7 @@ The following example documents the https://docs.mulesoft.com/dataweave/2.4/dw-c
  * This module contains core DataWeave functions for data transformations.
  * It is automatically imported into any DataWeave script. For documentation
  * on DataWeave _1.0_ functions, see
- * https://docs.mulesoft.com/dataweave/1.2/dataweave-operators[DataWeave Operators].
+ * https://docs.mulesoft.com/dataweave/latest/dataweave-operators[DataWeave Operators].
  */
 %dw 2.0
 ----

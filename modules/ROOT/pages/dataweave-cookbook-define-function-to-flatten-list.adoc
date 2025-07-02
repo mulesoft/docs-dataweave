@@ -8,7 +8,7 @@ endif::[]
 When presented with nested structures of data, you might need to reduce (or
 "flatten") the data in them to produce a simpler output.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 This DataWeave example
 flattens the data in the `interests` and `contenttypes` arrays with the function

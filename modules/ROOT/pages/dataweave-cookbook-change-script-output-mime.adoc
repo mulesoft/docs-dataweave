@@ -8,7 +8,7 @@ endif::[]
 The DataWeave examples show how to differentiate the output MIME type from the MIME type in which the output data is formatted. Such differentiation enables a Mule application to output a MIME type that clients can use to determine how to render the application's output data. An example is HTTP, which uses the MIME type to generate its `Content-Type` header.
 
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 The first example uses the "problem details" standard for APIs. The standard requires the
 `application/problem+json` content type in the response header and a JSON-formatted response body that contains specific keys.

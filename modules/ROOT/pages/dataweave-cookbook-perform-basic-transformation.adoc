@@ -7,7 +7,7 @@ endif::[]
 
 These simple DataWeave examples change the XML input to JSON output. Note that more complex transformations usually require the use of the `map` or `mapObject` function.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 The following DataWeave script maps the names (or keys) for the output fields to values of the input fields. The input fields are specified with selector expressions without any functions. The script also changes the order and names of some of the fields.
 

@@ -8,7 +8,7 @@ endif::[]
 Several DataWeave functions accept regular expressions as arguments, which you can use to return or check for matches. You can also construct regular expressions that incorporate DataWeave expressions that include functions and variables.
 
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 [[ex01]]
 == Return Matches from a String

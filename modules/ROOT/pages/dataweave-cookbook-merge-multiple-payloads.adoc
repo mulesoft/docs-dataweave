@@ -7,7 +7,7 @@ endif::[]
 
 The DataWeave examples merge fields from separate input arrays. The first (`firstInput`) is a DataWeave variable that lists price by book ID, and the second (`secondInput`) lists authors by book ID. Each book has a unique `bookId` key.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Example]
 
 The DataWeave scripts produce the same output. Both scripts use two `map` functions with a filter, and one of them also creates an alias for the `bookId`:
 
