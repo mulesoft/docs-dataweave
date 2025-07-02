@@ -7,7 +7,7 @@ endif::[]
 
 This DataWeave example sorts an array of candidates by the score they got in a test, then picks only the ones with the best score, as many as there are open positions to fill.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 This example uses the following:
 

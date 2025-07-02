@@ -7,7 +7,7 @@ endif::[]
 
 The following DataWeave examples use the `mapObject` function to iterate through the keys and values of objects.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 == First Example
 

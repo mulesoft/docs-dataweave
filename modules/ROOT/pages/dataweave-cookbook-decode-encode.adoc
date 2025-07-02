@@ -7,7 +7,7 @@ endif::[]
 
 The following DataWeave examples show how to convert a file stream into Base64 and to convert a Base64 string into a file stream. They use a PDF file as the input and output.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 [[ex01]]
 == Encode a PDF File to Base64
