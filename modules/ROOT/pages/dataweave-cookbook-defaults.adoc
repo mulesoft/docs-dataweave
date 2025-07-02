@@ -12,7 +12,7 @@ Use one of the following methods to set default values when a payload value is a
 * Using `else` when pattern matching
 
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 == Example of Using the Keyword default to Set a Default Value
 

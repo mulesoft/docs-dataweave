@@ -7,7 +7,7 @@ endif::[]
 
 This DataWeave example uses both the `map` and `mapObject` functions to iterate through the input and set all of the keys to upper case.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 The example uses these DataWeave functions:
 

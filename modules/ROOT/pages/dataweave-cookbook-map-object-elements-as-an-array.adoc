@@ -7,7 +7,7 @@ endif::[]
 
 This DataWeave example uses the DataWeave `map` function to iterate through the object elements that match the key `book`. The input also includes the key `magazine`, which is ignored.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 The example uses these DataWeave functions:
 

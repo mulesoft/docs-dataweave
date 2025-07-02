@@ -8,7 +8,7 @@ endif::[]
 This DataWeave example shows multiple addition and subtraction operations that
 deal with date and time types.
 //LINK TO DW 1.0 EXAMPLES:
-include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
+// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 The examples use:
 
