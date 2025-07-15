@@ -4,10 +4,9 @@ include::_attributes.adoc[]
 endif::[]
 
 
-
-
 [[withmaxsize1]]
 == withMaxSize&#40;text: String, maxLength: Number&#41;: String
+
 
 Checks that the string length is no larger than the specified `maxLength`.
 If the string's length is larger than the `maxLength`, the function cuts
