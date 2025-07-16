@@ -8,7 +8,7 @@ endif::[]
 [[withmaxsize1]]
 == withMaxSize&#40;text: String, maxLength: Number&#41;: String
 
-Checks that the string length isn't larger than the specified `maxLength`. If the string is longer, the function returns a substring that starts at the beginning of the string and is `maxLength` characters long.
+Checks that the string length isn't greater than the specified `maxLength`. If the string is longer, the function returns a substring that starts at the beginning of the string and is `maxLength` characters long.
 
 _Introduced in DataWeave version 2.3.0._
 
