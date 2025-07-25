@@ -193,7 +193,9 @@ Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 //com.mulesoft.dw.java.enabled_class_definition_lookup//
 |`com.mulesoft.dw.java.enabled_class_definition_lookup`|
 
-When set to `true`, the JavaModuleLoader honors the public interface definition of the given bean instance to access properties via reflection. The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17 or later and the language version is 2.10 or later. If set to `false`, the JavaModuleLoader uses the specific bean's class definition to access properties via reflection, which can cause accessibility issues.
+When set to `true`, the JavaModuleLoader honors the public interface definition of the given bean instance to access properties via reflection. 
+The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17 or later and the language version is 2.10 or later. 
+If set to `false`, the JavaModuleLoader uses the specific bean's class definition to access properties via reflection, which can cause accessibility issues.
 
 
 * Type: `Boolean`
