@@ -323,7 +323,7 @@ output application/json
 ----
 * If `com.mulesoft.dw.stableOrderBy` is set to `false`, the script returns the following output:
 `[1, "10", 5]`
-* If `com.mulesoft.dw.stableOrderBy` is set to `true`, the script throws an `InvalidComparisonException`.
+* If `com.mulesoft.dw.stableOrderBy` is set to `true`, the script throws `InvalidComparisonException`.
 
 
 * Type: `Boolean`
