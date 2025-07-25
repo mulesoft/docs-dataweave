@@ -314,7 +314,8 @@ Specifies the size of DataWeave scheduler thread pool.
 
 //com.mulesoft.dw.stableOrderBy//
 |`com.mulesoft.dw.stableOrderBy`|
-When set to `true`, DataWeave throws an `InvalidComparisonException` if the `orderBy` function attempts to compare values of different types. If set to `false`, coercions are used when comparing values of different types, which can cause that the resulting order isn't the expected one as in:
+When set to `true`, DataWeave throws an `InvalidComparisonException` if the `orderBy` function attempts to compare values of different types. If set to `false`, coercions are used when comparing values of different types, 
+which can cause that the resulting order isn't the expected one as in:
 .DataWeave script:
 [source,xml,linenums]
 ----
