@@ -251,4 +251,15 @@ When this property is set to `true`, DataWeave uses the encoding declared in the
   ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
 Available for language levels: 2.4, 2.5, 2.6, 2.7, 2.8, 2.9
 
+//com.mulesoft.dw.csv_writer.alwaysEscapeQuotesInCSV//
+|`com.mulesoft.dw.csv_writer.alwaysEscapeQuotesInCSV`|
+
+When set to `true`, DataWeave escapes quotes in CSV.
+
+* Type: `Boolean`
+* Default:
+  ** `false` for language levels: 2.4
+  ** `true` for language levels: 2.5
+Available for language levels: 2.4, 2.5
+
 |===
