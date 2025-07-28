@@ -239,4 +239,16 @@ Determines the maximum size of compiled scripts that are being cached.
 
 * Type: `Number`
 * Default: `10000`
+
+//com.mulesoft.dw.csv_writer.alwaysEscapeQuotesInCSV//
+|`com.mulesoft.dw.csv_writer.alwaysEscapeQuotesInCSV`|
+
+When set to `true`, DataWeave escapes quotes in CSV.
+
+* Type: `Boolean`
+* Default:
+  ** `false` for language levels: 2.4
+  ** `true` for language levels: 2.5
+Available for language levels: 2.4, 2.5
+
 |===
