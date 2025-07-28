@@ -520,7 +520,7 @@ Controls whether DTD handling is enabled or disabled. When this property is set 
 
 //com.mulesoft.dw.xml_reader.allowIndexedLatin1//
 |`com.mulesoft.dw.xml_reader.allowIndexedLatin1`|
-When set to `true`, DataWeave lets you use the indexed reader for Latin1(ISO-8859-1) encoding. Use this only for backward compatibility, as Latin1 isn't fully supported.
+When set to `true`, DataWeave lets you use the indexed reader for Latin1(ISO-8859-1) encoding. Use this for backward compatibility only, as Latin1 isn't fully supported.
 
 * Type: `Boolean`
 
