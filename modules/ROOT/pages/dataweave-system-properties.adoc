@@ -239,4 +239,49 @@ Determines the maximum size of compiled scripts that are being cached.
 
 * Type: `Number`
 * Default: `10000`
+
+
+//com.mulesoft.dw.csv_reader.indexed.retainStringValueInMemory//
+|`com.mulesoft.dw.csv_reader.indexed.retainStringValueInMemory`|
+
+When set to `false`, this property prevents DataWeave indexed readers for CSV from keeping string value references in memory. While this can reduce performance, it helps prevent out-of-memory errors.
+
+* Type: `Boolean`
+* Default:
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+Available for language levels: 2.6, 2.7, 2.8, 2.9
+
+
+//com.mulesoft.dw.csv_writer.alwaysEscapeQuotesInCSV//
+|`com.mulesoft.dw.csv_writer.alwaysEscapeQuotesInCSV`|
+
+When set to `true`, DataWeave escapes quotes in CSV.
+
+* Type: `Boolean`
+* Default:
+  ** `false` for language levels: 2.4
+  ** `true` for language levels: 2.5
+Available for language levels: 2.4, 2.5
+
+
+//com.mulesoft.dw.surrogateCharCodeSupport//
+|`com.mulesoft.dw.surrogateCharCodeSupport`|
+When set to `true`, the `fromCharCode` function supports surrogate characters and throws an exception if the code point isn't a valid Unicode character.
+
+* Type: `Boolean`
+* Default:
+  ** `false` for language levels: 2.6, 2.7, 2.8, 2.9
+Available for language levels: 2.6, 2.7, 2.8, 2.9
+
+
+//com.mulesoft.dw.xml_reader.allowIndexedLatin1//
+|`com.mulesoft.dw.xml_reader.allowIndexedLatin1`|
+When set to `true`, DataWeave lets you use the indexed reader for Latin1(ISO-8859-1) encoding. Use this for backward compatibility only, as Latin1 isn't fully supported.
+
+* Type: `Boolean`
+* Default:
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+Available for language levels: 2.6, 2.7, 2.8, 2.9
+
+
 |===
