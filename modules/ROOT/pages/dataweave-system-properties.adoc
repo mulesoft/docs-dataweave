@@ -221,19 +221,6 @@ When set to `true`, the JavaModuleLoader honors the bean definition by using the
 Available for language levels: 2.8, 2.9
 
 
-//com.mulesoft.dw.java.output_types_as_string//
-|`com.mulesoft.dw.java.output_types_as_string`|
-
-When set to `true`, DataWeave scripts with a Java output MIME type that return a type return the string representation of the type. If set to `false`, the scripts return a Java class constructed from the corresponding DataWeave type class.
-
-* Type: `Boolean`
-
-* Default:
-  ** `true` for language levels: 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9
-
-Available for language levels: 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9
-
-
 //com.mulesoft.dw.java.stacktrace//
 |`com.mulesoft.dw.java.stacktrace`|
 Specifies the depth of the Java stack trace.
