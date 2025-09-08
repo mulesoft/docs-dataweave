@@ -74,7 +74,7 @@ unzip([ [0,"a"], [1,"a","foo"], [2], [3,"a"] ])
 
 === Example
 
-This example unzips an array of arrays where each input sub-array contains more than two elements. It shows that `unzip` can produce more than two output sub-arrays when there are additional values at each index.
+This example unzips an array of arrays where each input subarray contains more than two elements. It shows that `unzip` can produce more than two output subarrays when there are additional values at each index.
 
 ==== Source
 
