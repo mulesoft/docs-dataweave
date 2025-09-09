@@ -8,7 +8,7 @@ endif::[]
 [[islowercase1]]
 == isLowerCase&#40;text: String&#41;: Boolean
 
-Checks if the `text` contains only lowercase characters.
+Checks if the `text` contains only lowercase Unicode characters.
 
 _Introduced in DataWeave version 2.2.0._
 
@@ -22,7 +22,7 @@ _Introduced in DataWeave version 2.2.0._
 
 === Example
 
-This example shows how `isLowerCase` behaves with different inputs and sizes.
+This example shows how `isLowerCase` behaves with different inputs, including Unicode characters outside the ASCII range.
 
 ==== Source
 
@@ -33,14 +33,16 @@ import isLowerCase from dw::core::Strings
 output application/json
 ---
 {
-  "a": isLowerCase(null),
-  "b": isLowerCase(""),
-  "c": isLowerCase("  "),
-  "d": isLowerCase("abc"),
-  "e": isLowerCase("aBC"),
-  "f": isLowerCase("a c"),
-  "g": isLowerCase("a1c"),
-  "h": isLowerCase("a/c")
+ "a": isLowerCase(null),
+ "b": isLowerCase(""),
+ "c": isLowerCase(" "),
+ "d": isLowerCase("abc"),
+ "e": isLowerCase("aBC"),
+ "f": isLowerCase("a c"),
+ "g": isLowerCase("a1c"),
+ "h": isLowerCase("a/c"),
+ "i": isLowerCase("mulesöft"), // ö is lowercase Unicode
+ "j": isLowerCase("mulesÖft") // Ö is uppercase Unicode
 }
 ----
 
@@ -49,14 +51,16 @@ output application/json
 [source,JSON,linenums]
 ----
 {
-  "a": false,
-  "b": false,
-  "c": false,
-  "d": true,
-  "e": false,
-  "f": false,
-  "g": false,
-  "h": false
+ "a": false,
+ "b": false,
+ "c": false,
+ "d": true,
+ "e": false,
+ "f": false,
+ "g": false,
+ "h": false,
+ "i": true,
+ "j": false
 }
 ----
 

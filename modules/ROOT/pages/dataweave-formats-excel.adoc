@@ -187,7 +187,7 @@ into `foo` and `bar`, respectively.
 
 The following image shows the Excel table output.
 
-image::dataweave-formats-exceltable.png[]
+image::dataweave-formats-exceltable.png["A table in an Excel format displaying IDs and names"]
 
 
 == Limitations

@@ -26,7 +26,8 @@ variables, and any error, but it only passes in the payload without any
 attributes or variables. Similarly, the called flow will only return
 its payload.
 
-Note that `lookup` function does not support calling subflows.
+[NOTE]
+The `lookup` function does not support calling subflows.
 
 [WARNING]
 ====
@@ -80,4 +81,3 @@ Mule::lookup('flow2', {test:'hello '})]]></ee:set-payload>
   <logger level="INFO" doc:name="Logger" message='#[payload]'/>
 </flow>
 ----
-

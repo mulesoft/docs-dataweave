@@ -15,7 +15,7 @@ The Mule app consists of:
 * A Set Variable component that sets the variable name as the Key and variable value as the Value in the JSON array
 * A Logger component that prints the variable results per each iteration
 
-image::dataweave-cookbook-pluck-examples.png[Mule app flow example in Studio canvas]
+image::dataweave-cookbook-pluck-examples.png["Mule app flow example in Studio canvas"]
 
 Application XML File (reformatted for readability):
 

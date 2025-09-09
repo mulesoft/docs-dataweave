@@ -29,7 +29,7 @@ This example shows how `isArrayType` behaves with different inputs.
 [source,DataWeave,linenums]
 ----
 %dw 2.0
-import * from dw::utils::Tree
+import * from dw::util::Tree
 output application/json
 ---
 {
@@ -51,4 +51,3 @@ output application/json
   "c": true
 }
 ----
-

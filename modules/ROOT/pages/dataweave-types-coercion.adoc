@@ -7,7 +7,7 @@ endif::[]
 
 In DataWeave, types can be coerced from one type to other using the `as` operator. Type coercion takes place at runtime.
 //LINK TO DW 1.0 LANDING PAGE IN MULE 3.9 DOCS:
-include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
+//include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
 
 Note that when you provide an operator with properties that do not match the expected types, DataWeave automatically attempts to coerce the provided property to the required type.
 
@@ -188,8 +188,8 @@ var s1= 20201228 // (uuuuMMdd),
 var s2= 1608 //(HHMM)
 ---
 (s1 ++ s2)
-as LocalDateTime {format:"uuuuMMddHHMM"}
-as String {format:"MM-dd-uuuu HH:MM:ss"}
+as LocalDateTime {format:"uuuuMMddHHmm"}
+as String {format:"MM-dd-uuuu HH:mm:ss"}
 ----
 
 .Output:
@@ -207,7 +207,7 @@ The following example also converts a string into a date format. First, the tran
 output application/json
 ---
 "8/30/2020 4:00:13 PM"
-    as LocalDateTime {format: "M/dd/uuuu H:MM:ss a"}
+    as LocalDateTime {format: "M/dd/uuuu h:mm:ss a"}
     as String {format: "MM/dd/uuuu"}
 ----
 

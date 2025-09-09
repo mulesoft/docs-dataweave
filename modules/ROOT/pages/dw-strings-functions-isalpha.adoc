@@ -8,8 +8,7 @@ endif::[]
 [[isalpha1]]
 == isAlpha&#40;text: String&#41;: Boolean
 
-Checks if the `text` contains only Unicode digits. A decimal point is not a Unicode digit and returns `false`.
-
+Checks if the `text` contains only Unicode digits. This excludes digits, punctuation, and other nonletter characters.
 
 Note that the method does not allow for a leading sign, either positive or negative.
 
