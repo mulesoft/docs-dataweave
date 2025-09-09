@@ -47,7 +47,7 @@ import * from dw::core::URL
 output application/json
 ---
 {
-    "encodeURI" : encodeURI("http://asd/ text to decode /text"),
+    "encodeURI" : encodeURI("http://asd/ text to decode /%/\"\\/text"),
     "not_encoded": encodeURI("http://:;,/?:@&=\$_-_.!~*'()")
 }
 ----
@@ -57,8 +57,8 @@ output application/json
 [source,JSON,linenums]
 ----
 {
-   "encodeURI": "http://asd/%20text%20to%20decode%20/%25/\"\'/text",
-   "not_encoded": "http://:;,/?:@&=$_-_.!~*'()"
+  "encodeURI": "http://asd/%20text%20to%20decode%20/%25/%22%5C/text",
+  "not_encoded": "http://:;,/?:@&=$_-_.!~*'()"
 }
 ----
 
