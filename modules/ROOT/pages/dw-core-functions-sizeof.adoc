@@ -151,7 +151,7 @@ output application/json
 [[sizeof3]]
 == sizeOf&#40;binary: Binary&#41;: Number
 
-Returns the number of elements in an array of binary values.
+Returns the size of a binary payload in bytes. Returns 0 if the payload is empty.
 
 === Parameters
 
@@ -163,7 +163,7 @@ Returns the number of elements in an array of binary values.
 
 === Example
 
-This example returns the size of an array of binary values.
+This example returns the number of bytes in the binary payload. Notice how multi-byte UTF-8 characters take up more than one byte.
 
 ==== Source
 
@@ -172,14 +172,26 @@ This example returns the size of an array of binary values.
 %dw 2.0
 output application/json
 ---
-sizeOf(["\u0000" as Binary, "\u0001" as Binary, "\u0002" as Binary])
+{
+
+BinarySizeOf: sizeOf("'my word'" as Binary) ++ " " ++ sizeOf("'my word'" as Binary),
+
+StringSizeOf: sizeOf("'my word'") ++ " " ++ sizeOf("'my word'")
+
+}
 ----
 
 ==== Output
 
 [source,JSON,linenums]
 ----
-3
+{
+
+"BinarySizeOf": "13 9",
+
+"StringSizeOf": "9 9"
+
+}
 ----
 
 
