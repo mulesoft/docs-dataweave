@@ -72,3 +72,27 @@ unzip([ [0,"a"], [1,"a","foo"], [2], [3,"a"] ])
 [0,1,2,3]
 ----
 
+=== Example
+
+This example unzips an array of arrays where each input subarray contains more than two elements. It shows that `unzip` can produce more than two output subarrays when there are additional values at each index.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+unzip([ [0,"a","W"], [1,"b","X"], [2,"c","Y"], [3,"d","Z"] ])
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+[
+ [0,1,2,3],
+ ["a","b","c","d"],
+ ["W","X","Y","Z"]
+]
+----
