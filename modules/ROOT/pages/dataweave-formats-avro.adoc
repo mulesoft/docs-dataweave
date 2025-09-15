@@ -151,3 +151,14 @@ This format supports the following MIME types.
 | MIME Type
 |`application/avro`
 |===
+
+[[supported_types]]
+== Supported Top-Level Schema Types
+
+DataWeave supports the following Avro types as the top-level element in the schema.
+
+[cols="1", options="header"]
+|===
+| Avro Types
+|`record`
+|===
