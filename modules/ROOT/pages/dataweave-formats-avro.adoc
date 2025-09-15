@@ -102,6 +102,25 @@ output application/avro schemaUrl="classpath://schema.json"
 }]
 ----
 
+[[supported_types]]
+== Supported Top-Level Schema Types
+
+DataWeave supports the following Avro types as the top-level element in the schema.
+
+[cols="1", options="header"]
+|===
+| Avro Types
+|`record`
+|`array`
+|`int`
+|`long`
+|`float`
+|`double`
+|`boolean`
+|`string`
+|`bytes`
+|`null`
+|===
 
 [[properties]]
 == Configuration Properties
