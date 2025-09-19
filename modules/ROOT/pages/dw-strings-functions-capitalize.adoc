@@ -38,7 +38,7 @@ output application/json
   "b" : capitalize("customer_first_name"),
   "c" : capitalize("customer NAME"),
   "d" : capitalize("customerName"),
-  "e" : capitalize("a*s_b’s") 
+  "e" : capitalize("a*s_b’s")
 }
 ----
 
@@ -60,4 +60,3 @@ output application/json
 == capitalize&#40;text: Null&#41;: Null
 
 Helper function that enables `capitalize` to work with a `null` value.
-

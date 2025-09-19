@@ -65,4 +65,3 @@ output application/json
 Helper function that enables `isAlpha` to work with a `null` value.
 
 _Introduced in DataWeave version 2.2.0._
-

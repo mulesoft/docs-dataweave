@@ -4,6 +4,10 @@
 |===
 | Variable | Definition | Description
 
+| DECIMAL_128_CONTEXT
+| `DECIMAL_128_CONTEXT: OperationContext`
+| A `MathContext` object with a precision of 34 digits, matching the IEEE 754-2019 decimal128 format, and a rounding mode of `HALF_EVEN`.
+
 | E
 | `E`
 | Variable `E` sets the value of mathematical constant `e`,
@@ -17,4 +21,9 @@ _Introduced in DataWeave version 2.4.0._
 of the circumference of a circle to its diameter.
 
 _Introduced in DataWeave version 2.4.0._
+
+| UNLIMITED_CONTEXT
+| `UNLIMITED_CONTEXT: OperationContext`
+| A `MathContext` object with settings configured for unlimited precision arithmetic.
+The values of the settings are: precision=0 roundingMode=HALF_UP
 |===
