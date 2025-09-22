@@ -102,6 +102,7 @@ output application/avro schemaUrl="classpath://schema.json"
 }]
 ----
 
+
 [[properties]]
 == Configuration Properties
 
