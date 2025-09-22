@@ -1,0 +1,118 @@
+= DataWeave Logging Configuration
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+The logging configuration feature provides granular control over DataWeave logging, which improves debugging and monitoring of data transformations.
+
+Starting with DataWeave 2.10, you can configure logging to control the verbosity of log messages using standard log levels: `Debug`, `Info`, `Warn`, and `Error`. You can filter log messages by severity and scope, which makes it easier to troubleshoot and monitor your DataWeave code.
+
+== Configuration Location
+
+Define the logging configuration in a DataWeave language file named `log-config.dwl`. Place this file in the classpath at the root level.
+
+Use the `DataWeaveScriptingEngine` API to customize the name, location, and format of the configuration file by either implementing the `LoggingConfigurationSourceProvider` interface or by using the helper class `DefaultLoggingConfigurationSourceProvider`.
+
+The DataWeave code in this example retrieves the logging configuration in JSON format from a custom classpath location.
+
+[source,java,linenums]
+----
+DataWeaveScriptingEngine engine = new DataWeaveScriptingEngine();
+engine.withLoggingConfigurationSourceProvider(
+  new DefaultLoggingConfigurationSourceProvider("classpath://org/acme/my-log-config.json")
+);
+----
+
+== Configuration Structure
+
+The `log-config.dwl` file contains an array of objects. Each object defines a logging rule with these properties:
+
+[%header%autowidth.spread,cols="a,a,a,a", options="header"]
+|===
+|Property |Description |Required for Scope |Possible Values
+
+|`scope`
+|Specifies the scope of the logging rule.
+|Always required
+|`Runtime` (Applies to all DataWeave executions), `Module` (Applies to all code within a specific module), `Function` (Applies to a specific function within a module)
+
+|`level`
+|Specifies the log level.
+|Always required
+|`Debug`, `Info`, `Warn`, `Error`
+
+|`module`
+|Specifies the name of the DataWeave module.
+|Optional, required for `Module` and `Function`
+|Any valid DataWeave module name
+
+|`function`
+|Specifies the name of the DataWeave function within the specified module.
+|Optional, required for `Function`
+|Any valid DataWeave function name
+|===
+
+== Example: Configuring Log Levels
+
+This configuration sets three logging rules. The first rule sets the default log level for the entire runtime to `Warn`, so only `Warn` and `Error` messages are logged unless a more specific rule overrides it. The second rule sets the log level for the module `MyModule` to `Info`, which overrides the runtime level and logs `Info`, `Warn`, and `Error` messages for all functions in `MyModule`. The third rule sets the log level for the function `test` in `MyModule` to `Debug`, which overrides both the module and runtime levels and logs all messages for this function.
+
+[source,json,linenums]
+----
+[
+  {
+    scope: "Runtime",
+    level: "Warn"
+  },
+  {
+    scope: "Module",
+    module: "MyModule",
+    level: "Info"
+  },
+  {
+    scope: "Function",
+    module: "MyModule",
+    function: "test",
+    level: "Debug"
+  }
+]
+----
+
+== DataWeave Logging Functions
+
+The DataWeave Core library provides these functions for logging messages:
+
+[%header%autowidth.spread,cols="a,a", options="header"]
+|===
+|Function |Description
+
+|`logWith<T>(level: LogLevel, prefix: String, value: T): T`
+|Base function that provides the most flexibility. It takes a log level, an optional prefix, and a value to log, and returns the value.
+
+|`logDebug<T>(prefix: String = "", value: T): T`
+|Logs a message with the `Debug` level.
+
+|`logInfo<T>(prefix: String = "", value: T): T`
+|Logs a message with the `Info` level.
+
+|`logWarn<T>(prefix: String = "", value: T): T`
+|Logs a message with the `Warn` level.
+
+|`logError<T>(prefix: String = "", value: T): T`
+|Logs a message with the `Error` level.
+
+|`log<T>(prefix: String = "", value: T): T`
+|Logs a message with the `Info` level (shorthand for `logInfo`).
+|===
+
+== Best Practices
+
+* Place the `log-config.dwl` file in the classpath for the configuration to take effect.
+* Log levels are hierarchical. `Error` is the highest level, followed by `Warn`, `Info`, and `Debug`.
+* More specific rules (for example, function-level rules) override less specific ones (for example, runtime-level rules).
+* Use the `prefix` parameter in log functions to add context to your log messages.
+
+This logging configuration feature provides granular control over DataWeave logging, which makes debugging and monitoring data transformations more efficient.
+
+== See Also
+
+* xref:dw-core.adoc[Core (dw::Core)]
