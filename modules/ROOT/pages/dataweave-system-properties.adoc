@@ -191,7 +191,7 @@ Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 //com.mulesoft.dw.java.enabled_class_definition_lookup//
 |`com.mulesoft.dw.java.enabled_class_definition_lookup`|
 
-"When set to `true`, the JavaModuleLoader honors the public interface definition of the given bean instance to access properties via reflection.
+When set to `true`, the JavaModuleLoader honors the public interface definition of the given bean instance to access properties via reflection.
 The default value evaluates the current JDK version used and the language level. The value is `true` when the used JDK is 17 or later and the language version is 2.10 or later.
 If set to `false`, the JavaModuleLoader uses the specific bean's class definition to access properties via reflection, which can cause accessibility issues.
 
@@ -208,7 +208,7 @@ Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9, 2.10
 //com.mulesoft.dw.java.honour_bean_definition_accessor//
 |`com.mulesoft.dw.java.honour_bean_definition_accessor`|
 
-When set to `true`, the JavaModuleLoader honors the bean definition by using the getter and setter methods to access properties via reflection at object value selectors. If it is set to `false`,  the JavaModuleLoader uses the getter and setter methods to access existing properties or the property uses the field accessor as default.
+When set to `true`, the JavaModuleLoader honors the bean definition by using the getter and setter methods to access properties via reflection at object value selectors. If set to `false`, the JavaModuleLoader uses the getter and setter methods to access existing properties or the property uses the field accessor as default.
 
 * Type: `Boolean`
 
@@ -311,7 +311,8 @@ Specifies the size of DataWeave scheduler thread pool.
 
 //com.mulesoft.dw.stableOrderBy//
 |`com.mulesoft.dw.stableOrderBy`|
-When set to `true`, DataWeave throws `InvalidComparisonException` if the orderBy function attempts to compare values of different types. If set to `false`, coercions are used when comparing values of different types, which can cause that the resulting order isn't the expected one as in:
+When set to `true`, DataWeave throws `InvalidComparisonException` if the `orderBy` function attempts to compare values of different types. If set to `false`, coercions are used when comparing values of different types,
+which can cause that the resulting order isn't the expected one as in:
 
 .DataWeave script:
 [source,xml,linenums]
@@ -323,7 +324,7 @@ output application/json
 ----
 * If `com.mulesoft.dw.stableOrderBy` is set to `false`, the script returns the following output:
 `[1, "10", 5]`
-* If `com.mulesoft.dw.stableOrderBy` is set to `true`, the script throws an `InvalidComparisonException`
+* If `com.mulesoft.dw.stableOrderBy` is set to `true`, the script throws `InvalidComparisonException`.
 
 * Type: `Boolean`
 
