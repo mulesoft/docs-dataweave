@@ -13,6 +13,9 @@ Define the logging configuration in a DataWeave language file named `log-config.
 
 Use the `DataWeaveScriptingEngine` API to customize the name, location, and format of the configuration file by either implementing the `LoggingConfigurationSourceProvider` interface or by using the helper class `DefaultLoggingConfigurationSourceProvider`.
 
+[NOTE]
+The `DataWeaveScriptingEngine` API is available only when running DataWeave outside of Mule runtime. If you're using Mule runtime, configure logging only with the `log-config.dwl` file and, if needed, the `log4j2.xml` configuration file.
+
 The DataWeave code in this example retrieves the logging configuration in JSON format from a custom classpath location.
 
 [source,java,linenums]
@@ -110,6 +113,16 @@ The DataWeave Core library provides these functions for logging messages:
 * Log levels are hierarchical. `Error` is the highest level, followed by `Warn`, `Info`, and `Debug`.
 * More specific rules (for example, function-level rules) override less specific ones (for example, runtime-level rules).
 * Use the `prefix` parameter in log functions to add context to your log messages.
+* In Mule runtime, the default logging level shows only `Warn` and `Error` messages.
++
+To enable more detailed messages (`Info` or `Debug`), add a custom logger entry to your `log4j2.xml` configuration file in the `$MULE_HOME/conf/` directory.
++
+To enable `Debug` logging for DataWeave messages, add a custom logger entry to your `log4j2.xml` configuration file:
++
+[source,xml,linenums]
+----
+<AsyncLogger name="org.mule.weave.v2.model.service.DefaultLoggingService$" level="DEBUG"/>
+----
 
 This logging configuration feature provides granular control over DataWeave logging, which makes debugging and monitoring data transformations more efficient.
 
