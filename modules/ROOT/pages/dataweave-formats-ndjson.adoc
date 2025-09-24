@@ -128,10 +128,10 @@ This format accepts properties that provide instructions for reading input data.
 [cols="1,1,1,3a", options="header"]
 |===
 |Parameter |Type |Default|Description
-|`ignoreEmptyLine`  |`Boolean`|`true`|
+|`ignoreEmptyLine`  |`Boolean`|`true`|Ignores empty lines.
 
 Valid values are `true` or `false`.
-|`skipInvalid`  |`Boolean`|`false`|
+|`skipInvalid`  |`Boolean`|`false`|Skips invalid records and ignores values that aren't valid in this format.
 
 Valid values are `true` or `false`.
 |===
@@ -150,11 +150,23 @@ This format accepts properties that provide instructions for writing output data
 
 
 Valid values are `true` or `false`.
-|`encoding`  |`String`|`'UTF-8'`|
-|`skipNullOn`  |`String`|`null`|
+|`encoding`  |`String`|`'UTF-8'`|Encoding that the writer uses for output. Defaults to "UTF-8".
+|`skipNullOn`  |`String`|`null`|Skips `null` values. By default, DataWeave does not skip.
+
+
+* `arrays` +
+Ignore and omit `null` values inside arrays from the JSON output,
+for example, with `output application/x-ndjson skipNullOn="arrays"`.
+* `objects` +
+Ignore key-value pairs that have `null` as the value, for example,
+with `output application/x-ndjson skipNullOn="objects"`.
+* `everywhere` +
+Apply `skipNullOn` to arrays and objects, for example,
+`output application/x-ndjson skipNullOn="everywhere"`.
 
 Valid values are `arrays` or `objects` or `everywhere`.
-|`writeAttributes`  |`Boolean`|`false`|
+|`writeAttributes`  |`Boolean`|`false`|Converts attributes of a key into child key-value pairs of that key.
+The attribute key name starts with `@`.
 
 Valid values are `true` or `false`.
 |===
