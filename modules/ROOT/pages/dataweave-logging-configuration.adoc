@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-The logging configuration feature provides granular control over DataWeave logging, which improves debugging and monitoring of data transformations.
+Get granular control over DataWeave logging to debug and monitor your data transformations with precision.
 
 Starting with DataWeave 2.10, you can configure logging to control the verbosity of log messages using standard log levels: `Debug`, `Info`, `Warn`, and `Error`. You can filter log messages by severity and scope, which makes it easier to troubleshoot and monitor your DataWeave code.
 
