@@ -107,7 +107,7 @@ The DataWeave Core library provides these functions for logging messages:
 |Logs a message with the `Info` level (shorthand for `logInfo`).
 |===
 
-== Best Practices
+== Considerations
 
 * Place the `log-config.dwl` file in the classpath for the configuration to take effect.
 * Log levels are hierarchical. `Error` is the highest level, followed by `Warn`, `Info`, and `Debug`.
