@@ -46,7 +46,7 @@ The `log-config.dwl` file contains an array of objects. Each object defines a lo
 
 |`module`
 |Specifies the name of the DataWeave module.
-|Optional, required for `Module` and `Function`
+|Optional but required for `Module` and `Function`
 |Any valid DataWeave module name
 
 |`function`
