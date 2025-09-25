@@ -124,8 +124,6 @@ To enable `Debug` logging for DataWeave messages, add a custom logger entry to y
 <AsyncLogger name="org.mule.weave.v2.model.service.DefaultLoggingService$" level="DEBUG"/>
 ----
 
-This logging configuration feature provides granular control over DataWeave logging, which makes debugging and monitoring data transformations more efficient.
-
 == See Also
 
 * xref:dw-core.adoc[Core (dw::Core)]
