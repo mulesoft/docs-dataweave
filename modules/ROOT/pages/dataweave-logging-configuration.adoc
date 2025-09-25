@@ -37,7 +37,7 @@ The `log-config.dwl` file contains an array of objects. Each object defines a lo
 |`scope`
 |Specifies the scope of the logging rule.
 |Always required
-|`Runtime` (Applies to all DataWeave executions), `Module` (Applies to all code within a specific module), `Function` (Applies to a specific function within a module)
+|`Runtime` (applies to all DataWeave executions), `Module` (applies to all code within a specific module), `Function` (applies to a specific function within a module)
 
 |`level`
 |Specifies the log level.
