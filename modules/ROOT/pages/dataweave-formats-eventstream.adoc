@@ -14,7 +14,7 @@ The output type is `Array<{_:String}>`, where each key represents a field in the
 [[examples]]
 == Examples
 
-These examples show uses of the Event Stream format.
+These examples show uses of the event stream format.
 
 * <<example1>>
 * <<example2>>
@@ -26,7 +26,7 @@ This example shows how DataWeave represents a simple server event input.
 
 ==== Input
 
-This stream contains four blocks. The first block has one comment, and fires no events. The second block has two fields with names `data` and `id` respectively; an event is fired with the data `first event` and sets the last event ID to `1`. The third block fires an event with the data `second event`; it also has an `id` field with no value, which resets the last event ID to an empty string. The fourth block contains a `data` field with the value `third event`, which fires an event. 
+This stream contains four blocks. The first block has one comment, and fires no events. The second block has two fields with names `data` and `id` respectively; an event is fired with the data `first event` and sets the last event ID to `1`. The third block fires an event with the data `second event`; it also has an `id` field with no value, which resets the last event ID to an empty string. The fourth block contains a `data` field with the value `third event`, which fires an event.
 
 [source,event-stream,linenums]
 ----
@@ -136,7 +136,6 @@ DataWeave supports these configuration properties for this format.
 
 This format has no reader properties.
 
- 
 [[writer_properties]]
 === Writer Properties
 
@@ -144,7 +143,7 @@ This format accepts properties that provide instructions for writing output data
 
 [cols="1,1,1,3a", options="header"]
 |===
-|Parameter |Type |Default |Description
+|Parameter | Type | Default | Description
 |`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
@@ -157,10 +156,6 @@ Valid values are `true` or `false`.
 [[mime_types]]
 == Supported MIME Types
 
-This format supports the following MIME types.
+This format supports this MIME type:
 
-[cols="1", options="header"]
-|===
-| MIME Type
-|`text/event-stream`
-|===
+* `text/event-stream`
