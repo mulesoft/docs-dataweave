@@ -42,7 +42,7 @@ If the digit to the left of the discarded fraction is odd, it behaves like `ROUN
 
 | RoundHalfUp
 | `type RoundHalfUp = "HALF_UP"`
-| Rounding mode that rounds towards the nearest neighbor, unless both neighbors are equidistant, in which case it rounds up.
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds up.
 If the discarded fraction is greater than or equal to 0.5, it behaves like `ROUND_UP`. Otherwise, it behaves like `ROUND_DOWN`.
 
 
