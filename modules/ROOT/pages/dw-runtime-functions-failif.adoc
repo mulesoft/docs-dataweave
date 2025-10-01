@@ -63,7 +63,7 @@ output application/json
 
 ==== Output
 
-[source,Json,linenums]
+[source,JSON,linenums]
 ----
 {
   "result": {
@@ -71,4 +71,3 @@ output application/json
   }
 }
 ----
-

@@ -1,0 +1,63 @@
+= Math Types (dw::util::Math)
+
+[%header, cols="1,2a,3a"]
+|===
+| Type | Definition | Description
+
+| OperationContext
+| `type OperationContext = {&#124; precision?: Number, roundingMode?: RoundingMode &#124;}`
+| Defines the configuration under which a math operation is executed.
+
+ * `precision`: number of digits used for the operation.
+ * `roundingMode`: rounding mode applied to the operation.
+
+
+| RoundCeiling
+| `type RoundCeiling = "CEILING"`
+| Rounding mode that rounds toward positive infinity. If the number is positive, it behaves like `ROUND_UP`. If negative, it behaves like `ROUND_DOWN`.
+This rounding mode never decreases the calculated value.
+
+
+| RoundDown
+| `type RoundDown = "DOWN"`
+| Rounding mode that rounds toward zero. It never increments the digit before a discarded fraction (for example, truncates).
+
+
+| RoundFloor
+| `type RoundFloor = "FLOOR"`
+| Rounding mode that rounds toward negative infinity. If the number is positive, it behaves like `ROUND_DOWN`. If negative, it behaves like `ROUND_UP`.
+
+
+| RoundHalfDown
+| `type RoundHalfDown = "HALF_DOWN"`
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds down.
+If the discarded fraction is greater than 0.5, it behaves like `ROUND_UP`. Otherwise, it behaves like `ROUND_DOWN`.
+
+
+| RoundHalfEven
+| `type RoundHalfEven = "HALF_EVEN"`
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds toward the even neighbor.
+If the digit to the left of the discarded fraction is odd, it behaves like `ROUND_HALF_UP`. If even, it behaves like `ROUND_HALF_DOWN`.
+
+
+| RoundHalfUp
+| `type RoundHalfUp = "HALF_UP"`
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds up.
+If the discarded fraction is greater than or equal to 0.5, it behaves like `ROUND_UP`. Otherwise, it behaves like `ROUND_DOWN`.
+
+
+| RoundUnnecessary
+| `type RoundUnnecessary = "UNNECESSARY"`
+| Rounding mode that asserts that the requested operation has an exact result, so rounding isn't necessary.
+
+
+| RoundUp
+| `type RoundUp = "UP"`
+| Rounding mode that rounds away from zero. It always increments the digit before a nonzero discarded fraction.
+
+
+| RoundingMode
+| `type RoundingMode = RoundUp &#124; RoundDown &#124; RoundCeiling &#124; RoundFloor &#124; RoundHalfUp &#124; RoundHalfDown &#124; RoundHalfEven &#124; RoundUnnecessary`
+| Enumeration of rounding strategies available for math operations. Available options are: `RoundUp`, `RoundDown`, `RoundCeiling`, `RoundFloor`, `RoundHalfUp`, `RoundHalfDown`, `RoundHalfEven`, `RoundUnnecessary`.
+
+|===

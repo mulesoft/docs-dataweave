@@ -1,0 +1,11 @@
+= decimalSqrt
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[decimalsqrt1]]
+== decimalSqrt&#40;n: Number, ctx: OperationContext = DECIMAL_128_CONTEXT&#41;: Number
+
+Returns a number that approximates the square root of the argument with rounding specified by the operation context.
