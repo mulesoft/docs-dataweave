@@ -6,7 +6,10 @@
 
 | OperationContext
 | `type OperationContext = {&#124; precision?: Number, roundingMode?: RoundingMode &#124;}`
-|
+| Defines the configuration under which a math operation is executed.
+
+ * `precision`: number of digits used for the operation.
+ * `roundingMode`: rounding mode applied to the operation.
 
 
 | RoundCeiling
