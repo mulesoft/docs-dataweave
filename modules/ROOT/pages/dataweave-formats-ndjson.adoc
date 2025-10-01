@@ -131,7 +131,7 @@ This format accepts properties that provide instructions for reading input data.
 |`ignoreEmptyLine`  |`Boolean`|`true`|Ignores empty lines.
 
 Valid values are `true` or `false`.
-|`skipInvalid`  |`Boolean`|`false`|Skips invalid records and ignores values that are not valid in this format.
+|`skipInvalid`  |`Boolean`|`false`|Skips invalid records and ignores values that aren't valid in this format.
 
 Valid values are `true` or `false`.
 |===
@@ -175,11 +175,7 @@ Valid values are `true` or `false`.
 [[mime_types]]
 == Supported MIME Types
 
-This format supports the following MIME types.
+This format supports these MIME types:
 
-[cols="1", options="header"]
-|===
-| MIME Type
-|`application/x-ndjson`
-|`application/x-ldjson`
-|===
+* `application/x-ndjson`
+* `application/x-ldjson`

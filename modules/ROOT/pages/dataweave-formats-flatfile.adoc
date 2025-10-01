@@ -152,10 +152,6 @@ Valid values are `true` or `false`.
 [[mime_types]]
 == Supported MIME Types
 
-This format supports the following MIME types.
+This format supports this MIME type:
 
-[cols="1", options="header"]
-|===
-| MIME Type
-|`*/flatfile`
-|===
+* `*/flatfile`
