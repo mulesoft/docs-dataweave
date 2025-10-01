@@ -51,7 +51,7 @@ with *log* and the result will be printed out without modifying the result of th
 The output is going to be printed in application/dw format.
 | xref:dw-core-functions-logdebug.adoc[logDebug] | Helper function that logs messages at `Debug` level.
 | xref:dw-core-functions-logerror.adoc[logError] | Helper function that logs messages at `Error` level.
-| xref:dw-core-functions-loginfo.adoc[logInfo] | Helper function that log messages at `Info` level.
+| xref:dw-core-functions-loginfo.adoc[logInfo] | Helper function that logs messages at `Info` level.
 | xref:dw-core-functions-logwarn.adoc[logWarn] | Helper function that log messages at `Warn` level.
 | xref:dw-core-functions-logwith.adoc[logWith] | Without changing the value of the input, `logWith` returns the input as a system log at the specified level.
 This makes it simple to debug your code, because any expression or subexpression can be wrapped
