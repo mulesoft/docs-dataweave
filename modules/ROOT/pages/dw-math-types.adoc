@@ -14,7 +14,7 @@
 
 | RoundCeiling
 | `type RoundCeiling = "CEILING"`
-| Rounding mode that rounds towards positive infinity. If the number is positive, it behaves like `ROUND_UP`. If negative, it behaves like `ROUND_DOWN`.
+| Rounding mode that rounds toward positive infinity. If the number is positive, it behaves like `ROUND_UP`. If negative, it behaves like `ROUND_DOWN`.
 This rounding mode never decreases the calculated value.
 
 
