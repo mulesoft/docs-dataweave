@@ -30,7 +30,7 @@ This rounding mode never decreases the calculated value.
 
 | RoundHalfDown
 | `type RoundHalfDown = "HALF_DOWN"`
-| Rounding mode that rounds towards the nearest neighbor, unless both neighbors are equidistant, in which case it rounds down.
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds down.
 If the discarded fraction is greater than 0.5, it behaves like `ROUND_UP`. Otherwise, it behaves like `ROUND_DOWN`.
 
 
