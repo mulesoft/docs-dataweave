@@ -49,7 +49,7 @@ array or `-1` if the array does not contain the element.
 log. So this makes it very simple to debug your code, because any expression or subexpression can be wrapped
 with *log* and the result will be printed out without modifying the result of the expression.
 The output is going to be printed in application/dw format.
-| xref:dw-core-functions-logdebug.adoc[logDebug] | Helper function that log messages at `Debug` level.
+| xref:dw-core-functions-logdebug.adoc[logDebug] | Helper function that logs messages at `Debug` level.
 | xref:dw-core-functions-logerror.adoc[logError] | Helper function that log messages at `Error` level.
 | xref:dw-core-functions-loginfo.adoc[logInfo] | Helper function that log messages at `Info` level.
 | xref:dw-core-functions-logwarn.adoc[logWarn] | Helper function that log messages at `Warn` level.
