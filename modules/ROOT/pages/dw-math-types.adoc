@@ -58,6 +58,6 @@ If the discarded fraction is greater than or equal to 0.5, it behaves like `ROUN
 
 | RoundingMode
 | `type RoundingMode = RoundUp &#124; RoundDown &#124; RoundCeiling &#124; RoundFloor &#124; RoundHalfUp &#124; RoundHalfDown &#124; RoundHalfEven &#124; RoundUnnecessary`
-|
+| Enumeration of rounding strategies available for math operations. Available options are: `RoundUp`, `RoundDown`, `RoundCeiling`, `RoundFloor`, `RoundHalfUp`, `RoundHalfDown`, `RoundHalfEven`, `RoundUnnecessary`.
 
 |===
