@@ -20,7 +20,7 @@ This rounding mode never decreases the calculated value.
 
 | RoundDown
 | `type RoundDown = "DOWN"`
-| Rounding mode that rounds towards zero. It never increments the digit before a discarded fraction (for example, truncates).
+| Rounding mode that rounds toward zero. It never increments the digit before a discarded fraction (for example, truncates).
 
 
 | RoundFloor
