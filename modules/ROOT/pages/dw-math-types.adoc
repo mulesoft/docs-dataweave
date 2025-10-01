@@ -36,7 +36,7 @@ If the discarded fraction is greater than 0.5, it behaves like `ROUND_UP`. Other
 
 | RoundHalfEven
 | `type RoundHalfEven = "HALF_EVEN"`
-| Rounding mode that rounds towards the nearest neighbor, unless both neighbors are equidistant, in which case it rounds towards the even neighbor.
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds toward the even neighbor.
 If the digit to the left of the discarded fraction is odd, it behaves like `ROUND_HALF_UP`. If even, it behaves like `ROUND_HALF_DOWN`.
 
 
