@@ -113,7 +113,7 @@ Examples: `{ myKey : "a value" }`, `{ myKey : { a : 1, b : 2} }`,
 
 | LogLevel
 | `type LogLevel = "Debug" &#124; "Info" &#124; "Warn" &#124; "Error"`
-|
+| A type that represents the severity level of logging operations. For examples: `Debug`, `Info`, `Warn`, `Error`.
 
 
 | NaN
