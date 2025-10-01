@@ -48,7 +48,7 @@ If the discarded fraction is greater than or equal to 0.5, it behaves like `ROUN
 
 | RoundUnnecessary
 | `type RoundUnnecessary = "UNNECESSARY"`
-| Rounding mode that asserts that the requested operation has an exact result, so no rounding is necessary.
+| Rounding mode that asserts that the requested operation has an exact result, so rounding isn't necessary.
 
 
 | RoundUp
