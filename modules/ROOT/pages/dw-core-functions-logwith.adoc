@@ -1,0 +1,35 @@
+= logWith
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[logwith1]]
+== logWith<T&#62;&#40;level: LogLevel, prefix: String, value: T&#41;: T
+
+Without changing the value of the input, `logWith` returns the input as a system log at the specified level.
+This makes it simple to debug your code, because any expression or subexpression can be wrapped
+with *log* and the result is printed out without modifying the result of the expression.
+The output is printed in application/dw format.
+
+
+The prefix parameter is optional and allows finding the log output easily.
+
+Use the `LogLevel` to categorize log events by severity and control the verbosity of the logs.
+
+Use this function to help with debugging DataWeave scripts. A Mule app
+outputs the results through the `DefaultLoggingService`, which you can see
+in the Studio console.
+
+_Introduced in DataWeave version 2.10.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Description
+| `level` | Log level that indicates the severity of the event.
+| `prefix` | An optional string that typically describes the log.
+| `value` | The value to log.
+|===

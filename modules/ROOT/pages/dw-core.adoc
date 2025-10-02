@@ -49,6 +49,14 @@ array or `-1` if the array does not contain the element.
 log. So this makes it very simple to debug your code, because any expression or subexpression can be wrapped
 with *log* and the result will be printed out without modifying the result of the expression.
 The output is going to be printed in application/dw format.
+| xref:dw-core-functions-logdebug.adoc[logDebug] | Helper function that logs messages at `Debug` level.
+| xref:dw-core-functions-logerror.adoc[logError] | Helper function that logs messages at `Error` level.
+| xref:dw-core-functions-loginfo.adoc[logInfo] | Helper function that logs messages at `Info` level.
+| xref:dw-core-functions-logwarn.adoc[logWarn] | Helper function that logs messages at `Warn` level.
+| xref:dw-core-functions-logwith.adoc[logWith] | Without changing the value of the input, `logWith` returns the input as a system log at the specified level.
+This makes it simple to debug your code, because any expression or subexpression can be wrapped
+with *log* and the result is printed out without modifying the result of the expression.
+The output is printed in application/dw format.
 | xref:dw-core-functions-lower.adoc[lower] | Returns the provided string in lowercase characters.
 | xref:dw-core-functions-map.adoc[map] | Iterates over items in an array and outputs the results into a new array.
 | xref:dw-core-functions-mapobject.adoc[mapObject] | Iterates over an object using a mapper that acts on keys, values, or

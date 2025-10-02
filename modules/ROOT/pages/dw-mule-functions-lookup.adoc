@@ -82,4 +82,3 @@ Mule::lookup('flow2', {test:'hello '})]]></ee:set-payload>
   <logger level="INFO" doc:name="Logger" message='#[payload]'/>
 </flow>
 ----
-

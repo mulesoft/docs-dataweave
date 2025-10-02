@@ -60,4 +60,3 @@ output application/json
 == capitalize&#40;text: Null&#41;: Null
 
 Helper function that enables `capitalize` to work with a `null` value.
-

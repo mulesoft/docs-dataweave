@@ -1,0 +1,11 @@
+= decimalMultiply
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[decimalmultiply1]]
+== decimalMultiply&#40;leftFactor: Number, rightFactor: Number, ctx: OperationContext = DECIMAL_128_CONTEXT&#41;: Number
+
+Performs number multiplication with rounding specified by the operation context.
