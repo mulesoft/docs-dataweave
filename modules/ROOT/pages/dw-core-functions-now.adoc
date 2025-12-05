@@ -8,13 +8,13 @@ endif::[]
 [[now1]]
 == now&#40;&#41;: DateTime
 
-Returns a `DateTime` value for the current date and time.
+Returns a `DateTime` value for the current date and time. DataWeave delegates to Java `ZonedDateTime.now()`, so the precision of the returned value depends on the underlying JVM and operating system.
 
 === Example
 
 This example uses `now()` to return the current date and time as a
 `DateTime` value. It also shows how to return a date and time
-in a specific time zone. Java 8 time zones are supported.
+in a specific time zone. Java 17 time zones are supported.
 
 ==== Source
 
@@ -96,4 +96,3 @@ output application/json
   "formattedTime": "04:55:46"
 }
 ----
-
