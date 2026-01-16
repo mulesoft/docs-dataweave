@@ -8,7 +8,7 @@ endif::[]
 [[loginfo1]]
 == logInfo<T&#62;&#40;prefix: String = "", value: T&#41;: T
 
-Helper function that log messages at `Info` level.
+Helper function that logs messages at `Info` level.
 
 _Introduced in DataWeave version 2.10.0._
 
@@ -20,4 +20,3 @@ _Introduced in DataWeave version 2.10.0._
 | `prefix` | An optional string that typically describes the log.
 | `value` | The value to log.
 |===
-

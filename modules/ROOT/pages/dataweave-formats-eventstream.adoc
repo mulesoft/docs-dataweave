@@ -1,4 +1,3 @@
-
 = Event Stream Format
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
@@ -10,28 +9,24 @@ MIME type: `text/event-stream`
 ID: `eventstream`
 
 DataWeave represents the Event Stream as an `Array` of `Object` where the value is a `String`.
-So the type of the output would be `Array<{_:String}>` where each key represents each field of event.
+The output type is `Array<{_:String}>`, where each key represents a field in the event.
 
 [[examples]]
 == Examples
 
-The following examples show uses of the event stream format.
+These examples show uses of the event stream format.
 
 * <<example1>>
 * <<example2>>
 
 [[example1]]
-=== Example: Simple server event input
+=== Example: Simple Server Event Input
 
 This example shows how DataWeave represents a simple server event input.
 
-The following stream contains four blocks:
-
-* The first block has just a comment, and will fire nothing.
-* The second block has two fields with names "data" and "id" respectively; an event will be fired for this block, with the data "first event", and will then set the last event ID to "1".
-* The third block fires an event with data "second event", and also has an "id" field, this time with no value, which resets the last event ID to the empty string.
-
 ==== Input
+
+This stream contains four blocks. The first block has one comment, and fires no events. The second block has two fields with names `data` and `id` respectively; an event is fired with the data `first event` and sets the last event ID to `1`. The third block fires an event with the data `second event`; it also has an `id` field with no value, which resets the last event ID to an empty string. The fourth block contains a `data` field with the value `third event`, which fires an event.
 
 [source,event-stream,linenums]
 ----
@@ -49,7 +44,7 @@ data:  third event
 
 ==== Source
 
-The Data weave script transforms this input into the given output
+The DataWeave script transforms this input into the given output.
 
 [source,dataweave,linenums]
 ----
@@ -61,7 +56,7 @@ payload
 
 ==== Output
 
-The `JSON` format outputs the 3 events.
+The JSON format outputs these three events.
 
 [source,json,linenums]
 ----
@@ -81,9 +76,9 @@ The `JSON` format outputs the 3 events.
 ----
 
 [[example2]]
-=== Example: Ignoring spaces after the colon
+=== Example: Ignoring Spaces After the Colon
 
-This example shows that spaces after the colon is ignored if present.
+This example shows that spaces after the colon are ignored if present.
 
 ==== Input
 
@@ -99,7 +94,7 @@ data: test
 
 ==== Source
 
-It just transforms the input into a `JSON`
+This process transforms the input into a JSON.
 
 [source,dataweave,linenums]
 ----
@@ -112,7 +107,7 @@ payload
 
 ==== Output
 
-The `JSON` output is an `Array` of the valid `Object` from the server event input.
+The JSON output is an `Array` of the valid `Object` from the server event input.
 
 [source,weave,linenums]
 ----
@@ -133,15 +128,15 @@ The `JSON` output is an `Array` of the valid `Object` from the server event inpu
 [[properties]]
 == Configuration Properties
 
-DataWeave supports the following configuration properties for this format.
+DataWeave supports these configuration properties for this format.
 
 
 [[reader_properties]]
 === Reader Properties
 
-There are no reader properties for this format.
+This format has no reader properties.
 
- 
+
 [[writer_properties]]
 === Writer Properties
 
@@ -162,10 +157,6 @@ Valid values are `true` or `false`.
 [[mime_types]]
 == Supported MIME Types
 
-This format supports the following MIME types.
+This format supports this MIME type:
 
-[cols="1", options="header"]
-|===
-| MIME Type
-|`text/event-stream`
-|===
+* `text/event-stream`

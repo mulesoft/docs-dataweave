@@ -8,7 +8,7 @@ endif::[]
 [[logwarn1]]
 == logWarn<T&#62;&#40;prefix: String = "", value: T&#41;: T
 
-Helper function that log messages at `Warn` level.
+Helper function that logs messages at `Warn` level.
 
 _Introduced in DataWeave version 2.10.0._
 
@@ -20,4 +20,3 @@ _Introduced in DataWeave version 2.10.0._
 | `prefix` | An optional string that typically describes the log.
 | `value` | The value to log.
 |===
-
