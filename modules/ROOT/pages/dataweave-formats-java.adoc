@@ -13,7 +13,7 @@ For the Java data format, DataWeave attempts to map any Java value to a DataWeav
 
 == Java Value Mapping
 
-This table maps Java classes to DataWeave types:
+The following table maps Java classes to DataWeave types.
 
 [cols="2,2",options="header"]
 |===
@@ -64,7 +64,7 @@ This table maps Java classes to DataWeave types:
 | `*[]` | `Array`
 |===
 
-IMPORTANT: If a Java class isn't in present in the table, DataWeave treats it as a `JavaBean` and maps it as an `Object` type. In this case, DataWeave takes all properties from the Java getters.
+IMPORTANT: If a Java class is not in present in the table, DataWeave treats it as a `JavaBean` and maps it as an `Object` type. In this case, DataWeave takes all properties from the Java getters.
 
 [[metadata]]
 == Metadata
@@ -105,7 +105,7 @@ The following examples show uses of the Java format.
 
 === Class Definitions
 
-The Java examples use these class definitions:
+The Java examples use the following class definitions:
 
 * <<class_user, `User`>>
 * <<class_customer, `Customer`>> (which extends `User`)
@@ -145,7 +145,7 @@ class User {
 }
 ----
 
-This class extends `User`.
+The following class extends `User`.
 
 [[class_customer]]
 .Customer class:
@@ -228,7 +228,7 @@ The output is a JSON object that contains key-value pairs. The values are the `n
 
 This example shows how to create an instance of a `Customer` class. The script outputs the object in the JSON format and MIME type.
 
-Notice that it isn't necessary to specify the class of inner properties because their class is inferred from the parent class definition.
+Notice that it is not necessary to specify the class of inner properties because their class is inferred from the parent class definition.
 
 [source,dataweave,linenums]
 ----
@@ -250,7 +250,7 @@ output application/json
 
 This example relies on generic support in the class name to create a `java.util.ArrayList` of `User` objects.
 
-Don't use a generic to specify the class in each instance. The class is taken from the generic in the list.
+Note that you do not need to use a generic to specify the class in each instance. The class is taken from the generic in the list.
 
 [source,dataweave,linenums]
 ----
@@ -283,7 +283,7 @@ Starting with version 2.6, DataWeave supports Java 17. Java 17 adds restrictions
 [[java17_examples]]
 == Examples of Java Support
 
-These examples run using Java 17 and https://docs.mulesoft.com/dataweave/latest/dataweave-versioning-behavior.adoc[language level 2.6].
+The following examples run using Java 17 and https://docs.mulesoft.com/dataweave/latest/dataweave-versioning-behavior.adoc[language level 2.6].
 
 * <<example4>>
 * <<example5>>
@@ -295,7 +295,7 @@ This example shows how to create a Java object instance.
 
 ==== User Class
 
-The Java example uses this class:
+The Java example uses the following class:
 
 [source,java,linenums]
 ----
@@ -322,11 +322,11 @@ public class User {
 
 ==== Output
 
-The expected output is an instance of the user class. Because the user class definition doesn't have the proper setters, the output is `IllegalAccessException`.
+The expected output is an instance of the user class. Because the user class definition doesn't have the proper setters, the output is `IllegalAccessException`.   
 
 [source,java,linenums]
 ----
-java.lang.IllegalAccessException - class
+java.lang.IllegalAccessException - class 
 org.mule.weave.v2.module.pojo.reader.PropertyDefinition (in module org.mule.weave.module.java) cannot access a member of class User with modifiers "private
 ----
 
@@ -344,7 +344,7 @@ The Java example uses the following class:
 public class Item {
 	private String name;
 	private int quantity;
-
+	
 	public Item() {
 	}
     public Item(String name, int quantity) {
@@ -372,7 +372,7 @@ new Item("Pencil", 5)
 ----
 output application/json
 ---
-{
+{ 
     "name": "payload.name",
     "quantity": "payload.quantity"
 }
@@ -380,7 +380,7 @@ output application/json
 
 ==== Output
 
-The expected output is a JSON object.
+The expected output is a JSON object.  
 
 [source,json,linenums]
 ----
@@ -390,20 +390,20 @@ The expected output is a JSON object.
 }
 ----
 
-Because the item class definition doesn't have the proper getters, the output is `IllegalAccessException`.
+Because the item class definition doesn't have the proper getters, the output is `IllegalAccessException`.  
 
 [source,java,linenums]
 ----
-java.lang.IllegalAccessException: class
+java.lang.IllegalAccessException: class 
 org.mule.weave.v2.module.pojo.reader.PropertyDefinition (in module org.mule.weave.module.java) cannot access a member of class Item with modifiers "private"
 ----
 
 === Troubleshooting Common Errors
 
-To resolve conflicts, ensure that you:
+To resolve conflicts, ensure that you: 
 
-* Update your class definitions to follow the POJOs structure (recommended).
-* Use the compatibility flag `com.mulesoft.dw.java.disable_set_accessible=false` to allow accessible flag modification for reflection objects.
+* Update your class definitions to follow the POJOs structure (recommended). 
+* Use the compatibility flag `com.mulesoft.dw.java.disable_set_accessible=false` to allow accessible flag modification for reflection objects. 
 +
 This approach is a workaround and works for customer domain classes only. Note that the usage of this compatibility flag might not affect future versions.
 
@@ -413,7 +413,7 @@ This approach is a workaround and works for customer domain classes only. Note t
 [[properties]]
 == Configuration Properties
 
-DataWeave supports these configuration properties for this format.
+DataWeave supports the following configuration properties for this format.
 
 
 [[reader_properties]]
@@ -421,6 +421,7 @@ DataWeave supports these configuration properties for this format.
 
 There are no reader properties for this format.
 
+ 
 [[writer_properties]]
 === Writer Properties
 
@@ -441,6 +442,10 @@ Valid values are `true` or `false`.
 [[mime_types]]
 == Supported MIME Types
 
-This format supports this MIME type:
+This format supports the following MIME types.
 
-* `*/java`
+[cols="1", options="header"]
+|===
+| MIME Type
+|`*/java`
+|===

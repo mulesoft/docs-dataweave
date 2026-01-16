@@ -106,7 +106,7 @@ output application/avro schemaUrl="classpath://schema.json"
 [[properties]]
 == Configuration Properties
 
-DataWeave supports these configuration properties for this format.
+DataWeave supports the following configuration properties for this format.
 
 
 [[reader_properties]]
@@ -144,22 +144,10 @@ Valid values are `true` or `false`.
 [[mime_types]]
 == Supported MIME Types
 
-This format supports this MIME type:
+This format supports the following MIME types.
 
-* `application/avro`
-
-[[supported_types]]
-== Supported Top-Level Schema Types
-
-This format supports these Avro types as the top-level element in the schema:
-
-* `record`
-* `array`
-* `int`
-* `long`
-* `float`
-* `double`
-* `boolean`
-* `string`
-* `bytes`
-* `null`
+[cols="1", options="header"]
+|===
+| MIME Type
+|`application/avro`
+|===

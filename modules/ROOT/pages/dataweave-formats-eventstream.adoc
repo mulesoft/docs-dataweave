@@ -1,3 +1,4 @@
+
 = Event Stream Format
 ifndef::env-site,env-github[]
 include::_attributes.adoc[]
@@ -8,25 +9,29 @@ MIME type: `text/event-stream`
 
 ID: `eventstream`
 
-DataWeave represents the Event Stream as an `Array` of `Object`, where each value is a `String`.
-The output type is `Array<{_:String}>`, where each key represents a field in the event.
+DataWeave represents the Event Stream as an `Array` of `Object` where the value is a `String`.
+So the type of the output would be `Array<{_:String}>` where each key represents each field of event.
 
 [[examples]]
 == Examples
 
-These examples show uses of the event stream format.
+The following examples show uses of the event stream format.
 
 * <<example1>>
 * <<example2>>
 
 [[example1]]
-=== Example: Simple Server Event Input
+=== Example: Simple server event input
 
 This example shows how DataWeave represents a simple server event input.
 
-==== Input
+The following stream contains four blocks:
 
-This stream contains four blocks. The first block has one comment, and fires no events. The second block has two fields with names `data` and `id` respectively; an event is fired with the data `first event` and sets the last event ID to `1`. The third block fires an event with the data `second event`; it also has an `id` field with no value, which resets the last event ID to an empty string. The fourth block contains a `data` field with the value `third event`, which fires an event.
+* The first block has just a comment, and will fire nothing.
+* The second block has two fields with names "data" and "id" respectively; an event will be fired for this block, with the data "first event", and will then set the last event ID to "1".
+* The third block fires an event with data "second event", and also has an "id" field, this time with no value, which resets the last event ID to the empty string.
+
+==== Input
 
 [source,event-stream,linenums]
 ----
@@ -44,7 +49,7 @@ data:  third event
 
 ==== Source
 
-The DataWeave script transforms this input into the given output.
+The Data weave script transforms this input into the given output
 
 [source,dataweave,linenums]
 ----
@@ -56,7 +61,7 @@ payload
 
 ==== Output
 
-The JSON format outputs the 3 events.
+The `JSON` format outputs the 3 events.
 
 [source,json,linenums]
 ----
@@ -76,9 +81,9 @@ The JSON format outputs the 3 events.
 ----
 
 [[example2]]
-=== Example: Ignoring Spaces After the Colon
+=== Example: Ignoring spaces after the colon
 
-This example shows that spaces after the colon are ignored if present.
+This example shows that spaces after the colon is ignored if present.
 
 ==== Input
 
@@ -94,7 +99,7 @@ data: test
 
 ==== Source
 
-This process transforms the input into JSON.
+It just transforms the input into a `JSON`
 
 [source,dataweave,linenums]
 ----
@@ -107,7 +112,7 @@ payload
 
 ==== Output
 
-The JSON output is an `Array` of the valid `Object` from the server event input.
+The `JSON` output is an `Array` of the valid `Object` from the server event input.
 
 [source,weave,linenums]
 ----
@@ -128,14 +133,15 @@ The JSON output is an `Array` of the valid `Object` from the server event input.
 [[properties]]
 == Configuration Properties
 
-DataWeave supports these configuration properties for this format.
+DataWeave supports the following configuration properties for this format.
 
 
 [[reader_properties]]
 === Reader Properties
 
-This format has no reader properties.
+There are no reader properties for this format.
 
+ 
 [[writer_properties]]
 === Writer Properties
 
@@ -143,7 +149,7 @@ This format accepts properties that provide instructions for writing output data
 
 [cols="1,1,1,3a", options="header"]
 |===
-|Parameter | Type | Default | Description
+|Parameter |Type |Default|Description
 |`bufferSize`  |`Number`|`8192`|Size of the buffer writer, in bytes. The value must be greater than `8`.
 
 |`deferred`  |`Boolean`|`false`|Generates the output as a data stream when set to `true`, and defers the script's execution until the generated content is consumed.
@@ -156,6 +162,10 @@ Valid values are `true` or `false`.
 [[mime_types]]
 == Supported MIME Types
 
-This format supports this MIME type:
+This format supports the following MIME types.
 
-* `text/event-stream`
+[cols="1", options="header"]
+|===
+| MIME Type
+|`text/event-stream`
+|===
