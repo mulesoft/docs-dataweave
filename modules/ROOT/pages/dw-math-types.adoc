@@ -7,56 +7,57 @@
 | OperationContext
 | `type OperationContext = {&#124; precision?: Number, roundingMode?: RoundingMode &#124;}`
 | Defines the configuration under which a math operation will be executed.
+
  * `precision`: specifies number of digits used for the operation.
  * `roundingMode`: specifies the strategy used for rounding to the defined precision.
 
 
 | RoundCeiling
 | `type RoundCeiling = "CEILING"`
-| Rounding mode to round towards positive infinity. If the number is positive, behaves as for ROUND_UP; if negative, behaves as for ROUND_DOWN.
-Note that this rounding mode never decreases the calculated value.
+| Rounding mode that rounds toward positive infinity. If the number is positive, it behaves like `ROUND_UP`. If negative, it behaves like `ROUND_DOWN`.
+This rounding mode never decreases the calculated value.
 
 
 | RoundDown
 | `type RoundDown = "DOWN"`
-| Rounding mode to round towards zero. Never increments the digit prior to a discarded fraction (i.e., truncates).
+| Rounding mode that rounds toward zero. It never increments the digit before a discarded fraction (for example, truncates).
 
 
 | RoundFloor
 | `type RoundFloor = "FLOOR"`
-| Rounding mode to round towards negative infinity. If the number is positive, behave as for ROUND_DOWN; if negative, behave as for ROUND_UP.
+| Rounding mode that rounds toward negative infinity. If the number is positive, it behaves like `ROUND_DOWN`. If negative, it behaves like `ROUND_UP`.
 
 
 | RoundHalfDown
 | `type RoundHalfDown = "HALF_DOWN"`
-| Rounding mode to round towards "nearest neighbor" unless both neighbors are equidistant, in which case round down.
-Behaves as for ROUND_UP if the discarded fraction is > 0.5; otherwise, behaves as for ROUND_DOWN.
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds down.
+If the discarded fraction is greater than 0.5, it behaves like `ROUND_UP`. Otherwise, it behaves like `ROUND_DOWN`.
 
 
 | RoundHalfEven
 | `type RoundHalfEven = "HALF_EVEN"`
-| Rounding mode to round towards the "nearest neighbor" unless both neighbors are equidistant, in which case, round towards the even neighbor.
-Behaves as for ROUND_HALF_UP if the digit to the left of the discarded fraction is odd; behaves as for ROUND_HALF_DOWN if it's even.
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds toward the even neighbor.
+If the digit to the left of the discarded fraction is odd, it behaves like `ROUND_HALF_UP`. If even, it behaves like `ROUND_HALF_DOWN`.
 
 
 | RoundHalfUp
 | `type RoundHalfUp = "HALF_UP"`
-| Rounding mode to round towards "nearest neighbor" unless both neighbors are equidistant, in which case round up.
-Behaves as for ROUND_UP if the discarded fraction is ≥ 0.5; otherwise, behaves as for ROUND_DOWN.
+| Rounding mode that rounds toward the nearest neighbor, unless both neighbors are equidistant, in which case it rounds up.
+If the discarded fraction is greater than or equal to 0.5, it behaves like `ROUND_UP`. Otherwise, it behaves like `ROUND_DOWN`.
 
 
 | RoundUnnecessary
 | `type RoundUnnecessary = "UNNECESSARY"`
-| Rounding mode to assert that the requested operation has an exact result, hence no rounding is necessary.
+| Rounding mode that asserts that the requested operation has an exact result, so rounding isn't necessary.
 
 
 | RoundUp
 | `type RoundUp = "UP"`
-| Rounding mode to round away from zero. Always increments the digit prior to a nonzero discarded fraction.
+| Rounding mode that rounds away from zero. It always increments the digit before a nonzero discarded fraction.
 
 
 | RoundingMode
 | `type RoundingMode = RoundUp &#124; RoundDown &#124; RoundCeiling &#124; RoundFloor &#124; RoundHalfUp &#124; RoundHalfDown &#124; RoundHalfEven &#124; RoundUnnecessary`
-| Enumeration of rounding strategies available for math operations.
+| Enumeration of rounding strategies available for math operations. Available options are: `RoundUp`, `RoundDown`, `RoundCeiling`, `RoundFloor`, `RoundHalfUp`, `RoundHalfDown`, `RoundHalfEven`, `RoundUnnecessary`.
 
 |===

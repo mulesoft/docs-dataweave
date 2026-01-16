@@ -89,7 +89,7 @@ and filter it.
 
 Just like the Java class, `Iterator` is designed to be consumed only once. For
 example, if you pass it to a
-https://docs.mulesoft.com/dataweave/latest/logger-component-reference[Logger component],
+https://docs.mulesoft.com/mule-runtime/latest/logger-component-reference[Logger component],
 the Logger consumes it, so it becomes unreadable by further elements in the flow.
 
 
@@ -113,9 +113,7 @@ Examples: `{ myKey : "a value" }`, `{ myKey : { a : 1, b : 2} }`,
 
 | LogLevel
 | `type LogLevel = "Debug" &#124; "Info" &#124; "Warn" &#124; "Error"`
-| Represents the severity levels for logging operations.
-
-_Introduced in DataWeave version 2.10.0._
+| A type that represents the severity level of logging operations. For example: `Debug`, `Info`, `Warn`, `Error`.
 
 
 | NaN
