@@ -24,7 +24,7 @@ and the function returns `null` if the array is empty.
 | `criteria` | Expression for selecting an item from the array, where the item is a `Number`, `Boolean`, `DateTime`, `LocalDateTime`, `Date`, `LocalTime`, `Time`, or `TimeZone` data type. Can be referenced with `&#36;`.
 |===
 
-=== Example: Numeric Values
+=== Example
 
 This example returns the greatest numeric value within objects
 (key-value pairs) in an array. Notice that it uses `item.a` to select the
@@ -49,7 +49,7 @@ output  application/json
 { "a" : 3 }
 ----
 
-=== Example: Date and Time Values
+=== Example
 
 This example gets the latest `DateTime`, `Date`, and `Time` from inputs
 defined in the variables `myDateTime1` and `myDateTime2`. It also shows that
@@ -60,8 +60,8 @@ the function returns null on an empty array.
 [source,DataWeave,linenums]
 ----
 %dw 2.0
-var myDateTime1 = |2017-10-01T22:57:59-03:00|
-var myDateTime2 = |2018-10-01T23:57:59-03:00|
+var myDateTime1 = "2017-10-01T22:57:59-03:00"
+var myDateTime2 = "2018-10-01T23:57:59-03:00"
 output application/json
 ---
 {
@@ -88,20 +88,3 @@ output application/json
 }
 ----
 
-=== Example: String Values
-
-`maxBy` can also compare strings. The following example demonstrates this using simple string elements.
-
-==== Source
-
-[source,DataWeave,linenums]
-----
-[ "A", "B", "C" ] maxBy ((item) -> item)
-----
-
-==== Output
-
-[source,JSON,linenums]
-----
-"C"
-----

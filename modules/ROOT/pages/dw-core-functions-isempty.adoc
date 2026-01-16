@@ -115,6 +115,43 @@ output application/json
 
 
 [[isempty4]]
+== isEmpty&#40;value: Binary&#41;: Boolean
+
+Returns `true` if the input binary is empty, `false` if not.
+
+_Introduced in DataWeave version 2.11.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `value` | Binary | The input binary value.
+|===
+
+=== Example
+
+This example indicates whether the input binary are empty.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+---
+[ isEmpty("" as Binary), isEmpty("DataWeave" as Binary) ]
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+[ true, false ]
+----
+
+
+[[isempty5]]
 == isEmpty&#40;value: Null&#41;: true
 
 Returns `true` if the input is `null`.

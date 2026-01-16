@@ -8,4 +8,5 @@ endif::[]
 [[decimalround1]]
 == decimalRound&#40;n: Number, ctx: OperationContext = DECIMAL_128_CONTEXT&#41;
 
-Returns the argument number with rounding specified by the operation context.
+Returns the argument number with rounding specified by the operation context
+

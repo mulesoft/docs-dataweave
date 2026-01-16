@@ -151,7 +151,7 @@ output application/json
 [[sizeof3]]
 == sizeOf&#40;binary: Binary&#41;: Number
 
-Returns the size of a binary payload in bytes. Returns 0 if the payload is empty.
+Returns the number of elements in an array of binary values.
 
 === Parameters
 
@@ -163,7 +163,7 @@ Returns the size of a binary payload in bytes. Returns 0 if the payload is empty
 
 === Example
 
-This example returns the number of bytes in the binary payload. Notice how multi-byte UTF-8 characters take up more than one byte.
+This example returns the size of an array of binary values.
 
 ==== Source
 
@@ -172,26 +172,14 @@ This example returns the number of bytes in the binary payload. Notice how multi
 %dw 2.0
 output application/json
 ---
-{
-
-BinarySizeOf: sizeOf("'my word'" as Binary) ++ " " ++ sizeOf("'my word'" as Binary),
-
-StringSizeOf: sizeOf("'my word'") ++ " " ++ sizeOf("'my word'")
-
-}
+sizeOf(["\u0000" as Binary, "\u0001" as Binary, "\u0002" as Binary])
 ----
 
 ==== Output
 
 [source,JSON,linenums]
 ----
-{
-
-"BinarySizeOf": "13 9",
-
-"StringSizeOf": "9 9"
-
-}
+3
 ----
 
 
@@ -235,9 +223,7 @@ sizeOf("abc")
 === Example
 
 This example returns the number of characters in the input strings. Notice it
-counts blank spaces in the string `"my string"` and that
-`sizeOf("123" as Number)` returns `1` because `123` is coerced into a number,
-so it's not a string.
+counts blank spaces in the string `"my string"`.
 
 ==== Source
 
@@ -248,8 +234,7 @@ output application/json
 ---
 {
   sizeOfSting2 : sizeOf("my string"),
-  sizeOfEmptyString: sizeOf(""),
-  sizeOfNumber : sizeOf("123" as Number)
+  sizeOfEmptyString: sizeOf("")
 }
 ----
 
@@ -259,8 +244,7 @@ output application/json
 ----
 {
   "sizeOfSting2": 9,
-  "sizeOfEmptyString": 0,
-  "sizeOfNumber": 1
+  "sizeOfEmptyString": 0
 }
 ----
 
@@ -388,7 +372,7 @@ output application/json
 Returns the number of characters in a `Number` value.
 
 
-To keep backward compatibility with 2.4, this function returns `1` for any `Number` value when the flag `com.mulesoft.dw.legacySizeOfNumber` is enabled.
+To keep backward compatibility with 2.4, returns `1` for any `Number` value when the flag `com.mulesoft.dw.legacySizeOfNumber` is enabled.
 
 _Introduced in DataWeave version 2.6.0._
 
@@ -427,7 +411,7 @@ output application/json
 === Example
 
 This example shows how the `sizeOf` function works when the flag `com.mulesoft.dw.legacySizeOfNumber` is enabled.
-Notice it returns 1 for any given input.
+Notice it return 1 for any given input.
 
 ==== Source
 
@@ -456,3 +440,4 @@ output application/json
 Helper function that enables `sizeOf` to work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
+
