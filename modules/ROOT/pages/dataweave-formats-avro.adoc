@@ -144,7 +144,7 @@ Valid values are `true` or `false`.
 [[mime_types]]
 == Supported MIME Types
 
-This format supports these MIME types:
+This format supports this MIME type:
 
 * `application/avro`
 

@@ -131,7 +131,7 @@ _Introduced in DataWeave version 2.11.0._
 
 === Example
 
-This example indicates whether the input binary are empty.
+This example indicates whether the input binary is empty.
 
 ==== Source
 
@@ -184,4 +184,3 @@ output application/json
 ----
 { "nullValue": true }
 ----
-

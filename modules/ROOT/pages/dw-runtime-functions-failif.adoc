@@ -47,3 +47,27 @@ ERROR 2018-07-29 11:56:39,988 ...
 Message               : "Failed
 ----
 
+Alternatively, the function outputs the value.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import failIf from dw::Runtime
+var result = {"a":"test"}
+output application/json
+---
+{ "result" : result failIf isEmpty($) }
+----
+
+==== Output
+
+[source,JSON,linenums]
+----
+{
+  "result": {
+    "a": "test"
+  }
+}
+----

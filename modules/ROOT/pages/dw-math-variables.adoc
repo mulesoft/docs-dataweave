@@ -6,7 +6,7 @@
 
 | DECIMAL_128_CONTEXT
 | `DECIMAL_128_CONTEXT: OperationContext`
-| A MathContext object with a precision setting matching the precision of the IEEE 754-2019 decimal128 format, 34 digits, and a rounding mode of HALF_EVEN.
+| A `MathContext` object with a precision of 34 digits, matching the IEEE 754-2019 decimal128 format, and a rounding mode of `HALF_EVEN`.
 
 | E
 | `E`
@@ -24,6 +24,5 @@ _Introduced in DataWeave version 2.4.0._
 
 | UNLIMITED_CONTEXT
 | `UNLIMITED_CONTEXT: OperationContext`
-| A MathContext object whose settings have the values required for unlimited precision arithmetic.
-The values of the settings are: precision=0 roundingMode=HALF_UP
+| A `MathContext` object with settings configured for unlimited precision arithmetic.
 |===

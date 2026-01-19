@@ -1,4 +1,4 @@
-= Mule (Mule)
+= Mule (dw::Mule)
 
 This DataWeave module contains functions for interacting with Mule runtime.
 
@@ -17,5 +17,3 @@ Environment variables.
 
 == Types
 * xref:dw-mule-types.adoc[Mule Types]
-
-

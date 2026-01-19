@@ -9,5 +9,4 @@ endif::[]
 == decimalDivide&#40;dividend: Number, divisor: Number, ctx: OperationContext = DECIMAL_128_CONTEXT&#41;: Number
 
 Performs number division with rounding specified by the operation context. If precision is set to 0 (unlimited precision)
-and the result has an infinite decimal expansion it will error
-
+and the result has an infinite decimal expansion it will error.

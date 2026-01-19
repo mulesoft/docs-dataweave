@@ -43,7 +43,7 @@ Sets the size (in bytes) of in-memory input and output buffers that DataWeave us
 |`com.mulesoft.dw.charbuffersize`|
 Determines the size (in bytes) of the buffer used by the writer.
 
-* Type: `Number`
+* Type: `Number` (in bytes)
 * Default: `4096`
 
 
@@ -70,8 +70,8 @@ When set to `false`, this property prevents DataWeave indexed readers for CSV fr
 * Type: `Boolean`
 
 * Default:
-   ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
-   ** `false` for language levels: 2.10, 2.11
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+  ** `false` for language levels: 2.10, 2.11
 
 Available for language levels: 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
@@ -84,8 +84,8 @@ When set to `true`, DataWeave escapes quotes in CSV.
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.4
-   ** `true` for language levels: 2.5
+  ** `false` for language levels: 2.4
+  ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
 
@@ -109,7 +109,7 @@ output application/dw
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.3, 2.4, 2.5
+  ** `false` for language levels: 2.3, 2.4, 2.5
 
 
 Available for language levels: 2.3, 2.4, 2.5
@@ -133,7 +133,7 @@ When set to `false`, the `default` operator catches the runtime exceptions and r
 * Type: `Boolean`
 
 * Default:
-   ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+  ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -199,8 +199,8 @@ When set to `true`, the JavaModuleLoader doesn't change the accessible flag for 
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.5
-   ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+  ** `false` for language levels: 2.5
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
@@ -215,8 +215,8 @@ If it is set to `false`, the JavaModuleLoader uses the specific bean's class def
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
-   ** `true` for language levels: 2.10, 2.11
+  ** `false` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+  ** `true` for language levels: 2.10, 2.11
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
@@ -228,8 +228,8 @@ When set to `true`, the JavaModuleLoader honors the bean definition by using the
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.8
-   ** `true` for language levels: 2.9, 2.10, 2.11
+  ** `false` for language levels: 2.8
+  ** `true` for language levels: 2.9, 2.10, 2.11
 
 Available for language levels: 2.8, 2.9, 2.10, 2.11
 
@@ -241,7 +241,7 @@ When set to `true`, DataWeave scripts with Java output `mimetype` return the str
 * Type: `Boolean`
 
 * Default:
-   ** `true` for language levels: 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
+  ** `true` for language levels: 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
 Available for language levels: 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
@@ -261,8 +261,8 @@ When set, `java.sql.Date` maps to the DataWeave `Date` type. If `false`, it maps
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.4
-   ** `true` for language levels: 2.5
+  ** `false` for language levels: 2.4
+  ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
 
@@ -275,7 +275,7 @@ When set to `true`, DataWeave returns `1` when calling `sizeOf()` function for a
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.6, 2.7, 2.8, 2.9, 2.10
+  ** `false` for language levels: 2.6, 2.7, 2.8, 2.9, 2.10
 
 Available for language levels: 2.6, 2.7, 2.8, 2.9, 2.10
 
@@ -342,8 +342,8 @@ output application/json
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.9
-   ** `true` for language levels: 2.10, 2.11
+  ** `false` for language levels: 2.9
+  ** `true` for language levels: 2.10, 2.11
 
 Available for language levels: 2.9, 2.10, 2.11
 
@@ -377,22 +377,20 @@ output application/json
 * Type: `Boolean`
 
 * Default:
-   ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
+  ** `true` for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 Available for language levels: 2.5, 2.6, 2.7, 2.8, 2.9
 
 
 //com.mulesoft.dw.surrogateCharCodeSupport//
 |`com.mulesoft.dw.surrogateCharCodeSupport`|
-When set to `true`, fromCharCode function supports surrogate characters and throws an exception if
-the code point isn't a valid unicode character.
-
+When set to `true`, the `fromCharCode` function supports surrogate characters and throws an exception if the code point isn't a valid Unicode character.
 
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.6, 2.7, 2.8, 2.9
-   ** `true` for language levels: 2.10
+  ** `false` for language levels: 2.6, 2.7, 2.8, 2.9
+  ** `true` for language levels: 2.10
 
 Available for language levels: 2.6, 2.7, 2.8, 2.9, 2.10
 
@@ -499,7 +497,7 @@ output application/json
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.3, 2.4, 2.5
+  ** `false` for language levels: 2.3, 2.4, 2.5
 
 Available for language levels: 2.3, 2.4, 2.5
 
@@ -551,8 +549,8 @@ When set to `true`, DataWeave lets you use the indexed reader for Latin1(ISO-885
 * Type: `Boolean`
 
 * Default:
-   ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
-   ** `false` for language levels: 2.10, 2.11
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9
+  ** `false` for language levels: 2.10, 2.11
 
 Available for language levels: 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
@@ -564,8 +562,8 @@ When this property is set to `true`, DataWeave retains a mixed-content structure
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.4
-   ** `true` for language levels: 2.5
+  ** `false` for language levels: 2.4
+  ** `true` for language levels: 2.5
 
 Available for language levels: 2.4, 2.5
 
@@ -577,8 +575,8 @@ When this property is set to `true`, DataWeave uses the encoding declared in the
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.4, 2.5
-   ** `true` for language levels: 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
+  ** `false` for language levels: 2.4, 2.5
+  ** `true` for language levels: 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
 Available for language levels: 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
@@ -590,8 +588,8 @@ When this property is set to `false`, DataWeave doesn't declare the `xml` implic
 * Type: `Boolean`
 
 * Default:
-   ** `true` for language levels: 2.4, 2.5
-   ** `false` for language levels: 2.6
+  ** `true` for language levels: 2.4, 2.5
+  ** `false` for language levels: 2.6
 
 Available for language levels: 2.4, 2.5, 2.6
 
@@ -603,8 +601,8 @@ Enables a pass of the DataWeave compiler that extracts usages of values in Mule 
 * Type: `Boolean`
 
 * Default:
-   ** `false` for language levels: 2.6, 2.7, 2.8, 2.9, 2.10
-   ** `true` for language levels: 2.11
+  ** `false` for language levels: 2.6, 2.7, 2.8, 2.9, 2.10
+  ** `true` for language levels: 2.11
 
 Available for language levels: 2.6, 2.7, 2.8, 2.9, 2.10, 2.11
 
@@ -616,7 +614,7 @@ When set to `true`, the JavaModuleLoader loads the methods for Java Classes in d
 * Type: `Boolean`
 
 * Default:
-   ** `true` for language levels: 2.5, 2.6
+  ** `true` for language levels: 2.5, 2.6
 
 Available for language levels: 2.5, 2.6
 

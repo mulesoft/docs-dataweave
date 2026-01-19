@@ -8,7 +8,7 @@ MIME type: `text/event-stream`
 
 ID: `eventstream`
 
-DataWeave represents the Event Stream as an `Array` of `Object` where the value is a `String`.
+DataWeave represents the Event Stream as an `Array` of `Object`, where each value is a `String`.
 The output type is `Array<{_:String}>`, where each key represents a field in the event.
 
 [[examples]]
