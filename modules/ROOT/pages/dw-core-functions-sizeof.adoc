@@ -427,7 +427,7 @@ output application/json
 === Example
 
 This example shows how the `sizeOf` function works when the flag `com.mulesoft.dw.legacySizeOfNumber` is enabled.
-Notice it returns 1 for any given input.
+Notice it returns `1` for any given input.
 
 ==== Source
 

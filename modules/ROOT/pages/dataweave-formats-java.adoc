@@ -64,7 +64,7 @@ This table maps Java classes to DataWeave types:
 | `*[]` | `Array`
 |===
 
-IMPORTANT: If a Java class isn't in present in the table, DataWeave treats it as a `JavaBean` and maps it as an `Object` type. In this case, DataWeave takes all properties from the Java getters.
+IMPORTANT: If a Java class isn't present in the table, DataWeave treats it as a `JavaBean` and maps it as an `Object` type. In this case, DataWeave takes all properties from the Java getters.
 
 [[metadata]]
 == Metadata
@@ -228,7 +228,7 @@ The output is a JSON object that contains key-value pairs. The values are the `n
 
 This example shows how to create an instance of a `Customer` class. The script outputs the object in the JSON format and MIME type.
 
-Notice that it isn't necessary to specify the class of inner properties because their class is inferred from the parent class definition.
+Notice that it's not necessary to specify the class of inner properties because their class is inferred from the parent class definition.
 
 [source,dataweave,linenums]
 ----
@@ -420,6 +420,7 @@ DataWeave supports these configuration properties for this format.
 === Reader Properties
 
 There are no reader properties for this format.
+
 
 [[writer_properties]]
 === Writer Properties

@@ -33,16 +33,16 @@ import isLowerCase from dw::core::Strings
 output application/json
 ---
 {
- "a": isLowerCase(null),
- "b": isLowerCase(""),
- "c": isLowerCase(" "),
- "d": isLowerCase("abc"),
- "e": isLowerCase("aBC"),
- "f": isLowerCase("a c"),
- "g": isLowerCase("a1c"),
- "h": isLowerCase("a/c"),
- "i": isLowerCase("mulesöft"), // ö is lowercase Unicode
- "j": isLowerCase("mulesÖft") // Ö is uppercase Unicode
+  "a": isLowerCase(null),
+  "b": isLowerCase(""),
+  "c": isLowerCase("  "),
+  "d": isLowerCase("abc"),
+  "e": isLowerCase("aBC"),
+  "f": isLowerCase("a c"),
+  "g": isLowerCase("a1c"),
+  "h": isLowerCase("a/c"),
+  "i": isLowerCase("mulesöft"),
+  "j": isLowerCase("mulesÖft")
 }
 ----
 
@@ -51,16 +51,16 @@ output application/json
 [source,JSON,linenums]
 ----
 {
- "a": false,
- "b": false,
- "c": false,
- "d": true,
- "e": false,
- "f": false,
- "g": false,
- "h": false,
- "i": true,
- "j": false
+  "a": false,
+  "b": false,
+  "c": false,
+  "d": false,
+  "e": false,
+  "f": false,
+  "g": false,
+  "h": false,
+  "i": true,
+  "j": false
 }
 ----
 

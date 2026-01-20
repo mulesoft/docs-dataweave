@@ -11,7 +11,7 @@ ID: `ndjson`
 
 DataWeave represents the Newline Delimited JSON format (ndjson) as an array of objects. Each line of the ndjson format is mapped to one object in the array.
 
-The following parser strategies are supported by the ndjson reader:
+These parser strategies are supported by the ndjson reader:
 
 * In-memory
 * Streaming
@@ -165,6 +165,7 @@ Apply `skipNullOn` to arrays and objects, for example,
 `output application/x-ndjson skipNullOn="everywhere"`.
 
 Valid values are `arrays` or `objects` or `everywhere`.
+
 |`writeAttributes`  |`Boolean`|`false`|Converts attributes of a key into child key-value pairs of that key.
 The attribute key name starts with `@`.
 

@@ -10,6 +10,7 @@ endif::[]
 
 Checks if the `text` contains only Unicode digits. This excludes digits, punctuation, and other nonletter characters.
 
+
 Note that the method does not allow for a leading sign, either positive or negative.
 
 _Introduced in DataWeave version 2.2.0._

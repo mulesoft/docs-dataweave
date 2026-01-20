@@ -56,7 +56,7 @@ payload
 
 ==== Output
 
-The JSON format outputs the 3 events.
+The JSON format outputs these three events.
 
 [source,json,linenums]
 ----

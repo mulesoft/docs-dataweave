@@ -57,7 +57,7 @@ output application/json
 [source,JSON,linenums]
 ----
 {
-  "encodeURI": "http://asd/%20text%20to%20decode%20/%25/%22%5C/text",
-  "not_encoded": "http://:;,/?:@&=$_-_.!~*'()"
+    "encodeURI": "http://asd/%20text%20to%20decode%20/%25/%22%5C/text",
+    "not_encoded": "http://:;,/?:@&=$_-_.!~*'()"
 }
 ----

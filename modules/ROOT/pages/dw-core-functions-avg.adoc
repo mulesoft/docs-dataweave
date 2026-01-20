@@ -42,3 +42,4 @@ output application/json
 ----
 { "a": 500.5, "b": 2 }
 ----
+
