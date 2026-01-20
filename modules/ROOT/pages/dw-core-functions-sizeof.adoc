@@ -237,7 +237,7 @@ sizeOf("abc")
 This example returns the number of characters in the input strings. Notice it
 counts blank spaces in the string `"my string"` and that
 `sizeOf("123" as Number)` returns `1` because `123` is coerced into a number,
-so it isn't a string.
+so it's not a string.
 
 ==== Source
 
