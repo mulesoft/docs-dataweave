@@ -94,7 +94,7 @@ data: test
 
 ==== Source
 
-This process transforms the input into a JSON.
+This process transforms the input into JSON.
 
 [source,dataweave,linenums]
 ----
