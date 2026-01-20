@@ -145,7 +145,7 @@ class User {
 }
 ----
 
-The following class extends `User`.
+This class extends `User`.
 
 [[class_customer]]
 .Customer class:
