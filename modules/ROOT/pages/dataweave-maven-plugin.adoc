@@ -100,7 +100,7 @@ Inside the `plugin` configuration, add a `tests` element configured to use param
 |Specifies the format for the coverage report, one of:
 
 * `sonar` +
-Generates a valid https://www.sonarqube.org/[Sonar^] coverage report for your test suite.
+Generates a valid https://www.sonarsource.com/products/sonarqube/[Sonar^] coverage report for your test suite.
 * `html` +
 Generates an HTML coverage report for your test suite.
 
