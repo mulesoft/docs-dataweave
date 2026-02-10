@@ -183,7 +183,7 @@ The DataWeave script shows how the Protobuf message input is represented in the 
 
 === Oneof
 
-https://protobuf.dev/programming-guides/proto3/[Oneof^] fields, a Protobuf particularity, are represented as regular fields on DataWeave. When writing a `proto` message, a particular schema specifies what the DataWeave script needs to validate. If more than one of the fields defined is present, the script fails.
+https://protobuf.dev/programming-guides/proto3/#oneof[Oneof^] fields, a Protobuf particularity, are represented as regular fields on DataWeave. When writing a `proto` message, a particular schema specifies what the DataWeave script needs to validate. If more than one of the fields defined is present, the script fails.
 
 [[example_protobuf_oneof_fail]]
 === Example: An Invalid Attempt to Write Two Exclusive Fields
