@@ -339,7 +339,7 @@ The DataWeave script outputs a JSON message containing an array of names.
 === Unknowns
 
 Protobuf offers capabilities for forward and backward compatibility of protocols. In order
-to achieve this, readers and writers accept https://protobuf.dev/programming-guides/proto3/[unknown fields^] on messages. DataWeave adapts to this functionality by using certain key names.
+to achieve this, readers and writers accept https://protobuf.dev/programming-guides/proto3/#unknowns[unknown fields^] on messages. DataWeave adapts to this functionality by using certain key names.
 
 When reading a Protobuf message, if a field not present in the schema is found, it is read into something similar to `"-35": 111111 as Number {wireType: "Varint"},`, where `"-35"` means that the field index is `35`, and `wireType: "Varint"` specifies the wire type the field has in the message. The `wireType` can be `"Varint"`, `"64Bit"`, `"LengthDelimited"`, `"Group"`, or `"32Bit"`.
 
@@ -389,7 +389,7 @@ type ProtoBufValue  = Null
 
 === Maps
 
-https://protobuf.dev/programming-guides/proto3/[Protobuf maps^] enable you to have a structure without a predefined set of keys, but with every field sharing the same value type.
+https://protobuf.dev/programming-guides/proto3/#maps[Protobuf maps^] enable you to have a structure without a predefined set of keys, but with every field sharing the same value type.
 A `map<keyType, valueType>` is mapped to a DataWeave object with the keys represented as strings and the values mapped to their corresponding value. When writing a `proto` message, the key is casted to the `keyType` specified on the descriptor. If it's not possible to execute the cast, the script fails.
 
 == Compiling Schemas into Descriptors
