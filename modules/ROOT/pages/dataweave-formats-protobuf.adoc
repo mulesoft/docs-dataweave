@@ -74,7 +74,7 @@ Protobuf supports the following features which are not common in other formats.
 [[protobuf_enums]]
 === Enumerations
 
-https://developers.google.com/protocol-buffers/docs/proto3#enum[Protobuf enumerations^], or enums, are read as a `String` with a particular schema that specifies the enum index. When parsing a `proto` message, the schema is used to extract the label of the enum value. If many labels share the same index, the first one is used. If the index does not have a matching label, the special label `"-UNRECOGNIZED"` is used.
+https://protobuf.dev/programming-guides/proto3/[Protobuf enumerations^], or enums, are read as a `String` with a particular schema that specifies the enum index. When parsing a `proto` message, the schema is used to extract the label of the enum value. If many labels share the same index, the first one is used. If the index does not have a matching label, the special label `"-UNRECOGNIZED"` is used.
 When writing a `proto` message, the schema specifies the protocol used to get the index corresponding to the given label.
 
 [[example_protobuf_enum_ok]]
@@ -183,7 +183,7 @@ The DataWeave script shows how the Protobuf message input is represented in the 
 
 === Oneof
 
-https://developers.google.com/protocol-buffers/docs/proto3#oneof[Oneof^] fields, a Protobuf particularity, are represented as regular fields on DataWeave. When writing a `proto` message, a particular schema specifies what the DataWeave script needs to validate. If more than one of the fields defined is present, the script fails.
+https://protobuf.dev/programming-guides/proto3/[Oneof^] fields, a Protobuf particularity, are represented as regular fields on DataWeave. When writing a `proto` message, a particular schema specifies what the DataWeave script needs to validate. If more than one of the fields defined is present, the script fails.
 
 [[example_protobuf_oneof_fail]]
 === Example: An Invalid Attempt to Write Two Exclusive Fields
@@ -333,7 +333,7 @@ The DataWeave script outputs a JSON message containing an array of names.
 === Unknowns
 
 Protobuf offers capabilities for forward and backward compatibility of protocols. In order
-to achieve this, readers and writers accept https://developers.google.com/protocol-buffers/docs/proto3#unknowns[unknown fields^] on messages. DataWeave adapts to this functionality by using certain key names.
+to achieve this, readers and writers accept https://protobuf.dev/programming-guides/proto3/[unknown fields^] on messages. DataWeave adapts to this functionality by using certain key names.
 
 When reading a Protobuf message, if a field not present in the schema is found, it is read into something similar to `"-35": 111111 as Number {wireType: "Varint"},`, where `"-35"` means that the field index is `35`, and `wireType: "Varint"` specifies the wire type the field has in the message. The `wireType` can be `"Varint"`, `"64Bit"`, `"LengthDelimited"`, `"Group"`, or `"32Bit"`.
 
@@ -341,7 +341,7 @@ When reading a Protobuf message, if a field not present in the schema is found, 
 === Semantic Parsing (Or Commonly Used Message Types)
 
 Protobuf offers a collection of
-https://developers.google.com/protocol-buffers/docs/reference/google.protobuf[commonly used message types^]. DataWeave parses some of these as the value they represent instead of as the underlying message.
+https://protobuf.dev/reference/protobuf/google.protobuf/[commonly used message types^]. DataWeave parses some of these as the value they represent instead of as the underlying message.
 For example, a `google.protobuf.Duration` is read into DataWeave as a `Period`, while
 a `google.protobuf.NullValue` is read as `Null`.
 
@@ -383,7 +383,7 @@ type ProtoBufValue  = Null
 
 === Maps
 
-https://developers.google.com/protocol-buffers/docs/proto3#maps[Protobuf maps^] enable you to have a structure without a predefined set of keys, but with every field sharing the same value type.
+https://protobuf.dev/programming-guides/proto3/[Protobuf maps^] enable you to have a structure without a predefined set of keys, but with every field sharing the same value type.
 A `map<keyType, valueType>` is mapped to a DataWeave object with the keys represented as strings and the values mapped to their corresponding value. When writing a `proto` message, the key is casted to the `keyType` specified on the descriptor. If it's not possible to execute the cast, the script fails.
 
 == Compiling Schemas into Descriptors
