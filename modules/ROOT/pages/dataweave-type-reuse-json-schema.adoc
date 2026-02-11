@@ -7,7 +7,7 @@ JSON Schema is a standard that provides a format for the JSON data required for 
 
 To reuse predefined types, you can load the JSON schema into DataWeave to make the types structure available for use in your scripts.
 
-The JSON schema loader parses schemas using the https://json-schema.org/specification-links.html#draft-7[JSON Schema Draft 7ˆ].
+The JSON schema loader parses schemas using the https://json-schema.org/specification-links#draft-7[JSON Schema Draft 7ˆ].
 
 == Import a Type from a JSON Schema
 
