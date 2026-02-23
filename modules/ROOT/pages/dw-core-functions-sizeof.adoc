@@ -187,7 +187,7 @@ StringSizeOf: sizeOf("'my word'") ++ " " ++ sizeOf("'my word'")
 ----
 {
 
-"BinarySizeOf": "13 9",
+"BinarySizeOf": "9 9",
 
 "StringSizeOf": "9 9"
 
