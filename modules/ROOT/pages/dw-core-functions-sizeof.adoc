@@ -187,7 +187,7 @@ StringSizeOf: sizeOf("'my word'") ++ " " ++ sizeOf("'my word'")
 ----
 {
 
-"BinarySizeOf": "13 9",
+"BinarySizeOf": "9 9",
 
 "StringSizeOf": "9 9"
 
@@ -271,4 +271,3 @@ output application/json
 Helper function that enables `sizeOf` to work with a `null` value.
 
 _Introduced in DataWeave version 2.4.0._
-
