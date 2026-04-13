@@ -2,6 +2,10 @@
 
 DataWeave supports several system properties. To use these properties in application development and deployments, see xref:mule-runtime::mule-app-properties-system.adoc[System Properties].
 
+Whether a property in this reference applies depends on the DataWeave language level configured for the application, not only on the Mule runtime version where the application runs. For how language level is determined in Mule applications (including its relationship to `minMuleVersion`), see xref:dataweave-versioning-behavior.adoc[Versioning Behavior in DataWeave].
+
+If a property is listed as available only for specific language levels, it applies only when the application uses one of those levels. In newer DataWeave versions, some of these properties remain supported only for backward compatibility when the application targets a compatible earlier language level, even if it runson a newer Mule runtime.
+
 [%header%autowidth.spread,cols=",a"]
 |===
 |Property |Description
