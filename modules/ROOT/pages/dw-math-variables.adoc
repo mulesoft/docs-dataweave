@@ -25,4 +25,5 @@ _Introduced in DataWeave version 2.4.0._
 | UNLIMITED_CONTEXT
 | `UNLIMITED_CONTEXT: OperationContext`
 | A `MathContext` object with settings configured for unlimited precision arithmetic.
+The values of the settings are: `precision=0` and `roundingMode=HALF_UP`.
 |===

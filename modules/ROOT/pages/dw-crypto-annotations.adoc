@@ -1,0 +1,47 @@
+= Crypto Annotations (dw::Crypto)
+
+Parameters annotated with `@CryptographicSink` are subject to taint analysis during
+type checking. When a literal algorithm value is passed to a parameter marked with
+this annotation, the type checker validates whether the algorithm is permitted.
+If the algorithm matches a forbidden or insecure algorithm (such as MD5 or SHA-1 in
+FIPS-compliant environments), a compilation error is raised.
+
+This annotation can only be applied to function parameters.
+
+== Parameters
+
+[%header, cols="1,2a,3a"]
+|===
+| Annotation | Definition | Description
+
+| CryptographicSink
+| `@CryptographicSink&#40;&#41;`
+| Marks a function parameter as a cryptographic algorithm sink for security validation.
+
+== Error
+
+When an insecure algorithm is detected, DataWeave produces this error:
+
+----
+Cryptographic violation: Forbidden use of algorithm <algorithm> in <module>.
+----
+
+=== Example
+
+This function declares an algorithm parameter as a cryptographic sink.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+fun hashWith(content: Binary, @CryptographicSink algorithm: String = "SHA-1"): Binary = native("system::HashFunctionValue")
+----
+
+When called with a forbidden algorithm in a security-restricted environment, DataWeave produces this error. For example, this error occurs when MD5 is configured as a forbidden algorithm.
+
+[source,DataWeave,linenums]
+----
+hashWith("data" as Binary, "MD5")
+----
+
+|===
