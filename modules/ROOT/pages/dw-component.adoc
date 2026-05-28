@@ -3,7 +3,7 @@
 Component Descriptor Schema
 
 This module defines the types for DataWeave component descriptors.
-Component descriptors are stored in /META-INF/dataweave/components.dwl
+Component descriptors are stored in `/META-INF/dataweave/components.dwl`
 
 
 == Types
