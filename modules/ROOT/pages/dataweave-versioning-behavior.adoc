@@ -9,6 +9,7 @@ For Mule applications, the language level is determined by the application's `mi
 [%header%autowidth.spread,cols="a,a"]
 |===
 | minMuleVersion | Language Level
+| 4.12 | 2.12
 | 4.11 | 2.11
 | 4.10 | 2.10
 | 4.9 | 2.9
