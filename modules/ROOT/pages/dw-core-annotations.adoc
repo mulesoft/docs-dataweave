@@ -119,23 +119,4 @@ no privileges. For example, such a script cannot gain access to environment
 variables or read a resource from a URL.
 
 _Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
-
-| VisibleTo
-| `@VisibleTo&#40;components: Array<String&#62;&#41;`
-| Annotation that allows internal directives (var, fun, type, ns) to be visible
-to specific components beyond their own component. This annotation provides
-fine-grained control over internal visibility by explicitly listing which
-components can access the internal declaration.
-
-Example:
-```
-@VisibleTo(components = ["component-b", "component-c"])
-internal var sharedSecret = 42
-```
-
-_Introduced in DataWeave 2.12.0. Supported by Mule 4.12.0 and later._
-
-_Experimental:_ This experimental feature is subject to change or removal from future versions of DataWeave.
-
-_Introduced in DataWeave version 2.12.0._
 |===
