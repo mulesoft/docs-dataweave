@@ -1,0 +1,12 @@
+= Component (dw::meta::Component)
+
+This module defines the schema of the DataWeave component descriptor.
+
+The descriptor lives at `/META-INF/dw-components.dwl` inside a `.jar` and is
+an `Array<ComponentDescriptor>`. The DataWeave Maven plugin generates it
+automatically when packaging a `dw-library` artifact.
+
+
+== Types
+
+* xref:dw-component-types.adoc[Component Types]

@@ -49,6 +49,7 @@
  ** xref:dataweave-memory-management.adoc[Memory Management]
  ** xref:dataweave-logging-configuration.adoc[Logging Configuration]
  ** xref:dataweave-versioning-behavior.adoc[Versioning Behavior in DataWeave]
+ ** xref:dataweave-scope-visibility.adoc[Scope Visibility in DataWeave]
 * xref:dataweave-cookbook.adoc[DataWeave Examples]
  ** xref:dataweave-cookbook-extract-data.adoc[Extract Data]
  ** xref:dataweave-cookbook-select-xml-elements.adoc[Select XML Elements]

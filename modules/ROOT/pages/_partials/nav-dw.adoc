@@ -253,6 +253,8 @@
 ** xref:dw-dataformat.adoc[dw::extension::DataFormat]
 *** xref:dw-dataformat-types.adoc[DataFormat Types]
 *** xref:dw-dataformat-annotations.adoc[DataFormat Annotations]
+** xref:dw-component.adoc[dw::meta::Component]
+*** xref:dw-component-types.adoc[Component Types]
 ** xref:dw-mime.adoc[dw::module::Mime]
 *** xref:dw-mime-functions-fromstring.adoc[fromString]
 *** xref:dw-mime-functions-ishandledby.adoc[isHandledBy]
