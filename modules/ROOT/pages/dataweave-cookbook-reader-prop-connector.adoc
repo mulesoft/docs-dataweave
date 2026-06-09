@@ -18,8 +18,6 @@ id | name | role
 4567 | Chibana,Mr. | dev
 ----
 
-//LINK TO DW 1.0 EXAMPLES:
-// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 The following example uses the Read operation in the File connector to read the pipe-separated (`|`) CSV input, and it uses a DataWeave script in the Transform Message component to output a row of the input in comma-separated format.
 
