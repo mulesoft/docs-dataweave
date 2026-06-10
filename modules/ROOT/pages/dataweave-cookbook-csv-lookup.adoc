@@ -5,8 +5,6 @@ endif::[]
 
 
 This DataWeave example uses `filter` with `map` to look up data in a CSV file and return a country code for each calling code found within an input array of phone numbers.
-//LINK TO DW 1.0 EXAMPLES:
-// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 The following JSON payload provides an array of phone numbers to the DataWeave script.
 
