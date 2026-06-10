@@ -6,8 +6,6 @@ endif::[]
 
 
 You can use DataWeave to change the format of date and time input.
-//LINK TO DW 1.0 EXAMPLES:
-// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 [[ex01]]
 == Change Date and Time Formats

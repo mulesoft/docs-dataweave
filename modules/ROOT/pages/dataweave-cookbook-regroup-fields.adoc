@@ -6,8 +6,6 @@ endif::[]
 
 
 These DataWeave examples take input that is grouped under one field and transform it into a new structure that groups data under another field.
-//LINK TO DW 1.0 EXAMPLES:
-// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 Both examples use these functions:
 
