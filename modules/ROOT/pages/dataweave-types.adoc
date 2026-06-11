@@ -6,8 +6,6 @@ endif::[]
 
 
 DataWeave represents data using values, each of which has a data type associated with it. There are many types, such as strings, arrays, Booleans, numbers, objects, dates, times, and others. Each type supports several ways of creating its values. This topic explores many of the ways you can create them.
-//LINK TO DW 1.0 LANDING PAGE IN MULE 3.9 DOCS:
-//include::partial$dataweave1-links.adoc[tag=dataweave1LandingPage]
 
 
 The types that DataWeave provide are bundled into modules that also contain the related functions.

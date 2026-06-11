@@ -6,8 +6,6 @@ endif::[]
 
 
 You can create a transformation that can dynamically change what it does depending on a definition input. This DataWeave example receives both a payload input, and a variable named `mappings` that specifies how to rename each field and what default value to use in each.
-//LINK TO DW 1.0 EXAMPLES:
-// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 The example uses the following:
 
