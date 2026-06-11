@@ -6,8 +6,6 @@ endif::[]
 
 This DataWeave example uses the `filter` function to return only the
 rows in an Excel (XLSX) input file that contain a specified value.
-//LINK TO DW 1.0 EXAMPLES:
-// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 NOTE: By default, files over 1.5 MB are stored on disk. Smaller
 files are stored in memory.

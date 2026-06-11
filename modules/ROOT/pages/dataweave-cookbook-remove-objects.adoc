@@ -6,8 +6,6 @@ endif::[]
 
 
 This DataWeave example removes all objects that contain a set of key-value pairs from an array of objects.
-//LINK TO DW 1.0 EXAMPLES:
-// include::partial$dataweave1-links.adoc[tag=dataweave1Examples]
 
 
 This example uses the following functions:
