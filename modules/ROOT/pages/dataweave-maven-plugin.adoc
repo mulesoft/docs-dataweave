@@ -151,6 +151,53 @@ include::dataweave::partial$dataweave-maven-plugin-config.adoc[tag=config]
 </plugin>
 ----
 
+== Configure Cryptographic Taint Analysis
+
+The Maven plugin for DataWeave can run cryptographic taint analysis at compile time to help identify potential security vulnerabilities in your DataWeave code. The analysis tracks literal algorithm values that flow into parameters annotated with xref:dataweave::dw-crypto-annotations.adoc[`@CryptographicSink`] and fails the build when an algorithm matches your configured insecure list. For more details about the annotation, see xref:dataweave::dw-crypto-annotations.adoc[Crypto Annotations].
+
+Inside the `plugin` configuration, add `cryptoTaintAnalysisSettings` with values that match your security requirements:
+
+[%header%autowidth.spread,cols=".^a,.^a,.^a,.^a"]
+|===
+|Name |Type |Default |Description
+
+|`enabled`
+|`boolean`
+|`false`
+|When set to `true`, the plugin runs cryptographic taint analysis during compilation.
+
+|`insecureAlgorithms`
+|`String`
+|`""`
+|Comma-separated list of cryptographic algorithms that your organization considers insecure. The plugin reports a compilation error when one of these algorithms reaches a `@CryptographicSink` parameter. For example, `MD5,SHA1,DES,RC4`.
+
+|`sensitiveModules`
+|`String`
+|`""`
+|Comma-separated list of DataWeave modules to flag as sensitive. Use DataWeave module notation with the `::` separator. For example, `dw::crypto::CryptoModule,dw::security::HashModule`.
+|===
+
+=== Cryptographic Taint Analysis Example
+
+This example enables taint analysis and configures both insecure algorithms and sensitive modules:
+
+.Example `pom.xml` file
+[source,xml,linenums]
+----
+<plugin>
+include::dataweave::partial$dataweave-maven-plugin-config.adoc[tag=config]
+  <configuration>
+    ...
+    <cryptoTaintAnalysisSettings>
+      <enabled>true</enabled>
+      <insecureAlgorithms>MD5,SHA1,DES,RC4</insecureAlgorithms>
+      <sensitiveModules>dw::crypto::CryptoModule,dw::security::HashModule,dw::util::SecurityModule</sensitiveModules>
+    </cryptoTaintAnalysisSettings>
+    ...
+  </configuration>
+</plugin>
+----
+
 == Generate Documentation for a DataWeave Library
 
 Run the `data-weave:generate-docs` goal to auto-generate the documentation for your DataWeave library, for example:
