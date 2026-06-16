@@ -19,7 +19,7 @@ DataWeave 2.12.0 supports three visibility levels:
 
 [NOTE]
 ====
-Visibility checks run only at *compile time*. Once a script is compiled, no runtime visibility check is performed. This keeps execution overhead at zero and ensures pre-compiled (`.bdwl`) modules behave the same as source modules.
+Visibility checks run only at compile time. Once a script is compiled, no runtime visibility check is performed. This keeps execution overhead at zero and ensures pre-compiled (`.bdwl`) modules behave the same as source modules.
 ====
 
 == Syntax
