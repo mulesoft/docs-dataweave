@@ -155,7 +155,7 @@ include::dataweave::partial$dataweave-maven-plugin-config.adoc[tag=config]
 
 The Maven plugin for DataWeave can run cryptographic taint analysis at compile time to help identify potential security vulnerabilities in your DataWeave code. The analysis tracks literal algorithm values that flow into parameters annotated with xref:dw-crypto-annotations.adoc[`@CryptographicSink`] and causes the build to fail when an algorithm matches your configured insecure list. For more details about the annotation, see xref:dw-crypto-annotations.adoc[Crypto Annotations].
 
-Inside the `plugin` configuration, add `cryptoTaintAnalysisSettings` with values that match your security requirements:
+Inside the plugin configuration, add `cryptoTaintAnalysisSettings` with values that match your security requirements:
 
 [%header%autowidth.spread,cols=".^a,.^a,.^a,.^a"]
 |===
