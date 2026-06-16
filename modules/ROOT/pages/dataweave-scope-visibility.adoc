@@ -82,7 +82,7 @@ A component is described by a component descriptor, a `.dwl` resource located at
 ]
 ----
 
-When the compiler resolves a reference to a symbol declared in another module, it looks up which component owns the declaring module and which component owns the caller module by consulting the descriptors on the classpath.
+When the compiler resolves a reference to a symbol declared in another module, it consults the descriptors on the classpath to determine the components that own the declaring module and the caller module.
 
 === Generating the Descriptor
 
