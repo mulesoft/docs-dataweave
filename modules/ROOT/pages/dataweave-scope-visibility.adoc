@@ -1,5 +1,4 @@
 = Scope Visibility in DataWeave
-:page-aliases: dataweave::dataweave-scope-visibility.adoc
 
 DataWeave 2.12.0 introduces scope visibility so you can control which directives in a DataWeave file are accessible from other files. Visibility rules apply to module-level declarations: `fun`, `var`, `type`, `ns`, and `annotation`.
 
@@ -11,7 +10,7 @@ DataWeave 2.12.0 supports three visibility levels:
 
 [%header%autowidth.spread]
 |===
-| Level    | Keyword    | Accessible from
+| Level    | Keyword    | Accessible From
 | Public   | _(none)_   | Anywhere. Default and only behavior in versions before 2.12.0.
 | Private  | `private`  | The same file only.
 | Internal | `internal` | Any file in the same xref:#components[component]. Can be widened with `@VisibleTo`.
@@ -86,7 +85,7 @@ When the compiler resolves a reference to a symbol declared in another module, i
 
 === Generating the Descriptor
 
-You don't write the descriptor manually. The xref:dataweave::dataweave-maven-plugin.adoc[Maven plugin for DataWeave] generates it automatically:
+You don't write the descriptor manually. The xref:dataweave-maven-plugin.adoc[Maven plugin for DataWeave] generates it automatically:
 
 * For a production build (`data-weave:package`), the plugin scans `src/main/dw`, derives the resource names of every `.dwl` file, and writes `target/generated-dataweave-metadata/dw-components.dwl`. The file is added to the produced JAR at `META-INF/dw-components.dwl`.
 * For a test build (`data-weave:test`), the plugin scans both `src/main/dw` and `src/test/dw`, so test files belong to the same component as the production sources they exercise. This lets tests call `internal` directives without further configuration.
@@ -95,12 +94,11 @@ The component name defaults to the Maven `artifactId` of the project.
 
 === Component Resolution Algorithm
 
-Given a reference from caller `A` to symbol `s` declared in module `B`:
+Given a reference from caller `A` to symbol `s` declared in module `B`, the compiler looks up `componentOf(B)` from the descriptors on the classpath. Access is allowed based on the visibility of `s`:
 
-. The compiler looks up `componentOf(B)` from the descriptors on the classpath.
-. If `s` is `private`, access is allowed only when `A == B`.
-. If `s` is `internal`, access is allowed when `componentOf(A) == componentOf(B)`, or when `componentOf(A)` appears in the `@VisibleTo` list on `s`.
-. If `s` is `public`, access is always allowed.
+* If `s` is `private`, access is allowed only when `A == B`.
+* If `s` is `internal`, access is allowed when `componentOf(A) == componentOf(B)`, or when `componentOf(A)` appears in the `@VisibleTo` list on `s`.
+* If `s` is `public`, access is always allowed.
 
 If a module declares `internal` directives and no descriptor on the classpath claims it, the compiler emits the `Module 'X' declares 'internal' members but has no component descriptor` error. In that case, package the module with the Maven plugin for DataWeave or add a component descriptor that lists it.
 
@@ -110,7 +108,7 @@ The compiler reports four new errors:
 
 [%header%autowidth.spread]
 |===
-| Error kind | Triggered when
+| Error Kind | Triggered When
 | `PrivateAccessViolation` | A reference targets a `private` directive declared in a different file.
 | `InternalAccessViolation` | A reference targets an `internal` directive declared in a different component, when the caller's component isn't in the directive's `@VisibleTo` list.
 | `VisibleToRequiresInternal` | `@VisibleTo` is applied to a directive that isn't `internal`.
@@ -147,7 +145,11 @@ The same rule applies to type annotations on variables (`var x: Account = ...`) 
 
 == Examples
 
+These examples demonstrate common visibility patterns for DataWeave library authors.
+
 === File-Local Helper
+
+Use `private` to restrict a helper function to a single file.
 
 [source,dataweave]
 ----
@@ -166,6 +168,8 @@ fun sizeOf(value) =
 
 === Component-Internal Helper
 
+Use `internal` to share helper functions across files within the same component while preventing external access.
+
 [source,dataweave]
 ----
 // dw/core/Internal.dwl   (component: wlang)
@@ -183,6 +187,8 @@ import dropFrame from dw::core::Internal         // Error: internal to `wlang`
 ----
 
 === Sharing Internals With a Specific Component
+
+Use `@VisibleTo` with `internal` to allow specific external components to access a directive.
 
 [source,dataweave]
 ----
@@ -205,7 +211,7 @@ In versions before 2.12.0, the only way to constrain visibility was the experime
 
 [%header%autowidth.spread]
 |===
-| Old form | Replacement
+| Old Form | Replacement
 | `@Internal(permits = [])` | `private`
 | `@Internal(permits = ["dw::"])` | `internal` (the consuming component must also be migrated to a 2.12.0 build so a descriptor exists)
 | `@Internal(permits = ["bat::", "dw::"])` | `@VisibleTo(components = ["bat"])` `internal`
@@ -230,7 +236,7 @@ This is used together with `@Since` on function overloads to dispatch to the cor
 
 == See Also
 
-* xref:dataweave::dw-component.adoc[`dw::meta::Component` Module]
-* xref:dataweave::dw-core-annotations.adoc[`@VisibleTo` Annotation]
-* xref:dataweave::dataweave-maven-plugin.adoc[Maven plugin for DataWeave]
-* xref:dataweave::dataweave-extension-plugin.adoc[DataWeave extension plugin]
+* xref:dw-component.adoc[`dw::meta::Component` Module]
+* xref:dw-core-annotations.adoc[`@VisibleTo` Annotation]
+* xref:dataweave-maven-plugin.adoc[Maven plugin for DataWeave]
+* xref:dataweave-extension-plugin.adoc[DataWeave extension plugin]
