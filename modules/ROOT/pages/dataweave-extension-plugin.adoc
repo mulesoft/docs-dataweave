@@ -396,6 +396,22 @@ To check the logs, follow these steps:
 
 image::dataweave-extension-logs.png[Mule DX DataWeave LS option to select in the drop-down menu of the Output]
 
+== Scope Visibility
+
+When you author DataWeave libraries (`.dwl` files that other DataWeave code imports), the DataWeave extension supports the visibility model introduced in DataWeave 2.12.0:
+
+* Highlights the keywords `private` and `internal` as language keywords.
+* Recognizes the `@VisibleTo` annotation when applied to `internal` directives.
+* Reports visibility violations inline and uses the same wording as the compiler (`... cannot be accessed from ... as it is private to the module ...`, `... is internal to the component ...`).
+* Filters out directives that aren't visible from the current file in auto-completion. For example, `private` helpers defined in another file don't appear in the suggestion list.
+* Supports `Go to definition` and warns when you navigate to a directive that isn't accessible from the current file.
+
+These features apply to library projects only. If you write a Mule transformation mapping inline (a `%dw 2.0` expression in a Transform Message component, a Set Variable expression, or a DataWeave expression embedded in a connector), the `internal` keyword and `@VisibleTo` annotation have no practical effect. An inline mapping is a self-contained script that can't be imported from another inline mapping, so there is nothing to constrain. The keywords are still parsed, but you don't need them in mapping code.
+
+The same rule applies to `.dwl` modules defined inside the Mule application. Every inline mapping and application-level module belongs to an unnamed component, so they can freely reference each other's `internal` directives. The `private` keyword still applies and restricts a directive to its declaring file regardless of component.
+
+For the full visibility model, including definitions for `private`, `internal`, and components, and how the Maven plugin for DataWeave generates the component descriptor, see xref:dataweave-scope-visibility.adoc[].
+
 == See Also
 
 * xref:dataweave-extension.adoc[]
