@@ -112,8 +112,8 @@ The compiler reports four new errors:
 |===
 | Error kind | Triggered when
 | `PrivateAccessViolation` | A reference targets a `private` directive declared in a different file.
-| `InternalAccessViolation` | A reference targets an `internal` directive declared in a different component, when the caller's component is not in the directive's `@VisibleTo` list.
-| `VisibleToRequiresInternal` | `@VisibleTo` is applied to a directive that is not `internal`.
+| `InternalAccessViolation` | A reference targets an `internal` directive declared in a different component, when the caller's component isn't in the directive's `@VisibleTo` list.
+| `VisibleToRequiresInternal` | `@VisibleTo` is applied to a directive that isn't `internal`.
 | `MissingComponentForInternalDirective` | A module declares `internal` directives but no component descriptor on the classpath claims it.
 |===
 
