@@ -403,7 +403,7 @@ When you author DataWeave libraries (`.dwl` files that other DataWeave code impo
 * The keywords `private` and `internal` are highlighted as language keywords.
 * The `@VisibleTo` annotation is recognized when applied to `internal` directives.
 * The editor reports visibility violations inline and uses the same wording as the compiler (`... cannot be accessed from ... as it is private to the module ...`, `... is internal to the component ...`).
-* Auto-completion filters out directives that are not visible from the current file. For example, `private` helpers from another file will not appear in the suggestion list.
+* Auto-completion filters out directives that aren't visible from the current file. For example, `private` helpers defined in another file don't appear in the suggestion list.
 * `Go to definition` continues to work, and the editor warns when you navigate to a directive that isn't accessible from the current file.
 
 These features apply to library projects only. If you write a Mule transformation mapping inline (a `%dw 2.0` expression in a Transform Message component, a Set Variable expression, or a DataWeave expression embedded in a connector), the `internal` keyword and `@VisibleTo` annotation have no practical effect. An inline mapping is a self-contained script that can't be imported from another inline mapping, so there is nothing to constrain. The keywords are still parsed, but you don't need them in mapping code.
