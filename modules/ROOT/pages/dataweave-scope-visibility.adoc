@@ -100,7 +100,7 @@ Given a reference from caller `A` to symbol `s` declared in module `B`, the comp
 * If `s` is `internal`, access is allowed when `componentOf(A) == componentOf(B)`, or when `componentOf(A)` appears in the `@VisibleTo` list on `s`.
 * If `s` is `public`, access is always allowed.
 
-If a module declares `internal` directives and no descriptor on the classpath claims it, the compiler emits the `Module 'X' declares `internal` members but has no component descriptor` error. In that case, package the module with the Maven plugin for DataWeave or add a component descriptor that lists it.
+If a module declares `internal` directives and no descriptor on the classpath claims it, the compiler emits the `Module 'X' declares 'internal' members but has no component descriptor` error. In that case, package the module with the Maven plugin for DataWeave or add a component descriptor that lists it.
 
 == Compile-Time Validation
 
