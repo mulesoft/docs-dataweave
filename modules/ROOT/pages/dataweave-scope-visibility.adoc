@@ -54,7 +54,7 @@ import * from dw::Core
 internal fun computeStats(records: Array) = sizeOf(records)
 ----
 
-`@VisibleTo` is only valid on `internal` directives. Applying it to a `private` directive or to a directive without a visibility keyword raises a compile-time error: `The @VisibleTo annotation can only be applied to `internal` directives`.
+`@VisibleTo` is only valid on `internal` directives. Applying it to a `private` directive or to a directive without a visibility keyword raises a compile-time error: `The @VisibleTo annotation can only be applied to 'internal' directives`.
 
 [[components]]
 == What Is a Component?
