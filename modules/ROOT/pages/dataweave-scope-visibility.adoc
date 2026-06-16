@@ -24,7 +24,7 @@ Visibility checks run only at compile time. Once a script is compiled, no runtim
 
 == Syntax
 
-Place the visibility keyword before the directive keyword (`fun`, `var`, `type`, `ns`, `annotation`).
+Place the visibility keyword before the directive keyword (`fun`, `var`, `type`, `ns`, and `annotation`).
 
 [source,dataweave]
 ----
