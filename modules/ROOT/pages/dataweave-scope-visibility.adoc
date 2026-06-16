@@ -62,7 +62,7 @@ internal fun computeStats(records: Array) = sizeOf(records)
 
 DataWeave doesn't provide a `module` or `package` keyword to group files. Until 2.12.0, every `.dwl` file lived in one global namespace. To make `internal` meaningful, the language now uses the component concept, which is a named set of DataWeave resources (modules) that are compiled and packaged together.
 
-A component is described by a component descriptor, a `.dwl` resource located at `META-INF/dw-components.dwl` inside a `.jar`. The descriptor is an array of components, and each component lists the resources it owns:
+A component is described by a component descriptor, a `.dwl` resource located at `META-INF/dw-components.dwl` inside a `.jar` file. The descriptor is an array of components, and each component lists the resources it owns:
 
 [source,dataweave]
 ----
