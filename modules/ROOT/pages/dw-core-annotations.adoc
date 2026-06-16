@@ -122,7 +122,7 @@ _Experimental:_ This experimental feature is subject to change or removal from f
 
 | VisibleTo
 | `@VisibleTo&#40;components: Array<String&#62;&#41;`
-| Annotation that marks an `internal` directive (`fun`, `var`, `type`, `ns`) as visible to listed components in addition to its own component. Use it to share helpers across libraries you own without making them public. Component names must match the `name` field in the `META-INF/dw-components.dwl` descriptor.
+| Annotation that marks an `internal` directive (`fun`, `var`, `type`, and `ns`) as visible to listed components in addition to its own component. Use it to share helpers across libraries you own without making them public. Component names must match the `name` field in the `META-INF/dw-components.dwl` descriptor.
 
 `@VisibleTo` is valid only on `internal` directives. Applying it to a `private` directive, or to a directive without a visibility keyword, produces a compile-time error.
 
