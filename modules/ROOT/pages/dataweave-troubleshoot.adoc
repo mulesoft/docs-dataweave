@@ -205,3 +205,7 @@ Trace:
 ----
 
 Making the output explicit solves the issue: `output application/java --- payload splitBy ' '`
+
+== See Also
+
+include::release-notes::partial$release-notes/rn-known-issues.adoc[tag=knownIssuesSeeAlsoLink]
