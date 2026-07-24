@@ -336,3 +336,7 @@ payload.parts mapObject ((value, key, index) ->
     rawContent: payload.parts[index].content.^raw
     }
 })
+
+== See Also
+
+include::release-notes::partial$release-notes/rn-known-issues.adoc[tag=knownIssuesSeeAlsoLink]
