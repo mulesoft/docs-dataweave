@@ -81,6 +81,7 @@ This table shows the possible combinations and the properties from the schema th
 |`Time`           |`LocalTime`      |
 |`String`         |`LocalTime`      | `format` / `locale`
 |`DateTime`       |`Number`         | `unit`
+|`Period`         |`Number`         | `unit`
 |`String`         |`Number`         | `format` / `locale`
 |`String`         |`Period`         |
 |`String`         |`Regex`          |
@@ -129,7 +130,7 @@ This table shows the possible combinations and the properties from the schema th
 Note that `LENIENT` and `SMART` autocorrect invalid dates in different ways, but `STRICT` returns an error on the date. See <<modeExamples, examples>> that use `mode`.
 
 | `unit`
-| Value can be `milliseconds` or `seconds`. These are used for Number to DateTime conversions.
+| Value can be `milliseconds` or `seconds`. These are used for Number to DateTime, DateTime to Number, and Period to Number conversions.
 |===
 
 [[modeExamples]]
