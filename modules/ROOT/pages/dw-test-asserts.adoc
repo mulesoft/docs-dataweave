@@ -11,7 +11,7 @@ This example validates if a payload is of type `Object`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 payload must beObject()
 ----
@@ -41,7 +41,7 @@ This example shows how to assert that a value must be of type `Object` or `Strin
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 "A Text" must anyOf(beObject(), beString())
 ----
@@ -62,7 +62,7 @@ This example shows how to validate that a value is of type `Array`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 [1, 4, 7] must beArray()
 ----
@@ -82,7 +82,7 @@ Validates that the string is empty or has whitespaces.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 "  " must beBlank()
 ----
@@ -103,7 +103,7 @@ This example shows how to validate that a value is of type `Boolean`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 true must beBoolean()
 ----
@@ -125,7 +125,7 @@ Validates that the array is of size `0`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 [] must beEmpty()
 ----
@@ -157,7 +157,7 @@ Expects a `Number` to be greater than `2`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 3 must beGreaterThan(2)
 ----
@@ -171,7 +171,7 @@ Expects a number to be greater or equal than `2`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 3 must beGreaterThan(2, true)
 ----
@@ -203,7 +203,7 @@ Expects a `Number` to be less than `2`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 1 must beLowerThan(2)
 ----
@@ -217,7 +217,7 @@ Expects a `Number` to be less or equal than `2`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 1 must beLowerThan(2, true)
 ----
@@ -238,7 +238,7 @@ This example shows how to validate that a value is of type `Null`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 null must beNull()
 ----
@@ -259,7 +259,7 @@ This example shows how to validate that a value is of type `Number`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 123 must beNumber()
 ----
@@ -280,7 +280,7 @@ This example shows how to validate that a value is of type `Object`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 { name : "Lionel", lastName: "Messi"} must beObject()
 ----
@@ -309,7 +309,7 @@ Asserts that the value is either `1` or "A Text" or `true`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 1 must beOneOf([1, "A Text", true])
 ----
@@ -330,7 +330,7 @@ This example shows how to validate that a value is of type `String`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 "A Text" must beString()
 ----
@@ -358,7 +358,7 @@ Expects the value to contain the `String` value "ex".
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 "A Text" must contain("ex")
 ----
@@ -384,7 +384,7 @@ Expects the `Array` value to contain the `Number` value 1.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 [1, "A Text", true] must contain(1)
 ----
@@ -413,7 +413,7 @@ Expects all the elements in the array to be a number.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 [1,2,3] must eachItem(beNumber())
 ----
@@ -442,7 +442,7 @@ Expects the `String` value to end with "xt".
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 "A Text" must endWith("xt")
 ----
@@ -471,7 +471,7 @@ This example shows how to assert that a value must be `equal` to `3`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 (1 + 2) must equalTo(3)
 ----
@@ -504,7 +504,7 @@ Expects a value to be equal to the content of the resource `user.json`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 { name: "Lionel", lastName: "Messi" } must equalToResource("user.json", "application/json")
 ----
@@ -533,7 +533,7 @@ Expects that one element of the array is a number.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 [1, true, "a text"] must haveItem(beNumber())
 ----
@@ -562,7 +562,7 @@ Validates that the `Object` contains a key called "name".
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 { name: "Lionel", lastName: "Messi" } must haveKey("name")
 ----
@@ -591,7 +591,7 @@ Expects that the array must be of size `3`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 [1, 4, 7] must haveSize(3)
 ----
@@ -620,7 +620,7 @@ Expected that the `Object` contains the value "Messi".
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 { name: "Lionel", lastName: "Messi" } must haveValue("Messi")
 ----
@@ -650,7 +650,7 @@ This example shows how to assert that a `payload` is of type `Object` and has a 
 [source, DataWeave,linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 payload must [
     beObject(),
@@ -680,7 +680,7 @@ This example shows how to assert that a `payload` is of type `Object`.
 [source, DataWeave,linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 payload must beObject()
 ----
@@ -709,7 +709,7 @@ This example shows how to assert that a value mustn't be equal to 2.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 1 must notBe(equalTo(2))
 ----
@@ -730,7 +730,7 @@ This example shows how to validate that a value isn't of type `Null`.
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 "A Text" must notBeNull()
 ----
@@ -759,7 +759,7 @@ Validates that the string starts with "A".
 [source,DataWeave, linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 ---
 "A Text" must startWith("A")
 ----
@@ -786,7 +786,7 @@ Data type that represents a matcher to perform assertions.
 [source, DataWeave,linenums]
 ----
 %dw 2.0
-import dw::tests::Asserts
+import * from dw::test::Asserts
 
 fun beEqualToOne(): Matcher<Any> =
     (actual) -> do {
