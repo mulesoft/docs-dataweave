@@ -1,14 +1,12 @@
 = Component Types (dw::meta::Component)
 
-Use this topic to understand the DataWeave types in a component descriptor. These types define how DataWeave represents components and their owned modules in `dw-components.dwl`.
-
 [%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
 
 | ComponentDescriptor
 | `type ComponentDescriptor = { name: ComponentName, resources: { &#40;NameIdentifier&#41;: ModuleDescriptor } }`
-| Describes a single component. Contains the following fields:
+| Describes a single component. Contains these fields:
 
 * `name`: Component identifier referenced from `@VisibleTo`.
 * `resources`: Modules owned by the component, keyed by `NameIdentifier`.
@@ -31,7 +29,7 @@ _Introduced in DataWeave version 2.12.0._
 
 
 | ModuleDescriptor
-| `type ModuleDescriptor = {}`
+| `type ModuleDescriptor = Object`
 | Per-resource metadata. Reserved for future fields; emit `{}` for every entry.
 
 _Introduced in DataWeave version 2.12.0._

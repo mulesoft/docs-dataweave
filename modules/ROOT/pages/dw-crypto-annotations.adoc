@@ -17,10 +17,11 @@ This annotation can only be applied to function parameters.
 | CryptographicSink
 | `@CryptographicSink&#40;&#41;`
 | Marks a function parameter as a cryptographic algorithm sink for security validation.
+|===
 
-== Error
+=== Error
 
-When an insecure algorithm is detected, DataWeave produces this error:
+When an insecure algorithm is detected, this error is produced.
 
 ----
 Cryptographic violation: Forbidden use of algorithm <algorithm> in <module>.
@@ -43,5 +44,3 @@ When called with a forbidden algorithm in a security-restricted environment, Dat
 ----
 hashWith("data" as Binary, "MD5")
 ----
-
-|===
