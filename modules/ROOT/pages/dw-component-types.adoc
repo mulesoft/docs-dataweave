@@ -1,5 +1,7 @@
 = Component Types (dw::meta::Component)
 
+Use this topic to understand the DataWeave types in a component descriptor. These types define how DataWeave represents components and their owned modules in `dw-components.dwl`.
+
 [%header, cols="1,2a,3a"]
 |===
 | Type | Definition | Description
