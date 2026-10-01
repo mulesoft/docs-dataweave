@@ -19,9 +19,9 @@ This annotation can only be applied to function parameters.
 | Marks a function parameter as a cryptographic algorithm sink for security validation.
 |===
 
-=== Error
+== Error
 
-When an insecure algorithm is detected, this error is produced.
+When an insecure algorithm is detected, DataWeave produces this error:
 
 ----
 Cryptographic violation: Forbidden use of algorithm <algorithm> in <module>.
