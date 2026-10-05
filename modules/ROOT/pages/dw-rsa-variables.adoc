@@ -1,0 +1,12 @@
+= RSA Variables (dw::util::jwt::RSA)
+
+[%header, cols="1,2a,3a"]
+|===
+| Variable | Definition | Description
+
+| algMapping
+| `algMapping`
+| Supported RSA algorithms.
+
+_Introduced in DataWeave version 2.6.0._
+|===

@@ -1,0 +1,93 @@
+= JWT
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[jwt1]]
+== JWT&#40;header: Object, payload: Object, signingKey: String, algorithm: String&#41;: String
+
+Generate JWT with header, payload, and signature by specific algorithm.
+
+_Introduced in DataWeave version 2.6.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `header` | `Object` | JWT header.
+| `payload` | `Object` | JWT payload.
+| `signingKey` | `String` | RSA private key in PEM format.
+| `algorithm` | `String` | RSA algorithm, such as `Sha384withRSA`.
+|===
+
+=== Example
+
+Supply `key` as a JSON string containing an unencrypted RSA private key
+with a modulus of at least 2048 bits. This example signs with RS384.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::jwt::RSA
+output application/json
+input key application/json
+---
+JWT({kid: "example"}, {sub: "test"}, key, "Sha384withRSA")
+----
+
+==== Output
+
+The exact signature depends on `key`.
+
+[source,Json,linenums]
+----
+"<base64url-header>.<base64url-payload>.<base64url-signature>"
+----
+
+
+[[jwt2]]
+== JWT&#40;payload: Object, signingKey: String&#41;: String
+
+Generate JWT with a payload, automatically generated header, and key signed with RS256.
+
+_Introduced in DataWeave version 2.6.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `payload` | `Object` | JWT payload.
+| `signingKey` | `String` | RSA private key in PEM format.
+|===
+
+=== Example
+
+Supply `key` as a JSON string containing an unencrypted RSA private key
+with a modulus of at least 2048 bits. This example signs with RS256.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::jwt::RSA
+output application/json
+input key application/json
+---
+JWT({sub: "test"}, key)
+----
+
+==== Output
+
+The exact signature depends on `key`.
+
+[source,Json,linenums]
+----
+"<base64url-header>.<base64url-payload>.<base64url-signature>"
+----
