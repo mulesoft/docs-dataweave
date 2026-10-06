@@ -8,7 +8,7 @@ Use this topic to understand the DataWeave types in a component descriptor. Thes
 
 | ComponentDescriptor
 | `type ComponentDescriptor = { name: ComponentName, resources: { &#40;NameIdentifier&#41;: ModuleDescriptor } }`
-| Describes a single component. Contains the following fields:
+| Describes a single component. Contains these fields:
 
 * `name`: Component identifier referenced from `@VisibleTo`.
 * `resources`: Modules owned by the component, keyed by `NameIdentifier`.
@@ -31,7 +31,7 @@ _Introduced in DataWeave version 2.12.0._
 
 
 | ModuleDescriptor
-| `type ModuleDescriptor = {}`
+| `type ModuleDescriptor = Object`
 | Per-resource metadata. Reserved for future fields; emit `{}` for every entry.
 
 _Introduced in DataWeave version 2.12.0._

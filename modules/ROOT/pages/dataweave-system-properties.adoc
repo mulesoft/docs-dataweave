@@ -671,11 +671,11 @@ Enables a pass of the DataWeave compiler that extracts usages of values in Mule 
 
 * Default:
 
-  ** `false` for language levels: 2.6, 2.7, 2.8, 2.9, 2.10
+  ** `false` for language levels: 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.10
 
-  ** `true` for language levels: 2.11, 2.12
+  ** `true` for language levels: 2.11, 2.12, 2.13
 
-Available for language levels: 2.6, 2.7, 2.8, 2.9, 2.10, 2.11, 2.12
+Available for language levels: 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 2.10, 2.11, 2.12, 2.13
 
 
 //mule.dw.java_module_loader_deterministic_functions_ordering//

@@ -1,0 +1,21 @@
+= HMAC Variables (dw::util::jwt::HMAC)
+
+This module contains variables for the HMAC module.
+
+[%header, cols="1,2a,3a"]
+|===
+| Variable | Definition | Description
+
+| algMapping
+| `algMapping`
+| Supported HMAC algorithms.
+
+_Introduced in DataWeave version 2.6.0._
+
+| requiredKeyLengthBits
+| `requiredKeyLengthBits`
+| Required key lengths for FIPS 198-1 compliance.
+NIST recommends HMAC key length >= hash output length.
+
+_Introduced in DataWeave version 2.6.0._
+|===

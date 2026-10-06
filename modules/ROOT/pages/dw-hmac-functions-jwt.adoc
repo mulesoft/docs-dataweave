@@ -1,0 +1,128 @@
+= JWT
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+
+
+
+[[jwt1]]
+== JWT&#40;header: Object, payload: Object, signingKey: String, algorithm: String&#41;: String
+
+Generate JWT with header, payload, and signature by specific algorithm.
+
+_Introduced in DataWeave version 2.6.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `header` | `Object` | JWT header.
+| `payload` | `Object` | JWT payload.
+| `signingKey` | `String` | Signing key.
+| `algorithm` | `String` | HMAC algorithm.
+|===
+
+=== Example
+
+This example signs a payload with HS384 and a 384-bit key.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::jwt::HMAC
+output application/json
+---
+JWT({"header": "value"}, {"firstName": "Michael", "lastName": "Jones"},
+  "012345678901234567890123456789012345678901234567", "HmacSHA384")
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+"eyJoZWFkZXIiOiAidmFsdWUiLCJhbGciOiAiSFMzODQiLCJ0eXAiOiAiSldUIn0.eyJmaXJzdE5hbWUiOiAiTWljaGFlbCIsImxhc3ROYW1lIjogIkpvbmVzIn0.F1xP9JjXqmwVfPXULZ7F6EYu2Td36eW4xUWElGHN7ayjWIiBPWM3L4STPQzQ570R"
+----
+
+
+[[jwt2]]
+== JWT&#40;header: Object, payload: Object, signingKey: String&#41;: String
+
+Generate JWT with a header, payload, and key signed with HMAC-SHA256.
+
+_Introduced in DataWeave version 2.6.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `header` | `Object` | JWT header.
+| `payload` | `Object` | JWT payload.
+| `signingKey` | `String` | Signing key.
+|===
+
+=== Example
+
+This example uses HS256 and a 256-bit key.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::jwt::HMAC
+output application/json
+---
+JWT({"header": "value"}, {"firstName": "Michael", "lastName": "Jones"},
+  "01234567890123456789012345678901")
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+"eyJoZWFkZXIiOiAidmFsdWUiLCJhbGciOiAiSFMyNTYiLCJ0eXAiOiAiSldUIn0.eyJmaXJzdE5hbWUiOiAiTWljaGFlbCIsImxhc3ROYW1lIjogIkpvbmVzIn0.wAoUwkmKhZy6Op119t0N5MwQX-03fJZClzfA5lFwEhg"
+----
+
+
+[[jwt3]]
+== JWT&#40;payload: Object, signingKey: String&#41;: String
+
+Generate JWT with a payload, automatically generated header, and key signed with HMAC-SHA256.
+
+_Introduced in DataWeave version 2.6.0._
+
+=== Parameters
+
+[%header, cols="1,1,3"]
+|===
+| Name | Type | Description
+| `payload` | `Object` | JWT payload.
+| `signingKey` | `String` | Signing key.
+|===
+
+=== Example
+
+This example signs a payload with the default HS256 algorithm.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::jwt::HMAC
+output application/json
+---
+JWT({"firstName": "Michael", "lastName": "Jones"},
+  "01234567890123456789012345678901")
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+"eyJhbGciOiAiSFMyNTYiLCJ0eXAiOiAiSldUIn0.eyJmaXJzdE5hbWUiOiAiTWljaGFlbCIsImxhc3ROYW1lIjogIkpvbmVzIn0.JaEz34HXuF4fWg5jM2U9JRnX4vu5twoeDRRg9_anWMc"
+----

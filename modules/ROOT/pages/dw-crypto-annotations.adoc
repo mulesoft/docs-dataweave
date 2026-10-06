@@ -17,6 +17,7 @@ This annotation can only be applied to function parameters.
 | CryptographicSink
 | `@CryptographicSink&#40;&#41;`
 | Marks a function parameter as a cryptographic algorithm sink for security validation.
+|===
 
 == Error
 
@@ -43,5 +44,3 @@ When called with a forbidden algorithm in a security-restricted environment, Dat
 ----
 hashWith("data" as Binary, "MD5")
 ----
-
-|===
