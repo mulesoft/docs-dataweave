@@ -136,7 +136,7 @@ var x = 2
 * `a`: `-x + 3` is evaluated as `-(x + 3)`.
 * `b`: Parentheses restrict the unary minus to `x`.
 * `c`: `-x * 2 + 1` is evaluated as `-((x * 2) + 1)`.
-* `d`: Negative number literals, such as `-3`, are not affected. `-3 + 1` is evaluated as `(-3) + 1`.
+* `d`: Negative number literals, such as `-3`, aren't affected. `-3 + 1` is evaluated as `(-3) + 1`.
 
 Because unary minus also applies to comparison and logical operators, an expression
 such as `-x > 0` is evaluated as `-(x > 0)` and fails with the error
