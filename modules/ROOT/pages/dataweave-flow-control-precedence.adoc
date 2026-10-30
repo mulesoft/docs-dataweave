@@ -97,6 +97,54 @@ a|
 * `if else`: Conditional expression used for flow control in DataWeave.
 |===
 
+[[unary_minus]]
+== Precedence of the Unary Minus Operator
+
+The unary minus operator (`-`) negates the expression that follows it.
+Unary minus has a lower precedence than the mathematical, comparison, and
+logical (`and`, `or`) operators, meaning it applies to the entire expression involving
+those operations rather than just the immediately following operand.
+
+For example, `-x + 3` is evaluated as `-(x + 3)`, not as `(-x) + 3`:
+
+.DataWeave Script:
+[source,DataWeave,linenums]
+----
+%dw 2.0
+output application/json
+var x = 2
+---
+{
+  a: -x + 3,
+  b: (-x) + 3,
+  c: -x * 2 + 1,
+  d: -3 + 1
+}
+----
+
+.Output:
+[source,json,linenums]
+----
+{
+  "a": -5,
+  "b": 1,
+  "c": -5,
+  "d": -2
+}
+----
+
+* `a`: `-x + 3` is evaluated as `-(x + 3)`.
+* `b`: Parentheses restrict the unary minus to `x`.
+* `c`: `-x * 2 + 1` is evaluated as `-((x * 2) + 1)`.
+* `d`: Negative number literals, such as `-3`, aren't affected. `-3 + 1` is evaluated as `(-3) + 1`.
+
+Because unary minus also applies to comparison and logical operators, an expression
+such as `-x > 0` is evaluated as `-(x > 0)` and fails with the error
+`Expecting Type: Number, but got: Boolean`. To compare the negated value, use `(-x) > 0`.
+
+TIP: To negate only the operand next to the unary minus operator, enclose the
+negated value in parentheses, for example, `(-x) + 3` or `(-payload.amount) > 0`.
+
 == Order of Chained Function Calls
 
 When functions are chained together in a series, the functions are processed
