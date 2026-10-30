@@ -22,7 +22,7 @@ DataWeave supports the most common mathematical operators:
 You can also use `-` as a unary operator to negate an expression, for example, `-payload.amount`.
 The unary minus operator applies to the whole expression that follows it,
 so `-x + 3` is evaluated as `-(x + 3)`. Use parentheses to negate a single operand,
-for example, `(-x) + 3`. Negative number literals, such as `-3 + 1`, are not affected.
+for example, `(-x) + 3`. Negative number literals, such as `-3 + 1`, aren't affected.
 See xref:dataweave-flow-control-precedence.adoc#unary_minus[Precedence of the Unary Minus Operator].
 
 In addition to operating with numbers, the `(-)` and `(+)` operators can also operate with complex data structures like arrays, objects, and dates.
