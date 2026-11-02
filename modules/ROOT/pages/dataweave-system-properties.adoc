@@ -469,7 +469,7 @@ Available for language levels: 2.4, 2.5, 2.6
 //mule.dw.enable_vars_materialization_pass//
 |`mule.dw.enable_vars_materialization_pass`|
 
-Enables a pass of the DataWeave compiler that extracts usages of values in Mule `vars` special variable into variable declarations. This forces materialization of values inside `vars`, and is useful for fixing issues where repeated reads of `vars` yield a `null` value.
+When set to `true`, enables a DataWeave compiler pass that extracts usages of values in Mule `vars` special variable into variable declarations. This forces DataWeave to materialize the values in `vars`, which fixes issues where repeated reads of `vars` yield a `null` value.
 
 * Type: `Boolean`
 
