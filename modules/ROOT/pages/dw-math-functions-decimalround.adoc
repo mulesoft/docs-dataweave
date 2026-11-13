@@ -9,3 +9,33 @@ endif::[]
 == decimalRound&#40;n: Number, ctx: OperationContext = DECIMAL_128_CONTEXT&#41;
 
 Returns the argument number with rounding specified by the operation context.
+
+=== Example
+
+This example shows how `decimalRound` behaves with different operation contexts.
+
+==== Source
+
+[source,DataWeave,linenums]
+----
+%dw 2.0
+import * from dw::util::Math
+output application/json
+---
+{
+  "decimalRound123456": decimalRound(123.456, {precision: 4, roundingMode: "HALF_UP"}),
+  "decimalRound25HalfUp": decimalRound(2.5, {precision: 1, roundingMode: "HALF_UP"}),
+  "decimalRound25HalfEven": decimalRound(2.5, {precision: 1, roundingMode: "HALF_EVEN"})
+}
+----
+
+==== Output
+
+[source,Json,linenums]
+----
+{
+   "decimalRound123456": 123.5,
+   "decimalRound25HalfUp": 3,
+   "decimalRound25HalfEven": 2
+}
+----
