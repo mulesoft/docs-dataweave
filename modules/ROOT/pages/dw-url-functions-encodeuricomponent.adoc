@@ -47,7 +47,7 @@ output application/json
 ---
 {
   "comparing_encode_functions_output" : {
-  	"encodeURIComponent" : encodeURI(" PATH/ TO /ENCODE "),
+  	"encodeURIComponent" : encodeURIComponent(" PATH/ TO /ENCODE "),
   	"encodeURI" : encodeURI(" PATH/ TO /ENCODE "),
   	"encodeURIComponent_to_hex" : encodeURIComponent(";,/?:@&="),
   	"encodeURI_not_to_hex" : encodeURI(";,/?:@&="),
